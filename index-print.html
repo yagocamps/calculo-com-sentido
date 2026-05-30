@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cálculo com Sentido · Layout do site (impressão)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    html, body { margin: 0; padding: 0; background: #efe9dd; }
+    body { font-family: "DM Sans", system-ui, sans-serif; color: #2A211A; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    * { box-sizing: border-box; }
+
+    /* Cover page */
+    .cover {
+      width: 1440px; height: 940px;
+      background: linear-gradient(135deg, #FAF6EF 0%, #F4D9CF 130%);
+      padding: 90px 100px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      page: page-940;
+      page-break-after: always;
+      break-after: page;
+      position: relative; overflow: hidden;
+    }
+    .cover h1 {
+      font-family: "Newsreader", serif; font-size: 96px; font-weight: 500;
+      letter-spacing: -0.03em; line-height: 1; margin: 0; color: #2A211A;
+      max-width: 980px; text-wrap: balance;
+    }
+    .cover em { color: #C2553D; font-style: italic; }
+    .cover .eyebrow {
+      font-family: "Newsreader", serif; font-style: italic; font-size: 22px;
+      color: #C2553D; letter-spacing: 0.02em;
+    }
+    .cover .lede {
+      font-size: 22px; color: #6E5C4E; max-width: 760px; line-height: 1.55;
+      margin-top: 22px;
+    }
+    .cover .toc {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 60px;
+      font-family: "Newsreader", serif; font-size: 19px;
+      max-width: 900px;
+    }
+    .cover .toc-row {
+      display: flex; align-items: center; gap: 16px;
+      border-bottom: 1px dashed #A08C7B; padding: 8px 0;
+    }
+    .cover .toc-num {
+      font-family: "JetBrains Mono", monospace; font-size: 13px;
+      color: #C2553D; font-weight: 600;
+    }
+    .cover .toc-name { flex: 1; }
+    .cover .toc-page { color: #A08C7B; font-family: "JetBrains Mono", monospace; font-size: 13px; }
+    .cover .deco {
+      position: absolute; right: -60px; top: -40px; opacity: 0.07;
+      font-family: "Newsreader", serif; font-size: 460px; line-height: 1;
+      color: #7A2E1F; font-style: italic; user-select: none;
+    }
+    .cover .footer {
+      display: flex; justify-content: space-between; align-items: end;
+      font-size: 13px; color: #6E5C4E;
+      border-top: 1px solid #E8DFD0; padding-top: 18px;
+    }
+    .cover .footer b { color: #2A211A; }
+
+    /* Artboard caption */
+    .frame {
+      page-break-after: always;
+      break-after: page;
+      position: relative;
+    }
+    .frame-caption {
+      position: absolute; top: 24px; left: 32px;
+      display: flex; align-items: center; gap: 12px;
+      z-index: 10; pointer-events: none;
+    }
+    .frame-caption .num {
+      font-family: "JetBrains Mono", monospace; font-size: 11px;
+      background: rgba(42,33,26,0.85); color: #FAF6EF;
+      padding: 4px 8px; border-radius: 6px; font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .frame-caption .label {
+      font-family: "Newsreader", serif; font-style: italic;
+      font-size: 14px; color: #6E5C4E;
+      background: rgba(255,255,255,0.7);
+      padding: 4px 10px; border-radius: 6px;
+      border: 1px solid #E8DFD0;
+    }
+
+    .artboard { width: 1440px; }
+    .artboard-940 { height: 940px; page: page-940; }
+    .artboard-1180 { height: 1180px; page: page-1180; }
+    .artboard-1380 { height: 1380px; page: page-1380; }
+
+    @page page-940  { size: 1440px 940px;  margin: 0; }
+    @page page-1180 { size: 1440px 1180px; margin: 0; }
+    @page page-1380 { size: 1440px 1380px; margin: 0; }
+
+    @media print {
+      html, body { background: #fff; }
+      .frame, .cover { box-shadow: none; }
+    }
+
+    /* On-screen layout (when previewing) */
+    @media screen {
+      body { padding: 24px; display: flex; flex-direction: column; gap: 18px; align-items: center; }
+      .frame, .cover { box-shadow: 0 18px 48px -20px rgba(42,33,26,0.18), 0 4px 12px rgba(42,33,26,0.05); }
+    }
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+          integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+          crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+          integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+          crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+          integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+          crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="src/tokens.jsx"></script>
+  <script type="text/babel" src="src/Sidebar.jsx"></script>
+  <script type="text/babel" src="src/Shell.jsx"></script>
+  <script type="text/babel" src="src/pages/Home.jsx"></script>
+  <script type="text/babel" src="src/pages/TesteNivel.jsx"></script>
+  <script type="text/babel" src="src/pages/Trilhas.jsx"></script>
+  <script type="text/babel" src="src/pages/Aula.jsx"></script>
+  <script type="text/babel" src="src/pages/Exercicios.jsx"></script>
+  <script type="text/babel" src="src/pages/Resumos.jsx"></script>
+  <script type="text/babel" src="src/pages/Glossario.jsx"></script>
+  <script type="text/babel" src="src/pages/MeuProgresso.jsx"></script>
+  <script type="text/babel" src="src/pages/Sobre.jsx"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" data-presets="env,react">
+    const PAGES = [
+      { Comp: Home,             label: 'Entrada · Início (Home)',                  h: 940  },
+      { Comp: Sobre,            label: 'Entrada · Sobre o projeto',                h: 1180 },
+      { Comp: TesteNivel,       label: 'Onboarding · Teste de nível',              h: 940  },
+      { Comp: TrilhaPreCalculo, label: 'Trilhas · Pré-Cálculo',                    h: 940  },
+      { Comp: TrilhaCalculo1,   label: 'Trilhas · Cálculo 1',                      h: 940  },
+      { Comp: Aula,             label: 'Conteúdo · Aula (modelo padrão)',          h: 1380 },
+      { Comp: Exercicios,       label: 'Conteúdo · Exercícios (modelo padrão)',    h: 1180 },
+      { Comp: Resumos,          label: 'Referência · Resumos rápidos',             h: 1180 },
+      { Comp: Glossario,        label: 'Referência · Glossário',                   h: 940  },
+      { Comp: MeuProgresso,     label: 'Pessoal · Meu progresso',                  h: 940  },
+    ];
+
+    function Cover() {
+      return (
+        <section className="cover">
+          <div className="deco">∫</div>
+          <div>
+            <div className="eyebrow">Layout do site</div>
+            <h1>Cálculo com<br/><em>Sentido</em>.</h1>
+            <p className="lede">
+              Dez telas em alta fidelidade para o site educacional de Pré-Cálculo
+              e Cálculo 1. Sidebar fixa estilo documentação, paleta acolhedora
+              e tipografia editorial.
+            </p>
+          </div>
+          <div className="toc">
+            {PAGES.map((p, i) => (
+              <div key={i} className="toc-row">
+                <span className="toc-num">{String(i+1).padStart(2,'0')}</span>
+                <span className="toc-name">{p.label}</span>
+                <span className="toc-page">p. {i+2}</span>
+              </div>
+            ))}
+          </div>
+          <div className="footer">
+            <span>Documento de layout · v1</span>
+            <span><b>Cálculo com Sentido</b> · 2026</span>
+          </div>
+        </section>
+      );
+    }
+
+    function App() {
+      return (
+        <React.Fragment>
+          <Cover />
+          {PAGES.map((p, i) => (
+            <div key={i} className="frame">
+              <div className="frame-caption">
+                <span className="num">{String(i+1).padStart(2,'0')} / {PAGES.length}</span>
+                <span className="label">{p.label}</span>
+              </div>
+              <div className={`artboard artboard-${p.h}`}>
+                <p.Comp />
+              </div>
+            </div>
+          ))}
+        </React.Fragment>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+    // Auto-print after fonts + render settle
+    (async () => {
+      try { await document.fonts.ready; } catch (e) {}
+      // Wait for React tree + layout
+      await new Promise(r => setTimeout(r, 1200));
+      window.print();
+    })();
+  </script>
+</body>
+</html>

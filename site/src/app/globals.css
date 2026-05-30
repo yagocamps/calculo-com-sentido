@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #faf6ef;
+  --surface: #ffffff;
+  --surface-warm: #f4ede0;
+  --surface-soft: #fbf6eb;
+  --surface-ink: #2a211a;
+
+  --ink: #2a211a;
+  --ink-muted: #6e5c4e;
+  --ink-subtle: #a08c7b;
+  --ink-on-dark: #faf6ef;
+
+  --border: #e8dfd0;
+  --border-soft: #f0e8d9;
+
+  --terracotta: #c2553d;
+  --terracotta-soft: #f4d9cf;
+  --terracotta-ink: #7a2e1f;
+
+  --sage: #7a9275;
+  --sage-soft: #d9e3d2;
+  --sage-ink: #3f5b3a;
+
+  --sky: #6b8aae;
+  --sky-soft: #d8e3ee;
+  --sky-ink: #33506e;
+
+  --amber: #d6a24a;
+  --amber-soft: #f3e3c0;
+  --amber-ink: #7a5616;
+}
+
+html.dark {
+  --bg: #1b1714;
+  --surface: #241e19;
+  --surface-warm: #2c241d;
+  --surface-soft: #201a15;
+  --surface-ink: #100d0b;
+
+  --ink: #f0e8dc;
+  --ink-muted: #c3b3a2;
+  --ink-subtle: #8f7d6b;
+  --ink-on-dark: #faf6ef;
+
+  --border: #3a2f26;
+  --border-soft: #2f261f;
+
+  --terracotta: #e07a5f;
+  --terracotta-soft: #46271e;
+  --terracotta-ink: #f4c4b5;
+
+  --sage: #9bb396;
+  --sage-soft: #2b3a28;
+  --sage-ink: #cfe0c9;
+
+  --sky: #8ba8c8;
+  --sky-soft: #25323e;
+  --sky-ink: #cfe0f0;
+
+  --amber: #e0b96a;
+  --amber-soft: #392f1c;
+  --amber-ink: #f0dcae;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 6px 16px -8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 18px 48px -20px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-warm: var(--surface-warm);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-ink: var(--surface-ink);
+
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-ink-on-dark: var(--ink-on-dark);
+
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-soft: var(--terracotta-soft);
+  --color-terracotta-ink: var(--terracotta-ink);
+
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-sage-ink: var(--sage-ink);
+
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-sky-ink: var(--sky-ink);
+
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-amber-ink: var(--amber-ink);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-1: 8px;
+  --radius-2: 14px;
+  --radius-3: 20px;
+  --radius-4: 28px;
+
+  --shadow-sm: 0 1px 2px rgba(42, 33, 26, 0.04), 0 1px 1px rgba(42, 33, 26, 0.03);
+  --shadow-md: 0 6px 16px -8px rgba(42, 33, 26, 0.12),
+    0 2px 4px rgba(42, 33, 26, 0.04);
+  --shadow-lg: 0 18px 48px -20px rgba(42, 33, 26, 0.18),
+    0 4px 12px rgba(42, 33, 26, 0.05);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Transição suave ao alternar tema */
+body,
+.bg-bg,
+.bg-surface,
+.bg-surface-warm,
+.bg-surface-soft {
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* function-plot: respeitar os tokens de tema */
+.ccs-plot text {
+  fill: var(--ink-muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+}
+.ccs-plot .tick line,
+.ccs-plot .grid line {
+  stroke: var(--border);
+}
+.ccs-plot .domain,
+.ccs-plot .origin path,
+.ccs-plot path.domain {
+  stroke: var(--ink-subtle);
+}
+.ccs-plot .annotations path {
+  stroke: var(--ink-subtle);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus,
+.sr-only:focus-visible {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
