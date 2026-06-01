@@ -198,7 +198,7 @@ function FilterChip({
       className={cn(
         "rounded-full border px-2.5 py-1 text-xs font-semibold transition-colors",
         active
-          ? "border-ink bg-ink text-ink-on-dark"
+          ? "border-surface-ink bg-surface-ink text-ink-on-dark"
           : "border-border bg-surface text-ink-muted hover:border-terracotta",
       )}
     >

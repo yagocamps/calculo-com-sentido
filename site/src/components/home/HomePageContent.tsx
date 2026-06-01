@@ -45,11 +45,11 @@ function HeroSection() {
         ∫ƒ
       </div>
 
-      <p className="relative font-serif text-lg font-medium tracking-tight text-terracotta-ink">
+      <p className="relative font-serif text-lg font-medium tracking-tight text-terracotta">
         Cálculo com Sentido
       </p>
 
-      <span className="relative mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-terracotta-ink">
+      <span className="relative mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-surface/80 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-terracotta backdrop-blur-sm">
         <span className="h-1.5 w-1.5 rounded-full bg-terracotta" />
         Para quem chega à faculdade com medo de Cálculo
       </span>

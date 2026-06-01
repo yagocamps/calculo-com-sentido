@@ -9,7 +9,7 @@ type Size = "sm" | "md" | "lg";
 const variants: Record<Variant, string> = {
   primary:
     "bg-terracotta text-white border border-transparent shadow-[inset_0_-1px_0_rgba(0,0,0,0.08),0_1px_2px_rgba(0,0,0,0.08)]",
-  dark: "bg-ink text-ink-on-dark border border-transparent",
+  dark: "bg-surface-ink text-ink-on-dark border border-transparent",
   ghost: "bg-transparent text-ink border border-border",
   soft: "bg-surface text-ink border border-border shadow-sm",
 };
