@@ -26,47 +26,49 @@ export const derivadasAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Definição",
       paragraphs: [
-        "Entre x = a e x = b, a variação média de f é quanto f mudou por unidade de x.",
-        "Geometricamente: inclinação da reta por (a, f(a)) e (b, f(b)).",
+        "Entre \\(x = a\\) e \\(x = b\\), a variação média de f é quanto f mudou por unidade de \\(x\\).",
+        "Geometricamente: inclinação da reta por \\((a, f(a))\\) e \\((b, f(b))\\).",
         "Quanto menor o intervalo, mais nos aproximamos da mudança \"no instante\".",
       ],
       formula: "média = [f(b) − f(a)] / (b − a)",
+      formulaLatex: "\\text{média} = \\frac{f(b) - f(a)}{b - a}",
+      formulaAria: "média igual a f de b menos f de a, sobre b menos a",
       formulaLegend: "Δy / Δx no intervalo",
       callout: "Unidades: (unidade de f) por (unidade de x).",
     },
     ondeAparece: {
       title: "Exemplos",
       items: [
-        { label: "Viagem", detail: "Velocidade média = Δs/Δt" },
+        { label: "Viagem", detail: "Velocidade média \\(= \\frac{\\Delta s}{\\Delta t}\\)" },
         { label: "Economia", detail: "Custo médio por unidade extra no trecho" },
         { label: "Clima", detail: "Temperatura média subiu X°C por hora" },
       ],
     },
     exemplo: {
       title: "s(t) = t² metros",
-      situacao: "Posição de t = 1 s a t = 3 s. Variação média de posição?",
+      situacao: "Posição de \\(t = 1\\) s a \\(t = 3\\) s. Variação média de posição?",
     },
     passos: {
       title: "Cálculo",
       steps: [
-        { title: "Valores", detail: "s(1)=1, s(3)=9." },
-        { title: "Δs", detail: "9 − 1 = 8 m." },
-        { title: "Δt", detail: "3 − 1 = 2 s." },
-        { title: "Média", detail: "8/2 = 4 m/s (velocidade média no intervalo)." },
+        { title: "Valores", detail: "\\(s(1)=1\\), \\(s(3)=9\\)." },
+        { title: "Δs", detail: "\\(9 - 1 = 8\\) m." },
+        { title: "Δt", detail: "\\(3 - 1 = 2\\) s." },
+        { title: "Média", detail: "\\(\\frac{8}{2} = 4\\) m/s (velocidade média no intervalo)." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
         "4 m/s não garante que em cada instante a velocidade foi 4 — só descreve o trecho.",
-        "Derivada virá quando Δt → 0.",
+        "Derivada virá quando \\(\\Delta t \\to 0\\).",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Trocar (f(b)−f(a)) por (f(a)−f(b)) sem ajustar sinal.",
-        "Dividir por (a−b) em vez de (b−a).",
+        "Trocar \\(f(b)-f(a)\\) por \\(f(a)-f(b)\\) sem ajustar sinal.",
+        "Dividir por \\((a-b)\\) em vez de \\((b-a)\\).",
         "Confundir média com valor instantâneo.",
       ],
     },
@@ -76,9 +78,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "vm-g1",
           type: "calculo",
-          enunciado: "f(x)=3x+2 entre x=0 e x=4. Variação média?",
-          resposta: "3",
-          resolucao: "(14−2)/4 = 12/4 = 3.",
+          enunciado: "\\(f(x)=3x+2\\) entre \\(x=0\\) e \\(x=4\\). Variação média?",
+          resposta: "\\(3\\)",
+          resolucao: "\\(\\frac{14-2}{4} = \\frac{12}{4} = 3\\).",
           interpretacao: "Afim: média = coeficiente angular.",
         },
         {
@@ -86,7 +88,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
           type: "interpretacao",
           enunciado: "Lucro passou de R$ 1000 a R$ 2500 ao aumentar produção de 10 para 60 peças. Variação média do lucro em relação à quantidade?",
           resposta: "R$ 30 por peça",
-          resolucao: "(2500−1000)/(60−10) = 1500/50 = 30.",
+          resolucao: "\\(\\frac{2500-1000}{60-10} = \\frac{1500}{50} = 30\\).",
           interpretacao: "Lucro médio extra por peça no trecho.",
         },
       ],
@@ -95,7 +97,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Variação média = Δf/Δx no intervalo.",
+        "Variação média \\(= \\frac{\\Delta f}{\\Delta x}\\) no intervalo.",
         "É inclinação da secante.",
         "Base para velocidade média e derivada.",
       ],
@@ -116,7 +118,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       paragraphs: [
         "O velocímetro mostra velocidade agora, não só a média da viagem.",
         "Variação instantânea pergunta: se o intervalo ficar minúsculo, para qual taxa a mudança tende?",
-        "Resposta: limite da variação média quando Δx → 0.",
+        "Resposta: limite da variação média quando \\(\\Delta x \\to 0\\).",
       ],
     },
     explicacao: {
@@ -127,6 +129,8 @@ export const derivadasAulas: Record<string, AulaContent> = {
         "Pode não existir se o gráfico tiver quina ou salto.",
       ],
       formula: "taxa instantânea = lim (Δx→0) Δf/Δx",
+      formulaLatex: "\\text{taxa instantânea} = \\lim_{\\Delta x \\to 0} \\frac{\\Delta f}{\\Delta x}",
+      formulaAria: "taxa instantânea igual ao limite de delta f sobre delta x quando delta x tende a zero",
       callout: "Mesma ideia de limite que você já estudou.",
     },
     ondeAparece: {
@@ -139,14 +143,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "s(t)=t²",
-      situacao: "Velocidade instantânea em t = 2 s?",
+      situacao: "Velocidade instantânea em \\(t = 2\\) s?",
     },
     passos: {
       title: "Esboço",
       steps: [
-        { title: "Média em [2, 2+h]", detail: "[(2+h)²−4]/h = 4+h." },
+        { title: "Média em [2, 2+h]", detail: "\\(\\frac{(2+h)^2-4}{h} = 4+h\\)." },
         { title: "h → 0", detail: "Tende a 4 m/s." },
-        { title: "Conferência", detail: "Carro acelerando; em t=2 a taxa é 4." },
+        { title: "Conferência", detail: "Carro acelerando; em \\(t=2\\) a taxa é 4." },
       ],
     },
     interpretacao: {
@@ -169,8 +173,8 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "vi-g1",
           type: "compreensao",
-          enunciado: "Por que Δx não pode ser zero na média antes do limite?",
-          resposta: "Divisão por zero; usamos limite quando Δx → 0.",
+          enunciado: "Por que \\(\\Delta x\\) não pode ser zero na média antes do limite?",
+          resposta: "Divisão por zero; usamos limite quando \\(\\Delta x \\to 0\\).",
           resolucao: "Processo de aproximação.",
           interpretacao: "Limite formaliza o instante.",
         },
@@ -189,7 +193,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Instantânea = limite da variação média.",
-        "Velocidade no ponto = limite de Δs/Δt.",
+        "Velocidade no ponto = limite de \\(\\frac{\\Delta s}{\\Delta t}\\).",
         "Prepara definição de derivada.",
       ],
     },
@@ -214,12 +218,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Geometria",
       paragraphs: [
-        "Secante por (a,f(a)) e (a+h,f(a+h)): inclinação [f(a+h)−f(a)]/h.",
-        "h → 0: secante → tangente em a (se o limite existir).",
+        "Secante por \\((a,f(a))\\) e \\((a+h,f(a+h))\\): inclinação \\(\\frac{f(a+h)-f(a)}{h}\\).",
+        "\\(h \\to 0\\): secante → tangente em \\(a\\) (se o limite existir).",
         "Tangente é a melhor aproximação linear do gráfico perto de a.",
       ],
       formula: "m_tangente = lim (h→0) [f(a+h)−f(a)]/h",
-      callout: "Equação da tangente: y − f(a) = m(x − a).",
+      formulaLatex: "m_{\\text{tangente}} = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}",
+      formulaAria: "m tangente igual ao limite de f de a mais h menos f de a, sobre h, quando h tende a zero",
+      callout: "Equação da tangente: \\(y - f(a) = m(x - a)\\).",
     },
     ondeAparece: {
       title: "Uso",
@@ -236,23 +242,23 @@ export const derivadasAulas: Record<string, AulaContent> = {
     passos: {
       title: "Passos",
       steps: [
-        { title: "Secante", detail: "[(1+h)²−1]/h = 2+h." },
-        { title: "Limite", detail: "h→0 → m = 2." },
-        { title: "Tangente", detail: "y − 1 = 2(x − 1) → y = 2x − 1." },
+        { title: "Secante", detail: "\\(\\frac{(1+h)^2-1}{h} = 2+h\\)." },
+        { title: "Limite", detail: "\\(h \\to 0 \\Rightarrow m = 2\\)." },
+        { title: "Tangente", detail: "\\(y - 1 = 2(x - 1) \\Rightarrow y = 2x - 1\\)." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "Perto de (1,1), a parábola parece uma reta de inclinação 2.",
-        "Derivada em a é inclinação da tangente.",
+        "Perto de \\((1,1)\\), a parábola parece uma reta de inclinação 2.",
+        "Derivada em \\(a\\) é inclinação da tangente.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
         "Confundir secante com tangente antes do limite.",
-        "Tangente em quina (|x| em 0) não é única clássica.",
+        "Tangente em quina (\\(|x|\\) em 0) não é única clássica.",
       ],
     },
     exerciciosGuiados: {
@@ -261,15 +267,15 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "st-g1",
           type: "calculo",
-          enunciado: "f(x)=5x em x=2. Inclinação da tangente?",
-          resposta: "5",
-          resolucao: "Reta já é tangente; m=5.",
+          enunciado: "\\(f(x)=5x\\) em \\(x=2\\). Inclinação da tangente?",
+          resposta: "\\(5\\)",
+          resolucao: "Reta já é tangente; \\(m=5\\).",
           interpretacao: "Afim: derivada = coeficiente.",
         },
         {
           id: "st-g2",
           type: "compreensao",
-          enunciado: "h→0 na secante representa o quê?",
+          enunciado: "\\(h \\to 0\\) na secante representa o quê?",
           resposta: "Aproximar o segundo ponto ao primeiro.",
           resolucao: "Secante → tangente.",
           interpretacao: "Processo visual do limite.",
@@ -280,8 +286,8 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Secante → tangente quando h→0.",
-        "Inclinação da tangente = derivada em a.",
+        "Secante → tangente quando \\(h \\to 0\\).",
+        "Inclinação da tangente = derivada em \\(a\\).",
         "Tangente aproxima o gráfico localmente.",
       ],
     },
@@ -300,15 +306,15 @@ export const derivadasAulas: Record<string, AulaContent> = {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
         "A derivada nomeia o que construímos: taxa instantânea de mudança.",
-        "Notação f′(a) ou df/dx em a — ferramenta central do Cálculo 1.",
+        "Notação \\(f'(a)\\) ou \\(\\frac{df}{dx}\\) em \\(a\\) — ferramenta central do Cálculo 1.",
       ],
     },
     explicacao: {
       title: "Definição formal",
       paragraphs: [
-        "f′(a) = lim (h→0) [f(a+h) − f(a)] / h, se o limite existir.",
-        "Equivalente: lim (x→a) [f(x) − f(a)] / (x − a).",
-        "Derivável em a ⇒ contínua em a (mas o contrário é falso).",
+        "\\(f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}\\), se o limite existir.",
+        "Equivalente: \\(\\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}\\).",
+        "Derivável em \\(a \\Rightarrow\\) contínua em \\(a\\) (mas o contrário é falso).",
       ],
       formula: "f′(a) = lim (h→0) [f(a+h)−f(a)]/h",
       formulaLatex:
@@ -328,21 +334,21 @@ export const derivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "f(x)=x² em a=3",
-      situacao: "f′(3) pela definição.",
+      situacao: "\\(f'(3)\\) pela definição.",
     },
     passos: {
       title: "Cálculo",
       steps: [
-        { title: "Diferença", detail: "[(3+h)²−9]/h = (6h+h²)/h = 6+h." },
-        { title: "Limite", detail: "f′(3)=6." },
-        { title: "Tangente", detail: "y−9=6(x−3)." },
+        { title: "Diferença", detail: "\\[\\frac{(3+h)^2-9}{h} = \\frac{6h+h^2}{h} = 6+h\\]" },
+        { title: "Limite", detail: "\\(f'(3)=6\\)." },
+        { title: "Tangente", detail: "\\(y-9=6(x-3)\\)." },
       ],
     },
     interpretacao: {
       title: "Significado",
       paragraphs: [
-        "Em x=3, x² muda instantaneamente como se fosse reta de inclinação 6.",
-        "Regras darão f′(x)=2x → f′(3)=6.",
+        "Em \\(x=3\\), \\(x^2\\) muda instantaneamente como se fosse reta de inclinação 6.",
+        "Regras darão \\(f'(x)=2x \\Rightarrow f'(3)=6\\).",
       ],
     },
     erros: {
@@ -359,16 +365,16 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "def-g1",
           type: "calculo",
-          enunciado: "f(x)=7x−1. f′(2)?",
-          resposta: "7",
+          enunciado: "\\(f(x)=7x-1\\). \\(f'(2)\\)?",
+          resposta: "\\(7\\)",
           resolucao: "Limite dá 7; reta tem inclinação 7.",
           interpretacao: "Derivada constante da afim.",
         },
         {
           id: "def-g2",
           type: "compreensao",
-          enunciado: "f′(a) não existe. f pode ser contínua em a?",
-          resposta: "Sim (ex.: |x| em 0).",
+          enunciado: "\\(f'(a)\\) não existe. \\(f\\) pode ser contínua em \\(a\\)?",
+          resposta: "Sim (ex.: \\(|x|\\) em 0).",
           resolucao: "Contínua mas quina.",
           interpretacao: "Derivável é mais forte.",
         },
@@ -378,7 +384,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "f′(a) = limite do quociente de diferenças.",
+        "\\(f'(a)\\) = limite do quociente de diferenças.",
         "Tangente, velocidade, marginal = mesma ideia.",
         "Próximo: regras para calcular rápido.",
       ],
@@ -404,12 +410,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Mapa das regras",
       paragraphs: [
-        "(c)′ = 0. (x^n)′ = n x^(n−1) para n inteiro (estendido depois).",
-        "(f+g)′ = f′+g′. (cf)′ = c f′.",
-        "(fg)′ = f′g + fg′. (f/g)′ = (f′g−fg′)/g².",
-        "(f∘g)′(x) = f′(g(x))·g′(x) — regra da cadeia.",
+        "\\((c)' = 0\\). \\((x^n)' = n\\,x^{n-1}\\) para n inteiro (estendido depois).",
+        "\\((f+g)' = f'+g'\\). \\((cf)' = c\\,f'\\).",
+        "\\((fg)' = f'g + fg'\\). \\(\\left(\\frac{f}{g}\\right)' = \\frac{f'g - fg'}{g^2}\\).",
+        "\\((f \\circ g)'(x) = f'(g(x)) \\cdot g'(x)\\) — regra da cadeia.",
       ],
       formula: "(f+g)′ = f′ + g′",
+      formulaLatex: "(f+g)' = f' + g'",
+      formulaAria: "derivada de f mais g é igual a f linha mais g linha",
       callout: "Sempre simplifique antes de derivar quando possível.",
     },
     ondeAparece: {
@@ -427,10 +435,10 @@ export const derivadasAulas: Record<string, AulaContent> = {
     passos: {
       title: "Passo a passo",
       steps: [
-        { title: "x²", detail: "→ 2x; multiplica 3 → 6x." },
-        { title: "2x", detail: "→ 2." },
-        { title: "−5", detail: "→ 0." },
-        { title: "f′(x)", detail: "6x+2." },
+        { title: "x²", detail: "\\(\\to 2x\\); multiplica 3 \\(\\to 6x\\)." },
+        { title: "2x", detail: "\\(\\to 2\\)." },
+        { title: "−5", detail: "\\(\\to 0\\)." },
+        { title: "f′(x)", detail: "\\(f'(x) = 6x+2\\)." },
       ],
     },
     interpretacao: {
@@ -455,15 +463,15 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "reg-g1",
           type: "calculo",
-          enunciado: "f(x)=x³+x. f′(x)?",
-          resposta: "3x²+1",
-          resolucao: "3x² e 1.",
+          enunciado: "\\(f(x)=x^3+x\\). \\(f'(x)\\)?",
+          resposta: "\\(3x^2+1\\)",
+          resolucao: "\\(3x^2\\) e \\(1\\).",
           interpretacao: "Regra da soma + potência.",
         },
         {
           id: "reg-g2",
           type: "compreensao",
-          enunciado: "Por que (fg)′ não é f′g′?",
+          enunciado: "Por que \\((fg)'\\) não é \\(f'g'\\)?",
           resposta: "Efeito de um fator muda enquanto o outro varia.",
           resolucao: "Regra do produto completa.",
           interpretacao: "Interação entre fatores.",
@@ -501,10 +509,12 @@ export const derivadasAulas: Record<string, AulaContent> = {
       title: "Regra da potência",
       paragraphs: [
         "n inteiro positivo: derivada reduz expoente em 1 e multiplica por n.",
-        "Constante c: derivada 0. cx: derivada c.",
-        "Raiz e 1/x são potências disfarçadas: √x = x^(1/2).",
+        "Constante c: derivada 0. \\(cx\\): derivada c.",
+        "Raiz e \\(\\frac{1}{x}\\) são potências disfarçadas: \\(\\sqrt{x} = x^{1/2}\\).",
       ],
       formula: "(x^n)′ = n x^(n−1)",
+      formulaLatex: "(x^n)' = n\\,x^{n-1}",
+      formulaAria: "derivada de x elevado a n é igual a n vezes x elevado a n menos 1",
       formulaLegend: "válida para n racional em domínio adequado",
     },
     ondeAparece: {
@@ -517,15 +527,15 @@ export const derivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "f(x)=x⁴−3x²+5",
-      situacao: "f′(x)?",
+      situacao: "\\(f'(x)\\)?",
     },
     passos: {
       title: "Derivar",
       steps: [
-        { title: "x⁴", detail: "4x³." },
-        { title: "−3x²", detail: "−6x." },
-        { title: "5", detail: "0." },
-        { title: "Resultado", detail: "f′(x)=4x³−6x." },
+        { title: "x⁴", detail: "\\(\\to 4x^3\\)." },
+        { title: "−3x²", detail: "\\(\\to -6x\\)." },
+        { title: "5", detail: "\\(\\to 0\\)." },
+        { title: "Resultado", detail: "\\(f'(x)=4x^3-6x\\)." },
       ],
     },
     interpretacao: {
@@ -549,17 +559,17 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "pot-g1",
           type: "calculo",
-          enunciado: "f(x)=x⁵. f′(x)?",
-          resposta: "5x⁴",
+          enunciado: "\\(f(x)=x^5\\). \\(f'(x)\\)?",
+          resposta: "\\(5x^4\\)",
           resolucao: "Regra da potência.",
           interpretacao: "Padrão direto.",
         },
         {
           id: "pot-g2",
           type: "calculo",
-          enunciado: "f(x)=1/x = x⁻¹. f′(x)?",
-          resposta: "−x⁻² = −1/x²",
-          resolucao: "−1·x⁻².",
+          enunciado: "\\(f(x)=\\frac{1}{x} = x^{-1}\\). \\(f'(x)\\)?",
+          resposta: "\\(-x^{-2} = -\\frac{1}{x^2}\\)",
+          resolucao: "\\(-1 \\cdot x^{-2}\\).",
           interpretacao: "Potência negativa.",
         },
       ],
@@ -568,7 +578,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "(x^n)′ = n x^(n−1).",
+        "\\((x^n)' = n\\,x^{n-1}\\).",
         "Polinômio: derivar termo a termo.",
         "Constante some na derivada.",
       ],
@@ -594,11 +604,13 @@ export const derivadasAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Fórmulas",
       paragraphs: [
-        "Produto: (fg)′ = f′g + fg′.",
-        "Quociente: (f/g)′ = (f′g − fg′) / g², com g ≠ 0.",
+        "Produto: \\((fg)' = f'g + fg'\\).",
+        "Quociente: \\(\\left(\\frac{f}{g}\\right)' = \\frac{f'g - fg'}{g^2}\\), com \\(g \\neq 0\\).",
         "Se possível, expandir antes evita trabalho extra.",
       ],
       formula: "(fg)′ = f′g + fg′",
+      formulaLatex: "(fg)' = f'g + fg'",
+      formulaAria: "derivada de f vezes g é igual a f linha g mais f g linha",
       callout: "Ordem no quociente: \"derivada do topo vezes embaixo menos topo vezes derivada de embaixo\".",
     },
     ondeAparece: {
@@ -616,15 +628,15 @@ export const derivadasAulas: Record<string, AulaContent> = {
     passos: {
       title: "Produto",
       steps: [
-        { title: "f=x², g=2x+1", detail: "f′=2x, g′=2." },
-        { title: "Aplicar", detail: "2x(2x+1)+x²·2." },
-        { title: "Simplificar", detail: "4x²+2x+2x²=6x²+2x." },
+        { title: "f=x², g=2x+1", detail: "\\(f'=2x\\), \\(g'=2\\)." },
+        { title: "Aplicar", detail: "\\(2x(2x+1)+x^2 \\cdot 2\\)." },
+        { title: "Simplificar", detail: "\\[4x^2+2x+2x^2 = 6x^2+2x\\]" },
       ],
     },
     interpretacao: {
       title: "Dica",
       paragraphs: [
-        "Expandir x²(2x+1)=2x³+x² e derivar dá o mesmo — confira.",
+        "Expandir \\(x^2(2x+1)=2x^3+x^2\\) e derivar dá o mesmo — confira.",
         "Quociente é sensível a sinais.",
       ],
     },
@@ -642,17 +654,17 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "pq-g1",
           type: "calculo",
-          enunciado: "f(x)=(x)(x+3). Pela regra do produto.",
-          resposta: "2x+3",
-          resolucao: "1·(x+3)+x·1 = x+3+x.",
-          interpretacao: "Confere expandindo x²+3x.",
+          enunciado: "\\(f(x)=(x)(x+3)\\). Pela regra do produto.",
+          resposta: "\\(2x+3\\)",
+          resolucao: "\\(1 \\cdot (x+3)+x \\cdot 1 = x+3+x\\).",
+          interpretacao: "Confere expandindo \\(x^2+3x\\).",
         },
         {
           id: "pq-g2",
           type: "calculo",
-          enunciado: "f(x)=1/x. Pela regra do quociente (1 sobre x).",
-          resposta: "−1/x²",
-          resolucao: "(0·x−1·1)/x².",
+          enunciado: "\\(f(x)=\\frac{1}{x}\\). Pela regra do quociente (1 sobre x).",
+          resposta: "\\(-\\frac{1}{x^2}\\)",
+          resolucao: "\\(\\frac{0 \\cdot x - 1 \\cdot 1}{x^2}\\).",
           interpretacao: "Caso clássico.",
         },
       ],
@@ -661,8 +673,8 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Produto: f′g + fg′.",
-        "Quociente: (f′g−fg′)/g².",
+        "Produto: \\(f'g + fg'\\).",
+        "Quociente: \\(\\frac{f'g-fg'}{g^2}\\).",
         "Expandir às vezes é mais rápido.",
       ],
     },
@@ -687,31 +699,33 @@ export const derivadasAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Ideia",
       paragraphs: [
-        "Se y = f(u) e u = g(x), então dy/dx = (dy/du)·(du/dx).",
-        "Notação: (f(g(x)))′ = f′(g(x))·g′(x).",
+        "Se \\(y = f(u)\\) e \\(u = g(x)\\), então \\(\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}\\).",
+        "Notação: \\((f(g(x)))' = f'(g(x)) \\cdot g'(x)\\).",
         "Identifique a camada de fora e a de dentro.",
       ],
       formula: "(f∘g)′(x) = f′(g(x)) · g′(x)",
+      formulaLatex: "(f \\circ g)'(x) = f'(g(x)) \\cdot g'(x)",
+      formulaAria: "derivada de f composta com g em x é igual a f linha de g de x vezes g linha de x",
       callout: "Não esqueça o fator g′(x) — erro mais comum.",
     },
     ondeAparece: {
       title: "Exemplos",
       items: [
-        { label: "(3x+1)⁵", detail: "Fora: u⁵, dentro: 3x+1" },
-        { label: "√(x²+1)", detail: "Fora: √u" },
+        { label: "(3x+1)⁵", detail: "Fora: \\(u^5\\), dentro: \\(3x+1\\)" },
+        { label: "√(x²+1)", detail: "Fora: \\(\\sqrt{u}\\)" },
         { label: "e^(2x)", detail: "Exponencial composta (futuro)" },
       ],
     },
     exemplo: {
       title: "f(x)=(2x+3)⁴",
-      situacao: "f′(x)?",
+      situacao: "\\(f'(x)\\)?",
     },
     passos: {
       title: "Cadeia",
       steps: [
-        { title: "Fora", detail: "u⁴ → 4u³." },
-        { title: "Dentro", detail: "u=2x+3 → u′=2." },
-        { title: "Montar", detail: "4(2x+3)³·2 = 8(2x+3)³." },
+        { title: "Fora", detail: "\\(u^4 \\to 4u^3\\)." },
+        { title: "Dentro", detail: "\\(u=2x+3 \\to u'=2\\)." },
+        { title: "Montar", detail: "\\[4(2x+3)^3 \\cdot 2 = 8(2x+3)^3\\]" },
       ],
     },
     interpretacao: {
@@ -735,16 +749,16 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "cad-g1",
           type: "calculo",
-          enunciado: "f(x)=(x²+1)³. f′(x)?",
-          resposta: "3(x²+1)²·2x = 6x(x²+1)²",
-          resolucao: "3u²·2x.",
+          enunciado: "\\(f(x)=(x^2+1)^3\\). \\(f'(x)\\)?",
+          resposta: "\\(3(x^2+1)^2 \\cdot 2x = 6x(x^2+1)^2\\)",
+          resolucao: "\\(3u^2 \\cdot 2x\\).",
           interpretacao: "Cadeia clássica.",
         },
         {
           id: "cad-g2",
           type: "compreensao",
-          enunciado: "(f·g)′ vs (f∘g)′: qual envolve multiplicar g′?",
-          resposta: "Ambas, mas (f∘g)′ = f′(g)·g′; produto é f′g+fg′.",
+          enunciado: "\\((f \\cdot g)'\\) vs \\((f \\circ g)'\\): qual envolve multiplicar \\(g'\\)?",
+          resposta: "Ambas, mas \\((f \\circ g)' = f'(g) \\cdot g'\\); produto é \\(f'g+fg'\\).",
           resolucao: "Estruturas diferentes.",
           interpretacao: "Identifique composição vs produto.",
         },
@@ -756,7 +770,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       bullets: [
         "Cadeia: derivada externa × derivada interna.",
         "Marque u interno antes de derivar.",
-        "Erro clássico: omitir g′(x).",
+        "Erro clássico: omitir \\(g'(x)\\).",
       ],
     },
   },
@@ -773,36 +787,38 @@ export const derivadasAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Calcular f′(x) sem interpretar perde metade da prova aplicada.",
-        "f′>0: função sobe; f′<0: desce; f′=0: possível extremo ou platô.",
+        "Calcular \\(f'(x)\\) sem interpretar perde metade da prova aplicada.",
+        "\\(f'>0\\): função sobe; \\(f'<0\\): desce; \\(f'=0\\): possível extremo ou platô.",
       ],
     },
     explicacao: {
       title: "Leituras",
       paragraphs: [
-        "Sinal de f′: direção do gráfico.",
-        "Valor de |f′|: rapidez da mudança (não o valor de f).",
-        "f′ em unidades de (unidade de f) por (unidade de x).",
+        "Sinal de \\(f'\\): direção do gráfico.",
+        "Valor de \\(|f'|\\): rapidez da mudança (não o valor de f).",
+        "\\(f'\\) em unidades de (unidade de f) por (unidade de x).",
       ],
       formula: "f′ > 0 ⇒ crescente | f′ < 0 ⇒ decrescente",
+      formulaLatex: "f' > 0 \\Rightarrow \\text{crescente} \\quad|\\quad f' < 0 \\Rightarrow \\text{decrescente}",
+      formulaAria: "f linha maior que zero implica crescente; f linha menor que zero implica decrescente",
       callout: "Segunda derivada (futuro) estuda concavidade.",
     },
     ondeAparece: {
       title: "Frases de prova",
       items: [
-        { label: "Marginal", detail: "Custo de mais uma unidade ≈ C′(x)" },
-        { label: "Velocidade", detail: "s′(t)" },
-        { label: "Crescimento", detail: "P′(t) populacional" },
+        { label: "Marginal", detail: "Custo de mais uma unidade \\(\\approx C'(x)\\)" },
+        { label: "Velocidade", detail: "\\(s'(t)\\)" },
+        { label: "Crescimento", detail: "\\(P'(t)\\) populacional" },
       ],
     },
     exemplo: {
       title: "C(x)=1000+5x+0,01x²",
-      situacao: "C′(x)=5+0,02x. O que C′(100) significa?",
+      situacao: "\\(C'(x)=5+0{,}02x\\). O que \\(C'(100)\\) significa?",
     },
     passos: {
       title: "Interpretar",
       steps: [
-        { title: "Valor", detail: "C′(100)=5+2=7 reais/unidade (aprox.)." },
+        { title: "Valor", detail: "\\(C'(100)=5+2=7\\) reais/unidade (aprox.)." },
         { title: "Frase", detail: "Produzir a 101ª unidade custa cerca de R$ 7 extras." },
         { title: "Cuidado", detail: "Não é custo total nem médio." },
       ],
@@ -817,8 +833,8 @@ export const derivadasAulas: Record<string, AulaContent> = {
     erros: {
       title: "Cuidado com",
       items: [
-        "Achar que f′=0 implica mínimo (pode ser máximo ou inflexão).",
-        "Confundir f com f′.",
+        "Achar que \\(f'=0\\) implica mínimo (pode ser máximo ou inflexão).",
+        "Confundir \\(f\\) com \\(f'\\).",
         "Ignorar domínio positivo em produção.",
       ],
     },
@@ -828,7 +844,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "intd-g1",
           type: "interpretacao",
-          enunciado: "f′(5)=−3. O gráfico sobe ou desce perto de x=5?",
+          enunciado: "\\(f'(5)=-3\\). O gráfico sobe ou desce perto de \\(x=5\\)?",
           resposta: "Desce.",
           resolucao: "Derivada negativa.",
           interpretacao: "Decrescente local.",
@@ -836,9 +852,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "intd-g2",
           type: "aplicada",
-          enunciado: "R′(q)=80−0,4q (receita). O que R′(50)=60 significa?",
-          resposta: "Receita marginal ≈ R$ 60 na 51ª unidade.",
-          resolucao: "Taxa de mudança da receita em q=50.",
+          enunciado: "\\(R'(q)=80-0{,}4q\\) (receita). O que \\(R'(50)=60\\) significa?",
+          resposta: "Receita marginal \\(\\approx\\) R$ 60 na 51ª unidade.",
+          resolucao: "Taxa de mudança da receita em \\(q=50\\).",
           interpretacao: "Marginal ≠ receita total.",
         },
       ],
@@ -847,7 +863,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "f′: sinal = direção; valor = rapidez.",
+        "\\(f'\\): sinal = direção; valor = rapidez.",
         "Marginal e velocidade são interpretações.",
         "Sempre traduza para linguagem do problema.",
       ],
@@ -866,7 +882,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "s(t) posição → v(t)=s′(t) velocidade → a(t)=v′(t)=s″(t) aceleração.",
+        "\\(s(t)\\) posição \\(\\to v(t)=s'(t)\\) velocidade \\(\\to a(t)=v'(t)=s''(t)\\) aceleração.",
         "É o exemplo que motivou o Cálculo desde Newton.",
       ],
     },
@@ -875,9 +891,11 @@ export const derivadasAulas: Record<string, AulaContent> = {
       paragraphs: [
         "Velocidade instantânea = derivada da posição em relação ao tempo.",
         "Aceleração = derivada da velocidade = segunda derivada da posição.",
-        "v>0: indo no sentido positivo; v<0: sentido oposto.",
+        "\\(v>0\\): indo no sentido positivo; \\(v<0\\): sentido oposto.",
       ],
       formula: "v(t) = s′(t),  a(t) = v′(t) = s″(t)",
+      formulaLatex: "v(t) = s'(t), \\quad a(t) = v'(t) = s''(t)",
+      formulaAria: "v de t igual a s linha de t; a de t igual a v linha de t igual a s duas linhas de t",
     },
     ondeAparece: {
       title: "Situações",
@@ -889,21 +907,21 @@ export const derivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "s(t)=−5t²+20t (metros)",
-      situacao: "v(t) e a(t)? Significado em t=1 s.",
+      situacao: "\\(v(t)\\) e \\(a(t)\\)? Significado em \\(t=1\\) s.",
     },
     passos: {
       title: "Derivar",
       steps: [
-        { title: "v(t)", detail: "−10t+20 m/s." },
-        { title: "a(t)", detail: "−10 m/s² (constante)." },
-        { title: "t=1", detail: "v(1)=10 m/s; a(1)=−10 m/s² (desacelerando se positivo for cima)." },
+        { title: "v(t)", detail: "\\(v(t) = -10t+20\\) m/s." },
+        { title: "a(t)", detail: "\\(a(t) = -10\\) m/s² (constante)." },
+        { title: "t=1", detail: "\\(v(1)=10\\) m/s; \\(a(1)=-10\\) m/s² (desacelerando se positivo for cima)." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "a constante negativa: gravidade simplificada.",
-        "Máximo de s ocorre quando v=0.",
+        "\\(a\\) constante negativa: gravidade simplificada.",
+        "Máximo de \\(s\\) ocorre quando \\(v=0\\).",
       ],
     },
     erros: {
@@ -920,18 +938,18 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "veld-g1",
           type: "calculo",
-          enunciado: "s(t)=t³. v(2)?",
-          resposta: "12 m/s se s em m, t em s",
-          resolucao: "v=3t² → 12.",
-          interpretacao: "Derivada de t³.",
+          enunciado: "\\(s(t)=t^3\\). \\(v(2)\\)?",
+          resposta: "\\(12\\) m/s se s em m, t em s",
+          resolucao: "\\(v=3t^2 \\to 12\\).",
+          interpretacao: "Derivada de \\(t^3\\).",
         },
         {
           id: "veld-g2",
           type: "interpretacao",
-          enunciado: "v(t)=0 em t=3. O que isso sugere sobre s?",
+          enunciado: "\\(v(t)=0\\) em \\(t=3\\). O que isso sugere sobre \\(s\\)?",
           resposta: "Possível instante de máximo ou mínimo local de posição.",
           resolucao: "Mudança de direção ou ponto crítico.",
-          interpretacao: "v=0 não implica s=0.",
+          interpretacao: "\\(v=0\\) não implica \\(s=0\\).",
         },
       ],
     },
@@ -939,9 +957,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "v=s′, a=v′=s″.",
+        "\\(v=s'\\), \\(a=v'=s''\\).",
         "Unidades coerentes sempre.",
-        "v=0: candidato a extremo de posição.",
+        "\\(v=0\\): candidato a extremo de posição.",
       ],
     },
   },
@@ -958,18 +976,20 @@ export const derivadasAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Produzir mais uma unidade custa aproximadamente C′(x) — custo marginal.",
-        "Lucro marginal L′ = R′ − C′ guia decisão de produzir ou parar.",
+        "Produzir mais uma unidade custa aproximadamente \\(C'(x)\\) — custo marginal.",
+        "Lucro marginal \\(L' = R' - C'\\) guia decisão de produzir ou parar.",
       ],
     },
     explicacao: {
       title: "Definições",
       paragraphs: [
-        "Custo marginal em x: C′(x) (custo da próxima unidade infinitesimal).",
-        "Receita marginal: R′(x).",
-        "Lucro marginal: L′(x) = R′(x) − C′(x).",
+        "Custo marginal em x: \\(C'(x)\\) (custo da próxima unidade infinitesimal).",
+        "Receita marginal: \\(R'(x)\\).",
+        "Lucro marginal: \\(L'(x) = R'(x) - C'(x)\\).",
       ],
       formula: "L(x) = R(x) − C(x) ⇒ L′(x) = R′(x) − C′(x)",
+      formulaLatex: "L(x) = R(x) - C(x) \\Rightarrow L'(x) = R'(x) - C'(x)",
+      formulaAria: "L de x igual a R de x menos C de x, implica L linha de x igual a R linha de x menos C linha de x",
       callout: "Produzir mais vale a pena enquanto R′ > C′ (lucro marginal positivo).",
     },
     ondeAparece: {
@@ -982,14 +1002,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "C(x)=500+10x+0,05x², R(x)=40x",
-      situacao: "C′(x), R′(x) e quando lucro marginal zera?",
+      situacao: "\\(C'(x)\\), \\(R'(x)\\) e quando lucro marginal zera?",
     },
     passos: {
       title: "Análise",
       steps: [
-        { title: "C′", detail: "10+0,1x." },
-        { title: "R′", detail: "40." },
-        { title: "L′=0", detail: "40−10−0,1x=0 → x=300." },
+        { title: "C′", detail: "\\(C'(x) = 10+0{,}1x\\)." },
+        { title: "R′", detail: "\\(R'(x) = 40\\)." },
+        { title: "L′=0", detail: "\\[40-10-0{,}1x=0 \\Rightarrow x=300\\]" },
         { title: "Interpretação", detail: "Além de 300, custo marginal supera receita marginal." },
       ],
     },
@@ -1014,17 +1034,17 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "cm-g1",
           type: "calculo",
-          enunciado: "C(x)=1000+8x. C′(50)?",
-          resposta: "8",
+          enunciado: "\\(C(x)=1000+8x\\). \\(C'(50)\\)?",
+          resposta: "\\(8\\)",
           resolucao: "Derivada constante 8.",
           interpretacao: "Cada unidade extra custa R$ 8.",
         },
         {
           id: "cm-g2",
           type: "interpretacao",
-          enunciado: "R′(q)=30, C′(q)=35. Devo aumentar produção?",
+          enunciado: "\\(R'(q)=30\\), \\(C'(q)=35\\). Devo aumentar produção?",
           resposta: "Não; custo marginal > receita marginal.",
-          resolucao: "L′ negativo.",
+          resolucao: "\\(L'\\) negativo.",
           interpretacao: "Mais uma unidade reduz lucro.",
         },
       ],
@@ -1033,9 +1053,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "C′ e R′ são taxas marginais.",
-        "L′ = R′ − C′.",
-        "L′>0: produzir mais ajuda (localmente).",
+        "\\(C'\\) e \\(R'\\) são taxas marginais.",
+        "\\(L' = R' - C'\\).",
+        "\\(L'>0\\): produzir mais ajuda (localmente).",
       ],
     },
   },
@@ -1057,38 +1077,40 @@ export const derivadasAulas: Record<string, AulaContent> = {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
         "Consolidar derivada como taxa instantânea e regras de cálculo.",
-        "Próximo módulo usa f′ para máximos, mínimos e otimização.",
+        "Próximo módulo usa \\(f'\\) para máximos, mínimos e otimização.",
       ],
     },
     explicacao: {
       title: "Checklist",
       paragraphs: [
-        "✓ Variação média → limite → f′(a).",
+        "✓ Variação média \\(\\to\\) limite \\(\\to f'(a)\\).",
         "✓ Tangente e interpretação.",
         "✓ Regras: soma, potência, produto, quociente, cadeia.",
         "✓ Velocidade, aceleração, marginal.",
       ],
       formula: "f′(a) = lim [f(a+h)−f(a)]/h",
+      formulaLatex: "f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}",
+      formulaAria: "f linha de a igual ao limite, quando h tende a zero, de f de a mais h menos f de a, sobre h",
       callout: "Aplicações de derivadas: onde f′=0 e sinais de f′.",
     },
     ondeAparece: {
       title: "Próximo módulo",
       items: [
-        { label: "Crescimento", detail: "Sinal de f′" },
-        { label: "Extremos", detail: "f′=0" },
+        { label: "Crescimento", detail: "Sinal de \\(f'\\)" },
+        { label: "Extremos", detail: "\\(f'=0\\)" },
         { label: "Otimização", detail: "Lucro máximo" },
       ],
     },
     exemplo: {
       title: "Desafio rápido",
-      situacao: "f(x)=x²(3x−1). Esboce estratégia para f′ sem expandir tudo de uma vez.",
+      situacao: "\\(f(x)=x^2(3x-1)\\). Esboce estratégia para \\(f'\\) sem expandir tudo de uma vez.",
     },
     passos: {
       title: "Estratégia",
       steps: [
         { title: "Opção A", detail: "Expandir e derivar termo a termo." },
-        { title: "Opção B", detail: "Regra do produto: 2x(3x−1)+x²·3." },
-        { title: "Simplificar", detail: "6x²−2x+3x²=9x²−2x." },
+        { title: "Opção B", detail: "Regra do produto: \\(2x(3x-1)+x^2 \\cdot 3\\)." },
+        { title: "Simplificar", detail: "\\[6x^2-2x+3x^2 = 9x^2-2x\\]" },
       ],
     },
     interpretacao: {
@@ -1111,16 +1133,16 @@ export const derivadasAulas: Record<string, AulaContent> = {
         {
           id: "revd-g1",
           type: "calculo",
-          enunciado: "f(x)=(x²+1)². f′(1) pela cadeia.",
-          resposta: "2(1+1)·2·1 = 8",
-          resolucao: "2u·2x em x=1, u=2.",
+          enunciado: "\\(f(x)=(x^2+1)^2\\). \\(f'(1)\\) pela cadeia.",
+          resposta: "\\(2(1+1) \\cdot 2 \\cdot 1 = 8\\)",
+          resolucao: "\\(2u \\cdot 2x\\) em \\(x=1\\), \\(u=2\\).",
           interpretacao: "Revisão cadeia.",
         },
         {
           id: "revd-g2",
           type: "compreensao",
-          enunciado: "Relacione derivável, contínua e limite em a.",
-          resposta: "Derivável ⇒ contínua ⇒ limite existe (em a).",
+          enunciado: "Relacione derivável, contínua e limite em \\(a\\).",
+          resposta: "Derivável \\(\\Rightarrow\\) contínua \\(\\Rightarrow\\) limite existe (em \\(a\\)).",
           resolucao: "Implicações em uma direção.",
           interpretacao: "Hierarquia de hipóteses.",
         },
@@ -1130,7 +1152,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Derivada = taxa instantânea = inclinação da tangente.",
+        "Derivada \\(=\\) taxa instantânea \\(=\\) inclinação da tangente.",
         "Regras aceleram; interpretação fecha o ciclo.",
         "Próximo: aplicações (máximos, otimização).",
       ],

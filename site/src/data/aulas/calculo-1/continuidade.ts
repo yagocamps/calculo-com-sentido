@@ -27,12 +27,14 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Intuição gráfica",
       paragraphs: [
-        "Perto de x = a, o gráfico não tem salto nem buraco: a tendência (limite) coincide com o valor f(a).",
-        "Se existe limite e f(a) está definido e são iguais, há continuidade em a.",
+        "Perto de \\(x = a\\), o gráfico não tem salto nem buraco: a tendência (limite) coincide com o valor \\(f(a)\\).",
+        "Se existe limite e \\(f(a)\\) está definido e são iguais, há continuidade em \\(a\\).",
         "Quebra = limite diferente do valor, ou limite que não existe, ou função indefinida no ponto.",
       ],
-      callout: "Limite descreve a tendência; continuidade exige que ela bata com f(a).",
+      callout: "Limite descreve a tendência; continuidade exige que ela bata com \\(f(a)\\).",
       formula: "f contínua em a ⟺ lim (x→a) f(x) = f(a)",
+      formulaLatex: "f \\text{ contínua em } a \\iff \\lim_{x \\to a} f(x) = f(a)",
+      formulaAria: "f contínua em a se e somente se o limite quando x tende a a de f de x é igual a f de a",
       formulaLegend: "três condições equivalentes quando bem definidas",
     },
     ondeAparece: {
@@ -47,21 +49,21 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Gráfico contínuo",
       situacao:
-        "f(x) = x². O gráfico é uma parábola sem buracos. O que esperar de lim (x→2) f(x)?",
+        "\\(f(x) = x^2\\). O gráfico é uma parábola sem buracos. O que esperar de \\(\\lim_{x \\to 2} f(x)\\)?",
     },
     passos: {
       title: "Verificação intuitiva",
       steps: [
-        { title: "Calcular f(2)", detail: "f(2) = 4." },
-        { title: "Aproximar x → 2", detail: "Valores perto de 2 dão f(x) perto de 4." },
-        { title: "Limite", detail: "lim (x→2) x² = 4." },
-        { title: "Conclusão", detail: "Limite = f(2) → contínua em x = 2." },
+        { title: "Calcular f(2)", detail: "\\(f(2) = 4\\)." },
+        { title: "Aproximar x → 2", detail: "Valores perto de 2 dão \\(f(x)\\) perto de 4." },
+        { title: "Limite", detail: "\\(\\lim_{x \\to 2} x^2 = 4\\)." },
+        { title: "Conclusão", detail: "Limite \\(= f(2)\\) → contínua em \\(x = 2\\)." },
       ],
     },
     interpretacao: {
       title: "Mensagem",
       paragraphs: [
-        "Polinômios são contínuos em todo ℝ — por isso substituição direta costuma funcionar.",
+        "Polinômios são contínuos em todo \\(\\mathbb{R}\\) — por isso substituição direta costuma funcionar.",
         "Buracos e saltos viram foco nas próximas aulas.",
       ],
     },
@@ -79,7 +81,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         {
           id: "cont-g1",
           type: "compreensao",
-          enunciado: "Gráfico sem salto nem buraco em x = 3. Contínua em 3?",
+          enunciado: "Gráfico sem salto nem buraco em \\(x = 3\\). Contínua em 3?",
           resposta: "Sim (visualmente contínua em 3).",
           resolucao: "Limite coincide com valor no ponto.",
           interpretacao: "Definição intuitiva.",
@@ -87,9 +89,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         {
           id: "cont-g2",
           type: "interpretacao",
-          enunciado: "lim (x→1) f(x) = 5 mas f(1) = 2. Contínua em 1?",
+          enunciado: "\\(\\lim_{x \\to 1} f(x) = 5\\) mas \\(f(1) = 2\\). Contínua em 1?",
           resposta: "Não.",
-          resolucao: "Limite ≠ f(1).",
+          resolucao: "Limite \\(\\neq f(1)\\).",
           interpretacao: "Há buraco ou valor errado no ponto.",
         },
       ],
@@ -99,7 +101,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Contínua = gráfico sem quebra no ponto.",
-        "Formalmente: lim (x→a) f(x) = f(a).",
+        "Formalmente: \\(\\lim_{x \\to a} f(x) = f(a)\\).",
         "Liga limites ao valor da função.",
         "Próximo: tipos de quebra (furos e saltos).",
       ],
@@ -125,32 +127,34 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Dois tipos clássicos",
       paragraphs: [
-        "Buraco (descontinuidade removível): limite existe, mas f(a) não existe ou ≠ limite.",
+        "Buraco (descontinuidade removível): limite existe, mas \\(f(a)\\) não existe ou \\(\\neq\\) limite.",
         "Salto (descontinuidade de salto): limites laterais existem mas são diferentes.",
         "Oscilatória: limite não existe — caso mais difícil, aparece em funções senoidais perto de zero.",
       ],
       formula: "Buraco: lim f(x) = L ≠ f(a) | Salto: lim⁺ ≠ lim⁻",
-      callout: "Buraco às vezes pode ser \"corrigido\" redefinindo f(a) = L.",
+      formulaLatex: "\\text{Buraco: } \\lim f(x) = L \\neq f(a) \\quad \\text{Salto: } \\lim^+ \\neq \\lim^-",
+      formulaAria: "buraco: limite igual a L diferente de f de a; salto: limite pela direita diferente do limite pela esquerda",
+      callout: "Buraco às vezes pode ser \"corrigido\" redefinindo \\(f(a) = L\\).",
     },
     ondeAparece: {
       title: "Exemplos",
       items: [
-        { label: "Buraco", detail: "(x²−4)/(x−2) em x = 2" },
+        { label: "Buraco", detail: "\\(\\frac{x^2-4}{x-2}\\) em \\(x = 2\\)" },
         { label: "Salto", detail: "Tarifa com faixa de preço diferente" },
-        { label: "Degrau", detail: "Função degrão u(t) em controle" },
+        { label: "Degrau", detail: "Função degrau \\(u(t)\\) em controle" },
       ],
     },
     exemplo: {
       title: "Buraco vs salto",
       situacao:
-        "f(x) = (x²−1)/(x−1) para x≠1; g(x) = 1 se x<0 e g(x)=2 se x≥0. Classifique em x=1 e x=0.",
+        "\\(f(x) = \\frac{x^2-1}{x-1}\\) para \\(x \\neq 1\\); \\(g(x) = 1\\) se \\(x<0\\) e \\(g(x)=2\\) se \\(x \\geq 0\\). Classifique em \\(x=1\\) e \\(x=0\\).",
     },
     passos: {
       title: "Classificar",
       steps: [
-        { title: "f em x=1", detail: "Simplifica para x+1 (x≠1); lim = 2, f(1) indefinido → buraco." },
+        { title: "f em x=1", detail: "Simplifica para \\(x+1\\) (\\(x \\neq 1\\)); lim \\(= 2\\), \\(f(1)\\) indefinido → buraco." },
         { title: "g em x=0", detail: "Esquerda → 1, direita → 2 → salto." },
-        { title: "Correção buraco", detail: "Definir f(1)=2 tornaria f contínua." },
+        { title: "Correção buraco", detail: "Definir \\(f(1)=2\\) tornaria f contínua." },
       ],
     },
     interpretacao: {
@@ -174,15 +178,15 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         {
           id: "fs-g1",
           type: "compreensao",
-          enunciado: "lim (x→3) f(x) = 7 mas f(3) não está definido. Tipo?",
+          enunciado: "\\(\\lim_{x \\to 3} f(x) = 7\\) mas \\(f(3)\\) não está definido. Tipo?",
           resposta: "Descontinuidade removível (buraco).",
           resolucao: "Limite existe; valor no ponto falta.",
-          interpretacao: "Pode estender definindo f(3)=7.",
+          interpretacao: "Pode estender definindo \\(f(3)=7\\).",
         },
         {
           id: "fs-g2",
           type: "interpretacao",
-          enunciado: "lim⁻ f(x)=0 e lim⁺ f(x)=5 em x=2. Tipo?",
+          enunciado: "\\(\\lim^- f(x)=0\\) e \\(\\lim^+ f(x)=5\\) em \\(x=2\\). Tipo?",
           resposta: "Salto.",
           resolucao: "Laterais diferentes.",
           interpretacao: "Não há um único limite bilateral.",
@@ -212,38 +216,40 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Assíntota vertical: função explode (→±∞) perto de uma reta x = a — descontinuidade infinita.",
-        "Assíntota horizontal: comportamento estável quando x → ∞ — não é quebra num ponto finito, mas fecha o gráfico.",
+        "Assíntota vertical: função explode (\\(\\to \\pm\\infty\\)) perto de uma reta \\(x = a\\) — descontinuidade infinita.",
+        "Assíntota horizontal: comportamento estável quando \\(x \\to \\infty\\) — não é quebra num ponto finito, mas fecha o gráfico.",
         "Você já viu assíntotas em limites; agora enquadramos na continuidade.",
       ],
     },
     explicacao: {
       title: "Tipos e continuidade",
       paragraphs: [
-        "Vertical x = a: f não é contínua em a (nem definida no limite finito).",
-        "Horizontal y = L: descreve tendência no infinito, não quebra local.",
-        "Obliqua: reta inclinada que o gráfico aproxima quando x → ∞.",
+        "Vertical \\(x = a\\): f não é contínua em \\(a\\) (nem definida no limite finito).",
+        "Horizontal \\(y = L\\): descreve tendência no infinito, não quebra local.",
+        "Oblíqua: reta inclinada que o gráfico aproxima quando \\(x \\to \\infty\\).",
       ],
       formula: "x = a ass. vert. se lim (x→a⁺) f = ±∞ (ou ambos lados)",
+      formulaLatex: "x = a \\text{ vertical se } \\lim_{x \\to a^+} f = \\pm\\infty",
+      formulaAria: "x igual a a é assíntota vertical se o limite pela direita é mais ou menos infinito",
       formulaLegend: "horizontal: lim (x→±∞) f(x) = L",
     },
     ondeAparece: {
       title: "Aplicações",
       items: [
-        { label: "1/x", detail: "Assíntota vertical x = 0" },
+        { label: "1/x", detail: "Assíntota vertical \\(x = 0\\)" },
         { label: "Custos fixos", detail: "Comportamento longo prazo → horizontal" },
         { label: "Capacidade", detail: "Platô como limite no infinito" },
       ],
     },
     exemplo: {
       title: "f(x) = 1/(x − 2)",
-      situacao: "Onde há assíntota vertical? Contínua em x = 3?",
+      situacao: "Onde há assíntota vertical? Contínua em \\(x = 3\\)?",
     },
     passos: {
       title: "Análise",
       steps: [
-        { title: "Vertical", detail: "x = 2 (denominador zero)." },
-        { title: "Em x = 3", detail: "f(3) = 1; função definida e finita." },
+        { title: "Vertical", detail: "\\(x = 2\\) (denominador zero)." },
+        { title: "Em x = 3", detail: "\\(f(3) = 1\\); função definida e finita." },
         { title: "Limite em 3", detail: "Substituição direta → contínua em 3." },
       ],
     },
@@ -259,7 +265,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       items: [
         "Confundir assíntota horizontal com valor em x finito.",
         "Achar que gráfico cruza assíntota vertical.",
-        "Esquecer que ∞ não é um número.",
+        "Esquecer que \\(\\infty\\) não é um número.",
       ],
     },
     exerciciosGuiados: {
@@ -268,17 +274,17 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         {
           id: "as-g1",
           type: "compreensao",
-          enunciado: "f(x)=1/x. Contínua em x=0?",
+          enunciado: "\\(f(x)=\\frac{1}{x}\\). Contínua em \\(x=0\\)?",
           resposta: "Não (não definida; limite infinito).",
           resolucao: "Descontinuidade infinita em 0.",
-          interpretacao: "Assíntota vertical x=0.",
+          interpretacao: "Assíntota vertical \\(x=0\\).",
         },
         {
           id: "as-g2",
           type: "interpretacao",
-          enunciado: "lim (x→∞) (3x+1)/x = 3. Interpretação gráfica?",
-          resposta: "Assíntota horizontal y = 3 quando x → ∞.",
-          resolucao: "Comportamento longe segue reta y=3.",
+          enunciado: "\\(\\lim_{x \\to \\infty} \\frac{3x+1}{x} = 3\\). Interpretação gráfica?",
+          resposta: "Assíntota horizontal \\(y = 3\\) quando \\(x \\to \\infty\\).",
+          resolucao: "Comportamento longe segue reta \\(y=3\\).",
           interpretacao: "Liga limite no infinito ao gráfico.",
         },
       ],
@@ -306,19 +312,21 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "A definição formal junta três checagens: f(a) definida, limite existe, limite = f(a).",
-        "É o que permite substituir x por a direto em muitos limites.",
+        "A definição formal junta três checagens: \\(f(a)\\) definida, limite existe, limite \\(= f(a)\\).",
+        "É o que permite substituir \\(x\\) por \\(a\\) direto em muitos limites.",
       ],
     },
     explicacao: {
       title: "Três condições",
       paragraphs: [
-        "1) f(a) existe (número finito).",
-        "2) lim (x→a) f(x) existe (laterais iguais se aplicável).",
-        "3) lim (x→a) f(x) = f(a).",
-        "Falha em qualquer uma → descontínua em a.",
+        "1) \\(f(a)\\) existe (número finito).",
+        "2) \\(\\lim_{x \\to a} f(x)\\) existe (laterais iguais se aplicável).",
+        "3) \\(\\lim_{x \\to a} f(x) = f(a)\\).",
+        "Falha em qualquer uma → descontínua em \\(a\\).",
       ],
       formula: "Contínua em a ⟺ (i)(ii)(iii) acima",
+      formulaLatex: "f(a)\\ \\text{existe} \\;\\wedge\\; \\lim_{x\\to a} f(x)\\ \\text{existe} \\;\\wedge\\; \\lim_{x\\to a} f(x) = f(a)",
+      formulaAria: "f de a existe, e o limite existe, e o limite é igual a f de a",
       callout: "Para polinômios e funções racionais fora de zeros do denominador, as três valem.",
     },
     ondeAparece: {
@@ -331,27 +339,27 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Verificar em a = 1",
-      situacao: "f(x) = { x² se x≠1; 3 se x=1 }. Contínua em 1?",
+      situacao: "\\[f(x) = \\begin{cases} x^2 & x \\neq 1 \\\\ 3 & x = 1 \\end{cases}\\] Contínua em 1?",
     },
     passos: {
       title: "Checklist",
       steps: [
-        { title: "f(1)", detail: "f(1) = 3 — existe." },
-        { title: "Limite", detail: "Para x≠1, f(x)=x² → lim = 1." },
-        { title: "Comparar", detail: "1 ≠ 3 → descontínua (buraco corrigível para 1)." },
+        { title: "f(1)", detail: "\\(f(1) = 3\\) — existe." },
+        { title: "Limite", detail: "Para \\(x \\neq 1\\), \\(f(x)=x^2 \\to\\) lim \\(= 1\\)." },
+        { title: "Comparar", detail: "\\(1 \\neq 3\\) → descontínua (buraco corrigível para 1)." },
       ],
     },
     interpretacao: {
       title: "Correção",
       paragraphs: [
-        "Redefinir f(1) = 1 tornaria contínua — buraco removível.",
+        "Redefinir \\(f(1) = 1\\) tornaria contínua — buraco removível.",
         "Provas pedem explicitar as três condições.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Verificar só o limite e esquecer f(a).",
+        "Verificar só o limite e esquecer \\(f(a)\\).",
         "Não testar limites laterais em funções por partes.",
         "Confundir domínio com continuidade.",
       ],
@@ -362,16 +370,16 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         {
           id: "cp-g1",
           type: "calculo",
-          enunciado: "f(x)=5x−2. Contínua em x=4?",
+          enunciado: "\\(f(x)=5x-2\\). Contínua em \\(x=4\\)?",
           resposta: "Sim.",
-          resolucao: "Afim é contínua em todo ℝ; f(4)=18, lim=18.",
+          resolucao: "Afim é contínua em todo \\(\\mathbb{R}\\); \\(f(4)=18\\), lim \\(= 18\\).",
           interpretacao: "Substituição direta.",
         },
         {
           id: "cp-g2",
           type: "compreensao",
-          enunciado: "Qual condição falha se há salto em a?",
-          resposta: "Limite bilateral não existe (ou ≠ f(a)).",
+          enunciado: "Qual condição falha se há salto em \\(a\\)?",
+          resposta: "Limite bilateral não existe (ou \\(\\neq f(a)\\)).",
           resolucao: "Laterais diferentes.",
           interpretacao: "Salto viola (ii) ou (iii).",
         },
@@ -381,8 +389,8 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Três condições: f(a), limite, igualdade.",
-        "Buraco: ajuste f(a); salto: não corrige só redefinindo um valor.",
+        "Três condições: \\(f(a)\\), limite, igualdade.",
+        "Buraco: ajuste \\(f(a)\\); salto: não corrige só redefinindo um valor.",
         "Base para intervalos e teoremas.",
       ],
     },
@@ -400,26 +408,28 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Dizer que f é contínua em [a, b] significa contínua em todo ponto interno e bem comportada nas pontas (em intervalo fechado).",
+        "Dizer que f é contínua em \\([a, b]\\) significa contínua em todo ponto interno e bem comportada nas pontas (em intervalo fechado).",
         "Teoremas importantes (valor intermediário) exigem continuidade em intervalo.",
       ],
     },
     explicacao: {
       title: "Intervalos abertos e fechados",
       paragraphs: [
-        "Contínua em (a, b): vale a definição em cada ponto do interior.",
-        "Em [a, b] fechado: contínua em (a,b) + contínua à direita em a + à esquerda em b.",
+        "Contínua em \\((a, b)\\): vale a definição em cada ponto do interior.",
+        "Em \\([a, b]\\) fechado: contínua em \\((a,b)\\) + contínua à direita em \\(a\\) + à esquerda em \\(b\\).",
         "Função contínua em intervalo tem gráfico \"colado\" sem quebras internas.",
       ],
       formula: "Contínua em [a,b] ⟹ gráfico conectado entre extremos",
+      formulaLatex: "f \\text{ contínua em } [a,b] \\Rightarrow \\text{gráfico conectado}",
+      formulaAria: "f contínua no intervalo fechado a b implica gráfico conectado",
       callout: "Próximo módulo (derivadas) usa funções contínuas em trechos.",
     },
     ondeAparece: {
       title: "Aplicações",
       items: [
-        { label: "Movimento", detail: "s(t) contínua em intervalo de tempo" },
+        { label: "Movimento", detail: "\\(s(t)\\) contínua em intervalo de tempo" },
         { label: "Produção", detail: "Fluxo sem parada no turno" },
-        { label: "Teorema", detail: "Existe c com f(c) entre f(a) e f(b)" },
+        { label: "Teorema", detail: "Existe \\(c\\) com \\(f(c)\\) entre \\(f(a)\\) e \\(f(b)\\)" },
       ],
     },
     exemplo: {
@@ -437,15 +447,15 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     interpretacao: {
       title: "Ponte para derivadas",
       paragraphs: [
-        "Continuidade não implica suavidade (|x| é contínua mas tem \"quina\" em 0).",
-        "Derivável ⟹ contínua; o contrário é falso.",
+        "Continuidade não implica suavidade (\\(|x|\\) é contínua mas tem \"quina\" em 0).",
+        "Derivável \\(\\Rightarrow\\) contínua; o contrário é falso.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
         "Achar que contínua em intervalo implica derivável em todo ponto.",
-        "Ignorar comportamento nas pontas de [a,b].",
+        "Ignorar comportamento nas pontas de \\([a,b]\\).",
         "Misturar domínio máximo com intervalo pedido no problema.",
       ],
     },
@@ -455,7 +465,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         {
           id: "ci-g1",
           type: "compreensao",
-          enunciado: "f contínua em [1,5]. O gráfico pode ter buraco em x=3?",
+          enunciado: "f contínua em \\([1,5]\\). O gráfico pode ter buraco em \\(x=3\\)?",
           resposta: "Não.",
           resolucao: "Buraco quebraria continuidade em 3.",
           interpretacao: "Conectado no intervalo.",
@@ -463,9 +473,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         {
           id: "ci-g2",
           type: "interpretacao",
-          enunciado: "Derivável em (a,b) implica contínua em (a,b)?",
+          enunciado: "Derivável em \\((a,b)\\) implica contínua em \\((a,b)\\)?",
           resposta: "Sim.",
-          resolucao: "Teorema clássico: diferenciável ⇒ contínua.",
+          resolucao: "Teorema clássico: diferenciável \\(\\Rightarrow\\) contínua.",
           interpretacao: "Derivada só existe onde função não quebra.",
         },
       ],
@@ -504,12 +514,14 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Mapa do módulo",
       paragraphs: [
-        "✓ Ideia visual e lim (x→a) f(x) = f(a).",
+        "✓ Ideia visual e \\(\\lim_{x \\to a} f(x) = f(a)\\).",
         "✓ Buraco vs salto vs infinito (assíntota vertical).",
         "✓ Três condições em um ponto.",
         "✓ Intervalos e ligação com modelos reais.",
       ],
       formula: "Derivável ⇒ contínua ⇒ limite existe (em a)",
+      formulaLatex: "\\text{Derivável} \\Rightarrow \\text{contínua} \\Rightarrow \\text{limite existe (em } a)",
+      formulaAria: "derivável implica contínua implica limite existe em a",
       callout: "Próximo: taxa de variação — módulo Derivadas.",
     },
     ondeAparece: {
@@ -522,13 +534,13 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Mini-desafio",
-      situacao: "Classifique em x = 0: f(x)=sin(x)/x para x≠0, f(0)=1; g(x)=|x|/x para x≠0.",
+      situacao: "Classifique em \\(x = 0\\): \\(f(x)=\\frac{\\sin x}{x}\\) para \\(x \\neq 0\\), \\(f(0)=1\\); \\(g(x)=\\frac{|x|}{x}\\) para \\(x \\neq 0\\).",
     },
     passos: {
       title: "Respostas",
       steps: [
-        { title: "f", detail: "lim=1, f(0)=1 → contínua (clássico)." },
-        { title: "g", detail: "Saltos ±1 em 0 → descontínua." },
+        { title: "f", detail: "lim \\(= 1\\), \\(f(0)=1\\) → contínua (clássico)." },
+        { title: "g", detail: "Saltos \\(\\pm 1\\) em 0 → descontínua." },
         { title: "Próximo", detail: "Abrir Derivadas — variação média." },
       ],
     },
@@ -560,7 +572,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         {
           id: "rc-g2",
           type: "calculo",
-          enunciado: "f(x)=(x²−9)/(x−3). Contínua em x=3 se definirmos f(3)=6?",
+          enunciado: "\\(f(x)=\\frac{x^2-9}{x-3}\\). Contínua em \\(x=3\\) se definirmos \\(f(3)=6\\)?",
           resposta: "Sim.",
           resolucao: "Limite 6; redefinição fecha o buraco.",
           interpretacao: "Descontinuidade removível.",
@@ -571,7 +583,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Contínua ⟺ limite = valor no ponto.",
+        "Contínua \\(\\iff\\) limite = valor no ponto.",
         "Buraco, salto, infinita — três perfis de quebra.",
         "Intervalo conectado para teoremas e modelos.",
         "Próximo: módulo Derivadas com sentido.",
