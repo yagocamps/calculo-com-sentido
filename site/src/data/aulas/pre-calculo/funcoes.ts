@@ -176,7 +176,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
     ondeAparece: {
       title: "Onde isso aparece",
       items: [
-        { label: "Tempo", detail: "em problemas reais, t ≥ 0" },
+        { label: "Tempo", detail: "em problemas reais, \\(t \\geq 0\\)" },
         { label: "Geometria", detail: "lados e raios são positivos" },
         { label: "Finanças", detail: "quantidade vendida não é negativa" },
         { label: "Física", detail: "domínio limitado pelo fenômeno" },
@@ -467,7 +467,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       items: [
         { label: "Distância", detail: "quão longe, sem se importar com direção" },
         { label: "Erro", detail: "desvio para mais ou para menos" },
-        { label: "Tolerância", detail: "peça dentro de ±0,5 mm" },
+        { label: "Tolerância", detail: "peça dentro de \\(\\pm 0{,}5\\) mm" },
         { label: "Finanças", detail: "diferença absoluta entre valores" },
         { label: "Programação", detail: "função abs() em toda linguagem" },
         { label: "Física", detail: "módulo de uma grandeza vetorial" },

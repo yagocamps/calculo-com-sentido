@@ -183,7 +183,7 @@ export const integraisAulas: Record<string, AulaContent> = {
           enunciado: "Gráfico de v(t) acima do eixo. O que é a área?",
           resposta: "Distância percorrida no sentido positivo (no intervalo).",
           resolucao: "Soma de deslocamentos.",
-          interpretacao: "v≥0.",
+          interpretacao: "\\(v \\geq 0\\).",
         },
       ],
     },

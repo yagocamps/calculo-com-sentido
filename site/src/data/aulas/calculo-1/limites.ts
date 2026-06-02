@@ -188,7 +188,7 @@ export const limitesAulas: Record<string, AulaContent> = {
           enunciado: "Gráfico: reta \\(y = x + 1\\) com buraco em \\((1, 2)\\). Qual \\(\\lim_{x \\to 1} f(x)\\)?",
           resposta: "\\(2\\)",
           resolucao: "Curva tende a \\(y = 2\\); buraco não altera tendência.",
-          interpretacao: "Limite ≠ valor no ponto quando há buraco.",
+          interpretacao: "Limite \\(\\neq\\) valor no ponto quando há buraco.",
         },
         {
           id: "graf-g2",

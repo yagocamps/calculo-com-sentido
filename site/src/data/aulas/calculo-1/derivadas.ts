@@ -520,7 +520,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
     ondeAparece: {
       title: "Exemplos",
       items: [
-        { label: "Área", detail: "x² em dimensões" },
+        { label: "Área", detail: "\\(x^2\\) em dimensões" },
         { label: "Custo", detail: "Termos quadráticos de escala" },
         { label: "Movimento", detail: "s(t) polinomial" },
       ],
@@ -855,7 +855,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
           enunciado: "\\(R'(q)=80-0{,}4q\\) (receita). O que \\(R'(50)=60\\) significa?",
           resposta: "Receita marginal \\(\\approx\\) R$ 60 na 51ª unidade.",
           resolucao: "Taxa de mudança da receita em \\(q=50\\).",
-          interpretacao: "Marginal ≠ receita total.",
+          interpretacao: "Marginal \\(\\neq\\) receita total.",
         },
       ],
     },
