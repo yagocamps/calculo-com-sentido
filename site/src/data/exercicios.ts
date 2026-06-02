@@ -1,6 +1,7 @@
 import { exerciciosAlgebra } from "@/data/exercicios-algebra";
 import { exerciciosFuncoes } from "@/data/exercicios-funcoes";
 import { exerciciosGraficos } from "@/data/exercicios-graficos";
+import { exerciciosTrigonometria } from "@/data/exercicios-trigonometria";
 import { exerciciosFundamentos } from "@/data/exercicios-fundamentos";
 import { exerciciosLimites } from "@/data/exercicios-limites";
 
@@ -37,6 +38,7 @@ export const exercicioTemas = [
   { slug: "algebra", label: "Álgebra" },
   { slug: "funcoes", label: "Funções" },
   { slug: "graficos", label: "Gráficos" },
+  { slug: "trigonometria", label: "Trigonometria" },
   { slug: "funcao-afim", label: "Função afim" },
   { slug: "funcao-quadratica", label: "Função quadrática" },
   { slug: "limites", label: "Limites" },
@@ -218,5 +220,6 @@ export const exercicios: Exercicio[] = [
   ...exerciciosAlgebra,
   ...exerciciosFuncoes,
   ...exerciciosGraficos,
+  ...exerciciosTrigonometria,
   ...exerciciosLimites,
 ];

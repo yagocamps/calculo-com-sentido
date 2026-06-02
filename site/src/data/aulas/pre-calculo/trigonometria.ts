@@ -133,7 +133,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique cálculos com seno em triângulos retângulos no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-01", "trig-ap-02"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -274,7 +274,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique cálculos com cosseno em triângulos retângulos no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-03", "trig-ap-04"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -414,7 +414,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique tangente e inclinação no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-05", "trig-ap-06"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -553,7 +553,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique o ciclo trigonométrico e valores notáveis no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-07", "trig-ap-08"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -690,7 +690,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique a relação fundamental no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-09", "trig-ap-10"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -840,7 +840,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique leitura de gráficos de seno e cosseno no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-11", "trig-ap-12"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -980,7 +980,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique altura, rampas e ângulos de elevação no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-13", "trig-ap-14"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1120,7 +1120,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique movimento circular e ondas no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-15", "trig-ap-16"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1261,7 +1261,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique decomposição de forças e ângulos em estruturas no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-17", "trig-ap-18"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1405,7 +1405,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Revise todo o módulo de trigonometria no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["trig-ap-19", "trig-ap-20"],
     },
     resumo: {
       title: "Resumo da aula",
