@@ -18,19 +18,21 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "A derivada é um termômetro do gráfico: f′>0 a função sobe; f′<0 desce; f′=0 pode ser platô ou virada.",
+        "A derivada é um termômetro do gráfico: \\(f'>0\\) a função sobe; \\(f'<0\\) desce; \\(f'=0\\) pode ser platô ou virada.",
         "Esse teste organiza onde buscar máximos e mínimos.",
       ],
     },
     explicacao: {
       title: "Teste da primeira derivada",
       paragraphs: [
-        "Calcule f′(x) e estude o sinal em intervalos.",
-        "f′>0 no intervalo → f crescente ali.",
-        "f′<0 → f decrescente.",
-        "Mudança de sinal em f′ indica possível extremo.",
+        "Calcule \\(f'(x)\\) e estude o sinal em intervalos.",
+        "\\(f'>0\\) no intervalo \\(\\to f\\) crescente ali.",
+        "\\(f'<0 \\to f\\) decrescente.",
+        "Mudança de sinal em \\(f'\\) indica possível extremo.",
       ],
       formula: "f′ > 0 ⇒ ↗ | f′ < 0 ⇒ ↘",
+      formulaLatex: "f' > 0 \\Rightarrow \\nearrow \\quad|\\quad f' < 0 \\Rightarrow \\searrow",
+      formulaAria: "f linha maior que zero implica crescente; f linha menor que zero implica decrescente",
       callout: "Sinal de f′ importa mais que o valor de f em si.",
     },
     ondeAparece: {
@@ -48,25 +50,25 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     passos: {
       title: "Análise",
       steps: [
-        { title: "f′(x)", detail: "3x²−3 = 3(x²−1)." },
-        { title: "Zeros", detail: "x=−1 e x=1." },
-        { title: "Sinais", detail: "f′>0 se |x|>1; f′<0 se |x|<1." },
-        { title: "Conclusão", detail: "Cresce (−∞,−1)∪(1,∞); decresce (−1,1)." },
+        { title: "f′(x)", detail: "\\(f'(x) = 3x^2-3 = 3(x^2-1)\\)." },
+        { title: "Zeros", detail: "\\(x=-1\\) e \\(x=1\\)." },
+        { title: "Sinais", detail: "\\(f'>0\\) se \\(|x|>1\\); \\(f'<0\\) se \\(|x|<1\\)." },
+        { title: "Conclusão", detail: "Cresce \\((-\\infty,-1) \\cup (1,\\infty)\\); decresce \\((-1,1)\\)." },
       ],
     },
     interpretacao: {
       title: "Gráfico",
       paragraphs: [
-        "Entre −1 e 1 o gráfico desce; fora disso sobe — coerente com cubo menos 3x.",
+        "Entre \\(-1\\) e \\(1\\) o gráfico desce; fora disso sobe — coerente com cubo menos 3x.",
         "Extremos locais serão estudados na próxima aula.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Usar sinal de f em vez de f′.",
-        "Esquecer pontos onde f′ não existe.",
-        "Concluir extremo só com f′=0 sem trocar sinal.",
+        "Usar sinal de \\(f\\) em vez de \\(f'\\).",
+        "Esquecer pontos onde \\(f'\\) não existe.",
+        "Concluir extremo só com \\(f'=0\\) sem trocar sinal.",
       ],
     },
     exerciciosGuiados: {
@@ -75,18 +77,18 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         {
           id: "cd-g1",
           type: "calculo",
-          enunciado: "f(x)=5−2x. f cresce ou decresce?",
-          resposta: "Decresce em ℝ.",
-          resolucao: "f′=−2<0.",
+          enunciado: "\\(f(x)=5-2x\\). f cresce ou decresce?",
+          resposta: "Decresce em \\(\\mathbb{R}\\).",
+          resolucao: "\\(f'=-2<0\\).",
           interpretacao: "Afim decrescente.",
         },
         {
           id: "cd-g2",
           type: "interpretacao",
-          enunciado: "f′ passa de + para − em x=4. O que isso sugere?",
-          resposta: "Possível máximo local em x=4.",
+          enunciado: "\\(f'\\) passa de \\(+\\) para \\(-\\) em \\(x=4\\). O que isso sugere?",
+          resposta: "Possível máximo local em \\(x=4\\).",
           resolucao: "Crescente antes, decrescente depois.",
-          interpretacao: "Mudança de sinal em f′.",
+          interpretacao: "Mudança de sinal em \\(f'\\).",
         },
       ],
     },
@@ -94,9 +96,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "f′>0: crescente; f′<0: decrescente.",
-        "Zeros de f′ candidatos a extremos.",
-        "Monte tabela de sinais de f′.",
+        "\\(f'>0\\): crescente; \\(f'<0\\): decrescente.",
+        "Zeros de \\(f'\\) candidatos a extremos.",
+        "Monte tabela de sinais de \\(f'\\).",
       ],
     },
   },
@@ -120,11 +122,13 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Conceitos",
       paragraphs: [
-        "Máximo local: f(a) ≥ f(x) perto de a.",
-        "Mínimo local: f(a) ≤ f(x) perto de a.",
-        "Em interior de intervalo, extremo local frequentemente tem f′(a)=0 ou f′ indefinida.",
+        "Máximo local: \\(f(a) \\geq f(x)\\) perto de \\(a\\).",
+        "Mínimo local: \\(f(a) \\leq f(x)\\) perto de \\(a\\).",
+        "Em interior de intervalo, extremo local frequentemente tem \\(f'(a)=0\\) ou \\(f'\\) indefinida.",
       ],
       formula: "Extremo local interior ⟹ f′(a)=0 ou f′(a) não existe",
+      formulaLatex: "\\text{extremo local interior} \\Rightarrow f'(a)=0 \\text{ ou } f'(a) \\text{ não existe}",
+      formulaAria: "extremo local interior implica f linha de a igual a zero ou f linha de a não existe",
       callout: "f′(a)=0 não garante extremo — confirme mudança de sinal.",
     },
     ondeAparece: {
@@ -142,23 +146,23 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     passos: {
       title: "Resolver",
       steps: [
-        { title: "f′", detail: "−2x+4." },
-        { title: "f′=0", detail: "x=2." },
-        { title: "Sinal f′", detail: "+ antes de 2, − depois → máximo em x=2." },
-        { title: "Valor", detail: "f(2)=−4+8+1=5." },
+        { title: "f′", detail: "\\(f'(x) = -2x+4\\)." },
+        { title: "f′=0", detail: "\\(x=2\\)." },
+        { title: "Sinal f′", detail: "\\(+\\) antes de 2, \\(-\\) depois \\(\\to\\) máximo em \\(x=2\\)." },
+        { title: "Valor", detail: "\\(f(2)=-4+8+1=5\\)." },
       ],
     },
     interpretacao: {
       title: "Parábola",
       paragraphs: [
-        "Coeficiente de x² negativo: um único máximo global em x=2.",
-        "Problemas aplicados pedem interpretar x=2 no contexto (unidades).",
+        "Coeficiente de \\(x^2\\) negativo: um único máximo global em \\(x=2\\).",
+        "Problemas aplicados pedem interpretar \\(x=2\\) no contexto (unidades).",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Achar que f′=0 é sempre máximo.",
+        "Achar que \\(f'=0\\) é sempre máximo.",
         "Ignorar extremos nos endpoints do domínio.",
         "Confundir máximo local com global.",
       ],
@@ -169,9 +173,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         {
           id: "mm-g1",
           type: "calculo",
-          enunciado: "f(x)=x²−6x+10. Mínimo local?",
-          resposta: "x=3, f(3)=1",
-          resolucao: "f′=2x−6=0 → x=3; f′ muda + para −? f′=2(x−3): mínimo em 3.",
+          enunciado: "\\(f(x)=x^2-6x+10\\). Mínimo local?",
+          resposta: "\\(x=3\\), \\(f(3)=1\\)",
+          resolucao: "\\(f'=2x-6=0 \\Rightarrow x=3\\); \\(f'=2(x-3)\\): mínimo em 3.",
           interpretacao: "Parábola abre para cima.",
         },
         {
@@ -189,8 +193,8 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Máximo/mínimo local = topo/fundo do gráfico.",
-        "Candidatos: f′=0, f′ indefinida, bordas do domínio.",
-        "Confirme com sinal de f′ ou valor.",
+        "Candidatos: \\(f'=0\\), \\(f'\\) indefinida, bordas do domínio.",
+        "Confirme com sinal de \\(f'\\) ou valor.",
       ],
     },
   },
@@ -207,26 +211,28 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Ponto crítico: onde a \"estratégia\" de subida/descida pode mudar — f′=0 ou f′ não existe.",
+        "Ponto crítico: onde a \"estratégia\" de subida/descida pode mudar — \\(f'=0\\) ou \\(f'\\) não existe.",
         "Lista de críticos reduz busca em problemas de otimização.",
       ],
     },
     explicacao: {
       title: "Definição e fluxo",
       paragraphs: [
-        "Crítico em a: f′(a)=0 ou f′(a) indefinida (com a no domínio).",
+        "Crítico em \\(a\\): \\(f'(a)=0\\) ou \\(f'(a)\\) indefinida (com \\(a\\) no domínio).",
         "Passo 1: derive. Passo 2: ache zeros e indeterminações. Passo 3: teste sinal ou segunda derivada.",
-        "Domínio físico (x≥0) corta candidatos inválidos.",
+        "Domínio físico (\\(x \\geq 0\\)) corta candidatos inválidos.",
       ],
       formula: "críticos = { x | f′(x)=0 ou f′ não existe }",
+      formulaLatex: "\\text{críticos} = \\{\\, x \\mid f'(x)=0 \\text{ ou } f' \\text{ não existe} \\,\\}",
+      formulaAria: "conjunto dos críticos: x tais que f linha de x igual a zero ou f linha não existe",
       callout: "Todo extremo interior é crítico, mas nem todo crítico é extremo.",
     },
     ondeAparece: {
       title: "Exemplos",
       items: [
         { label: "|x| em 0", detail: "Crítico sem derivada" },
-        { label: "x³ em 0", detail: "f′=0 mas sem extremo" },
-        { label: "Produção", detail: "x≥0 apenas" },
+        { label: "x³ em 0", detail: "\\(f'=0\\) mas sem extremo" },
+        { label: "Produção", detail: "\\(x \\geq 0\\) apenas" },
       ],
     },
     exemplo: {
@@ -236,24 +242,24 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     passos: {
       title: "Achar",
       steps: [
-        { title: "f′", detail: "4x³−8x = 4x(x²−2)." },
-        { title: "f′=0", detail: "x=0, x=√2, x=−√2." },
-        { title: "Classificar depois", detail: "mínimo em 0? máximos em ±√2? (teste sinal)." },
+        { title: "f′", detail: "\\(f'(x) = 4x^3-8x = 4x(x^2-2)\\)." },
+        { title: "f′=0", detail: "\\(x=0\\), \\(x=\\sqrt{2}\\), \\(x=-\\sqrt{2}\\)." },
+        { title: "Classificar depois", detail: "mínimo em 0? máximos em \\(\\pm\\sqrt{2}\\)? (teste sinal)." },
       ],
     },
     interpretacao: {
       title: "x³ em 0",
       paragraphs: [
-        "f′(0)=0 mas gráfico atravessa — ponto de inflexão, não extremo.",
+        "\\(f'(0)=0\\) mas gráfico atravessa — ponto de inflexão, não extremo.",
         "Por isso classificação após listar críticos.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Esquecer onde f′ não existe.",
-        "Incluir x fora do domínio aplicado.",
-        "Parar em f′=0 sem classificar.",
+        "Esquecer onde \\(f'\\) não existe.",
+        "Incluir \\(x\\) fora do domínio aplicado.",
+        "Parar em \\(f'=0\\) sem classificar.",
       ],
     },
     exerciciosGuiados: {
@@ -262,15 +268,15 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         {
           id: "pc-g1",
           type: "calculo",
-          enunciado: "f(x)=x³−3x. Críticos?",
-          resposta: "x=−1 e x=1",
-          resolucao: "f′=3x²−3=3(x²−1).",
+          enunciado: "\\(f(x)=x^3-3x\\). Críticos?",
+          resposta: "\\(x=-1\\) e \\(x=1\\)",
+          resolucao: "\\(f'=3x^2-3=3(x^2-1)\\).",
           interpretacao: "Dois candidatos.",
         },
         {
           id: "pc-g2",
           type: "compreensao",
-          enunciado: "f′(2) não existe. x=2 é crítico?",
+          enunciado: "\\(f'(2)\\) não existe. \\(x=2\\) é crítico?",
           resposta: "Sim, se 2 está no domínio.",
           resolucao: "Definição inclui derivada inexistente.",
           interpretacao: "Cantos contam.",
@@ -281,7 +287,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Crítico: f′=0 ou f′ indefinida.",
+        "Crítico: \\(f'=0\\) ou \\(f'\\) indefinida.",
         "Lista completa antes de classificar.",
         "Domínio do problema filtra candidatos.",
       ],
@@ -301,18 +307,20 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
         "Concavidade descreve se o gráfico parece um U (∪) ou um ∩.",
-        "f″>0: concavidade para cima; f″<0: para baixo; f″=0 possível inflexão.",
+        "\\(f''>0\\): concavidade para cima; \\(f''<0\\): para baixo; \\(f''=0\\) possível inflexão.",
         "Segunda derivada classifica críticos (teste da segunda derivada).",
       ],
     },
     explicacao: {
       title: "Regras",
       paragraphs: [
-        "f″(x)>0 → f′ crescente → f concava para cima.",
-        "f″(x)<0 → concava para baixo.",
-        "Em crítico c com f′(c)=0: f″(c)>0 mínimo local; f″(c)<0 máximo local; f″(c)=0 inconclusivo.",
+        "\\(f''(x)>0 \\to f'\\) crescente \\(\\to f\\) côncava para cima.",
+        "\\(f''(x)<0 \\to\\) côncava para baixo.",
+        "Em crítico \\(c\\) com \\(f'(c)=0\\): \\(f''(c)>0\\) mínimo local; \\(f''(c)<0\\) máximo local; \\(f''(c)=0\\) inconclusivo.",
       ],
       formula: "f″ > 0 ⇒ ∪ | f″ < 0 ⇒ ∩",
+      formulaLatex: "f'' > 0 \\Rightarrow \\cup \\quad|\\quad f'' < 0 \\Rightarrow \\cap",
+      formulaAria: "f duas linhas maior que zero implica concavidade para cima; menor que zero, para baixo",
       callout: "Cálculo 1 introdutório usa f″ quando disponível; senão teste de f′.",
     },
     ondeAparece: {
@@ -325,28 +333,28 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "f(x)=x³",
-      situacao: "f″ e concavidade?",
+      situacao: "\\(f''\\) e concavidade?",
     },
     passos: {
       title: "Análise",
       steps: [
-        { title: "f′", detail: "3x²." },
-        { title: "f″", detail: "6x." },
-        { title: "Sinal", detail: "f″<0 se x<0; f″>0 se x>0 → inflexão em 0." },
+        { title: "f′", detail: "\\(f'(x) = 3x^2\\)." },
+        { title: "f″", detail: "\\(f''(x) = 6x\\)." },
+        { title: "Sinal", detail: "\\(f''<0\\) se \\(x<0\\); \\(f''>0\\) se \\(x>0 \\to\\) inflexão em 0." },
       ],
     },
     interpretacao: {
       title: "Inflexão",
       paragraphs: [
         "Em 0 o gráfico muda de ∩ para ∪ — ponto de inflexão.",
-        "f′(0)=0 e não é extremo.",
+        "\\(f'(0)=0\\) e não é extremo.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
         "Confundir concavidade com crescimento.",
-        "Aplicar teste da 2ª derivada quando f″(c)=0.",
+        "Aplicar teste da 2ª derivada quando \\(f''(c)=0\\).",
         "Derivar duas vezes errado em regra da cadeia.",
       ],
     },
@@ -356,17 +364,17 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         {
           id: "conc-g1",
           type: "calculo",
-          enunciado: "f(x)=x². f″(x)? Classifique x=0.",
-          resposta: "f″=2>0 → mínimo",
-          resolucao: "f′=2x, f″=2.",
+          enunciado: "\\(f(x)=x^2\\). \\(f''(x)\\)? Classifique \\(x=0\\).",
+          resposta: "\\(f''=2>0 \\to\\) mínimo",
+          resolucao: "\\(f'=2x\\), \\(f''=2\\).",
           interpretacao: "Parábola ∪.",
         },
         {
           id: "conc-g2",
           type: "interpretacao",
-          enunciado: "f″>0 no intervalo. f′ está aumentando ou diminuindo?",
-          resposta: "f′ aumenta (f cresce mais rápido ou decresce mais devagar).",
-          resolucao: "f″ é derivada de f′.",
+          enunciado: "\\(f''>0\\) no intervalo. \\(f'\\) está aumentando ou diminuindo?",
+          resposta: "\\(f'\\) aumenta (f cresce mais rápido ou decresce mais devagar).",
+          resolucao: "\\(f''\\) é derivada de \\(f'\\).",
           interpretacao: "Aceleração da taxa.",
         },
       ],
@@ -375,9 +383,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "f″ descreve concavidade.",
-        "Teste f″(c) classifica críticos com f′(c)=0.",
-        "f″=0 pode ser inflexão.",
+        "\\(f''\\) descreve concavidade.",
+        "Teste \\(f''(c)\\) classifica críticos com \\(f'(c)=0\\).",
+        "\\(f''=0\\) pode ser inflexão.",
       ],
     },
   },
@@ -416,22 +424,22 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Campo retangular",
-      situacao: "Cercar 40 m de tela contra um muro (sem tela no muro). Largura x, comprimento y. Área máxima?",
+      situacao: "Cercar 40 m de tela contra um muro (sem tela no muro). Largura \\(x\\), comprimento \\(y\\). Área máxima?",
     },
     passos: {
       title: "Modelar",
       steps: [
-        { title: "Restrição", detail: "x+2y=40 (dois lados y e um x)." },
-        { title: "Área", detail: "A=xy = x(40−x)/2 = 20x−x²/2." },
-        { title: "Domínio", detail: "x∈(0,40)." },
-        { title: "A′=0", detail: "20−x=0 → x=20, y=10, A=200 m²." },
+        { title: "Restrição", detail: "\\(x+2y=40\\) (dois lados y e um x)." },
+        { title: "Área", detail: "\\[A=xy = \\frac{x(40-x)}{2} = 20x - \\frac{x^2}{2}\\]" },
+        { title: "Domínio", detail: "\\(x \\in (0,40)\\)." },
+        { title: "A′=0", detail: "\\(20-x=0 \\Rightarrow x=20,\\ y=10,\\ A=200\\) m²." },
       ],
     },
     interpretacao: {
       title: "Resposta",
       paragraphs: [
         "Retângulo 20 m perpendicular ao muro, 10 m paralelo — área máxima 200 m².",
-        "Sempre verifique se x=20 respeita contexto.",
+        "Sempre verifique se \\(x=20\\) respeita contexto.",
       ],
     },
     erros: {
@@ -449,8 +457,8 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
           id: "opt-g1",
           type: "aplicada",
           enunciado: "Dois números positivos com soma 20 e produto máximo. Modelo?",
-          resposta: "P(x)=x(20−x), máximo em x=10",
-          resolucao: "P′=20−2x=0.",
+          resposta: "\\(P(x)=x(20-x)\\), máximo em \\(x=10\\)",
+          resolucao: "\\(P'=20-2x=0\\).",
           interpretacao: "Quadrado 10+10.",
         },
         {
@@ -493,11 +501,13 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Ideia",
       paragraphs: [
-        "Se V(t) volume e h(t) altura relacionados por V=πr²h com r fixo, dV/dt = πr² dh/dt.",
+        "Se \\(V(t)\\) volume e \\(h(t)\\) altura relacionados por \\(V=\\pi r^2 h\\) com r fixo, \\(\\frac{dV}{dt} = \\pi r^2 \\frac{dh}{dt}\\).",
         "Taxas relacionadas: derive implicitamente em relação ao tempo.",
         "Cálculo 1 intro: reconhecer que derivada mede ritmo de mudança conjunta.",
       ],
       formula: "d/dt [relação em x,y,t] = 0",
+      formulaLatex: "\\frac{d}{dt}\\left[\\text{relação em } x,y,t\\right] = 0",
+      formulaAria: "derivada em relação a t da relação entre x, y e t igual a zero",
       callout: "Problemas clássicos de escada e balde — mesma estrutura.",
     },
     ondeAparece: {
@@ -510,21 +520,21 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Produção Q(t)",
-      situacao: "Q(t)=50t−t² peças em 0≤t≤50 h. Quando produção instantânea é máxima?",
+      situacao: "\\(Q(t)=50t-t^2\\) peças em \\(0 \\leq t \\leq 50\\) h. Quando produção instantânea é máxima?",
     },
     passos: {
       title: "Taxa",
       steps: [
-        { title: "Q′(t)", detail: "50−2t." },
-        { title: "Q′=0", detail: "t=25 h." },
+        { title: "Q′(t)", detail: "\\(Q'(t) = 50-2t\\)." },
+        { title: "Q′=0", detail: "\\(t=25\\) h." },
         { title: "Interpretação", detail: "Ritmo de produção máximo na metade do intervalo; depois desacelera." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "Q acumula peças; Q′ é taxa instantânea de produção.",
-        "Q total máxima em t=50 (endpoint), mas taxa máxima em t=25.",
+        "\\(Q\\) acumula peças; \\(Q'\\) é taxa instantânea de produção.",
+        "\\(Q\\) total máxima em \\(t=50\\) (endpoint), mas taxa máxima em \\(t=25\\).",
       ],
     },
     erros: {
@@ -541,15 +551,15 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         {
           id: "vp-g1",
           type: "calculo",
-          enunciado: "s(t)=t². Velocidade máxima em [0,5]?",
-          resposta: "v(5)=10 m/s",
-          resolucao: "v=2t crescente; máximo no fim do intervalo.",
+          enunciado: "\\(s(t)=t^2\\). Velocidade máxima em \\([0,5]\\)?",
+          resposta: "\\(v(5)=10\\) m/s",
+          resolucao: "\\(v=2t\\) crescente; máximo no fim do intervalo.",
           interpretacao: "Taxa cresce com t.",
         },
         {
           id: "vp-g2",
           type: "interpretacao",
-          enunciado: "Q′(t)<0. O que ocorre com estoque sendo produzido?",
+          enunciado: "\\(Q'(t)<0\\). O que ocorre com estoque sendo produzido?",
           resposta: "Produção instantânea negativa ou modelo só válido até certo t — revisar contexto.",
           resolucao: "Taxa negativa = diminui acúmulo.",
           interpretacao: "Ler enunciado físico.",
@@ -591,6 +601,8 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         "Derivada zero + teste de máximo.",
       ],
       formula: "V(x) ou A(x) → V′(x)=0",
+      formulaLatex: "V(x) \\text{ ou } A(x) \\;\\to\\; V'(x)=0",
+      formulaAria: "V de x ou A de x, derive e iguale a zero",
     },
     ondeAparece: {
       title: "Problemas",
@@ -602,22 +614,22 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Caixa sem tampa",
-      situacao: "Cartão 12×12. Cortar quadrados de lado x nos cantos e dobrar. Volume máximo?",
+      situacao: "Cartão \\(12 \\times 12\\). Cortar quadrados de lado \\(x\\) nos cantos e dobrar. Volume máximo?",
     },
     passos: {
       title: "Modelo",
       steps: [
-        { title: "Base", detail: "12−2x por lado." },
-        { title: "V(x)", detail: "x(12−2x)²." },
-        { title: "Domínio", detail: "0<x<6." },
-        { title: "Derivar e resolver", detail: "V′=0 no interior → x=2 (com 0<x<6)." },
-        { title: "V(2)", detail: "Base 8×8, altura 2 → V=128 cm³." },
+        { title: "Base", detail: "\\(12-2x\\) por lado." },
+        { title: "V(x)", detail: "\\(V(x) = x(12-2x)^2\\)." },
+        { title: "Domínio", detail: "\\(0<x<6\\)." },
+        { title: "Derivar e resolver", detail: "\\(V'=0\\) no interior \\(\\to x=2\\) (com \\(0<x<6\\))." },
+        { title: "V(2)", detail: "Base \\(8 \\times 8\\), altura 2 \\(\\to V=128\\) cm³." },
       ],
     },
     interpretacao: {
       title: "Conferência",
       paragraphs: [
-        "Sempre teste x pequeno (V→0) e x→6 (V→0) para confirmar máximo interior.",
+        "Sempre teste \\(x\\) pequeno (\\(V \\to 0\\)) e \\(x \\to 6\\) (\\(V \\to 0\\)) para confirmar máximo interior.",
         "Resposta: dimensões da caixa, não só x.",
       ],
     },
@@ -635,16 +647,16 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         {
           id: "av-g1",
           type: "aplicada",
-          enunciado: "Retângulo de perímetro 24. Lados x e 12−x. Área máxima?",
-          resposta: "36 com x=6",
-          resolucao: "A=12x−x², A′=12−2x=0.",
+          enunciado: "Retângulo de perímetro 24. Lados \\(x\\) e \\(12-x\\). Área máxima?",
+          resposta: "\\(36\\) com \\(x=6\\)",
+          resolucao: "\\(A=12x-x^2\\), \\(A'=12-2x=0\\).",
           interpretacao: "Quadrado lado 6.",
         },
         {
           id: "av-g2",
           type: "compreensao",
-          enunciado: "Por que V→0 quando x→0+ na caixa?",
-          resposta: "Altura x→0.",
+          enunciado: "Por que \\(V \\to 0\\) quando \\(x \\to 0^+\\) na caixa?",
+          resposta: "Altura \\(x \\to 0\\).",
           resolucao: "Volume colapsa.",
           interpretacao: "Endpoints ajudam a confiar no crítico.",
         },
@@ -673,54 +685,56 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Empresas querem L(x)=R(x)−C(x) máximo — onde produzir/vender para melhor lucro.",
+        "Empresas querem \\(L(x)=R(x)-C(x)\\) máximo — onde produzir/vender para melhor lucro.",
         "Une custo marginal, receita e otimização.",
       ],
     },
     explicacao: {
       title: "Passos",
       paragraphs: [
-        "Monte R(x) e C(x) do enunciado.",
-        "L(x)=R(x)−C(x); domínio x≥0.",
-        "L′(x)=R′(x)−C′(x); zeros de L′ ou compare críticos.",
-        "Interprete x em unidades vendidas/produzidas.",
+        "Monte \\(R(x)\\) e \\(C(x)\\) do enunciado.",
+        "\\(L(x)=R(x)-C(x)\\); domínio \\(x \\geq 0\\).",
+        "\\(L'(x)=R'(x)-C'(x)\\); zeros de \\(L'\\) ou compare críticos.",
+        "Interprete \\(x\\) em unidades vendidas/produzidas.",
       ],
       formula: "L′(x)=0 ⇔ R′(x)=C′(x) (marginais iguais)",
+      formulaLatex: "L'(x)=0 \\iff R'(x)=C'(x) \\quad (\\text{marginais iguais})",
+      formulaAria: "L linha de x igual a zero se e somente se R linha de x igual a C linha de x",
       callout: "Produzir enquanto receita marginal > custo marginal.",
     },
     ondeAparece: {
       title: "Modelos",
       items: [
-        { label: "Preço fixo", detail: "R=px" },
-        { label: "Demanda linear", detail: "p=a−bx" },
+        { label: "Preço fixo", detail: "\\(R=px\\)" },
+        { label: "Demanda linear", detail: "\\(p=a-bx\\)" },
         { label: "Custo quadrático", detail: "Escalas de produção" },
       ],
     },
     exemplo: {
       title: "C(x)=2000+10x+0,02x², p=50 reais/unidade",
-      situacao: "R(x)=50x. Lucro máximo?",
+      situacao: "\\(R(x)=50x\\). Lucro máximo?",
     },
     passos: {
       title: "Cálculo",
       steps: [
-        { title: "L(x)", detail: "50x−2000−10x−0,02x² = 40x−2000−0,02x²." },
-        { title: "L′", detail: "40−0,04x=0 → x=1000." },
+        { title: "L(x)", detail: "\\[L(x) = 50x-2000-10x-0{,}02x^2 = 40x-2000-0{,}02x^2\\]" },
+        { title: "L′", detail: "\\(40-0{,}04x=0 \\Rightarrow x=1000\\)." },
         { title: "L(1000)", detail: "Substituir e interpretar lucro em reais." },
       ],
     },
     interpretacao: {
       title: "Marginal",
       paragraphs: [
-        "Em x=1000, R′=50 e C′=10+0,04·1000=50 — marginais iguais.",
-        "Antes disso R′>C′; depois o contrário.",
+        "Em \\(x=1000\\), \\(R'=50\\) e \\(C'=10+0{,}04 \\cdot 1000=50\\) — marginais iguais.",
+        "Antes disso \\(R'>C'\\); depois o contrário.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
         "Maximizar receita em vez de lucro.",
-        "Esquecer custo fixo na interpretação (afeta L, não L′=0).",
-        "x não inteiro quando só faz sentido inteiro — testar vizinhos.",
+        "Esquecer custo fixo na interpretação (afeta \\(L\\), não \\(L'=0\\)).",
+        "\\(x\\) não inteiro quando só faz sentido inteiro — testar vizinhos.",
       ],
     },
     exerciciosGuiados: {
@@ -729,17 +743,17 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         {
           id: "lm-g1",
           type: "calculo",
-          enunciado: "R(x)=80x, C(x)=500+15x. L′(x)=0?",
-          resposta: "Nunca — R′>C′ sempre",
-          resolucao: "L′=65>0; lucro cresce no modelo linear sem limite.",
+          enunciado: "\\(R(x)=80x\\), \\(C(x)=500+15x\\). \\(L'(x)=0\\)?",
+          resposta: "Nunca — \\(R'>C'\\) sempre",
+          resolucao: "\\(L'=65>0\\); lucro cresce no modelo linear sem limite.",
           interpretacao: "Modelo precisa domínio limitado ou curvatura.",
         },
         {
           id: "lm-g2",
           type: "aplicada",
-          enunciado: "L(x)=−x²+100x−500. x que maximiza?",
-          resposta: "x=50",
-          resolucao: "L′=−2x+100=0.",
+          enunciado: "\\(L(x)=-x^2+100x-500\\). \\(x\\) que maximiza?",
+          resposta: "\\(x=50\\)",
+          resolucao: "\\(L'=-2x+100=0\\).",
           interpretacao: "Parábola abre para baixo.",
         },
       ],
@@ -748,9 +762,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Maximize L=R−C.",
-        "L′=0 ↔ marginais iguais.",
-        "Interprete x e lucro em reais.",
+        "Maximize \\(L=R-C\\).",
+        "\\(L'=0\\) ↔ marginais iguais.",
+        "Interprete \\(x\\) e lucro em reais.",
       ],
     },
   },
@@ -778,13 +792,15 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Checklist",
       paragraphs: [
-        "✓ Sinal de f′: crescimento/decrescimento.",
+        "✓ Sinal de \\(f'\\): crescimento/decrescimento.",
         "✓ Críticos e máximos/mínimos.",
-        "✓ f″ e concavidade (quando couber).",
+        "✓ \\(f''\\) e concavidade (quando couber).",
         "✓ Otimização: modelar, derivar, testar bordas.",
         "✓ Lucro e geometria.",
       ],
       formula: "Problema aplicado = modelo + domínio + L′ ou f′=0",
+      formulaLatex: "\\text{problema aplicado} = \\text{modelo} + \\text{domínio} + (L'=0 \\text{ ou } f'=0)",
+      formulaAria: "problema aplicado igual a modelo mais domínio mais L linha igual a zero ou f linha igual a zero",
       callout: "Integrais respondem \"quanto acumulou\" — complemento natural.",
     },
     ondeAparece: {
@@ -802,9 +818,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     passos: {
       title: "Esboço",
       steps: [
-        { title: "Variáveis", detail: "Largura x, comprimento y." },
-        { title: "Restrição", detail: "x+2y=100." },
-        { title: "Objetivo", detail: "A=xy → otimizar." },
+        { title: "Variáveis", detail: "Largura \\(x\\), comprimento \\(y\\)." },
+        { title: "Restrição", detail: "\\(x+2y=100\\)." },
+        { title: "Objetivo", detail: "\\(A=xy \\to\\) otimizar." },
       ],
     },
     interpretacao: {
@@ -835,9 +851,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         {
           id: "rad-g2",
           type: "calculo",
-          enunciado: "f(x)=−2x²+8x+1. Máximo?",
-          resposta: "x=2, f(2)=9",
-          resolucao: "f′=−4x+8=0.",
+          enunciado: "\\(f(x)=-2x^2+8x+1\\). Máximo?",
+          resposta: "\\(x=2\\), \\(f(2)=9\\)",
+          resolucao: "\\(f'=-4x+8=0\\).",
           interpretacao: "Revisão extremos.",
         },
       ],
@@ -846,7 +862,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "f′ e f″ guiam forma do gráfico e extremos.",
+        "\\(f'\\) e \\(f''\\) guiam forma do gráfico e extremos.",
         "Otimização = modelo + domínio + críticos.",
         "Próximo: integrais e acúmulo.",
       ],
