@@ -1,3 +1,5 @@
+import { exerciciosLimites } from "@/data/exercicios-limites";
+
 export type ExerciseType =
   | "compreensao"
   | "calculo"
@@ -204,4 +206,5 @@ export const exercicios: Exercicio[] = [
       "Problemas de orçamento máximo são inequações disfarçadas de função afim.",
     erroComum: "Esquecer a taxa fixa na inequação.",
   },
+  ...exerciciosLimites,
 ];

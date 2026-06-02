@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { RichText } from "@/components/aulas/RichText";
 import { RevealBlock } from "@/components/exercicios/RevealBlock";
 import { TypeTag } from "@/components/exercicios/TypeTag";
 import { Button } from "@/components/ui/Button";
@@ -108,13 +109,17 @@ export function ExercicioDetail({
       </header>
 
       <Field label="Enunciado">
-        <p className="whitespace-pre-line">{exercicio.enunciado}</p>
+        <RichText as="p" className="whitespace-pre-line">
+          {exercicio.enunciado}
+        </RichText>
       </Field>
 
       <Field label="O que identificar">
         <ul className="list-disc space-y-1 pl-4">
           {identificar.map((item) => (
-            <li key={item}>{item}</li>
+            <RichText as="li" key={item}>
+              {item}
+            </RichText>
           ))}
         </ul>
       </Field>
@@ -125,7 +130,7 @@ export function ExercicioDetail({
           visible={showDica}
           onToggle={() => setShowDica((v) => !v)}
         >
-          {exercicio.dica}
+          <RichText>{exercicio.dica}</RichText>
         </RevealBlock>
       </Field>
 
@@ -138,11 +143,15 @@ export function ExercicioDetail({
           {exercicio.resolucaoSteps ? (
             <ol className="list-decimal space-y-1 pl-4">
               {exercicio.resolucaoSteps.map((step) => (
-                <li key={step}>{step}</li>
+                <RichText as="li" key={step}>
+                  {step}
+                </RichText>
               ))}
             </ol>
           ) : (
-            <p className="font-mono text-[13.5px]">{exercicio.resolucao}</p>
+            <RichText as="p" className="text-[13.5px]">
+              {exercicio.resolucao}
+            </RichText>
           )}
         </RevealBlock>
       </Field>
@@ -153,12 +162,16 @@ export function ExercicioDetail({
           visible={showResposta}
           onToggle={() => setShowResposta((v) => !v)}
         >
-          <p className="font-semibold">{exercicio.resposta}</p>
+          <RichText as="p" className="font-semibold">
+            {exercicio.resposta}
+          </RichText>
         </RevealBlock>
       </Field>
 
       <Field label="Interpretação">
-        <p className="italic text-ink-muted">{exercicio.interpretacao}</p>
+        <RichText as="p" className="italic text-ink-muted">
+          {exercicio.interpretacao}
+        </RichText>
       </Field>
 
       <Field label="Erro comum">
@@ -167,7 +180,7 @@ export function ExercicioDetail({
           visible={showErro}
           onToggle={() => setShowErro((v) => !v)}
         >
-          {exercicio.erroComum}
+          <RichText>{exercicio.erroComum}</RichText>
         </RevealBlock>
       </Field>
 

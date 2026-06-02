@@ -98,7 +98,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-03", "lim-ap-04"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -200,7 +204,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-05", "lim-ap-06"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -302,7 +310,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-07", "lim-ap-08"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -404,7 +416,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-09", "lim-ap-10"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -506,7 +522,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-11", "lim-ap-12"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -608,7 +628,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-13", "lim-ap-14"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -710,7 +734,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-15", "lim-ap-16"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -812,7 +840,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-17", "lim-ap-18"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -915,7 +947,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-19"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -1019,7 +1055,11 @@ export const limitesAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: {
+      title: "Exercícios aplicados",
+      intro: "Pratique com exercícios resolvidos passo a passo.",
+      exerciseIds: ["lim-ap-20"],
+    },
     resumo: {
       title: "Resumo da aula",
       bullets: [

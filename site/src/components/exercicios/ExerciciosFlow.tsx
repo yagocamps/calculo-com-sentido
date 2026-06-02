@@ -16,7 +16,13 @@ import { cn } from "@/lib/utils";
 export function ExerciciosFlow() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [tema, setTema] = useState("funcao-afim");
+  const paramId = searchParams.get("id");
+  // Deep-link de uma aula (?id=...): começa no tema do próprio exercício,
+  // senão a lista filtrada não conteria o exercício e ele "sumiria".
+  const initialTema =
+    (paramId && exercicios.find((e) => e.id === paramId)?.temaSlug) ||
+    "funcao-afim";
+  const [tema, setTema] = useState(initialTema);
   const [nivel, setNivel] = useState("todos");
 
   const filtered = useMemo(
@@ -24,7 +30,6 @@ export function ExerciciosFlow() {
     [tema, nivel],
   );
 
-  const paramId = searchParams.get("id");
   const activeId =
     paramId && filtered.some((e) => e.id === paramId)
       ? paramId

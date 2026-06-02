@@ -114,8 +114,8 @@ export const ideiaDeLimiteAula: AulaContent = {
   },
   exerciciosAplicados: {
     title: "Exercícios aplicados",
-    intro: "Em breve: exercícios de limite com contexto de velocidade e tendência.",
-    exerciseIds: [],
+    intro: "Pratique a ideia de limite com exercícios resolvidos passo a passo.",
+    exerciseIds: ["lim-ap-01", "lim-ap-02"],
   },
   resumo: {
     title: "Resumo da aula",
