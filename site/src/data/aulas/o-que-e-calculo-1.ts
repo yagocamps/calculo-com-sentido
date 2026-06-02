@@ -57,7 +57,7 @@ export const oQueECalculo1Aula: AulaContent = {
     steps: [
       {
         title: "Velocidade média",
-        detail: "60 km ÷ 1 h = 60 km/h — isso é variação média de posição.",
+        detail: "\\(60 \\text{ km} \\div 1 \\text{ h} = 60\\) km/h — isso é variação média de posição.",
       },
       {
         title: "Velocidade instantânea",
@@ -98,10 +98,10 @@ export const oQueECalculo1Aula: AulaContent = {
         type: "compreensao",
         enunciado:
           "Qual pergunta um limite ajuda a responder em uma situação real?",
-        identificar: "Pense em \"para onde tende\" quando x se aproxima de um valor.",
+        identificar: "Pense em \"para onde tende\" quando \\(x\\) se aproxima de um valor.",
         dica: "Velocidade no instante é um caso clássico.",
         resolucao:
-          "Limite descreve o comportamento de f(x) quando x se aproxima de um número — sem precisar chegar exatamente nele.",
+          "Limite descreve o comportamento de \\(f(x)\\) quando \\(x\\) se aproxima de um número — sem precisar chegar exatamente nele.",
         resposta: "Para onde a grandeza tende quando nos aproximamos de um valor.",
         interpretacao: "É a ponte entre média e instantâneo.",
       },

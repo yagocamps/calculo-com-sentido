@@ -22,7 +22,7 @@ export const limitesAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Antes de calcular com álgebra, você pode observar o comportamento: escolha valores de x cada vez mais perto de a e veja para onde f(x) vai.",
+        "Antes de calcular com álgebra, você pode observar o comportamento: escolha valores de \\(x\\) cada vez mais perto de \\(a\\) e veja para onde \\(f(x)\\) vai.",
         "Tabelas são a ferramenta mais honesta do iniciante — mostram tendência sem exigir manipulação simbólica.",
         "Em engenharia e economia, dados numéricos muitas vezes chegam antes de uma fórmula fechada.",
       ],
@@ -30,12 +30,14 @@ export const limitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Montar a tabela",
       paragraphs: [
-        "Escolha a (o ponto de interesse) e valores de x que se aproximam de a — pela esquerda, pela direita, ou pelos dois lados.",
-        "Calcule f(x) para cada x da tabela. Ignore x = a se a função não estiver definida ali.",
-        "Observe se os valores de f(x) se estabilizam em torno de um número L — esse é o candidato a limite.",
+        "Escolha \\(a\\) (o ponto de interesse) e valores de \\(x\\) que se aproximam de \\(a\\) — pela esquerda, pela direita, ou pelos dois lados.",
+        "Calcule \\(f(x)\\) para cada \\(x\\) da tabela. Ignore \\(x = a\\) se a função não estiver definida ali.",
+        "Observe se os valores de \\(f(x)\\) se estabilizam em torno de um número \\(L\\) — esse é o candidato a limite.",
       ],
-      callout: "Quanto mais perto de a, mais confiança na tendência — mas a tabela nunca prova sozinha.",
+      callout: "Quanto mais perto de \\(a\\), mais confiança na tendência — mas a tabela nunca prova sozinha.",
       formula: "lim (x→a) f(x) ≈ L",
+      formulaLatex: "\\lim_{x \\to a} f(x) \\approx L",
+      formulaAria: "limite quando x tende a a de f de x é aproximadamente L",
       formulaLegend: "L = valor para o qual f(x) parece convergir na tabela",
     },
     ondeAparece: {
@@ -49,21 +51,21 @@ export const limitesAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "f(x) = (x² − 4)/(x − 2)",
-      situacao: "Monte uma tabela com x → 2 (por cima e por baixo) e estime o limite.",
+      situacao: "Monte uma tabela com \\(x \\to 2\\) (por cima e por baixo) e estime o limite.",
     },
     passos: {
       title: "Construir a tabela",
       steps: [
-        { title: "Escolher x", detail: "Ex.: 1,9 · 1,99 · 1,999 · 2,001 · 2,01 · 2,1." },
-        { title: "Calcular f(x)", detail: "Simplifique antes: f(x) = x + 2 para x ≠ 2." },
-        { title: "Ler tendência", detail: "Valores perto de 4 quando x → 2." },
-        { title: "Conclusão", detail: "lim (x→2) f(x) ≈ 4." },
+        { title: "Escolher x", detail: "Ex.: \\(1{,}9\\) · \\(1{,}99\\) · \\(1{,}999\\) · \\(2{,}001\\) · \\(2{,}01\\) · \\(2{,}1\\)." },
+        { title: "Calcular f(x)", detail: "Simplifique antes: \\(f(x) = x + 2\\) para \\(x \\neq 2\\)." },
+        { title: "Ler tendência", detail: "Valores perto de 4 quando \\(x \\to 2\\)." },
+        { title: "Conclusão", detail: "\\(\\lim_{x \\to 2} f(x) \\approx 4\\)." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "A tabela sugere L = 4 mesmo com buraco em x = 2.",
+        "A tabela sugere \\(L = 4\\) mesmo com buraco em \\(x = 2\\).",
         "Diferenças pequenas entre linhas indicam convergência; saltos indicam possível limite lateral ou inexistência.",
       ],
     },
@@ -71,7 +73,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Usar poucos valores — a tendência pode enganar.",
-        "Incluir x = a quando f(a) não existe e confundir com o limite.",
+        "Incluir \\(x = a\\) quando \\(f(a)\\) não existe e confundir com o limite.",
         "Achar que a tabela substitui a demonstração formal.",
       ],
     },
@@ -81,15 +83,15 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "tab-g1",
           type: "calculo",
-          enunciado: "Para f(x) = (x² − 9)/(x − 3), monte x = 2,9 · 2,99 · 3,01 · 3,1. Qual tendência?",
+          enunciado: "Para \\(f(x) = \\frac{x^2 - 9}{x - 3}\\), monte \\(x = 2{,}9\\) · \\(2{,}99\\) · \\(3{,}01\\) · \\(3{,}1\\). Qual tendência?",
           resposta: "Valores perto de 6.",
-          resolucao: "f(x) = x + 3 para x ≠ 3 → f(2,99) ≈ 5,99.",
-          interpretacao: "lim (x→3) f(x) = 6.",
+          resolucao: "\\(f(x) = x + 3\\) para \\(x \\neq 3 \\to f(2{,}99) \\approx 5{,}99\\).",
+          interpretacao: "\\(\\lim_{x \\to 3} f(x) = 6\\).",
         },
         {
           id: "tab-g2",
           type: "compreensao",
-          enunciado: "Por que testar x à esquerda e à direita de a?",
+          enunciado: "Por que testar \\(x\\) à esquerda e à direita de \\(a\\)?",
           resposta: "Para detectar se os dois lados convergem ao mesmo L.",
           resolucao: "Limites laterais podem diferir.",
           interpretacao: "Tabela bilateral é hábito essencial.",
@@ -100,9 +102,9 @@ export const limitesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Tabela: x perto de a → calcular f(x) → observar tendência.",
-        "Funciona mesmo quando f(a) não existe.",
-        "Teste esquerda e direita de a.",
+        "Tabela: \\(x\\) perto de \\(a\\) → calcular \\(f(x)\\) → observar tendência.",
+        "Funciona mesmo quando \\(f(a)\\) não existe.",
+        "Teste esquerda e direita de \\(a\\).",
         "Próximo: ler a mesma ideia no gráfico.",
       ],
     },
@@ -122,20 +124,22 @@ export const limitesAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "O gráfico mostra tendência de um relance: para onde a curva caminha quando x se aproxima de a?",
-        "Buracos e saltos explicam por que f(a) pode faltar ou diferir do limite.",
+        "O gráfico mostra tendência de um relance: para onde a curva caminha quando \\(x\\) se aproxima de \\(a\\)?",
+        "Buracos e saltos explicam por que \\(f(a)\\) pode faltar ou diferir do limite.",
         "Ler gráficos com cuidado evita confundir valor no ponto com comportamento perto dele.",
       ],
     },
     explicacao: {
       title: "Ler tendência no gráfico",
       paragraphs: [
-        "Aproxime x de a pelo eixo horizontal e siga f(x) no eixo vertical.",
-        "Buraco (○): f(a) ausente, mas curva tende a L — limite existe.",
+        "Aproxime \\(x\\) de \\(a\\) pelo eixo horizontal e siga \\(f(x)\\) no eixo vertical.",
+        "Buraco (○): \\(f(a)\\) ausente, mas curva tende a \\(L\\) — limite existe.",
         "Salto: lados esquerdo e direito tendem a alturas diferentes — limite bilateral não existe.",
       ],
       callout: "Limite = altura para onde a curva aponta, não necessariamente o ponto marcado.",
       formula: "lim (x→a) f(x) = L",
+      formulaLatex: "\\lim_{x \\to a} f(x) = L",
+      formulaAria: "limite quando x tende a a de f de x igual a L",
       formulaLegend: "L = y para o qual a curva se aproxima visualmente",
     },
     ondeAparece: {
@@ -149,14 +153,14 @@ export const limitesAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Três gráficos mentais",
-      situacao: "Compare: (1) reta com buraco em (2, 5); (2) degrau em x = 2; (3) curva suave passando por (2, 5).",
+      situacao: "Compare: (1) reta com buraco em \\((2, 5)\\); (2) degrau em \\(x = 2\\); (3) curva suave passando por \\((2, 5)\\).",
     },
     passos: {
       title: "Análise visual",
       steps: [
-        { title: "Buraco", detail: "Curva → 5; ponto vazio → lim (x→2) f(x) = 5." },
+        { title: "Buraco", detail: "Curva → 5; ponto vazio → \\(\\lim_{x \\to 2} f(x) = 5\\)." },
         { title: "Salto", detail: "Esquerda → 3, direita → 7 → limite bilateral não existe." },
-        { title: "Contínuo", detail: "Curva passa por (2, 5) → limite = f(2) = 5." },
+        { title: "Contínuo", detail: "Curva passa por \\((2, 5)\\) → limite \\(= f(2) = 5\\)." },
         { title: "Registrar L", detail: "Anote L e tipo de quebra antes de calcular." },
       ],
     },
@@ -181,17 +185,17 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "graf-g1",
           type: "interpretacao",
-          enunciado: "Gráfico: reta y = x + 1 com buraco em (1, 2). Qual lim (x→1) f(x)?",
-          resposta: "2",
-          resolucao: "Curva tende a y = 2; buraco não altera tendência.",
+          enunciado: "Gráfico: reta \\(y = x + 1\\) com buraco em \\((1, 2)\\). Qual \\(\\lim_{x \\to 1} f(x)\\)?",
+          resposta: "\\(2\\)",
+          resolucao: "Curva tende a \\(y = 2\\); buraco não altera tendência.",
           interpretacao: "Limite ≠ valor no ponto quando há buraco.",
         },
         {
           id: "graf-g2",
           type: "compreensao",
-          enunciado: "Degrau em x = 0: esquerda em y = −1, direita em y = 1. Existe lim (x→0) f(x)?",
+          enunciado: "Degrau em \\(x = 0\\): esquerda em \\(y = -1\\), direita em \\(y = 1\\). Existe \\(\\lim_{x \\to 0} f(x)\\)?",
           resposta: "Não (laterais diferentes).",
-          resolucao: "3 ≠ 7 no exemplo de salto; aqui −1 ≠ 1.",
+          resolucao: "\\(3 \\neq 7\\) no exemplo de salto; aqui \\(-1 \\neq 1\\).",
           interpretacao: "Salto = limite bilateral falha.",
         },
       ],
@@ -200,8 +204,8 @@ export const limitesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Siga a curva quando x → a para ler L.",
-        "Buraco: limite pode existir sem f(a).",
+        "Siga a curva quando \\(x \\to a\\) para ler \\(L\\).",
+        "Buraco: limite pode existir sem \\(f(a)\\).",
         "Salto: limites laterais distintos.",
         "Próximo: calcular por substituição quando possível.",
       ],
@@ -222,55 +226,57 @@ export const limitesAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Quando a função é \"bem comportada\" em a, o limite é simplesmente f(a) — basta substituir.",
-        "Muitos limites parecem difíceis porque x = a gera 0/0 ou forma indeterminada; aí substituição direta falha, mas a tendência ainda existe.",
+        "Quando a função é \"bem comportada\" em \\(a\\), o limite é simplesmente \\(f(a)\\) — basta substituir.",
+        "Muitos limites parecem difíceis porque \\(x = a\\) gera \\(\\frac{0}{0}\\) ou forma indeterminada; aí substituição direta falha, mas a tendência ainda existe.",
         "Reconhecer quando substituir funciona economiza tempo em prova e em modelos aplicados.",
       ],
     },
     explicacao: {
       title: "Substituir com critério",
       paragraphs: [
-        "Se f é contínua em a (sem buraco, salto ou assíntota), então lim (x→a) f(x) = f(a).",
-        "Substitua x = a na expressão. Se obtiver número definido, esse é o limite.",
-        "Se der 0/0, ∞/∞ ou outra indeterminação, simplifique (fatorar, racionalizar) antes de substituir de novo.",
+        "Se \\(f\\) é contínua em \\(a\\) (sem buraco, salto ou assíntota), então \\(\\lim_{x \\to a} f(x) = f(a)\\).",
+        "Substitua \\(x = a\\) na expressão. Se obtiver número definido, esse é o limite.",
+        "Se der \\(\\frac{0}{0}\\), \\(\\frac{\\infty}{\\infty}\\) ou outra indeterminação, simplifique (fatorar, racionalizar) antes de substituir de novo.",
       ],
       callout: "Substituição direta é o atalho — quando a continuidade garante.",
       formula: "lim (x→a) f(x) = f(a)",
+      formulaLatex: "\\lim_{x \\to a} f(x) = f(a)",
+      formulaAria: "limite quando x tende a a de f de x igual a f de a",
       formulaLegend: "válido quando f é contínua em a",
     },
     ondeAparece: {
       title: "Aplicações reais",
       items: [
         { label: "Polinômios", detail: "Sempre contínuos → substituição imediata" },
-        { label: "Custo", detail: "C(10) = custo exato de 10 unidades" },
-        { label: "Posição", detail: "s(5) = onde o móvel está aos 5 s" },
+        { label: "Custo", detail: "\\(C(10)\\) = custo exato de 10 unidades" },
+        { label: "Posição", detail: "\\(s(5)\\) = onde o móvel está aos 5 s" },
         { label: "Engenharia", detail: "Modelos válidos só após simplificar singularidades" },
       ],
     },
     exemplo: {
       title: "Dois casos",
-      situacao: "(A) lim (x→3) (x² + 2x − 1). (B) lim (x→2) (x² − 4)/(x − 2).",
+      situacao: "(A) \\(\\lim_{x \\to 3} (x^2 + 2x - 1)\\). (B) \\(\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}\\).",
     },
     passos: {
       title: "Resolver",
       steps: [
-        { title: "Caso A", detail: "Polinômio contínuo → 9 + 6 − 1 = 14." },
-        { title: "Caso B — tentativa", detail: "x = 2 → 0/0 (indeterminação)." },
-        { title: "Simplificar", detail: "(x−2)(x+2)/(x−2) = x + 2 para x ≠ 2." },
-        { title: "Substituir", detail: "x = 2 → 4." },
+        { title: "Caso A", detail: "Polinômio contínuo → \\(9 + 6 - 1 = 14\\)." },
+        { title: "Caso B — tentativa", detail: "\\(x = 2 \\to \\frac{0}{0}\\) (indeterminação)." },
+        { title: "Simplificar", detail: "\\(\\frac{(x-2)(x+2)}{x-2} = x + 2\\) para \\(x \\neq 2\\)." },
+        { title: "Substituir", detail: "\\(x = 2 \\to 4\\)." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "0/0 não significa limite inexistente — significa que substituição bruta falhou.",
+        "\\(\\frac{0}{0}\\) não significa limite inexistente — significa que substituição bruta falhou.",
         "Simplificar revela a tendência que tabela e gráfico já sugeriam.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Substituir em 0/0 sem simplificar e concluir \"não existe\".",
+        "Substituir em \\(\\frac{0}{0}\\) sem simplificar e concluir \"não existe\".",
         "Cancelar termos que não são fatores comuns (ex.: somar em vez de fatorar).",
         "Esquecer que simplificação altera domínio — limite ignora o buraco.",
       ],
@@ -281,18 +287,18 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "sub-g1",
           type: "calculo",
-          enunciado: "lim (x→−1) (3x² − x + 2)",
-          resposta: "6",
-          resolucao: "Polinômio → 3(1) + 1 + 2 = 6.",
+          enunciado: "\\(\\lim_{x \\to -1} (3x^2 - x + 2)\\)",
+          resposta: "\\(6\\)",
+          resolucao: "Polinômio → \\(3(1) + 1 + 2 = 6\\).",
           interpretacao: "Substituição direta.",
         },
         {
           id: "sub-g2",
           type: "calculo",
-          enunciado: "lim (x→5) (x² − 25)/(x − 5)",
-          resposta: "10",
-          resolucao: "(x−5)(x+5)/(x−5) = x + 5 → 10.",
-          interpretacao: "0/0 resolvido por fatoração.",
+          enunciado: "\\(\\lim_{x \\to 5} \\frac{x^2 - 25}{x - 5}\\)",
+          resposta: "\\(10\\)",
+          resolucao: "\\(\\frac{(x-5)(x+5)}{x-5} = x + 5 \\to 10\\).",
+          interpretacao: "\\(\\frac{0}{0}\\) resolvido por fatoração.",
         },
       ],
     },
@@ -300,8 +306,8 @@ export const limitesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Contínua em a → limite = f(a).",
-        "0/0 pede simplificação antes de substituir.",
+        "Contínua em \\(a\\) → limite \\(= f(a)\\).",
+        "\\(\\frac{0}{0}\\) pede simplificação antes de substituir.",
         "Fatorar e racionalizar são ferramentas básicas.",
         "Próximo: limites laterais quando os lados diferem.",
       ],
@@ -330,40 +336,42 @@ export const limitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Um lado de cada vez",
       paragraphs: [
-        "Limite à esquerda: x se aproxima de a com x < a. Notação: lim (x→a⁻) f(x).",
-        "Limite à direita: x se aproxima de a com x > a. Notação: lim (x→a⁺) f(x).",
+        "Limite à esquerda: \\(x\\) se aproxima de \\(a\\) com \\(x < a\\). Notação: \\(\\lim_{x \\to a^-} f(x)\\).",
+        "Limite à direita: \\(x\\) se aproxima de \\(a\\) com \\(x > a\\). Notação: \\(\\lim_{x \\to a^+} f(x)\\).",
         "Limite bilateral existe ⟺ limites laterais existem e são iguais.",
       ],
       callout: "Salto no gráfico = laterais diferentes.",
       formula: "lim (x→a) f(x) = L ⟺ lim (x→a⁻) f(x) = lim (x→a⁺) f(x) = L",
+      formulaLatex: "\\lim_{x \\to a} f(x) = L \\iff \\lim_{x \\to a^-} f(x) = \\lim_{x \\to a^+} f(x) = L",
+      formulaAria: "limite bilateral igual a L se e somente se limites laterais iguais a L",
       formulaLegend: "a⁻ = por baixo · a⁺ = por cima",
     },
     ondeAparece: {
       title: "Aplicações reais",
       items: [
-        { label: "Tarifas", detail: "Preço muda exatamente em x = k unidades" },
-        { label: "Controle", detail: "Sinal liga/desliga em instante t₀" },
+        { label: "Tarifas", detail: "Preço muda exatamente em \\(x = k\\) unidades" },
+        { label: "Controle", detail: "Sinal liga/desliga em instante \\(t_0\\)" },
         { label: "Engenharia", detail: "Material com comportamento distinto em compressão vs tração" },
         { label: "Economia", detail: "Imposto com faixa que salta no limite" },
       ],
     },
     exemplo: {
       title: "Função por partes",
-      situacao: "f(x) = { x + 1 se x < 2; 5 se x = 2; 2x − 1 se x > 2 }. Estude x → 2.",
+      situacao: "\\[f(x) = \\begin{cases} x + 1 & x < 2 \\\\ 5 & x = 2 \\\\ 2x - 1 & x > 2 \\end{cases}\\] Estude \\(x \\to 2\\).",
     },
     passos: {
       title: "Calcular laterais",
       steps: [
-        { title: "Esquerda", detail: "x → 2⁻ usa x + 1 → tende a 3." },
-        { title: "Direita", detail: "x → 2⁺ usa 2x − 1 → tende a 3." },
-        { title: "Comparar", detail: "3 = 3 → lim (x→2) f(x) = 3." },
-        { title: "Observar f(2)", detail: "f(2) = 5 ≠ 3 — limite existe, valor no ponto difere." },
+        { title: "Esquerda", detail: "\\(x \\to 2^-\\) usa \\(x + 1\\) → tende a 3." },
+        { title: "Direita", detail: "\\(x \\to 2^+\\) usa \\(2x - 1\\) → tende a 3." },
+        { title: "Comparar", detail: "\\(3 = 3 \\to \\lim_{x \\to 2} f(x) = 3\\)." },
+        { title: "Observar f(2)", detail: "\\(f(2) = 5 \\neq 3\\) — limite existe, valor no ponto difere." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "Laterais explicam saltos: se 3 ≠ 7, limite bilateral não existe.",
+        "Laterais explicam saltos: se \\(3 \\neq 7\\), limite bilateral não existe.",
         "Em aplicações, o lado importa: chegar ao limite por baixo vs por cima pode ter significados distintos.",
       ],
     },
@@ -372,7 +380,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       items: [
         "Usar a fórmula errada do lado errado da fronteira.",
         "Achar que limite bilateral existe só porque um dos lados existe.",
-        "Confundir limite lateral com valor de f(a).",
+        "Confundir limite lateral com valor de \\(f(a)\\).",
       ],
     },
     exerciciosGuiados: {
@@ -381,17 +389,17 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "lat-g1",
           type: "calculo",
-          enunciado: "f(x) = |x|/x para x ≠ 0. Qual lim (x→0⁺) e lim (x→0⁻)?",
-          resposta: "1 e −1",
-          resolucao: "x > 0 → 1; x < 0 → −1.",
-          interpretacao: "Laterais diferentes → lim (x→0) não existe.",
+          enunciado: "\\(f(x) = \\frac{|x|}{x}\\) para \\(x \\neq 0\\). Qual \\(\\lim_{x \\to 0^+}\\) e \\(\\lim_{x \\to 0^-}\\)?",
+          resposta: "\\(1\\) e \\(-1\\)",
+          resolucao: "\\(x > 0 \\to 1\\); \\(x < 0 \\to -1\\).",
+          interpretacao: "Laterais diferentes → \\(\\lim_{x \\to 0}\\) não existe.",
         },
         {
           id: "lat-g2",
           type: "interpretacao",
-          enunciado: "Gráfico com degrau: esquerda 4, direita 4. Existe lim (x→a) f(x)?",
-          resposta: "Sim, L = 4",
-          resolucao: "Laterais iguais bastam; f(a) pode ainda saltar.",
+          enunciado: "Gráfico com degrau: esquerda 4, direita 4. Existe \\(\\lim_{x \\to a} f(x)\\)?",
+          resposta: "Sim, \\(L = 4\\)",
+          resolucao: "Laterais iguais bastam; \\(f(a)\\) pode ainda saltar.",
           interpretacao: "Coincidência lateral = limite bilateral.",
         },
       ],
@@ -400,7 +408,7 @@ export const limitesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "a⁻ e a⁺: aproximar por um lado.",
+        "\\(a^-\\) e \\(a^+\\): aproximar por um lado.",
         "Limite bilateral exige laterais iguais.",
         "Saltos e tarifas por partes são casos típicos.",
         "Próximo: quando f(x) → ±∞.",
@@ -430,12 +438,14 @@ export const limitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Quando f(x) dispara",
       paragraphs: [
-        "lim (x→a) f(x) = +∞ significa: f(x) cresce além de qualquer M, se x estiver suficientemente perto de a.",
-        "Analogamente −∞ para decrescimento ilimitado.",
-        "Gráfico: curva sobe ou desce \"verticalmente\" perto da reta x = a.",
+        "\\(\\lim_{x \\to a} f(x) = +\\infty\\) significa: \\(f(x)\\) cresce além de qualquer \\(M\\), se \\(x\\) estiver suficientemente perto de \\(a\\).",
+        "Analogamente \\(-\\infty\\) para decrescimento ilimitado.",
+        "Gráfico: curva sobe ou desce \"verticalmente\" perto da reta \\(x = a\\).",
       ],
-      callout: "∞ não é um número — é shorthand para \"fica arbitrariamente grande\".",
+      callout: "\\(\\infty\\) não é um número — é shorthand para \"fica arbitrariamente grande\".",
       formula: "lim (x→a) f(x) = +∞",
+      formulaLatex: "\\lim_{x \\to a} f(x) = +\\infty",
+      formulaAria: "limite quando x tende a a de f de x igual a mais infinito",
       formulaLegend: "f(x) > M para x perto de a (M qualquer)",
     },
     ondeAparece: {
@@ -449,30 +459,30 @@ export const limitesAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "f(x) = 1/(x − 3)²",
-      situacao: "Descreva o comportamento quando x → 3.",
+      situacao: "Descreva o comportamento quando \\(x \\to 3\\).",
     },
     passos: {
       title: "Análise",
       steps: [
-        { title: "Denominador", detail: "→ 0 quando x → 3." },
-        { title: "Sinal", detail: "(x−3)² > 0 para x ≠ 3 → f(x) > 0." },
-        { title: "Magnitude", detail: "Quanto menor |x−3|, maior f(x)." },
-        { title: "Conclusão", detail: "lim (x→3) f(x) = +∞; x = 3 é assíntota vertical." },
+        { title: "Denominador", detail: "→ 0 quando \\(x \\to 3\\)." },
+        { title: "Sinal", detail: "\\((x-3)^2 > 0\\) para \\(x \\neq 3 \\to f(x) > 0\\)." },
+        { title: "Magnitude", detail: "Quanto menor \\(|x-3|\\), maior \\(f(x)\\)." },
+        { title: "Conclusão", detail: "\\(\\lim_{x \\to 3} f(x) = +\\infty\\); \\(x = 3\\) é assíntota vertical." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "+∞ e −∞ importam para o lado da curva em relação ao eixo x.",
-        "Laterais podem ser +∞ de um lado e −∞ do outro (ex.: 1/x em x = 0).",
+        "\\(+\\infty\\) e \\(-\\infty\\) importam para o lado da curva em relação ao eixo x.",
+        "Laterais podem ser \\(+\\infty\\) de um lado e \\(-\\infty\\) do outro (ex.: \\(\\frac{1}{x}\\) em \\(x = 0\\)).",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Tratar ∞ como valor numérico para operar.",
-        "Esquecer de verificar sinal ( +∞ vs −∞ ).",
-        "Confundir limite infinito (f → ∞) com limite no infinito (x → ∞).",
+        "Tratar \\(\\infty\\) como valor numérico para operar.",
+        "Esquecer de verificar sinal (\\(+\\infty\\) vs \\(-\\infty\\)).",
+        "Confundir limite infinito (\\(f \\to \\infty\\)) com limite no infinito (\\(x \\to \\infty\\)).",
       ],
     },
     exerciciosGuiados: {
@@ -481,18 +491,18 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "inf-g1",
           type: "calculo",
-          enunciado: "lim (x→0⁺) 1/x e lim (x→0⁻) 1/x",
-          resposta: "+∞ e −∞",
-          resolucao: "x > 0 → positivo grande; x < 0 → negativo grande.",
+          enunciado: "\\(\\lim_{x \\to 0^+} \\frac{1}{x}\\) e \\(\\lim_{x \\to 0^-} \\frac{1}{x}\\)",
+          resposta: "\\(+\\infty\\) e \\(-\\infty\\)",
+          resolucao: "\\(x > 0\\) → positivo grande; \\(x < 0\\) → negativo grande.",
           interpretacao: "Laterais com sinais opostos.",
         },
         {
           id: "inf-g2",
           type: "interpretacao",
-          enunciado: "f(x) = 1/(x − 1). Por que x = 1 é assíntota vertical?",
-          resposta: "Denominador zero → |f| → ∞",
-          resolucao: "lim (x→1) |f(x)| = ∞.",
-          interpretacao: "Padrão 1/(x−a).",
+          enunciado: "\\(f(x) = \\frac{1}{x - 1}\\). Por que \\(x = 1\\) é assíntota vertical?",
+          resposta: "Denominador zero → \\(|f| \\to \\infty\\)",
+          resolucao: "\\(\\lim_{x \\to 1} |f(x)| = \\infty\\).",
+          interpretacao: "Padrão \\(\\frac{1}{x-a}\\).",
         },
       ],
     },
@@ -500,8 +510,8 @@ export const limitesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "f(x) → ±∞ quando x → a: crescimento ilimitado.",
-        "Gráfico: assíntota vertical x = a.",
+        "\\(f(x) \\to \\pm\\infty\\) quando \\(x \\to a\\): crescimento ilimitado.",
+        "Gráfico: assíntota vertical \\(x = a\\).",
         "Verifique laterais e sinal.",
         "Próximo: x → ±∞ (comportamento no infinito).",
       ],
@@ -530,49 +540,51 @@ export const limitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Comportamento assintótico",
       paragraphs: [
-        "lim (x→+∞) f(x) = L: valores de f(x) ficam arbitrariamente perto de L se x for grande o bastante.",
+        "\\(\\lim_{x \\to +\\infty} f(x) = L\\): valores de \\(f(x)\\) ficam arbitrariamente perto de \\(L\\) se \\(x\\) for grande o bastante.",
         "Polinômio vs racional: grau do numerador comparado ao denominador decide se tende a ∞ ou a constante.",
-        "Regra rápida: grau num < grau den → L = 0; graus iguais → razão dos coeficientes líderes.",
+        "Regra rápida: grau num < grau den → \\(L = 0\\); graus iguais → razão dos coeficientes líderes.",
       ],
-      callout: "Pense no gráfico \"achatando\" perto de y = L.",
+      callout: "Pense no gráfico \"achatando\" perto de \\(y = L\\).",
       formula: "lim (x→+∞) f(x) = L",
+      formulaLatex: "\\lim_{x \\to +\\infty} f(x) = L",
+      formulaAria: "limite quando x tende a mais infinito de f de x igual a L",
       formulaLegend: "L pode ser 0, constante ou ±∞",
     },
     ondeAparece: {
       title: "Aplicações reais",
       items: [
         { label: "Economia", detail: "Demanda tende a patamar quando preço sobe muito" },
-        { label: "Biologia", detail: "População próxima de capacidade máxima K" },
+        { label: "Biologia", detail: "População próxima de capacidade máxima \\(K\\)" },
         { label: "Engenharia", detail: "Resposta em regime permanente" },
         { label: "Medicina", detail: "Concentração plasmática estabiliza com tempo longo" },
       ],
     },
     exemplo: {
       title: "f(x) = (3x² + 1)/(x² + 4)",
-      situacao: "Determine lim (x→+∞) f(x) e lim (x→−∞) f(x).",
+      situacao: "Determine \\(\\lim_{x \\to +\\infty} f(x)\\) e \\(\\lim_{x \\to -\\infty} f(x)\\).",
     },
     passos: {
       title: "Resolver",
       steps: [
         { title: "Graus", detail: "Numerador e denominador grau 2." },
-        { title: "Coeficientes", detail: "3/1 = 3 no termo líder." },
-        { title: "Conclusão", detail: "lim (x→±∞) f(x) = 3." },
-        { title: "Gráfico", detail: "Assíntota horizontal y = 3." },
+        { title: "Coeficientes", detail: "\\(\\frac{3}{1} = 3\\) no termo líder." },
+        { title: "Conclusão", detail: "\\(\\lim_{x \\to \\pm\\infty} f(x) = 3\\)." },
+        { title: "Gráfico", detail: "Assíntota horizontal \\(y = 3\\)." },
       ],
     },
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "y = 3 é o valor de longo prazo do modelo racional.",
-        "Se grau num > grau den, limite no infinito é ±∞ — curva não achata.",
+        "\\(y = 3\\) é o valor de longo prazo do modelo racional.",
+        "Se grau num > grau den, limite no infinito é \\(\\pm\\infty\\) — curva não achata.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Confundir lim (x→a) f(x) = ∞ com lim (x→∞) f(x).",
+        "Confundir \\(\\lim_{x \\to a} f(x) = \\infty\\) com \\(\\lim_{x \\to \\infty} f(x)\\).",
         "Esquecer termos de grau menor — só o líder decide no infinito.",
-        "Assumir L = 0 sempre para racionais.",
+        "Assumir \\(L = 0\\) sempre para racionais.",
       ],
     },
     exerciciosGuiados: {
@@ -581,16 +593,16 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "ninf-g1",
           type: "calculo",
-          enunciado: "lim (x→+∞) (5x + 2)/(2x − 7)",
-          resposta: "5/2",
-          resolucao: "Graus iguais → 5/2.",
-          interpretacao: "Assíntota horizontal y = 5/2.",
+          enunciado: "\\(\\lim_{x \\to +\\infty} \\frac{5x + 2}{2x - 7}\\)",
+          resposta: "\\(\\frac{5}{2}\\)",
+          resolucao: "Graus iguais → \\(\\frac{5}{2}\\).",
+          interpretacao: "Assíntota horizontal \\(y = \\frac{5}{2}\\).",
         },
         {
           id: "ninf-g2",
           type: "calculo",
-          enunciado: "lim (x→+∞) (x + 1)/(x² + 3)",
-          resposta: "0",
+          enunciado: "\\(\\lim_{x \\to +\\infty} \\frac{x + 1}{x^2 + 3}\\)",
+          resposta: "\\(0\\)",
           resolucao: "Grau num < grau den.",
           interpretacao: "Curva achata no eixo x.",
         },
@@ -600,9 +612,9 @@ export const limitesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "x → ±∞: estuda comportamento de longo prazo.",
+        "\\(x \\to \\pm\\infty\\): estuda comportamento de longo prazo.",
         "Racionais: compare graus e coeficientes líderes.",
-        "Assíntota horizontal y = L quando lim = L finito.",
+        "Assíntota horizontal \\(y = L\\) quando lim \\(= L\\) finito.",
         "Próximo: vertical, horizontal e oblíqua juntas.",
       ],
     },
@@ -630,12 +642,14 @@ export const limitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Três tipos (introdução)",
       paragraphs: [
-        "Vertical x = a: lim (x→a) |f(x)| = ∞ — denominador zero, explosão local.",
-        "Horizontal y = L: lim (x→±∞) f(x) = L — comportamento de longo prazo.",
-        "Oblíqua y = mx + b: quando grau num = grau den + 1, a curva aproxima uma reta inclinada (divisão polinomial).",
+        "Vertical \\(x = a\\): \\(\\lim_{x \\to a} |f(x)| = \\infty\\) — denominador zero, explosão local.",
+        "Horizontal \\(y = L\\): \\(\\lim_{x \\to \\pm\\infty} f(x) = L\\) — comportamento de longo prazo.",
+        "Oblíqua \\(y = mx + b\\): quando grau num = grau den + 1, a curva aproxima uma reta inclinada (divisão polinomial).",
       ],
       callout: "Assíntota descreve tendência do gráfico, não interseção obrigatória.",
       formula: "y = L · y = mx + b · x = a",
+      formulaLatex: "y = L \\quad y = mx + b \\quad x = a",
+      formulaAria: "y igual a L; y igual a m x mais b; x igual a a",
       formulaLegend: "horizontal · oblíqua · vertical",
     },
     ondeAparece: {
@@ -644,7 +658,7 @@ export const limitesAulas: Record<string, AulaContent> = {
         { label: "Engenharia", detail: "Capacidade máxima (horizontal)" },
         { label: "Economia", detail: "Custo médio → custo marginal (oblíqua em modelos)" },
         { label: "Física", detail: "Assíntota vertical em singularidade idealizada" },
-        { label: "Biologia", detail: "y = K capacidade de ambiente" },
+        { label: "Biologia", detail: "\\(y = K\\) capacidade de ambiente" },
       ],
     },
     exemplo: {
@@ -654,10 +668,10 @@ export const limitesAulas: Record<string, AulaContent> = {
     passos: {
       title: "Inventário",
       steps: [
-        { title: "Vertical", detail: "x = 0 (denominador); lim (x→0) |f| = ∞." },
+        { title: "Vertical", detail: "\\(x = 0\\) (denominador); \\(\\lim_{x \\to 0} |f| = \\infty\\)." },
         { title: "Horizontal?", detail: "Grau num > den → não há horizontal finita." },
-        { title: "Oblíqua", detail: "(x²+1)/x = x + 1/x → y = x (reta guia)." },
-        { title: "Esboço mental", detail: "Curva segue y = x longe da origem; explode em x = 0." },
+        { title: "Oblíqua", detail: "\\(\\frac{x^2+1}{x} = x + \\frac{1}{x} \\to y = x\\) (reta guia)." },
+        { title: "Esboço mental", detail: "Curva segue \\(y = x\\) longe da origem; explode em \\(x = 0\\)." },
       ],
     },
     interpretacao: {
@@ -681,17 +695,17 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "ass-g1",
           type: "calculo",
-          enunciado: "f(x) = 2/(x − 5). Assíntota vertical?",
-          resposta: "x = 5",
-          resolucao: "Denominador zero em x = 5.",
-          interpretacao: "Padrão k/(x−a).",
+          enunciado: "\\(f(x) = \\frac{2}{x - 5}\\). Assíntota vertical?",
+          resposta: "\\(x = 5\\)",
+          resolucao: "Denominador zero em \\(x = 5\\).",
+          interpretacao: "Padrão \\(\\frac{k}{x-a}\\).",
         },
         {
           id: "ass-g2",
           type: "calculo",
-          enunciado: "f(x) = (2x² + 3)/(x + 1). Assíntota oblíqua?",
-          resposta: "y = 2x − 2",
-          resolucao: "Divisão: 2x − 2 + 5/(x+1); resto → 0 no ∞.",
+          enunciado: "\\(f(x) = \\frac{2x^2 + 3}{x + 1}\\). Assíntota oblíqua?",
+          resposta: "\\(y = 2x - 2\\)",
+          resolucao: "Divisão: \\(2x - 2 + \\frac{5}{x+1}\\); resto → 0 no \\(\\infty\\).",
           interpretacao: "Grau num = grau den + 1 → oblíqua.",
         },
       ],
@@ -700,8 +714,8 @@ export const limitesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Vertical: lim infinito em x = a.",
-        "Horizontal: lim finito quando x → ±∞.",
+        "Vertical: lim infinito em \\(x = a\\).",
+        "Horizontal: lim finito quando \\(x \\to \\pm\\infty\\).",
         "Oblíqua: reta inclinada guia no infinito.",
         "Próximo: velocidade instantânea via limites.",
       ],
@@ -723,19 +737,21 @@ export const limitesAulas: Record<string, AulaContent> = {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
         "Velocidade no velocímetro não é média da viagem inteira — é o que acontece \"agora\", em um instante.",
-        "Com s(t) = posição, velocidade média em [t₁, t₂] usa diferença; instantânea exige intervalo cada vez menor.",
+        "Com \\(s(t)\\) = posição, velocidade média em \\([t_1, t_2]\\) usa diferença; instantânea exige intervalo cada vez menor.",
         "Limite transforma taxa média em taxa instantânea — ponte direta para derivada.",
       ],
     },
     explicacao: {
       title: "De média a instantânea",
       paragraphs: [
-        "Velocidade média: v_méd = Δs/Δt = (s(t₂) − s(t₁))/(t₂ − t₁).",
-        "Instantânea em t = a: lim (Δt→0) [s(a + Δt) − s(a)]/Δt.",
+        "Velocidade média: \\(v_{\\text{méd}} = \\frac{\\Delta s}{\\Delta t} = \\frac{s(t_2) - s(t_1)}{t_2 - t_1}\\).",
+        "Instantânea em \\(t = a\\): \\(\\lim_{\\Delta t \\to 0} \\frac{s(a + \\Delta t) - s(a)}{\\Delta t}\\).",
         "Geometricamente: inclinação da reta secante → inclinação da tangente.",
       ],
       callout: "Limite dá sentido preciso a \"velocidade no instante\".",
       formula: "v(a) = lim (Δt→0) [s(a + Δt) − s(a)]/Δt",
+      formulaLatex: "v(a) = \\lim_{\\Delta t \\to 0} \\frac{s(a + \\Delta t) - s(a)}{\\Delta t}",
+      formulaAria: "v de a igual ao limite quando delta t tende a zero de s de a mais delta t menos s de a, sobre delta t",
       formulaLegend: "v(a) = velocidade instantânea em t = a",
     },
     ondeAparece: {
@@ -743,21 +759,21 @@ export const limitesAulas: Record<string, AulaContent> = {
       items: [
         { label: "Trânsito", detail: "s(t) do GPS → velocidade no radar" },
         { label: "Engenharia", detail: "Taxa de deformação em materiais" },
-        { label: "Economia", detail: "Custo marginal como limite de ΔC/Δq" },
+        { label: "Economia", detail: "Custo marginal como limite de \\(\\frac{\\Delta C}{\\Delta q}\\)" },
         { label: "Medicina", detail: "Taxa de eliminação de fármaco no sangue" },
       ],
     },
     exemplo: {
       title: "s(t) = t² (metros)",
-      situacao: "Velocidade média em [2, 2,5] e limite para instantânea em t = 2.",
+      situacao: "Velocidade média em [2, 2,5] e limite para instantânea em \\(t = 2\\).",
     },
     passos: {
       title: "Calcular",
       steps: [
-        { title: "Média", detail: "Δs = 2,5² − 2² = 2,25 m; Δt = 0,5 s → 4,5 m/s." },
-        { title: "Intervalo menor", detail: "[2, 2,1]: Δs/Δt ≈ 4,1 m/s." },
-        { title: "Limite", detail: "Quando Δt → 0, tende a 4 m/s." },
-        { title: "Interpretar", detail: "v(2) = 4 m/s — instantânea em t = 2." },
+        { title: "Média", detail: "\\(\\Delta s = 2{,}5^2 - 2^2 = 2{,}25\\) m; \\(\\Delta t = 0{,}5\\) s → 4,5 m/s." },
+        { title: "Intervalo menor", detail: "[2, 2,1]: \\(\\frac{\\Delta s}{\\Delta t} \\approx 4{,}1\\) m/s." },
+        { title: "Limite", detail: "Quando \\(\\Delta t \\to 0\\), tende a 4 m/s." },
+        { title: "Interpretar", detail: "\\(v(2) = 4\\) m/s — instantânea em \\(t = 2\\)." },
       ],
     },
     interpretacao: {
@@ -772,7 +788,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       items: [
         "Usar velocidade média da viagem como instantânea.",
         "Esquecer unidades (m/s, km/h).",
-        "Confundir posição s(a) com velocidade v(a).",
+        "Confundir posição \\(s(a)\\) com velocidade \\(v(a)\\).",
       ],
     },
     exerciciosGuiados: {
@@ -781,15 +797,15 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "vel-g1",
           type: "calculo",
-          enunciado: "s(t) = 3t + 5. Velocidade média em [0, 4] e instantânea?",
+          enunciado: "\\(s(t) = 3t + 5\\). Velocidade média em [0, 4] e instantânea?",
           resposta: "3 m/s em ambos",
-          resolucao: "Movimento uniforme: Δs/Δt = 12/4 = 3; limite igual.",
+          resolucao: "Movimento uniforme: \\(\\frac{\\Delta s}{\\Delta t} = \\frac{12}{4} = 3\\); limite igual.",
           interpretacao: "Retilineo uniforme: média = instantânea.",
         },
         {
           id: "vel-g2",
           type: "aplicada",
-          enunciado: "C(q) = 1000 + 20q. O que representa lim (Δq→0) ΔC/Δq?",
+          enunciado: "\\(C(q) = 1000 + 20q\\). O que representa \\(\\lim_{\\Delta q \\to 0} \\frac{\\Delta C}{\\Delta q}\\)?",
           resposta: "Custo marginal instantâneo",
           resolucao: "Mesma estrutura de velocidade com C e q.",
           interpretacao: "Limite de taxa média → taxa instantânea.",
@@ -800,8 +816,8 @@ export const limitesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "s(t) posição; v média = Δs/Δt.",
-        "Instantânea = limite quando Δt → 0.",
+        "\\(s(t)\\) posição; v média \\(= \\frac{\\Delta s}{\\Delta t}\\).",
+        "Instantânea = limite quando \\(\\Delta t \\to 0\\).",
         "Motivação central para derivada.",
         "Próximo: panorama de aplicações.",
       ],
@@ -830,13 +846,15 @@ export const limitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Onde limites moram",
       paragraphs: [
-        "Velocidade e aceleração: limites de Δs/Δt e Δv/Δt.",
+        "Velocidade e aceleração: limites de \\(\\frac{\\Delta s}{\\Delta t}\\) e \\(\\frac{\\Delta v}{\\Delta t}\\).",
         "Economia: custo marginal, elasticidade perto de um preço.",
         "Engenharia: carga limite, deformação antes de ruptura (modelos ideais).",
-        "Biologia: população tendendo a capacidade K (limite finito no infinito).",
+        "Biologia: população tendendo a capacidade \\(K\\) (limite finito no infinito).",
       ],
       callout: "Pergunte sempre: o que se aproxima de quê?",
       formula: "lim (variável → alvo) (taxa ou função)",
+      formulaLatex: "\\lim_{x \\to a} f(x)",
+      formulaAria: "limite quando x tende a a de f de x",
       formulaLegend: "esqueleto comum das aplicações",
     },
     ondeAparece: {
@@ -850,13 +868,13 @@ export const limitesAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Custo de produção",
-      situacao: "C(q) = 500 + 8q + 0,01q². Discuta custo médio e custo marginal quando q cresce muito.",
+      situacao: "\\(C(q) = 500 + 8q + 0{,}01q^2\\). Discuta custo médio e custo marginal quando q cresce muito.",
     },
     passos: {
       title: "Análise",
       steps: [
-        { title: "Médio", detail: "C(q)/q = 500/q + 8 + 0,01q → ∞ quando q → ∞? termo 0,01q domina." },
-        { title: "Marginal (ideia)", detail: "ΔC/Δq ≈ 8 + 0,02q para q grande." },
+        { title: "Médio", detail: "\\(\\frac{C(q)}{q} = \\frac{500}{q} + 8 + 0{,}01q\\); o termo \\(0{,}01q\\) domina quando \\(q \\to \\infty\\)." },
+        { title: "Marginal (ideia)", detail: "\\(\\frac{\\Delta C}{\\Delta q} \\approx 8 + 0{,}02q\\) para q grande." },
         { title: "Limite no infinito", detail: "Custo marginal cresce sem bound — capacidade precisa de outro modelo." },
         { title: "Decisão", detail: "Limites alertam saturação ou necessidade de retificar modelo." },
       ],
@@ -864,7 +882,7 @@ export const limitesAulas: Record<string, AulaContent> = {
     interpretacao: {
       title: "Leitura",
       paragraphs: [
-        "Limites traduzem \"o que acontece no extremo\" em números ou ∞.",
+        "Limites traduzem \"o que acontece no extremo\" em números ou \\(\\infty\\).",
         "Revisão desta aula amarra tabela, gráfico, laterais, infinitos e velocidade.",
       ],
     },
@@ -872,7 +890,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Aplicar modelo fora do domínio onde foi calibrado.",
-        "Ignorar unidades e contexto ao interpretar L ou ∞.",
+        "Ignorar unidades e contexto ao interpretar L ou \\(\\infty\\).",
         "Confundir tendência com previsão exata.",
       ],
     },
@@ -882,7 +900,7 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "apl-g1",
           type: "aplicada",
-          enunciado: "Demanda D(p) = 1000/(1 + p). O que lim (p→+∞) D(p) sugere?",
+          enunciado: "Demanda \\(D(p) = \\frac{1000}{1 + p}\\). O que \\(\\lim_{p \\to +\\infty} D(p)\\) sugere?",
           resposta: "Demanda → 0",
           resolucao: "Denominador domina → 0.",
           interpretacao: "Preço muito alto esvazia demanda.",
@@ -891,7 +909,7 @@ export const limitesAulas: Record<string, AulaContent> = {
           id: "apl-g2",
           type: "compreensao",
           enunciado: "Cite duas situações onde limite infinito aparece.",
-          resposta: "Ex.: 1/(x−a) perto de a; tempo de fila quando demanda → capacidade",
+          resposta: "Ex.: \\(\\frac{1}{x-a}\\) perto de \\(a\\); tempo de fila quando demanda → capacidade",
           resolucao: "Explosão local ou modelo idealizado.",
           interpretacao: "Infinito = sem bound, não número.",
         },
@@ -932,34 +950,36 @@ export const limitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Checklist do módulo",
       paragraphs: [
-        "✓ Ideia: tendência quando x → a (sem exigir f(a)).",
+        "✓ Ideia: tendência quando \\(x \\to a\\) (sem exigir \\(f(a)\\)).",
         "✓ Tabela e gráfico: estimar L; buracos vs saltos.",
-        "✓ Substituir quando contínuo; simplificar 0/0.",
+        "✓ Substituir quando contínuo; simplificar \\(\\frac{0}{0}\\).",
         "✓ Laterais, infinitos, no infinito, assíntotas.",
-        "✓ Velocidade instantânea como limite de Δs/Δt.",
+        "✓ Velocidade instantânea como limite de \\(\\frac{\\Delta s}{\\Delta t}\\).",
       ],
       formula: "Próximo: continuidade em a",
-      formulaLegend: "f contínua em a ⟺ lim (x→a) f(x) = f(a)",
+      formulaLatex: "f \\text{ contínua em } a \\iff \\lim_{x \\to a} f(x) = f(a)",
+      formulaAria: "f contínua em a se e somente se o limite quando x tende a a de f de x é igual a f de a",
+      formulaLegend: "continuidade junta limite e valor no ponto",
       callout: "Continuidade junta limite e valor no ponto.",
     },
     ondeAparece: {
       title: "Conexão",
       items: [
-        { label: "Continuidade", detail: "Limite = f(a) sem quebra" },
+        { label: "Continuidade", detail: "Limite \\(= f(a)\\) sem quebra" },
         { label: "Derivada", detail: "Limite de taxa média" },
         { label: "Modelagem", detail: "Assíntotas e tendências" },
       ],
     },
     exemplo: {
       title: "Mini-simulado mental",
-      situacao: "f(x) = (x² − 1)/(x − 1). Limite em x = 1? Assíntotas de g(x) = 1/x + 2?",
+      situacao: "\\(f(x) = \\frac{x^2 - 1}{x - 1}\\). Limite em \\(x = 1\\)? Assíntotas de \\(g(x) = \\frac{1}{x} + 2\\)?",
     },
     passos: {
       title: "Revisão rápida",
       steps: [
-        { title: "f em x = 1", detail: "Simplifica x + 1 → lim = 2." },
-        { title: "g", detail: "Vertical x = 0; horizontal y = 2." },
-        { title: "Laterais", detail: "1/x: esquerda −∞, direita +∞ em 0." },
+        { title: "f em x = 1", detail: "Simplifica \\(x + 1 \\to\\) lim \\(= 2\\)." },
+        { title: "g", detail: "Vertical \\(x = 0\\); horizontal \\(y = 2\\)." },
+        { title: "Laterais", detail: "\\(\\frac{1}{x}\\): esquerda \\(-\\infty\\), direita \\(+\\infty\\) em 0." },
         { title: "Próximo módulo", detail: "Continuidade formaliza \"sem quebra\"." },
       ],
     },
@@ -975,7 +995,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       items: [
         "Memorizar regras sem interpretar tabela/gráfico.",
         "Pular limites laterais em funções por partes.",
-        "Tratar ∞ como número nas contas.",
+        "Tratar \\(\\infty\\) como número nas contas.",
       ],
     },
     exerciciosGuiados: {
@@ -984,7 +1004,7 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "revl-g1",
           type: "compreensao",
-          enunciado: "Liste três métodos para investigar lim (x→a) f(x).",
+          enunciado: "Liste três métodos para investigar \\(\\lim_{x \\to a} f(x)\\).",
           resposta: "Tabela, gráfico, substituição/simplificação",
           resolucao: "Complementar com laterais quando necessário.",
           interpretacao: "Kit completo do módulo.",
@@ -992,10 +1012,10 @@ export const limitesAulas: Record<string, AulaContent> = {
         {
           id: "revl-g2",
           type: "calculo",
-          enunciado: "lim (x→+∞) (4x − 1)/(2x + 5)",
-          resposta: "2",
-          resolucao: "Graus iguais → 4/2.",
-          interpretacao: "Assíntota horizontal y = 2.",
+          enunciado: "\\(\\lim_{x \\to +\\infty} \\frac{4x - 1}{2x + 5}\\)",
+          resposta: "\\(2\\)",
+          resolucao: "Graus iguais → \\(\\frac{4}{2}\\).",
+          interpretacao: "Assíntota horizontal \\(y = 2\\).",
         },
       ],
     },

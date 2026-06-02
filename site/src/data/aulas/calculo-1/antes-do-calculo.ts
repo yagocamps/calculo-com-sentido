@@ -53,7 +53,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Caso típico",
       situacao:
-        "Ana passou no ensino médio decorando fórmulas. Na faculdade, na primeira lista de limites, não entende por que x não pode ser 1 em (x²−1)/(x−1), mesmo o gráfico \"passando\" perto de 2.",
+        "Ana passou no ensino médio decorando fórmulas. Na faculdade, na primeira lista de limites, não entende por que \\(x\\) não pode ser 1 em \\(\\frac{x^2-1}{x-1}\\), mesmo o gráfico \"passando\" perto de 2.",
     },
     passos: {
       title: "Como sair desse ciclo",
@@ -156,13 +156,13 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       title: "Checklist mínimo",
       paragraphs: [
         "Álgebra: fatorar, simplificar frações, resolver equações do 1º e 2º grau.",
-        "Funções: notação f(x), domínio, imagem, composição básica.",
+        "Funções: notação \\(f(x)\\), domínio, imagem, composição básica.",
         "Gráficos: reta, parábola, exponencial simples; ler aumento e decrescimento.",
         "Trigonometria (nível intro): seno e cosseno em triângulo e no círculo — muitos cursos usam em derivadas.",
         "Raciocínio: traduzir problema de texto para equação ou função.",
       ],
       callout:
-        "Não precisa ser expert — precisa não travar ao ver f(x) = ax + b ou x².",
+        "Não precisa ser expert — precisa não travar ao ver \\(f(x) = ax + b\\) ou \\(x^2\\).",
       formula: "Base sólida → limites → derivadas → integrais",
       formulaLegend: "cada etapa usa a anterior",
     },
@@ -179,7 +179,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Autoavaliação rápida",
       situacao:
-        "Você consegue, sem calculadora, dizer o que é f(2) se f(x) = 3x − 1? Esboçar se a reta sobe ou desce? Resolver x² − 4 = 0?",
+        "Você consegue, sem calculadora, dizer o que é \\(f(2)\\) se \\(f(x) = 3x - 1\\)? Esboçar se a reta sobe ou desce? Resolver \\(x^2 - 4 = 0\\)?",
     },
     passos: {
       title: "O que fazer se falhar algum item",
@@ -214,7 +214,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Achar que Cálculo vai \"ensinar álgebra de novo\" do zero.",
-        "Confundir notação f(x) com multiplicação f vezes x.",
+        "Confundir notação \\(f(x)\\) com multiplicação \\(f\\) vezes \\(x\\).",
         "Ignorar gráficos porque a prova \"é só conta\".",
         "Subestimar trigonometria em cursos de exatas.",
       ],
@@ -225,18 +225,18 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
         {
           id: "pre-g1",
           type: "calculo",
-          enunciado: "Se f(x) = 2x + 5, calcule f(3).",
-          resolucao: "f(3) = 2·3 + 5 = 11",
-          resposta: "11",
-          interpretacao: "Substituir x por 3 na regra da função.",
+          enunciado: "Se \\(f(x) = 2x + 5\\), calcule \\(f(3)\\).",
+          resolucao: "\\(f(3) = 2 \\cdot 3 + 5 = 11\\)",
+          resposta: "\\(11\\)",
+          interpretacao: "Substituir \\(x\\) por 3 na regra da função.",
         },
         {
           id: "pre-g2",
           type: "compreensao",
-          enunciado: "f(x) = −x + 4. A função cresce ou decresce?",
-          resolucao: "Coeficiente de x é negativo → decresce.",
+          enunciado: "\\(f(x) = -x + 4\\). A função cresce ou decresce?",
+          resolucao: "Coeficiente de \\(x\\) é negativo → decresce.",
           resposta: "Decresce.",
-          interpretacao: "Sinal de a em ax + b indica inclinação da reta.",
+          interpretacao: "Sinal de \\(a\\) em \\(ax + b\\) indica inclinação da reta.",
         },
       ],
     },
@@ -420,7 +420,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "História de um carro",
       situacao:
-        "Posição s(t). Limite ajuda na velocidade instantânea; derivada é v(t); integral de v recupera distância.",
+        "Posição \\(s(t)\\). Limite ajuda na velocidade instantânea; derivada é \\(v(t)\\); integral de \\(v\\) recupera distância.",
     },
     passos: {
       title: "Como usar este mapa no semestre",
