@@ -51,26 +51,22 @@ export const graficosAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Localizar um ponto",
       situacao:
-        "Onde fica o ponto (3, 2) no plano? E como ele difere do ponto (2, 3)?",
+        "Onde fica o ponto \\((3, 2)\\) no plano? E como ele difere do ponto \\((2, 3)\\)?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Ler a primeira coordenada (x)",
-          detail: "Para (3, 2), x = 3: ande 3 para a direita a partir da origem.",
+          detail: "Para \\((3, 2)\\), \\(x = 3\\): ande 3 para a direita a partir da origem.",
         },
         {
           title: "Ler a segunda coordenada (y)",
-          detail: "y = 2: suba 2 a partir dali.",
-        },
-        {
-          title: "Marcar o ponto",
-          detail: "O cruzamento desses dois movimentos é o ponto (3, 2).",
+          detail: "\\(y = 2\\): suba 2 a partir dali — o cruzamento é o ponto \\((3, 2)\\).",
         },
         {
           title: "Comparar com (2, 3)",
-          detail: "(2, 3) anda 2 para a direita e sobe 3 — um lugar diferente.",
+          detail: "\\((2, 3)\\) anda 2 para a direita e sobe 3 — um lugar diferente.",
         },
         {
           title: "Concluir",
@@ -81,15 +77,15 @@ export const graficosAulas: Record<string, AulaContent> = {
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "(3, 2) e (2, 3) são pontos distintos, porque o primeiro número sempre é o horizontal e o segundo o vertical. Trocar a ordem move o ponto.",
-        "Esse endereço de dois números é o que liga a álgebra ao desenho: cada par (x, f(x)) de uma função vira um ponto, e juntos formam a curva.",
+        "\\((3, 2)\\) e \\((2, 3)\\) são pontos distintos, porque o primeiro número sempre é o horizontal e o segundo o vertical. Trocar a ordem move o ponto.",
+        "Esse endereço de dois números é o que liga a álgebra ao desenho: cada par \\((x, f(x))\\) de uma função vira um ponto, e juntos formam a curva.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Trocar a ordem: (x, y) não é (y, x).",
-        "Confundir o eixo x (horizontal) com o y (vertical).",
+        "Trocar a ordem: \\((x, y)\\) não é \\((y, x)\\).",
+        "Confundir o eixo \\(x\\) (horizontal) com o \\(y\\) (vertical).",
         "Esquecer o sinal: à esquerda e abaixo da origem os valores são negativos.",
         "Contar a partir do lugar errado em vez da origem.",
       ],
@@ -100,31 +96,31 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "compreensao",
-          enunciado: "No ponto (5, −2), qual é a coordenada vertical?",
-          identificar: "A segunda coordenada é o y.",
-          dica: "Ordem: (x, y).",
-          resolucao: "O y é −2.",
-          resposta: "−2",
+          enunciado: "No ponto \\((5, -2)\\), qual é a coordenada vertical?",
+          identificar: "A segunda coordenada é o \\(y\\).",
+          dica: "Ordem: \\((x, y)\\).",
+          resolucao: "O \\(y\\) é \\(-2\\).",
+          resposta: "\\(-2\\)",
           interpretacao: "O ponto está 2 abaixo da origem na vertical.",
-          erroComum: "Responder 5, que é o x.",
+          erroComum: "Responder 5, que é o \\(x\\).",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "Um ponto está sobre o eixo x. O que sabemos do seu y?",
-          identificar: "O eixo x está na altura zero.",
+          enunciado: "Um ponto está sobre o eixo \\(x\\). O que sabemos do seu \\(y\\)?",
+          identificar: "O eixo \\(x\\) está na altura zero.",
           dica: "Quem está no eixo horizontal não subiu nem desceu.",
-          resolucao: "O y é 0; o ponto é (x, 0).",
-          resposta: "y = 0",
-          interpretacao: "Estar no eixo x significa altura zero.",
-          erroComum: "Achar que x também é zero.",
+          resolucao: "O \\(y\\) é 0; o ponto é \\((x, 0)\\).",
+          resposta: "\\(y = 0\\)",
+          interpretacao: "Estar no eixo \\(x\\) significa altura zero.",
+          erroComum: "Achar que \\(x\\) também é zero.",
         },
         {
           id: "guiado-3",
           type: "compreensao",
-          enunciado: "Em qual região fica (−3, −4)?",
+          enunciado: "Em qual região fica \\((-3, -4)\\)?",
           identificar: "Veja os sinais das duas coordenadas.",
-          dica: "x negativo (esquerda) e y negativo (abaixo).",
+          dica: "\\(x\\) negativo (esquerda) e \\(y\\) negativo (abaixo).",
           resolucao: "Esquerda e abaixo da origem (terceiro quadrante).",
           resposta: "Terceiro quadrante",
           interpretacao: "Ambos negativos colocam o ponto no canto inferior esquerdo.",
@@ -140,9 +136,9 @@ export const graficosAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Plano cartesiano: eixo x horizontal, eixo y vertical, cruzando na origem.",
-        "Cada ponto é um par ordenado (x, y).",
-        "A ordem importa: (3, 2) ≠ (2, 3).",
+        "Plano cartesiano: eixo \\(x\\) horizontal, eixo \\(y\\) vertical, cruzando na origem.",
+        "Cada ponto é um par ordenado \\((x, y)\\).",
+        "A ordem importa: \\((3, 2) \\neq (2, 3)\\).",
         "Sinais indicam o lado: esquerda/abaixo são negativos.",
       ],
     },
@@ -192,30 +188,26 @@ export const graficosAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Temperatura ao longo do dia",
       situacao:
-        "Um gráfico mostra a temperatura (y, em °C) por hora do dia (x). Às 6h o ponto está em (6, 18) e às 14h em (14, 30). Como ler esses valores?",
+        "Um gráfico mostra a temperatura (\\(y\\), em °C) por hora do dia (\\(x\\)). Às 6h o ponto está em \\((6, 18)\\) e às 14h em \\((14, 30)\\). Como ler esses valores?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Identificar o que cada eixo mede",
-          detail: "Eixo x: hora do dia. Eixo y: temperatura em °C.",
+          detail: "Eixo \\(x\\): hora do dia. Eixo \\(y\\): temperatura em °C.",
         },
         {
           title: "Ler o ponto das 6h",
-          detail: "Suba de x = 6 até a curva: altura 18 → 18 °C às 6h.",
+          detail: "Suba de \\(x = 6\\) até a curva: altura 18 → 18 °C às 6h.",
         },
         {
           title: "Ler o ponto das 14h",
-          detail: "Suba de x = 14: altura 30 → 30 °C às 14h.",
+          detail: "Suba de \\(x = 14\\): altura 30 → 30 °C às 14h.",
         },
         {
-          title: "Comparar",
-          detail: "A temperatura subiu 12 °C entre 6h e 14h.",
-        },
-        {
-          title: "Interpretar a história",
-          detail: "A manhã esquenta até a tarde — o gráfico mostra isso de relance.",
+          title: "Comparar e interpretar",
+          detail: "A temperatura subiu 12 °C entre 6h e 14h: a manhã esquenta até a tarde.",
         },
       ],
     },
@@ -241,31 +233,31 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "compreensao",
-          enunciado: "Num gráfico de (5, 12), qual o valor da função em x = 5?",
-          identificar: "A altura (y) na curva é a resposta.",
-          dica: "Suba de x = 5 até a curva.",
-          resolucao: "y = 12.",
-          resposta: "12",
-          interpretacao: "Em x = 5 a função vale 12.",
+          enunciado: "Num gráfico de \\((5, 12)\\), qual o valor da função em \\(x = 5\\)?",
+          identificar: "A altura (\\(y\\)) na curva é a resposta.",
+          dica: "Suba de \\(x = 5\\) até a curva.",
+          resolucao: "\\(y = 12\\).",
+          resposta: "\\(12\\)",
+          interpretacao: "Em \\(x = 5\\) a função vale 12.",
           erroComum: "Responder 5, que é a entrada.",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "A curva passa por (0, 4). O que isso diz?",
-          identificar: "x = 0 é onde a curva cruza o eixo y.",
+          enunciado: "A curva passa por \\((0, 4)\\). O que isso diz?",
+          identificar: "\\(x = 0\\) é onde a curva cruza o eixo \\(y\\).",
           dica: "Valor inicial da função.",
-          resolucao: "Em x = 0 a função vale 4 (corta o eixo y em 4).",
-          resposta: "Vale 4 em x = 0",
+          resolucao: "Em \\(x = 0\\) a função vale 4 (corta o eixo \\(y\\) em 4).",
+          resposta: "Vale 4 em \\(x = 0\\)",
           interpretacao: "É o ponto de partida, o valor inicial.",
-          erroComum: "Achar que o ponto está sobre o eixo x.",
+          erroComum: "Achar que o ponto está sobre o eixo \\(x\\).",
         },
         {
           id: "guiado-3",
           type: "aplicada",
-          enunciado: "Num gráfico de saldo bancário por dia, o ponto (10, −50) aparece. O que significa?",
-          identificar: "y negativo indica saldo abaixo de zero.",
-          dica: "Eixo x = dia, eixo y = saldo.",
+          enunciado: "Num gráfico de saldo bancário por dia, o ponto \\((10, -50)\\) aparece. O que significa?",
+          identificar: "\\(y\\) negativo indica saldo abaixo de zero.",
+          dica: "Eixo \\(x\\) = dia, eixo \\(y\\) = saldo.",
           resolucao: "No dia 10, o saldo era −R$ 50 (negativo).",
           resposta: "Saldo de −R$ 50 no dia 10",
           interpretacao: "O sinal negativo no eixo y mostra que a conta estava no vermelho.",
@@ -384,21 +376,21 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "compreensao",
-          enunciado: "A reta de f(x) = 2x + 1 é crescente ou decrescente?",
-          identificar: "Olhe o sinal do coeficiente de x.",
+          enunciado: "A reta de \\(f(x) = 2x + 1\\) é crescente ou decrescente?",
+          identificar: "Olhe o sinal do coeficiente de \\(x\\).",
           dica: "Coeficiente positivo sobe.",
           resolucao: "Como o coeficiente (2) é positivo, a reta sobe: crescente.",
           resposta: "Crescente",
-          interpretacao: "A cada x a mais, y aumenta 2.",
-          erroComum: "Olhar o +1 em vez do coeficiente de x.",
+          interpretacao: "A cada \\(x\\) a mais, \\(y\\) aumenta 2.",
+          erroComum: "Olhar o \\(+1\\) em vez do coeficiente de \\(x\\).",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "Uma curva sobe até x = 3 e depois desce. O que ocorre em x = 3?",
+          enunciado: "Uma curva sobe até \\(x = 3\\) e depois desce. O que ocorre em \\(x = 3\\)?",
           identificar: "É o ponto de virada.",
           dica: "Onde para de subir e começa a descer.",
-          resolucao: "Em x = 3 está o ponto de máximo (pico).",
+          resolucao: "Em \\(x = 3\\) está o ponto de máximo (pico).",
           resposta: "Ponto de máximo",
           interpretacao: "É o valor mais alto antes da queda.",
           erroComum: "Chamar de mínimo.",
@@ -478,18 +470,18 @@ export const graficosAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Dois planos no mesmo gráfico",
       situacao:
-        "Dois planos de celular aparecem como retas no mesmo gráfico de custo (y) por GB (x). Elas se cruzam em (20, 70). O que esse cruzamento conta?",
+        "Dois planos de celular aparecem como retas no mesmo gráfico de custo (\\(y\\)) por GB (\\(x\\)). Elas se cruzam em \\((20, 70)\\). O que esse cruzamento conta?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Identificar o que é cada eixo",
-          detail: "x = GB usados; y = custo em reais.",
+          detail: "\\(x\\) = GB usados; \\(y\\) = custo em reais.",
         },
         {
           title: "Localizar o cruzamento",
-          detail: "As retas se encontram em (20, 70).",
+          detail: "As retas se encontram em \\((20, 70)\\).",
         },
         {
           title: "Interpretar o ponto de encontro",
@@ -621,46 +613,42 @@ export const graficosAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Subir uma parábola",
       situacao:
-        "Você conhece o gráfico de f(x) = x² (parábola com vértice na origem). O que acontece com o gráfico de g(x) = x² + 3?",
+        "Você conhece o gráfico de \\(f(x) = x^2\\) (parábola com vértice na origem). O que acontece com o gráfico de \\(g(x) = x^2 + 3\\)?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Reconhecer o gráfico-base",
-          detail: "f(x) = x² é a parábola com vértice em (0, 0).",
+          detail: "\\(f(x) = x^2\\) é a parábola com vértice em \\((0, 0)\\).",
         },
         {
           title: "Identificar a mudança",
-          detail: "g soma 3 FORA da função: x² + 3.",
+          detail: "\\(g\\) soma 3 FORA da função: \\(x^2 + 3\\).",
         },
         {
           title: "Decidir o tipo de deslocamento",
-          detail: "Somar fora move na vertical; +3 sobe.",
+          detail: "Somar fora move na vertical; \\(+3\\) sobe.",
         },
         {
-          title: "Mover o vértice",
-          detail: "O vértice vai de (0, 0) para (0, 3).",
-        },
-        {
-          title: "Concluir",
-          detail: "g é a mesma parábola, 3 unidades mais alta.",
+          title: "Mover o vértice e concluir",
+          detail: "O vértice vai de \\((0, 0)\\) para \\((0, 3)\\): \\(g\\) é a mesma parábola, 3 unidades mais alta.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "g(x) = x² + 3 é exatamente o gráfico de x² levantado em 3. Você não precisou recalcular pontos — só reconhecer o deslocamento.",
+        "\\(g(x) = x^2 + 3\\) é exatamente o gráfico de \\(x^2\\) levantado em 3. Você não precisou recalcular pontos — só reconhecer o deslocamento.",
         "Essa leitura rápida (gráfico-base + deslocamento) vale para qualquer função: reta, parábola, V, exponencial. Identificar a base e o movimento resolve metade dos exercícios de gráfico.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Inverter o sentido horizontal: f(x − 2) vai para a DIREITA.",
+        "Inverter o sentido horizontal: \\(f(x - 2)\\) vai para a DIREITA.",
         "Confundir mudança dentro (horizontal) com fora (vertical).",
-        "Achar que +k sempre move para a direita.",
+        "Achar que \\(+k\\) sempre move para a direita.",
         "Esquecer de mover o ponto-chave (vértice, bico, interceptos).",
       ],
     },
@@ -670,10 +658,10 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "compreensao",
-          enunciado: "Como fica o gráfico de f(x) = x² − 5 em relação a x²?",
+          enunciado: "Como fica o gráfico de \\(f(x) = x^2 - 5\\) em relação a \\(x^2\\)?",
           identificar: "Mudança fora da função.",
-          dica: "−5 fora move na vertical.",
-          resolucao: "Desce 5 unidades: vértice em (0, −5).",
+          dica: "\\(-5\\) fora move na vertical.",
+          resolucao: "Desce 5 unidades: vértice em \\((0, -5)\\).",
           resposta: "Desce 5 unidades",
           interpretacao: "Mesma parábola, 5 mais baixa.",
           erroComum: "Mover para o lado em vez de para baixo.",
@@ -681,21 +669,21 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "Para onde se move o gráfico de f(x − 4) em relação a f(x)?",
+          enunciado: "Para onde se move o gráfico de \\(f(x - 4)\\) em relação a \\(f(x)\\)?",
           identificar: "Mudança dentro da função.",
           dica: "Dentro move ao contrário do sinal.",
           resolucao: "Move 4 para a direita.",
           resposta: "4 para a direita",
-          interpretacao: "Apesar do −4, o deslocamento é para a direita.",
+          interpretacao: "Apesar do \\(-4\\), o deslocamento é para a direita.",
           erroComum: "Mover 4 para a esquerda.",
         },
         {
           id: "guiado-3",
           type: "compreensao",
-          enunciado: "O gráfico de |x| + 2 fica onde em relação a |x|?",
+          enunciado: "O gráfico de \\(|x| + 2\\) fica onde em relação a \\(|x|\\)?",
           identificar: "Soma fora da função.",
-          dica: "+2 fora sobe.",
-          resolucao: "Sobe 2: o bico do V vai de (0,0) para (0,2).",
+          dica: "\\(+2\\) fora sobe.",
+          resolucao: "Sobe 2: o bico do V vai de \\((0,0)\\) para \\((0,2)\\).",
           resposta: "Sobe 2 unidades",
           interpretacao: "O V inteiro sobe 2.",
           erroComum: "Mover o V para a esquerda.",
@@ -710,8 +698,8 @@ export const graficosAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Somar fora, f(x) + k: move na vertical (+k sobe, −k desce).",
-        "Somar dentro, f(x ± k): move na horizontal, sentido contrário ao sinal.",
+        "Somar fora, \\(f(x) + k\\): move na vertical (\\(+k\\) sobe, \\(-k\\) desce).",
+        "Somar dentro, \\(f(x \\pm k)\\): move na horizontal, sentido contrário ao sinal.",
         "Reconheça o gráfico-base e só aplique o deslocamento.",
         "Mova sempre o ponto-chave (vértice, bico, interceptos).",
       ],
@@ -764,30 +752,28 @@ export const graficosAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "O preço de um ingresso",
       situacao:
-        "A receita de um show é R(p) = −2p² + 200p (p é o preço do ingresso). O gráfico é uma parábola para baixo. Qual preço dá a maior receita?",
+        "A receita de um show é \\(R(p) = -2p^2 + 200p\\) (\\(p\\) é o preço do ingresso). O gráfico é uma parábola para baixo. Qual preço dá a maior receita?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Reconhecer a parábola",
-          detail: "a = −2 < 0: abre para baixo, tem máximo (o pico é o melhor preço).",
+          detail: "\\(a = -2 < 0\\): abre para baixo, tem máximo (o pico é o melhor preço).",
         },
         {
           title: "Achar o preço do vértice",
-          detail: "p_v = −b/2a = −200/(2·(−2)) = −200/(−4) = 50.",
+          detail:
+            "\\[\\begin{aligned} p_v &= \\frac{-b}{2a} = \\frac{-200}{2 \\cdot (-2)} \\\\ &= \\frac{-200}{-4} = 50 \\end{aligned}\\]",
         },
         {
           title: "Calcular a receita máxima",
-          detail: "R(50) = −2·2500 + 200·50 = −5000 + 10000 = 5000.",
+          detail:
+            "\\[\\begin{aligned} R(50) &= -2 \\cdot 2500 + 200 \\cdot 50 \\\\ &= -5000 + 10000 \\\\ &= 5000 \\end{aligned}\\]",
         },
         {
           title: "Interpretar o pico",
-          detail: "O melhor preço é R$ 50, gerando R$ 5000 de receita.",
-        },
-        {
-          title: "Conferir o sentido",
-          detail: "Preço maior ou menor que R$ 50 rende menos — daí ser o pico.",
+          detail: "O melhor preço é R$ 50, gerando R$ 5000 de receita. Preço maior ou menor rende menos.",
         },
       ],
     },
@@ -802,8 +788,8 @@ export const graficosAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Achar que preço sempre maior gera receita maior.",
-        "Parar no preço (p_v) sem calcular a receita máxima.",
-        "Errar o sinal em −b/2a.",
+        "Parar no preço (\\(p_v\\)) sem calcular a receita máxima.",
+        "Errar o sinal em \\(\\frac{-b}{2a}\\).",
         "Confundir receita (preço × quantidade) com lucro (receita − custo).",
       ],
     },
@@ -813,21 +799,23 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Para R(p) = −p² + 40p, qual preço dá a receita máxima?",
+          enunciado: "Para \\(R(p) = -p^2 + 40p\\), qual preço dá a receita máxima?",
           identificar: "Vértice da parábola.",
-          dica: "p_v = −b/2a com a = −1, b = 40.",
-          resolucao: "p_v = −40/(2·(−1)) = 20.",
-          resposta: "p = 20",
+          dica: "\\(p_v = \\frac{-b}{2a}\\) com \\(a = -1\\), \\(b = 40\\).",
+          resolucao:
+            "\\[\\begin{aligned} p_v &= \\frac{-40}{2 \\cdot (-1)} \\\\ &= 20 \\end{aligned}\\]",
+          resposta: "\\(p = 20\\)",
           interpretacao: "O preço ótimo é R$ 20.",
-          erroComum: "Esquecer que a é negativo no denominador.",
+          erroComum: "Esquecer que \\(a\\) é negativo no denominador.",
         },
         {
           id: "guiado-2",
           type: "calculo",
           enunciado: "No item anterior, qual é a receita máxima?",
-          identificar: "Calcule R(20).",
-          dica: "−20² + 40·20.",
-          resolucao: "−400 + 800 = 400.",
+          identificar: "Calcule \\(R(20)\\).",
+          dica: "\\(-20^2 + 40 \\cdot 20\\).",
+          resolucao:
+            "\\[\\begin{aligned} R(20) &= -400 + 800 \\\\ &= 400 \\end{aligned}\\]",
           resposta: "R$ 400,00",
           interpretacao: "É o pico da curva de receita.",
           erroComum: "Reportar 20 como a receita.",
@@ -912,19 +900,16 @@ export const graficosAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Identificar as variáveis",
-          detail: "x = temperatura (°C); y = consumo (kWh/dia).",
+          detail: "\\(x\\) = temperatura (°C); \\(y\\) = consumo (kWh/dia).",
         },
         {
           title: "Ler os dois pontos",
-          detail: "(20, 100) e (30, 200).",
-        },
-        {
-          title: "Ver a tendência",
-          detail: "Consumo sobe quando a temperatura sobe: relação direta (crescente).",
+          detail: "\\((20, 100)\\) e \\((30, 200)\\): consumo sobe quando a temperatura sobe (relação direta).",
         },
         {
           title: "Calcular o gasto por grau",
-          detail: "Variação: (200 − 100) ÷ (30 − 20) = 100/10 = 10 kWh por grau.",
+          detail:
+            "\\[\\begin{aligned} \\text{taxa} &= \\frac{200 - 100}{30 - 20} \\\\ &= \\frac{100}{10} = 10 \\end{aligned}\\] (kWh por grau)",
         },
         {
           title: "Interpretar",
@@ -965,12 +950,12 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "De (10, 50) a (20, 90), qual a variação por unidade de x?",
-          identificar: "Variação de y dividida pela de x.",
-          dica: "(90 − 50)/(20 − 10).",
-          resolucao: "40/10 = 4.",
+          enunciado: "De \\((10, 50)\\) a \\((20, 90)\\), qual a variação por unidade de \\(x\\)?",
+          identificar: "Variação de \\(y\\) dividida pela de \\(x\\).",
+          dica: "\\(\\frac{90 - 50}{20 - 10}\\).",
+          resolucao: "\\(\\frac{40}{10} = 4\\).",
           resposta: "4 por unidade",
-          interpretacao: "y aumenta 4 a cada 1 de x.",
+          interpretacao: "\\(y\\) aumenta 4 a cada 1 de \\(x\\).",
           erroComum: "Dividir 40 por 90.",
         },
         {
@@ -1050,30 +1035,26 @@ export const graficosAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Uma leitura completa",
       situacao:
-        "Uma curva passa por (0, 2), sobe até um pico em (3, 8) e desce até (6, 2). Faça a leitura completa: tipo, comportamento e pontos-chave.",
+        "Uma curva passa por \\((0, 2)\\), sobe até um pico em \\((3, 8)\\) e desce até \\((6, 2)\\). Faça a leitura completa: tipo, comportamento e pontos-chave.",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Ler o ponto inicial",
-          detail: "Em x = 0, y = 2: a curva começa na altura 2.",
+          detail: "Em \\(x = 0\\), \\(y = 2\\): a curva começa na altura 2.",
         },
         {
           title: "Descrever o comportamento",
-          detail: "Sobe de x = 0 a x = 3 (crescente), depois desce até x = 6 (decrescente).",
+          detail: "Sobe de \\(x = 0\\) a \\(x = 3\\) (crescente), depois desce até \\(x = 6\\) (decrescente).",
         },
         {
           title: "Identificar o ponto-chave",
-          detail: "Pico em (3, 8): é o máximo, valor mais alto da curva.",
+          detail: "Pico em \\((3, 8)\\): é o máximo, valor mais alto da curva.",
         },
         {
-          title: "Reconhecer a forma",
-          detail: "Sobe e desce simetricamente: parábola para baixo.",
-        },
-        {
-          title: "Contar a história",
-          detail: "Começa em 2, atinge o máximo 8 em x = 3 e volta a 2 em x = 6.",
+          title: "Reconhecer a forma e contar a história",
+          detail: "Sobe e desce simetricamente (parábola para baixo): começa em 2, atinge o máximo 8 em \\(x = 3\\) e volta a 2 em \\(x = 6\\).",
         },
       ],
     },
@@ -1099,21 +1080,21 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "compreensao",
-          enunciado: "Uma reta passa por (0, 3) e sobe. Onde ela corta o eixo y e qual o comportamento?",
-          identificar: "Intercepto em x = 0 e sentido.",
-          dica: "x = 0 dá o corte no eixo y.",
-          resolucao: "Corta o eixo y em 3 e é crescente.",
-          resposta: "Corta em (0,3); crescente",
+          enunciado: "Uma reta passa por \\((0, 3)\\) e sobe. Onde ela corta o eixo \\(y\\) e qual o comportamento?",
+          identificar: "Intercepto em \\(x = 0\\) e sentido.",
+          dica: "\\(x = 0\\) dá o corte no eixo \\(y\\).",
+          resolucao: "Corta o eixo \\(y\\) em 3 e é crescente.",
+          resposta: "Corta em \\((0,3)\\); crescente",
           interpretacao: "Começa em 3 e sobe a partir dali.",
-          erroComum: "Trocar o corte com o eixo x.",
+          erroComum: "Trocar o corte com o eixo \\(x\\).",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "g(x) = x² + 1 está como em relação a x²?",
+          enunciado: "\\(g(x) = x^2 + 1\\) está como em relação a \\(x^2\\)?",
           identificar: "Translação vertical.",
-          dica: "+1 fora da função.",
-          resolucao: "Sobe 1 unidade: vértice em (0, 1).",
+          dica: "\\(+1\\) fora da função.",
+          resolucao: "Sobe 1 unidade: vértice em \\((0, 1)\\).",
           resposta: "Sobe 1 unidade",
           interpretacao: "Mesma parábola, 1 acima.",
           erroComum: "Mover para a direita.",
@@ -1121,11 +1102,11 @@ export const graficosAulas: Record<string, AulaContent> = {
         {
           id: "guiado-3",
           type: "interpretacao",
-          enunciado: "Duas retas de custo se cruzam em (5, 40). O que decidir a partir daí?",
+          enunciado: "Duas retas de custo se cruzam em \\((5, 40)\\). O que decidir a partir daí?",
           identificar: "Cruzamento = custos iguais.",
           dica: "Antes e depois um plano vence.",
           resolucao: "Em 5 unidades os custos empatam (R$ 40); antes um plano é melhor, depois o outro.",
-          resposta: "Ponto de equilíbrio em (5, 40)",
+          resposta: "Ponto de equilíbrio em \\((5, 40)\\)",
           interpretacao: "O cruzamento orienta a escolha conforme a quantidade.",
           erroComum: "Ignorar o que acontece fora do cruzamento.",
         },

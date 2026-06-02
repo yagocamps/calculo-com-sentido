@@ -19,7 +19,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Uma expressão algébrica é só uma conta com letra no lugar de um número que você ainda não sabe. \"3 maçãs + 2 maçãs\" vira \"3x + 2x\" — e dá 5x, do mesmo jeito que daria 5 maçãs.",
+        "Uma expressão algébrica é só uma conta com letra no lugar de um número que você ainda não sabe. \"3 maçãs + 2 maçãs\" vira \"\\(3x + 2x\\)\" — e dá \\(5x\\), do mesmo jeito que daria 5 maçãs.",
         "Manipular expressão é arrumar a bagunça: juntar o que é parecido, abrir parênteses, deixar tudo mais curto antes de resolver.",
         "Quase toda equação, função e problema de Cálculo começa com uma expressão que precisa ser simplificada. É a faxina antes do trabalho de verdade.",
       ],
@@ -27,11 +27,11 @@ export const algebraAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Juntar o que é semelhante",
       paragraphs: [
-        "Termos semelhantes têm a mesma letra elevada ao mesmo expoente: 3x e 5x são semelhantes; 3x e 3x² não são. Só dá para somar ou subtrair termos semelhantes.",
-        "A propriedade distributiva abre os parênteses: a(b + c) = ab + ac. Ela é a ferramenta para tirar parênteses e depois juntar os termos parecidos.",
+        "Termos semelhantes têm a mesma letra elevada ao mesmo expoente: \\(3x\\) e \\(5x\\) são semelhantes; \\(3x\\) e \\(3x^2\\) não são. Só dá para somar ou subtrair termos semelhantes.",
+        "A propriedade distributiva abre os parênteses: \\(a(b + c) = ab + ac\\). Ela é a ferramenta para tirar parênteses e depois juntar os termos parecidos.",
       ],
       callout:
-        "Pense na letra como uma \"unidade\": você soma 3 reais + 2 reais, mas não soma 3 reais + 2 metros. x e x² são unidades diferentes.",
+        "Pense na letra como uma \"unidade\": você soma 3 reais + 2 reais, mas não soma 3 reais + 2 metros. \\(x\\) e \\(x^2\\) são unidades diferentes.",
       formula: "a(b + c) = ab + ac",
       formulaLatex: "a(b + c) = ab + ac",
       formulaAria: "a vezes abre parêntese b mais c fecha parêntese é igual a a b mais a c",
@@ -51,47 +51,40 @@ export const algebraAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Uma expressão para arrumar",
       situacao:
-        "Simplifique: 2(x + 3) + 4x − 5. Tem parêntese para abrir e termos parecidos para juntar.",
+        "Simplifique: \\(2(x + 3) + 4x - 5\\). Tem parêntese para abrir e termos parecidos para juntar.",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Abrir o parêntese (distributiva)",
-          detail: "2(x + 3) = 2·x + 2·3 = 2x + 6.",
+          detail: "\\(2(x + 3) = 2 \\cdot x + 2 \\cdot 3 = 2x + 6\\).",
         },
         {
-          title: "Reescrever a expressão inteira",
-          detail: "2x + 6 + 4x − 5.",
-        },
-        {
-          title: "Juntar os termos com x",
-          detail: "2x + 4x = 6x.",
-        },
-        {
-          title: "Juntar os números soltos",
-          detail: "6 − 5 = 1.",
+          title: "Juntar tudo passo a passo",
+          detail:
+            "\\[\\begin{aligned} 2(x + 3) + 4x - 5 &= 2x + 6 + 4x - 5 \\\\ &= (2x + 4x) + (6 - 5) \\\\ &= 6x + 1 \\end{aligned}\\]",
         },
         {
           title: "Escrever o resultado simplificado",
-          detail: "6x + 1.",
+          detail: "\\(6x + 1\\) — não dá para juntar mais (um tem letra, o outro não).",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "6x + 1 é a mesma expressão de antes, só que arrumada. Para qualquer valor de x, as duas dão o mesmo número — só que esta é mais fácil de usar.",
-        "Repare que não dá para juntar 6x com 1: um tem letra, o outro não. São unidades diferentes, e por isso o resultado fica com dois termos.",
+        "\\(6x + 1\\) é a mesma expressão de antes, só que arrumada. Para qualquer valor de \\(x\\), as duas dão o mesmo número — só que esta é mais fácil de usar.",
+        "Repare que não dá para juntar \\(6x\\) com \\(1\\): um tem letra, o outro não. São unidades diferentes, e por isso o resultado fica com dois termos.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Somar termos diferentes: 6x + 1 não é 7x.",
+        "Somar termos diferentes: \\(6x + 1\\) não é \\(7x\\).",
         "Esquecer de distribuir para todos os termos do parêntese.",
-        "Errar o sinal ao distribuir um número negativo: −2(x − 3) = −2x + 6.",
-        "Somar x com x² como se fossem semelhantes.",
+        "Errar o sinal ao distribuir um número negativo: \\(-2(x - 3) = -2x + 6\\).",
+        "Somar \\(x\\) com \\(x^2\\) como se fossem semelhantes.",
       ],
     },
     exerciciosGuiados: {
@@ -100,35 +93,38 @@ export const algebraAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Simplifique 3x + 5x − 2x.",
+          enunciado: "Simplifique \\(3x + 5x - 2x\\).",
           identificar: "Todos são termos semelhantes (mesma letra).",
           dica: "Some e subtraia os coeficientes.",
-          resolucao: "3 + 5 − 2 = 6, então 6x.",
-          resposta: "6x",
+          resolucao:
+            "\\[\\begin{aligned} 3x + 5x - 2x &= (3 + 5 - 2)x \\\\ &= 6x \\end{aligned}\\]",
+          resposta: "\\(6x\\)",
           interpretacao: "Como somar 3 + 5 − 2 caixas iguais: sobram 6 caixas.",
-          erroComum: "Esquecer de manter o x no resultado.",
+          erroComum: "Esquecer de manter o \\(x\\) no resultado.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Abra e simplifique 4(2x − 1).",
+          enunciado: "Abra e simplifique \\(4(2x - 1)\\).",
           identificar: "Use a distributiva.",
           dica: "Multiplique o 4 por cada termo de dentro.",
-          resolucao: "4·2x − 4·1 = 8x − 4.",
-          resposta: "8x − 4",
+          resolucao:
+            "\\[\\begin{aligned} 4(2x - 1) &= 4 \\cdot 2x - 4 \\cdot 1 \\\\ &= 8x - 4 \\end{aligned}\\]",
+          resposta: "\\(8x - 4\\)",
           interpretacao: "O 4 multiplica tudo que está no parêntese, não só o primeiro termo.",
-          erroComum: "Multiplicar só o 2x e esquecer o −1.",
+          erroComum: "Multiplicar só o \\(2x\\) e esquecer o \\(-1\\).",
         },
         {
           id: "guiado-3",
           type: "calculo",
-          enunciado: "Simplifique 5x + 3 − (2x − 4).",
+          enunciado: "Simplifique \\(5x + 3 - (2x - 4)\\).",
           identificar: "O sinal de menos na frente do parêntese inverte os sinais.",
-          dica: "−(2x − 4) = −2x + 4.",
-          resolucao: "5x + 3 − 2x + 4 = 3x + 7.",
-          resposta: "3x + 7",
+          dica: "\\(-(2x - 4) = -2x + 4\\).",
+          resolucao:
+            "\\[\\begin{aligned} 5x + 3 - (2x - 4) &= 5x + 3 - 2x + 4 \\\\ &= 3x + 7 \\end{aligned}\\]",
+          resposta: "\\(3x + 7\\)",
           interpretacao: "O menos virou os dois sinais de dentro; só depois junte os semelhantes.",
-          erroComum: "Trocar só o sinal do 2x e deixar o −4.",
+          erroComum: "Trocar só o sinal do \\(2x\\) e deixar o \\(-4\\).",
         },
       ],
     },
@@ -141,7 +137,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Só some/subtraia termos semelhantes (mesma letra e expoente).",
-        "Distributiva: a(b + c) = ab + ac abre os parênteses.",
+        "Distributiva: \\(a(b + c) = ab + ac\\) abre os parênteses.",
         "Menos na frente do parêntese inverte todos os sinais de dentro.",
         "Simplificar é arrumar a expressão sem mudar o valor dela.",
       ],
@@ -194,38 +190,31 @@ export const algebraAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Uma fórmula para inverter",
       situacao:
-        "Você guarda dinheiro com a regra T = 50m + 200 (total T após m meses, começando com R$ 200). Quantos meses para juntar R$ 950? Isole m.",
+        "Você guarda dinheiro com a regra \\(T = 50m + 200\\) (total \\(T\\) após \\(m\\) meses, começando com R$ 200). Quantos meses para juntar R$ 950? Isole \\(m\\).",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Escrever a equação com o valor pedido",
-          detail: "950 = 50m + 200.",
+          detail: "\\(950 = 50m + 200\\).",
         },
         {
-          title: "Tirar o que está somando (operação inversa)",
-          detail: "Subtraia 200 dos dois lados: 950 − 200 = 50m → 750 = 50m.",
-        },
-        {
-          title: "Tirar o que está multiplicando",
-          detail: "Divida os dois lados por 50: 750 ÷ 50 = m.",
-        },
-        {
-          title: "Calcular",
-          detail: "m = 15.",
+          title: "Isolar m passo a passo",
+          detail:
+            "\\[\\begin{aligned} 950 &= 50m + 200 \\\\ 950 - 200 &= 50m \\\\ 750 &= 50m \\\\ m &= \\frac{750}{50} \\\\ m &= 15 \\end{aligned}\\]",
         },
         {
           title: "Conferir o sentido",
-          detail: "50·15 + 200 = 750 + 200 = 950. Confere.",
+          detail: "\\(50 \\cdot 15 + 200 = 750 + 200 = 950\\). Confere.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "m = 15 meses é o tempo para juntar R$ 950 nesse ritmo. Isolar a variável transformou \"quanto tempo?\" em uma conta direta.",
-        "A ordem das operações inversas importa: tiramos primeiro o que estava somando (200) e depois o que estava multiplicando (50) — o contrário da ordem normal das operações.",
+        "\\(m = 15\\) meses é o tempo para juntar R$ 950 nesse ritmo. Isolar a variável transformou \"quanto tempo?\" em uma conta direta.",
+        "A ordem das operações inversas importa: tiramos primeiro o que estava somando (\\(200\\)) e depois o que estava multiplicando (\\(50\\)) — o contrário da ordem normal das operações.",
       ],
     },
     erros: {
@@ -243,35 +232,37 @@ export const algebraAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Isole x em 2x + 6 = 20.",
+          enunciado: "Isole \\(x\\) em \\(2x + 6 = 20\\).",
           identificar: "Tire primeiro o que soma, depois o que multiplica.",
           dica: "Subtraia 6, depois divida por 2.",
-          resolucao: "2x = 14; x = 7.",
-          resposta: "x = 7",
-          interpretacao: "Substituindo: 2·7 + 6 = 20. Confere.",
-          erroComum: "Dividir por 2 antes de tirar o 6.",
+          resolucao:
+            "\\[\\begin{aligned} 2x + 6 &= 20 \\\\ 2x &= 14 \\\\ x &= 7 \\end{aligned}\\]",
+          resposta: "\\(x = 7\\)",
+          interpretacao: "Substituindo: \\(2 \\cdot 7 + 6 = 20\\). Confere.",
+          erroComum: "Dividir por \\(2\\) antes de tirar o \\(6\\).",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Isole t na fórmula d = v·t.",
-          identificar: "v está multiplicando t.",
-          dica: "Divida os dois lados por v.",
-          resolucao: "t = d / v.",
-          resposta: "t = d/v",
+          enunciado: "Isole \\(t\\) na fórmula \\(d = v \\cdot t\\).",
+          identificar: "\\(v\\) está multiplicando \\(t\\).",
+          dica: "Divida os dois lados por \\(v\\).",
+          resolucao: "\\(t = \\frac{d}{v}\\).",
+          resposta: "\\(t = \\frac{d}{v}\\)",
           interpretacao: "Tempo é distância dividida pela velocidade — faz sentido físico.",
-          erroComum: "Escrever t = d − v, confundindo divisão com subtração.",
+          erroComum: "Escrever \\(t = d - v\\), confundindo divisão com subtração.",
         },
         {
           id: "guiado-3",
           type: "calculo",
-          enunciado: "Isole x em (x − 4)/3 = 5.",
+          enunciado: "Isole \\(x\\) em \\(\\frac{x - 4}{3} = 5\\).",
           identificar: "Desfaça a divisão antes da subtração.",
           dica: "Multiplique os dois lados por 3 primeiro.",
-          resolucao: "x − 4 = 15; x = 19.",
-          resposta: "x = 19",
-          interpretacao: "Verificando: (19 − 4)/3 = 15/3 = 5. Confere.",
-          erroComum: "Somar 4 antes de multiplicar por 3.",
+          resolucao:
+            "\\[\\begin{aligned} \\frac{x - 4}{3} &= 5 \\\\ x - 4 &= 15 \\\\ x &= 19 \\end{aligned}\\]",
+          resposta: "\\(x = 19\\)",
+          interpretacao: "Verificando: \\(\\frac{19 - 4}{3} = \\frac{15}{3} = 5\\). Confere.",
+          erroComum: "Somar \\(4\\) antes de multiplicar por \\(3\\).",
         },
       ],
     },
@@ -313,8 +304,8 @@ export const algebraAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Quase igual a equação, com uma pegadinha",
       paragraphs: [
-        "Os símbolos: < (menor), > (maior), ≤ (menor ou igual), ≥ (maior ou igual). Você isola a variável do mesmo jeito que numa equação.",
-        "A pegadinha: ao multiplicar ou dividir os dois lados por um número negativo, o sinal da desigualdade vira. Se −x < 3, ao multiplicar por −1 fica x > −3 (o < virou >).",
+        "Os símbolos: \\(<\\) (menor), \\(>\\) (maior), \\(\\leq\\) (menor ou igual), \\(\\geq\\) (maior ou igual). Você isola a variável do mesmo jeito que numa equação.",
+        "A pegadinha: ao multiplicar ou dividir os dois lados por um número negativo, o sinal da desigualdade vira. Se \\(-x < 3\\), ao multiplicar por \\(-1\\) fica \\(x > -3\\) (o \\(<\\) virou \\(>\\)).",
       ],
       callout:
         "Multiplicou ou dividiu por número negativo? Vire a desigualdade. É o único passo diferente de uma equação comum.",
@@ -326,9 +317,9 @@ export const algebraAulas: Record<string, AulaContent> = {
     ondeAparece: {
       title: "Onde isso aparece",
       items: [
-        { label: "Elevador", detail: "peso total ≤ capacidade máxima" },
+        { label: "Elevador", detail: "peso total \\(\\leq\\) capacidade máxima" },
         { label: "Provas", detail: "pelo menos X pontos para aprovar" },
-        { label: "Orçamento", detail: "gastos ≤ dinheiro disponível" },
+        { label: "Orçamento", detail: "gastos \\(\\leq\\) dinheiro disponível" },
         { label: "Velocidade", detail: "manter abaixo do limite da via" },
         { label: "Produção", detail: "fabricar acima do ponto de lucro" },
         { label: "Cálculo", detail: "domínio de funções com restrição" },
@@ -344,31 +335,28 @@ export const algebraAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Montar a inequação",
-          detail: "Gasto total não pode passar de 100: 18x + 10 ≤ 100.",
+          detail: "Gasto total não pode passar de 100: \\(18x + 10 \\leq 100\\).",
         },
         {
-          title: "Tirar o que está somando",
-          detail: "Subtraia 10 dos dois lados: 18x ≤ 90.",
-        },
-        {
-          title: "Tirar o que multiplica",
-          detail: "Divida por 18 (positivo, não vira o sinal): x ≤ 5.",
+          title: "Resolver passo a passo",
+          detail:
+            "\\[\\begin{aligned} 18x + 10 &\\leq 100 \\\\ 18x &\\leq 90 \\\\ x &\\leq 5 \\end{aligned}\\]",
         },
         {
           title: "Interpretar o intervalo",
-          detail: "x pode ser 0, 1, 2, 3, 4 ou 5 ingressos.",
+          detail: "\\(x\\) pode ser 0, 1, 2, 3, 4 ou 5 ingressos.",
         },
         {
           title: "Conferir o sentido",
-          detail: "5 ingressos: 18·5 + 10 = 100, exatamente o limite. 6 estouraria.",
+          detail: "5 ingressos: \\(18 \\cdot 5 + 10 = 100\\), exatamente o limite. 6 estouraria.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "x ≤ 5 quer dizer \"no máximo 5 ingressos\". A resposta não é um número só, e sim todos os valores que respeitam o orçamento.",
-        "Como ingresso é coisa inteira, na prática a resposta vai de 0 a 5. O símbolo ≤ inclui o 5, porque gastar exatamente R$ 100 ainda está dentro do limite.",
+        "\\(x \\leq 5\\) quer dizer \"no máximo 5 ingressos\". A resposta não é um número só, e sim todos os valores que respeitam o orçamento.",
+        "Como ingresso é coisa inteira, na prática a resposta vai de 0 a 5. O símbolo \\(\\leq\\) inclui o 5, porque gastar exatamente R$ 100 ainda está dentro do limite.",
       ],
     },
     erros: {
@@ -376,7 +364,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       items: [
         "Esquecer de virar o sinal ao multiplicar/dividir por negativo.",
         "Tratar a resposta como um único número, e não como um intervalo.",
-        "Confundir < (não inclui) com ≤ (inclui o valor).",
+        "Confundir \\(<\\) (não inclui) com \\(\\leq\\) (inclui o valor).",
         "Virar o sinal ao multiplicar por um número positivo (não precisa).",
       ],
     },
@@ -386,35 +374,38 @@ export const algebraAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Resolva 2x + 1 > 7.",
-          identificar: "Isole o x como numa equação.",
+          enunciado: "Resolva \\(2x + 1 > 7\\).",
+          identificar: "Isole o \\(x\\) como numa equação.",
           dica: "Subtraia 1, depois divida por 2 (positivo).",
-          resolucao: "2x > 6; x > 3.",
-          resposta: "x > 3",
-          interpretacao: "Qualquer valor maior que 3 satisfaz; 3 não entra (é >, não ≥).",
-          erroComum: "Incluir o 3 na resposta.",
+          resolucao:
+            "\\[\\begin{aligned} 2x + 1 &> 7 \\\\ 2x &> 6 \\\\ x &> 3 \\end{aligned}\\]",
+          resposta: "\\(x > 3\\)",
+          interpretacao: "Qualquer valor maior que 3 satisfaz; 3 não entra (é \\(>\\), não \\(\\geq\\)).",
+          erroComum: "Incluir o \\(3\\) na resposta.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Resolva −3x ≥ 12.",
+          enunciado: "Resolva \\(-3x \\geq 12\\).",
           identificar: "Vai dividir por número negativo.",
-          dica: "Divida por −3 e vire o sinal.",
-          resolucao: "x ≤ −4 (o ≥ virou ≤).",
-          resposta: "x ≤ −4",
-          interpretacao: "Testando x = −5: −3·(−5) = 15 ≥ 12. Confere.",
-          erroComum: "Esquecer de inverter a desigualdade e escrever x ≥ −4.",
+          dica: "Divida por \\(-3\\) e vire o sinal.",
+          resolucao:
+            "Dividir por \\(-3\\) inverte a desigualdade: \\[\\begin{aligned} -3x &\\geq 12 \\\\ x &\\leq -4 \\end{aligned}\\]",
+          resposta: "\\(x \\leq -4\\)",
+          interpretacao: "Testando \\(x = -5\\): \\(-3 \\cdot (-5) = 15 \\geq 12\\). Confere.",
+          erroComum: "Esquecer de inverter a desigualdade e escrever \\(x \\geq -4\\).",
         },
         {
           id: "guiado-3",
           type: "aplicada",
-          enunciado: "Para passar você precisa de média ≥ 6. Já tem 5 e 7; que nota mínima x precisa na terceira prova?",
-          identificar: "Monte a média das três e force ≥ 6.",
-          dica: "(5 + 7 + x)/3 ≥ 6.",
-          resolucao: "(12 + x)/3 ≥ 6; 12 + x ≥ 18; x ≥ 6.",
-          resposta: "x ≥ 6",
+          enunciado: "Para passar você precisa de média \\(\\geq 6\\). Já tem 5 e 7; que nota mínima \\(x\\) precisa na terceira prova?",
+          identificar: "Monte a média das três e force \\(\\geq 6\\).",
+          dica: "\\(\\frac{5 + 7 + x}{3} \\geq 6\\).",
+          resolucao:
+            "\\[\\begin{aligned} \\frac{5 + 7 + x}{3} &\\geq 6 \\\\ \\frac{12 + x}{3} &\\geq 6 \\\\ 12 + x &\\geq 18 \\\\ x &\\geq 6 \\end{aligned}\\]",
+          resposta: "\\(x \\geq 6\\)",
           interpretacao: "Precisa tirar pelo menos 6 na última prova para fechar a média.",
-          erroComum: "Multiplicar só parte do lado ao tirar o /3.",
+          erroComum: "Multiplicar só parte do lado ao tirar o \\(/3\\).",
         },
       ],
     },
@@ -429,7 +420,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Inequação resolve-se quase igual a uma equação.",
         "Multiplicar/dividir por negativo VIRA o sinal da desigualdade.",
         "A resposta é um intervalo de valores, não um número só.",
-        "≤ e ≥ incluem o valor; < e > não incluem.",
+        "\\(\\leq\\) e \\(\\geq\\) incluem o valor; \\(<\\) e \\(>\\) não incluem.",
       ],
     },
   },
@@ -480,30 +471,28 @@ export const algebraAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Dois preços, dois totais",
       situacao:
-        "2 cafés e 1 pão custam R$ 17. 1 café e 1 pão custam R$ 11. Qual o preço de cada um? Chame café de x e pão de y.",
+        "2 cafés e 1 pão custam R$ 17. 1 café e 1 pão custam R$ 11. Qual o preço de cada um? Chame café de \\(x\\) e pão de \\(y\\).",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Montar o sistema",
-          detail: "2x + y = 17 e x + y = 11.",
+          detail: "\\[\\begin{cases} 2x + y = 17 \\\\ x + y = 11 \\end{cases}\\]",
         },
         {
           title: "Subtrair as equações (eliminação)",
-          detail: "(2x + y) − (x + y) = 17 − 11 → x = 6.",
+          detail:
+            "\\[\\begin{aligned} (2x + y) - (x + y) &= 17 - 11 \\\\ x &= 6 \\end{aligned}\\]",
         },
         {
-          title: "Substituir x na equação simples",
-          detail: "6 + y = 11.",
-        },
-        {
-          title: "Isolar y",
-          detail: "y = 11 − 6 = 5.",
+          title: "Substituir e isolar y",
+          detail:
+            "\\[\\begin{aligned} 6 + y &= 11 \\\\ y &= 5 \\end{aligned}\\]",
         },
         {
           title: "Conferir nas duas equações",
-          detail: "2·6 + 5 = 17 ✓ e 6 + 5 = 11 ✓.",
+          detail: "\\(2 \\cdot 6 + 5 = 17\\) ✓ e \\(6 + 5 = 11\\) ✓.",
         },
       ],
     },
@@ -511,7 +500,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       title: "O que esse resultado significa?",
       paragraphs: [
         "Café custa R$ 6 e pão R$ 5. Esse par é o único que satisfaz as duas situações ao mesmo tempo — por isso precisávamos das duas equações.",
-        "Subtrair as equações foi esperto: o y tinha coeficiente igual nas duas, então sumiu e sobrou só o x. Esse é o coração do método da adição/eliminação.",
+        "Subtrair as equações foi esperto: o \\(y\\) tinha coeficiente igual nas duas, então sumiu e sobrou só o \\(x\\). Esse é o coração do método da adição/eliminação.",
       ],
     },
     erros: {
@@ -529,34 +518,37 @@ export const algebraAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Resolva: x + y = 10 e x − y = 4.",
+          enunciado: "Resolva: \\(x + y = 10\\) e \\(x - y = 4\\).",
           identificar: "Os y se cancelam ao somar.",
           dica: "Some as duas equações.",
-          resolucao: "2x = 14 → x = 7; depois 7 + y = 10 → y = 3.",
-          resposta: "x = 7, y = 3",
-          interpretacao: "Confere: 7 + 3 = 10 e 7 − 3 = 4.",
+          resolucao:
+            "Somando as duas equações: \\[\\begin{aligned} 2x &= 14 \\\\ x &= 7 \\\\ 7 + y &= 10 \\Rightarrow y = 3 \\end{aligned}\\]",
+          resposta: "\\(x = 7,\\ y = 3\\)",
+          interpretacao: "Confere: \\(7 + 3 = 10\\) e \\(7 - 3 = 4\\).",
           erroComum: "Somar os lados errados e perder o cancelamento.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Resolva por substituição: y = 2x e x + y = 9.",
-          identificar: "y já está isolado.",
-          dica: "Troque y por 2x na segunda equação.",
-          resolucao: "x + 2x = 9 → 3x = 9 → x = 3; y = 2·3 = 6.",
-          resposta: "x = 3, y = 6",
+          enunciado: "Resolva por substituição: \\(y = 2x\\) e \\(x + y = 9\\).",
+          identificar: "\\(y\\) já está isolado.",
+          dica: "Troque \\(y\\) por \\(2x\\) na segunda equação.",
+          resolucao:
+            "\\[\\begin{aligned} x + 2x &= 9 \\\\ 3x &= 9 \\\\ x &= 3 \\\\ y &= 2 \\cdot 3 = 6 \\end{aligned}\\]",
+          resposta: "\\(x = 3,\\ y = 6\\)",
           interpretacao: "Substituição brilha quando uma variável já está pronta.",
-          erroComum: "Esquecer de voltar e calcular y.",
+          erroComum: "Esquecer de voltar e calcular \\(y\\).",
         },
         {
           id: "guiado-3",
           type: "aplicada",
           enunciado: "Em um show, 3 adultos e 2 crianças pagam R$ 130; 1 adulto e 2 crianças pagam R$ 70. Preço de cada?",
-          identificar: "Monte o sistema com a (adulto) e c (criança).",
+          identificar: "Monte o sistema com \\(a\\) (adulto) e \\(c\\) (criança).",
           dica: "Subtraia para cancelar as crianças.",
-          resolucao: "3a + 2c = 130 e a + 2c = 70; subtraindo: 2a = 60 → a = 30; 30 + 2c = 70 → c = 20.",
+          resolucao:
+            "\\[\\begin{aligned} 3a + 2c &= 130 \\\\ a + 2c &= 70 \\\\ 2a &= 60 \\\\ a &= 30 \\\\ c &= 20 \\end{aligned}\\]",
           resposta: "adulto R$ 30, criança R$ 20",
-          interpretacao: "O termo 2c era igual nas duas, então sumiu na subtração.",
+          interpretacao: "O termo \\(2c\\) era igual nas duas, então sumiu na subtração.",
           erroComum: "Subtrair só parte de uma das equações.",
         },
       ],
@@ -600,7 +592,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       title: "Cancelar só fatores, nunca termos soltos",
       paragraphs: [
         "Você só pode cancelar o que está multiplicando o numerador inteiro e o denominador inteiro — um fator comum. Por isso, muitas vezes é preciso fatorar antes de cortar.",
-        "O erro clássico é cortar pedaços que estão somando. Em (x + 2)/2 não dá para cortar o 2, porque o de cima está somando, não multiplicando.",
+        "O erro clássico é cortar pedaços que estão somando. Em \\(\\frac{x + 2}{2}\\) não dá para cortar o 2, porque o de cima está somando, não multiplicando.",
       ],
       callout:
         "Só corta o que multiplica tudo. Se há soma no numerador, fatore primeiro para achar o fator comum.",
@@ -629,38 +621,31 @@ export const algebraAulas: Record<string, AulaContent> = {
       title: "Como pensar e resolver",
       steps: [
         {
-          title: "Procurar o fator comum no numerador",
-          detail: "x² + 3x = x(x + 3) — o x aparece nos dois termos.",
+          title: "Fatorar o numerador",
+          detail: "\\(x^2 + 3x = x(x + 3)\\) — o \\(x\\) aparece nos dois termos.",
         },
         {
-          title: "Reescrever a fração fatorada",
-          detail: "x(x + 3) / x.",
-        },
-        {
-          title: "Cancelar o fator comum",
-          detail: "O x de cima e o x de baixo se cancelam.",
-        },
-        {
-          title: "Escrever o resultado",
-          detail: "x + 3.",
+          title: "Cancelar e simplificar",
+          detail:
+            "\\[\\begin{aligned} \\frac{x^2 + 3x}{x} &= \\frac{x(x + 3)}{x} \\\\ &= x + 3 \\end{aligned}\\]",
         },
         {
           title: "Conferir com um número",
-          detail: "Para x = 2: (4 + 6)/2 = 5 e 2 + 3 = 5. Confere.",
+          detail: "Para \\(x = 2\\): \\(\\frac{4 + 6}{2} = 5\\) e \\(2 + 3 = 5\\). Confere.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "x + 3 é a mesma expressão, muito mais simples. Para qualquer x (diferente de 0), as duas dão o mesmo valor.",
-        "O passo decisivo foi fatorar antes de cortar. Sem fatorar, alguém tentaria cancelar o x direto e erraria, porque o 3x estava somando.",
+        "\\(x + 3\\) é a mesma expressão, muito mais simples. Para qualquer \\(x\\) (diferente de 0), as duas dão o mesmo valor.",
+        "O passo decisivo foi fatorar antes de cortar. Sem fatorar, alguém tentaria cancelar o \\(x\\) direto e erraria, porque o \\(3x\\) estava somando.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Cancelar termos que estão somando: (x + 2)/2 não vira x.",
+        "Cancelar termos que estão somando: \\(\\frac{x + 2}{2}\\) não vira \\(x\\).",
         "Cortar antes de fatorar e perder o fator comum.",
         "Cancelar só um dos termos do numerador.",
         "Esquecer a condição de que o denominador não pode ser zero.",
@@ -672,35 +657,37 @@ export const algebraAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Simplifique 6x / 3.",
+          enunciado: "Simplifique \\(\\frac{6x}{3}\\).",
           identificar: "Fator numérico comum.",
           dica: "Divida o coeficiente por 3.",
-          resolucao: "6/3 = 2, então 2x.",
-          resposta: "2x",
-          interpretacao: "O 3 divide o 6 inteiro, que multiplica o x — pode cancelar.",
-          erroComum: "Achar que sobra x sozinho.",
+          resolucao: "\\(\\frac{6x}{3} = 2x\\), porque \\(\\frac{6}{3} = 2\\).",
+          resposta: "\\(2x\\)",
+          interpretacao: "O 3 divide o 6 inteiro, que multiplica o \\(x\\) — pode cancelar.",
+          erroComum: "Achar que sobra \\(x\\) sozinho.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Simplifique (2x + 4)/2.",
+          enunciado: "Simplifique \\(\\frac{2x + 4}{2}\\).",
           identificar: "Fatore o numerador antes de cortar.",
-          dica: "2x + 4 = 2(x + 2).",
-          resolucao: "2(x + 2)/2 = x + 2.",
-          resposta: "x + 2",
+          dica: "\\(2x + 4 = 2(x + 2)\\).",
+          resolucao:
+            "\\[\\begin{aligned} \\frac{2x + 4}{2} &= \\frac{2(x + 2)}{2} \\\\ &= x + 2 \\end{aligned}\\]",
+          resposta: "\\(x + 2\\)",
           interpretacao: "Só cortou porque o 2 multiplicava todo o numerador depois de fatorar.",
-          erroComum: "Cortar o 2 do 4 e esquecer o 2x, escrevendo x + 4.",
+          erroComum: "Cortar o 2 do 4 e esquecer o \\(2x\\), escrevendo \\(x + 4\\).",
         },
         {
           id: "guiado-3",
           type: "calculo",
-          enunciado: "Simplifique (x² − x)/(x − 1).",
+          enunciado: "Simplifique \\(\\frac{x^2 - x}{x - 1}\\).",
           identificar: "Fatore numerador e procure fator comum.",
-          dica: "x² − x = x(x − 1).",
-          resolucao: "x(x − 1)/(x − 1) = x.",
-          resposta: "x",
-          interpretacao: "O fator (x − 1) aparece em cima e embaixo e se cancela.",
-          erroComum: "Tentar cancelar o x sem fatorar primeiro.",
+          dica: "\\(x^2 - x = x(x - 1)\\).",
+          resolucao:
+            "\\[\\begin{aligned} \\frac{x^2 - x}{x - 1} &= \\frac{x(x - 1)}{x - 1} \\\\ &= x \\end{aligned}\\]",
+          resposta: "\\(x\\)",
+          interpretacao: "O fator \\((x - 1)\\) aparece em cima e embaixo e se cancela.",
+          erroComum: "Tentar cancelar o \\(x\\) sem fatorar primeiro.",
         },
       ],
     },
@@ -773,19 +760,16 @@ export const algebraAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Escrever a expressão de cada plano",
-          detail: "A: 30 + 2x. B: 50 + 1x, onde x = GB usados.",
+          detail: "A: \\(30 + 2x\\). B: \\(50 + x\\), onde \\(x\\) = GB usados.",
         },
         {
-          title: "Igualar para achar o ponto de equilíbrio",
-          detail: "30 + 2x = 50 + x.",
-        },
-        {
-          title: "Isolar x",
-          detail: "2x − x = 50 − 30 → x = 20.",
+          title: "Igualar e isolar x",
+          detail:
+            "\\[\\begin{aligned} 30 + 2x &= 50 + x \\\\ 2x - x &= 50 - 30 \\\\ x &= 20 \\end{aligned}\\]",
         },
         {
           title: "Interpretar o ponto",
-          detail: "Em 20 GB os dois custam o mesmo: 30 + 40 = 70 = 50 + 20.",
+          detail: "Em 20 GB os dois custam o mesmo: \\(30 + 40 = 70 = 50 + 20\\).",
         },
         {
           title: "Decidir acima e abaixo",
@@ -816,9 +800,10 @@ export const algebraAulas: Record<string, AulaContent> = {
           id: "guiado-1",
           type: "calculo",
           enunciado: "Um plano cobra R$ 40 fixos + R$ 3 por GB. Quanto custam 12 GB?",
-          identificar: "Substitua x = 12 na expressão.",
-          dica: "40 + 3·12.",
-          resolucao: "40 + 36 = 76.",
+          identificar: "Substitua \\(x = 12\\) na expressão.",
+          dica: "\\(40 + 3 \\cdot 12\\).",
+          resolucao:
+            "\\[\\begin{aligned} 40 + 3 \\cdot 12 &= 40 + 36 \\\\ &= 76 \\end{aligned}\\]",
           resposta: "R$ 76,00",
           interpretacao: "A parte variável (R$ 36) já superou a fixa nesse uso.",
           erroComum: "Esquecer de somar a parte fixa.",
@@ -828,8 +813,9 @@ export const algebraAulas: Record<string, AulaContent> = {
           type: "aplicada",
           enunciado: "App A: R$ 5 fixos + R$ 2/km. App B: R$ 8 fixos + R$ 1,50/km. Em quantos km custam igual?",
           identificar: "Iguale as duas expressões.",
-          dica: "5 + 2x = 8 + 1,5x.",
-          resolucao: "0,5x = 3 → x = 6.",
+          dica: "\\(5 + 2x = 8 + 1{,}5x\\).",
+          resolucao:
+            "\\[\\begin{aligned} 5 + 2x &= 8 + 1{,}5x \\\\ 0{,}5x &= 3 \\\\ x &= 6 \\end{aligned}\\]",
           resposta: "6 km",
           interpretacao: "Até 6 km o App A é mais barato; acima, o B.",
           erroComum: "Subtrair os fixos no lado errado e achar x negativo.",
@@ -916,19 +902,20 @@ export const algebraAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Montar o custo total",
-          detail: "C(x) = 200 + 8x, com x = número de bolos.",
+          detail: "\\(C(x) = 200 + 8x\\), com \\(x\\) = número de bolos.",
         },
         {
           title: "Calcular para 50 bolos",
-          detail: "C(50) = 200 + 8·50 = 200 + 400 = 600.",
+          detail:
+            "\\[\\begin{aligned} C(50) &= 200 + 8 \\cdot 50 \\\\ &= 200 + 400 \\\\ &= 600 \\end{aligned}\\]",
         },
         {
           title: "Calcular o custo por bolo",
-          detail: "Cu = 600 / 50 = 12.",
+          detail: "\\(C_u = \\frac{600}{50} = 12\\).",
         },
         {
           title: "Comparar com uma produção menor",
-          detail: "Com 20 bolos: (200 + 160)/20 = 360/20 = 18 por bolo.",
+          detail: "Com 20 bolos: \\(\\frac{200 + 160}{20} = \\frac{360}{20} = 18\\) por bolo.",
         },
         {
           title: "Interpretar a diferença",
@@ -959,9 +946,10 @@ export const algebraAulas: Record<string, AulaContent> = {
           id: "guiado-1",
           type: "calculo",
           enunciado: "Custo fixo R$ 100, variável R$ 5/item. Qual o custo total de 30 itens?",
-          identificar: "Use C = F + v·x.",
-          dica: "100 + 5·30.",
-          resolucao: "100 + 150 = 250.",
+          identificar: "Use \\(C = F + v \\cdot x\\).",
+          dica: "\\(100 + 5 \\cdot 30\\).",
+          resolucao:
+            "\\[\\begin{aligned} 100 + 5 \\cdot 30 &= 100 + 150 \\\\ &= 250 \\end{aligned}\\]",
           resposta: "R$ 250,00",
           interpretacao: "O variável (R$ 150) já superou o fixo nessa quantidade.",
           erroComum: "Multiplicar o fixo por 30 também.",
@@ -971,8 +959,8 @@ export const algebraAulas: Record<string, AulaContent> = {
           type: "calculo",
           enunciado: "Com o item anterior, qual o custo por unidade dos 30 itens?",
           identificar: "Divida o total pela quantidade.",
-          dica: "250 / 30.",
-          resolucao: "250 / 30 ≈ 8,33.",
+          dica: "\\(\\frac{250}{30}\\).",
+          resolucao: "\\(\\frac{250}{30} \\approx 8{,}33\\).",
           resposta: "≈ R$ 8,33 por item",
           interpretacao: "Maior que os R$ 5 variáveis, porque inclui parte do fixo.",
           erroComum: "Dividir só o R$ 150 variável e achar R$ 5.",
@@ -1059,23 +1047,16 @@ export const algebraAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Montar receita e custo",
-          detail: "Receita = 3x. Custo = 120 + 1x, com x = brigadeiros.",
+          detail: "Receita = \\(3x\\). Custo = \\(120 + x\\), com \\(x\\) = brigadeiros.",
         },
         {
-          title: "Igualar (lucro zero)",
-          detail: "3x = 120 + x.",
-        },
-        {
-          title: "Juntar os termos com x",
-          detail: "3x − x = 120 → 2x = 120.",
-        },
-        {
-          title: "Isolar x",
-          detail: "x = 60.",
+          title: "Igualar (lucro zero) e isolar x",
+          detail:
+            "\\[\\begin{aligned} 3x &= 120 + x \\\\ 3x - x &= 120 \\\\ 2x &= 120 \\\\ x &= 60 \\end{aligned}\\]",
         },
         {
           title: "Conferir o sentido",
-          detail: "Receita: 3·60 = 180. Custo: 120 + 60 = 180. Empata.",
+          detail: "Receita: \\(3 \\cdot 60 = 180\\). Custo: \\(120 + 60 = 180\\). Empata.",
         },
       ],
     },
@@ -1083,7 +1064,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       title: "O que esse resultado significa?",
       paragraphs: [
         "Você precisa vender 60 brigadeiros para empatar. A partir do 61º, cada um deixa R$ 2 de lucro (preço R$ 3 menos R$ 1 de ingrediente).",
-        "O número 2 do denominador (p − v = 3 − 1) é a margem por unidade: quanto cada venda contribui para cobrir o fixo. Quanto maior a margem, menos vendas para empatar.",
+        "O número 2 do denominador (\\(p - v = 3 - 1\\)) é a margem por unidade: quanto cada venda contribui para cobrir o fixo. Quanto maior a margem, menos vendas para empatar.",
       ],
     },
     erros: {
@@ -1091,7 +1072,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       items: [
         "Confundir receita (só o que entra) com lucro (entra menos sai).",
         "Esquecer o custo variável e dividir o fixo só pelo preço.",
-        "Usar o preço em vez da margem (p − v) no denominador.",
+        "Usar o preço em vez da margem (\\(p - v\\)) no denominador.",
         "Achar que vender abaixo do ponto de equilíbrio já dá lucro.",
       ],
     },
@@ -1101,10 +1082,11 @@ export const algebraAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Receita 5x, custo 200 + 5x... existe ponto de equilíbrio?",
+          enunciado: "Receita \\(5x\\), custo \\(200 + 5x\\)... existe ponto de equilíbrio?",
           identificar: "Compare preço de venda e custo variável.",
-          dica: "Iguale 5x = 200 + 5x.",
-          resolucao: "5x − 5x = 200 → 0 = 200, impossível: nunca cobre o fixo.",
+          dica: "Iguale \\(5x = 200 + 5x\\).",
+          resolucao:
+            "\\[\\begin{aligned} 5x &= 200 + 5x \\\\ 5x - 5x &= 200 \\\\ 0 &= 200 \\end{aligned}\\] impossível: nunca cobre o fixo.",
           resposta: "Não há ponto de equilíbrio",
           interpretacao: "Vendendo ao mesmo valor do custo variável, a margem é zero — nunca paga o fixo.",
           erroComum: "Dividir 200 por zero sem perceber que é impossível.",
@@ -1113,9 +1095,9 @@ export const algebraAulas: Record<string, AulaContent> = {
           id: "guiado-2",
           type: "aplicada",
           enunciado: "Ingressos a R$ 20, custo fixo R$ 800, R$ 4 por pessoa. Quantos ingressos para empatar?",
-          identificar: "Use x = F/(p − v).",
-          dica: "Margem = 20 − 4 = 16.",
-          resolucao: "x = 800 / 16 = 50.",
+          identificar: "Use \\(x = \\frac{F}{p - v}\\).",
+          dica: "Margem \\(= 20 - 4 = 16\\).",
+          resolucao: "\\(x = \\frac{800}{16} = 50\\).",
           resposta: "50 ingressos",
           interpretacao: "Do 51º em diante, cada ingresso rende R$ 16 de lucro.",
           erroComum: "Dividir 800 por 20 (preço) em vez da margem.",
@@ -1125,8 +1107,9 @@ export const algebraAulas: Record<string, AulaContent> = {
           type: "calculo",
           enunciado: "No exemplo dos brigadeiros, qual o lucro vendendo 100?",
           identificar: "Lucro = receita − custo.",
-          dica: "Receita 3·100; custo 120 + 100.",
-          resolucao: "300 − 220 = 80.",
+          dica: "Receita \\(3 \\cdot 100\\); custo \\(120 + 100\\).",
+          resolucao:
+            "\\[\\begin{aligned} \\text{Lucro} &= 300 - 220 \\\\ &= 80 \\end{aligned}\\]",
           resposta: "R$ 80,00 de lucro",
           interpretacao: "40 unidades acima do equilíbrio × R$ 2 de margem = R$ 80.",
           erroComum: "Reportar a receita (R$ 300) como se fosse o lucro.",
@@ -1204,23 +1187,16 @@ export const algebraAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Montar as expressões",
-          detail: "A: 60 + 40h. B: 100 + 30h, com h = horas.",
+          detail: "A: \\(60 + 40h\\). B: \\(100 + 30h\\), com \\(h\\) = horas.",
         },
         {
-          title: "Igualar para o ponto de equilíbrio",
-          detail: "60 + 40h = 100 + 30h.",
-        },
-        {
-          title: "Juntar os termos com h",
-          detail: "40h − 30h = 100 − 60 → 10h = 40.",
-        },
-        {
-          title: "Isolar h",
-          detail: "h = 4 horas.",
+          title: "Igualar e isolar h",
+          detail:
+            "\\[\\begin{aligned} 60 + 40h &= 100 + 30h \\\\ 40h - 30h &= 100 - 60 \\\\ 10h &= 40 \\\\ h &= 4 \\end{aligned}\\]",
         },
         {
           title: "Calcular o custo nesse ponto",
-          detail: "60 + 40·4 = 220 (igual a 100 + 30·4 = 220).",
+          detail: "\\(60 + 40 \\cdot 4 = 220\\) (igual a \\(100 + 30 \\cdot 4 = 220\\)).",
         },
       ],
     },
@@ -1246,32 +1222,34 @@ export const algebraAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Simplifique e resolva: 3(x − 2) + 4 = 16.",
+          enunciado: "Simplifique e resolva: \\(3(x - 2) + 4 = 16\\).",
           identificar: "Abra o parêntese, junte e isole.",
           dica: "Distribua o 3 primeiro.",
-          resolucao: "3x − 6 + 4 = 16 → 3x − 2 = 16 → 3x = 18 → x = 6.",
-          resposta: "x = 6",
+          resolucao:
+            "\\[\\begin{aligned} 3(x - 2) + 4 &= 16 \\\\ 3x - 6 + 4 &= 16 \\\\ 3x - 2 &= 16 \\\\ 3x &= 18 \\\\ x &= 6 \\end{aligned}\\]",
+          resposta: "\\(x = 6\\)",
           interpretacao: "Simplificar antes deixou a equação fácil de isolar.",
-          erroComum: "Distribuir o 3 só no x e esquecer o −2.",
+          erroComum: "Distribuir o 3 só no \\(x\\) e esquecer o \\(-2\\).",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Resolva o sistema: x + y = 12 e 2x − y = 3.",
+          enunciado: "Resolva o sistema: \\(x + y = 12\\) e \\(2x - y = 3\\).",
           identificar: "Some para cancelar y.",
-          dica: "As parcelas de y são +y e −y.",
-          resolucao: "3x = 15 → x = 5; 5 + y = 12 → y = 7.",
-          resposta: "x = 5, y = 7",
-          interpretacao: "Confere nas duas: 5 + 7 = 12 e 10 − 7 = 3.",
-          erroComum: "Subtrair em vez de somar e não cancelar o y.",
+          dica: "As parcelas de \\(y\\) são \\(+y\\) e \\(-y\\).",
+          resolucao:
+            "Somando as duas: \\[\\begin{aligned} 3x &= 15 \\\\ x &= 5 \\\\ 5 + y &= 12 \\Rightarrow y = 7 \\end{aligned}\\]",
+          resposta: "\\(x = 5,\\ y = 7\\)",
+          interpretacao: "Confere nas duas: \\(5 + 7 = 12\\) e \\(10 - 7 = 3\\).",
+          erroComum: "Subtrair em vez de somar e não cancelar o \\(y\\).",
         },
         {
           id: "guiado-3",
           type: "aplicada",
           enunciado: "Você vende a R$ 10, custo fixo R$ 300, R$ 4 por item. Quantos itens para ter lucro?",
           identificar: "Ponto de equilíbrio e depois \"mais que isso\".",
-          dica: "x = 300/(10 − 4).",
-          resolucao: "x = 300/6 = 50; para lucro, x > 50.",
+          dica: "\\(x = \\frac{300}{10 - 4}\\).",
+          resolucao: "\\(x = \\frac{300}{6} = 50\\); para lucro, \\(x > 50\\).",
           resposta: "Mais de 50 itens",
           interpretacao: "No 50º empata; do 51º em diante há lucro — resposta é um intervalo.",
           erroComum: "Responder exatamente 50, que dá lucro zero.",

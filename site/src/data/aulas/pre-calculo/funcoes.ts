@@ -51,46 +51,39 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Uma máquina simples",
       situacao:
-        "Uma função dobra o número e soma 1: f(x) = 2x + 1. O que ela devolve para a entrada x = 3?",
+        "Uma função dobra o número e soma 1: \\(f(x) = 2x + 1\\). O que ela devolve para a entrada \\(x = 3\\)?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Identificar a entrada",
-          detail: "A entrada é x = 3.",
+          detail: "A entrada é \\(x = 3\\).",
         },
         {
-          title: "Substituir na regra",
-          detail: "f(3) = 2·3 + 1.",
-        },
-        {
-          title: "Aplicar a ordem das operações",
-          detail: "2·3 = 6; depois 6 + 1.",
-        },
-        {
-          title: "Obter a saída",
-          detail: "f(3) = 7.",
+          title: "Substituir e calcular",
+          detail:
+            "\\[\\begin{aligned} f(3) &= 2 \\cdot 3 + 1 \\\\ &= 6 + 1 \\\\ &= 7 \\end{aligned}\\]",
         },
         {
           title: "Interpretar a notação",
-          detail: "f(3) = 7 se lê: \"para a entrada 3, a função devolve 7\".",
+          detail: "\\(f(3) = 7\\) se lê: \"para a entrada 3, a função devolve 7\".",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "f(3) = 7 quer dizer que, ao colocar 3 na máquina, ela devolve 7. A notação f(3) não é multiplicação — é \"o valor da função em 3\".",
+        "\\(f(3) = 7\\) quer dizer que, ao colocar 3 na máquina, ela devolve 7. A notação \\(f(3)\\) não é multiplicação — é \"o valor da função em 3\".",
         "Se você colocar 3 de novo, sempre sai 7. Essa previsibilidade é a essência de função: a mesma entrada nunca dá duas saídas diferentes.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Ler f(x) como f vezes x — é \"f de x\", o valor da função.",
+        "Ler \\(f(x)\\) como \\(f\\) vezes \\(x\\) — é \"f de x\", o valor da função.",
         "Achar que uma entrada pode ter duas saídas diferentes.",
-        "Confundir a entrada (x) com a saída (f(x)).",
+        "Confundir a entrada (\\(x\\)) com a saída (\\(f(x)\\)).",
         "Esquecer a ordem das operações ao substituir.",
       ],
     },
@@ -100,24 +93,24 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Para f(x) = x + 4, quanto é f(10)?",
-          identificar: "Substitua x por 10.",
-          dica: "f(10) = 10 + 4.",
-          resolucao: "f(10) = 14.",
-          resposta: "14",
+          enunciado: "Para \\(f(x) = x + 4\\), quanto é \\(f(10)\\)?",
+          identificar: "Substitua \\(x\\) por 10.",
+          dica: "\\(f(10) = 10 + 4\\).",
+          resolucao: "\\(f(10) = 10 + 4 = 14\\).",
+          resposta: "\\(14\\)",
           interpretacao: "Entrada 10 → saída 14, pela regra de somar 4.",
           erroComum: "Multiplicar 10 por 4.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Para g(x) = 3x − 2, quanto é g(0)?",
-          identificar: "Substitua x por 0.",
-          dica: "3·0 − 2.",
-          resolucao: "g(0) = 0 − 2 = −2.",
-          resposta: "−2",
-          interpretacao: "Mesmo com entrada zero, a parte fixa (−2) aparece na saída.",
-          erroComum: "Achar que g(0) é sempre 0.",
+          enunciado: "Para \\(g(x) = 3x - 2\\), quanto é \\(g(0)\\)?",
+          identificar: "Substitua \\(x\\) por 0.",
+          dica: "\\(3 \\cdot 0 - 2\\).",
+          resolucao: "\\(g(0) = 0 - 2 = -2\\).",
+          resposta: "\\(-2\\)",
+          interpretacao: "Mesmo com entrada zero, a parte fixa (\\(-2\\)) aparece na saída.",
+          erroComum: "Achar que \\(g(0)\\) é sempre 0.",
         },
         {
           id: "guiado-3",
@@ -194,7 +187,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Uma função com entrada proibida",
       situacao:
-        "Considere f(x) = 1/(x − 2). Qual é o domínio dessa função?",
+        "Considere \\(f(x) = \\frac{1}{x - 2}\\). Qual é o domínio dessa função?",
     },
     passos: {
       title: "Como pensar e resolver",
@@ -204,20 +197,16 @@ export const funcoesAulas: Record<string, AulaContent> = {
           detail: "Há uma divisão; o denominador não pode ser zero.",
         },
         {
-          title: "Escrever a condição proibida",
-          detail: "x − 2 = 0 quando x = 2.",
-        },
-        {
-          title: "Excluir esse valor",
-          detail: "x = 2 não pode entrar.",
+          title: "Escrever e resolver a condição proibida",
+          detail: "\\(x - 2 = 0\\) quando \\(x = 2\\) — logo \\(x = 2\\) não pode entrar.",
         },
         {
           title: "Escrever o domínio",
-          detail: "Todos os reais menos o 2: x ≠ 2.",
+          detail: "Todos os reais menos o 2: \\(x \\neq 2\\).",
         },
         {
           title: "Conferir o sentido",
-          detail: "Em x = 2 daria 1/0, que não existe. Confere a exclusão.",
+          detail: "Em \\(x = 2\\) daria \\(\\frac{1}{0}\\), que não existe. Confere a exclusão.",
         },
       ],
     },
@@ -225,7 +214,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "O que esse resultado significa?",
       paragraphs: [
         "O domínio é \"todos os números reais, exceto 2\". Para qualquer outro valor a função funciona; só o 2 quebra a conta.",
-        "No gráfico, isso vira um \"buraco\" ou uma linha que a curva nunca toca em x = 2. O domínio antecipa onde a função existe.",
+        "No gráfico, isso vira um \"buraco\" ou uma linha que a curva nunca toca em \\(x = 2\\). O domínio antecipa onde a função existe.",
       ],
     },
     erros: {
@@ -243,34 +232,34 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Qual o domínio de f(x) = 1/x?",
+          enunciado: "Qual o domínio de \\(f(x) = \\frac{1}{x}\\)?",
           identificar: "Denominador não pode ser zero.",
-          dica: "Quando x = 0 há divisão por zero.",
-          resolucao: "Exclua x = 0: domínio é x ≠ 0.",
-          resposta: "x ≠ 0",
+          dica: "Quando \\(x = 0\\) há divisão por zero.",
+          resolucao: "Exclua \\(x = 0\\): domínio é \\(x \\neq 0\\).",
+          resposta: "\\(x \\neq 0\\)",
           interpretacao: "Todo real serve, menos o zero.",
           erroComum: "Incluir o zero no domínio.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Qual o domínio de f(x) = √x (nos reais)?",
+          enunciado: "Qual o domínio de \\(f(x) = \\sqrt{x}\\) (nos reais)?",
           identificar: "Raiz quadrada exige radicando não negativo.",
-          dica: "x precisa ser ≥ 0.",
-          resolucao: "Domínio: x ≥ 0.",
-          resposta: "x ≥ 0",
+          dica: "\\(x\\) precisa ser \\(\\geq 0\\).",
+          resolucao: "Domínio: \\(x \\geq 0\\).",
+          resposta: "\\(x \\geq 0\\)",
           interpretacao: "Não existe raiz real de número negativo.",
-          erroComum: "Permitir valores negativos de x.",
+          erroComum: "Permitir valores negativos de \\(x\\).",
         },
         {
           id: "guiado-3",
           type: "aplicada",
-          enunciado: "A área de um quadrado é A(L) = L². No mundo real, qual o domínio?",
-          identificar: "L é o lado de um quadrado.",
+          enunciado: "A área de um quadrado é \\(A(L) = L^2\\). No mundo real, qual o domínio?",
+          identificar: "\\(L\\) é o lado de um quadrado.",
           dica: "Comprimento não pode ser negativo nem zero.",
-          resolucao: "L > 0 (lado positivo).",
-          resposta: "L > 0",
-          interpretacao: "Matematicamente L² aceita negativos, mas um lado real é positivo.",
+          resolucao: "\\(L > 0\\) (lado positivo).",
+          resposta: "\\(L > 0\\)",
+          interpretacao: "Matematicamente \\(L^2\\) aceita negativos, mas um lado real é positivo.",
           erroComum: "Usar todos os reais ignorando o contexto.",
         },
       ],
@@ -313,11 +302,11 @@ export const funcoesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "A forma e o que cada parte faz",
       paragraphs: [
-        "A função quadrática é f(x) = ax² + bx + c, com a ≠ 0. O termo ax² é o que dá a curva; sem ele seria uma reta.",
-        "O sinal de a decide a concavidade: a > 0 abre para cima (tem mínimo), a < 0 abre para baixo (tem máximo). O vértice é o ponto extremo, e as raízes são onde a parábola cruza o eixo x.",
+        "A função quadrática é \\(f(x) = ax^2 + bx + c\\), com \\(a \\neq 0\\). O termo \\(ax^2\\) é o que dá a curva; sem ele seria uma reta.",
+        "O sinal de \\(a\\) decide a concavidade: \\(a > 0\\) abre para cima (tem mínimo), \\(a < 0\\) abre para baixo (tem máximo). O vértice é o ponto extremo, e as raízes são onde a parábola cruza o eixo \\(x\\).",
       ],
       callout:
-        "a > 0: U para cima, tem ponto mínimo. a < 0: U para baixo, tem ponto máximo. O vértice é sempre esse ponto de virada.",
+        "\\(a > 0\\): U para cima, tem ponto mínimo. \\(a < 0\\): U para baixo, tem ponto máximo. O vértice é sempre esse ponto de virada.",
       formula: "f(x) = ax² + bx + c,  x_v = −b/2a",
       formulaLatex: "f(x) = ax^2 + bx + c, \\quad x_v = \\frac{-b}{2a}",
       formulaAria: "f de x igual a a x ao quadrado mais b x mais c; x do vértice igual a menos b sobre dois a",
@@ -344,30 +333,28 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "A altura de uma bola",
       situacao:
-        "Uma bola é jogada e sua altura é h(t) = −5t² + 20t (em metros, t em segundos). Qual a altura máxima e quando ela ocorre?",
+        "Uma bola é jogada e sua altura é \\(h(t) = -5t^2 + 20t\\) (em metros, \\(t\\) em segundos). Qual a altura máxima e quando ela ocorre?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Identificar a, b e c",
-          detail: "a = −5, b = 20, c = 0. Como a < 0, a parábola abre para baixo (tem máximo).",
+          detail: "\\(a = -5\\), \\(b = 20\\), \\(c = 0\\). Como \\(a < 0\\), a parábola abre para baixo (tem máximo).",
         },
         {
           title: "Achar o instante do vértice",
-          detail: "t_v = −b/2a = −20/(2·(−5)) = −20/(−10) = 2.",
+          detail:
+            "\\[\\begin{aligned} t_v &= \\frac{-b}{2a} = \\frac{-20}{2 \\cdot (-5)} \\\\ &= \\frac{-20}{-10} = 2 \\end{aligned}\\]",
         },
         {
           title: "Calcular a altura nesse instante",
-          detail: "h(2) = −5·4 + 20·2 = −20 + 40 = 20.",
-        },
-        {
-          title: "Identificar o tipo de extremo",
-          detail: "Como a < 0, esse vértice é o ponto máximo.",
+          detail:
+            "\\[\\begin{aligned} h(2) &= -5 \\cdot 4 + 20 \\cdot 2 \\\\ &= -20 + 40 \\\\ &= 20 \\end{aligned}\\]",
         },
         {
           title: "Conferir o sentido",
-          detail: "A bola sobe, atinge 20 m aos 2 s e depois cai. Faz sentido físico.",
+          detail: "Como \\(a < 0\\), o vértice é máximo: a bola sobe, atinge 20 m aos 2 s e cai. Faz sentido físico.",
         },
       ],
     },
@@ -375,16 +362,16 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "O que esse resultado significa?",
       paragraphs: [
         "A bola atinge a altura máxima de 20 metros aos 2 segundos. O vértice respondeu exatamente \"qual o pico e quando\".",
-        "O sinal negativo de a foi a pista: ele garante que existe um máximo, não um mínimo. Se a fosse positivo, a curva teria um fundo em vez de um pico.",
+        "O sinal negativo de \\(a\\) foi a pista: ele garante que existe um máximo, não um mínimo. Se \\(a\\) fosse positivo, a curva teria um fundo em vez de um pico.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Esquecer o sinal de a ao decidir se é máximo ou mínimo.",
-        "Errar o sinal em −b/2a (o b = 20 dá −20 no numerador).",
-        "Calcular só t_v e esquecer de achar a altura h(t_v).",
-        "Confundir as raízes (onde y = 0) com o vértice (extremo).",
+        "Esquecer o sinal de \\(a\\) ao decidir se é máximo ou mínimo.",
+        "Errar o sinal em \\(\\frac{-b}{2a}\\) (o \\(b = 20\\) dá \\(-20\\) no numerador).",
+        "Calcular só \\(t_v\\) e esquecer de achar a altura \\(h(t_v)\\).",
+        "Confundir as raízes (onde \\(y = 0\\)) com o vértice (extremo).",
       ],
     },
     exerciciosGuiados: {
@@ -393,10 +380,10 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "compreensao",
-          enunciado: "A função f(x) = 2x² − 3x + 1 tem máximo ou mínimo?",
-          identificar: "Olhe o sinal de a.",
-          dica: "a = 2 > 0.",
-          resolucao: "Como a > 0, a parábola abre para cima: tem mínimo.",
+          enunciado: "A função \\(f(x) = 2x^2 - 3x + 1\\) tem máximo ou mínimo?",
+          identificar: "Olhe o sinal de \\(a\\).",
+          dica: "\\(a = 2 > 0\\).",
+          resolucao: "Como \\(a > 0\\), a parábola abre para cima: tem mínimo.",
           resposta: "Mínimo",
           interpretacao: "U para cima sempre tem um ponto de fundo.",
           erroComum: "Achar que toda parábola tem máximo.",
@@ -404,23 +391,25 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Ache o x do vértice de f(x) = x² − 6x + 5.",
-          identificar: "Use x_v = −b/2a.",
-          dica: "a = 1, b = −6.",
-          resolucao: "x_v = −(−6)/(2·1) = 6/2 = 3.",
-          resposta: "x_v = 3",
-          interpretacao: "O extremo (aqui mínimo) está em x = 3.",
-          erroComum: "Esquecer que −(−6) = +6.",
+          enunciado: "Ache o \\(x\\) do vértice de \\(f(x) = x^2 - 6x + 5\\).",
+          identificar: "Use \\(x_v = \\frac{-b}{2a}\\).",
+          dica: "\\(a = 1\\), \\(b = -6\\).",
+          resolucao:
+            "\\[\\begin{aligned} x_v &= \\frac{-(-6)}{2 \\cdot 1} = \\frac{6}{2} \\\\ &= 3 \\end{aligned}\\]",
+          resposta: "\\(x_v = 3\\)",
+          interpretacao: "O extremo (aqui mínimo) está em \\(x = 3\\).",
+          erroComum: "Esquecer que \\(-(-6) = +6\\).",
         },
         {
           id: "guiado-3",
           type: "calculo",
-          enunciado: "Quais as raízes de x² − 5x + 6 = 0?",
-          identificar: "Onde a parábola corta o eixo x.",
+          enunciado: "Quais as raízes de \\(x^2 - 5x + 6 = 0\\)?",
+          identificar: "Onde a parábola corta o eixo \\(x\\).",
           dica: "Fatore: dois números que somam 5 e multiplicam 6.",
-          resolucao: "(x − 2)(x − 3) = 0 → x = 2 ou x = 3.",
-          resposta: "x = 2 e x = 3",
-          interpretacao: "A parábola cruza o eixo x nesses dois pontos.",
+          resolucao:
+            "\\[\\begin{aligned} x^2 - 5x + 6 &= 0 \\\\ (x - 2)(x - 3) &= 0 \\\\ x = 2 \\ &\\text{ou} \\ x = 3 \\end{aligned}\\]",
+          resposta: "\\(x = 2\\) e \\(x = 3\\)",
+          interpretacao: "A parábola cruza o eixo \\(x\\) nesses dois pontos.",
           erroComum: "Confundir as raízes com o vértice.",
         },
       ],
@@ -433,10 +422,10 @@ export const funcoesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Função quadrática: f(x) = ax² + bx + c, gráfico em parábola.",
-        "a > 0 abre para cima (mínimo); a < 0 abre para baixo (máximo).",
-        "Vértice em x_v = −b/2a é o ponto extremo.",
-        "Raízes são onde a parábola cruza o eixo x.",
+        "Função quadrática: \\(f(x) = ax^2 + bx + c\\), gráfico em parábola.",
+        "\\(a > 0\\) abre para cima (mínimo); \\(a < 0\\) abre para baixo (máximo).",
+        "Vértice em \\(x_v = \\frac{-b}{2a}\\) é o ponto extremo.",
+        "Raízes são onde a parábola cruza o eixo \\(x\\).",
       ],
     },
   },
@@ -487,26 +476,18 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Um erro de temperatura",
       situacao:
-        "Um termostato deve manter 20 °C. A diferença em relação ao alvo é |T − 20|. Qual a diferença quando T = 17 °C e quando T = 23 °C?",
+        "Um termostato deve manter 20 °C. A diferença em relação ao alvo é \\(|T - 20|\\). Qual a diferença quando \\(T = 17\\) °C e quando \\(T = 23\\) °C?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
-          title: "Montar a expressão para T = 17",
-          detail: "|17 − 20| = |−3|.",
+          title: "Calcular para T = 17",
+          detail: "\\(|17 - 20| = |-3| = 3\\).",
         },
         {
-          title: "Aplicar o módulo",
-          detail: "|−3| = 3.",
-        },
-        {
-          title: "Montar para T = 23",
-          detail: "|23 − 20| = |3|.",
-        },
-        {
-          title: "Aplicar o módulo",
-          detail: "|3| = 3.",
+          title: "Calcular para T = 23",
+          detail: "\\(|23 - 20| = |3| = 3\\).",
         },
         {
           title: "Comparar os dois casos",
@@ -518,16 +499,16 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "O que esse resultado significa?",
       paragraphs: [
         "Estar a 17 °C ou a 23 °C representa o mesmo erro de 3 graus em relação ao alvo. O módulo ignora se faltou ou sobrou — só mede o quanto.",
-        "Por isso |x| é a ferramenta de \"distância\": o que importa é o afastamento do alvo, não o lado para o qual ele aconteceu.",
+        "Por isso \\(|x|\\) é a ferramenta de \"distância\": o que importa é o afastamento do alvo, não o lado para o qual ele aconteceu.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Achar que |−x| = x sempre (só vale se você souber o sinal de x).",
-        "Tratar o módulo como se cancelasse o número (|−5| não é −5).",
+        "Achar que \\(|-x| = x\\) sempre (só vale se você souber o sinal de \\(x\\)).",
+        "Tratar o módulo como se cancelasse o número (\\(|-5|\\) não é \\(-5\\)).",
         "Esquecer que o módulo pode dar zero (quando o número é zero).",
-        "Distribuir módulo sobre soma: |a + b| nem sempre é |a| + |b|.",
+        "Distribuir módulo sobre soma: \\(|a + b|\\) nem sempre é \\(|a| + |b|\\).",
       ],
     },
     exerciciosGuiados: {
@@ -536,33 +517,33 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Quanto é |−8|?",
-          identificar: "Distância de −8 até o zero.",
+          enunciado: "Quanto é \\(|-8|\\)?",
+          identificar: "Distância de \\(-8\\) até o zero.",
           dica: "Negativo vira positivo.",
-          resolucao: "|−8| = 8.",
-          resposta: "8",
-          interpretacao: "−8 está a 8 unidades do zero.",
-          erroComum: "Responder −8.",
+          resolucao: "\\(|-8| = 8\\).",
+          resposta: "\\(8\\)",
+          interpretacao: "\\(-8\\) está a 8 unidades do zero.",
+          erroComum: "Responder \\(-8\\).",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Calcule |3 − 10|.",
+          enunciado: "Calcule \\(|3 - 10|\\).",
           identificar: "Resolva dentro do módulo primeiro.",
-          dica: "3 − 10 = −7.",
-          resolucao: "|−7| = 7.",
-          resposta: "7",
+          dica: "\\(3 - 10 = -7\\).",
+          resolucao: "\\(|3 - 10| = |-7| = 7\\).",
+          resposta: "\\(7\\)",
           interpretacao: "A diferença entre 3 e 10 é 7, em tamanho.",
           erroComum: "Aplicar o módulo antes de fazer a subtração.",
         },
         {
           id: "guiado-3",
           type: "calculo",
-          enunciado: "Para quais valores de x temos |x| = 5?",
+          enunciado: "Para quais valores de \\(x\\) temos \\(|x| = 5\\)?",
           identificar: "Quais números estão a 5 do zero?",
           dica: "Há dois: um positivo e um negativo.",
-          resolucao: "x = 5 ou x = −5.",
-          resposta: "x = 5 e x = −5",
+          resolucao: "\\(x = 5\\) ou \\(x = -5\\).",
+          resposta: "\\(x = 5\\) e \\(x = -5\\)",
           interpretacao: "Dois pontos têm distância 5 até o zero, um de cada lado.",
           erroComum: "Dar só a solução positiva.",
         },
@@ -576,10 +557,10 @@ export const funcoesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Módulo = distância até o zero, sempre ≥ 0.",
-        "|x| mantém positivos e inverte negativos.",
-        "O gráfico de |x| é um V com bico na origem.",
-        "|x| = k (k > 0) tem duas soluções: k e −k.",
+        "Módulo = distância até o zero, sempre \\(\\geq 0\\).",
+        "\\(|x|\\) mantém positivos e inverte negativos.",
+        "O gráfico de \\(|x|\\) é um V com bico na origem.",
+        "\\(|x| = k\\) (\\(k > 0\\)) tem duas soluções: \\(k\\) e \\(-k\\).",
       ],
     },
   },
@@ -606,11 +587,11 @@ export const funcoesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Multiplicar em vez de somar",
       paragraphs: [
-        "Na função afim você soma sempre o mesmo valor. Na exponencial você multiplica sempre pela mesma base. f(x) = a·bˣ: a é o valor inicial e b é o fator de multiplicação a cada passo.",
-        "Se b > 1, há crescimento (cada passo aumenta); se 0 < b < 1, há decaimento (cada passo diminui). O gráfico sobe (ou desce) cada vez mais rápido.",
+        "Na função afim você soma sempre o mesmo valor. Na exponencial você multiplica sempre pela mesma base. \\(f(x) = a \\cdot b^x\\): \\(a\\) é o valor inicial e \\(b\\) é o fator de multiplicação a cada passo.",
+        "Se \\(b > 1\\), há crescimento (cada passo aumenta); se \\(0 < b < 1\\), há decaimento (cada passo diminui). O gráfico sobe (ou desce) cada vez mais rápido.",
       ],
       callout:
-        "Afim soma a mesma coisa; exponencial multiplica pela mesma coisa. b > 1 cresce, 0 < b < 1 decai.",
+        "Afim soma a mesma coisa; exponencial multiplica pela mesma coisa. \\(b > 1\\) cresce, \\(0 < b < 1\\) decai.",
       formula: "f(x) = a·bˣ",
       formulaLatex: "f(x) = a \\cdot b^{x}",
       formulaAria: "f de x igual a a vezes b elevado a x",
@@ -630,30 +611,23 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Bactérias que dobram",
       situacao:
-        "Uma cultura começa com 100 bactérias e dobra a cada hora: N(t) = 100·2ᵗ. Quantas bactérias há após 3 horas?",
+        "Uma cultura começa com 100 bactérias e dobra a cada hora: \\(N(t) = 100 \\cdot 2^t\\). Quantas bactérias há após 3 horas?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Identificar os elementos",
-          detail: "Valor inicial a = 100; base b = 2 (dobra); t = 3 horas.",
+          detail: "Valor inicial \\(a = 100\\); base \\(b = 2\\) (dobra); \\(t = 3\\) horas.",
         },
         {
-          title: "Montar a expressão",
-          detail: "N(3) = 100·2³.",
-        },
-        {
-          title: "Calcular a potência",
-          detail: "2³ = 8.",
-        },
-        {
-          title: "Multiplicar pelo inicial",
-          detail: "100·8 = 800.",
+          title: "Substituir e calcular",
+          detail:
+            "\\[\\begin{aligned} N(3) &= 100 \\cdot 2^3 \\\\ &= 100 \\cdot 8 \\\\ &= 800 \\end{aligned}\\]",
         },
         {
           title: "Conferir passo a passo",
-          detail: "100 → 200 (1h) → 400 (2h) → 800 (3h). Confere.",
+          detail: "\\(100 \\to 200\\) (1h) \\(\\to 400\\) (2h) \\(\\to 800\\) (3h). Confere.",
         },
       ],
     },
@@ -668,9 +642,9 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Tratar como afim e somar em vez de multiplicar.",
-        "Multiplicar a base pelo expoente (2³ não é 6).",
-        "Esquecer o valor inicial a ao calcular.",
-        "Confundir crescimento (b > 1) com decaimento (b < 1).",
+        "Multiplicar a base pelo expoente (\\(2^3\\) não é 6).",
+        "Esquecer o valor inicial \\(a\\) ao calcular.",
+        "Confundir crescimento (\\(b > 1\\)) com decaimento (\\(b < 1\\)).",
       ],
     },
     exerciciosGuiados: {
@@ -679,21 +653,21 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Para f(x) = 3·2ˣ, quanto é f(2)?",
+          enunciado: "Para \\(f(x) = 3 \\cdot 2^x\\), quanto é \\(f(2)\\)?",
           identificar: "Calcule a potência antes de multiplicar.",
-          dica: "2² = 4.",
-          resolucao: "f(2) = 3·4 = 12.",
-          resposta: "12",
+          dica: "\\(2^2 = 4\\).",
+          resolucao: "\\(f(2) = 3 \\cdot 4 = 12\\).",
+          resposta: "\\(12\\)",
           interpretacao: "Partindo de 3, multiplicado por 2 duas vezes.",
           erroComum: "Fazer 3·2·2 na ordem errada ou somar.",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "f(x) = 5·(0,5)ˣ cresce ou decai?",
+          enunciado: "\\(f(x) = 5 \\cdot (0{,}5)^x\\) cresce ou decai?",
           identificar: "Olhe a base.",
-          dica: "0,5 está entre 0 e 1.",
-          resolucao: "Como 0 < 0,5 < 1, a função decai.",
+          dica: "\\(0{,}5\\) está entre 0 e 1.",
+          resolucao: "Como \\(0 < 0{,}5 < 1\\), a função decai.",
           resposta: "Decai",
           interpretacao: "Cada passo corta o valor pela metade.",
           erroComum: "Achar que toda exponencial cresce.",
@@ -703,11 +677,11 @@ export const funcoesAulas: Record<string, AulaContent> = {
           type: "aplicada",
           enunciado: "Um remédio de 80 mg cai pela metade a cada 4 h. Quanto resta após 8 h?",
           identificar: "Duas meias-vidas em 8 horas.",
-          dica: "Multiplique por 1/2 duas vezes.",
-          resolucao: "80 → 40 (4h) → 20 (8h).",
+          dica: "Multiplique por \\(\\frac{1}{2}\\) duas vezes.",
+          resolucao: "\\(80 \\to 40\\) (4h) \\(\\to 20\\) (8h).",
           resposta: "20 mg",
           interpretacao: "Decaimento exponencial: metade, depois metade da metade.",
-          erroComum: "Subtrair sempre 40 mg em vez de multiplicar por 1/2.",
+          erroComum: "Subtrair sempre 40 mg em vez de multiplicar por \\(\\frac{1}{2}\\).",
         },
       ],
     },
@@ -720,8 +694,8 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Exponencial multiplica pela mesma base a cada passo.",
-        "f(x) = a·bˣ: a é o inicial, b o fator por passo.",
-        "b > 1 cresce acelerando; 0 < b < 1 decai.",
+        "\\(f(x) = a \\cdot b^x\\): \\(a\\) é o inicial, \\(b\\) o fator por passo.",
+        "\\(b > 1\\) cresce acelerando; \\(0 < b < 1\\) decai.",
         "Calcule a potência antes de multiplicar pelo inicial.",
       ],
     },
@@ -749,11 +723,11 @@ export const funcoesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Log pergunta 'qual é o expoente?'",
       paragraphs: [
-        "log_b(N) pergunta: \"a qual expoente preciso elevar a base b para obter N?\". Por exemplo, log₂(8) = 3, porque 2³ = 8.",
+        "\\(\\log_b(N)\\) pergunta: \"a qual expoente preciso elevar a base \\(b\\) para obter \\(N\\)?\". Por exemplo, \\(\\log_2(8) = 3\\), porque \\(2^3 = 8\\).",
         "É exatamente a operação inversa da exponencial. Onde a exponencial empilha multiplicações, o log conta quantas foram. Por isso elas se desfazem.",
       ],
       callout:
-        "log_b(N) = x significa bˣ = N. Logaritmo é \"qual expoente\"; é a inversa da exponencial.",
+        "\\(\\log_b(N) = x\\) significa \\(b^x = N\\). Logaritmo é \"qual expoente\"; é a inversa da exponencial.",
       formula: "log_b(N) = x  ⟺  bˣ = N",
       formulaLatex: "\\log_b(N) = x \\iff b^{x} = N",
       formulaAria: "log na base b de N igual a x se e somente se b elevado a x igual a N",
@@ -773,37 +747,33 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Quantas vezes dobrar até chegar a 64?",
       situacao:
-        "Você começa com 1 e dobra repetidamente: 1, 2, 4, 8... Quantas vezes precisa dobrar para chegar a 64? Em log: quanto é log₂(64)?",
+        "Você começa com 1 e dobra repetidamente: 1, 2, 4, 8... Quantas vezes precisa dobrar para chegar a 64? Em log: quanto é \\(\\log_2(64)\\)?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Reescrever como pergunta de expoente",
-          detail: "log₂(64) pergunta: 2 elevado a quê dá 64?",
+          detail: "\\(\\log_2(64)\\) pergunta: 2 elevado a quê dá 64?",
         },
         {
           title: "Testar potências de 2",
-          detail: "2¹=2, 2²=4, 2³=8, 2⁴=16, 2⁵=32, 2⁶=64.",
+          detail: "\\(2^1=2,\\ 2^2=4,\\ 2^3=8,\\ 2^4=16,\\ 2^5=32,\\ 2^6=64\\).",
         },
         {
           title: "Identificar o expoente certo",
-          detail: "2⁶ = 64, então o expoente é 6.",
-        },
-        {
-          title: "Escrever o resultado",
-          detail: "log₂(64) = 6.",
+          detail: "\\(2^6 = 64\\), então \\(\\log_2(64) = 6\\).",
         },
         {
           title: "Conferir com a contagem",
-          detail: "Dobrar 6 vezes a partir de 1: 2,4,8,16,32,64. Confere.",
+          detail: "Dobrar 6 vezes a partir de 1: 2, 4, 8, 16, 32, 64. Confere.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "log₂(64) = 6 quer dizer que são necessárias 6 duplicações para sair de 1 e chegar a 64. O log contou os passos da exponencial.",
+        "\\(\\log_2(64) = 6\\) quer dizer que são necessárias 6 duplicações para sair de 1 e chegar a 64. O log contou os passos da exponencial.",
         "Repare como o log encolhe números grandes: 64 vira 6. É por isso que escalas como Richter e decibéis usam log — para que diferenças enormes caibam em poucos números.",
       ],
     },
@@ -811,7 +781,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Achar que log é multiplicação ou divisão.",
-        "Esquecer qual é a base (log₂ e log₁₀ dão resultados diferentes).",
+        "Esquecer qual é a base (\\(\\log_2\\) e \\(\\log_{10}\\) dão resultados diferentes).",
         "Tentar calcular log de número negativo ou zero (não existe).",
         "Inverter a pergunta: log dá o expoente, não a potência.",
       ],
@@ -822,22 +792,22 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Quanto é log₃(9)?",
+          enunciado: "Quanto é \\(\\log_3(9)\\)?",
           identificar: "3 elevado a quê dá 9?",
           dica: "Pense nas potências de 3.",
-          resolucao: "3² = 9, então log₃(9) = 2.",
-          resposta: "2",
+          resolucao: "\\(3^2 = 9\\), então \\(\\log_3(9) = 2\\).",
+          resposta: "\\(2\\)",
           interpretacao: "São dois passos de multiplicação por 3.",
           erroComum: "Responder 3 (a base) em vez do expoente.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Quanto é log₁₀(1000)?",
+          enunciado: "Quanto é \\(\\log_{10}(1000)\\)?",
           identificar: "10 elevado a quê dá 1000?",
-          dica: "1000 = 10·10·10.",
-          resolucao: "10³ = 1000, então log₁₀(1000) = 3.",
-          resposta: "3",
+          dica: "\\(1000 = 10 \\cdot 10 \\cdot 10\\).",
+          resolucao: "\\(10^3 = 1000\\), então \\(\\log_{10}(1000) = 3\\).",
+          resposta: "\\(3\\)",
           interpretacao: "O log base 10 conta os zeros das potências de 10.",
           erroComum: "Responder 100 ou 1000.",
         },
@@ -862,9 +832,9 @@ export const funcoesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "log_b(N) pergunta: qual expoente leva b a N?",
+        "\\(\\log_b(N)\\) pergunta: qual expoente leva \\(b\\) a \\(N\\)?",
         "Logaritmo é a operação inversa da exponencial.",
-        "log_b(N) = x equivale a bˣ = N.",
+        "\\(\\log_b(N) = x\\) equivale a \\(b^x = N\\).",
         "Log comprime números grandes (Richter, decibéis, pH).",
       ],
     },
@@ -896,7 +866,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "No gráfico, é uma reta que começa na altura da bandeirada (quando x = 0) e sobe de forma constante. Cada km a mais soma sempre o mesmo valor.",
       ],
       callout:
-        "C(x) = a·x + b: a é o preço por km, b é a bandeirada. Quilometragem zero já custa a bandeirada.",
+        "\\(C(x) = a \\cdot x + b\\): \\(a\\) é o preço por km, \\(b\\) é a bandeirada. Quilometragem zero já custa a bandeirada.",
       formula: "C(x) = 2,5·x + 6",
       formulaLatex: "C(x) = 2{,}5 \\cdot x + 6",
       formulaAria: "C de x igual a dois vírgula cinco vezes x mais seis",
@@ -923,19 +893,17 @@ export const funcoesAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Montar a função",
-          detail: "C(x) = 2,5x + 6, com x = km.",
+          detail: "\\(C(x) = 2{,}5x + 6\\), com \\(x\\) = km.",
         },
         {
           title: "Calcular o preço de 8 km",
-          detail: "C(8) = 2,5·8 + 6 = 20 + 6 = 26.",
+          detail:
+            "\\[\\begin{aligned} C(8) &= 2{,}5 \\cdot 8 + 6 \\\\ &= 20 + 6 \\\\ &= 26 \\end{aligned}\\]",
         },
         {
-          title: "Para R$ 31, montar a equação",
-          detail: "2,5x + 6 = 31.",
-        },
-        {
-          title: "Isolar x",
-          detail: "2,5x = 25 → x = 10.",
+          title: "Para R$ 31, montar e resolver a equação",
+          detail:
+            "\\[\\begin{aligned} 2{,}5x + 6 &= 31 \\\\ 2{,}5x &= 25 \\\\ x &= 10 \\end{aligned}\\]",
         },
         {
           title: "Interpretar",
@@ -946,7 +914,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "Você consegue ir nos dois sentidos: do trajeto para o preço (C(8) = 26) e do preço para o trajeto (R$ 31 → 10 km). É a mesma função, lida de dois jeitos.",
+        "Você consegue ir nos dois sentidos: do trajeto para o preço (\\(C(8) = 26\\)) e do preço para o trajeto (R$ 31 → 10 km). É a mesma função, lida de dois jeitos.",
         "A bandeirada de R$ 6 é o que você paga mesmo sem andar quase nada. Por isso corridas curtíssimas saem proporcionalmente caras: o fixo pesa mais.",
       ],
     },
@@ -965,10 +933,11 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Com C(x) = 2,5x + 6, quanto custa uma corrida de 4 km?",
-          identificar: "Substitua x = 4.",
-          dica: "2,5·4 + 6.",
-          resolucao: "10 + 6 = 16.",
+          enunciado: "Com \\(C(x) = 2{,}5x + 6\\), quanto custa uma corrida de 4 km?",
+          identificar: "Substitua \\(x = 4\\).",
+          dica: "\\(2{,}5 \\cdot 4 + 6\\).",
+          resolucao:
+            "\\[\\begin{aligned} C(4) &= 2{,}5 \\cdot 4 + 6 \\\\ &= 10 + 6 = 16 \\end{aligned}\\]",
           resposta: "R$ 16,00",
           interpretacao: "Metade do trajeto de 8 km, mas não metade do preço, por causa da bandeirada.",
           erroComum: "Esquecer a bandeirada e responder R$ 10.",
@@ -977,11 +946,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
           id: "guiado-2",
           type: "calculo",
           enunciado: "Quantos km dá uma corrida de R$ 21 nesse app?",
-          identificar: "Resolva 2,5x + 6 = 21.",
-          dica: "Tire 6, depois divida por 2,5.",
-          resolucao: "2,5x = 15 → x = 6.",
+          identificar: "Resolva \\(2{,}5x + 6 = 21\\).",
+          dica: "Tire 6, depois divida por \\(2{,}5\\).",
+          resolucao:
+            "\\[\\begin{aligned} 2{,}5x + 6 &= 21 \\\\ 2{,}5x &= 15 \\\\ x &= 6 \\end{aligned}\\]",
           resposta: "6 km",
-          interpretacao: "Verificando: 2,5·6 + 6 = 21. Confere.",
+          interpretacao: "Verificando: \\(2{,}5 \\cdot 6 + 6 = 21\\). Confere.",
           erroComum: "Dividir 21 por 2,5 sem tirar a bandeirada.",
         },
         {
@@ -989,8 +959,8 @@ export const funcoesAulas: Record<string, AulaContent> = {
           type: "aplicada",
           enunciado: "App A: R$ 5 + R$ 3/km. App B: R$ 8 + R$ 2/km. Para 5 km, qual sai mais barato?",
           identificar: "Calcule os dois preços e compare.",
-          dica: "A: 5 + 15; B: 8 + 10.",
-          resolucao: "A = 20; B = 18. B é mais barato.",
+          dica: "A: \\(5 + 15\\); B: \\(8 + 10\\).",
+          resolucao: "\\(A = 20\\); \\(B = 18\\). B é mais barato.",
           resposta: "App B (R$ 18)",
           interpretacao: "O menor preço por km de B compensa a bandeirada maior nesse trajeto.",
           erroComum: "Escolher pelo menor fixo sem calcular o total.",
@@ -1006,7 +976,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Corrida de app é função afim: bandeirada + preço por km.",
-        "C(x) = a·x + b, com b = bandeirada e a = preço por km.",
+        "\\(C(x) = a \\cdot x + b\\), com \\(b\\) = bandeirada e \\(a\\) = preço por km.",
         "Dá para ir do trajeto ao preço e do preço ao trajeto.",
         "A bandeirada pesa mais em corridas curtas.",
       ],
@@ -1035,11 +1005,11 @@ export const funcoesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Multiplicar pelo fator a cada período",
       paragraphs: [
-        "A cada período, o valor é multiplicado por (1 + i), onde i é a taxa em decimal. Após t períodos, multiplica-se t vezes: M = C·(1 + i)ᵗ.",
-        "C é o capital inicial, i a taxa por período e t o número de períodos. Como há multiplicação repetida, o crescimento é exponencial — acelera com o tempo.",
+        "A cada período, o valor é multiplicado por \\((1 + i)\\), onde \\(i\\) é a taxa em decimal. Após \\(t\\) períodos, multiplica-se \\(t\\) vezes: \\(M = C \\cdot (1 + i)^t\\).",
+        "\\(C\\) é o capital inicial, \\(i\\) a taxa por período e \\(t\\) o número de períodos. Como há multiplicação repetida, o crescimento é exponencial — acelera com o tempo.",
       ],
       callout:
-        "Cada período multiplica por (1 + i). Repetir isso t vezes é elevar a (1 + i) à potência t.",
+        "Cada período multiplica por \\((1 + i)\\). Repetir isso \\(t\\) vezes é elevar \\((1 + i)\\) à potência \\(t\\).",
       formula: "M = C·(1 + i)ᵗ",
       formulaLatex: "M = C \\cdot (1 + i)^{t}",
       formulaAria: "M igual a C vezes abre parêntese um mais i fecha parêntese elevado a t",
@@ -1066,23 +1036,16 @@ export const funcoesAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Identificar os valores",
-          detail: "C = 1000; i = 10% = 0,10; t = 2 anos.",
+          detail: "\\(C = 1000\\); \\(i = 10\\% = 0{,}10\\); \\(t = 2\\) anos.",
         },
         {
-          title: "Montar a fórmula",
-          detail: "M = 1000·(1 + 0,10)² = 1000·(1,10)².",
-        },
-        {
-          title: "Calcular a potência",
-          detail: "(1,10)² = 1,21.",
-        },
-        {
-          title: "Multiplicar pelo capital",
-          detail: "1000·1,21 = 1210.",
+          title: "Montar e desenvolver a fórmula",
+          detail:
+            "\\[\\begin{aligned} M &= 1000 \\cdot (1 + 0{,}10)^2 \\\\ &= 1000 \\cdot (1{,}10)^2 \\\\ &= 1000 \\cdot 1{,}21 \\\\ &= 1210 \\end{aligned}\\]",
         },
         {
           title: "Comparar com juro simples",
-          detail: "Juro simples daria 1000 + 100 + 100 = 1200; composto deu 1210 (os R$ 10 a mais são juro sobre juro).",
+          detail: "Juro simples daria \\(1000 + 100 + 100 = 1200\\); composto deu 1210 (os R$ 10 a mais são juro sobre juro).",
         },
       ],
     },
@@ -1096,10 +1059,10 @@ export const funcoesAulas: Record<string, AulaContent> = {
     erros: {
       title: "Cuidado com",
       items: [
-        "Usar a taxa em porcentagem (10) em vez de decimal (0,10).",
+        "Usar a taxa em porcentagem (\\(10\\)) em vez de decimal (\\(0{,}10\\)).",
         "Multiplicar a base pelo expoente em vez de elevar.",
         "Confundir juro composto com simples (somar sempre o mesmo).",
-        "Esquecer de somar o 1 ao i: é (1 + i), não i.",
+        "Esquecer de somar o 1 ao \\(i\\): é \\((1 + i)\\), não \\(i\\).",
       ],
     },
     exerciciosGuiados: {
@@ -1109,23 +1072,24 @@ export const funcoesAulas: Record<string, AulaContent> = {
           id: "guiado-1",
           type: "calculo",
           enunciado: "R$ 500 a 10% ao ano, por 1 ano. Qual o montante?",
-          identificar: "Use M = C·(1 + i)ᵗ com t = 1.",
-          dica: "500·1,10.",
-          resolucao: "500·1,10 = 550.",
+          identificar: "Use \\(M = C \\cdot (1 + i)^t\\) com \\(t = 1\\).",
+          dica: "\\(500 \\cdot 1{,}10\\).",
+          resolucao: "\\(500 \\cdot 1{,}10 = 550\\).",
           resposta: "R$ 550,00",
           interpretacao: "Em 1 ano, composto e simples dão o mesmo: R$ 50 de juro.",
-          erroComum: "Usar 1,10² mesmo com t = 1.",
+          erroComum: "Usar \\(1{,}10^2\\) mesmo com \\(t = 1\\).",
         },
         {
           id: "guiado-2",
           type: "calculo",
           enunciado: "R$ 1000 a 20% ao ano, por 2 anos. Qual o montante?",
-          identificar: "Eleve (1,20) ao quadrado.",
-          dica: "(1,20)² = 1,44.",
-          resolucao: "1000·1,44 = 1440.",
+          identificar: "Eleve \\((1{,}20)\\) ao quadrado.",
+          dica: "\\((1{,}20)^2 = 1{,}44\\).",
+          resolucao:
+            "\\[\\begin{aligned} M &= 1000 \\cdot (1{,}20)^2 \\\\ &= 1000 \\cdot 1{,}44 \\\\ &= 1440 \\end{aligned}\\]",
           resposta: "R$ 1440,00",
           interpretacao: "Juro simples daria 1400; os R$ 40 extras são juro sobre juro.",
-          erroComum: "Calcular 1000·1,40.",
+          erroComum: "Calcular \\(1000 \\cdot 1{,}40\\).",
         },
         {
           id: "guiado-3",
@@ -1148,8 +1112,8 @@ export const funcoesAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Juros compostos: M = C·(1 + i)ᵗ.",
-        "A taxa entra em decimal (10% = 0,10) e soma-se 1.",
+        "Juros compostos: \\(M = C \\cdot (1 + i)^t\\).",
+        "A taxa entra em decimal (\\(10\\% = 0{,}10\\)) e soma-se 1.",
         "Cada período rende sobre o total acumulado (juro sobre juro).",
         "É crescimento exponencial: dispara no longo prazo.",
       ],
@@ -1179,7 +1143,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "Custo como função da quantidade",
       paragraphs: [
         "No caso simples, C(x) = custo fixo + custo variável × quantidade — uma função afim. O gráfico é uma reta que parte do custo fixo.",
-        "Quando o custo por unidade muda com a escala, o custo médio vira uma quadrática: cai, atinge um mínimo e depois sobe. O vértice (x_v = −b/2a) aponta a quantidade de custo mínimo.",
+        "Quando o custo por unidade muda com a escala, o custo médio vira uma quadrática: cai, atinge um mínimo e depois sobe. O vértice (\\(x_v = \\frac{-b}{2a}\\)) aponta a quantidade de custo mínimo.",
       ],
       callout:
         "Custo afim: reta partindo do fixo. Custo médio quadrático: tem um ponto de mínimo no vértice.",
@@ -1202,30 +1166,28 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Custo com ponto mínimo",
       situacao:
-        "O custo médio por peça é C(x) = x² − 8x + 30 (em reais), onde x é a quantidade em centenas. Qual quantidade minimiza o custo, e qual é esse custo?",
+        "O custo médio por peça é \\(C(x) = x^2 - 8x + 30\\) (em reais), onde \\(x\\) é a quantidade em centenas. Qual quantidade minimiza o custo, e qual é esse custo?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Identificar a, b, c",
-          detail: "a = 1, b = −8, c = 30. Como a > 0, há um mínimo.",
+          detail: "\\(a = 1\\), \\(b = -8\\), \\(c = 30\\). Como \\(a > 0\\), há um mínimo.",
         },
         {
           title: "Achar a quantidade do mínimo",
-          detail: "x_min = −b/2a = −(−8)/(2·1) = 8/2 = 4.",
+          detail:
+            "\\[\\begin{aligned} x_{min} &= \\frac{-b}{2a} = \\frac{-(-8)}{2 \\cdot 1} \\\\ &= \\frac{8}{2} = 4 \\end{aligned}\\]",
         },
         {
           title: "Calcular o custo nesse ponto",
-          detail: "C(4) = 16 − 32 + 30 = 14.",
-        },
-        {
-          title: "Confirmar que é mínimo",
-          detail: "Como a parábola abre para cima (a > 0), o vértice é o ponto mais baixo.",
+          detail:
+            "\\[\\begin{aligned} C(4) &= 16 - 32 + 30 \\\\ &= 14 \\end{aligned}\\]",
         },
         {
           title: "Interpretar",
-          detail: "Produzir 400 peças (x = 4 centenas) dá o menor custo médio: R$ 14 por peça.",
+          detail: "Como \\(a > 0\\), o vértice é o ponto mais baixo: produzir 400 peças (\\(x = 4\\) centenas) dá o menor custo médio, R$ 14 por peça.",
         },
       ],
     },
@@ -1239,10 +1201,10 @@ export const funcoesAulas: Record<string, AulaContent> = {
     erros: {
       title: "Cuidado com",
       items: [
-        "Esquecer o sinal ao calcular −b/2a (b = −8 dá +8 no numerador).",
-        "Parar em x_min e não calcular o custo C(x_min).",
+        "Esquecer o sinal ao calcular \\(\\frac{-b}{2a}\\) (\\(b = -8\\) dá \\(+8\\) no numerador).",
+        "Parar em \\(x_{min}\\) e não calcular o custo \\(C(x_{min})\\).",
         "Achar que produzir sempre mais reduz o custo médio.",
-        "Confundir a unidade (aqui x está em centenas).",
+        "Confundir a unidade (aqui \\(x\\) está em centenas).",
       ],
     },
     exerciciosGuiados: {
@@ -1251,10 +1213,10 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Custo C(x) = 50 + 4x. Quanto custa produzir 20 unidades?",
-          identificar: "Função afim: substitua x = 20.",
-          dica: "50 + 4·20.",
-          resolucao: "50 + 80 = 130.",
+          enunciado: "Custo \\(C(x) = 50 + 4x\\). Quanto custa produzir 20 unidades?",
+          identificar: "Função afim: substitua \\(x = 20\\).",
+          dica: "\\(50 + 4 \\cdot 20\\).",
+          resolucao: "\\(50 + 4 \\cdot 20 = 50 + 80 = 130\\).",
           resposta: "R$ 130,00",
           interpretacao: "Custo fixo de R$ 50 mais R$ 4 por unidade.",
           erroComum: "Esquecer o custo fixo.",
@@ -1262,24 +1224,25 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Ache a quantidade de custo mínimo de C(x) = x² − 10x + 40.",
+          enunciado: "Ache a quantidade de custo mínimo de \\(C(x) = x^2 - 10x + 40\\).",
           identificar: "Vértice da parábola.",
-          dica: "x_min = −b/2a com b = −10.",
-          resolucao: "x_min = 10/2 = 5.",
-          resposta: "x = 5",
-          interpretacao: "Em x = 5 o custo é o menor (parábola abre para cima).",
-          erroComum: "Usar −10 no numerador sem inverter o sinal.",
+          dica: "\\(x_{min} = \\frac{-b}{2a}\\) com \\(b = -10\\).",
+          resolucao: "\\(x_{min} = \\frac{10}{2} = 5\\).",
+          resposta: "\\(x = 5\\)",
+          interpretacao: "Em \\(x = 5\\) o custo é o menor (parábola abre para cima).",
+          erroComum: "Usar \\(-10\\) no numerador sem inverter o sinal.",
         },
         {
           id: "guiado-3",
           type: "calculo",
           enunciado: "No item anterior, qual é o custo mínimo?",
-          identificar: "Calcule C(5).",
-          dica: "5² − 10·5 + 40.",
-          resolucao: "25 − 50 + 40 = 15.",
+          identificar: "Calcule \\(C(5)\\).",
+          dica: "\\(5^2 - 10 \\cdot 5 + 40\\).",
+          resolucao:
+            "\\[\\begin{aligned} C(5) &= 25 - 50 + 40 \\\\ &= 15 \\end{aligned}\\]",
           resposta: "R$ 15,00",
-          interpretacao: "O menor custo possível dessa função é R$ 15, em x = 5.",
-          erroComum: "Reportar o x (5) como se fosse o custo.",
+          interpretacao: "O menor custo possível dessa função é R$ 15, em \\(x = 5\\).",
+          erroComum: "Reportar o \\(x\\) (5) como se fosse o custo.",
         },
       ],
     },
@@ -1293,7 +1256,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       bullets: [
         "Custo simples é função afim: fixo + variável × quantidade.",
         "Custo médio pode ser quadrático, com um ponto de mínimo.",
-        "O vértice x_min = −b/2a dá a quantidade de custo mínimo.",
+        "O vértice \\(x_{min} = \\frac{-b}{2a}\\) dá a quantidade de custo mínimo.",
         "Sempre calcule o custo no ponto, não pare na quantidade.",
       ],
     },
@@ -1322,7 +1285,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "As funções básicas, lado a lado",
       paragraphs: [
         "Função: regra que dá uma saída para cada entrada. Domínio: as entradas permitidas (cuidado com divisão por zero e raiz de negativo).",
-        "Afim (f = ax + b): reta, cresce de forma constante. Quadrática (f = ax² + bx + c): parábola, tem vértice de máximo ou mínimo. Modular (f = |x|): V, mede distância sem sinal.",
+        "Afim (\\(f = ax + b\\)): reta, cresce de forma constante. Quadrática (\\(f = ax^2 + bx + c\\)): parábola, tem vértice de máximo ou mínimo. Modular (\\(f = |x|\\)): V, mede distância sem sinal.",
       ],
       callout:
         "Reconheça pelo gráfico: reta = afim, parábola = quadrática, V = modular. Cada forma conta a história da função.",
@@ -1343,26 +1306,22 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Identificar e avaliar",
       situacao:
-        "Dada f(x) = x² − 4x + 3, diga o tipo, se tem máximo ou mínimo, e calcule f(0).",
+        "Dada \\(f(x) = x^2 - 4x + 3\\), diga o tipo, se tem máximo ou mínimo, e calcule \\(f(0)\\).",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Identificar o tipo",
-          detail: "Tem x²: é quadrática, gráfico em parábola.",
+          detail: "Tem \\(x^2\\): é quadrática, gráfico em parábola.",
         },
         {
           title: "Olhar o sinal de a",
-          detail: "a = 1 > 0: abre para cima, tem mínimo.",
+          detail: "\\(a = 1 > 0\\): abre para cima, tem mínimo.",
         },
         {
           title: "Calcular f(0)",
-          detail: "f(0) = 0 − 0 + 3 = 3.",
-        },
-        {
-          title: "Interpretar f(0)",
-          detail: "Em x = 0 a função vale 3 (onde corta o eixo y).",
+          detail: "\\(f(0) = 0 - 0 + 3 = 3\\) — onde corta o eixo \\(y\\).",
         },
         {
           title: "Conferir o sentido",
@@ -1373,7 +1332,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "Você classificou a função (quadrática), descreveu o comportamento (mínimo) e avaliou um ponto (f(0) = 3) — exatamente o que se espera ao ler uma função.",
+        "Você classificou a função (quadrática), descreveu o comportamento (mínimo) e avaliou um ponto (\\(f(0) = 3\\)) — exatamente o que se espera ao ler uma função.",
         "Esse trio — tipo, comportamento, valor num ponto — é a leitura básica de qualquer função, e vale para todos os tipos do módulo.",
       ],
     },
@@ -1382,8 +1341,8 @@ export const funcoesAulas: Record<string, AulaContent> = {
       items: [
         "Confundir os gráficos: reta, parábola e V são bem diferentes.",
         "Esquecer de checar o domínio antes de avaliar.",
-        "Ler f(0) como zero automaticamente.",
-        "Trocar máximo por mínimo ignorando o sinal de a.",
+        "Ler \\(f(0)\\) como zero automaticamente.",
+        "Trocar máximo por mínimo ignorando o sinal de \\(a\\).",
       ],
     },
     exerciciosGuiados: {
@@ -1395,7 +1354,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
           enunciado: "Que tipo de função tem gráfico em formato de V?",
           identificar: "Associe a forma ao tipo.",
           dica: "Distância sem sinal.",
-          resolucao: "É a função modular, f(x) = |x|.",
+          resolucao: "É a função modular, \\(f(x) = |x|\\).",
           resposta: "Modular",
           interpretacao: "O bico do V está onde o conteúdo do módulo zera.",
           erroComum: "Confundir com a parábola.",
@@ -1403,24 +1362,24 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Para f(x) = 2x − 1, quanto é f(5)?",
-          identificar: "Função afim: substitua x = 5.",
-          dica: "2·5 − 1.",
-          resolucao: "10 − 1 = 9.",
-          resposta: "9",
+          enunciado: "Para \\(f(x) = 2x - 1\\), quanto é \\(f(5)\\)?",
+          identificar: "Função afim: substitua \\(x = 5\\).",
+          dica: "\\(2 \\cdot 5 - 1\\).",
+          resolucao: "\\(f(5) = 2 \\cdot 5 - 1 = 9\\).",
+          resposta: "\\(9\\)",
           interpretacao: "Saída 9 para entrada 5, numa reta crescente.",
-          erroComum: "Calcular 2·(5 − 1).",
+          erroComum: "Calcular \\(2 \\cdot (5 - 1)\\).",
         },
         {
           id: "guiado-3",
           type: "calculo",
-          enunciado: "Qual o domínio de f(x) = 1/(x + 1)?",
+          enunciado: "Qual o domínio de \\(f(x) = \\frac{1}{x + 1}\\)?",
           identificar: "Denominador não pode zerar.",
-          dica: "x + 1 = 0 quando x = −1.",
-          resolucao: "Exclua x = −1: domínio é x ≠ −1.",
-          resposta: "x ≠ −1",
+          dica: "\\(x + 1 = 0\\) quando \\(x = -1\\).",
+          resolucao: "Exclua \\(x = -1\\): domínio é \\(x \\neq -1\\).",
+          resposta: "\\(x \\neq -1\\)",
           interpretacao: "Só esse valor quebra a função.",
-          erroComum: "Excluir x = 1 em vez de x = −1.",
+          erroComum: "Excluir \\(x = 1\\) em vez de \\(x = -1\\).",
         },
       ],
     },
@@ -1434,7 +1393,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       bullets: [
         "Função: cada entrada gera uma saída; cheque o domínio.",
         "Afim = reta; quadrática = parábola; modular = V.",
-        "O sinal de a na quadrática decide máximo ou mínimo.",
+        "O sinal de \\(a\\) na quadrática decide máximo ou mínimo.",
         "Leitura básica: tipo, comportamento e valor num ponto.",
       ],
     },
@@ -1466,7 +1425,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Exponencial, log e aplicações",
       paragraphs: [
-        "Exponencial (f = a·bˣ): multiplica pela base a cada passo; b > 1 cresce, 0 < b < 1 decai. Logaritmo: a inversa, responde \"qual expoente\".",
+        "Exponencial (\\(f = a \\cdot b^x\\)): multiplica pela base a cada passo; \\(b > 1\\) cresce, \\(0 < b < 1\\) decai. Logaritmo: a inversa, responde \"qual expoente\".",
         "Aplicações: a corrida é função afim; os juros compostos são exponencial; o custo pode ser afim ou quadrático. Cada problema real escolhe a função que descreve sua mudança.",
       ],
       callout:
@@ -1498,16 +1457,9 @@ export const funcoesAulas: Record<string, AulaContent> = {
           detail: "Crescer uma porcentagem a cada ano é multiplicar: exponencial.",
         },
         {
-          title: "Montar a fórmula de juros",
-          detail: "M = 200·(1 + 0,05)² = 200·(1,05)².",
-        },
-        {
-          title: "Calcular a potência",
-          detail: "(1,05)² = 1,1025.",
-        },
-        {
-          title: "Multiplicar",
-          detail: "200·1,1025 = 220,50.",
+          title: "Montar e desenvolver a fórmula de juros",
+          detail:
+            "\\[\\begin{aligned} M &= 200 \\cdot (1 + 0{,}05)^2 \\\\ &= 200 \\cdot (1{,}05)^2 \\\\ &= 200 \\cdot 1{,}1025 \\\\ &= 220{,}50 \\end{aligned}\\]",
         },
         {
           title: "Interpretar",
@@ -1537,22 +1489,22 @@ export const funcoesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Para f(x) = 2·3ˣ, quanto é f(2)?",
+          enunciado: "Para \\(f(x) = 2 \\cdot 3^x\\), quanto é \\(f(2)\\)?",
           identificar: "Potência antes da multiplicação.",
-          dica: "3² = 9.",
-          resolucao: "2·9 = 18.",
-          resposta: "18",
+          dica: "\\(3^2 = 9\\).",
+          resolucao: "\\(f(2) = 2 \\cdot 9 = 18\\).",
+          resposta: "\\(18\\)",
           interpretacao: "Crescimento exponencial a partir de 2.",
-          erroComum: "Calcular 2·3·2.",
+          erroComum: "Calcular \\(2 \\cdot 3 \\cdot 2\\).",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Quanto é log₂(16)?",
+          enunciado: "Quanto é \\(\\log_2(16)\\)?",
           identificar: "2 elevado a quê dá 16?",
           dica: "Potências de 2.",
-          resolucao: "2⁴ = 16, então log₂(16) = 4.",
-          resposta: "4",
+          resolucao: "\\(2^4 = 16\\), então \\(\\log_2(16) = 4\\).",
+          resposta: "\\(4\\)",
           interpretacao: "São 4 duplicações para chegar a 16.",
           erroComum: "Responder 8 (metade) ou 2 (base).",
         },
@@ -1562,7 +1514,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
           enunciado: "Um salário fixo de R$ 2000 + R$ 50 por venda é qual tipo de função?",
           identificar: "Soma um valor fixo por unidade.",
           dica: "Fixo + variável constante.",
-          resolucao: "É função afim: f(x) = 50x + 2000.",
+          resolucao: "É função afim: \\(f(x) = 50x + 2000\\).",
           resposta: "Afim",
           interpretacao: "Mudança constante por venda — reta, não exponencial.",
           erroComum: "Classificar como exponencial por ter crescimento.",
@@ -1579,7 +1531,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       bullets: [
         "Exponencial multiplica pela base; log é sua inversa.",
         "Mudança constante = afim; acelerada = exponencial.",
-        "Juros compostos: M = C·(1 + i)ᵗ.",
+        "Juros compostos: \\(M = C \\cdot (1 + i)^t\\).",
         "Escolher a função certa começa por analisar o tipo de mudança.",
       ],
     },

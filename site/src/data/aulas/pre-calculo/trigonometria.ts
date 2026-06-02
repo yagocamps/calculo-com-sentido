@@ -51,7 +51,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "A altura de uma pipa",
       situacao:
-        "Uma pipa está presa por uma linha de 50 m que faz 30° com o chão. A que altura ela está? Use sen(30°) = 0,5.",
+        "Uma pipa está presa por uma linha de 50 m que faz 30° com o chão. A que altura ela está? Use \\(\\sin(30^\\circ) = 0{,}5\\).",
     },
     passos: {
       title: "Como pensar e resolver",
@@ -62,15 +62,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         },
         {
           title: "Escolher a razão certa",
-          detail: "Queremos o oposto e temos a hipotenusa → usamos o seno.",
+          detail: "Queremos o oposto e temos a hipotenusa → usamos o seno: \\(\\sin(30^\\circ) = \\frac{\\text{altura}}{50}\\).",
         },
         {
-          title: "Montar a equação",
-          detail: "sen(30°) = altura / 50.",
-        },
-        {
-          title: "Isolar a altura",
-          detail: "altura = 50 · sen(30°) = 50 · 0,5 = 25.",
+          title: "Isolar e calcular a altura",
+          detail:
+            "\\[\\begin{aligned} \\text{altura} &= 50 \\cdot \\sin(30^\\circ) \\\\ &= 50 \\cdot 0{,}5 \\\\ &= 25 \\end{aligned}\\]",
         },
         {
           title: "Conferir o sentido",
@@ -82,7 +79,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       title: "O que esse resultado significa?",
       paragraphs: [
         "A pipa está a 25 m de altura. Medimos algo inalcançável usando só um ângulo e o comprimento da linha — esse é o superpoder da trigonometria.",
-        "Como sen(30°) = 0,5, a altura é exatamente metade da linha. Se o ângulo fosse maior, o seno cresceria e a pipa estaria mais alta para a mesma linha.",
+        "Como \\(\\sin(30^\\circ) = 0{,}5\\), a altura é exatamente metade da linha. Se o ângulo fosse maior, o seno cresceria e a pipa estaria mais alta para a mesma linha.",
       ],
     },
     erros: {
@@ -103,18 +100,19 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           enunciado: "Num triângulo, o oposto a um ângulo é 6 e a hipotenusa é 10. Qual o seno?",
           identificar: "Seno = oposto / hipotenusa.",
           dica: "6 dividido por 10.",
-          resolucao: "sen = 6/10 = 0,6.",
-          resposta: "0,6",
+          resolucao: "\\(\\sin = \\frac{6}{10} = 0{,}6\\).",
+          resposta: "\\(0{,}6\\)",
           interpretacao: "A razão entre o lado oposto e a hipotenusa é 0,6.",
           erroComum: "Dividir a hipotenusa pelo oposto.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Uma rampa de 20 m faz 30° com o chão. Qual a altura no topo? (sen 30° = 0,5)",
+          enunciado: "Uma rampa de 20 m faz 30° com o chão. Qual a altura no topo? (\\(\\sin 30^\\circ = 0{,}5\\))",
           identificar: "Altura é o cateto oposto; a rampa é a hipotenusa.",
-          dica: "altura = hipotenusa · sen.",
-          resolucao: "altura = 20 · 0,5 = 10.",
+          dica: "altura = hipotenusa \\(\\cdot \\sin\\).",
+          resolucao:
+            "\\[\\begin{aligned} \\text{altura} &= 20 \\cdot 0{,}5 \\\\ &= 10 \\end{aligned}\\]",
           resposta: "10 m",
           interpretacao: "A rampa sobe 10 m ao longo dos 20 m de comprimento.",
           erroComum: "Multiplicar por 30 em vez do seno.",
@@ -140,7 +138,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Seno = cateto oposto ÷ hipotenusa (SOH).",
+        "\\(\\sin = \\frac{\\text{cateto oposto}}{\\text{hipotenusa}}\\) (SOH).",
         "Depende só do ângulo, não do tamanho do triângulo.",
         "Permite medir alturas e distâncias inalcançáveis.",
         "Cuidado para não trocar oposto com adjacente.",
@@ -194,7 +192,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "A base de uma escada",
       situacao:
-        "Uma escada de 4 m encosta na parede formando 60° com o chão. A que distância da parede está o pé da escada? Use cos(60°) = 0,5.",
+        "Uma escada de 4 m encosta na parede formando 60° com o chão. A que distância da parede está o pé da escada? Use \\(\\cos(60^\\circ) = 0{,}5\\).",
     },
     passos: {
       title: "Como pensar e resolver",
@@ -204,16 +202,13 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           detail: "A escada é a hipotenusa (4 m); a distância do pé à parede é o cateto adjacente ao ângulo de 60°.",
         },
         {
-          title: "Escolher a razão",
-          detail: "Temos a hipotenusa e queremos o adjacente → cosseno.",
+          title: "Escolher a razão e montar",
+          detail: "Temos a hipotenusa e queremos o adjacente → cosseno: \\(\\cos(60^\\circ) = \\frac{\\text{distância}}{4}\\).",
         },
         {
-          title: "Montar a equação",
-          detail: "cos(60°) = distância / 4.",
-        },
-        {
-          title: "Isolar a distância",
-          detail: "distância = 4 · cos(60°) = 4 · 0,5 = 2.",
+          title: "Isolar e calcular a distância",
+          detail:
+            "\\[\\begin{aligned} \\text{distância} &= 4 \\cdot \\cos(60^\\circ) \\\\ &= 4 \\cdot 0{,}5 \\\\ &= 2 \\end{aligned}\\]",
         },
         {
           title: "Conferir o sentido",
@@ -246,18 +241,19 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           enunciado: "O adjacente é 8 e a hipotenusa é 10. Qual o cosseno?",
           identificar: "Cosseno = adjacente / hipotenusa.",
           dica: "8 dividido por 10.",
-          resolucao: "cos = 8/10 = 0,8.",
-          resposta: "0,8",
+          resolucao: "\\(\\cos = \\frac{8}{10} = 0{,}8\\).",
+          resposta: "\\(0{,}8\\)",
           interpretacao: "A razão do lado adjacente com a hipotenusa é 0,8.",
           erroComum: "Usar o cateto oposto.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Uma rampa de 10 m faz 60° com o chão. Qual o avanço horizontal? (cos 60° = 0,5)",
+          enunciado: "Uma rampa de 10 m faz 60° com o chão. Qual o avanço horizontal? (\\(\\cos 60^\\circ = 0{,}5\\))",
           identificar: "Avanço horizontal é o adjacente.",
-          dica: "adjacente = hipotenusa · cos.",
-          resolucao: "10 · 0,5 = 5.",
+          dica: "adjacente = hipotenusa \\(\\cdot \\cos\\).",
+          resolucao:
+            "\\[\\begin{aligned} \\text{adjacente} &= 10 \\cdot 0{,}5 \\\\ &= 5 \\end{aligned}\\]",
           resposta: "5 m",
           interpretacao: "A rampa avança 5 m na horizontal.",
           erroComum: "Usar o seno e achar a altura.",
@@ -268,7 +264,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           enunciado: "Quando o ângulo aumenta de 30° para 60°, o cosseno cresce ou diminui?",
           identificar: "Pense no adjacente ficando menor.",
           dica: "Ângulo mais íngreme aproxima da parede.",
-          resolucao: "O cosseno diminui (cos 30° ≈ 0,87 > cos 60° = 0,5).",
+          resolucao: "O cosseno diminui (\\(\\cos 30^\\circ \\approx 0{,}87 > \\cos 60^\\circ = 0{,}5\\)).",
           resposta: "Diminui",
           interpretacao: "Ângulos maiores reduzem a parte horizontal.",
           erroComum: "Achar que cosseno cresce com o ângulo (isso é o seno).",
@@ -283,7 +279,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Cosseno = cateto adjacente ÷ hipotenusa (CAH).",
+        "\\(\\cos = \\frac{\\text{cateto adjacente}}{\\text{hipotenusa}}\\) (CAH).",
         "É o par do seno: descreve a parte horizontal.",
         "Quando o ângulo cresce, o cosseno diminui.",
         "Use cosseno quando o lado adjacente está envolvido.",
@@ -314,7 +310,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       title: "A razão entre os dois catetos",
       paragraphs: [
         "A tangente do ângulo é o cateto oposto dividido pelo cateto adjacente. É exatamente \"o quanto sobe\" sobre \"o quanto anda\".",
-        "Repare que tan(θ) = sen(θ)/cos(θ): a tangente é o seno dividido pelo cosseno. Por isso ela cresce muito rápido perto de 90°, onde o cosseno se aproxima de zero.",
+        "Repare que \\(\\tan(\\theta) = \\frac{\\sin\\theta}{\\cos\\theta}\\): a tangente é o seno dividido pelo cosseno. Por isso ela cresce muito rápido perto de 90°, onde o cosseno se aproxima de zero.",
       ],
       callout:
         "Tangente = cateto oposto ÷ cateto adjacente. Memorize por TOA: Tangente = Oposto sobre Adjacente.",
@@ -337,7 +333,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "A altura de um prédio pela sombra",
       situacao:
-        "Do chão, você vê o topo de um prédio a 40 m de distância sob um ângulo de 45°. Qual a altura do prédio? Use tan(45°) = 1.",
+        "Do chão, você vê o topo de um prédio a 40 m de distância sob um ângulo de 45°. Qual a altura do prédio? Use \\(\\tan(45^\\circ) = 1\\).",
     },
     passos: {
       title: "Como pensar e resolver",
@@ -347,16 +343,13 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           detail: "A distância no chão (40 m) é o adjacente; a altura é o oposto ao ângulo de 45°.",
         },
         {
-          title: "Escolher a razão",
-          detail: "Temos adjacente e queremos oposto, sem a hipotenusa → tangente.",
+          title: "Escolher a razão e montar",
+          detail: "Temos adjacente e queremos oposto, sem a hipotenusa → tangente: \\(\\tan(45^\\circ) = \\frac{\\text{altura}}{40}\\).",
         },
         {
-          title: "Montar a equação",
-          detail: "tan(45°) = altura / 40.",
-        },
-        {
-          title: "Isolar a altura",
-          detail: "altura = 40 · tan(45°) = 40 · 1 = 40.",
+          title: "Isolar e calcular a altura",
+          detail:
+            "\\[\\begin{aligned} \\text{altura} &= 40 \\cdot \\tan(45^\\circ) \\\\ &= 40 \\cdot 1 = 40 \\end{aligned}\\]",
         },
         {
           title: "Conferir o sentido",
@@ -367,7 +360,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "O prédio tem 40 m. Como tan(45°) = 1, a altura é igual à distância — característico do ângulo de 45°, onde subir e andar se equilibram.",
+        "O prédio tem 40 m. Como \\(\\tan(45^\\circ) = 1\\), a altura é igual à distância — característico do ângulo de 45°, onde subir e andar se equilibram.",
         "A tangente é a própria definição de inclinação: 40 m de altura em 40 m de distância é uma subida de 100%. É assim que se lê a placa \"rampa 8%\" numa estrada.",
       ],
     },
@@ -376,8 +369,8 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       items: [
         "Usar a hipotenusa na tangente (ela só usa os catetos).",
         "Inverter a razão (oposto sobre adjacente, não o contrário).",
-        "Esquecer que tan = sen/cos.",
-        "Tentar calcular tan(90°), que não existe (cosseno zero).",
+        "Esquecer que \\(\\tan = \\frac{\\sin}{\\cos}\\).",
+        "Tentar calcular \\(\\tan(90^\\circ)\\), que não existe (cosseno zero).",
       ],
     },
     exerciciosGuiados: {
@@ -389,8 +382,8 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           enunciado: "O oposto é 3 e o adjacente é 4. Qual a tangente?",
           identificar: "Tangente = oposto / adjacente.",
           dica: "3 dividido por 4.",
-          resolucao: "tan = 3/4 = 0,75.",
-          resposta: "0,75",
+          resolucao: "\\(\\tan = \\frac{3}{4} = 0{,}75\\).",
+          resposta: "\\(0{,}75\\)",
           interpretacao: "Sobe 3 a cada 4 de avanço horizontal.",
           erroComum: "Calcular 4/3.",
         },
@@ -399,9 +392,9 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           type: "aplicada",
           enunciado: "Uma estrada sobe 6 m a cada 100 m na horizontal. Qual a tangente da inclinação?",
           identificar: "Oposto = 6, adjacente = 100.",
-          dica: "6/100.",
-          resolucao: "tan = 6/100 = 0,06.",
-          resposta: "0,06 (6%)",
+          dica: "\\(\\frac{6}{100}\\).",
+          resolucao: "\\(\\tan = \\frac{6}{100} = 0{,}06\\).",
+          resposta: "\\(0{,}06\\) (6%)",
           interpretacao: "É a famosa rampa de 6%.",
           erroComum: "Confundir com porcentagem do comprimento total.",
         },
@@ -409,7 +402,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           id: "guiado-3",
           type: "compreensao",
           enunciado: "Por que a tangente dispara quando o ângulo se aproxima de 90°?",
-          identificar: "Lembre que tan = sen/cos.",
+          identificar: "Lembre que \\(\\tan = \\frac{\\sin}{\\cos}\\).",
           dica: "O que acontece com o cosseno perto de 90°?",
           resolucao: "Perto de 90° o cosseno tende a zero, e dividir por algo quase zero faz a tangente crescer sem limite.",
           resposta: "Porque o cosseno tende a zero",
@@ -426,9 +419,9 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Tangente = cateto oposto ÷ cateto adjacente (TOA).",
+        "\\(\\tan = \\frac{\\text{cateto oposto}}{\\text{cateto adjacente}}\\) (TOA).",
         "Não usa a hipotenusa; compara os catetos.",
-        "tan(θ) = sen(θ)/cos(θ).",
+        "\\(\\tan(\\theta) = \\frac{\\sin\\theta}{\\cos\\theta}\\).",
         "Mede inclinação (subida por avanço horizontal).",
       ],
     },
@@ -480,30 +473,26 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Pontos famosos do círculo",
       situacao:
-        "Qual é o ponto (cos θ, sen θ) para θ = 0°, 90° e 180° no ciclo trigonométrico?",
+        "Qual é o ponto \\((\\cos\\theta, \\sin\\theta)\\) para \\(\\theta = 0^\\circ\\), \\(90^\\circ\\) e \\(180^\\circ\\) no ciclo trigonométrico?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Começar em 0°",
-          detail: "O raio aponta para a direita: ponto (1, 0). Logo cos 0° = 1 e sen 0° = 0.",
+          detail: "O raio aponta para a direita: ponto \\((1, 0)\\). Logo \\(\\cos 0^\\circ = 1\\) e \\(\\sin 0^\\circ = 0\\).",
         },
         {
           title: "Girar para 90°",
-          detail: "O raio aponta para cima: ponto (0, 1). cos 90° = 0 e sen 90° = 1.",
+          detail: "O raio aponta para cima: ponto \\((0, 1)\\). \\(\\cos 90^\\circ = 0\\) e \\(\\sin 90^\\circ = 1\\).",
         },
         {
           title: "Girar para 180°",
-          detail: "O raio aponta para a esquerda: ponto (−1, 0). cos 180° = −1 e sen 180° = 0.",
-        },
-        {
-          title: "Observar o padrão",
-          detail: "O cosseno (x) e o seno (y) se alternam entre −1, 0 e 1 conforme o ponto gira.",
+          detail: "O raio aponta para a esquerda: ponto \\((-1, 0)\\). \\(\\cos 180^\\circ = -1\\) e \\(\\sin 180^\\circ = 0\\).",
         },
         {
           title: "Concluir",
-          detail: "O círculo dá seno e cosseno de qualquer ângulo, não só de 0° a 90°.",
+          detail: "O cosseno (\\(x\\)) e o seno (\\(y\\)) se alternam entre \\(-1\\), 0 e 1: o círculo dá seno e cosseno de qualquer ângulo, não só de 0° a 90°.",
         },
       ],
     },
@@ -517,9 +506,9 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     erros: {
       title: "Cuidado com",
       items: [
-        "Trocar as coordenadas: x é cosseno, y é seno.",
+        "Trocar as coordenadas: \\(x\\) é cosseno, \\(y\\) é seno.",
         "Esquecer que os valores ficam entre −1 e 1.",
-        "Confundir graus com radianos (360° = 2π).",
+        "Confundir graus com radianos (\\(360^\\circ = 2\\pi\\)).",
         "Achar que ângulos maiores que 90° não têm seno/cosseno.",
       ],
     },
@@ -540,11 +529,11 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Quanto valem cos 90° e sen 90°?",
-          identificar: "Em 90° o ponto está em (0, 1).",
+          enunciado: "Quanto valem \\(\\cos 90^\\circ\\) e \\(\\sin 90^\\circ\\)?",
+          identificar: "Em 90° o ponto está em \\((0, 1)\\).",
           dica: "Aponta para cima.",
-          resolucao: "cos 90° = 0 e sen 90° = 1.",
-          resposta: "cos = 0, sen = 1",
+          resolucao: "\\(\\cos 90^\\circ = 0\\) e \\(\\sin 90^\\circ = 1\\).",
+          resposta: "\\(\\cos = 0,\\ \\sin = 1\\)",
           interpretacao: "No topo do círculo, só há altura.",
           erroComum: "Inverter os dois valores.",
         },
@@ -569,8 +558,8 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "O ciclo é um círculo de raio 1; o ponto do ângulo é (cos θ, sen θ).",
-        "Cosseno é a coordenada x; seno é a y.",
+        "O ciclo é um círculo de raio 1; o ponto do ângulo é \\((\\cos\\theta, \\sin\\theta)\\).",
+        "Cosseno é a coordenada \\(x\\); seno é a \\(y\\).",
         "Estende seno e cosseno para qualquer ângulo.",
         "Seno e cosseno ficam entre −1 e 1 e se repetem a cada volta.",
       ],
@@ -623,37 +612,30 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Achar o cosseno a partir do seno",
       situacao:
-        "Um ângulo agudo tem sen θ = 0,6. Quanto vale cos θ?",
+        "Um ângulo agudo tem \\(\\sin\\theta = 0{,}6\\). Quanto vale \\(\\cos\\theta\\)?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
-          title: "Escrever a relação",
-          detail: "sen²θ + cos²θ = 1.",
+          title: "Escrever a relação fundamental",
+          detail: "\\(\\sin^2\\theta + \\cos^2\\theta = 1\\).",
         },
         {
-          title: "Substituir o seno",
-          detail: "0,6² + cos²θ = 1 → 0,36 + cos²θ = 1.",
-        },
-        {
-          title: "Isolar o cosseno ao quadrado",
-          detail: "cos²θ = 1 − 0,36 = 0,64.",
-        },
-        {
-          title: "Tirar a raiz",
-          detail: "cos θ = √0,64 = 0,8 (positivo, pois o ângulo é agudo).",
+          title: "Substituir e isolar passo a passo",
+          detail:
+            "\\[\\begin{aligned} 0{,}6^2 + \\cos^2\\theta &= 1 \\\\ \\cos^2\\theta &= 1 - 0{,}36 \\\\ \\cos^2\\theta &= 0{,}64 \\\\ \\cos\\theta &= \\sqrt{0{,}64} = 0{,}8 \\end{aligned}\\]",
         },
         {
           title: "Conferir",
-          detail: "0,6² + 0,8² = 0,36 + 0,64 = 1. Confere.",
+          detail: "\\(0{,}6^2 + 0{,}8^2 = 0{,}36 + 0{,}64 = 1\\). Confere.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "Com cos θ = 0,8, achamos o segundo lado sem medir nada — só usando a relação. Esse é o ângulo do triângulo 3-4-5, clássico.",
+        "Com \\(\\cos\\theta = 0{,}8\\), achamos o segundo lado sem medir nada — só usando a relação. Esse é o ângulo do triângulo 3-4-5, clássico.",
         "Repare: quanto maior o seno, menor o cosseno, porque a soma dos quadrados é fixa em 1. Eles dividem um \"orçamento\" de 1 entre si.",
       ],
     },
@@ -663,7 +645,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Esquecer de elevar ao quadrado antes de somar.",
         "Esquecer a raiz no final ao isolar.",
         "Ignorar o sinal (em ângulos maiores que 90° o cosseno pode ser negativo).",
-        "Confundir sen²θ com sen(θ²).",
+        "Confundir \\(\\sin^2\\theta\\) com \\(\\sin(\\theta^2)\\).",
       ],
     },
     exerciciosGuiados: {
@@ -672,21 +654,22 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Se cos θ = 0,8 (ângulo agudo), quanto vale sen θ?",
-          identificar: "Use sen²θ = 1 − cos²θ.",
+          enunciado: "Se \\(\\cos\\theta = 0{,}8\\) (ângulo agudo), quanto vale \\(\\sin\\theta\\)?",
+          identificar: "Use \\(\\sin^2\\theta = 1 - \\cos^2\\theta\\).",
           dica: "1 − 0,64 e depois a raiz.",
-          resolucao: "sen²θ = 1 − 0,64 = 0,36 → sen θ = 0,6.",
-          resposta: "0,6",
+          resolucao:
+            "\\[\\begin{aligned} \\sin^2\\theta &= 1 - 0{,}64 = 0{,}36 \\\\ \\sin\\theta &= 0{,}6 \\end{aligned}\\]",
+          resposta: "\\(0{,}6\\)",
           interpretacao: "É o mesmo triângulo 3-4-5 visto de outro lado.",
           erroComum: "Esquecer a raiz quadrada.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Verifique se sen θ = 0,5 e cos θ = 0,5 podem ser do mesmo ângulo.",
+          enunciado: "Verifique se \\(\\sin\\theta = 0{,}5\\) e \\(\\cos\\theta = 0{,}5\\) podem ser do mesmo ângulo.",
           identificar: "Teste na relação fundamental.",
           dica: "Some os quadrados.",
-          resolucao: "0,25 + 0,25 = 0,5 ≠ 1. Não podem.",
+          resolucao: "\\(0{,}25 + 0{,}25 = 0{,}5 \\neq 1\\). Não podem.",
           resposta: "Não, pois a soma dos quadrados não dá 1",
           interpretacao: "A relação fundamental serve de teste de consistência.",
           erroComum: "Achar que quaisquer valores entre 0 e 1 servem.",
@@ -694,10 +677,10 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-3",
           type: "compreensao",
-          enunciado: "De onde vem a relação sen²θ + cos²θ = 1?",
+          enunciado: "De onde vem a relação \\(\\sin^2\\theta + \\cos^2\\theta = 1\\)?",
           identificar: "Pense no círculo de raio 1.",
           dica: "Teorema de Pitágoras.",
-          resolucao: "É Pitágoras no triângulo de catetos cos θ e sen θ e hipotenusa 1 (o raio).",
+          resolucao: "É Pitágoras no triângulo de catetos \\(\\cos\\theta\\) e \\(\\sin\\theta\\) e hipotenusa 1 (o raio).",
           resposta: "Do teorema de Pitágoras no círculo unitário",
           interpretacao: "Geometria e trigonometria são a mesma ideia.",
           erroComum: "Achar que é uma fórmula decorada sem origem.",
@@ -712,7 +695,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Relação fundamental: sen²θ + cos²θ = 1.",
+        "Relação fundamental: \\(\\sin^2\\theta + \\cos^2\\theta = 1\\).",
         "Vem de Pitágoras no círculo de raio 1.",
         "Conhecendo um, isola-se o outro.",
         "Cuidado com a raiz e com o sinal.",
@@ -773,14 +756,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Lendo a senoide",
       situacao:
-        "No gráfico de y = sen(x), em quais ângulos entre 0° e 360° a curva vale 0?",
+        "No gráfico de \\(y = \\sin(x)\\), em quais ângulos entre 0° e 360° a curva vale 0?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Lembrar o início",
-          detail: "Em x = 0°, sen(0°) = 0. Primeiro zero.",
+          detail: "Em \\(x = 0^\\circ\\), \\(\\sin(0^\\circ) = 0\\). Primeiro zero.",
         },
         {
           title: "Subir e voltar",
@@ -822,18 +805,18 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "compreensao",
-          enunciado: "Qual a amplitude da curva y = sen(x)?",
+          enunciado: "Qual a amplitude da curva \\(y = \\sin(x)\\)?",
           identificar: "É o valor máximo de afastamento do zero.",
           dica: "Até onde a curva sobe?",
           resolucao: "Sobe até 1 e desce até −1, então a amplitude é 1.",
-          resposta: "1",
+          resposta: "\\(1\\)",
           interpretacao: "A onda se afasta no máximo 1 do eixo.",
           erroComum: "Dizer que é 2 (a distância total topo-fundo).",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "Qual o período de y = sen(x) em graus?",
+          enunciado: "Qual o período de \\(y = \\sin(x)\\) em graus?",
           identificar: "Quanto anda até repetir?",
           dica: "Uma volta completa.",
           resolucao: "Repete a cada 360° (2π radianos).",
@@ -916,7 +899,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Altura de uma torre",
       situacao:
-        "A 30 m da base de uma torre, você mede um ângulo de elevação de 45° até o topo. Qual a altura da torre? (tan 45° = 1)",
+        "A 30 m da base de uma torre, você mede um ângulo de elevação de 45° até o topo. Qual a altura da torre? (\\(\\tan 45^\\circ = 1\\))",
     },
     passos: {
       title: "Como pensar e resolver",
@@ -926,16 +909,13 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           detail: "A distância (30 m) é o adjacente; a altura é o oposto ao ângulo de 45°.",
         },
         {
-          title: "Escolher a razão",
-          detail: "Tenho adjacente, quero oposto, sem hipotenusa → tangente.",
+          title: "Escolher a razão e montar",
+          detail: "Tenho adjacente, quero oposto, sem hipotenusa → tangente: \\(\\tan(45^\\circ) = \\frac{\\text{altura}}{30}\\).",
         },
         {
-          title: "Montar a equação",
-          detail: "tan(45°) = altura / 30.",
-        },
-        {
-          title: "Isolar a altura",
-          detail: "altura = 30 · tan(45°) = 30 · 1 = 30.",
+          title: "Isolar e calcular a altura",
+          detail:
+            "\\[\\begin{aligned} \\text{altura} &= 30 \\cdot \\tan(45^\\circ) \\\\ &= 30 \\cdot 1 = 30 \\end{aligned}\\]",
         },
         {
           title: "Conferir",
@@ -965,10 +945,10 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "aplicada",
-          enunciado: "A 50 m de um prédio, o ângulo de elevação ao topo é 45°. Qual a altura? (tan 45° = 1)",
+          enunciado: "A 50 m de um prédio, o ângulo de elevação ao topo é 45°. Qual a altura? (\\(\\tan 45^\\circ = 1\\))",
           identificar: "Adjacente = 50, ângulo = 45°, quero o oposto.",
-          dica: "altura = distância · tan.",
-          resolucao: "altura = 50 · 1 = 50.",
+          dica: "altura = distância \\(\\cdot \\tan\\).",
+          resolucao: "\\(\\text{altura} = 50 \\cdot 1 = 50\\).",
           resposta: "50 m",
           interpretacao: "A 45°, altura iguala a distância.",
           erroComum: "Usar seno em vez de tangente.",
@@ -976,10 +956,10 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-2",
           type: "aplicada",
-          enunciado: "Uma rampa precisa subir 1 m com inclinação máxima de tan = 0,083. Qual o comprimento horizontal mínimo?",
-          identificar: "tan = oposto/adjacente; oposto = 1.",
-          dica: "adjacente = oposto / tan.",
-          resolucao: "adjacente = 1 / 0,083 ≈ 12 m.",
+          enunciado: "Uma rampa precisa subir 1 m com inclinação máxima de \\(\\tan = 0{,}083\\). Qual o comprimento horizontal mínimo?",
+          identificar: "\\(\\tan = \\frac{\\text{oposto}}{\\text{adjacente}}\\); oposto = 1.",
+          dica: "adjacente = oposto \\(/ \\tan\\).",
+          resolucao: "\\(\\text{adjacente} = \\frac{1}{0{,}083} \\approx 12\\) m.",
           resposta: "≈ 12 m",
           interpretacao: "Por isso rampas acessíveis são longas.",
           erroComum: "Multiplicar em vez de dividir.",
@@ -1007,7 +987,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       bullets: [
         "Identifique ângulo e lados (conhecido e procurado) para escolher a razão.",
         "Ângulo de elevação mede alturas a partir do chão.",
-        "altura = distância · tan(ângulo) é o caso mais comum.",
+        "\\(\\text{altura} = \\text{distância} \\cdot \\tan(\\text{ângulo})\\) é o caso mais comum.",
         "Trigonometria está em rampas, telhados e prédios.",
       ],
     },
@@ -1035,7 +1015,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Do giro à onda",
       paragraphs: [
-        "Imagine um ponto girando num círculo. A altura dele (a coordenada y) é sen(θ). Conforme o ângulo aumenta com o tempo, essa altura traça uma senoide.",
+        "Imagine um ponto girando num círculo. A altura dele (a coordenada \\(y\\)) é \\(\\sin(\\theta)\\). Conforme o ângulo aumenta com o tempo, essa altura traça uma senoide.",
         "Por isso a posição num movimento que oscila — uma mola, um pêndulo pequeno, a tensão da rede — se escreve com seno ou cosseno em função do tempo. A frequência diz quantas voltas por segundo; o período, quanto dura cada volta.",
       ],
       callout:
@@ -1066,19 +1046,16 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       steps: [
         {
           title: "Modelar a altura",
-          detail: "altura = centro + raio · sen(θ) = 12 + 10 · sen(θ).",
+          detail: "\\(\\text{altura} = \\text{centro} + \\text{raio} \\cdot \\sin(\\theta) = 12 + 10\\sin(\\theta)\\).",
         },
         {
           title: "Usar o ângulo do topo",
-          detail: "No topo, θ = 90° e sen(90°) = 1.",
+          detail: "No topo, \\(\\theta = 90^\\circ\\) e \\(\\sin(90^\\circ) = 1\\).",
         },
         {
-          title: "Substituir",
-          detail: "altura = 12 + 10 · 1.",
-        },
-        {
-          title: "Calcular",
-          detail: "altura = 22 m.",
+          title: "Substituir e calcular",
+          detail:
+            "\\[\\begin{aligned} \\text{altura} &= 12 + 10 \\cdot 1 \\\\ &= 22 \\text{ m} \\end{aligned}\\]",
         },
         {
           title: "Conferir o sentido",
@@ -1108,13 +1085,13 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "aplicada",
-          enunciado: "Na roda do exemplo (12 + 10·sen θ), qual a altura quando θ = 0°?",
-          identificar: "sen(0°) = 0.",
+          enunciado: "Na roda do exemplo (\\(12 + 10\\sin\\theta\\)), qual a altura quando \\(\\theta = 0^\\circ\\)?",
+          identificar: "\\(\\sin(0^\\circ) = 0\\).",
           dica: "Some o centro com 10·0.",
-          resolucao: "altura = 12 + 10·0 = 12 m.",
+          resolucao: "\\(\\text{altura} = 12 + 10 \\cdot 0 = 12\\) m.",
           resposta: "12 m",
           interpretacao: "Na lateral, o assento está na altura do centro.",
-          erroComum: "Esquecer que sen(0°) = 0 e somar 10.",
+          erroComum: "Esquecer que \\(\\sin(0^\\circ) = 0\\) e somar 10.",
         },
         {
           id: "guiado-2",
@@ -1122,7 +1099,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           enunciado: "Se uma roda dá 2 voltas por minuto, qual é seu período?",
           identificar: "Período = tempo por volta.",
           dica: "60 s divididos por 2 voltas.",
-          resolucao: "60 / 2 = 30 s por volta.",
+          resolucao: "\\(\\frac{60}{2} = 30\\) s por volta.",
           resposta: "30 segundos",
           interpretacao: "Período e frequência são inversos.",
           erroComum: "Dizer 2 s, confundindo com a frequência.",
@@ -1131,9 +1108,9 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           id: "guiado-3",
           type: "compreensao",
           enunciado: "Por que a altura de um ponto girando forma uma onda?",
-          identificar: "A altura é sen(θ).",
+          identificar: "A altura é \\(\\sin(\\theta)\\).",
           dica: "Pense no seno crescendo e diminuindo com o ângulo.",
-          resolucao: "Como a altura é sen(θ) e θ cresce com o tempo, a altura traça a senoide.",
+          resolucao: "Como a altura é \\(\\sin(\\theta)\\) e \\(\\theta\\) cresce com o tempo, a altura traça a senoide.",
           resposta: "Porque a altura é o seno do ângulo, que oscila",
           interpretacao: "Giro e onda são o mesmo fenômeno.",
           erroComum: "Achar que precisa de uma fórmula diferente.",
@@ -1149,7 +1126,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Movimento circular projetado vira uma onda (senoide).",
-        "A altura de um ponto que gira é sen do ângulo.",
+        "A altura de um ponto que gira é \\(\\sin\\) do ângulo.",
         "Frequência = voltas por segundo; período = tempo por volta.",
         "Som, luz, marés e eletricidade seguem essa matemática.",
       ],
@@ -1178,11 +1155,11 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Decompor uma força",
       paragraphs: [
-        "Uma força F aplicada num ângulo θ com a horizontal tem duas partes: a horizontal, F·cos(θ), e a vertical, F·sen(θ). Somadas vetorialmente, elas reconstroem a força original.",
+        "Uma força \\(F\\) aplicada num ângulo \\(\\theta\\) com a horizontal tem duas partes: a horizontal, \\(F\\cos(\\theta)\\), e a vertical, \\(F\\sin(\\theta)\\). Somadas vetorialmente, elas reconstroem a força original.",
         "Essa decomposição é o pão de cada dia da engenharia: saber quanto de uma carga vai para baixo (peso) e quanto para o lado (empuxo) define se a estrutura aguenta.",
       ],
       callout:
-        "Força em diagonal = parte horizontal (F·cos θ) + parte vertical (F·sen θ).",
+        "Força em diagonal = parte horizontal (\\(F\\cos\\theta\\)) + parte vertical (\\(F\\sin\\theta\\)).",
       formula: "Fx = F·cos(θ),  Fy = F·sen(θ)",
       formulaLatex: "F_x = F\\cos(\\theta), \\quad F_y = F\\sin(\\theta)",
       formulaAria: "F x igual a F cosseno de teta; F y igual a F seno de teta",
@@ -1202,30 +1179,28 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Força em um cabo de sustentação",
       situacao:
-        "Um cabo puxa uma estrutura com força de 100 N num ângulo de 30° com a horizontal. Quais são as componentes horizontal e vertical? (cos 30° ≈ 0,87; sen 30° = 0,5)",
+        "Um cabo puxa uma estrutura com força de 100 N num ângulo de 30° com a horizontal. Quais são as componentes horizontal e vertical? (\\(\\cos 30^\\circ \\approx 0{,}87\\); \\(\\sin 30^\\circ = 0{,}5\\))",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Separar as componentes",
-          detail: "Fx = F·cos(θ) e Fy = F·sen(θ).",
+          detail: "\\(F_x = F\\cos(\\theta)\\) e \\(F_y = F\\sin(\\theta)\\).",
         },
         {
           title: "Calcular a horizontal",
-          detail: "Fx = 100 · cos(30°) ≈ 100 · 0,87 = 87 N.",
+          detail:
+            "\\[\\begin{aligned} F_x &= 100 \\cdot \\cos(30^\\circ) \\\\ &\\approx 100 \\cdot 0{,}87 = 87 \\text{ N} \\end{aligned}\\]",
         },
         {
           title: "Calcular a vertical",
-          detail: "Fy = 100 · sen(30°) = 100 · 0,5 = 50 N.",
+          detail:
+            "\\[\\begin{aligned} F_y &= 100 \\cdot \\sin(30^\\circ) \\\\ &= 100 \\cdot 0{,}5 = 50 \\text{ N} \\end{aligned}\\]",
         },
         {
-          title: "Interpretar",
-          detail: "87 N puxam na horizontal e 50 N na vertical.",
-        },
-        {
-          title: "Conferir",
-          detail: "Como 30° é baixo, a parte horizontal (87 N) deve ser maior que a vertical (50 N). Confere.",
+          title: "Interpretar e conferir",
+          detail: "87 N puxam na horizontal e 50 N na vertical. Como 30° é baixo, a horizontal (87 N) é maior que a vertical (50 N). Confere.",
         },
       ],
     },
@@ -1251,10 +1226,10 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "aplicada",
-          enunciado: "Uma força de 200 N atua a 60° com a horizontal. Qual a componente vertical? (sen 60° ≈ 0,87)",
-          identificar: "Fy = F·sen(θ).",
-          dica: "200 · 0,87.",
-          resolucao: "Fy = 200 · 0,87 = 174 N.",
+          enunciado: "Uma força de 200 N atua a 60° com a horizontal. Qual a componente vertical? (\\(\\sin 60^\\circ \\approx 0{,}87\\))",
+          identificar: "\\(F_y = F\\sin(\\theta)\\).",
+          dica: "\\(200 \\cdot 0{,}87\\).",
+          resolucao: "\\(F_y = 200 \\cdot 0{,}87 = 174\\) N.",
           resposta: "≈ 174 N",
           interpretacao: "A 60°, a parte vertical domina.",
           erroComum: "Usar cosseno e achar a horizontal.",
@@ -1262,10 +1237,10 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-2",
           type: "aplicada",
-          enunciado: "A mesma força de 200 N a 60°: qual a componente horizontal? (cos 60° = 0,5)",
-          identificar: "Fx = F·cos(θ).",
-          dica: "200 · 0,5.",
-          resolucao: "Fx = 200 · 0,5 = 100 N.",
+          enunciado: "A mesma força de 200 N a 60°: qual a componente horizontal? (\\(\\cos 60^\\circ = 0{,}5\\))",
+          identificar: "\\(F_x = F\\cos(\\theta)\\).",
+          dica: "\\(200 \\cdot 0{,}5\\).",
+          resolucao: "\\(F_x = 200 \\cdot 0{,}5 = 100\\) N.",
           resposta: "100 N",
           interpretacao: "A parte horizontal é menor que a vertical a 60°.",
           erroComum: "Trocar com a componente vertical.",
@@ -1276,7 +1251,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
           enunciado: "Qual componente cresce quando o ângulo com a horizontal aumenta?",
           identificar: "Pense em sen e cos ao crescer o ângulo.",
           dica: "Seno cresce, cosseno diminui.",
-          resolucao: "A componente vertical (F·sen θ) cresce; a horizontal diminui.",
+          resolucao: "A componente vertical (\\(F\\sin\\theta\\)) cresce; a horizontal diminui.",
           resposta: "A vertical",
           interpretacao: "Ângulos mais íngremes puxam mais para cima.",
           erroComum: "Achar que ambas crescem juntas.",
@@ -1291,7 +1266,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Força em diagonal se decompõe em horizontal (F·cos θ) e vertical (F·sen θ).",
+        "Força em diagonal se decompõe em horizontal (\\(F\\cos\\theta\\)) e vertical (\\(F\\sin\\theta\\)).",
         "Cosseno dá a parte horizontal; seno dá a vertical.",
         "Engenharia usa isso em pontes, telhados e guindastes.",
         "Mudar o ângulo redistribui a força entre as direções.",
@@ -1322,7 +1297,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       title: "O mapa do módulo",
       paragraphs: [
         "Seno (oposto/hipotenusa), cosseno (adjacente/hipotenusa) e tangente (oposto/adjacente) são as três razões: SOH-CAH-TOA. Cada uma serve a um par de lados.",
-        "O ciclo trigonométrico estende tudo para qualquer ângulo, com (cos θ, sen θ) como coordenadas. A relação sen²θ + cos²θ = 1 amarra os dois, e o gráfico do seno revela a onda que descreve oscilações e giros.",
+        "O ciclo trigonométrico estende tudo para qualquer ângulo, com \\((\\cos\\theta, \\sin\\theta)\\) como coordenadas. A relação \\(\\sin^2\\theta + \\cos^2\\theta = 1\\) amarra os dois, e o gráfico do seno revela a onda que descreve oscilações e giros.",
       ],
       callout:
         "Razões (SOH-CAH-TOA) → ciclo (qualquer ângulo) → relação fundamental → senoide (oscilações).",
@@ -1345,7 +1320,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Um problema que junta tudo",
       situacao:
-        "Uma rampa de 10 m faz 30° com o chão. Qual a altura ganha (use seno) e o avanço horizontal (use cosseno)? (sen 30° = 0,5; cos 30° ≈ 0,87)",
+        "Uma rampa de 10 m faz 30° com o chão. Qual a altura ganha (use seno) e o avanço horizontal (use cosseno)? (\\(\\sin 30^\\circ = 0{,}5\\); \\(\\cos 30^\\circ \\approx 0{,}87\\))",
     },
     passos: {
       title: "Como pensar e resolver",
@@ -1356,15 +1331,15 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         },
         {
           title: "Altura pelo seno",
-          detail: "altura = 10 · sen(30°) = 10 · 0,5 = 5 m.",
+          detail: "\\(\\text{altura} = 10 \\cdot \\sin(30^\\circ) = 10 \\cdot 0{,}5 = 5\\) m.",
         },
         {
           title: "Avanço pelo cosseno",
-          detail: "avanço = 10 · cos(30°) ≈ 10 · 0,87 = 8,7 m.",
+          detail: "\\(\\text{avanço} = 10 \\cdot \\cos(30^\\circ) \\approx 10 \\cdot 0{,}87 = 8{,}7\\) m.",
         },
         {
           title: "Conferir com a relação",
-          detail: "5² + 8,7² ≈ 25 + 75,7 = 100,7 ≈ 10² (pequeno arredondamento). Confere.",
+          detail: "\\(5^2 + 8{,}7^2 \\approx 25 + 75{,}7 = 100{,}7 \\approx 10^2\\) (pequeno arredondamento). Confere.",
         },
         {
           title: "Concluir",
@@ -1383,7 +1358,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Trocar a razão pelo par de lados errado.",
-        "Esquecer a relação sen²θ + cos²θ = 1 para conferir.",
+        "Esquecer a relação \\(\\sin^2\\theta + \\cos^2\\theta = 1\\) para conferir.",
         "Misturar graus e radianos.",
         "Confundir amplitude e período ao ler a senoide.",
       ],
@@ -1394,33 +1369,34 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Numa rampa de 8 m a 30°, qual a altura ganha? (sen 30° = 0,5)",
-          identificar: "altura = hipotenusa · sen.",
-          dica: "8 · 0,5.",
-          resolucao: "altura = 8 · 0,5 = 4 m.",
+          enunciado: "Numa rampa de 8 m a 30°, qual a altura ganha? (\\(\\sin 30^\\circ = 0{,}5\\))",
+          identificar: "altura = hipotenusa \\(\\cdot \\sin\\).",
+          dica: "\\(8 \\cdot 0{,}5\\).",
+          resolucao: "\\(\\text{altura} = 8 \\cdot 0{,}5 = 4\\) m.",
           resposta: "4 m",
-          interpretacao: "Metade do comprimento, pois sen 30° = 0,5.",
+          interpretacao: "Metade do comprimento, pois \\(\\sin 30^\\circ = 0{,}5\\).",
           erroComum: "Usar cosseno.",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Se sen θ = 0,6, quanto vale cos θ (ângulo agudo)?",
+          enunciado: "Se \\(\\sin\\theta = 0{,}6\\), quanto vale \\(\\cos\\theta\\) (ângulo agudo)?",
           identificar: "Relação fundamental.",
           dica: "1 − 0,36 e raiz.",
-          resolucao: "cos²θ = 1 − 0,36 = 0,64 → cos θ = 0,8.",
-          resposta: "0,8",
+          resolucao:
+            "\\[\\begin{aligned} \\cos^2\\theta &= 1 - 0{,}36 = 0{,}64 \\\\ \\cos\\theta &= 0{,}8 \\end{aligned}\\]",
+          resposta: "\\(0{,}8\\)",
           interpretacao: "Triângulo 3-4-5 de novo.",
           erroComum: "Esquecer a raiz.",
         },
         {
           id: "guiado-3",
           type: "compreensao",
-          enunciado: "Qual o período do gráfico de y = sen(x)?",
+          enunciado: "Qual o período do gráfico de \\(y = \\sin(x)\\)?",
           identificar: "Quanto anda até repetir.",
           dica: "Uma volta inteira.",
           resolucao: "360° (ou 2π radianos).",
-          resposta: "360° (2π)",
+          resposta: "\\(360^\\circ\\) (\\(2\\pi\\))",
           interpretacao: "Depois de uma volta, a onda recomeça.",
           erroComum: "Dizer 180°.",
         },
@@ -1436,7 +1412,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       bullets: [
         "SOH-CAH-TOA: as três razões e seus pares de lados.",
         "Ciclo trigonométrico estende tudo para qualquer ângulo.",
-        "sen²θ + cos²θ = 1 e tan θ = sen θ/cos θ amarram o módulo.",
+        "\\(\\sin^2\\theta + \\cos^2\\theta = 1\\) e \\(\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}\\) amarram o módulo.",
         "A senoide descreve ondas, giros e oscilações.",
       ],
     },

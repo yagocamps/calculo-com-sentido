@@ -27,7 +27,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Chegar perto é diferente de chegar lá",
       paragraphs: [
-        "Aproximar-se de um número significa assumir valores cada vez mais próximos dele: 1,9 — 1,99 — 1,999 — e assim por diante, encostando em 2 sem nunca colar.",
+        "Aproximar-se de um número significa assumir valores cada vez mais próximos dele: \\(1{,}9\\) — \\(1{,}99\\) — \\(1{,}999\\) — e assim por diante, encostando em 2 sem nunca colar.",
         "O que importa não é o valor final, e sim para onde a sequência está indo. Esse \"para onde está indo\" é a semente da ideia de limite.",
       ],
       callout:
@@ -51,7 +51,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Aproximando-se de 2",
       situacao:
-        "Observe a sequência 1,9 — 1,99 — 1,999 — 1,9999. De qual número ela está se aproximando, e ela chega exatamente nele?",
+        "Observe a sequência \\(1{,}9\\) — \\(1{,}99\\) — \\(1{,}999\\) — \\(1{,}9999\\). De qual número ela está se aproximando, e ela chega exatamente nele?",
     },
     passos: {
       title: "Como pensar e resolver",
@@ -66,7 +66,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         },
         {
           title: "Medir a distância até 2",
-          detail: "2 − 1,9 = 0,1; 2 − 1,99 = 0,01; 2 − 1,999 = 0,001. A distância encolhe.",
+          detail: "\\(2 - 1{,}9 = 0{,}1\\); \\(2 - 1{,}99 = 0{,}01\\); \\(2 - 1{,}999 = 0{,}001\\). A distância encolhe.",
         },
         {
           title: "Concluir o destino",
@@ -100,24 +100,24 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "compreensao",
-          enunciado: "A sequência 2,9 — 2,99 — 2,999 se aproxima de qual número?",
+          enunciado: "A sequência \\(2{,}9\\) — \\(2{,}99\\) — \\(2{,}999\\) se aproxima de qual número?",
           identificar: "Veja para onde os valores caminham.",
           dica: "Some mais um 9 mentalmente.",
           resolucao: "Os valores encostam em 3 por baixo: tende a 3.",
-          resposta: "3",
+          resposta: "\\(3\\)",
           interpretacao: "O destino é 3, mesmo sem nenhum termo ser 3.",
-          erroComum: "Responder 2,999 (um termo, não o destino).",
+          erroComum: "Responder \\(2{,}999\\) (um termo, não o destino).",
         },
         {
           id: "guiado-2",
           type: "calculo",
-          enunciado: "Qual a distância entre 4,99 e 5?",
+          enunciado: "Qual a distância entre \\(4{,}99\\) e 5?",
           identificar: "Subtraia os dois valores.",
-          dica: "5 − 4,99.",
-          resolucao: "5 − 4,99 = 0,01.",
-          resposta: "0,01",
+          dica: "\\(5 - 4{,}99\\).",
+          resolucao: "\\(5 - 4{,}99 = 0{,}01\\).",
+          resposta: "\\(0{,}01\\)",
           interpretacao: "A distância pequena mostra que 4,99 já está bem perto de 5.",
-          erroComum: "Calcular 4,99 − 5 e esquecer o sinal/contexto.",
+          erroComum: "Calcular \\(4{,}99 - 5\\) e esquecer o sinal/contexto.",
         },
         {
           id: "guiado-3",
@@ -194,37 +194,33 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "O que f(x) = x + 1 faz perto de x = 2",
       situacao:
-        "Observe a função f(x) = x + 1 com x se aproximando de 2 (1,9; 1,99; 2,01; 2,1). Para qual valor f(x) caminha?",
+        "Observe a função \\(f(x) = x + 1\\) com \\(x\\) se aproximando de 2 (\\(1{,}9\\); \\(1{,}99\\); \\(2{,}01\\); \\(2{,}1\\)). Para qual valor f(x) caminha?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Vir pela esquerda",
-          detail: "f(1,9) = 2,9 e f(1,99) = 2,99: f cresce em direção a 3.",
+          detail: "\\(f(1{,}9) = 2{,}9\\) e \\(f(1{,}99) = 2{,}99\\): f cresce em direção a 3.",
         },
         {
           title: "Vir pela direita",
-          detail: "f(2,1) = 3,1 e f(2,01) = 3,01: f desce em direção a 3.",
+          detail: "\\(f(2{,}1) = 3{,}1\\) e \\(f(2{,}01) = 3{,}01\\): f desce em direção a 3.",
         },
         {
           title: "Comparar os dois lados",
           detail: "Os dois caminhos apontam para o mesmo valor: 3.",
         },
         {
-          title: "Concluir o comportamento",
-          detail: "Perto de x = 2, a função se comporta indo para 3.",
-        },
-        {
           title: "Conferir com o ponto",
-          detail: "f(2) = 3 também, então aqui o destino e o valor coincidem.",
+          detail: "Perto de \\(x = 2\\) a função vai para 3, e \\(f(2) = 3\\) também — aqui o destino e o valor coincidem.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "Perto de x = 2, a função aponta para 3 pelos dois lados. Esse acordo entre esquerda e direita é o que dá confiança no comportamento.",
+        "Perto de \\(x = 2\\), a função aponta para 3 pelos dois lados. Esse acordo entre esquerda e direita é o que dá confiança no comportamento.",
         "Em funções mais difíceis, os dois lados podem discordar — e detectar isso cedo evita erros graves de interpretação no cálculo.",
       ],
     },
@@ -243,24 +239,24 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Para f(x) = 2x, quanto vale f(2,99)?",
-          identificar: "Substitua x = 2,99.",
-          dica: "2 × 2,99.",
-          resolucao: "f(2,99) = 5,98.",
-          resposta: "5,98",
-          interpretacao: "Perto de x = 3, f se aproxima de 6.",
+          enunciado: "Para \\(f(x) = 2x\\), quanto vale \\(f(2{,}99)\\)?",
+          identificar: "Substitua \\(x = 2{,}99\\).",
+          dica: "\\(2 \\times 2{,}99\\).",
+          resolucao: "\\(f(2{,}99) = 5{,}98\\).",
+          resposta: "\\(5{,}98\\)",
+          interpretacao: "Perto de \\(x = 3\\), f se aproxima de 6.",
           erroComum: "Somar em vez de multiplicar.",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "Para f(x) = x + 1, os dois lados perto de x = 4 apontam para o mesmo valor?",
-          identificar: "Teste 3,99 e 4,01.",
+          enunciado: "Para \\(f(x) = x + 1\\), os dois lados perto de \\(x = 4\\) apontam para o mesmo valor?",
+          identificar: "Teste \\(3{,}99\\) e \\(4{,}01\\).",
           dica: "Calcule f nos dois.",
-          resolucao: "f(3,99) = 4,99 e f(4,01) = 5,01: ambos vão a 5.",
+          resolucao: "\\(f(3{,}99) = 4{,}99\\) e \\(f(4{,}01) = 5{,}01\\): ambos vão a 5.",
           resposta: "Sim, ambos vão a 5",
           interpretacao: "O comportamento é consistente nos dois lados.",
-          erroComum: "Comparar só com f(4) sem olhar os lados.",
+          erroComum: "Comparar só com \\(f(4)\\) sem olhar os lados.",
         },
         {
           id: "guiado-3",
@@ -337,37 +333,33 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Tabela perto de x = 3",
       situacao:
-        "Para f(x) = x², complete a aproximação por valores próximos de x = 3 e diga para onde f(x) caminha.",
+        "Para \\(f(x) = x^2\\), complete a aproximação por valores próximos de \\(x = 3\\) e diga para onde f(x) caminha.",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Aproximar pela esquerda",
-          detail: "f(2,9) = 8,41 e f(2,99) = 8,9401: sobe em direção a 9.",
+          detail: "\\(f(2{,}9) = 8{,}41\\) e \\(f(2{,}99) = 8{,}9401\\): sobe em direção a 9.",
         },
         {
           title: "Aproximar pela direita",
-          detail: "f(3,1) = 9,61 e f(3,01) = 9,0601: desce em direção a 9.",
+          detail: "\\(f(3{,}1) = 9{,}61\\) e \\(f(3{,}01) = 9{,}0601\\): desce em direção a 9.",
         },
         {
           title: "Comparar as colunas",
           detail: "Esquerda e direita apontam para o mesmo número: 9.",
         },
         {
-          title: "Ler o destino",
-          detail: "Os valores próximos de x = 3 levam f(x) a 9.",
-        },
-        {
-          title: "Conferir",
-          detail: "f(3) = 9 confirma o destino apontado pela tabela.",
+          title: "Ler o destino e conferir",
+          detail: "Os valores próximos de \\(x = 3\\) levam f(x) a 9, e \\(f(3) = 9\\) confirma.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "A tabela mostrou, com números, que f(x) caminha para 9 perto de x = 3. A intuição virou evidência conferível.",
+        "A tabela mostrou, com números, que f(x) caminha para 9 perto de \\(x = 3\\). A intuição virou evidência conferível.",
         "Quando você não consegue calcular direto no ponto, essa tabela é a saída honesta: ela revela o destino sem precisar tocar nele.",
       ],
     },
@@ -386,13 +378,13 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Para f(x) = x², quanto vale f(1,99)?",
+          enunciado: "Para \\(f(x) = x^2\\), quanto vale \\(f(1{,}99)\\)?",
           identificar: "Eleve 1,99 ao quadrado.",
-          dica: "1,99 × 1,99.",
-          resolucao: "f(1,99) = 3,9601.",
-          resposta: "3,9601",
-          interpretacao: "Perto de x = 2, f se aproxima de 4.",
-          erroComum: "Calcular 2² direto e ignorar a aproximação.",
+          dica: "\\(1{,}99 \\times 1{,}99\\).",
+          resolucao: "\\(f(1{,}99) = 3{,}9601\\).",
+          resposta: "\\(3{,}9601\\)",
+          interpretacao: "Perto de \\(x = 2\\), f se aproxima de 4.",
+          erroComum: "Calcular \\(2^2\\) direto e ignorar a aproximação.",
         },
         {
           id: "guiado-2",
@@ -456,8 +448,8 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "O destino existe mesmo sem o ponto",
       paragraphs: [
-        "A tendência é o valor para onde f(x) aponta conforme x se aproxima de a. Esse destino pode existir mesmo que f(a) não exista ou seja diferente.",
-        "Um caso clássico: uma função com um \"buraco\" em x = a. Substituir dá uma indefinição (como 0/0), mas a tabela mostra claramente para onde tudo aponta.",
+        "A tendência é o valor para onde \\(f(x)\\) aponta conforme \\(x\\) se aproxima de \\(a\\). Esse destino pode existir mesmo que \\(f(a)\\) não exista ou seja diferente.",
+        "Um caso clássico: uma função com um \"buraco\" em \\(x = a\\). Substituir dá uma indefinição (como \\(\\frac{0}{0}\\)), mas a tabela mostra claramente para onde tudo aponta.",
       ],
       callout:
         "Tendência é o destino apontado pela função — independente do que acontece no ponto exato.",
@@ -480,37 +472,33 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Um buraco em x = 1",
       situacao:
-        "A função f(x) = (x² − 1)/(x − 1) não está definida em x = 1 (dá 0/0). Para onde ela tende quando x se aproxima de 1?",
+        "A função \\(f(x) = \\frac{x^2 - 1}{x - 1}\\) não está definida em \\(x = 1\\) (dá \\(\\frac{0}{0}\\)). Para onde ela tende quando \\(x\\) se aproxima de 1?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Reconhecer o problema no ponto",
-          detail: "Em x = 1, numerador e denominador zeram: 0/0, indefinido.",
+          detail: "Em \\(x = 1\\), numerador e denominador zeram: \\(\\frac{0}{0}\\), indefinido.",
         },
         {
           title: "Aproximar pela esquerda",
-          detail: "f(0,9) = (0,81−1)/(0,9−1) = (−0,19)/(−0,1) = 1,9.",
+          detail: "\\(f(0{,}9) = \\frac{0{,}81 - 1}{0{,}9 - 1} = \\frac{-0{,}19}{-0{,}1} = 1{,}9\\).",
         },
         {
           title: "Aproximar pela direita",
-          detail: "f(1,1) = (1,21−1)/(1,1−1) = (0,21)/(0,1) = 2,1.",
+          detail: "\\(f(1{,}1) = \\frac{1{,}21 - 1}{1{,}1 - 1} = \\frac{0{,}21}{0{,}1} = 2{,}1\\).",
         },
         {
-          title: "Ver a tendência",
-          detail: "À medida que x → 1, os valores cercam 2 pelos dois lados.",
-        },
-        {
-          title: "Concluir",
-          detail: "A função tende a 2, mesmo sem existir em x = 1.",
+          title: "Ver a tendência e concluir",
+          detail: "À medida que \\(x \\to 1\\), os valores cercam 2 pelos dois lados: a função tende a 2, mesmo sem existir em \\(x = 1\\).",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "Há um buraco no gráfico em x = 1, mas a tendência é clara: 2. A função aponta para 2 vindo dos dois lados.",
+        "Há um buraco no gráfico em \\(x = 1\\), mas a tendência é clara: 2. A função aponta para 2 vindo dos dois lados.",
         "Esse é o coração do cálculo: estudar o destino mesmo quando o ponto falha. É o que permite calcular velocidades instantâneas e inclinações exatas adiante.",
       ],
     },
@@ -518,7 +506,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Concluir que a tendência não existe só porque o ponto é indefinido.",
-        "Parar no 0/0 sem investigar a vizinhança.",
+        "Parar no \\(\\frac{0}{0}\\) sem investigar a vizinhança.",
         "Olhar um lado só.",
         "Confundir o buraco (ponto ausente) com a tendência (destino).",
       ],
@@ -529,21 +517,21 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Na função do exemplo, quanto vale f(0,99)?",
-          identificar: "Substitua x = 0,99.",
-          dica: "(0,99²−1)/(0,99−1).",
-          resolucao: "(0,9801−1)/(−0,01) = (−0,0199)/(−0,01) = 1,99.",
-          resposta: "1,99",
+          enunciado: "Na função do exemplo, quanto vale \\(f(0{,}99)\\)?",
+          identificar: "Substitua \\(x = 0{,}99\\).",
+          dica: "\\(\\frac{0{,}99^2 - 1}{0{,}99 - 1}\\).",
+          resolucao: "\\(f(0{,}99) = \\frac{0{,}9801 - 1}{-0{,}01} = \\frac{-0{,}0199}{-0{,}01} = 1{,}99\\).",
+          resposta: "\\(1{,}99\\)",
           interpretacao: "Cada vez mais perto de 2.",
           erroComum: "Errar o sinal no denominador.",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "Uma função dá 0/0 num ponto. Isso significa que ela não tem tendência ali?",
-          identificar: "Lembre que 0/0 é indeterminação.",
+          enunciado: "Uma função dá \\(\\frac{0}{0}\\) num ponto. Isso significa que ela não tem tendência ali?",
+          identificar: "Lembre que \\(\\frac{0}{0}\\) é indeterminação.",
           dica: "A tabela pode revelar o destino.",
-          resolucao: "Não: 0/0 é indeterminação; a vizinhança pode apontar para um valor bem definido.",
+          resolucao: "Não: \\(\\frac{0}{0}\\) é indeterminação; a vizinhança pode apontar para um valor bem definido.",
           resposta: "Não, a tendência pode existir",
           interpretacao: "Indeterminação no ponto não impede tendência.",
           erroComum: "Concluir que não há resposta.",
@@ -570,7 +558,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Tendência é o destino apontado pela função perto de um ponto.",
-        "Pode existir mesmo quando o ponto é indefinido (0/0).",
+        "Pode existir mesmo quando o ponto é indefinido (\\(\\frac{0}{0}\\)).",
         "Sempre confira os dois lados.",
         "Essa ideia é o limite do Cálculo 1.",
       ],
@@ -623,30 +611,26 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Curva com ponto aberto",
       situacao:
-        "Um gráfico mostra uma reta passando por y = 4 em x = 2, mas com uma bolinha aberta exatamente nesse ponto. Qual a tendência de f(x) quando x → 2?",
+        "Um gráfico mostra uma reta passando por \\(y = 4\\) em \\(x = 2\\), mas com uma bolinha aberta exatamente nesse ponto. Qual a tendência de \\(f(x)\\) quando \\(x \\to 2\\)?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Aproximar pela esquerda",
-          detail: "Seguindo a reta por valores < 2, a curva sobe rumo à altura 4.",
+          detail: "Seguindo a reta por valores \\(< 2\\), a curva sobe rumo à altura 4.",
         },
         {
           title: "Aproximar pela direita",
-          detail: "Seguindo por valores > 2, a curva desce rumo à mesma altura 4.",
+          detail: "Seguindo por valores \\(> 2\\), a curva desce rumo à mesma altura 4.",
         },
         {
           title: "Encontrar a altura comum",
-          detail: "Os dois lados miram y = 4.",
+          detail: "Os dois lados miram \\(y = 4\\).",
         },
         {
-          title: "Interpretar a bolinha aberta",
-          detail: "O ponto aberto diz que f(2) não vale 4 (ou não existe), mas a tendência é 4.",
-        },
-        {
-          title: "Concluir",
-          detail: "A tendência quando x → 2 é 4, apesar do buraco.",
+          title: "Interpretar a bolinha aberta e concluir",
+          detail: "O ponto aberto diz que \\(f(2)\\) não vale 4 (ou não existe), mas a tendência quando \\(x \\to 2\\) é 4, apesar do buraco.",
         },
       ],
     },
@@ -765,37 +749,33 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Velocidade perto de t = 2 s",
       situacao:
-        "Um objeto percorre s(t) = t² metros. Estime a velocidade instantânea em t = 2 s usando intervalos cada vez menores.",
+        "Um objeto percorre \\(s(t) = t^2\\) metros. Estime a velocidade instantânea em \\(t = 2\\) s usando intervalos cada vez menores.",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Velocidade média de 2 a 3 s",
-          detail: "(s(3)−s(2))/(3−2) = (9−4)/1 = 5 m/s.",
+          detail: "\\(\\frac{s(3) - s(2)}{3 - 2} = \\frac{9 - 4}{1} = 5\\) m/s.",
         },
         {
           title: "Encolher: de 2 a 2,1 s",
-          detail: "(s(2,1)−s(2))/0,1 = (4,41−4)/0,1 = 4,1 m/s.",
+          detail: "\\(\\frac{s(2{,}1) - s(2)}{0{,}1} = \\frac{4{,}41 - 4}{0{,}1} = 4{,}1\\) m/s.",
         },
         {
           title: "Encolher mais: de 2 a 2,01 s",
-          detail: "(s(2,01)−s(2))/0,01 = (4,0401−4)/0,01 = 4,01 m/s.",
+          detail: "\\(\\frac{s(2{,}01) - s(2)}{0{,}01} = \\frac{4{,}0401 - 4}{0{,}01} = 4{,}01\\) m/s.",
         },
         {
-          title: "Ver a tendência",
-          detail: "5 → 4,1 → 4,01: as médias caminham para 4 m/s.",
-        },
-        {
-          title: "Concluir",
-          detail: "A velocidade instantânea em t = 2 s tende a 4 m/s.",
+          title: "Ver a tendência e concluir",
+          detail: "\\(5 \\to 4{,}1 \\to 4{,}01\\): as médias caminham para 4 m/s, então a velocidade instantânea em \\(t = 2\\) s tende a 4 m/s.",
         },
       ],
     },
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "A velocidade no instante t = 2 s é 4 m/s — o destino das velocidades médias quando o intervalo encolhe. Você acabou de fazer, na mão, o que o cálculo chama de derivada.",
+        "A velocidade no instante \\(t = 2\\) s é 4 m/s — o destino das velocidades médias quando o intervalo encolhe. Você acabou de fazer, na mão, o que o cálculo chama de derivada.",
         "Esse é o ponto de chegada do Pré-Cálculo e o ponto de partida do Cálculo 1: tendência aplicada à taxa de variação. Você já tem a intuição completa para começar limites e derivadas de verdade.",
       ],
     },
@@ -804,8 +784,8 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       items: [
         "Confundir velocidade média (do trecho) com instantânea (do ponto).",
         "Parar num intervalo grande e achar que já é a resposta.",
-        "Dividir distância por tempo errado (trocar Δs e Δt).",
-        "Tentar usar Δt = 0 diretamente (dá 0/0).",
+        "Dividir distância por tempo errado (trocar \\(\\Delta s\\) e \\(\\Delta t\\)).",
+        "Tentar usar \\(\\Delta t = 0\\) diretamente (dá \\(\\frac{0}{0}\\)).",
       ],
     },
     exerciciosGuiados: {
@@ -814,22 +794,22 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         {
           id: "guiado-1",
           type: "calculo",
-          enunciado: "Para s(t) = t², qual a velocidade média entre t = 2 e t = 2,001 s?",
-          identificar: "(s(2,001) − s(2)) / 0,001.",
-          dica: "s(2,001) = 4,004001.",
-          resolucao: "(4,004001 − 4)/0,001 = 4,001 m/s.",
+          enunciado: "Para \\(s(t) = t^2\\), qual a velocidade média entre \\(t = 2\\) e \\(t = 2{,}001\\) s?",
+          identificar: "\\(\\frac{s(2{,}001) - s(2)}{0{,}001}\\).",
+          dica: "\\(s(2{,}001) = 4{,}004001\\).",
+          resolucao: "\\(\\frac{4{,}004001 - 4}{0{,}001} = 4{,}001\\) m/s.",
           resposta: "4,001 m/s",
           interpretacao: "Cada vez mais perto de 4 m/s.",
-          erroComum: "Errar o quadrado de 2,001.",
+          erroComum: "Errar o quadrado de \\(2{,}001\\).",
         },
         {
           id: "guiado-2",
           type: "compreensao",
-          enunciado: "Por que não calculamos a velocidade instantânea com Δt = 0 direto?",
+          enunciado: "Por que não calculamos a velocidade instantânea com \\(\\Delta t = 0\\) direto?",
           identificar: "Pense na divisão.",
-          dica: "Δs/Δt com Δt = 0.",
-          resolucao: "Porque daria 0/0, uma indeterminação; usamos a tendência com Δt encolhendo.",
-          resposta: "Porque daria 0/0",
+          dica: "\\(\\frac{\\Delta s}{\\Delta t}\\) com \\(\\Delta t = 0\\).",
+          resolucao: "Porque daria \\(\\frac{0}{0}\\), uma indeterminação; usamos a tendência com \\(\\Delta t\\) encolhendo.",
+          resposta: "Porque daria \\(\\frac{0}{0}\\)",
           interpretacao: "É exatamente o problema que o limite resolve.",
           erroComum: "Achar que basta colocar zero.",
         },
@@ -856,7 +836,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       bullets: [
         "Velocidade instantânea é a tendência das velocidades médias.",
         "Encolha o intervalo de tempo e veja para onde a média aponta.",
-        "Δt = 0 daria 0/0 — por isso usamos tendência.",
+        "\\(\\Delta t = 0\\) daria \\(\\frac{0}{0}\\) — por isso usamos tendência.",
         "Esse é o salto para limites e derivadas no Cálculo 1.",
       ],
     },
