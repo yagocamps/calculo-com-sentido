@@ -1,5 +1,6 @@
 import { exerciciosAlgebra } from "@/data/exercicios-algebra";
 import { exerciciosFuncoes } from "@/data/exercicios-funcoes";
+import { exerciciosFuncoesCalculo } from "@/data/exercicios-funcoes-calculo";
 import { exerciciosGraficos } from "@/data/exercicios-graficos";
 import { exerciciosPreparacaoLimites } from "@/data/exercicios-preparacao-limites";
 import { exerciciosTrigonometria } from "@/data/exercicios-trigonometria";
@@ -38,6 +39,7 @@ export const exercicioTemas = [
   { slug: "fundamentos", label: "Fundamentos" },
   { slug: "algebra", label: "Álgebra" },
   { slug: "funcoes", label: "Funções" },
+  { slug: "funcoes-calculo", label: "Funções p/ cálculo" },
   { slug: "graficos", label: "Gráficos" },
   { slug: "trigonometria", label: "Trigonometria" },
   { slug: "preparacao-limites", label: "Preparação p/ limites" },
@@ -221,6 +223,7 @@ export const exercicios: Exercicio[] = [
   ...exerciciosFundamentos,
   ...exerciciosAlgebra,
   ...exerciciosFuncoes,
+  ...exerciciosFuncoesCalculo,
   ...exerciciosGraficos,
   ...exerciciosTrigonometria,
   ...exerciciosPreparacaoLimites,

@@ -94,7 +94,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Veja função afim no Pré-Cálculo.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-01", "fc-ap-02"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -192,7 +192,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-03", "fc-ap-04"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -292,7 +292,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-05", "fc-ap-06"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -388,7 +388,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-07", "fc-ap-08"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -483,7 +483,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-09", "fc-ap-10"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -578,7 +578,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-11", "fc-ap-12"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -674,7 +674,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-13", "fc-ap-14"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -775,7 +775,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-15", "fc-ap-16"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
