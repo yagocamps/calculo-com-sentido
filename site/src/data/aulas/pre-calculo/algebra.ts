@@ -131,7 +131,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Treine simplificação de expressões no banco de exercícios do site.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-01", "alg-ap-02"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -269,7 +269,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique isolamento de variáveis e inversão de fórmulas no banco do site.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-03", "alg-ap-04"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -412,7 +412,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique inequações e problemas de limite no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-05", "alg-ap-06"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -556,7 +556,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique sistemas por substituição e adição no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-07", "alg-ap-08"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -694,7 +694,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique simplificação de frações algébricas no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-09", "alg-ap-10"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -836,7 +836,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique comparação de planos e orçamentos no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-11", "alg-ap-12"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -981,7 +981,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique cálculo de custo total e unitário no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-13", "alg-ap-14"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1119,7 +1119,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique lucro e ponto de equilíbrio no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-15", "alg-ap-16"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1259,7 +1259,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Revise todo o módulo de álgebra com exercícios variados no banco do site.",
-      exerciseIds: [],
+      exerciseIds: ["alg-ap-17", "alg-ap-18"],
     },
     resumo: {
       title: "Resumo da aula",

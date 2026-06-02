@@ -1,3 +1,4 @@
+import { exerciciosAlgebra } from "@/data/exercicios-algebra";
 import { exerciciosFundamentos } from "@/data/exercicios-fundamentos";
 import { exerciciosLimites } from "@/data/exercicios-limites";
 
@@ -31,6 +32,7 @@ export type Exercicio = {
 export const exercicioTemas = [
   { slug: "todos", label: "Todos" },
   { slug: "fundamentos", label: "Fundamentos" },
+  { slug: "algebra", label: "Álgebra" },
   { slug: "funcao-afim", label: "Função afim" },
   { slug: "funcao-quadratica", label: "Função quadrática" },
   { slug: "limites", label: "Limites" },
@@ -209,5 +211,6 @@ export const exercicios: Exercicio[] = [
     erroComum: "Esquecer a taxa fixa na inequação.",
   },
   ...exerciciosFundamentos,
+  ...exerciciosAlgebra,
   ...exerciciosLimites,
 ];
