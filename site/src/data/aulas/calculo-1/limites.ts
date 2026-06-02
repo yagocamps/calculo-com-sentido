@@ -50,7 +50,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x) = (x² − 4)/(x − 2)",
+      title: "\\(f(x) = \\frac{x^2 - 4}{x - 2}\\)",
       situacao: "Monte uma tabela com \\(x \\to 2\\) (por cima e por baixo) e estime o limite.",
     },
     passos: {
@@ -458,7 +458,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x) = 1/(x − 3)²",
+      title: "\\(f(x) = \\frac{1}{(x - 3)^2}\\)",
       situacao: "Descreva o comportamento quando \\(x \\to 3\\).",
     },
     passos: {
@@ -560,7 +560,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x) = (3x² + 1)/(x² + 4)",
+      title: "\\(f(x) = \\frac{3x^2 + 1}{x^2 + 4}\\)",
       situacao: "Determine \\(\\lim_{x \\to +\\infty} f(x)\\) e \\(\\lim_{x \\to -\\infty} f(x)\\).",
     },
     passos: {
@@ -662,7 +662,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x) = (x² + 1)/x",
+      title: "\\(f(x) = \\frac{x^2 + 1}{x}\\)",
       situacao: "Identifique assíntotas vertical, horizontal e oblíqua.",
     },
     passos: {
@@ -764,7 +764,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "s(t) = t² (metros)",
+      title: "\\(s(t) = t^2\\) (metros)",
       situacao: "Velocidade média em [2, 2,5] e limite para instantânea em \\(t = 2\\).",
     },
     passos: {

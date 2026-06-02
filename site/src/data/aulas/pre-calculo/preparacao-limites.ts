@@ -192,7 +192,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "O que f(x) = x + 1 faz perto de x = 2",
+      title: "O que \\(f(x) = x + 1\\) faz perto de \\(x = 2\\)",
       situacao:
         "Observe a função \\(f(x) = x + 1\\) com \\(x\\) se aproximando de 2 (\\(1{,}9\\); \\(1{,}99\\); \\(2{,}01\\); \\(2{,}1\\)). Para qual valor f(x) caminha?",
     },

@@ -145,7 +145,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x) = 1/(x − 2)",
+      title: "\\(f(x) = \\frac{1}{x - 2}\\)",
       situacao: "Qual \\(x\\) não pode ser usado? O que acontece perto de \\(x = 2\\)?",
     },
     passos: {
@@ -341,7 +341,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x) = −x² + 4x",
+      title: "\\(f(x) = -x^2 + 4x\\)",
       situacao: "Parábola com máximo. Onde cresce e onde decresce?",
     },
     passos: {
@@ -436,7 +436,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Lucro L(x)",
+      title: "Lucro \\(L(x)\\)",
       situacao: "\\(L(100) = 5000\\). O que isso quer dizer?",
     },
     passos: {
@@ -626,7 +626,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "s(t) = t²",
+      title: "\\(s(t) = t^2\\)",
       situacao: "Distância em metros, \\(t\\) em segundos. Velocidade média entre \\(t=1\\) e \\(t=3\\)?",
     },
     passos: {

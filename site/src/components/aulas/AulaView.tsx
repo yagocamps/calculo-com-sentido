@@ -139,7 +139,7 @@ export function AulaView({
           </div>
 
           <div id="exemplo">
-            <Section n={4} label="Exemplo aplicado" title={content.exemplo.title}>
+            <Section n={4} label="Exemplo aplicado" title={content.exemplo.title} titleRich>
               <RichText as="p" className="text-[15px] leading-relaxed">
                 {content.exemplo.situacao}
               </RichText>

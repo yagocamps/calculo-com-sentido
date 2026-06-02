@@ -44,7 +44,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x)=x³−3x",
+      title: "\\(f(x)=x^3-3x\\)",
       situacao: "Onde f cresce e onde decresce?",
     },
     passos: {
@@ -140,7 +140,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x)=−x²+4x+1",
+      title: "\\(f(x)=-x^2+4x+1\\)",
       situacao: "Encontre máximo local.",
     },
     passos: {
@@ -236,7 +236,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x)=x⁴−4x²",
+      title: "\\(f(x)=x^4-4x^2\\)",
       situacao: "Pontos críticos?",
     },
     passos: {
@@ -332,7 +332,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x)=x³",
+      title: "\\(f(x)=x^3\\)",
       situacao: "\\(f''\\) e concavidade?",
     },
     passos: {
@@ -519,7 +519,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Produção Q(t)",
+      title: "Produção \\(Q(t)\\)",
       situacao: "\\(Q(t)=50t-t^2\\) peças em \\(0 \\leq t \\leq 50\\) h. Quando produção instantânea é máxima?",
     },
     passos: {
@@ -711,7 +711,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "C(x)=2000+10x+0,02x², p=50 reais/unidade",
+      title: "\\(C(x)=2000+10x+0{,}02x^2\\), \\(p=50\\) reais/unidade",
       situacao: "\\(R(x)=50x\\). Lucro máximo?",
     },
     passos: {

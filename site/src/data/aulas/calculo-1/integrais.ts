@@ -140,7 +140,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x)=2 em [0,3]",
+      title: "\\(f(x)=2\\) em \\([0,3]\\)",
       situacao: "Área sob o gráfico?",
     },
     passos: {
@@ -235,7 +235,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "∫(3x²)dx",
+      title: "\\(\\int 3x^2\\,dx\\)",
       situacao: "Antiderivada?",
     },
     passos: {
@@ -330,7 +330,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "∫₀² (2x) dx",
+      title: "\\(\\int_0^2 2x\\,dx\\)",
       situacao: "Valor exato?",
     },
     passos: {
@@ -425,7 +425,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "∫₀⁴ f com f=2 em [0,2] e f=6 em [2,4]",
+      title: "\\(\\int_0^4 f\\) com \\(f=2\\) em \\([0,2]\\) e \\(f=6\\) em \\([2,4]\\)",
       situacao: "Calcular.",
     },
     passos: {
@@ -522,7 +522,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "∫₀¹ x² dx",
+      title: "\\(\\int_0^1 x^2\\,dx\\)",
       situacao: "Usar TFC.",
     },
     passos: {
@@ -617,7 +617,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "v(t)=6−2t em [0,6]",
+      title: "\\(v(t)=6-2t\\) em \\([0,6]\\)",
       situacao: "Deslocamento e distância em 0 a 6 s?",
     },
     passos: {
@@ -713,7 +713,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "P(t)=2t kW em [0,3] h",
+      title: "\\(P(t)=2t\\) kW em \\([0,3]\\) h",
       situacao: "Energia consumida?",
     },
     passos: {
@@ -808,7 +808,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Entre y=x e y=x² em [0,1]",
+      title: "Entre \\(y=x\\) e \\(y=x^2\\) em \\([0,1]\\)",
       situacao: "Área da região entre as curvas?",
     },
     passos: {

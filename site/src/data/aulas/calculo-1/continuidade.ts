@@ -242,7 +242,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "f(x) = 1/(x − 2)",
+      title: "\\(f(x) = \\frac{1}{x - 2}\\)",
       situacao: "Onde há assíntota vertical? Contínua em \\(x = 3\\)?",
     },
     passos: {
@@ -433,7 +433,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "s(t) em [0, 8]",
+      title: "\\(s(t)\\) em \\([0, 8]\\)",
       situacao: "Posição contínua durante 8 horas de viagem. O que isso exclui?",
     },
     passos: {

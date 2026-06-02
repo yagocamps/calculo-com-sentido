@@ -1,12 +1,16 @@
+import { RichText } from "@/components/aulas/RichText";
+
 export function Section({
   n,
   label,
   title,
+  titleRich,
   children,
 }: {
   n: number;
   label: string;
   title: string;
+  titleRich?: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -18,7 +22,7 @@ export function Section({
         {label}
       </div>
       <h3 className="mb-2.5 font-serif text-[22px] font-medium tracking-tight text-ink">
-        {title}
+        {titleRich ? <RichText as="span">{title}</RichText> : title}
       </h3>
       {children}
     </section>
