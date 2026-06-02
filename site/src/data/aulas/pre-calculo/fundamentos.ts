@@ -133,7 +133,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Treine contas com ordem de operações no banco de exercícios do site.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-01", "fund-ap-02"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -279,7 +279,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique frações em contextos de receita, tempo e desconto no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-03", "fund-ap-04"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -422,7 +422,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Use potências em notação científica e crescimento no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-05", "fund-ap-06"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -564,7 +564,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique raízes em Pitágoras e áreas no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-07", "fund-ap-08"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -704,7 +704,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Treine produtos notáveis e cálculo mental no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-09", "fund-ap-10"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -851,7 +851,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique fatoração aplicada a equações no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-11", "fund-ap-12"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1001,7 +1001,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Resolva equações de 1º grau aplicadas a custos e metas no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-13", "fund-ap-14"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1150,7 +1150,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique equações de 2º grau aplicadas no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-15", "fund-ap-16"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1293,7 +1293,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique porcentagem, desconto e acréscimo no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-17", "fund-ap-18"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1432,7 +1432,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique proporção, escala e regra de três no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-19", "fund-ap-20"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1575,7 +1575,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique juros simples e montante no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-21", "fund-ap-22"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1724,7 +1724,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique cálculo de consumo e custo de energia no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-23", "fund-ap-24"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1867,7 +1867,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Revise as seis ferramentas com exercícios variados no banco do site.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-25", "fund-ap-26"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -2009,7 +2009,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique equações e problemas aplicados no banco de exercícios do site.",
-      exerciseIds: [],
+      exerciseIds: ["fund-ap-27", "fund-ap-28"],
     },
     resumo: {
       title: "Resumo da aula",
