@@ -131,7 +131,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique leitura e marcação de coordenadas no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["graf-ap-01", "graf-ap-02"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -268,7 +268,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique leitura de valores em gráficos no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["graf-ap-03", "graf-ap-04"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -411,7 +411,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique identificação de crescimento e decrescimento no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["graf-ap-05", "graf-ap-06"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -554,7 +554,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique interpretação de picos, vales e cruzamentos no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["graf-ap-07", "graf-ap-08"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -693,7 +693,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique translações verticais e horizontais no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["graf-ap-09", "graf-ap-10"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -836,7 +836,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique gráficos de receita e preço ótimo no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["graf-ap-11", "graf-ap-12"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -974,7 +974,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique leitura de gráficos que relacionam duas grandezas no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["graf-ap-13", "graf-ap-14"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1115,7 +1115,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Revise todo o módulo de gráficos com exercícios variados no banco do site.",
-      exerciseIds: [],
+      exerciseIds: ["graf-ap-15", "graf-ap-16"],
     },
     resumo: {
       title: "Resumo da aula",
