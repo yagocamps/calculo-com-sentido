@@ -135,7 +135,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique a ideia de aproximação e tendência no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["prep-ap-01", "prep-ap-02"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -274,7 +274,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique a leitura do comportamento de funções no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["prep-ap-03", "prep-ap-04"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -413,7 +413,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique tabelas de valores próximos no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["prep-ap-05", "prep-ap-06"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -552,7 +552,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique a ideia de tendência e indeterminações no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["prep-ap-07", "prep-ap-08"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -691,7 +691,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique a leitura gráfica de tendências no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["prep-ap-09", "prep-ap-10"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -829,7 +829,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique velocidade média, instantânea e tendência no banco de exercícios.",
-      exerciseIds: [],
+      exerciseIds: ["prep-ap-11", "prep-ap-12"],
     },
     resumo: {
       title: "Resumo da aula",
