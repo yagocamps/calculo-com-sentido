@@ -31,33 +31,35 @@ export const integraisAulas: Record<string, AulaContent> = {
         "Pedaços cada vez menores → soma tende à integral (quando existe).",
       ],
       formula: "S ≈ Σ f(xᵢ*)·Δx",
+      formulaLatex: "S \\approx \\sum_{i=1}^{n} f(x_i^*)\\,\\Delta x",
+      formulaAria: "S aproximadamente igual à soma de f de x i estrela vezes delta x",
       formulaLegend: "Δx = largura do pedaço",
       callout: "Mais retângulos, melhor a aproximação.",
     },
     ondeAparece: {
       title: "Exemplos",
       items: [
-        { label: "Distância", detail: "Soma de v·Δt" },
-        { label: "Consumo", detail: "Soma de potência·Δt" },
-        { label: "Área", detail: "Soma de altura·Δx" },
+        { label: "Distância", detail: "Soma de \\(v \\cdot \\Delta t\\)" },
+        { label: "Consumo", detail: "Soma de \\(\\text{potência} \\cdot \\Delta t\\)" },
+        { label: "Área", detail: "Soma de \\(\\text{altura} \\cdot \\Delta x\\)" },
       ],
     },
     exemplo: {
       title: "Velocidade constante",
-      situacao: "v=5 m/s durante 10 s. Distância total?",
+      situacao: "\\(v=5\\) m/s durante 10 s. Distância total?",
     },
     passos: {
       title: "Pensar",
       steps: [
-        { title: "Retângulos", detail: "Altura 5, base 10 → área 50." },
-        { title: "Soma", detail: "Σ v·Δt = 5×10 = 50 m." },
+        { title: "Retângulos", detail: "Altura 5, base 10 \\(\\to\\) área 50." },
+        { title: "Soma", detail: "\\(\\sum v \\cdot \\Delta t = 5 \\times 10 = 50\\) m." },
         { title: "Limite", detail: "v constante: integral exata = soma simples." },
       ],
     },
     interpretacao: {
       title: "Par com derivada",
       paragraphs: [
-        "Se s′(t)=v(t), recuperar s é integrar v.",
+        "Se \\(s'(t)=v(t)\\), recuperar \\(s\\) é integrar \\(v\\).",
         "Acúmulo e taxa são operações inversas (TFC formaliza).",
       ],
     },
@@ -75,9 +77,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "som-g1",
           type: "interpretacao",
-          enunciado: "v(t)=3 em 0≤t≤4. Distância?",
-          resposta: "12 m",
-          resolucao: "3×4.",
+          enunciado: "\\(v(t)=3\\) em \\(0 \\leq t \\leq 4\\). Distância?",
+          resposta: "\\(12\\) m",
+          resolucao: "\\(3 \\times 4\\).",
           interpretacao: "Soma retangular.",
         },
         {
@@ -85,7 +87,7 @@ export const integraisAulas: Record<string, AulaContent> = {
           type: "compreensao",
           enunciado: "Por que dividir em pedaços menores?",
           resposta: "Aproximar melhor curvas que não são constantes.",
-          resolucao: "Limite Δx→0.",
+          resolucao: "Limite \\(\\Delta x \\to 0\\).",
           interpretacao: "Precisão da soma.",
         },
       ],
@@ -94,7 +96,7 @@ export const integraisAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Integral = acúmulo = limite de somas.",
+        "Integral \\(=\\) acúmulo \\(=\\) limite de somas.",
         "Pedaços × valor médio × largura.",
         "Inverso conceitual da derivada.",
       ],
@@ -113,18 +115,20 @@ export const integraisAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Área entre gráfico e eixo x modela total acumulado quando f≥0.",
+        "Área entre gráfico e eixo x modela total acumulado quando \\(f \\geq 0\\).",
         "f negativo: integral conta área com sinal (abaixo do eixo subtrai).",
       ],
     },
     explicacao: {
       title: "Leitura geométrica",
       paragraphs: [
-        "∫ₐᵇ f(x) dx: área líquida entre f e o eixo x de a a b.",
-        "f≥0: área geométrica. f alterna sinal: partes somam e subtraem.",
+        "\\(\\int_a^b f(x)\\,dx\\): área líquida entre f e o eixo x de a a b.",
+        "\\(f \\geq 0\\): área geométrica. f alterna sinal: partes somam e subtraem.",
         "Unidade: (unidade de f)×(unidade de x).",
       ],
       formula: "A ≈ Σ f(xᵢ)Δx → ∫ₐᵇ f(x) dx",
+      formulaLatex: "A \\approx \\sum f(x_i)\\,\\Delta x \\;\\to\\; \\int_a^b f(x)\\,dx",
+      formulaAria: "A aproximadamente igual à soma de f de x i delta x, que tende à integral de a a b de f de x dx",
       callout: "Desenho ajuda a ver o que está somando.",
     },
     ondeAparece: {
@@ -142,24 +146,24 @@ export const integraisAulas: Record<string, AulaContent> = {
     passos: {
       title: "Calcular",
       steps: [
-        { title: "Retângulo", detail: "2×3=6." },
-        { title: "Integral", detail: "∫₀³ 2 dx = 6." },
-        { title: "Unidade", detail: "Se x em m, f em m/s → área em m? Verifique contexto." },
+        { title: "Retângulo", detail: "\\(2 \\times 3 = 6\\)." },
+        { title: "Integral", detail: "\\(\\int_0^3 2\\,dx = 6\\)." },
+        { title: "Unidade", detail: "Se x em m, f em m/s \\(\\to\\) área em m? Verifique contexto." },
       ],
     },
     interpretacao: {
       title: "Sinal",
       paragraphs: [
         "Área \"abaixo\" do eixo contribui negativamente.",
-        "Distância total usa |v| ou separa trechos — cuidado em movimento.",
+        "Distância total usa \\(|v|\\) ou separa trechos — cuidado em movimento.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Ignorar trechos com f<0.",
+        "Ignorar trechos com \\(f<0\\).",
         "Confundir área com perímetro.",
-        "Esquecer limites a e b.",
+        "Esquecer limites \\(a\\) e \\(b\\).",
       ],
     },
     exerciciosGuiados: {
@@ -168,9 +172,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "asg-g1",
           type: "calculo",
-          enunciado: "f(x)=4, x∈[1,5]. ∫₁⁵ f dx?",
-          resposta: "16",
-          resolucao: "4×4.",
+          enunciado: "\\(f(x)=4\\), \\(x \\in [1,5]\\). \\(\\int_1^5 f\\,dx\\)?",
+          resposta: "\\(16\\)",
+          resolucao: "\\(4 \\times 4\\).",
           interpretacao: "Retângulo.",
         },
         {
@@ -188,7 +192,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Integral definida ≈ área líquida sob f.",
-        "Sinal importa quando f<0.",
+        "Sinal importa quando \\(f<0\\).",
         "Unidades: produto das escalas dos eixos.",
       ],
     },
@@ -206,25 +210,27 @@ export const integraisAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Se F′(x)=f(x), F é antiderivada de f — \"volta\" da derivada.",
-        "Integral indefinida ∫f(x)dx = F(x)+C reunir todas as antiderivadas.",
+        "Se \\(F'(x)=f(x)\\), F é antiderivada de f — \"volta\" da derivada.",
+        "Integral indefinida \\(\\int f(x)\\,dx = F(x)+C\\) reúne todas as antiderivadas.",
       ],
     },
     explicacao: {
       title: "Conceito",
       paragraphs: [
-        "C é constante porque (F+C)′=F′=f.",
-        "Regras espelham derivadas: ∫x^n dx = x^(n+1)/(n+1)+C (n≠−1).",
-        "∫f′(x)dx = f(x)+C — cheque derivando o resultado.",
+        "C é constante porque \\((F+C)'=F'=f\\).",
+        "Regras espelham derivadas: \\(\\int x^n\\,dx = \\frac{x^{n+1}}{n+1}+C\\) (\\(n \\neq -1\\)).",
+        "\\(\\int f'(x)\\,dx = f(x)+C\\) — cheque derivando o resultado.",
       ],
       formula: "∫f(x)dx = F(x) + C, com F′=f",
+      formulaLatex: "\\int f(x)\\,dx = F(x) + C, \\quad \\text{com } F'=f",
+      formulaAria: "integral de f de x dx igual a F de x mais C, com F linha igual a f",
       callout: "Sempre +C em indefinida (família de soluções).",
     },
     ondeAparece: {
       title: "Uso",
       items: [
-        { label: "Recuperar posição", detail: "s=∫v dt" },
-        { label: "Custo total", detail: "∫ marginal" },
+        { label: "Recuperar posição", detail: "\\(s=\\int v\\,dt\\)" },
+        { label: "Custo total", detail: "\\(\\int \\text{marginal}\\)" },
         { label: "TFC", detail: "Liga a definida" },
       ],
     },
@@ -235,24 +241,24 @@ export const integraisAulas: Record<string, AulaContent> = {
     passos: {
       title: "Integrar",
       steps: [
-        { title: "Regra", detail: "x³ + C." },
-        { title: "Verificar", detail: "(x³)′=3x²." },
+        { title: "Regra", detail: "\\(x^3 + C\\)." },
+        { title: "Verificar", detail: "\\((x^3)'=3x^2\\)." },
         { title: "C", detail: "Qualquer constante funciona." },
       ],
     },
     interpretacao: {
       title: "Diferença definida vs indefinida",
       paragraphs: [
-        "Indefinida: função + C (família).",
-        "Definida: número (área/acúmulo entre a e b).",
+        "Indefinida: função \\(+\\,C\\) (família).",
+        "Definida: número (área/acúmulo entre \\(a\\) e \\(b\\)).",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Esquecer +C.",
-        "Dividir por n+1 errado em potência.",
-        "∫(1/x)dx = ln|x|+C, não x^0/0.",
+        "Esquecer \\(+C\\).",
+        "Dividir por \\(n+1\\) errado em potência.",
+        "\\(\\int \\frac{1}{x}\\,dx = \\ln|x|+C\\), não \\(\\frac{x^0}{0}\\).",
       ],
     },
     exerciciosGuiados: {
@@ -261,17 +267,17 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "ind-g1",
           type: "calculo",
-          enunciado: "∫(2x+1)dx",
-          resposta: "x²+x+C",
+          enunciado: "\\(\\int (2x+1)\\,dx\\)",
+          resposta: "\\(x^2+x+C\\)",
           resolucao: "Termo a termo.",
           interpretacao: "Polinômio.",
         },
         {
           id: "ind-g2",
           type: "compreensao",
-          enunciado: "Por que (F+C)′=f se F′=f?",
+          enunciado: "Por que \\((F+C)'=f\\) se \\(F'=f\\)?",
           resposta: "Derivada de constante é zero.",
-          resolucao: "(C)′=0.",
+          resolucao: "\\((C)'=0\\).",
           interpretacao: "Família paralela.",
         },
       ],
@@ -281,7 +287,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       title: "Resumo da aula",
       bullets: [
         "Antiderivada: derivar volta a f.",
-        "∫f dx = F(x)+C.",
+        "\\(\\int f\\,dx = F(x)+C\\).",
         "Regras análogas às derivadas.",
       ],
     },
@@ -299,24 +305,26 @@ export const integraisAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Integral definida ∫ₐᵇ f(x)dx é um número: acúmulo/área líquida no intervalo.",
-        "Limites a e b fixam onde começa e termina a conta.",
+        "Integral definida \\(\\int_a^b f(x)\\,dx\\) é um número: acúmulo/área líquida no intervalo.",
+        "Limites \\(a\\) e \\(b\\) fixam onde começa e termina a conta.",
       ],
     },
     explicacao: {
       title: "Definição e notação",
       paragraphs: [
-        "Limite de somas de Riemann quando f é integrável em [a,b].",
-        "∫ₐᵃ f = 0. Trocar limites: ∫ₐᵇ f = −∫ᵇₐ f.",
+        "Limite de somas de Riemann quando f é integrável em \\([a,b]\\).",
+        "\\(\\int_a^a f = 0\\). Trocar limites: \\(\\int_a^b f = -\\int_b^a f\\).",
         "Interpretação: área líquida ou total acumulado no trecho.",
       ],
       formula: "∫ₐᵇ f(x) dx ∈ ℝ",
+      formulaLatex: "\\int_a^b f(x)\\,dx \\in \\mathbb{R}",
+      formulaAria: "integral de a a b de f de x dx pertence aos reais",
       callout: "dx indica variável de integração; a e b são números.",
     },
     ondeAparece: {
       title: "Exemplos",
       items: [
-        { label: "Produção", detail: "Total entre t₁ e t₂" },
+        { label: "Produção", detail: "Total entre \\(t_1\\) e \\(t_2\\)" },
         { label: "Probabilidade", detail: "Área sob densidade (futuro)" },
         { label: "Energia", detail: "Trabalho como integral de força" },
       ],
@@ -328,8 +336,8 @@ export const integraisAulas: Record<string, AulaContent> = {
     passos: {
       title: "Por área ou antiderivada",
       steps: [
-        { title: "Triângulo", detail: "Base 2, altura 4 → área 4." },
-        { title: "Antiderivada", detail: "x²|₀² = 4−0=4." },
+        { title: "Triângulo", detail: "Base 2, altura 4 \\(\\to\\) área 4." },
+        { title: "Antiderivada", detail: "\\(\\left. x^2 \\right|_0^2 = 4-0=4\\)." },
         { title: "Conferência", detail: "Mesmo resultado." },
       ],
     },
@@ -343,7 +351,7 @@ export const integraisAulas: Record<string, AulaContent> = {
     erros: {
       title: "Cuidado com",
       items: [
-        "Deixar +C na definida (não aparece no valor final).",
+        "Deixar \\(+C\\) na definida (não aparece no valor final).",
         "Limites invertidos sem sinal.",
         "Confundir variável de integração com limite.",
       ],
@@ -354,16 +362,16 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "def-g1",
           type: "calculo",
-          enunciado: "∫₁³ 5 dx",
-          resposta: "10",
-          resolucao: "5×(3−1).",
+          enunciado: "\\(\\int_1^3 5\\,dx\\)",
+          resposta: "\\(10\\)",
+          resolucao: "\\(5 \\times (3-1)\\).",
           interpretacao: "Retângulo altura 5.",
         },
         {
           id: "def-g2",
           type: "interpretacao",
-          enunciado: "∫ₐᵃ f dx = ?",
-          resposta: "0",
+          enunciado: "\\(\\int_a^a f\\,dx = \\;?\\)",
+          resposta: "\\(0\\)",
           resolucao: "Intervalo de largura zero.",
           interpretacao: "Propriedade básica.",
         },
@@ -373,7 +381,7 @@ export const integraisAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Definida = número no intervalo [a,b].",
+        "Definida = número no intervalo \\([a,b]\\).",
         "Área líquida / acúmulo.",
         "Antiderivada calcula via TFC (próxima).",
       ],
@@ -399,11 +407,13 @@ export const integraisAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Principais",
       paragraphs: [
-        "∫(f+g) = ∫f + ∫g. ∫(cf) = c∫f.",
-        "∫ₐᵇ f = ∫ₐᶜ f + ∫ᶜᵇ f (aditividade).",
-        "Se f≤g em [a,b], então ∫ₐᵇ f ≤ ∫ₐᵇ g.",
+        "\\(\\int (f+g) = \\int f + \\int g\\). \\(\\int (cf) = c\\int f\\).",
+        "\\(\\int_a^b f = \\int_a^c f + \\int_c^b f\\) (aditividade).",
+        "Se \\(f \\leq g\\) em \\([a,b]\\), então \\(\\int_a^b f \\leq \\int_a^b g\\).",
       ],
       formula: "∫ₐᵇ f = ∫ₐᶜ f + ∫ᶜᵇ f",
+      formulaLatex: "\\int_a^b f = \\int_a^c f + \\int_c^b f",
+      formulaAria: "integral de a a b de f igual à integral de a a c mais integral de c a b",
       callout: "c pode estar dentro ou fora de [a,b].",
     },
     ondeAparece: {
@@ -421,8 +431,8 @@ export const integraisAulas: Record<string, AulaContent> = {
     passos: {
       title: "Somar pedaços",
       steps: [
-        { title: "Quebrar", detail: "∫₀² 2 + ∫₂⁴ 6." },
-        { title: "Calcular", detail: "4+12=16." },
+        { title: "Quebrar", detail: "\\(\\int_0^2 2 + \\int_2^4 6\\)." },
+        { title: "Calcular", detail: "\\(4+12=16\\)." },
         { title: "Interpretação", detail: "Acúmulo em dois regimes." },
       ],
     },
@@ -430,13 +440,13 @@ export const integraisAulas: Record<string, AulaContent> = {
       title: "Estratégia",
       paragraphs: [
         "Modelos reais mudam de regra — integre trecho a trecho.",
-        "Simetria em [−a,a] economiza trabalho.",
+        "Simetria em \\([-a,a]\\) economiza trabalho.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Quebrar em c fora do domínio de f.",
+        "Quebrar em \\(c\\) fora do domínio de f.",
         "Esquecer sinal ao inverter limites.",
         "Aplicar linearidade em divisão inválida.",
       ],
@@ -447,16 +457,16 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "prop-g1",
           type: "calculo",
-          enunciado: "∫₀² (3x+1)dx = ∫₀² 3x dx + ?",
-          resposta: "∫₀² 1 dx",
+          enunciado: "\\(\\int_0^2 (3x+1)\\,dx = \\int_0^2 3x\\,dx + \\;?\\)",
+          resposta: "\\(\\int_0^2 1\\,dx\\)",
           resolucao: "Linearidade.",
           interpretacao: "Separar termos.",
         },
         {
           id: "prop-g2",
           type: "compreensao",
-          enunciado: "∫₀³ f = 5 e ∫₃⁵ f = 2. ∫₀⁵ f?",
-          resposta: "7",
+          enunciado: "\\(\\int_0^3 f = 5\\) e \\(\\int_3^5 f = 2\\). \\(\\int_0^5 f\\)?",
+          resposta: "\\(7\\)",
           resolucao: "Aditividade.",
           interpretacao: "Soma de trechos.",
         },
@@ -492,9 +502,9 @@ export const integraisAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Parte I e II (intuição)",
       paragraphs: [
-        "Parte I: F(x)=∫ₐˣ f(t)dt tem F′(x)=f(x) (área acumulada varia à taxa f).",
-        "Parte II: se F′=f, então ∫ₐᵇ f(x)dx = F(b)−F(a).",
-        "Notação: F(b)−F(a) = [F(x)]ₐᵇ.",
+        "Parte I: \\(F(x)=\\int_a^x f(t)\\,dt\\) tem \\(F'(x)=f(x)\\) (área acumulada varia à taxa f).",
+        "Parte II: se \\(F'=f\\), então \\(\\int_a^b f(x)\\,dx = F(b)-F(a)\\).",
+        "Notação: \\(F(b)-F(a) = \\left[F(x)\\right]_a^b\\).",
       ],
       formula: "∫ₐᵇ f(x) dx = F(b) − F(a),  F′=f",
       formulaLatex:
@@ -507,7 +517,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       title: "Tudo que integra",
       items: [
         { label: "Áreas", detail: "Cálculo exato" },
-        { label: "Física", detail: "s=∫v" },
+        { label: "Física", detail: "\\(s=\\int v\\)" },
         { label: "Probabilidade", detail: "Acúmulo de densidade" },
       ],
     },
@@ -518,9 +528,9 @@ export const integraisAulas: Record<string, AulaContent> = {
     passos: {
       title: "Passos",
       steps: [
-        { title: "Antiderivada", detail: "F(x)=x³/3." },
-        { title: "Avaliar", detail: "F(1)−F(0)=1/3−0=1/3." },
-        { title: "Interpretação", detail: "Área sob x² em [0,1] é 1/3." },
+        { title: "Antiderivada", detail: "\\(F(x)=\\frac{x^3}{3}\\)." },
+        { title: "Avaliar", detail: "\\(F(1)-F(0)=\\frac{1}{3}-0=\\frac{1}{3}\\)." },
+        { title: "Interpretação", detail: "Área sob \\(x^2\\) em \\([0,1]\\) é \\(\\frac{1}{3}\\)." },
       ],
     },
     interpretacao: {
@@ -534,8 +544,8 @@ export const integraisAulas: Record<string, AulaContent> = {
       title: "Cuidado com",
       items: [
         "Antiderivada errada.",
-        "Esquecer F(a) na subtração.",
-        "Confundir variável t com x (mesmo resultado se consistente).",
+        "Esquecer \\(F(a)\\) na subtração.",
+        "Confundir variável \\(t\\) com \\(x\\) (mesmo resultado se consistente).",
       ],
     },
     exerciciosGuiados: {
@@ -544,15 +554,15 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "tfc-g1",
           type: "calculo",
-          enunciado: "∫₀² (4x) dx via TFC.",
-          resposta: "8",
-          resolucao: "2x²|₀²=8.",
+          enunciado: "\\(\\int_0^2 4x\\,dx\\) via TFC.",
+          resposta: "\\(8\\)",
+          resolucao: "\\(\\left. 2x^2 \\right|_0^2=8\\).",
           interpretacao: "Parábola.",
         },
         {
           id: "tfc-g2",
           type: "compreensao",
-          enunciado: "Se F′=f, por que ∫ₐᵇ f = F(b)−F(a)?",
+          enunciado: "Se \\(F'=f\\), por que \\(\\int_a^b f = F(b)-F(a)\\)?",
           resposta: "Acúmulo total = valor final − valor inicial da antiderivada.",
           resolucao: "TFC parte II.",
           interpretacao: "Mudança líquida de F.",
@@ -563,7 +573,7 @@ export const integraisAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "TFC: ∫ₐᵇ f = F(b)−F(a).",
+        "TFC: \\(\\int_a^b f = F(b)-F(a)\\).",
         "Encontre antiderivada, avalie limites.",
         "Une área e acúmulo ao cálculo simbólico.",
       ],
@@ -582,18 +592,20 @@ export const integraisAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Deslocamento ∫v dt pode ser negativo; distância total soma o percorrido sem sinal.",
+        "Deslocamento \\(\\int v\\,dt\\) pode ser negativo; distância total soma o percorrido sem sinal.",
         "v negativo = voltar; distância conta ida e volta.",
       ],
     },
     explicacao: {
       title: "Deslocamento vs distância",
       paragraphs: [
-        "Deslocamento em [t₁,t₂]: ∫ₜ₁ᵗ² v(t) dt (com sinal).",
-        "Distância total: ∫|v(t)| dt ou soma de |trechos|.",
+        "Deslocamento em \\([t_1,t_2]\\): \\(\\int_{t_1}^{t_2} v(t)\\,dt\\) (com sinal).",
+        "Distância total: \\(\\int |v(t)|\\,dt\\) ou soma de |trechos|.",
         "Gráfico: área acima e abaixo do eixo separadamente.",
       ],
       formula: "distância = ∫ |v(t)| dt",
+      formulaLatex: "\\text{distância} = \\int |v(t)|\\,dt",
+      formulaAria: "distância igual à integral do módulo de v de t dt",
       callout: "Movimento ida e volta exige cuidado com sinal de v.",
     },
     ondeAparece: {
@@ -611,9 +623,9 @@ export const integraisAulas: Record<string, AulaContent> = {
     passos: {
       title: "Analisar",
       steps: [
-        { title: "Zero v", detail: "6−2t=0 → t=3." },
-        { title: "Deslocamento", detail: "∫₀⁶(6−2t)dt = [6t−t²]₀⁶ = 0." },
-        { title: "Distância", detail: "∫₀³ v + ∫₃⁶ |v| = 9+9=18 m." },
+        { title: "Zero v", detail: "\\(6-2t=0 \\Rightarrow t=3\\)." },
+        { title: "Deslocamento", detail: "\\[\\int_0^6 (6-2t)\\,dt = \\left[6t-t^2\\right]_0^6 = 0\\]" },
+        { title: "Distância", detail: "\\(\\int_0^3 v + \\int_3^6 |v| = 9+9=18\\) m." },
       ],
     },
     interpretacao: {
@@ -626,8 +638,8 @@ export const integraisAulas: Record<string, AulaContent> = {
     erros: {
       title: "Cuidado com",
       items: [
-        "Usar ∫v como distância quando v muda de sinal.",
-        "Esquecer de achar onde v=0.",
+        "Usar \\(\\int v\\) como distância quando v muda de sinal.",
+        "Esquecer de achar onde \\(v=0\\).",
         "Unidades de tempo e velocidade.",
       ],
     },
@@ -637,17 +649,17 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "dis-g1",
           type: "interpretacao",
-          enunciado: "v>0 todo o intervalo. Distância = deslocamento?",
+          enunciado: "\\(v>0\\) todo o intervalo. Distância = deslocamento?",
           resposta: "Sim no intervalo.",
-          resolucao: "|v|=v.",
+          resolucao: "\\(|v|=v\\).",
           interpretacao: "Mesmo sentido.",
         },
         {
           id: "dis-g2",
           type: "calculo",
-          enunciado: "v=5 m/s por 4 s. Distância?",
-          resposta: "20 m",
-          resolucao: "5×4.",
+          enunciado: "\\(v=5\\) m/s por 4 s. Distância?",
+          resposta: "\\(20\\) m",
+          resolucao: "\\(5 \\times 4\\).",
           interpretacao: "Constante positiva.",
         },
       ],
@@ -656,9 +668,9 @@ export const integraisAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Deslocamento = ∫v (com sinal).",
-        "Distância = ∫|v| ou soma de trechos.",
-        "Ache onde v=0 para quebrar intervalo.",
+        "Deslocamento = \\(\\int v\\) (com sinal).",
+        "Distância = \\(\\int |v|\\) ou soma de trechos.",
+        "Ache onde \\(v=0\\) para quebrar intervalo.",
       ],
     },
   },
@@ -683,11 +695,13 @@ export const integraisAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Modelo",
       paragraphs: [
-        "P(t) potência → energia E=∫P dt.",
-        "Consumo de água: ∫ vazão dt.",
+        "\\(P(t)\\) potência \\(\\to\\) energia \\(E=\\int P\\,dt\\).",
+        "Consumo de água: \\(\\int \\text{vazão}\\,dt\\).",
         "Unidades: (unidade/s) × s = unidade total.",
       ],
       formula: "Total = ∫ₜ₁ᵗ² (taxa) dt",
+      formulaLatex: "\\text{Total} = \\int_{t_1}^{t_2} \\text{taxa}\\,dt",
+      formulaAria: "total igual à integral de t1 a t2 da taxa dt",
       callout: "Gráfico da taxa: área = total acumulado.",
     },
     ondeAparece: {
@@ -705,8 +719,8 @@ export const integraisAulas: Record<string, AulaContent> = {
     passos: {
       title: "Integrar",
       steps: [
-        { title: "Unidades", detail: "t em horas, P em kW → kWh." },
-        { title: "∫₀³ 2t dt", detail: "[t²]₀³ = 9 kWh." },
+        { title: "Unidades", detail: "t em horas, P em kW \\(\\to\\) kWh." },
+        { title: "∫₀³ 2t dt", detail: "\\(\\int_0^3 2t\\,dt = \\left[t^2\\right]_0^3 = 9\\) kWh." },
         { title: "Interpretação", detail: "Potência crescente; total 9 kWh no intervalo." },
       ],
     },
@@ -732,8 +746,8 @@ export const integraisAulas: Record<string, AulaContent> = {
           id: "con-g1",
           type: "calculo",
           enunciado: "Vazão constante 5 L/min por 10 min. Volume?",
-          resposta: "50 L",
-          resolucao: "5×10.",
+          resposta: "\\(50\\) L",
+          resolucao: "\\(5 \\times 10\\).",
           interpretacao: "Retângulo.",
         },
         {
@@ -741,7 +755,7 @@ export const integraisAulas: Record<string, AulaContent> = {
           type: "interpretacao",
           enunciado: "Pico alto por 1 min e zero depois. Consumo total grande?",
           resposta: "Depende da integral; pico sozinho não define total.",
-          resolucao: "Área sob P(t).",
+          resolucao: "Área sob \\(P(t)\\).",
           interpretacao: "Acúmulo importa.",
         },
       ],
@@ -776,11 +790,13 @@ export const integraisAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Ideias",
       paragraphs: [
-        "Área entre f e g em [a,b]: ∫(f−g) dx quando f≥g.",
+        "Área entre f e g em \\([a,b]\\): \\(\\int (f-g)\\,dx\\) quando \\(f \\geq g\\).",
         "Volume por rotação (esboço): fatias perpendiculares; Cálculo 2 aprofunda.",
         "Simetria reduz trabalho em áreas.",
       ],
       formula: "A = ∫ₐᵇ (f(x) − g(x)) dx",
+      formulaLatex: "A = \\int_a^b \\left(f(x) - g(x)\\right)\\,dx",
+      formulaAria: "A igual à integral de a a b de f de x menos g de x dx",
       callout: "Desenhe quem está em cima.",
     },
     ondeAparece: {
@@ -798,22 +814,22 @@ export const integraisAulas: Record<string, AulaContent> = {
     passos: {
       title: "Resolver",
       steps: [
-        { title: "Quem está acima", detail: "x ≥ x² em [0,1]." },
-        { title: "Integral", detail: "∫₀¹ (x−x²)dx = [x²/2−x³/3]₀¹ = 1/2−1/3 = 1/6." },
+        { title: "Quem está acima", detail: "\\(x \\geq x^2\\) em \\([0,1]\\)." },
+        { title: "Integral", detail: "\\[\\int_0^1 (x-x^2)\\,dx = \\left[\\frac{x^2}{2}-\\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2}-\\frac{1}{3} = \\frac{1}{6}\\]" },
         { title: "Unidade", detail: "Área no plano (unidades²)." },
       ],
     },
     interpretacao: {
       title: "Volume (visão)",
       paragraphs: [
-        "Rotacionar região gera sólido; volume ≈ soma de discos πr²Δx — integral em curso seguinte.",
+        "Rotacionar região gera sólido; volume \\(\\approx\\) soma de discos \\(\\pi r^2 \\Delta x\\) — integral em curso seguinte.",
         "Aqui: fixe a ideia de fatiar e somar.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
-        "Integrar (f−g) sem ver quem é maior.",
+        "Integrar \\((f-g)\\) sem ver quem é maior.",
         "Limites errados de interseção.",
         "Esquecer unidades de área.",
       ],
@@ -824,9 +840,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "avol-g1",
           type: "calculo",
-          enunciado: "Área sob y=3 em [2,5].",
-          resposta: "9",
-          resolucao: "3×3.",
+          enunciado: "Área sob \\(y=3\\) em \\([2,5]\\).",
+          resposta: "\\(9\\)",
+          resolucao: "\\(3 \\times 3\\).",
           interpretacao: "Retângulo.",
         },
         {
@@ -843,7 +859,7 @@ export const integraisAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Área entre curvas: ∫(f−g) com f≥g.",
+        "Área entre curvas: \\(\\int (f-g)\\) com \\(f \\geq g\\).",
         "Ache interseções para limites.",
         "Volume: fatiar e integrar (aprofundamento depois).",
       ],
@@ -869,11 +885,13 @@ export const integraisAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Roteiro aplicado",
       paragraphs: [
-        "1) O que é a taxa? 2) Unidades? 3) Intervalo [a,b]? 4) ∫ taxa → total.",
+        "1) O que é a taxa? 2) Unidades? 3) Intervalo \\([a,b]\\)? 4) \\(\\int \\text{taxa} \\to\\) total.",
         "Deslocamento vs distância; energia vs potência; área vs altura.",
         "TFC para calcular quando há antiderivada.",
       ],
       formula: "Total = F(b)−F(a)  ou  ∫ₐᵇ f",
+      formulaLatex: "\\text{Total} = F(b)-F(a) \\quad \\text{ou} \\quad \\int_a^b f",
+      formulaAria: "total igual a F de b menos F de a, ou a integral de a a b de f",
       callout: "Desenho do gráfico valida sinal e magnitude.",
     },
     ondeAparece: {
@@ -886,15 +904,15 @@ export const integraisAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Problema misto",
-      situacao: "Marginal C′(x)=20+0,1x. Custo adicional de produzir de 100 a 200 unidades?",
+      situacao: "Marginal \\(C'(x)=20+0{,}1x\\). Custo adicional de produzir de 100 a 200 unidades?",
     },
     passos: {
       title: "Integrar marginal",
       steps: [
-        { title: "Interpretação", detail: "Custo extra ≈ ∫₁₀₀²⁰⁰ C′(x)dx." },
-        { title: "Antiderivada", detail: "20x+0,05x²." },
-        { title: "Avaliar", detail: "(20·200+0,05·40000)−(20·100+0,05·10000)." },
-        { title: "Calcular", detail: "4000+2000−2000−500 = 3500 (conferir contas no caderno)." },
+        { title: "Interpretação", detail: "Custo extra \\(\\approx \\int_{100}^{200} C'(x)\\,dx\\)." },
+        { title: "Antiderivada", detail: "\\(20x+0{,}05x^2\\)." },
+        { title: "Avaliar", detail: "\\[(20 \\cdot 200+0{,}05 \\cdot 40000)-(20 \\cdot 100+0{,}05 \\cdot 10000)\\]" },
+        { title: "Calcular", detail: "\\(4000+2000-2000-500 = 3500\\) (conferir contas no caderno)." },
       ],
     },
     interpretacao: {
@@ -918,8 +936,8 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "apl-g1",
           type: "interpretacao",
-          enunciado: "Dados v(t) em gráfico. Como achar distância total?",
-          resposta: "Somar áreas |v| por trechos ou ∫|v|.",
+          enunciado: "Dados \\(v(t)\\) em gráfico. Como achar distância total?",
+          resposta: "Somar áreas \\(|v|\\) por trechos ou \\(\\int |v|\\).",
           resolucao: "Sinal de v.",
           interpretacao: "Gráfico.",
         },
@@ -963,12 +981,14 @@ export const integraisAulas: Record<string, AulaContent> = {
       title: "Checklist da trilha",
       paragraphs: [
         "✓ Soma e área sob gráfico.",
-        "✓ Indefinida (+C) e definida (número).",
-        "✓ Propriedades e TFC: F(b)−F(a).",
+        "✓ Indefinida (\\(+C\\)) e definida (número).",
+        "✓ Propriedades e TFC: \\(F(b)-F(a)\\).",
         "✓ Distância, consumo, área entre curvas.",
         "✓ Par com derivada via TFC.",
       ],
       formula: "∫ₐᵇ f = F(b)−F(a)  |  d/dx ∫ₐˣ f = f(x)",
+      formulaLatex: "\\int_a^b f = F(b)-F(a) \\quad\\Big|\\quad \\frac{d}{dx}\\int_a^x f = f(x)",
+      formulaAria: "integral de a a b de f igual a F de b menos F de a; derivada em x da integral de a a x de f igual a f de x",
       callout: "Trilha Cálculo 1 completa em conteúdo de aulas.",
     },
     ondeAparece: {
@@ -981,13 +1001,13 @@ export const integraisAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Desafio final",
-      situacao: "v(t)=3t m/s em 0≤t≤4 s. Deslocamento e distância?",
+      situacao: "\\(v(t)=3t\\) m/s em \\(0 \\leq t \\leq 4\\) s. Deslocamento e distância?",
     },
     passos: {
       title: "Resolver",
       steps: [
-        { title: "Deslocamento", detail: "∫₀⁴ 3t dt = [1,5t²]₀⁴ = 24 m." },
-        { title: "Distância", detail: "v≥0 → 24 m também." },
+        { title: "Deslocamento", detail: "\\(\\int_0^4 3t\\,dt = \\left[1{,}5t^2\\right]_0^4 = 24\\) m." },
+        { title: "Distância", detail: "\\(v \\geq 0 \\to 24\\) m também." },
         { title: "Frase", detail: "Partiu do repouso e acelerou uniformemente; posição final 24 m à frente." },
       ],
     },
@@ -1013,9 +1033,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         {
           id: "revi-g1",
           type: "calculo",
-          enunciado: "∫₀² (x+1) dx",
-          resposta: "4",
-          resolucao: "[x²/2+x]₀²=2+2.",
+          enunciado: "\\(\\int_0^2 (x+1)\\,dx\\)",
+          resposta: "\\(4\\)",
+          resolucao: "\\(\\left[\\frac{x^2}{2}+x\\right]_0^2=2+2\\).",
           interpretacao: "TFC.",
         },
         {
@@ -1032,7 +1052,7 @@ export const integraisAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "Integral = acúmulo = área líquida (com sinal).",
+        "Integral \\(=\\) acúmulo \\(=\\) área líquida (com sinal).",
         "TFC é a ferramenta de cálculo.",
         "Trilha Cálculo 1: 62 aulas — conteúdo completo.",
         "Continue praticando e revisando Pré-Cálculo quando precisar.",
