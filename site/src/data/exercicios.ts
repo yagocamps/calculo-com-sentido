@@ -1,5 +1,6 @@
 import { exerciciosAlgebra } from "@/data/exercicios-algebra";
 import { exerciciosContinuidade } from "@/data/exercicios-continuidade";
+import { exerciciosDerivadas } from "@/data/exercicios-derivadas";
 import { exerciciosFuncoes } from "@/data/exercicios-funcoes";
 import { exerciciosFuncoesCalculo } from "@/data/exercicios-funcoes-calculo";
 import { exerciciosGraficos } from "@/data/exercicios-graficos";
@@ -48,6 +49,7 @@ export const exercicioTemas = [
   { slug: "funcao-quadratica", label: "Função quadrática" },
   { slug: "limites", label: "Limites" },
   { slug: "continuidade", label: "Continuidade" },
+  { slug: "derivadas", label: "Derivadas" },
 ] as const;
 
 export const exercicioNiveis = [
@@ -231,4 +233,5 @@ export const exercicios: Exercicio[] = [
   ...exerciciosPreparacaoLimites,
   ...exerciciosLimites,
   ...exerciciosContinuidade,
+  ...exerciciosDerivadas,
 ];
