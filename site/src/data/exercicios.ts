@@ -4,6 +4,7 @@ import { exerciciosContinuidade } from "@/data/exercicios-continuidade";
 import { exerciciosDerivadas } from "@/data/exercicios-derivadas";
 import { exerciciosFuncoes } from "@/data/exercicios-funcoes";
 import { exerciciosFuncoesCalculo } from "@/data/exercicios-funcoes-calculo";
+import { exerciciosIntegrais } from "@/data/exercicios-integrais";
 import { exerciciosGraficos } from "@/data/exercicios-graficos";
 import { exerciciosPreparacaoLimites } from "@/data/exercicios-preparacao-limites";
 import { exerciciosTrigonometria } from "@/data/exercicios-trigonometria";
@@ -52,6 +53,7 @@ export const exercicioTemas = [
   { slug: "continuidade", label: "Continuidade" },
   { slug: "derivadas", label: "Derivadas" },
   { slug: "aplicacoes-derivadas", label: "Aplic. derivadas" },
+  { slug: "integrais", label: "Integrais" },
 ] as const;
 
 export const exercicioNiveis = [
@@ -237,4 +239,5 @@ export const exercicios: Exercicio[] = [
   ...exerciciosContinuidade,
   ...exerciciosDerivadas,
   ...exerciciosAplicacoesDerivadas,
+  ...exerciciosIntegrais,
 ];
