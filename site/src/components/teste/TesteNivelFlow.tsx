@@ -211,9 +211,9 @@ export function TesteNivelFlow() {
                       className={cn(
                         "grid h-7 w-7 shrink-0 place-items-center rounded-lg border font-mono text-[13px] font-semibold",
                         isSelected && !showFeedback
-                          ? "border-terracotta bg-terracotta text-white"
+                          ? "border-terracotta bg-terracotta text-bg"
                           : "border-border bg-surface text-ink-muted",
-                        showCorrect && "border-sage bg-sage text-white",
+                        showCorrect && "border-sage bg-sage text-bg",
                       )}
                     >
                       {opt.key}

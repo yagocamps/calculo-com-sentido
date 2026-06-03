@@ -65,7 +65,7 @@ export function SidebarProgressWidget() {
           className="mt-2 flex items-center justify-between rounded-lg bg-sage-soft px-2.5 py-1.5 text-[11px] font-semibold text-sage-ink hover:opacity-90"
         >
           <span>Revisar hoje</span>
-          <span className="grid h-4 min-w-4 place-items-center rounded-full bg-sage px-1 text-[10px] text-white">
+          <span className="grid h-4 min-w-4 place-items-center rounded-full bg-sage px-1 text-[10px] text-bg">
             {reviewDue}
           </span>
         </Link>

@@ -157,7 +157,7 @@ function LessonRow({
         className={cn(
           "grid h-8 w-8 shrink-0 place-items-center rounded-lg font-mono text-xs font-semibold",
           done
-            ? "bg-sage text-white"
+            ? "bg-sage text-bg"
             : "border border-border bg-surface-warm text-ink-muted",
         )}
       >

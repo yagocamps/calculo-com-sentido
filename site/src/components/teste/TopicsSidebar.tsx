@@ -43,7 +43,7 @@ export function TopicsSidebar({ currentIndex }: { currentIndex: number }) {
               >
                 <span
                   className={cn(
-                    "grid h-[18px] w-[18px] shrink-0 place-items-center rounded-full text-[11px] font-bold text-white",
+                    "grid h-[18px] w-[18px] shrink-0 place-items-center rounded-full text-[11px] font-bold text-bg",
                     state === "done" && "bg-sage",
                     state === "current" && "bg-terracotta",
                     state === "pending" && "border border-border bg-surface-warm text-transparent",

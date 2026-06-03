@@ -150,7 +150,7 @@ export function Sidebar({
     >
       <div className="flex items-center justify-between px-2 py-1">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-terracotta font-serif text-lg font-semibold text-white shadow-[inset_0_-2px_0_rgba(0,0,0,0.1)]">
+          <div className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-terracotta font-serif text-lg font-semibold text-bg shadow-[inset_0_-2px_0_rgba(0,0,0,0.1)]">
             α
           </div>
           <div>
