@@ -1,4 +1,5 @@
 import { exerciciosAlgebra } from "@/data/exercicios-algebra";
+import { exerciciosAplicacoesDerivadas } from "@/data/exercicios-aplicacoes-derivadas";
 import { exerciciosContinuidade } from "@/data/exercicios-continuidade";
 import { exerciciosDerivadas } from "@/data/exercicios-derivadas";
 import { exerciciosFuncoes } from "@/data/exercicios-funcoes";
@@ -50,6 +51,7 @@ export const exercicioTemas = [
   { slug: "limites", label: "Limites" },
   { slug: "continuidade", label: "Continuidade" },
   { slug: "derivadas", label: "Derivadas" },
+  { slug: "aplicacoes-derivadas", label: "Aplic. derivadas" },
 ] as const;
 
 export const exercicioNiveis = [
@@ -234,4 +236,5 @@ export const exercicios: Exercicio[] = [
   ...exerciciosLimites,
   ...exerciciosContinuidade,
   ...exerciciosDerivadas,
+  ...exerciciosAplicacoesDerivadas,
 ];

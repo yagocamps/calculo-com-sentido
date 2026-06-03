@@ -92,7 +92,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-01", "ad-ap-02"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -188,7 +188,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-03", "ad-ap-04"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -283,7 +283,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-05", "ad-ap-06"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -379,7 +379,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-07", "ad-ap-08"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -471,7 +471,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-09", "ad-ap-10"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -566,7 +566,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-11", "ad-ap-12"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -662,7 +662,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-13", "ad-ap-14"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -758,7 +758,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-15", "ad-ap-16"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -858,7 +858,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Em breve.", exerciseIds: [] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-17", "ad-ap-18"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
