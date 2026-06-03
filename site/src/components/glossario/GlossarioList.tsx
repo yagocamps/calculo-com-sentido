@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { RichText } from "@/components/aulas/RichText";
 import type { GlossarioEntry } from "@/data/glossario";
 import { slugify } from "@/lib/utils";
 
@@ -61,10 +62,10 @@ export function GlossarioList({ entries }: { entries: GlossarioEntry[] }) {
             >
               <dt className="font-serif text-xl font-medium">{entry.termo}</dt>
               <dd className="mt-2 text-[15px] leading-relaxed text-ink-muted">
-                {entry.definicao}
+                <RichText as="span">{entry.definicao}</RichText>
                 {entry.exemplo && (
                   <span className="mt-2 block text-sm text-ink">
-                    Ex.: {entry.exemplo}
+                    Ex.: <RichText as="span">{entry.exemplo}</RichText>
                   </span>
                 )}
               </dd>
