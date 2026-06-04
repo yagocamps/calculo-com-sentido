@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { sectionLinks } from "@/components/aulas/toc-sections";
+import { GlossaryTermChip } from "@/components/glossario/GlossaryTermChip";
 import type { AulaContent } from "@/data/aulas/types";
+import { glossario } from "@/data/glossario";
 import { slugify } from "@/lib/utils";
+
+const glossarioByTerm = new Map(glossario.map((g) => [g.termo, g]));
 
 export function AulaToc({ content }: { content: AulaContent }) {
   const links = content.meta.nextLesson
@@ -71,13 +74,12 @@ export function AulaToc({ content }: { content: AulaContent }) {
             </p>
             <div className="flex flex-wrap gap-1.5">
               {content.meta.glossaryTerms.map((t) => (
-                <Link
+                <GlossaryTermChip
                   key={t}
+                  termo={t}
                   href={`/glossario#${slugify(t)}`}
-                  className="rounded-full border border-border bg-surface px-2 py-0.5 text-[11.5px] text-ink-muted hover:border-terracotta hover:text-ink"
-                >
-                  {t}
-                </Link>
+                  entry={glossarioByTerm.get(t)}
+                />
               ))}
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { ModuloPageClient } from "@/components/trilhas/ModuloPageClient";
 import { getAllModuloParams, getModulo } from "@/data/pre-calculo";
+import { getModuleFlashcards } from "@/lib/flashcards";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -26,5 +27,6 @@ export default async function ModuloPage({
   const modulo = getModulo(slug);
   if (!modulo) notFound();
 
-  return <ModuloPageClient modulo={modulo} />;
+  const flashcards = getModuleFlashcards("pre-calculo", slug);
+  return <ModuloPageClient modulo={modulo} flashcards={flashcards} />;
 }

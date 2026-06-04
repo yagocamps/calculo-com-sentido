@@ -1,6 +1,7 @@
 "use client";
 
 import { TrilhaModuloPageClient } from "@/components/trilhas/TrilhaModuloPageClient";
+import type { GlossarioEntry } from "@/data/glossario";
 import type { TrilhaModuloData } from "@/data/trilha-module";
 import {
   calculo1LessonId,
@@ -10,8 +11,10 @@ import {
 
 export function Calculo1ModuloPageClient({
   modulo,
+  flashcards,
 }: {
   modulo: TrilhaModuloData;
+  flashcards?: GlossarioEntry[];
 }) {
   return (
     <TrilhaModuloPageClient
@@ -21,6 +24,7 @@ export function Calculo1ModuloPageClient({
       modulo={modulo}
       lessonIdFn={calculo1LessonId}
       lessonPathFn={calculo1LessonPath}
+      flashcards={flashcards}
     />
   );
 }

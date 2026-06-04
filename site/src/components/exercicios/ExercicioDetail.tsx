@@ -6,12 +6,39 @@ import { RevealBlock } from "@/components/exercicios/RevealBlock";
 import { TypeTag } from "@/components/exercicios/TypeTag";
 import { Button } from "@/components/ui/Button";
 import { LevelTag } from "@/components/ui/Tag";
-import type { Exercicio } from "@/data/exercicios";
+import Link from "next/link";
+import { exercicios, type Exercicio } from "@/data/exercicios";
 import { checkAnswer, type CheckResult } from "@/lib/answer-check";
+import { levelOrder } from "@/lib/exercicios";
 import {
   isExerciseComplete,
   markExerciseComplete,
 } from "@/lib/progress";
+
+/**
+ * Próximo exercício recomendado: sobe um nível no acerto, desce um no erro,
+ * dentro do mesmo tema, preferindo um que ainda não foi resolvido.
+ */
+function recommendNext(
+  current: Exercicio,
+  outcome: "correct" | "incorrect",
+): Exercicio | null {
+  const idx = levelOrder.indexOf(current.level);
+  const targetIdx =
+    outcome === "correct"
+      ? Math.min(idx + 1, levelOrder.length - 1)
+      : Math.max(idx - 1, 0);
+  const targetLevel = levelOrder[targetIdx];
+  const sameTema = exercicios.filter(
+    (e) => e.temaSlug === current.temaSlug && e.id !== current.id,
+  );
+  return (
+    sameTema.find((e) => e.level === targetLevel && !isExerciseComplete(e.id)) ??
+    sameTema.find((e) => e.level === targetLevel) ??
+    sameTema.find((e) => !isExerciseComplete(e.id)) ??
+    null
+  );
+}
 
 function Field({
   label,
@@ -90,6 +117,11 @@ export function ExercicioDetail({
       setExerciseDone(true);
     }
   };
+
+  const recommended =
+    result === "correct" || result === "incorrect"
+      ? recommendNext(exercicio, result)
+      : null;
 
   return (
     <article className="rounded-3 border border-border bg-surface p-7 shadow-sm">
@@ -189,6 +221,22 @@ export function ExercicioDetail({
               </Button>
             </span>
           </div>
+        )}
+
+        {recommended && (
+          <Link
+            href={`/exercicios?id=${recommended.id}`}
+            className="mt-3 block rounded-2 border border-border bg-surface-soft px-4 py-3 transition-colors hover:border-terracotta"
+          >
+            <span className="block text-[11px] font-semibold uppercase tracking-wider text-ink-subtle">
+              {result === "correct"
+                ? "Mandou bem — tente um mais puxado"
+                : "Recomendado: reforce com um mais tranquilo"}
+            </span>
+            <span className="mt-0.5 block text-[13px] font-medium text-ink">
+              {recommended.title} →
+            </span>
+          </Link>
         )}
       </Field>
 

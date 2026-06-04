@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { ModuleFlashcards } from "@/components/flashcards/ModuleFlashcards";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { ProgressRing } from "@/components/ui/ProgressRing";
 import { Tag } from "@/components/ui/Tag";
 import type { ModuleState } from "@/components/trilhas/ModuleCard";
+import type { GlossarioEntry } from "@/data/glossario";
 import type { TrilhaModuloData } from "@/data/trilha-module";
 import { isLessonAccessible } from "@/lib/aulas";
 import { moduleStateTag } from "@/lib/progress-utils";
@@ -18,6 +20,7 @@ export function ModuloPageContent({
   moduleState,
   lessonStatuses,
   lessonPathFn,
+  flashcards = [],
 }: {
   trilhaSlug: "pre-calculo" | "calculo-1";
   trilhaLabel: string;
@@ -27,6 +30,7 @@ export function ModuloPageContent({
   moduleState: ModuleState;
   lessonStatuses: { slug: string; done: boolean; available: boolean }[];
   lessonPathFn: (moduloSlug: string, aulaSlug: string) => string;
+  flashcards?: GlossarioEntry[];
 }) {
   const stateLabel = moduleStateTag(moduleState);
 
@@ -78,6 +82,12 @@ export function ModuloPageContent({
           </ul>
         </Card>
       </div>
+
+      {flashcards.length > 0 && (
+        <div className="mt-4">
+          <ModuleFlashcards cards={flashcards} />
+        </div>
+      )}
 
       <section className="mt-6">
         <div className="mb-3 flex items-center justify-between">

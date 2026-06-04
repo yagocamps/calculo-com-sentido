@@ -5,6 +5,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ModuloPageContent } from "@/components/trilhas/ModuloPageContent";
 import type { TrilhaModuloData } from "@/data/trilha-module";
 import type { ModuleState } from "@/components/trilhas/ModuleCard";
+import type { GlossarioEntry } from "@/data/glossario";
 import { getProgress } from "@/lib/progress";
 import {
   computeModuleProgress,
@@ -19,6 +20,7 @@ export function TrilhaModuloPageClient({
   modulo,
   lessonIdFn,
   lessonPathFn,
+  flashcards,
 }: {
   trilhaSlug: "pre-calculo" | "calculo-1";
   trilhaLabel: string;
@@ -26,6 +28,7 @@ export function TrilhaModuloPageClient({
   modulo: TrilhaModuloData;
   lessonIdFn: LessonIdFn;
   lessonPathFn: (moduloSlug: string, aulaSlug: string) => string;
+  flashcards?: GlossarioEntry[];
 }) {
   const [progress, setProgress] = useState(0);
   const [moduleState, setModuleState] = useState<ModuleState>("open");
@@ -68,6 +71,7 @@ export function TrilhaModuloPageClient({
         moduleState={moduleState}
         lessonStatuses={lessonStatuses}
         lessonPathFn={lessonPathFn}
+        flashcards={flashcards}
       />
     </PageShell>
   );
