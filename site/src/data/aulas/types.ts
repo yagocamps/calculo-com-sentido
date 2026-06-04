@@ -15,6 +15,13 @@ export type AulaStep = {
   detail: string;
 };
 
+/** Vídeo-aula do YouTube (até 3 por aula). `youtubeId` é o ID do vídeo
+ * (ex.: em https://youtu.be/ABC123 ou ?v=ABC123, o ID é "ABC123"). */
+export type AulaVideo = {
+  titulo: string;
+  youtubeId: string;
+};
+
 export type AulaContent = {
   meta: {
     title: string;
@@ -84,4 +91,7 @@ export type AulaContent = {
     title: string;
     bullets: string[];
   };
+  /** Vídeo-aulas do YouTube (máx. 3). Quando vazio/ausente, a seção
+   * "Vídeo aula" aparece como "Em breve". */
+  videos?: AulaVideo[];
 };

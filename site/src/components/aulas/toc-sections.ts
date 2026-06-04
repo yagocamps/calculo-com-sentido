@@ -12,5 +12,6 @@ export const sectionLinks = [
   { id: "guiados", label: "Exercícios guiados" },
   { id: "aplicados", label: "Exercícios aplicados" },
   { id: "resumo", label: "Resumo" },
+  { id: "video", label: "Vídeo aula" },
   { id: "proxima", label: "Próxima aula" },
 ] as const;

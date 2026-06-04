@@ -7,6 +7,7 @@ import { FunctionPlot } from "@/components/aulas/FunctionPlot";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
 import { RichText } from "@/components/aulas/RichText";
 import { Section } from "@/components/aulas/Section";
+import { AulaVideos } from "@/components/aulas/AulaVideos";
 import { StepList } from "@/components/aulas/StepList";
 import { PageShell } from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/Button";
@@ -262,10 +263,16 @@ export function AulaView({
             </Section>
           </div>
 
+          <div id="video">
+            <Section n={11} label="Vídeo aula" title="Assista à explicação">
+              <AulaVideos videos={content.videos} />
+            </Section>
+          </div>
+
           {meta.nextLesson && (
             <div id="proxima">
               <Section
-                n={11}
+                n={12}
                 label="Próxima aula"
                 title="Continue sua trilha"
               >
