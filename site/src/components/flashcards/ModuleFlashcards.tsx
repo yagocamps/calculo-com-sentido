@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { RichText } from "@/components/aulas/RichText";
 import { Button } from "@/components/ui/Button";
 import type { GlossarioEntry } from "@/data/glossario";
+import { cn } from "@/lib/utils";
 
 function shuffled(n: number): number[] {
   const a = Array.from({ length: n }, (_, i) => i);
@@ -14,7 +15,16 @@ function shuffled(n: number): number[] {
   return a;
 }
 
-export function ModuleFlashcards({ cards }: { cards: GlossarioEntry[] }) {
+export function ModuleFlashcards({
+  cards,
+  moduleSlug,
+}: {
+  cards: GlossarioEntry[];
+  moduleSlug?: string;
+}) {
+  // Piloto do novo visual (cartão 3D + bolinhas) só no Fundamentos.
+  const pilot = moduleSlug === "fundamentos";
+
   const [open, setOpen] = useState(false);
   const [order, setOrder] = useState<number[]>([]);
   const [pos, setPos] = useState(0);
@@ -43,6 +53,11 @@ export function ModuleFlashcards({ cards }: { cards: GlossarioEntry[] }) {
     setFlipped(false);
     setPos((p) => (p - 1 + cards.length) % cards.length);
   }, [cards.length]);
+
+  const goTo = useCallback((i: number) => {
+    setFlipped(false);
+    setPos(i);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -91,10 +106,7 @@ export function ModuleFlashcards({ cards }: { cards: GlossarioEntry[] }) {
           aria-modal="true"
           aria-label="Flashcards do módulo"
         >
-          <div
-            className="w-full max-w-lg"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="w-full max-w-xl" onClick={(e) => e.stopPropagation()}>
             <div className="mb-2 flex items-center justify-between text-[12px] text-ink-on-dark/80">
               <span>
                 Cartão {pos + 1} de {cards.length}
@@ -109,61 +121,144 @@ export function ModuleFlashcards({ cards }: { cards: GlossarioEntry[] }) {
               </button>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setFlipped((f) => !f)}
-              className="grid min-h-[260px] w-full place-items-center rounded-3 border border-border bg-surface p-7 text-center shadow-lg"
-            >
-              {!flipped ? (
-                <div>
-                  <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-subtle">
-                    Termo
-                  </p>
-                  <p className="mt-3 font-serif text-3xl font-medium text-ink">
-                    {card.termo}
-                  </p>
-                  <p className="mt-5 text-xs text-ink-subtle">
-                    Toque para ver a definição
-                  </p>
-                </div>
-              ) : (
-                <div>
-                  <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-subtle">
-                    Definição
-                  </p>
-                  <RichText
-                    as="p"
-                    className="mt-3 text-[15px] leading-relaxed text-ink"
+            {pilot ? (
+              <>
+                {/* Cartão 3D paisagem com virada em rotateY */}
+                <div style={{ perspective: "1000px" }}>
+                  <button
+                    type="button"
+                    onClick={() => setFlipped((f) => !f)}
+                    aria-label="Virar cartão"
+                    className="relative block h-64 w-full cursor-pointer"
+                    style={{
+                      transformStyle: "preserve-3d",
+                      transition: "transform 0.5s ease-in-out",
+                      transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+                    }}
                   >
-                    {card.definicao}
-                  </RichText>
-                  {card.exemplo && (
-                    <RichText
-                      as="p"
-                      className="mt-3 text-sm text-ink-muted"
+                    {/* Frente */}
+                    <span
+                      className="absolute inset-0 grid place-items-center rounded-2 border border-border bg-surface p-7 text-center shadow-lg"
+                      style={{ backfaceVisibility: "hidden" }}
                     >
-                      {`Ex.: ${card.exemplo}`}
-                    </RichText>
-                  )}
+                      <span className="absolute right-3 top-3 inline-flex items-center gap-1 text-[12px] font-bold text-ink-subtle">
+                        ⟳ Virar
+                      </span>
+                      <span className="font-serif text-3xl font-medium text-ink">
+                        {card.termo}
+                      </span>
+                      <span className="absolute bottom-3 left-0 right-0 text-[11px] text-ink-subtle">
+                        toque para ver a definição
+                      </span>
+                    </span>
+                    {/* Verso */}
+                    <span
+                      className="absolute inset-0 grid place-items-center overflow-auto rounded-2 border border-border bg-surface p-7 text-center shadow-lg"
+                      style={{
+                        backfaceVisibility: "hidden",
+                        transform: "rotateY(180deg)",
+                      }}
+                    >
+                      <span>
+                        <span className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-subtle">
+                          Definição
+                        </span>
+                        <RichText
+                          as="p"
+                          className="mt-2 text-[15px] leading-relaxed text-ink"
+                        >
+                          {card.definicao}
+                        </RichText>
+                        {card.exemplo && (
+                          <RichText
+                            as="p"
+                            className="mt-2 text-sm text-ink-muted"
+                          >
+                            {`Ex.: ${card.exemplo}`}
+                          </RichText>
+                        )}
+                      </span>
+                    </span>
+                  </button>
                 </div>
-              )}
-            </button>
 
-            <div className="mt-3 flex items-center justify-between gap-2">
-              <Button variant="soft" size="sm" onClick={prev}>
-                ← Anterior
-              </Button>
-              <Button
-                variant="soft"
-                size="sm"
-                onClick={() => start(true)}
-              >
-                🔀 Embaralhar
-              </Button>
-              <Button variant="primary" size="sm" onClick={next}>
-                Próximo →
-              </Button>
-            </div>
+                {/* Paginação por bolinhas */}
+                <div className="mt-4 flex flex-wrap justify-center gap-1.5">
+                  {order.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => goTo(i)}
+                      aria-label={`Ir ao cartão ${i + 1}`}
+                      aria-current={i === pos}
+                      className={cn(
+                        "h-2 w-2 rounded-full transition-colors",
+                        i === pos
+                          ? "bg-terracotta"
+                          : "bg-ink/15 hover:bg-ink/35",
+                      )}
+                    />
+                  ))}
+                </div>
+
+                <div className="mt-3 flex justify-center">
+                  <Button variant="soft" size="sm" onClick={() => start(true)}>
+                    🔀 Embaralhar
+                  </Button>
+                </div>
+              </>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => setFlipped((f) => !f)}
+                  className="grid min-h-[260px] w-full place-items-center rounded-3 border border-border bg-surface p-7 text-center shadow-lg"
+                >
+                  {!flipped ? (
+                    <div>
+                      <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-subtle">
+                        Termo
+                      </p>
+                      <p className="mt-3 font-serif text-3xl font-medium text-ink">
+                        {card.termo}
+                      </p>
+                      <p className="mt-5 text-xs text-ink-subtle">
+                        Toque para ver a definição
+                      </p>
+                    </div>
+                  ) : (
+                    <div>
+                      <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-subtle">
+                        Definição
+                      </p>
+                      <RichText
+                        as="p"
+                        className="mt-3 text-[15px] leading-relaxed text-ink"
+                      >
+                        {card.definicao}
+                      </RichText>
+                      {card.exemplo && (
+                        <RichText as="p" className="mt-3 text-sm text-ink-muted">
+                          {`Ex.: ${card.exemplo}`}
+                        </RichText>
+                      )}
+                    </div>
+                  )}
+                </button>
+
+                <div className="mt-3 flex items-center justify-between gap-2">
+                  <Button variant="soft" size="sm" onClick={prev}>
+                    ← Anterior
+                  </Button>
+                  <Button variant="soft" size="sm" onClick={() => start(true)}>
+                    🔀 Embaralhar
+                  </Button>
+                  <Button variant="primary" size="sm" onClick={next}>
+                    Próximo →
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}

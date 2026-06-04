@@ -85,7 +85,7 @@ export function ModuloPageContent({
 
       {flashcards.length > 0 && (
         <div className="mt-4">
-          <ModuleFlashcards cards={flashcards} />
+          <ModuleFlashcards cards={flashcards} moduleSlug={modulo.slug} />
         </div>
       )}
 
