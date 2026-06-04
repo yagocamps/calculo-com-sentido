@@ -13,6 +13,7 @@ import { levelOrder } from "@/lib/exercicios";
 import {
   isExerciseComplete,
   markExerciseComplete,
+  unmarkExerciseComplete,
 } from "@/lib/progress";
 
 /**
@@ -96,6 +97,8 @@ export function ExercicioDetail({
     setShowErro(false);
     setAttempt("");
     setResult(null);
+    unmarkExerciseComplete(exercicio.id);
+    setExerciseDone(false);
     onReset();
   };
 

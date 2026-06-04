@@ -201,6 +201,15 @@ export function markExerciseComplete(exerciseId: string) {
   });
 }
 
+export function unmarkExerciseComplete(exerciseId: string) {
+  const current = getProgress();
+  const normalized = normalizeExerciseIds(current.completedExercises);
+  if (!normalized.includes(exerciseId)) return;
+  saveProgress({
+    completedExercises: normalized.filter((id) => id !== exerciseId),
+  });
+}
+
 export function isLessonComplete(lessonPathId: string): boolean {
   return getProgress().completedLessons.includes(lessonPathId);
 }
