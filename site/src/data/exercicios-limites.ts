@@ -263,7 +263,7 @@ export const exerciciosLimites: Exercicio[] = [
     dica: "Divida numerador e denominador por \\(x^2\\).",
     resolucao: "Ver passos abaixo.",
     resolucaoSteps: [
-      "Divida por \\(x^2\\): \\(\\frac{3 + \\frac{1}{x^2}}{1 + \\frac{4}{x^2}}\\).",
+      "Divida por \\(x^2\\): \\[\\frac{3 + \\frac{1}{x^2}}{1 + \\frac{4}{x^2}}\\]",
       "Quando \\(x \\to \\infty\\), \\(\\frac{1}{x^2} \\to 0\\) e \\(\\frac{4}{x^2} \\to 0\\).",
       "Sobra \\(\\frac{3}{1} = 3\\).",
     ],
@@ -286,7 +286,7 @@ export const exerciciosLimites: Exercicio[] = [
     dica: "Divida numerador e denominador por \\(t\\).",
     resolucao: "Ver passos abaixo.",
     resolucaoSteps: [
-      "\\(\\frac{20t}{t+5} = \\frac{20}{1 + \\frac{5}{t}}\\).",
+      "\\[\\frac{20t}{t+5} = \\frac{20}{1 + \\frac{5}{t}}\\]",
       "Quando \\(t \\to \\infty\\), \\(\\frac{5}{t} \\to 0\\).",
       "Sobra \\(\\frac{20}{1} = 20\\).",
     ],
