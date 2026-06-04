@@ -170,6 +170,19 @@ export function markLessonComplete(lessonPathId: string) {
   });
 }
 
+/** Desfaz a conclusão de uma aula (remove também a revisão agendada). */
+export function unmarkLessonComplete(lessonPathId: string) {
+  const current = getProgress();
+  const normalized = normalizeLessonIds(current.completedLessons);
+  if (!normalized.includes(lessonPathId)) return;
+  const reviews = { ...current.reviews };
+  delete reviews[lessonPathId];
+  saveProgress({
+    completedLessons: normalized.filter((id) => id !== lessonPathId),
+    reviews,
+  });
+}
+
 /** Registra o resultado de uma revisão e reagenda a próxima. */
 export function markReviewed(lessonPathId: string, result: ReviewResult) {
   const current = getProgress();

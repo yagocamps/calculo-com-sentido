@@ -6,6 +6,7 @@ import { burstConfetti } from "@/lib/confetti";
 import {
   isLessonComplete,
   markLessonComplete,
+  unmarkLessonComplete,
 } from "@/lib/progress";
 
 export function MarkCompleteButton({ lessonPathId }: { lessonPathId: string }) {
@@ -24,9 +25,19 @@ export function MarkCompleteButton({ lessonPathId }: { lessonPathId: string }) {
 
   if (done) {
     return (
-      <span className="inline-flex items-center rounded-full bg-sage-soft px-3 py-1 text-xs font-semibold text-sage-ink">
+      <button
+        type="button"
+        title="Clique para desmarcar como concluída"
+        aria-label="Concluída — clique para desmarcar"
+        onClick={() => {
+          unmarkLessonComplete(lessonPathId);
+          setDone(false);
+        }}
+        className="group inline-flex items-center gap-1.5 rounded-full bg-sage-soft px-3 py-1 text-xs font-semibold text-sage-ink transition-colors hover:bg-sage/25"
+      >
         ✓ Concluída
-      </span>
+        <span className="hidden text-sage-ink/70 group-hover:inline">↺ desmarcar</span>
+      </button>
     );
   }
 
