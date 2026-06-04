@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { RichText } from "@/components/aulas/RichText";
+import { FlashcardsIcon } from "@/components/flashcards/FlashcardsIcon";
 import { Button } from "@/components/ui/Button";
 import type { GlossarioEntry } from "@/data/glossario";
 import { cn } from "@/lib/utils";
@@ -104,12 +105,15 @@ export function ModuleFlashcards({
         onClick={() => start(false)}
         className="flex w-full items-center justify-between gap-3 rounded-2 border border-border bg-surface px-4 py-3 text-left transition-colors hover:border-terracotta hover:bg-terracotta-soft/30"
       >
-        <span>
-          <span className="font-serif text-lg font-medium text-ink">
-            🎴 Revisar conceitos
-          </span>
-          <span className="mt-0.5 block text-xs text-ink-muted">
-            {cards.length} flashcards dos termos deste módulo
+        <span className="flex items-center gap-2.5">
+          <FlashcardsIcon className="h-8 w-8 shrink-0" />
+          <span>
+            <span className="block font-serif text-lg font-medium text-ink">
+              Revisar conceitos
+            </span>
+            <span className="mt-0.5 block text-xs text-ink-muted">
+              {cards.length} flashcards dos termos deste módulo
+            </span>
           </span>
         </span>
         <span className="shrink-0 text-sm font-semibold text-terracotta">
