@@ -5,6 +5,7 @@
  * o KaTeX com throwOnError:true + strict:"warn" para capturar erros e avisos.
  */
 import katex from "katex";
+import { addAlignedRowGap } from "@/lib/katex-format";
 import { glossario } from "@/data/glossario";
 import { exercicios } from "@/data/exercicios";
 import { resumos } from "@/data/resumos";
@@ -50,7 +51,7 @@ function checkLatex(latex: string, display: boolean, source: string) {
   const origWarn = console.warn;
   console.warn = (...args: unknown[]) => warnings.push(args.join(" "));
   try {
-    katex.renderToString(latex, {
+    katex.renderToString(addAlignedRowGap(latex), {
       throwOnError: true,
       displayMode: display,
       strict: "warn",

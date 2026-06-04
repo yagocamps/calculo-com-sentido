@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import katex from "katex";
 import { GlossaryInline } from "@/components/glossario/GlossaryInline";
+import { addAlignedRowGap } from "@/lib/katex-format";
 import type { GlossarioEntry } from "@/data/glossario";
 
 export type GlossaryHighlight = {
@@ -107,7 +108,7 @@ function ariaFromLatex(latex: string): string {
 }
 
 function renderMath(latex: string, display: boolean, key: number): ReactNode {
-  const html = katex.renderToString(latex, {
+  const html = katex.renderToString(addAlignedRowGap(latex), {
     throwOnError: false,
     displayMode: display,
     output: "htmlAndMathml",
