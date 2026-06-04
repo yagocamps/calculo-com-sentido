@@ -1,7 +1,13 @@
-import { RichText } from "@/components/aulas/RichText";
+import { RichText, type GlossaryHighlight } from "@/components/aulas/RichText";
 import type { AulaStep } from "@/data/aulas/types";
 
-export function StepList({ steps }: { steps: AulaStep[] }) {
+export function StepList({
+  steps,
+  glossary,
+}: {
+  steps: AulaStep[];
+  glossary?: GlossaryHighlight;
+}) {
   return (
     <div>
       {steps.map((step, i) => (
@@ -14,7 +20,11 @@ export function StepList({ steps }: { steps: AulaStep[] }) {
           </span>
           <div>
             <p className="font-semibold">{step.title}</p>
-            <RichText as="p" className="font-mono text-[13.5px] text-ink-muted">
+            <RichText
+              as="p"
+              className="font-mono text-[13.5px] text-ink-muted"
+              glossary={glossary}
+            >
               {step.detail}
             </RichText>
           </div>

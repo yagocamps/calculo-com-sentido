@@ -121,7 +121,9 @@ export function AulaView({
               ))}
               {content.explicacao.callout && (
                 <Callout variant="idea" className="mt-3">
-                  <RichText>{content.explicacao.callout}</RichText>
+                  <RichText glossary={glossaryHL}>
+                    {content.explicacao.callout}
+                  </RichText>
                 </Callout>
               )}
               <FormulaBlock
@@ -148,7 +150,8 @@ export function AulaView({
                 <div className="grid gap-2 sm:grid-cols-2">
                   {content.ondeAparece.items.map((item) => (
                     <div key={item.label} className="text-[13px]">
-                      <b>{item.label}</b> · <RichText>{item.detail}</RichText>
+                      <b>{item.label}</b> ·{" "}
+                      <RichText glossary={glossaryHL}>{item.detail}</RichText>
                     </div>
                   ))}
                 </div>
@@ -170,7 +173,7 @@ export function AulaView({
 
           <div id="passos">
             <Section n={5} label="Resolução passo a passo" title={content.passos.title}>
-              <StepList steps={content.passos.steps} />
+              <StepList steps={content.passos.steps} glossary={glossaryHL} />
             </Section>
           </div>
 
@@ -194,7 +197,7 @@ export function AulaView({
               <Callout variant="warn" label="ERROS COMUNS">
                 <ul className="list-disc space-y-1 pl-4 text-[14px] leading-relaxed">
                   {content.erros.items.map((item) => (
-                    <RichText as="li" key={item}>
+                    <RichText as="li" key={item} glossary={glossaryHL}>
                       {item}
                     </RichText>
                   ))}
@@ -251,7 +254,7 @@ export function AulaView({
             <Section n={10} label="Resumo da aula" title={content.resumo.title}>
               <ul className="list-disc space-y-2 pl-5 text-[15px] leading-relaxed">
                 {content.resumo.bullets.map((b) => (
-                  <RichText as="li" key={b}>
+                  <RichText as="li" key={b} glossary={glossaryHL}>
                     {b}
                   </RichText>
                 ))}
