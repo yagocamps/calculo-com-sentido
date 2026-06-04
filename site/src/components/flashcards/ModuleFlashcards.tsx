@@ -29,6 +29,8 @@ export function ModuleFlashcards({
   const [order, setOrder] = useState<number[]>([]);
   const [pos, setPos] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  // Autoavaliação por posição: true = acertou, false = errou, null = sem resposta.
+  const [answers, setAnswers] = useState<(boolean | null)[]>([]);
 
   const start = useCallback(
     (shuffle: boolean) => {
@@ -39,6 +41,7 @@ export function ModuleFlashcards({
       );
       setPos(0);
       setFlipped(false);
+      setAnswers(Array(cards.length).fill(null));
       setOpen(true);
     },
     [cards.length],
@@ -59,6 +62,19 @@ export function ModuleFlashcards({
     setPos(i);
   }, []);
 
+  const answer = useCallback(
+    (ok: boolean) => {
+      setAnswers((prev) => {
+        const n = [...prev];
+        n[pos] = ok;
+        return n;
+      });
+      setFlipped(false);
+      if (pos < cards.length - 1) setPos(pos + 1);
+    },
+    [pos, cards.length],
+  );
+
   useEffect(() => {
     if (!open) return;
     function onKey(e: KeyboardEvent) {
@@ -77,6 +93,9 @@ export function ModuleFlashcards({
   if (cards.length === 0) return null;
 
   const card = open ? cards[order[pos]] : null;
+  const correctCount = answers.filter((a) => a === true).length;
+  const answeredCount = answers.filter((a) => a !== null).length;
+  const allDone = open && answeredCount === cards.length;
 
   return (
     <>
@@ -110,6 +129,11 @@ export function ModuleFlashcards({
             <div className="mb-2 flex items-center justify-between text-[12px] text-ink-on-dark/80">
               <span>
                 Cartão {pos + 1} de {cards.length}
+                {pilot && (
+                  <span className="ml-2 text-ink-on-dark">
+                    · ✓ {correctCount} acerto{correctCount === 1 ? "" : "s"}
+                  </span>
+                )}
               </span>
               <button
                 type="button"
@@ -123,89 +147,165 @@ export function ModuleFlashcards({
 
             {pilot ? (
               <>
-                {/* Cartão 3D paisagem com virada em rotateY */}
-                <div style={{ perspective: "1000px" }}>
-                  <button
-                    type="button"
-                    onClick={() => setFlipped((f) => !f)}
-                    aria-label="Virar cartão"
-                    className="relative block h-64 w-full cursor-pointer"
-                    style={{
-                      transformStyle: "preserve-3d",
-                      transition: "transform 0.5s ease-in-out",
-                      transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
-                    }}
-                  >
-                    {/* Frente */}
-                    <span
-                      className="absolute inset-0 grid place-items-center rounded-2 border border-border bg-surface p-7 text-center shadow-lg"
-                      style={{ backfaceVisibility: "hidden" }}
-                    >
-                      <span className="absolute right-3 top-3 inline-flex items-center gap-1 text-[12px] font-bold text-ink-subtle">
-                        ⟳ Virar
-                      </span>
-                      <span className="font-serif text-3xl font-medium text-ink">
-                        {card.termo}
-                      </span>
-                      <span className="absolute bottom-3 left-0 right-0 text-[11px] text-ink-subtle">
-                        toque para ver a definição
-                      </span>
-                    </span>
-                    {/* Verso */}
-                    <span
-                      className="absolute inset-0 grid place-items-center overflow-auto rounded-2 border border-border bg-surface p-7 text-center shadow-lg"
-                      style={{
-                        backfaceVisibility: "hidden",
-                        transform: "rotateY(180deg)",
-                      }}
-                    >
-                      <span>
-                        <span className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-subtle">
-                          Definição
-                        </span>
-                        <RichText
-                          as="p"
-                          className="mt-2 text-[15px] leading-relaxed text-ink"
+                {allDone ? (
+                  /* Tela de resultado */
+                  <div className="grid min-h-64 place-items-center rounded-2 border border-border bg-surface p-7 text-center shadow-lg">
+                    <div>
+                      <p className="font-serif text-lg text-ink-muted">Resultado</p>
+                      <p className="mt-1 font-serif text-5xl font-medium text-terracotta">
+                        {correctCount}/{cards.length}
+                      </p>
+                      <p className="mt-2 text-sm text-ink-muted">
+                        Você acertou {correctCount} de {cards.length} conceitos.
+                      </p>
+                      <span className="mt-4 inline-flex flex-wrap justify-center gap-2">
+                        <Button
+                          variant="primary"
+                          size="sm"
+                          onClick={() => start(false)}
                         >
-                          {card.definicao}
-                        </RichText>
-                        {card.exemplo && (
-                          <RichText
-                            as="p"
-                            className="mt-2 text-sm text-ink-muted"
-                          >
-                            {`Ex.: ${card.exemplo}`}
-                          </RichText>
-                        )}
+                          Refazer
+                        </Button>
+                        <Button
+                          variant="soft"
+                          size="sm"
+                          onClick={() => start(true)}
+                        >
+                          🔀 Embaralhar
+                        </Button>
                       </span>
-                    </span>
-                  </button>
-                </div>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {/* Cartão 3D paisagem com virada em rotateY */}
+                    <div style={{ perspective: "1000px" }}>
+                      <button
+                        type="button"
+                        onClick={() => setFlipped((f) => !f)}
+                        aria-label="Virar cartão"
+                        className="relative block h-64 w-full cursor-pointer"
+                        style={{
+                          transformStyle: "preserve-3d",
+                          transition: "transform 0.5s ease-in-out",
+                          transform: flipped
+                            ? "rotateY(180deg)"
+                            : "rotateY(0deg)",
+                        }}
+                      >
+                        {/* Frente */}
+                        <span
+                          className="absolute inset-0 grid place-items-center rounded-2 border border-border bg-surface p-7 text-center shadow-lg"
+                          style={{ backfaceVisibility: "hidden" }}
+                        >
+                          <span className="absolute right-3 top-3 inline-flex items-center gap-1 text-[12px] font-bold text-ink-subtle">
+                            ⟳ Virar
+                          </span>
+                          <span className="font-serif text-3xl font-medium text-ink">
+                            {card.termo}
+                          </span>
+                          <span className="absolute bottom-3 left-0 right-0 text-[11px] text-ink-subtle">
+                            toque para ver a definição
+                          </span>
+                        </span>
+                        {/* Verso */}
+                        <span
+                          className="absolute inset-0 grid place-items-center overflow-auto rounded-2 border border-border bg-surface p-7 text-center shadow-lg"
+                          style={{
+                            backfaceVisibility: "hidden",
+                            transform: "rotateY(180deg)",
+                          }}
+                        >
+                          <span>
+                            <span className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-subtle">
+                              Definição
+                            </span>
+                            <RichText
+                              as="p"
+                              className="mt-2 text-[15px] leading-relaxed text-ink"
+                            >
+                              {card.definicao}
+                            </RichText>
+                            {card.exemplo && (
+                              <RichText
+                                as="p"
+                                className="mt-2 text-sm text-ink-muted"
+                              >
+                                {`Ex.: ${card.exemplo}`}
+                              </RichText>
+                            )}
+                          </span>
+                        </span>
+                      </button>
+                    </div>
 
-                {/* Paginação por bolinhas */}
-                <div className="mt-4 flex flex-wrap justify-center gap-1.5">
-                  {order.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => goTo(i)}
-                      aria-label={`Ir ao cartão ${i + 1}`}
-                      aria-current={i === pos}
-                      className={cn(
-                        "h-2 w-2 rounded-full transition-colors",
-                        i === pos
-                          ? "bg-terracotta"
-                          : "bg-ink/15 hover:bg-ink/35",
+                    {/* Autoavaliação — aparece depois de virar */}
+                    <div className="mt-3 flex min-h-[40px] items-center justify-center gap-2">
+                      {flipped ? (
+                        <>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => answer(false)}
+                          >
+                            ✗ Errei
+                          </Button>
+                          <Button
+                            variant="primary"
+                            size="sm"
+                            onClick={() => answer(true)}
+                          >
+                            ✓ Acertei
+                          </Button>
+                        </>
+                      ) : (
+                        <span className="text-[12px] text-ink-on-dark/70">
+                          Vire o cartão para se avaliar
+                        </span>
                       )}
-                    />
-                  ))}
-                </div>
+                    </div>
 
-                <div className="mt-3 flex justify-center">
-                  <Button variant="soft" size="sm" onClick={() => start(true)}>
-                    🔀 Embaralhar
-                  </Button>
-                </div>
+                    {/* Paginação por bolinhas (cor por resultado) */}
+                    <div className="mt-2 flex flex-wrap justify-center gap-1.5">
+                      {order.map((_, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => goTo(i)}
+                          aria-label={`Ir ao cartão ${i + 1}`}
+                          aria-current={i === pos}
+                          className={cn(
+                            "h-2 w-2 rounded-full transition-colors",
+                            i === pos
+                              ? "bg-terracotta ring-2 ring-terracotta/40"
+                              : answers[i] === true
+                                ? "bg-sage"
+                                : answers[i] === false
+                                  ? "bg-amber"
+                                  : "bg-ink/15 hover:bg-ink/35",
+                          )}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Navegação */}
+                    <div className="mt-3 flex items-center justify-between gap-2">
+                      <Button variant="soft" size="sm" onClick={prev}>
+                        ← Anterior
+                      </Button>
+                      <Button
+                        variant="soft"
+                        size="sm"
+                        onClick={() => start(true)}
+                      >
+                        🔀 Embaralhar
+                      </Button>
+                      <Button variant="soft" size="sm" onClick={next}>
+                        Próximo →
+                      </Button>
+                    </div>
+                  </>
+                )}
               </>
             ) : (
               <>
