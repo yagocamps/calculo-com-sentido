@@ -7,6 +7,7 @@ import { TypeTag } from "@/components/exercicios/TypeTag";
 import { Button } from "@/components/ui/Button";
 import { LevelTag } from "@/components/ui/Tag";
 import type { Exercicio } from "@/data/exercicios";
+import { checkAnswer, type CheckResult } from "@/lib/answer-check";
 import {
   isExerciseComplete,
   markExerciseComplete,
@@ -49,6 +50,8 @@ export function ExercicioDetail({
   const [showResposta, setShowResposta] = useState(false);
   const [showErro, setShowErro] = useState(false);
   const [exerciseDone, setExerciseDone] = useState(false);
+  const [attempt, setAttempt] = useState("");
+  const [result, setResult] = useState<CheckResult | null>(null);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- leitura do estado de conclusão (localStorage) client-only
@@ -64,7 +67,28 @@ export function ExercicioDetail({
     setShowResolucao(false);
     setShowResposta(false);
     setShowErro(false);
+    setAttempt("");
+    setResult(null);
     onReset();
+  };
+
+  const handleVerify = () => {
+    const r = checkAnswer(attempt, exercicio.resposta);
+    setResult(r);
+    setShowResposta(true);
+    setShowResolucao(true);
+    if (r === "correct") {
+      markExerciseComplete(exercicio.id);
+      setExerciseDone(true);
+    }
+  };
+
+  const selfAssess = (acertou: boolean) => {
+    setResult(acertou ? "correct" : "incorrect");
+    if (acertou) {
+      markExerciseComplete(exercicio.id);
+      setExerciseDone(true);
+    }
   };
 
   return (
@@ -122,6 +146,50 @@ export function ExercicioDetail({
             </RichText>
           ))}
         </ul>
+      </Field>
+
+      <Field label="Sua resposta">
+        <div className="flex flex-wrap items-center gap-2">
+          <input
+            type="text"
+            value={attempt}
+            onChange={(e) => setAttempt(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleVerify();
+            }}
+            placeholder="Tente antes de ver a solução…"
+            aria-label="Sua resposta"
+            className="min-w-0 flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm text-ink outline-none transition-colors placeholder:text-ink-subtle focus-visible:border-terracotta"
+          />
+          <Button variant="primary" size="sm" onClick={handleVerify}>
+            Verificar
+          </Button>
+        </div>
+
+        {result === "correct" && (
+          <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-sage-soft px-3 py-1 text-[13px] font-semibold text-sage-ink">
+            ✓ Correto! Mandou bem.
+          </p>
+        )}
+        {result === "incorrect" && (
+          <p className="mt-2 text-[13px] text-ink-muted">
+            <span className="font-semibold text-sage-ink">Quase!</span> Confira a
+            resolução e a resposta abaixo — e tente entender onde escapou.
+          </p>
+        )}
+        {result === "manual" && (
+          <div className="mt-2 text-[13px] text-ink-muted">
+            Compare sua resposta com o gabarito abaixo. Você acertou?
+            <span className="mt-2 flex gap-2">
+              <Button variant="soft" size="sm" onClick={() => selfAssess(true)}>
+                ✓ Acertei
+              </Button>
+              <Button variant="ghost" size="sm" onClick={() => selfAssess(false)}>
+                ✗ Ainda não
+              </Button>
+            </span>
+          </div>
+        )}
       </Field>
 
       <Field label="Dica">

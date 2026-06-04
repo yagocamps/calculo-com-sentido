@@ -2,22 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { sectionLinks } from "@/components/aulas/toc-sections";
 import type { AulaContent } from "@/data/aulas/types";
 import { slugify } from "@/lib/utils";
-
-const sectionLinks = [
-  { id: "porque", label: "Por que aprender" },
-  { id: "explicacao", label: "Explicação simples" },
-  { id: "onde", label: "Onde aparece" },
-  { id: "exemplo", label: "Exemplo aplicado" },
-  { id: "passos", label: "Passo a passo" },
-  { id: "interpretacao", label: "Interpretação" },
-  { id: "erros", label: "Erros comuns" },
-  { id: "guiados", label: "Exercícios guiados" },
-  { id: "aplicados", label: "Exercícios aplicados" },
-  { id: "resumo", label: "Resumo" },
-  { id: "proxima", label: "Próxima aula" },
-] as const;
 
 export function AulaToc({ content }: { content: AulaContent }) {
   const links = content.meta.nextLesson

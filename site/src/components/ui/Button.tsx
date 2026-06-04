@@ -31,7 +31,7 @@ type Props = {
   className?: string;
   type?: "button" | "submit";
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent<HTMLElement>) => void;
 };
 
 export function Button({

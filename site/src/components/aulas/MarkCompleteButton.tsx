@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { burstConfetti } from "@/lib/confetti";
 import {
   isLessonComplete,
   markLessonComplete,
@@ -33,9 +34,13 @@ export function MarkCompleteButton({ lessonPathId }: { lessonPathId: string }) {
     <Button
       variant="ghost"
       size="sm"
-      onClick={() => {
+      onClick={(e) => {
         markLessonComplete(lessonPathId);
         setDone(true);
+        const r = (
+          e?.currentTarget as HTMLElement | undefined
+        )?.getBoundingClientRect();
+        if (r) burstConfetti(r.left + r.width / 2, r.top + r.height / 2);
       }}
     >
       Marcar como concluída

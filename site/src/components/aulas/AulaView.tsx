@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { AulaExerciseCard } from "@/components/aulas/AulaExerciseCard";
 import { AulaToc } from "@/components/aulas/AulaToc";
+import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
+import { LessonNav } from "@/components/aulas/LessonNav";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FunctionPlot } from "@/components/aulas/FunctionPlot";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
@@ -18,6 +20,7 @@ import {
   calculo1ModuloPath,
 } from "@/data/calculo-1";
 import { lessonId, moduloPath } from "@/data/pre-calculo";
+import { getAdjacentLessons } from "@/lib/lesson-nav";
 
 export function AulaView({
   content,
@@ -45,6 +48,8 @@ export function AulaView({
   const appliedExercises = content.exerciciosAplicados.exerciseIds
     .map((id) => exercicios.find((e) => e.id === id))
     .filter((e): e is NonNullable<typeof e> => Boolean(e));
+
+  const { prev, next } = getAdjacentLessons(trilha, meta.moduleSlug, aulaSlug);
 
   return (
     <PageShell
@@ -75,6 +80,8 @@ export function AulaView({
               <Tag tone="sage">Nível: {meta.level}</Tag>
             </div>
           </header>
+
+          <AulaTocMobile content={content} />
 
           <div id="porque">
             <Section n={1} label="Por que aprender isso" title={content.porQue.title}>
@@ -257,14 +264,12 @@ export function AulaView({
             </div>
           )}
 
-          <div className="mt-6 border-t border-border-soft pt-6">
-            <Link
-              href={backToModulo}
-              className="text-sm font-semibold text-terracotta hover:underline"
-            >
-              ← Voltar ao módulo {meta.moduleTitle}
-            </Link>
-          </div>
+          <LessonNav
+            prev={prev}
+            next={next}
+            backHref={backToModulo}
+            backLabel={`Módulo ${meta.moduleTitle}`}
+          />
         </article>
 
         <AulaToc content={content} />
