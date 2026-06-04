@@ -1,5 +1,66 @@
 import type { ReactNode } from "react";
 import katex from "katex";
+import { GlossaryInline } from "@/components/glossario/GlossaryInline";
+import type { GlossarioEntry } from "@/data/glossario";
+
+export type GlossaryHighlight = {
+  terms: { termo: string; entry: GlossarioEntry }[];
+  /** Termos já realçados (compartilhado entre parágrafos para realçar só a 1ª vez). */
+  used: Set<string>;
+};
+
+function normalizeTerm(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "");
+}
+
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/** Realça a 1ª ocorrência (ainda não usada) de cada termo num trecho de texto. */
+function highlightTerms(
+  text: string,
+  glossary: GlossaryHighlight,
+  keyBase: number,
+): ReactNode {
+  if (glossary.terms.length === 0) return text;
+  const sorted = [...glossary.terms].sort(
+    (a, b) => b.termo.length - a.termo.length,
+  );
+  const alts = sorted.map((t) => escapeRegExp(t.termo)).join("|");
+  const re = new RegExp(`(?<!\\p{L})(${alts})(?!\\p{L})`, "giu");
+  const normMap = new Map(
+    glossary.terms.map((t) => [normalizeTerm(t.termo), t]),
+  );
+
+  const out: ReactNode[] = [];
+  let last = 0;
+  let k = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    const key = normalizeTerm(m[0]);
+    const term = normMap.get(key);
+    if (term && !glossary.used.has(key)) {
+      glossary.used.add(key);
+      if (m.index > last) out.push(text.slice(last, m.index));
+      out.push(
+        <GlossaryInline
+          key={`g-${keyBase}-${k++}`}
+          termo={term.termo}
+          display={m[0]}
+          entry={term.entry}
+        />,
+      );
+      last = m.index + m[0].length;
+    }
+  }
+  if (out.length === 0) return text;
+  if (last < text.length) out.push(text.slice(last));
+  return out;
+}
 
 /**
  * Renderiza texto com LaTeX inline e blocos de desenvolvimento.
@@ -68,15 +129,20 @@ export function RichText({
   children,
   as: Tag = "span",
   className,
+  glossary,
 }: {
   children: string;
   as?: "span" | "p" | "div" | "li";
   className?: string;
+  glossary?: GlossaryHighlight;
 }) {
   const text = children;
 
+  const renderPlain = (segment: string, keyBase: number): ReactNode =>
+    glossary ? highlightTerms(segment, glossary, keyBase) : segment;
+
   if (!text.includes("\\(") && !text.includes("\\[")) {
-    return <Tag className={className}>{text}</Tag>;
+    return <Tag className={className}>{renderPlain(text, 0)}</Tag>;
   }
 
   // Captura blocos de display `\[ ... \]` (grupo 1) ou fórmulas inline
@@ -89,7 +155,7 @@ export function RichText({
   let match: RegExpExecArray | null;
   while ((match = mathToken.exec(text)) !== null) {
     if (match.index > lastIndex) {
-      nodes.push(text.slice(lastIndex, match.index));
+      nodes.push(renderPlain(text.slice(lastIndex, match.index), key));
     }
     const displayContent = match[1];
     const inlineContent = match[2];
@@ -101,7 +167,7 @@ export function RichText({
     lastIndex = match.index + match[0].length;
   }
   if (lastIndex < text.length) {
-    nodes.push(text.slice(lastIndex));
+    nodes.push(renderPlain(text.slice(lastIndex), key));
   }
 
   return <Tag className={className}>{nodes}</Tag>;

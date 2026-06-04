@@ -2,7 +2,6 @@ import Link from "next/link";
 import { AulaExerciseCard } from "@/components/aulas/AulaExerciseCard";
 import { AulaToc } from "@/components/aulas/AulaToc";
 import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
-import { LessonNav } from "@/components/aulas/LessonNav";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FunctionPlot } from "@/components/aulas/FunctionPlot";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
@@ -14,13 +13,15 @@ import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
 import { Tag } from "@/components/ui/Tag";
 import type { AulaContent } from "@/data/aulas/types";
+import { glossario, type GlossarioEntry } from "@/data/glossario";
 import { exercicios } from "@/data/exercicios";
 import {
   calculo1LessonId,
   calculo1ModuloPath,
 } from "@/data/calculo-1";
 import { lessonId, moduloPath } from "@/data/pre-calculo";
-import { getAdjacentLessons } from "@/lib/lesson-nav";
+
+const glossarioByTerm = new Map(glossario.map((g) => [g.termo, g]));
 
 export function AulaView({
   content,
@@ -49,7 +50,15 @@ export function AulaView({
     .map((id) => exercicios.find((e) => e.id === id))
     .filter((e): e is NonNullable<typeof e> => Boolean(e));
 
-  const { prev, next } = getAdjacentLessons(trilha, meta.moduleSlug, aulaSlug);
+  // Realce inline dos termos do glossário desta aula (1ª ocorrência no texto).
+  const glossaryHL = {
+    terms: meta.glossaryTerms
+      .map((t) => ({ termo: t, entry: glossarioByTerm.get(t) }))
+      .filter((x): x is { termo: string; entry: GlossarioEntry } =>
+        Boolean(x.entry),
+      ),
+    used: new Set<string>(),
+  };
 
   return (
     <PageShell
@@ -90,6 +99,7 @@ export function AulaView({
                   as="p"
                   key={p.slice(0, 24)}
                   className="mb-3 text-[15px] leading-relaxed last:mb-0"
+                  glossary={glossaryHL}
                 >
                   {p}
                 </RichText>
@@ -104,6 +114,7 @@ export function AulaView({
                   as="p"
                   key={p.slice(0, 24)}
                   className="mb-3 text-[15px] leading-relaxed last:mb-0"
+                  glossary={glossaryHL}
                 >
                   {p}
                 </RichText>
@@ -147,7 +158,11 @@ export function AulaView({
 
           <div id="exemplo">
             <Section n={4} label="Exemplo aplicado" title={content.exemplo.title} titleRich>
-              <RichText as="p" className="text-[15px] leading-relaxed">
+              <RichText
+                as="p"
+                className="text-[15px] leading-relaxed"
+                glossary={glossaryHL}
+              >
                 {content.exemplo.situacao}
               </RichText>
             </Section>
@@ -166,6 +181,7 @@ export function AulaView({
                   as="p"
                   key={p.slice(0, 24)}
                   className="mb-3 text-[15px] leading-relaxed last:mb-0"
+                  glossary={glossaryHL}
                 >
                   {p}
                 </RichText>
@@ -264,12 +280,14 @@ export function AulaView({
             </div>
           )}
 
-          <LessonNav
-            prev={prev}
-            next={next}
-            backHref={backToModulo}
-            backLabel={`Módulo ${meta.moduleTitle}`}
-          />
+          <div className="mt-8 border-t border-border-soft pt-6">
+            <Link
+              href={backToModulo}
+              className="text-sm font-semibold text-terracotta hover:underline"
+            >
+              ← Voltar ao módulo {meta.moduleTitle}
+            </Link>
+          </div>
         </article>
 
         <AulaToc content={content} />
