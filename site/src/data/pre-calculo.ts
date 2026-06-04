@@ -230,7 +230,7 @@ export const preCalculoModulos: PreCalculoModulo[] = [
     shortTitle: "Preparação p/ limites",
     title: "Preparação para limites",
     desc: "Aproximação, comportamento de funções e tendência — a porta de entrada para Cálculo 1.",
-    defaultState: "locked",
+    defaultState: "open",
     apps: ["velocidade", "tendências"],
     contents: [
       "Ideia de aproximação",
