@@ -52,16 +52,20 @@ export default function SobrePage() {
         </section>
 
         <section className="mt-10">
-          <h2 className="font-serif text-[28px] font-medium tracking-tight">
-            Como o site evolui
+          <p className="text-[11.5px] font-bold uppercase tracking-[0.14em] text-terracotta">
+            Quem faz
+          </p>
+          <h2 className="mt-2 font-serif text-[28px] font-medium tracking-tight">
+            Desenvolvido por Yago Campos
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed">
-            A Etapa 1 montou a base (navegação, trilhas, modelos). A Etapa 2
-            completou a página inicial com missão, problema, solução e benefícios.
-            Em seguida: teste de nível interativo, aulas em Markdown e progresso
-            no navegador.
+          <p className="mt-3 text-[15px] leading-relaxed text-ink-muted text-pretty">
+            Um aluno como você, que passou pelas mesmas dificuldades em Cálculo 1
+            e resolveu construir o material que gostaria de ter encontrado. Cada
+            aula aqui nasceu de uma dúvida real — provavelmente a mesma que você
+            tem agora.
           </p>
         </section>
+
       </article>
     </PageShell>
   );
