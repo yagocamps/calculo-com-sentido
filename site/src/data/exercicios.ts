@@ -2,6 +2,8 @@ import { exerciciosAlgebra } from "@/data/exercicios-algebra";
 import { exerciciosAplicacoesDerivadas } from "@/data/exercicios-aplicacoes-derivadas";
 import { exerciciosContinuidade } from "@/data/exercicios-continuidade";
 import { exerciciosDerivadas } from "@/data/exercicios-derivadas";
+import { exerciciosDesafios } from "@/data/exercicios-desafios";
+import { exerciciosFuncaoQuadratica } from "@/data/exercicios-funcao-quadratica";
 import { exerciciosFuncoes } from "@/data/exercicios-funcoes";
 import { exerciciosFuncoesCalculo } from "@/data/exercicios-funcoes-calculo";
 import { exerciciosIntegrais } from "@/data/exercicios-integrais";
@@ -231,6 +233,7 @@ export const exercicios: Exercicio[] = [
   ...exerciciosFundamentos,
   ...exerciciosAlgebra,
   ...exerciciosFuncoes,
+  ...exerciciosFuncaoQuadratica,
   ...exerciciosFuncoesCalculo,
   ...exerciciosGraficos,
   ...exerciciosTrigonometria,
@@ -240,4 +243,5 @@ export const exercicios: Exercicio[] = [
   ...exerciciosDerivadas,
   ...exerciciosAplicacoesDerivadas,
   ...exerciciosIntegrais,
+  ...exerciciosDesafios,
 ];

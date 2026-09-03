@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import katex from "katex";
 import { GlossaryInline } from "@/components/glossario/GlossaryInline";
-import { addAlignedRowGap } from "@/lib/katex-format";
+import { addAlignedRowGap, ariaFromLatex } from "@/lib/katex-format";
 import type { GlossarioEntry } from "@/data/glossario";
 
 export type GlossaryHighlight = {
@@ -79,34 +79,6 @@ function highlightTerms(
  * uma leitura aproximada em linguagem natural (ver `ariaFromLatex`).
  */
 
-/** Converte um trecho de LaTeX numa leitura textual aproximada (pt-BR). */
-function ariaFromLatex(latex: string): string {
-  return latex
-    .replace(/\\begin\{aligned\}/g, "")
-    .replace(/\\end\{aligned\}/g, "")
-    .replace(/\\begin\{cases\}/g, "")
-    .replace(/\\end\{cases\}/g, "")
-    .replace(/\\frac\{([^{}]*)\}\{([^{}]*)\}/g, "($1) sobre ($2)")
-    .replace(/\\sqrt\{([^{}]*)\}/g, "raiz de $1")
-    .replace(/\\times/g, " vezes ")
-    .replace(/\\cdot/g, " vezes ")
-    .replace(/\\div/g, " dividido por ")
-    .replace(/\\leq/g, " menor ou igual a ")
-    .replace(/\\geq/g, " maior ou igual a ")
-    .replace(/\\neq/g, " diferente de ")
-    .replace(/\\pm/g, " mais ou menos ")
-    .replace(/\\approx/g, " aproximadamente ")
-    .replace(/\^\{([^{}]*)\}/g, " elevado a $1")
-    .replace(/\^(\d)/g, " elevado a $1")
-    .replace(/\\\\/g, "; ")
-    .replace(/&/g, "")
-    .replace(/\\,/g, "")
-    .replace(/[{}]/g, "")
-    .replace(/\\[a-zA-Z]+/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 function renderMath(latex: string, display: boolean, key: number): ReactNode {
   const html = katex.renderToString(addAlignedRowGap(latex), {
     throwOnError: false,
@@ -114,11 +86,39 @@ function renderMath(latex: string, display: boolean, key: number): ReactNode {
     output: "htmlAndMathml",
     strict: "ignore",
   });
+  const reading = ariaFromLatex(latex);
+
+  // "Tradutor de notação": fórmulas inline com leitura de 2+ palavras ganham
+  // tooltip "Lê-se: …" no hover/foco — quem trava na notação (f(x), Δ, lim)
+  // descobre como verbalizá-la. Símbolos soltos (x, 8) ficam sem tooltip.
+  const showReading = !display && reading.split(/\s+/).length >= 2;
+
+  if (showReading) {
+    return (
+      <span key={`math-${key}`} className="group/math relative inline">
+        <span
+          role="math"
+          aria-label={reading}
+          tabIndex={0}
+          className="cursor-help rounded-sm border-b border-dotted border-ink-subtle/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta"
+        >
+          <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: html }} />
+        </span>
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-full left-0 z-30 mb-1.5 w-max max-w-[min(280px,80vw)] origin-bottom-left scale-95 rounded-xl border border-border bg-surface px-3 py-2 text-left font-sans text-[12px] font-normal not-italic leading-relaxed text-ink-muted opacity-0 shadow-lg transition-all duration-150 group-hover/math:scale-100 group-hover/math:opacity-100 group-focus-within/math:scale-100 group-focus-within/math:opacity-100"
+        >
+          <span className="font-semibold text-ink">Lê-se:</span> {reading}
+        </span>
+      </span>
+    );
+  }
+
   return (
     <span
       key={`math-${key}`}
       role="math"
-      aria-label={ariaFromLatex(latex)}
+      aria-label={reading}
       className={display ? "my-1 block" : undefined}
     >
       <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: html }} />

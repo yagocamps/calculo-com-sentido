@@ -1115,7 +1115,7 @@ export const graficosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Revise todo o módulo de gráficos com exercícios variados no banco do site.",
-      exerciseIds: ["graf-ap-15", "graf-ap-16"],
+      exerciseIds: ["graf-ap-15", "graf-ap-16", "dsf-graf-01"],
     },
     resumo: {
       title: "Resumo da aula",

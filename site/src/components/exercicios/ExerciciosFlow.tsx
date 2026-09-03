@@ -3,25 +3,38 @@
 import { useCallback, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ExercicioDetail } from "@/components/exercicios/ExercicioDetail";
+import { TypeTag } from "@/components/exercicios/TypeTag";
 import { PageShell } from "@/components/layout/PageShell";
 import { LevelTag } from "@/components/ui/Tag";
 import {
   exercicioNiveis,
   exercicioTemas,
   exercicios,
+  type ExerciseType,
 } from "@/data/exercicios";
 import { countByTema, filterExercicios } from "@/lib/exercicios";
 import { cn } from "@/lib/utils";
+
+const exercicioTipos: ExerciseType[] = [
+  "compreensao",
+  "calculo",
+  "aplicada",
+  "interpretacao",
+];
 
 export function ExerciciosFlow() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const paramId = searchParams.get("id");
+  const paramTema = searchParams.get("tema");
   // Deep-link de uma aula (?id=...): começa no tema do próprio exercício,
   // senão a lista filtrada não conteria o exercício e ele "sumiria".
+  // O dashboard de progresso usa ?tema=... ("Refazer exercícios").
   const initialTema =
     (paramId && exercicios.find((e) => e.id === paramId)?.temaSlug) ||
-    "funcao-afim";
+    (paramTema && exercicioTemas.some((t) => t.slug === paramTema)
+      ? paramTema
+      : "todos");
   const [tema, setTema] = useState(initialTema);
   const [nivel, setNivel] = useState("todos");
 
@@ -61,11 +74,11 @@ export function ExerciciosFlow() {
             type="button"
             className="mt-4 text-sm font-semibold text-terracotta hover:underline"
             onClick={() => {
-              setTema("funcao-afim");
+              setTema("todos");
               setNivel("todos");
             }}
           >
-            Ver Função afim →
+            Ver todos os exercícios →
           </button>
         </div>
       </PageShell>
@@ -132,6 +145,17 @@ export function ExerciciosFlow() {
             </div>
           </div>
 
+          <div className="mt-3">
+            <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-ink-subtle">
+              Tipos de questão
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {exercicioTipos.map((t) => (
+                <TypeTag key={t} type={t} />
+              ))}
+            </div>
+          </div>
+
           <ul className="mt-4 max-h-[480px] space-y-1.5 overflow-y-auto pr-1">
             {filtered.map((ex) => (
               <li key={ex.id}>
@@ -145,11 +169,12 @@ export function ExerciciosFlow() {
                       : "border-transparent hover:border-border hover:bg-surface-soft",
                   )}
                 >
-                  <div className="mb-1 flex items-center gap-2">
+                  <div className="mb-1 flex flex-wrap items-center gap-1.5">
                     <span className="font-mono text-[11px] font-semibold text-ink-subtle">
                       {ex.num}
                     </span>
                     <LevelTag level={ex.level} />
+                    <TypeTag type={ex.type} />
                   </div>
                   <div className="truncate text-[13.5px] font-semibold">
                     {ex.title}

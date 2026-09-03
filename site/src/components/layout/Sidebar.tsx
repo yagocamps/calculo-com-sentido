@@ -142,7 +142,9 @@ export function Sidebar({
   return (
     <aside
       className={cn(
-        "flex h-full w-[264px] min-w-[264px] flex-col gap-[18px] border-r border-border bg-surface-warm px-4 py-[22px]",
+        // Glassmorphism: fundo translúcido + blur — mais perceptível no
+        // drawer mobile, onde o conteúdo passa por trás.
+        "flex h-full w-[264px] min-w-[264px] flex-col gap-[18px] border-r border-border bg-surface-warm/80 backdrop-blur-xl px-4 py-[22px] print:hidden",
         // Mobile layout: fixed drawer, Desktop: standard sidebar
         "fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 md:static md:translate-x-0",
         isOpen ? "translate-x-0" : "-translate-x-full",

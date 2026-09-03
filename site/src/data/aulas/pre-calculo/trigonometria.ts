@@ -1405,7 +1405,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Revise todo o módulo de trigonometria no banco de exercícios.",
-      exerciseIds: ["trig-ap-19", "trig-ap-20"],
+      exerciseIds: ["trig-ap-19", "trig-ap-20", "dsf-trig-01"],
     },
     resumo: {
       title: "Resumo da aula",

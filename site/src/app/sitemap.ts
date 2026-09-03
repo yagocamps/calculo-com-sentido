@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     "",
     "/teste-de-nivel",
+    "/trilha-expressa",
     "/pre-calculo",
     "/calculo-1",
     "/exercicios",

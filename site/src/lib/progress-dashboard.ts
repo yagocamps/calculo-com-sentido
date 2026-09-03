@@ -4,14 +4,20 @@ import {
   calculo1ModuloPath,
   calculo1Modulos,
 } from "@/data/calculo-1";
-import { exercicios } from "@/data/exercicios";
+import { exercicios, type ExerciseType } from "@/data/exercicios";
 import {
   lessonId,
   lessonPath,
   moduloPath,
   preCalculoModulos,
 } from "@/data/pre-calculo";
-import type { ProgressState, TesteNivelStored } from "@/lib/progress";
+import { typeLabels } from "@/lib/exercicios";
+import {
+  localDateISO,
+  type ExerciseAttemptsMap,
+  type ProgressState,
+  type TesteNivelStored,
+} from "@/lib/progress";
 import { isLessonAccessible } from "@/lib/aulas";
 import { isDue, type ReviewMap } from "@/lib/review";
 import {
@@ -48,6 +54,23 @@ export type ReviewQueueItem = {
   isNew: boolean;
 };
 
+/**
+ * Área em que o aluno está errando exercícios, com link direto para a aula
+ * que cobre o assunto (ex.: muitos erros de "Interpretação · Função afim"
+ * → revisar a aula Função afim).
+ */
+export type WeakSpot = {
+  key: string;
+  label: string;
+  attempts: number;
+  incorrect: number;
+  /** Percentual de acerto (0–100) nas tentativas dessa área. */
+  accuracy: number;
+  lessonTitle: string;
+  lessonHref: string;
+  exercisesHref: string;
+};
+
 export type ProgressDashboard = {
   trilhaPreCalculoPercent: number;
   trilhaCalculo1Percent: number;
@@ -71,6 +94,11 @@ export type ProgressDashboard = {
     trilha: string;
   } | null;
   strengths: string[];
+  weakSpots: WeakSpot[];
+  /** Total de tentativas registradas (acertos + erros) — para mensagens de estado vazio. */
+  attemptsTotal: number;
+  /** Dias com estudo nos últimos 7 dias — streak suave, só mensagem positiva. */
+  studyDaysThisWeek: number;
   toReview: { title: string; href: string; moduleTitle: string }[];
   completedLessons: {
     title: string;
@@ -158,6 +186,200 @@ function getRecommendedModule(
       progress > 0 ? "Continue de onde parou" : "Próxima aula disponível",
     trilha: next.trilha,
   };
+}
+
+/**
+ * Aula (ou módulo) que cobre cada tema de exercício. Temas que são módulos
+ * inteiros apontam para a trilha do módulo; temas pontuais (ex.: função
+ * afim) apontam para a aula exata.
+ */
+const temaAulaMap: Record<
+  string,
+  { trilha: "pre-calculo" | "calculo-1"; modulo: string; aula?: string }
+> = {
+  fundamentos: { trilha: "pre-calculo", modulo: "fundamentos" },
+  algebra: { trilha: "pre-calculo", modulo: "algebra" },
+  funcoes: { trilha: "pre-calculo", modulo: "funcoes" },
+  "funcao-afim": { trilha: "pre-calculo", modulo: "funcoes", aula: "funcao-afim" },
+  "funcao-quadratica": {
+    trilha: "pre-calculo",
+    modulo: "funcoes",
+    aula: "funcao-quadratica",
+  },
+  graficos: { trilha: "pre-calculo", modulo: "graficos" },
+  trigonometria: { trilha: "pre-calculo", modulo: "trigonometria" },
+  "preparacao-limites": { trilha: "pre-calculo", modulo: "preparacao-limites" },
+  "funcoes-calculo": { trilha: "calculo-1", modulo: "funcoes-para-calculo" },
+  limites: { trilha: "calculo-1", modulo: "limites" },
+  continuidade: { trilha: "calculo-1", modulo: "continuidade" },
+  derivadas: { trilha: "calculo-1", modulo: "derivadas" },
+  "aplicacoes-derivadas": { trilha: "calculo-1", modulo: "aplicacoes-derivadas" },
+  integrais: { trilha: "calculo-1", modulo: "integrais" },
+};
+
+function lessonLinkForTema(
+  temaSlug: string,
+): { title: string; href: string } | null {
+  const map = temaAulaMap[temaSlug];
+  if (!map) return null;
+  const modulos =
+    map.trilha === "pre-calculo" ? preCalculoModulos : calculo1Modulos;
+  const modulo = modulos.find((m) => m.slug === map.modulo);
+  if (!modulo) return null;
+  if (map.aula) {
+    const lesson = modulo.lessons.find((l) => l.slug === map.aula);
+    if (lesson) {
+      return {
+        title: lesson.title,
+        href:
+          map.trilha === "pre-calculo"
+            ? lessonPath(modulo.slug, lesson.slug)
+            : calculo1LessonPath(modulo.slug, lesson.slug),
+      };
+    }
+  }
+  return {
+    title: `Módulo ${modulo.title}`,
+    href:
+      map.trilha === "pre-calculo"
+        ? moduloPath(modulo.slug)
+        : calculo1ModuloPath(modulo.slug),
+  };
+}
+
+type AttemptAgg = {
+  attempts: number;
+  correct: number;
+  incorrect: number;
+  temaSlug: string;
+  temaLabel: string;
+  type?: ExerciseType;
+};
+
+let exercicioByIdCache: Map<string, (typeof exercicios)[number]> | null = null;
+
+function getExercicioById(id: string) {
+  if (!exercicioByIdCache) {
+    exercicioByIdCache = new Map(exercicios.map((e) => [e.id, e]));
+  }
+  return exercicioByIdCache.get(id);
+}
+
+/** Agrega tentativas por tema e por célula tema × tipo de questão. */
+function aggregateAttempts(attemptsById: ExerciseAttemptsMap): {
+  byTema: Map<string, AttemptAgg>;
+  byCell: Map<string, AttemptAgg>;
+  total: number;
+} {
+  const byTema = new Map<string, AttemptAgg>();
+  const byCell = new Map<string, AttemptAgg>();
+  let total = 0;
+
+  for (const [id, stats] of Object.entries(attemptsById)) {
+    const ex = getExercicioById(id);
+    if (!ex) continue;
+    const n = stats.correct + stats.incorrect;
+    if (n === 0) continue;
+    total += n;
+
+    const tema = byTema.get(ex.temaSlug) ?? {
+      attempts: 0,
+      correct: 0,
+      incorrect: 0,
+      temaSlug: ex.temaSlug,
+      temaLabel: ex.tema,
+    };
+    tema.attempts += n;
+    tema.correct += stats.correct;
+    tema.incorrect += stats.incorrect;
+    byTema.set(ex.temaSlug, tema);
+
+    const cellKey = `${ex.temaSlug}:${ex.type}`;
+    const cell = byCell.get(cellKey) ?? {
+      attempts: 0,
+      correct: 0,
+      incorrect: 0,
+      temaSlug: ex.temaSlug,
+      temaLabel: ex.tema,
+      type: ex.type,
+    };
+    cell.attempts += n;
+    cell.correct += stats.correct;
+    cell.incorrect += stats.incorrect;
+    byCell.set(cellKey, cell);
+  }
+
+  return { byTema, byCell, total };
+}
+
+const accuracyOf = (agg: AttemptAgg) =>
+  Math.round((agg.correct / agg.attempts) * 100);
+
+/**
+ * Áreas para revisar: células tema × tipo com 2+ erros e menos de 70% de
+ * acerto (ex.: "Interpretação · Função afim"). Temas com erro acumulado mas
+ * sem célula crítica entram como tema inteiro.
+ */
+function getWeakSpots(
+  attemptsById: ExerciseAttemptsMap,
+  limit = 4,
+): WeakSpot[] {
+  const { byTema, byCell } = aggregateAttempts(attemptsById);
+
+  const isWeak = (agg: AttemptAgg) =>
+    agg.incorrect >= 2 && accuracyOf(agg) < 70;
+
+  const spots: WeakSpot[] = [];
+  const temasCobertos = new Set<string>();
+
+  const toSpot = (agg: AttemptAgg, key: string, label: string): WeakSpot | null => {
+    const lesson = lessonLinkForTema(agg.temaSlug);
+    if (!lesson) return null;
+    return {
+      key,
+      label,
+      attempts: agg.attempts,
+      incorrect: agg.incorrect,
+      accuracy: accuracyOf(agg),
+      lessonTitle: lesson.title,
+      lessonHref: lesson.href,
+      exercisesHref: `/exercicios?tema=${agg.temaSlug}`,
+    };
+  };
+
+  for (const [key, cell] of byCell) {
+    if (!isWeak(cell) || !cell.type) continue;
+    const spot = toSpot(cell, key, `${typeLabels[cell.type]} · ${cell.temaLabel}`);
+    if (spot) {
+      spots.push(spot);
+      temasCobertos.add(cell.temaSlug);
+    }
+  }
+
+  for (const [key, tema] of byTema) {
+    if (temasCobertos.has(key) || !isWeak(tema)) continue;
+    const spot = toSpot(tema, key, tema.temaLabel);
+    if (spot) spots.push(spot);
+  }
+
+  spots.sort((a, b) => b.incorrect - a.incorrect || a.accuracy - b.accuracy);
+  return spots.slice(0, limit);
+}
+
+/** Temas com 3+ tentativas e 80%+ de acerto viram pontos fortes. */
+function getExerciseStrengths(
+  attemptsById: ExerciseAttemptsMap,
+  limit = 3,
+): string[] {
+  const { byTema } = aggregateAttempts(attemptsById);
+  return [...byTema.values()]
+    .filter((t) => t.attempts >= 3 && accuracyOf(t) >= 80)
+    .sort((a, b) => accuracyOf(b) - accuracyOf(a) || b.attempts - a.attempts)
+    .slice(0, limit)
+    .map(
+      (t) =>
+        `${t.temaLabel} · ${accuracyOf(t)}% de acerto nos exercícios (${t.correct} de ${t.attempts})`,
+    );
 }
 
 function getStrengths(completedLessons: string[]): string[] {
@@ -329,10 +551,17 @@ function getReviewQueue(
   return { due: due.slice(0, limit), dueCount: due.length, total };
 }
 
+function countStudyDaysThisWeek(activityDays: string[]): number {
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 6);
+  const cutoffISO = localDateISO(cutoff);
+  return activityDays.filter((d) => d >= cutoffISO).length;
+}
+
 export function buildProgressDashboard(
   state: ProgressState,
 ): ProgressDashboard {
-  const { completedExercises = [], testeNivel } = state;
+  const { completedExercises = [], exerciseAttempts = {}, testeNivel } = state;
   const completedLessons = normalizeLessonIds(state.completedLessons);
   const trilhaPreCalculoPercent = computeTrilhaProgress(completedLessons);
   const trilhaCalculo1Percent = computeCalculo1TrilhaProgress(completedLessons);
@@ -390,7 +619,14 @@ export function buildProgressDashboard(
     exercisesTotal: exercicios.length,
     nextLesson: getNextLessonInfo(completedLessons),
     recommendedModule: getRecommendedModule(completedLessons),
-    strengths: getStrengths(completedLessons),
+    // Desempenho real nos exercícios vem primeiro; conclusão de módulos complementa.
+    strengths: [
+      ...getExerciseStrengths(exerciseAttempts),
+      ...getStrengths(completedLessons),
+    ].slice(0, 6),
+    weakSpots: getWeakSpots(exerciseAttempts),
+    attemptsTotal: aggregateAttempts(exerciseAttempts).total,
+    studyDaysThisWeek: countStudyDaysThisWeek(state.activityDays ?? []),
     toReview: getToReview(completedLessons),
     completedLessons: getCompletedLessonsList(completedLessons),
     modules: [...preModules, ...calcModules],

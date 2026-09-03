@@ -713,6 +713,11 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       duration: "9 min",
       readingNotes: ["Velocidade média vs instantânea", "Ponte para o Cálculo 1"],
       glossaryTerms: ["Velocidade média", "Velocidade instantânea", "Taxa"],
+      // Fim do Pré-Cálculo: em vez de beco sem saída, a ponte para a outra trilha.
+      nextExterno: {
+        title: "Começar Cálculo 1: o que é Cálculo 1?",
+        href: "/calculo-1/antes-do-calculo/o-que-e-calculo-1",
+      },
     }),
     porQue: {
       title: "Antes da fórmula, o sentido",
@@ -829,7 +834,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique velocidade média, instantânea e tendência no banco de exercícios.",
-      exerciseIds: ["prep-ap-11", "prep-ap-12"],
+      exerciseIds: ["prep-ap-11", "prep-ap-12", "dsf-prep-01"],
     },
     resumo: {
       title: "Resumo da aula",

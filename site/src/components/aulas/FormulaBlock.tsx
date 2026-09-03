@@ -24,6 +24,14 @@ export function FormulaBlock({
         </span>
       )}
       {legend && <span className="ml-auto text-xs opacity-60">{legend}</span>}
+      {/* Leitura por extenso: quem trava em notação muitas vezes não sabe nem
+          verbalizar a fórmula. aria-hidden evita leitura dupla (o aria-label
+          do role="math" já cobre leitores de tela). */}
+      {formulaAria && (
+        <p aria-hidden className="w-full font-sans text-xs italic leading-relaxed opacity-60">
+          Lê-se: “{formulaAria}”
+        </p>
+      )}
     </div>
   );
 }

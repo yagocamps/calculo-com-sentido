@@ -45,7 +45,8 @@ export function Button({
   onClick,
 }: Props) {
   const classes = cn(
-    "inline-flex items-center gap-2 rounded-[10px] font-semibold cursor-pointer transition-opacity hover:opacity-90",
+    "inline-flex items-center gap-2 rounded-[10px] font-semibold cursor-pointer transition-all duration-200 hover:opacity-90 hover:-translate-y-px active:translate-y-0",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-bg",
     variants[variant],
     sizes[size],
     className,

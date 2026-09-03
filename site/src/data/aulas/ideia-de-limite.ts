@@ -110,6 +110,15 @@ export const ideiaDeLimiteAula: AulaContent = {
         resposta: "\\(6\\)",
         interpretacao: "Funções contínuas simples: o limite coincide com \\(f(2)\\).",
       },
+          {
+        id: "lim-g3",
+        type: "interpretacao",
+        enunciado: "Sabe-se que \\(f(2) = 10\\), mas que perto de \\(2\\) a função vale sempre algo próximo de \\(4\\). Qual é \\(\\lim_{x \\to 2} f(x)\\)?",
+        resposta: "\\(4\\)",
+        resolucao: "O limite olha a vizinhança de \\(2\\), não o ponto: o valor \\(f(2)\\) não entra na conta.",
+        interpretacao: "É por isso que limite existe como conceito separado de \"valor da função\".",
+        erroComum: "Responder \\(10\\), lendo o valor no ponto em vez da tendência ao redor dele.",
+      },
     ],
   },
   exerciciosAplicados: {
@@ -126,4 +135,48 @@ export const ideiaDeLimiteAula: AulaContent = {
       "Base para derivada (velocidade instantânea) e continuidade.",
     ],
   },
+  quiz: [
+    {
+      pergunta:
+        "O limite de \\(f(x)\\) quando \\(x \\to a\\) descreve o quê?",
+      opcoes: [
+        "O valor exato de \\(f(a)\\)",
+        "Para onde \\(f(x)\\) tende quando \\(x\\) se aproxima de \\(a\\)",
+        "O maior valor que a função atinge",
+        "A inclinação da reta tangente",
+      ],
+      corretaIndex: 1,
+      explicacao:
+        "Limite é tendência: para onde \\(f\\) aponta perto de \\(a\\). A função nem precisa estar definida no ponto.",
+      reforcoSectionId: "explicacao",
+    },
+    {
+      pergunta:
+        "Ao substituir \\(x = 1\\) em \\(\\frac{x^2 - 1}{x - 1}\\) o resultado é \\(\\frac{0}{0}\\). O que isso significa?",
+      opcoes: [
+        "O limite não existe",
+        "O limite é \\(0\\)",
+        "É uma indeterminação: simplifique e investigue a tendência",
+        "O limite é \\(1\\)",
+      ],
+      corretaIndex: 2,
+      explicacao:
+        "\\(\\frac{0}{0}\\) não é resposta — fatorando, \\(\\frac{x^2-1}{x-1} = x + 1\\) perto de \\(1\\), e a tendência é \\(2\\).",
+      reforcoSectionId: "passos",
+    },
+    {
+      pergunta:
+        "Uma função tem um buraco em \\(x = 2\\), mas perto de \\(2\\) os valores se aproximam de \\(7\\). Qual o limite quando \\(x \\to 2\\)?",
+      opcoes: [
+        "Não existe, porque \\(f(2)\\) não existe",
+        "\\(7\\)",
+        "\\(2\\)",
+        "\\(0\\)",
+      ],
+      corretaIndex: 1,
+      explicacao:
+        "O limite olha a vizinhança, não o ponto: a tendência é \\(7\\), com ou sem buraco em \\(x = 2\\).",
+      reforcoSectionId: "interpretacao",
+    },
+  ],
 };

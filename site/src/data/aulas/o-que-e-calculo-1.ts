@@ -116,6 +116,15 @@ export const oQueECalculo1Aula: AulaContent = {
         resposta: "Derivada.",
         interpretacao: "Integral seria para acumular lucro ao longo de vários períodos.",
       },
+          {
+        id: "c1-g3",
+        type: "interpretacao",
+        enunciado: "Uma bomba registra a vazão de água a cada minuto. Para saber quantos litros passaram em uma hora, qual ferramenta do Cálculo se usa?",
+        resposta: "Integral — o acúmulo da taxa ao longo do intervalo",
+        resolucao: "A vazão é uma taxa (litros por minuto). Somar o efeito dela ao longo do tempo é acumular, e acumular é o papel da integral.",
+        interpretacao: "Derivada e integral respondem perguntas opostas: uma tira a taxa a partir do total, a outra tira o total a partir da taxa.",
+        erroComum: "Multiplicar a vazão final pelos 60 minutos — isso só valeria se a vazão fosse constante.",
+      },
     ],
   },
   exerciciosAplicados: {
@@ -132,4 +141,46 @@ export const oQueECalculo1Aula: AulaContent = {
       "Estude pelo sentido primeiro; a fórmula vem para nomear o que você já entendeu.",
     ],
   },
+  quiz: [
+    {
+      pergunta: "Quais são os três pilares do Cálculo 1?",
+      opcoes: [
+        "Matrizes, vetores e determinantes",
+        "Limites, derivadas e integrais",
+        "Equações, inequações e sistemas",
+        "Seno, cosseno e tangente",
+      ],
+      corretaIndex: 1,
+      explicacao:
+        "Cálculo 1 ≈ limites (tendência) + derivadas (taxa de mudança) + integrais (acúmulo).",
+      reforcoSectionId: "explicacao",
+    },
+    {
+      pergunta:
+        "A velocidade que o velocímetro mostra agora é melhor descrita por…",
+      opcoes: [
+        "A velocidade média da viagem inteira",
+        "A velocidade instantânea — média em intervalos cada vez menores",
+        "A distância total dividida pelo tempo total",
+        "O acúmulo da posição ao longo do tempo",
+      ],
+      corretaIndex: 1,
+      explicacao:
+        "Encolhendo o intervalo de tempo, a média se aproxima da velocidade naquele instante — essa é a ideia da derivada.",
+      reforcoSectionId: "passos",
+    },
+    {
+      pergunta: "Por que tanta gente reprova em Cálculo 1?",
+      opcoes: [
+        "Porque o conteúdo é impossível de entender",
+        "Por falta de base e por decorar fórmulas sem entender o sentido",
+        "Porque exige um talento que poucos têm",
+        "Porque as provas são sempre injustas",
+      ],
+      corretaIndex: 1,
+      explicacao:
+        "Quem chega sem base e decora fórmula desaba nos módulos seguintes. Entender o sentido primeiro muda o jogo — e base se constrói.",
+      reforcoSectionId: "porque",
+    },
+  ],
 };

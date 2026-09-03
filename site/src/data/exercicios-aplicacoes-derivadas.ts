@@ -3,6 +3,92 @@ import type { Exercicio } from "@/data/exercicios";
 // Banco de exercícios aplicados do módulo Aplicações de derivadas (Cálculo 1).
 // 9 campos do CLAUDE.md + LaTeX (\(...\)). Decimais com {,}.
 export const exerciciosAplicacoesDerivadas: Exercicio[] = [
+  // ── Entrada no tema: leitura do sinal da derivada ───────────────
+  {
+    id: "apd-f-01",
+    num: "APD-F1",
+    title: "O que a derivada positiva conta",
+    tema: "Aplic. derivadas",
+    temaSlug: "aplicacoes-derivadas",
+    area: "Cálculo · leitura",
+    type: "compreensao",
+    level: "facil",
+    enunciado:
+      "Num intervalo, uma função tem \\(f'(x) > 0\\) em todos os pontos. A função está crescendo ou decrescendo nesse intervalo?",
+    identificar: "A derivada mede a taxa de variação.",
+    dica: "Taxa positiva significa que o valor sobe conforme \\(x\\) avança.",
+    resolucao:
+      "Derivada positiva quer dizer que a variação é positiva: a cada passo de \\(x\\), o valor de \\(f\\) aumenta. Logo a função é crescente nesse intervalo.",
+    resposta: "Crescendo",
+    interpretacao:
+      "É a tradução mais direta da derivada: o sinal dela é o sentido do movimento da função. Positivo sobe, negativo desce.",
+    erroComum:
+      "Confundir o sinal da derivada com o sinal da função — \\(f\\) pode ser negativa e mesmo assim estar crescendo.",
+  },
+  {
+    id: "apd-f-02",
+    num: "APD-F2",
+    title: "Achar o ponto crítico",
+    tema: "Aplic. derivadas",
+    temaSlug: "aplicacoes-derivadas",
+    area: "Cálculo · pontos críticos",
+    type: "calculo",
+    level: "facil",
+    enunciado: "Para \\(f(x) = x^2 - 6x\\), encontre o valor de \\(x\\) onde \\(f'(x) = 0\\).",
+    identificar: "Derive e iguale a zero.",
+    dica: "A derivada de \\(x^2\\) é \\(2x\\); a de \\(-6x\\) é \\(-6\\).",
+    resolucao:
+      "\\(f'(x) = 2x - 6\\). Igualando a zero: \\(2x - 6 = 0 \\Rightarrow x = 3\\).",
+    resposta: "\\(x = 3\\)",
+    interpretacao:
+      "Nesse ponto a função para de descer e começa a subir — é o fundo da parábola. Ponto crítico é onde a taxa de variação zera.",
+    erroComum: "Igualar a própria função a zero em vez da derivada.",
+  },
+  {
+    id: "apd-f-03",
+    num: "APD-F3",
+    title: "Máximo ou mínimo?",
+    tema: "Aplic. derivadas",
+    temaSlug: "aplicacoes-derivadas",
+    area: "Cálculo · máximos e mínimos",
+    type: "interpretacao",
+    level: "facil",
+    enunciado:
+      "A derivada de uma função é positiva antes de \\(x = 4\\) e negativa depois. O que acontece em \\(x = 4\\)?",
+    identificar: "Antes: subindo. Depois: descendo.",
+    dica: "Desenhe mentalmente: o que fica no topo de uma subida seguida de descida?",
+    resolucao:
+      "Se a função sobe até \\(x = 4\\) e desce a partir dali, o valor em \\(x = 4\\) é o mais alto da vizinhança: um máximo local.",
+    resposta: "É um ponto de máximo local",
+    interpretacao:
+      "O sinal da derivada mudando de \\(+\\) para \\(-\\) é a assinatura de um pico. De \\(-\\) para \\(+\\) seria um vale.",
+    erroComum:
+      "Concluir mínimo, trocando a ordem — o que sobe e depois desce forma um pico, não um vale.",
+  },
+  {
+    id: "apd-f-04",
+    num: "APD-F4",
+    title: "O carro parou e voltou",
+    tema: "Aplic. derivadas",
+    temaSlug: "aplicacoes-derivadas",
+    area: "Física · movimento",
+    type: "aplicada",
+    level: "facil",
+    enunciado:
+      "A velocidade de um carro é a derivada da sua posição. Se a velocidade chega a zero num instante e fica negativa depois, o que aconteceu com o carro?",
+    identificar: [
+      "Velocidade zero significa posição sem variar naquele instante.",
+      "Velocidade negativa significa posição diminuindo.",
+    ],
+    dica: "Pense no sinal da velocidade como o sentido do movimento.",
+    resolucao:
+      "Velocidade zero: o carro parou naquele instante. Velocidade negativa em seguida: a posição passa a diminuir, ou seja, ele começou a voltar.",
+    resposta: "O carro parou e passou a andar no sentido contrário",
+    interpretacao:
+      "Esse instante de velocidade zero é um ponto crítico da posição — exatamente a mesma matemática do máximo de uma função, aplicada a movimento.",
+    erroComum:
+      "Achar que velocidade negativa significa freando. Freando é a aceleração negativa; velocidade negativa é o sentido invertido.",
+  },
   // ── Crescimento e decrescimento ─────────────────────────────────
   {
     id: "ad-ap-01",

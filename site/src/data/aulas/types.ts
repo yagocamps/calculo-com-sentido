@@ -22,6 +22,23 @@ export type AulaVideo = {
   youtubeId: string;
 };
 
+/** Pergunta do mini-quiz de saída (mastery learning). */
+export type AulaQuizQuestion = {
+  pergunta: string;
+  opcoes: string[];
+  corretaIndex: number;
+  /** Por que a resposta certa é certa (mostrado após conferir). */
+  explicacao: string;
+  /** Seção da aula para revisar em caso de erro (id da TOC, ex.: "explicacao"). */
+  reforcoSectionId?: string;
+};
+
+/** Pré-requisito de uma aula, com link para revisar. */
+export type AulaPrereq = {
+  label: string;
+  href: string;
+};
+
 export type AulaContent = {
   meta: {
     title: string;
@@ -33,6 +50,9 @@ export type AulaContent = {
     readingNotes: string[];
     glossaryTerms: string[];
     nextLesson?: { title: string; href: string };
+    /** Pré-requisitos específicos da aula. Quando ausente, a aula usa os
+     * pré-requisitos padrão do módulo (ver `src/data/prereqs.ts`). */
+    prereqs?: AulaPrereq[];
   };
   porQue: {
     title: string;
@@ -41,6 +61,9 @@ export type AulaContent = {
   explicacao: {
     title: string;
     paragraphs: string[];
+    /** Versão alternativa da explicação (outra analogia, ritmo mais lento) —
+     * aparece atrás do botão "Não entendi — explica de outro jeito". */
+    alternativa?: string[];
     callout?: string;
     /** Texto plano da fórmula — sempre serve como leitura acessível (pt-BR). */
     formula: string;
@@ -57,6 +80,9 @@ export type AulaContent = {
     xDomain?: [number, number];
     yDomain?: [number, number];
     legend?: string;
+    /** Quando presente, o gráfico ganha sliders para manipular os
+     * coeficientes (quem não "enxerga" abstração aprende manipulando). */
+    interactive?: { type: "afim"; a: number; b: number };
   };
   ondeAparece: {
     title: string;
@@ -94,4 +120,7 @@ export type AulaContent = {
   /** Vídeo-aulas do YouTube (máx. 3). Quando vazio/ausente, a seção
    * "Vídeo aula" aparece como "Em breve". */
   videos?: AulaVideo[];
+  /** Mini-quiz de saída (3 perguntas). 2+ acertos → pronto para a próxima;
+   * menos → reforço com link para a seção correspondente. */
+  quiz?: AulaQuizQuestion[];
 };

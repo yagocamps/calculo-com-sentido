@@ -11,6 +11,8 @@ export function c1Meta(opts: {
   readingNotes?: string[];
   glossaryTerms?: string[];
   next?: { slug: string; title: string; moduleSlug?: string };
+  /** Destino fora da trilha (fim de trilha, ponte para Cálculo 1, /resumos...). */
+  nextExterno?: { title: string; href: string };
 }): AulaContent["meta"] {
   return {
     title: opts.title,
@@ -21,7 +23,9 @@ export function c1Meta(opts: {
     level: opts.level ?? "iniciante",
     readingNotes: opts.readingNotes ?? [],
     glossaryTerms: opts.glossaryTerms ?? [],
-    nextLesson: opts.next
+    nextLesson: opts.nextExterno
+      ? opts.nextExterno
+      : opts.next
       ? {
           title: opts.next.title,
           href: calculo1LessonPath(

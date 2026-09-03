@@ -2009,7 +2009,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique equações e problemas aplicados no banco de exercícios do site.",
-      exerciseIds: ["fund-ap-27", "fund-ap-28"],
+      exerciseIds: ["fund-ap-27", "fund-ap-28", "dsf-fund-01"],
     },
     resumo: {
       title: "Resumo da aula",

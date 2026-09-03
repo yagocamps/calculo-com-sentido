@@ -10,6 +10,7 @@ export function NavIcon({ name }: { name: string }) {
     search: "M21 21l-4.3-4.3M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z",
     menu: "M4 6h16M4 12h16M4 18h16",
     close: "M18 6L6 18M6 6l12 12",
+    express: "M13 2L4 14h6l-1 8 9-12h-6l1-8z",
   };
 
   return (

@@ -2,6 +2,12 @@
 // `pontos` e `erros` aceitam LaTeX inline \(...\); `formulas` são LaTeX puro
 // (a página renderiza em bloco). `href` aponta para a trilha do módulo.
 
+/** Erro comum em duas colunas: o que o aluno costuma fazer × o correto. */
+export type ResumoErro = {
+  faz: string;
+  correto: string;
+};
+
 export type Resumo = {
   slug: string;
   titulo: string;
@@ -11,7 +17,7 @@ export type Resumo = {
   intro: string;
   pontos: string[];
   formulas: string[];
-  erros: string[];
+  erros: ResumoErro[];
 };
 
 export const resumos: Resumo[] = [
@@ -38,9 +44,18 @@ export const resumos: Resumo[] = [
       "\\text{Energia (kWh)} = \\text{potência (kW)} \\times \\text{tempo (h)}",
     ],
     erros: [
-      "Esquecer o termo \\(2ab\\) no quadrado da soma.",
-      "Somar frações sem igualar os denominadores.",
-      "Tirar desconto em reais em vez de porcentagem.",
+      {
+        faz: "Escrever \\((a+b)^2 = a^2 + b^2\\).",
+        correto: "\\((a+b)^2 = a^2 + 2ab + b^2\\) — o termo \\(2ab\\) sempre aparece.",
+      },
+      {
+        faz: "Somar frações direto: \\(\\tfrac{1}{2} + \\tfrac{1}{3} = \\tfrac{2}{5}\\).",
+        correto: "Igualar denominadores antes: \\(\\tfrac{3}{6} + \\tfrac{2}{6} = \\tfrac{5}{6}\\).",
+      },
+      {
+        faz: "Tratar \"20% de desconto\" como R$ 20 a menos.",
+        correto: "Calcular sobre o preço: desconto \\(= 0{,}20 \\times\\) valor.",
+      },
     ],
   },
   {
@@ -62,9 +77,18 @@ export const resumos: Resumo[] = [
       "\\text{equilíbrio:}\\quad R(x) = C(x)",
     ],
     erros: [
-      "Distribuir errado o sinal: \\(-(a+b) = -a - b\\), não \\(-a + b\\).",
-      "Não inverter a desigualdade ao dividir por negativo.",
-      "Cancelar termos que não são fatores comuns.",
+      {
+        faz: "Distribuir só no primeiro termo: \\(-(a+b) = -a + b\\).",
+        correto: "O sinal vale para todos: \\(-(a+b) = -a - b\\).",
+      },
+      {
+        faz: "Manter a desigualdade: \\(-2x < 6 \\Rightarrow x < -3\\).",
+        correto: "Dividir por negativo inverte: \\(-2x < 6 \\Rightarrow x > -3\\).",
+      },
+      {
+        faz: "Cancelar parcelas: \\(\\tfrac{x+3}{3} = x + 1\\).",
+        correto: "Só fatores comuns cancelam: \\(\\tfrac{3x}{3} = x\\); soma não cancela.",
+      },
     ],
   },
   {
@@ -87,9 +111,18 @@ export const resumos: Resumo[] = [
       "M = C\\,(1 + i)^t",
     ],
     erros: [
-      "Calcular \\((-2)^2 = -4\\) (o certo é \\(4\\)).",
-      "Esquecer restrições do domínio.",
-      "Ler a base \\(1{,}02\\) como \\(102\\%\\) de aumento (é \\(2\\%\\)).",
+      {
+        faz: "Calcular \\((-2)^2 = -4\\).",
+        correto: "\\((-2)^2 = 4\\) — quadrado de negativo é positivo.",
+      },
+      {
+        faz: "Aceitar qualquer \\(x\\) sem olhar a função.",
+        correto: "Excluir denominador \\(= 0\\) e radicando \\(< 0\\) do domínio.",
+      },
+      {
+        faz: "Ler \\(M = C(1{,}02)^t\\) como 102% de aumento.",
+        correto: "Base \\(1{,}02\\) significa crescimento de \\(2\\%\\) por período.",
+      },
     ],
   },
   {
@@ -111,9 +144,18 @@ export const resumos: Resumo[] = [
       "f(x) + k\\ \\text{(sobe } k\\text{)};\\quad f(x - h)\\ \\text{(direita } h\\text{)}",
     ],
     erros: [
-      "Inverter os eixos no par ordenado.",
-      "Achar que \\((x+3)^2\\) move para a direita (move para a esquerda).",
-      "Confundir o vale (mínimo) com um ponto qualquer da descida.",
+      {
+        faz: "Marcar \\((3, 5)\\) subindo 3 e andando 5.",
+        correto: "Primeiro a horizontal (\\(x = 3\\)), depois a vertical (\\(y = 5\\)).",
+      },
+      {
+        faz: "Achar que \\(f(x+3)\\) move o gráfico para a direita.",
+        correto: "\\(f(x+3)\\) move para a esquerda; \\(f(x-3)\\) move para a direita.",
+      },
+      {
+        faz: "Chamar qualquer ponto da descida de mínimo.",
+        correto: "O mínimo é o fundo do vale — onde o gráfico para de descer e volta a subir.",
+      },
     ],
   },
   {
@@ -135,9 +177,18 @@ export const resumos: Resumo[] = [
       "\\sin^2\\theta + \\cos^2\\theta = 1",
     ],
     erros: [
-      "Trocar cateto oposto com adjacente.",
-      "Usar seno onde a componente pede cosseno (horizontal usa cosseno).",
-      "Esquecer de elevar ao quadrado na relação fundamental.",
+      {
+        faz: "Usar o cateto adjacente no seno.",
+        correto: "Seno usa o oposto: \\(\\sin\\theta = \\tfrac{\\text{op}}{\\text{hip}}\\) (SOH).",
+      },
+      {
+        faz: "Decompor a componente horizontal com seno.",
+        correto: "Horizontal usa cosseno; vertical usa seno.",
+      },
+      {
+        faz: "Escrever \\(\\sin\\theta + \\cos\\theta = 1\\).",
+        correto: "A relação fundamental é com quadrados: \\(\\sin^2\\theta + \\cos^2\\theta = 1\\).",
+      },
     ],
   },
   {
@@ -158,12 +209,61 @@ export const resumos: Resumo[] = [
       "\\text{instantânea} = \\lim_{\\Delta t \\to 0} \\frac{\\Delta s}{\\Delta t}",
     ],
     erros: [
-      "Achar que \\(\\frac{0}{0}\\) significa que o limite não existe.",
-      "Tirar a média de laterais diferentes.",
-      "Confundir aproximar-se de um valor com atingi-lo.",
+      {
+        faz: "Ver \\(\\tfrac{0}{0}\\) e concluir que o limite não existe.",
+        correto: "\\(\\tfrac{0}{0}\\) é indeterminação: simplifique e tente de novo.",
+      },
+      {
+        faz: "Tirar a média quando cada lado aponta para um valor.",
+        correto: "Laterais diferentes \\(\\Rightarrow\\) a tendência bilateral não existe.",
+      },
+      {
+        faz: "Confundir \"aproximar-se de 2\" com \"valer 2\".",
+        correto: "Tendência descreve para onde aponta — a função nem precisa estar definida no ponto.",
+      },
     ],
   },
   // ════════════════ CÁLCULO 1 ════════════════
+  {
+    slug: "antes-do-calculo",
+    titulo: "Antes do Cálculo",
+    trilha: "Cálculo 1",
+    href: "/calculo-1/antes-do-calculo",
+    tempo: "3 min",
+    intro:
+      "O módulo que não tem conta, mas evita reprovação: o que Cálculo 1 realmente pede, por que tanta gente trava e como estudar sem se afogar no primeiro mês.",
+    pontos: [
+      "Cálculo 1 estuda mudança: como uma grandeza varia e quanto ela acumula.",
+      "O arco inteiro da matéria é um só: função \\(\\to\\) limite \\(\\to\\) derivada \\(\\to\\) integral.",
+      "A reprovação raramente vem do Cálculo em si — vem da base de Pré-Cálculo (frações, potências, fatoração, funções).",
+      "Derivada responde \"com que velocidade muda?\"; integral responde \"quanto acumulou?\".",
+      "Pré-requisitos reais: manipular expressões, resolver equações, ler gráficos e entender função como relação entre grandezas.",
+      "Estudar Cálculo é praticar, não reler: sem exercício resolvido por conta própria, a leitura dá falsa sensação de domínio.",
+      "Acompanhar a turma vale mais que estudar muito na véspera — a matéria é cumulativa.",
+    ],
+    formulas: [
+      "\\text{função} \\to \\text{limite} \\to \\text{derivada} \\to \\text{integral}",
+      "\\text{derivada} = \\text{taxa de variação instantânea}",
+      "\\text{integral} = \\text{acúmulo ao longo de um intervalo}",
+    ],
+    erros: [
+      {
+        faz: "Pular o Pré-Cálculo por achar que \"isso é do ensino médio\".",
+        correto:
+          "Checar a base antes: quase todo erro em prova de Cálculo é erro de álgebra, não de limite ou derivada.",
+      },
+      {
+        faz: "Estudar lendo a matéria várias vezes.",
+        correto:
+          "Resolver exercício sem olhar a resolução, errar, e só então conferir — é o erro que mostra o que faltou.",
+      },
+      {
+        faz: "Deixar acumular para a semana da prova.",
+        correto:
+          "Manter ritmo semanal: cada tópico novo usa o anterior, então atraso vira bola de neve.",
+      },
+    ],
+  },
   {
     slug: "funcoes-para-calculo",
     titulo: "Funções para cálculo",
@@ -183,9 +283,18 @@ export const resumos: Resumo[] = [
       "L(x) = R(x) - C(x)",
     ],
     erros: [
-      "Confundir \\(f\\) (valor) com \\(f'\\) (taxa).",
-      "Dizer que o máximo é o \\(x\\) (o máximo é o valor \\(y\\)).",
-      "Esquecer de excluir pontos onde o denominador zera.",
+      {
+        faz: "Tratar \\(f(a) < 0\\) como \"função caindo\".",
+        correto: "Sinal de \\(f\\) é altura; quem diz se sobe ou desce é a taxa \\(f'\\).",
+      },
+      {
+        faz: "Responder o máximo com o valor de \\(x\\).",
+        correto: "O máximo é o valor \\(y = f(x)\\); o \\(x\\) é onde ele acontece.",
+      },
+      {
+        faz: "Aceitar \\(x\\) que zera o denominador.",
+        correto: "Excluir do domínio os pontos onde o denominador é zero.",
+      },
     ],
   },
   {
@@ -207,9 +316,18 @@ export const resumos: Resumo[] = [
       "\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 + 4} = \\frac{3}{1} = 3",
     ],
     erros: [
-      "Parar em \\(\\frac{0}{0}\\) e dizer que não existe.",
-      "Tirar a média de laterais diferentes.",
-      "Achar que o gráfico toca a assíntota.",
+      {
+        faz: "Parar em \\(\\tfrac{0}{0}\\) e responder \"não existe\".",
+        correto: "Fatorar, simplificar e substituir de novo.",
+      },
+      {
+        faz: "Tirar a média de laterais diferentes.",
+        correto: "Se \\(\\lim_{x \\to a^-} \\neq \\lim_{x \\to a^+}\\), o limite não existe.",
+      },
+      {
+        faz: "Achar que o gráfico encosta na assíntota.",
+        correto: "A curva se aproxima cada vez mais sem precisar tocá-la.",
+      },
     ],
   },
   {
@@ -230,9 +348,18 @@ export const resumos: Resumo[] = [
       "\\text{contínua em } a \\iff \\lim_{x \\to a} f(x) = f(a)",
     ],
     erros: [
-      "Lembrar só do limite e esquecer a igualdade com \\(f(a)\\).",
-      "Classificar um salto como buraco removível.",
-      "Achar que basta a função 'ter valor' no ponto.",
+      {
+        faz: "Checar só se o limite existe.",
+        correto: "São três condições: \\(f(a)\\) existe, o limite existe e \\(\\lim = f(a)\\).",
+      },
+      {
+        faz: "Classificar um salto como buraco removível.",
+        correto: "Salto tem laterais diferentes — redefinir o ponto não conserta.",
+      },
+      {
+        faz: "Achar que basta a função \"ter valor\" no ponto.",
+        correto: "O valor precisa coincidir com o limite no ponto.",
+      },
     ],
   },
   {
@@ -257,9 +384,18 @@ export const resumos: Resumo[] = [
       "(f(g(x)))' = f'(g(x)) \\cdot g'(x)",
     ],
     erros: [
-      "Esquecer o fator da derivada interna na cadeia.",
-      "Derivar produto como \\(f'g'\\).",
-      "Confundir \\(f'(a) < 0\\) (decresce) com \\(f(a) < 0\\).",
+      {
+        faz: "Derivar \\(f(g(x))\\) e esquecer o \"de dentro\".",
+        correto: "Cadeia completa: \\(f'(g(x)) \\cdot g'(x)\\).",
+      },
+      {
+        faz: "Derivar produto como \\((fg)' = f'g'\\).",
+        correto: "\\((fg)' = f'g + fg'\\) — cada fator deriva uma vez.",
+      },
+      {
+        faz: "Confundir \\(f'(a) < 0\\) com \\(f(a) < 0\\).",
+        correto: "\\(f' < 0\\): a função desce; \\(f < 0\\): o valor é negativo. São coisas diferentes.",
+      },
     ],
   },
   {
@@ -282,9 +418,18 @@ export const resumos: Resumo[] = [
       "f'' (c) > 0 \\Rightarrow \\text{mínimo}; \\quad f''(c) < 0 \\Rightarrow \\text{máximo}",
     ],
     erros: [
-      "Usar o sinal de \\(f\\) em vez de \\(f'\\).",
-      "Esquecer de testar as bordas do domínio.",
-      "Parar no \\(x\\) ótimo sem calcular o valor pedido.",
+      {
+        faz: "Analisar crescimento pelo sinal de \\(f\\).",
+        correto: "Crescimento vem do sinal de \\(f'\\): positivo sobe, negativo desce.",
+      },
+      {
+        faz: "Otimizar testando só os pontos críticos.",
+        correto: "Testar também as bordas do domínio — o ótimo pode estar nelas.",
+      },
+      {
+        faz: "Parar no \\(x\\) ótimo.",
+        correto: "Substituir o \\(x\\) e responder o valor pedido (lucro, área, volume).",
+      },
     ],
   },
   {
@@ -307,9 +452,18 @@ export const resumos: Resumo[] = [
       "\\text{área entre curvas} = \\int_a^b (\\text{topo} - \\text{base})\\,dx",
     ],
     erros: [
-      "Esquecer o \\(+C\\) na integral indefinida.",
-      "Deixar \\(+C\\) na integral definida.",
-      "Usar \\(\\int v\\) como distância quando \\(v\\) troca de sinal (aí use \\(\\int |v|\\)).",
+      {
+        faz: "Escrever \\(\\int x^2\\,dx = \\tfrac{x^3}{3}\\).",
+        correto: "Indefinida sempre com a constante: \\(\\tfrac{x^3}{3} + C\\).",
+      },
+      {
+        faz: "Carregar o \\(+C\\) na integral definida.",
+        correto: "Na definida o \\(C\\) cancela: o resultado é \\(F(b) - F(a)\\).",
+      },
+      {
+        faz: "Usar \\(\\int v\\) como distância quando \\(v\\) troca de sinal.",
+        correto: "Distância total usa \\(\\int |v|\\); \\(\\int v\\) dá o deslocamento líquido.",
+      },
     ],
   },
 ];

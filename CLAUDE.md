@@ -101,3 +101,4 @@ O projeto implementado está em `site/`. Rodar com `cd site && npm run dev`.
 - **Etapa 5:** Aulas em `site/src/data/aulas/` + `AulaView` (12 seções). MD fonte em `site/src/content/aulas/`
 - **Etapa 6:** Exercícios em `site/src/data/exercicios.ts` + `ExerciciosFlow` (9 partes, filtros, reveal)
 - **Etapa 8:** Progresso em `site/src/components/progresso/` + `site/src/lib/progress-dashboard.ts`
+- **Etapa 9:** Diferenciais para quem trava em matemática: mini-quiz de saída (`AulaQuiz`, campo `quiz` opcional na aula), pré-requisitos por aula (`site/src/data/prereqs.ts`, default por módulo + override em `meta.prereqs`), tooltip "Lê-se" em fórmulas inline (RichText), explicação alternativa (`explicacao.alternativa`), gráfico com sliders (`InteractiveAfimPlot`, via `grafico.interactive`), trilha expressa `/trilha-expressa` e check de seção na TOC.

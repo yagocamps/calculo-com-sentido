@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { RichText } from "@/components/aulas/RichText";
 import { PageShell } from "@/components/layout/PageShell";
+import { PrintButton } from "@/components/ui/PrintButton";
 import { Tag } from "@/components/ui/Tag";
 import { resumos, type Resumo } from "@/data/resumos";
 import { slugify } from "@/lib/utils";
@@ -8,7 +9,7 @@ import { slugify } from "@/lib/utils";
 export const metadata = {
   title: "Resumos rápidos",
   description:
-    "Resumo de 1 página por módulo: pontos-chave, fórmulas e erros comuns para revisar antes da prova.",
+    "Cheat sheet de 1 página por módulo: pontos-chave, cards de fórmulas e tabela de erros comuns para revisar antes da prova.",
 };
 
 const trilhas = ["Pré-Cálculo", "Cálculo 1"] as const;
@@ -16,18 +17,22 @@ const trilhas = ["Pré-Cálculo", "Cálculo 1"] as const;
 export default function ResumosPage() {
   return (
     <PageShell crumbs={["Início", "Resumos rápidos"]}>
-      <div className="mx-auto max-w-[820px]">
-        <h1 className="font-serif text-4xl font-medium tracking-tight">
-          Resumos rápidos
-        </h1>
+      <div className="mx-auto max-w-[880px]">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h1 className="font-serif text-4xl font-medium tracking-tight">
+            Resumos rápidos
+          </h1>
+          <PrintButton />
+        </div>
         <p className="mt-2 max-w-2xl text-sm text-ink-muted">
-          Um resumo de uma página por módulo — pontos-chave, fórmulas e erros
-          comuns. Ideal para revisar na véspera da prova. Para se aprofundar,
-          abra a aula correspondente na trilha.
+          Uma página de cola por módulo — pontos-chave, cards de fórmulas e os
+          erros que mais derrubam nota, lado a lado com o jeito certo. Ideal
+          para a véspera da prova. Para se aprofundar, abra a aula
+          correspondente na trilha.
         </p>
 
         {/* Índice rápido */}
-        <nav className="mt-6 flex flex-wrap gap-2">
+        <nav aria-label="Índice dos resumos" className="mt-6 flex flex-wrap gap-2">
           {resumos.map((r) => (
             <a
               key={r.slug}
@@ -58,6 +63,14 @@ export default function ResumosPage() {
   );
 }
 
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <h4 className="mt-6 font-serif text-xs font-semibold uppercase tracking-wider text-ink-subtle">
+      {children}
+    </h4>
+  );
+}
+
 function ResumoCard({ resumo }: { resumo: Resumo }) {
   return (
     <article
@@ -83,36 +96,66 @@ function ResumoCard({ resumo }: { resumo: Resumo }) {
         {resumo.intro}
       </RichText>
 
-      <h4 className="mt-5 font-serif text-xs font-semibold uppercase tracking-wider text-ink-subtle">
-        Pontos-chave
-      </h4>
-      <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed">
+      <SectionLabel>Pontos-chave</SectionLabel>
+      <ul className="mt-2 grid gap-x-5 gap-y-2 sm:grid-cols-2">
         {resumo.pontos.map((p) => (
-          <RichText as="li" key={p}>
-            {p}
-          </RichText>
+          <li
+            key={p}
+            className="flex items-start gap-2 text-[14px] leading-relaxed"
+          >
+            <span className="mt-0.5 text-sage" aria-hidden>
+              ✓
+            </span>
+            <RichText>{p}</RichText>
+          </li>
         ))}
       </ul>
 
-      <h4 className="mt-5 font-serif text-xs font-semibold uppercase tracking-wider text-ink-subtle">
-        Fórmulas
-      </h4>
-      <div className="mt-2 space-y-1 rounded-2 bg-surface-soft px-4 py-3">
+      <SectionLabel>Fórmulas</SectionLabel>
+      <div className="mt-2 grid gap-2.5 sm:grid-cols-2">
         {resumo.formulas.map((f, i) => (
-          <RichText key={`${slugify(resumo.slug)}-f${i}`}>{`\\[${f}\\]`}</RichText>
+          <div
+            key={`${slugify(resumo.slug)}-f${i}`}
+            className="flex items-center justify-center rounded-2 border border-border-soft bg-surface-soft px-4 py-3 text-center"
+          >
+            <RichText>{`\\[${f}\\]`}</RichText>
+          </div>
         ))}
       </div>
 
-      <h4 className="mt-5 font-serif text-xs font-semibold uppercase tracking-wider text-ink-subtle">
-        Erros comuns
-      </h4>
-      <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[14px] leading-relaxed text-ink-muted">
-        {resumo.erros.map((e) => (
-          <RichText as="li" key={e}>
-            {e}
-          </RichText>
-        ))}
-      </ul>
+      <SectionLabel>Erros comuns</SectionLabel>
+      <div className="mt-2 overflow-x-auto">
+        <table className="w-full min-w-[480px] border-collapse text-[13.5px] leading-relaxed">
+          <thead>
+            <tr className="text-left">
+              <th
+                scope="col"
+                className="w-1/2 rounded-tl-2 border border-border-soft bg-amber-soft/60 px-3.5 py-2 font-semibold text-amber-ink"
+              >
+                ✗ O que o aluno faz
+              </th>
+              <th
+                scope="col"
+                className="w-1/2 rounded-tr-2 border border-border-soft bg-sage-soft/60 px-3.5 py-2 font-semibold text-sage-ink"
+              >
+                ✓ O correto
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {resumo.erros.map((e) => (
+              <tr key={e.faz} className="align-top">
+                <td className="border border-border-soft px-3.5 py-2.5 text-ink-muted">
+                  <RichText>{e.faz}</RichText>
+                </td>
+                <td className="border border-border-soft px-3.5 py-2.5">
+                  <RichText>{e.correto}</RichText>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </article>
   );
 }

@@ -6,9 +6,11 @@ import type { AulaContent } from "@/data/aulas/types";
  * na coluna lateral). Usa <details> nativo — sem JS, fecha ao tocar num link.
  */
 export function AulaTocMobile({ content }: { content: AulaContent }) {
-  const links = content.meta.nextLesson
-    ? sectionLinks
-    : sectionLinks.filter((item) => item.id !== "proxima");
+  const links = sectionLinks.filter(
+    (item) =>
+      (item.id !== "proxima" || content.meta.nextLesson) &&
+      (item.id !== "quiz" || content.quiz),
+  );
 
   return (
     <details className="group mb-6 rounded-2 border border-border bg-surface-soft lg:hidden">

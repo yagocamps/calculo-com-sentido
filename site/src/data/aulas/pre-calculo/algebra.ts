@@ -1259,7 +1259,7 @@ export const algebraAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Revise todo o módulo de álgebra com exercícios variados no banco do site.",
-      exerciseIds: ["alg-ap-17", "alg-ap-18"],
+      exerciseIds: ["alg-ap-17", "alg-ap-18", "dsf-alg-01"],
     },
     resumo: {
       title: "Resumo da aula",

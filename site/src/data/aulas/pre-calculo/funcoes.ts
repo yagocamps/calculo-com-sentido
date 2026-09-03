@@ -417,7 +417,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique parábolas, vértice e raízes no banco de exercícios.",
-      exerciseIds: ["func-ap-05", "func-ap-06"],
+      exerciseIds: ["func-ap-05", "func-ap-06", "fq-01", "fq-02", "fq-03", "fq-04", "fq-05", "fq-06", "fq-07", "fq-08", "fq-09", "fq-10", "fq-11", "fq-12", "fq-13", "fq-14"],
     },
     resumo: {
       title: "Resumo da aula",
@@ -1524,7 +1524,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Revise exponencial, log e aplicações no banco de exercícios.",
-      exerciseIds: ["func-ap-21", "func-ap-22"],
+      exerciseIds: ["func-ap-21", "func-ap-22", "dsf-func-01"],
     },
     resumo: {
       title: "Resumo da aula",

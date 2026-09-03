@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { AlternativeExplanation } from "@/components/aulas/AlternativeExplanation";
 import { AulaExerciseCard } from "@/components/aulas/AulaExerciseCard";
+import { AulaQuiz } from "@/components/aulas/AulaQuiz";
 import { AulaToc } from "@/components/aulas/AulaToc";
 import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FunctionPlot } from "@/components/aulas/FunctionPlot";
+import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
 import { RichText } from "@/components/aulas/RichText";
 import { Section } from "@/components/aulas/Section";
@@ -16,6 +19,7 @@ import { Tag } from "@/components/ui/Tag";
 import type { AulaContent } from "@/data/aulas/types";
 import { glossario, type GlossarioEntry } from "@/data/glossario";
 import { exercicios } from "@/data/exercicios";
+import { prereqsForModule } from "@/data/prereqs";
 import {
   calculo1LessonId,
   calculo1ModuloPath,
@@ -50,6 +54,9 @@ export function AulaView({
   const appliedExercises = content.exerciciosAplicados.exerciseIds
     .map((id) => exercicios.find((e) => e.id === id))
     .filter((e): e is NonNullable<typeof e> => Boolean(e));
+
+  // Pré-requisitos: os da aula, ou os padrão do módulo como fallback.
+  const prereqs = meta.prereqs ?? prereqsForModule(trilha, meta.moduleSlug);
 
   // Realce inline dos termos do glossário desta aula (1ª ocorrência no texto).
   const glossaryHL = {
@@ -89,6 +96,29 @@ export function AulaView({
               ))}
               <Tag tone="sage">Nível: {meta.level}</Tag>
             </div>
+
+            {prereqs.length > 0 && (
+              <div className="mt-4 rounded-2 border border-sky/50 bg-sky-soft/40 px-4 py-3">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-sky-ink">
+                  Para esta aula, ajuda já conhecer
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {prereqs.map((p) => (
+                    <Link
+                      key={p.href + p.label}
+                      href={p.href}
+                      className="rounded-full border border-border bg-surface px-2.5 py-0.5 text-[12px] font-semibold text-ink-muted transition-colors hover:border-sky hover:text-sky-ink"
+                    >
+                      {p.label}
+                    </Link>
+                  ))}
+                </div>
+                <p className="mt-2 text-[12px] leading-relaxed text-ink-muted">
+                  Se algum desses estiver nebuloso, revise primeiro — leva
+                  poucos minutos e evita travar no meio da aula.
+                </p>
+              </div>
+            )}
           </header>
 
           <AulaTocMobile content={content} />
@@ -120,6 +150,12 @@ export function AulaView({
                   {p}
                 </RichText>
               ))}
+              {content.explicacao.alternativa &&
+                content.explicacao.alternativa.length > 0 && (
+                  <AlternativeExplanation
+                    paragraphs={content.explicacao.alternativa}
+                  />
+                )}
               {content.explicacao.callout && (
                 <Callout variant="idea" className="mt-3">
                   <RichText glossary={glossaryHL}>
@@ -133,15 +169,23 @@ export function AulaView({
                 formulaAria={content.explicacao.formulaAria}
                 legend={content.explicacao.formulaLegend}
               />
-              {content.grafico && (
-                <FunctionPlot
-                  fn={content.grafico.fn}
-                  alt={content.grafico.alt}
-                  xDomain={content.grafico.xDomain}
-                  yDomain={content.grafico.yDomain}
-                  legend={content.grafico.legend}
-                />
-              )}
+              {content.grafico &&
+                (content.grafico.interactive?.type === "afim" ? (
+                  <InteractiveAfimPlot
+                    initialA={content.grafico.interactive.a}
+                    initialB={content.grafico.interactive.b}
+                    xDomain={content.grafico.xDomain}
+                    yDomain={content.grafico.yDomain}
+                  />
+                ) : (
+                  <FunctionPlot
+                    fn={content.grafico.fn}
+                    alt={content.grafico.alt}
+                    xDomain={content.grafico.xDomain}
+                    yDomain={content.grafico.yDomain}
+                    legend={content.grafico.legend}
+                  />
+                ))}
             </Section>
           </div>
 
@@ -263,8 +307,27 @@ export function AulaView({
             </Section>
           </div>
 
+          {content.quiz && content.quiz.length > 0 && (
+            <div id="quiz">
+              <Section
+                n={11}
+                label="Checagem rápida"
+                title="Pronto para a próxima?"
+              >
+                <AulaQuiz
+                  questions={content.quiz}
+                  nextLesson={meta.nextLesson}
+                />
+              </Section>
+            </div>
+          )}
+
           <div id="video">
-            <Section n={11} label="Vídeo aula" title="Assista à explicação">
+            <Section
+              n={content.quiz ? 12 : 11}
+              label="Vídeo aula"
+              title="Assista à explicação"
+            >
               <AulaVideos videos={content.videos} />
             </Section>
           </div>
@@ -272,7 +335,7 @@ export function AulaView({
           {meta.nextLesson && (
             <div id="proxima">
               <Section
-                n={12}
+                n={content.quiz ? 13 : 12}
                 label="Próxima aula"
                 title="Continue sua trilha"
               >

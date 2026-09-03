@@ -1,12 +1,13 @@
 import { cn } from "@/lib/utils";
 
-type TagTone = "sky" | "sage" | "terracotta" | "amber" | "muted";
+type TagTone = "sky" | "sage" | "terracotta" | "amber" | "verde" | "muted";
 
 const tones: Record<TagTone, string> = {
   sky: "bg-sky-soft text-sky-ink",
   sage: "bg-sage-soft text-sage-ink",
   terracotta: "bg-terracotta-soft text-terracotta-ink",
   amber: "bg-amber-soft text-amber-ink",
+  verde: "bg-verde-soft text-verde-ink",
   muted: "bg-surface-warm text-ink-muted",
 };
 

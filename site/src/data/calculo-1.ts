@@ -9,7 +9,7 @@ export const calculo1Trilha = {
   stats: [
     { n: "7", label: "Módulos" },
     { n: "62", label: "Aulas" },
-    { n: "320+", label: "Exercícios" },
+    { n: "230+", label: "Exercícios" },
     { n: "~10", label: "Semanas" },
   ],
 };

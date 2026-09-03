@@ -13,6 +13,7 @@ import { levelOrder } from "@/lib/exercicios";
 import {
   isExerciseComplete,
   markExerciseComplete,
+  recordExerciseAttempt,
   unmarkExerciseComplete,
 } from "@/lib/progress";
 
@@ -107,17 +108,25 @@ export function ExercicioDetail({
     setResult(r);
     setShowResposta(true);
     setShowResolucao(true);
+    // "manual" só conta depois da autoavaliação (selfAssess).
+    if (r === "correct" || r === "incorrect") {
+      recordExerciseAttempt(exercicio.id, r);
+    }
     if (r === "correct") {
       markExerciseComplete(exercicio.id);
       setExerciseDone(true);
     }
+    if (r === "incorrect") setShowErro(true);
   };
 
   const selfAssess = (acertou: boolean) => {
     setResult(acertou ? "correct" : "incorrect");
+    recordExerciseAttempt(exercicio.id, acertou ? "correct" : "incorrect");
     if (acertou) {
       markExerciseComplete(exercicio.id);
       setExerciseDone(true);
+    } else {
+      setShowErro(true);
     }
   };
 
@@ -207,10 +216,20 @@ export function ExercicioDetail({
           </p>
         )}
         {result === "incorrect" && (
-          <p className="mt-2 text-[13px] text-ink-muted">
-            <span className="font-semibold text-sage-ink">Quase!</span> Confira a
-            resolução e a resposta abaixo — e tente entender onde escapou.
-          </p>
+          <div className="mt-2 space-y-2 text-[13px]">
+            <p className="text-ink-muted">
+              <span className="font-semibold text-amber-ink">Quase!</span>{" "}
+              Errar aqui faz parte do caminho — esse exercício derruba muita
+              gente.
+            </p>
+            <div className="rounded-xl border border-amber bg-amber-soft/60 px-3.5 py-2.5 leading-relaxed text-amber-ink">
+              <b>O erro mais comum aqui:</b>{" "}
+              <RichText>{exercicio.erroComum}</RichText>{" "}
+              <span className="opacity-80">
+                Foi o seu caso? Confira a resolução abaixo e tenta de novo.
+              </span>
+            </div>
+          </div>
         )}
         {result === "manual" && (
           <div className="mt-2 text-[13px] text-ink-muted">

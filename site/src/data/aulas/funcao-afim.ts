@@ -15,6 +15,17 @@ export const funcaoAfimAula: AulaContent = {
       title: "Função quadrática: a parábola",
       href: lessonPath("funcoes", "funcao-quadratica"),
     },
+    prereqs: [
+      { label: "O que é uma função?", href: lessonPath("funcoes", "o-que-e-funcao") },
+      {
+        label: "Equações do 1º grau",
+        href: lessonPath("fundamentos", "equacao-primeiro-grau"),
+      },
+      {
+        label: "Isolamento de variáveis",
+        href: lessonPath("algebra", "isolamento-variaveis"),
+      },
+    ],
   },
   porQue: {
     title: "Antes da fórmula, o sentido",
@@ -30,6 +41,11 @@ export const funcaoAfimAula: AulaContent = {
       "Quando algo cresce de forma constante — sempre o mesmo tanto a cada passo — você está olhando para uma função afim.",
       "O gráfico é uma reta. Não precisa decorar isso agora; o importante é reconhecer a situação: fixo + variável.",
     ],
+    alternativa: [
+      "Outra forma de ver: pense numa assinatura de streaming com aluguel de filmes. Você paga R$ 20 por mês só para ter o serviço — mesmo sem assistir nada — e R$ 4 por filme alugado.",
+      "O número de filmes é o \\(x\\). O gasto do mês é \\(20\\) (sempre) mais \\(4\\) vezes o número de filmes: \\(G(x) = 4x + 20\\).",
+      "É só isso que a função afim diz: um valor que existe de qualquer jeito (\\(b\\), os R$ 20) e um valor que cresce passo a passo (\\(a\\), os R$ 4 por filme). Troque \"filmes\" por km, horas ou pacotes de dados — a estrutura é sempre a mesma.",
+    ],
     callout:
       "Pense em \"quanto eu pago só por existir\" (\\(b\\)) e \"quanto aumenta a cada unidade\" (\\(a\\)).",
     formula: "f(x) = a·x + b",
@@ -41,8 +57,9 @@ export const funcaoAfimAula: AulaContent = {
     fn: "2.4 * x + 6",
     alt: "Reta crescente da corrida de app: começa em R$ 6 (bandeirada, no eixo y) e sobe R$ 2,40 a cada quilômetro.",
     xDomain: [0, 12],
-    yDomain: [0, 40],
+    yDomain: [-10, 40],
     legend: "C(x) = 2,40·x + 6 — bandeirada de R$ 6 + R$ 2,40 por km.",
+    interactive: { type: "afim", a: 2.4, b: 6 },
   },
   ondeAparece: {
     title: "Aplicações reais",
@@ -150,7 +167,7 @@ export const funcaoAfimAula: AulaContent = {
     title: "Exercícios aplicados",
     intro:
       "Treine no banco de exercícios com contexto real (corrida, salário, energia).",
-    exerciseIds: ["ex-01", "ex-02", "ex-03", "ex-04", "ex-05"],
+    exerciseIds: ["ex-01", "ex-02", "ex-03", "ex-04", "ex-05", "ex-06", "ex-07", "ex-08"],
   },
   resumo: {
     title: "Resumo da aula",
@@ -161,4 +178,37 @@ export const funcaoAfimAula: AulaContent = {
       "Sempre interprete o resultado: o que é fixo e o que depende de \\(x\\)?",
     ],
   },
+  quiz: [
+    {
+      pergunta:
+        "Na função \\(f(x) = ax + b\\), o que o \\(b\\) representa numa situação real?",
+      opcoes: [
+        "A taxa de variação por unidade",
+        "A parte fixa / valor inicial",
+        "O valor de \\(x\\) quando \\(f(x) = 0\\)",
+        "O total a pagar",
+      ],
+      corretaIndex: 1,
+      explicacao:
+        "\\(b\\) é o que existe mesmo com \\(x = 0\\): a bandeirada, o salário fixo, a tarifa mínima.",
+      reforcoSectionId: "explicacao",
+    },
+    {
+      pergunta: "Se \\(C(x) = 2x + 10\\), quanto vale \\(C(4)\\)?",
+      opcoes: ["\\(8\\)", "\\(18\\)", "\\(12\\)", "\\(40\\)"],
+      corretaIndex: 1,
+      explicacao:
+        "Primeiro a parte que depende de \\(x\\): \\(2 \\times 4 = 8\\). Depois soma a parte fixa: \\(8 + 10 = 18\\).",
+      reforcoSectionId: "passos",
+    },
+    {
+      pergunta:
+        "Uma corrida custa \\(C(x) = 2{,}40x + 6\\). Se a corrida tiver \\(0\\) km, quanto custa?",
+      opcoes: ["R$ 0,00", "R$ 2,40", "R$ 6,00", "R$ 8,40"],
+      corretaIndex: 2,
+      explicacao:
+        "Com \\(x = 0\\) sobra só o \\(b\\): R$ 6,00 é o custo de \"chamar o carro\" — ele não zera.",
+      reforcoSectionId: "interpretacao",
+    },
+  ],
 };

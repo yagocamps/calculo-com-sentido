@@ -3,11 +3,16 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { buildProgressDashboard } from "@/lib/progress-dashboard";
+import { countPublishedLessons } from "@/lib/progress-utils";
 import { getProgress } from "@/lib/progress";
 
 export function SidebarProgressWidget() {
   const [percent, setPercent] = useState(0);
-  const [trilhaDetail, setTrilhaDetail] = useState("Pré 0% · Calc 0%");
+  // Com progresso zero, nada de "0/121 publicadas" — soa como site vazio.
+  const [trilhaDetail, setTrilhaDetail] = useState(
+    `${countPublishedLessons()} aulas disponíveis para você`,
+  );
+  const [nextLabel, setNextLabel] = useState("Comece por");
   const [reviewDue, setReviewDue] = useState(0);
   const [nextHref, setNextHref] = useState("/pre-calculo/funcoes/funcao-afim");
   const [nextTitle, setNextTitle] = useState("Função afim");
@@ -16,9 +21,13 @@ export function SidebarProgressWidget() {
     const update = () => {
       const dash = buildProgressDashboard(getProgress());
       setPercent(dash.publishedPercent);
+      const done = dash.publishedLessonsCompleted;
       setTrilhaDetail(
-        `${dash.publishedLessonsCompleted}/${dash.publishedLessonsTotal} publicadas · Pré ${dash.trilhaPreCalculoPercent}% · Calc ${dash.trilhaCalculo1Percent}%`,
+        done === 0
+          ? `${dash.publishedLessonsTotal} aulas disponíveis para você`
+          : `Você completou ${done} de ${dash.publishedLessonsTotal} · Pré ${dash.trilhaPreCalculoPercent}% · Calc ${dash.trilhaCalculo1Percent}%`,
       );
+      setNextLabel(done === 0 ? "Comece por" : "Próximo");
       setReviewDue(dash.reviewDueCount);
       if (dash.nextLesson) {
         setNextHref(dash.nextLesson.href);
@@ -51,7 +60,7 @@ export function SidebarProgressWidget() {
         />
       </div>
       <p className="mt-2 text-[11px] text-ink-subtle">
-        Próximo:{" "}
+        {nextLabel}:{" "}
         <Link
           href={nextHref}
           className="font-semibold text-ink hover:text-terracotta"

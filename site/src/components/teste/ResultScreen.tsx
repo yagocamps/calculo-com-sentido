@@ -2,7 +2,12 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { ProgressRing } from "@/components/ui/ProgressRing";
 import { Tag } from "@/components/ui/Tag";
-import { scoreByTopic, testTopics, type OptionKey } from "@/data/teste-nivel";
+import {
+  scoreByTopic,
+  testTopics,
+  topicosParaReforcar,
+  type OptionKey,
+} from "@/data/teste-nivel";
 import type { TesteNivelResult } from "@/lib/teste-nivel";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +21,11 @@ export function ResultScreen({
   onRetry: () => void;
 }) {
   const byTopic = scoreByTopic(answers);
+  // Módulos a reforçar, sem repetir (vários tópicos caem no mesmo módulo).
+  const fracos = topicosParaReforcar(answers);
+  const modulosSugeridos = fracos.filter(
+    (t, i) => fracos.findIndex((o) => o.modulo.href === t.modulo.href) === i,
+  );
 
   return (
     <div className="mx-auto max-w-[1080px]">
@@ -90,6 +100,39 @@ export function ResultScreen({
           })}
         </div>
       </section>
+
+      {modulosSugeridos.length > 0 && (
+        <section className="mt-5">
+          <h3 className="font-serif text-xl font-medium tracking-tight">
+            Por onde começar
+          </h3>
+          <p className="mt-1 text-sm text-ink-muted">
+            Você acertou menos da metade nestes assuntos. Eles são o caminho mais
+            curto para destravar o resto — comece por aqui, na ordem.
+          </p>
+          <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
+            {modulosSugeridos.map((t, i) => (
+              <a
+                key={t.topic}
+                href={t.modulo.href}
+                className="flex items-baseline gap-3 rounded-2 border border-border bg-surface p-4 transition-colors hover:border-terracotta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta"
+              >
+                <span className="font-serif text-sm italic text-terracotta">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span>
+                  <span className="block font-medium text-ink">
+                    {t.modulo.label}
+                  </span>
+                  <span className="mt-0.5 block text-[13px] text-ink-muted">
+                    {t.label} · {t.correct} de {t.total} acertos
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

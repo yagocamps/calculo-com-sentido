@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { AiTutorTeaser } from "@/components/layout/AiTutorTeaser";
 import { CommandPalette } from "@/components/layout/CommandPalette";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Topbar } from "@/components/layout/Topbar";
@@ -26,7 +27,7 @@ export function PageShell({
   }, []);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-bg text-ink">
+    <div className="flex h-screen overflow-hidden bg-bg text-ink print:block print:h-auto print:overflow-visible">
       <a href="#main-content" className="sr-only">
         Pular para o conteúdo
       </a>
@@ -42,7 +43,7 @@ export function PageShell({
 
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       
-      <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
+      <div className="flex min-w-0 flex-1 flex-col overflow-hidden print:block print:overflow-visible">
         <Topbar
           crumbs={crumbs}
           right={right}
@@ -51,13 +52,15 @@ export function PageShell({
         <main
           id="main-content"
           className={cn(
-            "flex-1 overflow-y-auto px-4 pb-9 pt-7 md:px-9",
+            "flex-1 overflow-y-auto px-4 pb-9 pt-7 md:px-9 print:overflow-visible",
             className,
           )}
         >
-          {children}
+          <div className="ccs-fade-up">{children}</div>
         </main>
       </div>
+
+      <AiTutorTeaser />
     </div>
   );
 }

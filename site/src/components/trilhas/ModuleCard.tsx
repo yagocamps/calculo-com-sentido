@@ -82,7 +82,7 @@ export function ModuleCard({
     return (
       <Link
         href={href}
-        className="relative flex flex-col gap-2.5 overflow-hidden rounded-2 border border-border bg-surface p-5 shadow-sm transition-shadow hover:shadow-md"
+        className="relative flex flex-col gap-2.5 overflow-hidden rounded-2 border border-border bg-surface p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
       >
         {inner}
       </Link>

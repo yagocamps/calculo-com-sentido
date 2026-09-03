@@ -19,7 +19,7 @@
 
   --ink: #1e2a3a;
   --ink-muted: #51606f;
-  --ink-subtle: #8893a0;
+  --ink-subtle: #5f6d7d;
   --ink-on-dark: #f7f9fc;
 
   --border: #e5e2d8;
@@ -44,6 +44,11 @@
   --amber: #d7a52e;
   --amber-soft: #f6ebc2;
   --amber-ink: #6c5210;
+
+  /* Exercício "Aplicada" — verde (badges de tipo de questão) */
+  --verde: #5a8a5e;
+  --verde-soft: #e1efe2;
+  --verde-ink: #2e5a33;
 }
 
 html.dark {
@@ -55,7 +60,7 @@ html.dark {
 
   --ink: #e7ecf2;
   --ink-muted: #aeb8c4;
-  --ink-subtle: #7c8794;
+  --ink-subtle: #8b96a3;
   --ink-on-dark: #f7f9fc;
 
   --border: #2c333e;
@@ -80,6 +85,11 @@ html.dark {
   --amber: #e2c162;
   --amber-soft: #362e18;
   --amber-ink: #f0dca0;
+
+  /* Exercício "Aplicada" — verde (badges de tipo de questão) */
+  --verde: #8fc795;
+  --verde-soft: #1d3320;
+  --verde-ink: #c8e6cb;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 6px 16px -8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -116,6 +126,10 @@ html.dark {
   --color-amber: var(--amber);
   --color-amber-soft: var(--amber-soft);
   --color-amber-ink: var(--amber-ink);
+
+  --color-verde: var(--verde);
+  --color-verde-soft: var(--verde-soft);
+  --color-verde-ink: var(--verde-ink);
 
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
@@ -175,6 +189,38 @@ body,
   stroke: var(--ink-subtle);
 }
 
+/*
+ * Foco visível para navegação por teclado (Plano Mestre, Seções 38 e 41).
+ * `:where()` zera a especificidade: componentes podem sobrescrever com
+ * utilitários (ex.: `focus-visible:ring-2`) sem brigar com esta regra.
+ */
+:where(:focus-visible) {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/*
+ * Entrada suave "fade-in-up" ao carregar a página. A ordem do stagger vem
+ * de `--fade-order` (0, 1, 2…) definida inline em cada seção.
+ * `prefers-reduced-motion` zera a duração via regra global abaixo.
+ */
+@keyframes ccs-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ccs-fade-up {
+  animation: ccs-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--fade-order, 0) * 70ms);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -207,6 +253,26 @@ body,
   font-size: 0.875rem;
   font-weight: 600;
   box-shadow: 0 4px 12px rgb(0 0 0 / 0.12);
+}
+
+/*
+ * Impressão (resumos viram "cola de parede"): esconde o chrome da UI,
+ * desfaz os contêineres de scroll (h-screen + overflow) que truncariam o
+ * conteúdo na 1ª página e desliga as animações de entrada.
+ */
+@media print {
+  html,
+  body {
+    height: auto;
+  }
+  .ccs-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  article {
+    break-inside: avoid;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

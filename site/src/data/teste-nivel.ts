@@ -227,6 +227,201 @@ export const testQuestions: TestQuestion[] = [
     explanation:
       "Substituindo x = 2 em x + 3 obtemos 5. O limite coincide com o valor da função afim.",
   },
+  {
+    id: "q13",
+    topic: "operacoes",
+    topicLabel: "Operações básicas",
+    question: "Quanto é 20 − 3 × (4 − 2)?",
+    context: "Parênteses primeiro, depois multiplicação, depois subtração.",
+    options: [
+      { key: "A", text: "34" },
+      { key: "B", text: "14" },
+      { key: "C", text: "26" },
+      { key: "D", text: "10" },
+    ],
+    correct: "B",
+    explanation:
+      "Dentro dos parênteses: 4 − 2 = 2. Depois 3 × 2 = 6. Por fim 20 − 6 = 14. Erro comum: fazer 20 − 3 primeiro.",
+  },
+  {
+    id: "q14",
+    topic: "operacoes",
+    topicLabel: "Operações básicas",
+    subtopic: "Sinais",
+    question: "Quanto é (−5) × (−4) + (−10)?",
+    options: [
+      { key: "A", text: "10" },
+      { key: "B", text: "−30" },
+      { key: "C", text: "30" },
+      { key: "D", text: "−10" },
+    ],
+    correct: "A",
+    explanation:
+      "Menos com menos dá mais: (−5) × (−4) = 20. Depois 20 + (−10) = 10. Erro comum: manter o sinal negativo no produto.",
+  },
+  {
+    id: "q15",
+    topic: "fracoes",
+    topicLabel: "Frações",
+    question: "Quanto é 2/3 × 3/5?",
+    options: [
+      { key: "A", text: "6/15, ou seja, 2/5" },
+      { key: "B", text: "5/8" },
+      { key: "C", text: "10/9" },
+      { key: "D", text: "6/8" },
+    ],
+    correct: "A",
+    explanation:
+      "Em multiplicação de frações, multiplica-se em linha: (2 × 3)/(3 × 5) = 6/15 = 2/5. Não é preciso igualar denominadores — isso só vale para soma.",
+  },
+  {
+    id: "q16",
+    topic: "fracoes",
+    topicLabel: "Frações",
+    subtopic: "Porcentagem",
+    question: "Uma blusa de R$ 80,00 está com 25% de desconto. Quanto se paga?",
+    options: [
+      { key: "A", text: "R$ 55,00" },
+      { key: "B", text: "R$ 60,00" },
+      { key: "C", text: "R$ 20,00" },
+      { key: "D", text: "R$ 75,00" },
+    ],
+    correct: "B",
+    explanation:
+      "25% de 80 é 80 × 0,25 = 20 (o desconto). Paga-se 80 − 20 = 60. Erro comum: responder 20, que é o desconto e não o valor final.",
+  },
+  {
+    id: "q17",
+    topic: "potencias",
+    topicLabel: "Potências e raízes",
+    question: "Qual é o valor de 5⁰?",
+    options: [
+      { key: "A", text: "0" },
+      { key: "B", text: "5" },
+      { key: "C", text: "1" },
+      { key: "D", text: "Não existe" },
+    ],
+    correct: "C",
+    explanation:
+      "Todo número diferente de zero elevado a 0 dá 1. Vem da regra de divisão: 5³ ÷ 5³ = 5⁰ e também = 1.",
+  },
+  {
+    id: "q18",
+    topic: "equacoes",
+    topicLabel: "Equações",
+    subtopic: "1º grau",
+    question: "Resolva: 3(x − 2) = x + 8",
+    options: [
+      { key: "A", text: "x = 7" },
+      { key: "B", text: "x = 3" },
+      { key: "C", text: "x = 5" },
+      { key: "D", text: "x = 1" },
+    ],
+    correct: "A",
+    explanation:
+      "3x − 6 = x + 8 → 3x − x = 8 + 6 → 2x = 14 → x = 7. Erro comum: distribuir o 3 só no x e esquecer o −2.",
+  },
+  {
+    id: "q19",
+    topic: "funcoes",
+    topicLabel: "Funções",
+    subtopic: "Leitura de função",
+    question:
+      "Um plano cobra R$ 50,00 fixos mais R$ 3,00 por GB. Qual função dá o custo de x GB?",
+    options: [
+      { key: "A", text: "C(x) = 50x + 3" },
+      { key: "B", text: "C(x) = 3x + 50" },
+      { key: "C", text: "C(x) = 53x" },
+      { key: "D", text: "C(x) = 3x − 50" },
+    ],
+    correct: "B",
+    explanation:
+      "O que varia com o consumo multiplica x (3x); o que é fixo entra somando (50). Erro comum: trocar os papéis do fixo e do variável.",
+  },
+  {
+    id: "q20",
+    topic: "graficos",
+    topicLabel: "Gráficos",
+    question:
+      "No plano cartesiano, o ponto (−3, 2) fica em qual região?",
+    options: [
+      { key: "A", text: "À esquerda do eixo vertical e acima do horizontal" },
+      { key: "B", text: "À direita do eixo vertical e acima do horizontal" },
+      { key: "C", text: "À esquerda do eixo vertical e abaixo do horizontal" },
+      { key: "D", text: "Sobre o eixo horizontal" },
+    ],
+    correct: "A",
+    explanation:
+      "O primeiro número é horizontal (x = −3, à esquerda) e o segundo é vertical (y = 2, acima). Erro comum: ler as coordenadas na ordem trocada.",
+  },
+  {
+    id: "q21",
+    topic: "graficos",
+    topicLabel: "Gráficos",
+    subtopic: "Leitura de curva",
+    question:
+      "Um gráfico de temperatura sobe até as 14h e depois desce. O que se pode afirmar sobre as 14h?",
+    options: [
+      { key: "A", text: "A temperatura foi zero nesse instante" },
+      { key: "B", text: "A temperatura atingiu seu valor máximo" },
+      { key: "C", text: "A temperatura parou de existir" },
+      { key: "D", text: "O gráfico cruzou o eixo horizontal" },
+    ],
+    correct: "B",
+    explanation:
+      "Onde a curva para de subir e começa a descer está o ponto mais alto — o máximo. Ler pontos de virada em gráficos é a base de máximos e mínimos no Cálculo.",
+  },
+  {
+    id: "q22",
+    topic: "trigonometria",
+    topicLabel: "Trigonometria",
+    subtopic: "Razões no triângulo",
+    question:
+      "Num triângulo retângulo, o seno de um ângulo agudo é a razão entre:",
+    options: [
+      { key: "A", text: "Cateto adjacente e hipotenusa" },
+      { key: "B", text: "Cateto oposto e cateto adjacente" },
+      { key: "C", text: "Cateto oposto e hipotenusa" },
+      { key: "D", text: "Hipotenusa e cateto oposto" },
+    ],
+    correct: "C",
+    explanation:
+      "Seno = cateto oposto ÷ hipotenusa. O adjacente sobre a hipotenusa é o cosseno; oposto sobre adjacente é a tangente.",
+  },
+  {
+    id: "q23",
+    topic: "limites",
+    topicLabel: "Noções de limite",
+    question:
+      "Conforme x cresce muito (10, 100, 1000…), de que valor 1/x se aproxima?",
+    context: "Ideia intuitiva de tendência — sem fórmula.",
+    options: [
+      { key: "A", text: "De 1" },
+      { key: "B", text: "De 0" },
+      { key: "C", text: "De infinito" },
+      { key: "D", text: "De x" },
+    ],
+    correct: "B",
+    explanation:
+      "Dividir 1 por números cada vez maiores dá resultados cada vez menores: 1/1000 = 0,001. O valor tende a 0 sem nunca chegar lá.",
+  },
+  {
+    id: "q24",
+    topic: "limites",
+    topicLabel: "Noções de limite",
+    subtopic: "Tendência vs valor",
+    question:
+      "Uma função tem um furo em x = 4, mas perto de 4 ela vale sempre algo próximo de 7. O que se pode dizer?",
+    options: [
+      { key: "A", text: "A função não pode ter tendência em x = 4" },
+      { key: "B", text: "A tendência em x = 4 é 7, mesmo sem a função valer 7 ali" },
+      { key: "C", text: "A tendência em x = 4 é 4" },
+      { key: "D", text: "A função vale 7 em x = 4" },
+    ],
+    correct: "B",
+    explanation:
+      "Limite fala de para onde a função vai perto do ponto, não de quanto ela vale no ponto. É exatamente por isso que limite existe como conceito separado.",
+  },
 ];
 
 export type RecommendationBand = "base" | "pre-calculo" | "calculo-1";
@@ -291,4 +486,39 @@ export function scoreByTopic(
     if (answers[q.id] === q.correct) map[q.topic].correct += 1;
   }
   return map;
+}
+
+/** Onde estudar cada tópico do teste. Serve para transformar "você foi mal em
+ * frações" num link concreto, em vez de só uma nota. */
+export const topicoParaModulo: Record<TopicId, { label: string; href: string }> = {
+  operacoes: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos" },
+  fracoes: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos" },
+  potencias: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos" },
+  equacoes: { label: "Álgebra essencial", href: "/pre-calculo/algebra" },
+  funcoes: { label: "Funções", href: "/pre-calculo/funcoes" },
+  graficos: { label: "Gráficos", href: "/pre-calculo/graficos" },
+  trigonometria: { label: "Trigonometria", href: "/pre-calculo/trigonometria" },
+  limites: { label: "Preparação para limites", href: "/pre-calculo/preparacao-limites" },
+};
+
+/** Tópicos com menos de 60% de acerto, do mais fraco para o menos fraco.
+ * É a lista de "estude isto primeiro" — mais útil que a nota global, porque
+ * a nota esconde em qual assunto está o buraco. */
+export function topicosParaReforcar(
+  answers: Record<string, OptionKey>,
+): { topic: TopicId; label: string; correct: number; total: number; modulo: { label: string; href: string } }[] {
+  const porTopico = scoreByTopic(answers);
+  return testTopics
+    .map((t) => {
+      const s = porTopico[t.id] ?? { correct: 0, total: 0 };
+      return {
+        topic: t.id,
+        label: t.label,
+        correct: s.correct,
+        total: s.total,
+        modulo: topicoParaModulo[t.id],
+      };
+    })
+    .filter((t) => t.total > 0 && t.correct / t.total < 0.6)
+    .sort((a, b) => a.correct / a.total - b.correct / b.total);
 }

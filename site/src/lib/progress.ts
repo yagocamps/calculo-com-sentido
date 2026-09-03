@@ -54,11 +54,22 @@ export type TesteNivelStored = {
   completedAt: string;
 };
 
+/** Acertos e erros acumulados de um exercício (alimenta "Pontos fortes" e "O que revisar"). */
+export type ExerciseAttemptStats = {
+  correct: number;
+  incorrect: number;
+};
+
+export type ExerciseAttemptsMap = Record<string, ExerciseAttemptStats>;
+
 export type ProgressState = {
   percent: number;
   nextLesson: string;
   completedLessons: string[];
   completedExercises: string[];
+  exerciseAttempts: ExerciseAttemptsMap;
+  /** Dias (YYYY-MM-DD locais) com atividade de estudo — alimenta o "streak suave". */
+  activityDays: string[];
   reviews: ReviewMap;
   testeNivel?: TesteNivelStored;
 };
@@ -68,8 +79,44 @@ const defaultProgress: ProgressState = {
   nextLesson: "Função afim",
   completedLessons: [],
   completedExercises: [],
+  exerciseAttempts: {},
+  activityDays: [],
   reviews: {},
 };
+
+const MAX_ACTIVITY_DAYS = 90;
+
+function normalizeActivityDays(raw: unknown): string[] {
+  if (!Array.isArray(raw)) return [];
+  const valid = raw.filter(
+    (d): d is string => typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d),
+  );
+  return [...new Set(valid)].sort().slice(-MAX_ACTIVITY_DAYS);
+}
+
+/** Data local de hoje em YYYY-MM-DD (sem UTC, para não virar o dia errado). */
+export function localDateISO(date = new Date()): string {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+}
+
+function withToday(days: string[]): string[] {
+  const today = localDateISO();
+  return days.includes(today) ? days : [...days, today];
+}
+
+function normalizeExerciseAttempts(raw: unknown): ExerciseAttemptsMap {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return {};
+  const out: ExerciseAttemptsMap = {};
+  for (const [id, value] of Object.entries(raw as Record<string, unknown>)) {
+    if (!value || typeof value !== "object") continue;
+    const { correct, incorrect } = value as Partial<ExerciseAttemptStats>;
+    const c = typeof correct === "number" && correct >= 0 ? Math.floor(correct) : 0;
+    const i =
+      typeof incorrect === "number" && incorrect >= 0 ? Math.floor(incorrect) : 0;
+    if (c > 0 || i > 0) out[id] = { correct: c, incorrect: i };
+  }
+  return out;
+}
 
 function persistProgress(state: ProgressState) {
   if (typeof window === "undefined") return;
@@ -122,12 +169,16 @@ export function getProgress(): ProgressState {
     const parsed = JSON.parse(raw) as Partial<ProgressState>;
     const completedLessons = normalizeLessonIds(parsed.completedLessons);
     const completedExercises = normalizeExerciseIds(parsed.completedExercises);
+    const exerciseAttempts = normalizeExerciseAttempts(parsed.exerciseAttempts);
+    const activityDays = normalizeActivityDays(parsed.activityDays);
     const reviews = normalizeReviews(parsed.reviews);
     return {
       ...defaultProgress,
       ...parsed,
       completedLessons,
       completedExercises,
+      exerciseAttempts,
+      activityDays,
       reviews,
       percent: computeCombinedTrilhaPercent(completedLessons),
       nextLesson:
@@ -152,6 +203,12 @@ export function saveProgress(state: Partial<ProgressState>) {
     completedExercises: state.completedExercises
       ? normalizeExerciseIds(state.completedExercises)
       : current.completedExercises,
+    exerciseAttempts: state.exerciseAttempts
+      ? normalizeExerciseAttempts(state.exerciseAttempts)
+      : current.exerciseAttempts,
+    activityDays: state.activityDays
+      ? normalizeActivityDays(state.activityDays)
+      : current.activityDays,
     reviews: state.reviews ? normalizeReviews(state.reviews) : current.reviews,
   };
   merged.percent = computeCombinedTrilhaPercent(merged.completedLessons);
@@ -167,6 +224,7 @@ export function markLessonComplete(lessonPathId: string) {
   saveProgress({
     completedLessons: [...normalized, lessonPathId],
     reviews: { ...current.reviews, [lessonPathId]: seedReview() },
+    activityDays: withToday(current.activityDays),
   });
 }
 
@@ -189,6 +247,33 @@ export function markReviewed(lessonPathId: string, result: ReviewResult) {
   const updated = applyReview(current.reviews[lessonPathId], result);
   saveProgress({
     reviews: { ...current.reviews, [lessonPathId]: updated },
+    activityDays: withToday(current.activityDays),
+  });
+}
+
+/**
+ * Registra uma tentativa de exercício (acerto ou erro). Diferente de
+ * `markExerciseComplete`, acumula histórico — é o que permite ao dashboard
+ * apontar "Pontos fortes" e "O que revisar" por tema e tipo de questão.
+ */
+export function recordExerciseAttempt(
+  exerciseId: string,
+  outcome: "correct" | "incorrect",
+) {
+  const current = getProgress();
+  const prev = current.exerciseAttempts[exerciseId] ?? {
+    correct: 0,
+    incorrect: 0,
+  };
+  saveProgress({
+    exerciseAttempts: {
+      ...current.exerciseAttempts,
+      [exerciseId]: {
+        correct: prev.correct + (outcome === "correct" ? 1 : 0),
+        incorrect: prev.incorrect + (outcome === "incorrect" ? 1 : 0),
+      },
+    },
+    activityDays: withToday(current.activityDays),
   });
 }
 
@@ -198,6 +283,7 @@ export function markExerciseComplete(exerciseId: string) {
   if (normalized.includes(exerciseId)) return;
   saveProgress({
     completedExercises: [...normalized, exerciseId],
+    activityDays: withToday(current.activityDays),
   });
 }
 
@@ -246,10 +332,14 @@ export function importProgressFromJson(raw: string): {
     }
     const completedLessons = normalizeLessonIds(parsed.completedLessons);
     const completedExercises = normalizeExerciseIds(parsed.completedExercises);
+    const exerciseAttempts = normalizeExerciseAttempts(parsed.exerciseAttempts);
+    const activityDays = normalizeActivityDays(parsed.activityDays);
     const reviews = normalizeReviews(parsed.reviews);
     saveProgress({
       completedLessons,
       completedExercises,
+      exerciseAttempts,
+      activityDays,
       reviews,
       testeNivel:
         parsed.testeNivel &&

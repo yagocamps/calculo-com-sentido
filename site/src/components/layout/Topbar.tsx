@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FontSizeControl } from "@/components/layout/FontSizeControl";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { NavIcon } from "@/components/layout/icons";
 
@@ -39,7 +40,7 @@ export function Topbar({
   }, []);
 
   return (
-    <header className="flex h-14 shrink-0 items-center gap-3 border-b border-border bg-bg px-4 md:px-7">
+    <header className="flex h-14 shrink-0 items-center gap-3 border-b border-border bg-bg px-4 md:px-7 print:hidden">
       {onMenuClick && (
         <button
           type="button"
@@ -68,15 +69,16 @@ export function Topbar({
         ))}
       </nav>
 
-      <div className="ml-auto flex items-center gap-2.5 shrink-0">
+      <div className="ml-auto flex min-w-0 items-center gap-2 md:gap-2.5">
         {right}
+        <FontSizeControl />
         <ThemeToggle />
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-warm px-2 py-0.5 md:px-2.5 md:py-1 text-[11px] md:text-xs font-medium text-ink-muted select-none">
+        <span className="hidden md:inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-warm px-2 py-0.5 md:px-2.5 md:py-1 text-[11px] md:text-xs font-medium text-ink-muted select-none">
           <span className="h-1.5 w-1.5 rounded-full bg-sage animate-pulse" aria-hidden />
           Sessão · {studyMinutes} min
         </span>
         <span
-          className="grid h-[28px] w-[28px] md:h-[30px] md:w-[30px] place-items-center rounded-full border border-border bg-sage-soft font-serif text-[12px] md:text-[13px] font-semibold text-sage-ink cursor-default"
+          className="hidden md:grid h-[28px] w-[28px] md:h-[30px] md:w-[30px] place-items-center rounded-full border border-border bg-sage-soft font-serif text-[12px] md:text-[13px] font-semibold text-sage-ink cursor-default"
           title="Estudante (Sessão Local)"
           aria-hidden
         >

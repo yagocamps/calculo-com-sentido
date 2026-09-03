@@ -69,6 +69,7 @@ export function ProgressoContent() {
   const isEmpty =
     dash.lessonsCompleted === 0 &&
     dash.exercisesCompleted === 0 &&
+    dash.attemptsTotal === 0 &&
     !dash.testeNivel;
 
   return (
@@ -82,6 +83,14 @@ export function ProgressoContent() {
             <p className="mt-2 text-sm text-ink-muted">
               Seus dados ficam salvos neste navegador (localStorage).
             </p>
+            {/* Streak suave: só celebra, nunca cobra (público já chega ansioso). */}
+            {dash.studyDaysThisWeek > 0 && (
+              <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-sage-soft px-3 py-1 text-[13px] font-semibold text-sage-ink">
+                Você estudou {dash.studyDaysThisWeek}{" "}
+                {dash.studyDaysThisWeek === 1 ? "dia" : "dias"} nos últimos 7
+                dias 👏
+              </p>
+            )}
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <Button
@@ -158,20 +167,32 @@ export function ProgressoContent() {
         </header>
 
         {isEmpty ? (
-          <Card className="text-center">
-            <p className="font-serif text-xl font-medium">
-              Você ainda não registrou progresso
+          <Card className="py-10 text-center">
+            <p className="font-serif text-3xl font-medium tracking-tight">
+              Sua jornada começa aqui 🌱
             </p>
-            <p className="mt-2 text-sm text-ink-muted">
-              Faça o teste de nível, conclua uma aula ou marque um exercício
-              como resolvido.
+            <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-muted">
+              Ninguém precisa chegar sabendo — este site existe justamente para
+              construir a base com calma, no seu ritmo. A primeira aula leva
+              cerca de 10 minutos.
             </p>
-            <div className="mt-5 flex flex-wrap justify-center gap-2">
-              <Button href="/teste-de-nivel">Teste de nível</Button>
-              <Button href="/pre-calculo/funcoes/funcao-afim" variant="soft">
-                Aula modelo
+            <div className="mt-6 flex justify-center">
+              <Button
+                href={dash.nextLesson?.href ?? "/pre-calculo"}
+                size="lg"
+              >
+                Começar primeira aula →
               </Button>
             </div>
+            <p className="mt-4 text-xs text-ink-subtle">
+              Prefere um diagnóstico antes?{" "}
+              <Link
+                href="/teste-de-nivel"
+                className="font-semibold text-terracotta hover:underline"
+              >
+                Faça o teste de nível (2 min)
+              </Link>
+            </p>
           </Card>
         ) : (
           <>
@@ -350,13 +371,64 @@ export function ProgressoContent() {
                   </ul>
                 ) : (
                   <p className="mt-3 text-sm text-ink-muted">
-                    Conclua mais aulas para ver seus pontos fortes aqui.
+                    Conclua aulas e resolva exercícios para ver seus pontos
+                    fortes aqui.
+                  </p>
+                )}
+              </Card>
+
+              <Card className="border-l-4 border-l-amber">
+                <h2 className="font-serif text-xl font-medium text-amber-ink">
+                  O que revisar
+                </h2>
+                {dash.weakSpots.length > 0 ? (
+                  <ul className="mt-3 space-y-2.5">
+                    {dash.weakSpots.map((w) => (
+                      <li
+                        key={w.key}
+                        className="rounded-2 border border-border bg-surface-soft px-3.5 py-2.5"
+                      >
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <span className="text-sm font-semibold text-ink">
+                            {w.label}
+                          </span>
+                          <span className="rounded-full bg-amber-soft px-2 py-0.5 text-[11px] font-bold text-amber-ink">
+                            {w.accuracy}% de acerto
+                          </span>
+                        </div>
+                        <p className="mt-0.5 text-xs text-ink-muted">
+                          {w.incorrect}{" "}
+                          {w.incorrect === 1 ? "erro" : "erros"} em {w.attempts}{" "}
+                          {w.attempts === 1 ? "tentativa" : "tentativas"}
+                        </p>
+                        <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-[13px] font-semibold">
+                          <Link
+                            href={w.lessonHref}
+                            className="text-terracotta hover:underline"
+                          >
+                            Rever: {w.lessonTitle} →
+                          </Link>
+                          <Link
+                            href={w.exercisesHref}
+                            className="text-ink-muted hover:text-terracotta"
+                          >
+                            Refazer exercícios →
+                          </Link>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-3 text-sm text-ink-muted">
+                    {dash.attemptsTotal === 0
+                      ? "Responda exercícios (digitando sua resposta e verificando) para o site detectar o que merece revisão."
+                      : "Nenhum ponto fraco detectado até agora — continue praticando! 🎉"}
                   </p>
                 )}
               </Card>
 
               <Card>
-                <h2 className="font-serif text-xl font-medium text-amber-ink">
+                <h2 className="font-serif text-xl font-medium">
                   Próximas aulas (não concluídas)
                 </h2>
                 <ul className="mt-3 space-y-2">
@@ -387,7 +459,7 @@ export function ProgressoContent() {
                   <Link
                     key={m.key}
                     href={m.href}
-                    className="rounded-2 border border-border bg-surface p-4 shadow-sm transition-shadow hover:shadow-md"
+                    className="rounded-2 border border-border bg-surface p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className="font-medium text-ink">{m.title}</span>

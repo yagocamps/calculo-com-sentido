@@ -2,16 +2,27 @@ import { Tag } from "@/components/ui/Tag";
 import type { ExerciseType } from "@/data/exercicios";
 import { typeLabels } from "@/lib/exercicios";
 
-const toneMap: Record<
+/**
+ * Badge por tipo de questão (Plano Mestre, Seção 17). Cores na tela:
+ * azul (compreensão), laranja (cálculo direto), verde (aplicada) e
+ * roxo (interpretação) — os nomes dos tokens são legados, ver globals.css.
+ */
+const typeMeta: Record<
   ExerciseType,
-  "sky" | "sage" | "terracotta" | "amber"
+  { tone: "sky" | "sage" | "terracotta" | "amber" | "verde"; icon: string }
 > = {
-  compreensao: "sky",
-  calculo: "sage",
-  aplicada: "terracotta",
-  interpretacao: "amber",
+  compreensao: { tone: "terracotta", icon: "🧠" },
+  calculo: { tone: "sage", icon: "🧮" },
+  aplicada: { tone: "verde", icon: "🌍" },
+  interpretacao: { tone: "sky", icon: "👁️" },
 };
 
 export function TypeTag({ type }: { type: ExerciseType }) {
-  return <Tag tone={toneMap[type]}>{typeLabels[type]}</Tag>;
+  const { tone, icon } = typeMeta[type];
+  return (
+    <Tag tone={tone}>
+      <span aria-hidden>{icon}</span>
+      {typeLabels[type]}
+    </Tag>
+  );
 }

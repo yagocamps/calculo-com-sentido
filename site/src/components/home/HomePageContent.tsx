@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { HeroCtas } from "@/components/home/HeroCtas";
+import { ReviewTodayBanner } from "@/components/home/ReviewTodayBanner";
 import { PageShell } from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
@@ -17,19 +19,31 @@ import { countPublishedLessons } from "@/lib/progress-utils";
 import { cn } from "@/lib/utils";
 
 export function HomePageContent() {
+  const sections = [
+    HeroSection,
+    ReviewTodayBanner,
+    SocialProofSection,
+    MissionSection,
+    ProblemSection,
+    SolutionSection,
+    PathsSection,
+    LessonsSection,
+    BenefitsSection,
+    AudienceSection,
+    FinalCtaSection,
+  ];
   return (
     <PageShell crumbs={["Início"]}>
       <div className="mx-auto max-w-[1080px] space-y-[22px]">
-        <HeroSection />
-        <SocialProofSection />
-        <MissionSection />
-        <ProblemSection />
-        <SolutionSection />
-        <PathsSection />
-        <LessonsSection />
-        <BenefitsSection />
-        <AudienceSection />
-        <FinalCtaSection />
+        {sections.map((Section, i) => (
+          <div
+            key={i}
+            className="ccs-fade-up"
+            style={{ "--fade-order": i } as React.CSSProperties}
+          >
+            <Section />
+          </div>
+        ))}
       </div>
     </PageShell>
   );
@@ -66,17 +80,7 @@ function HeroSection() {
         real.
       </p>
 
-      <div className="relative mt-5 flex flex-wrap gap-2.5">
-        <Button href="/teste-de-nivel" size="lg">
-          Descobrir por onde começar (2 min) →
-        </Button>
-        <Button href="/pre-calculo" variant="dark" size="lg">
-          Revisar a base do zero →
-        </Button>
-        <Button href="/calculo-1" variant="ghost" size="lg">
-          Entrar no Cálculo 1 sem medo →
-        </Button>
-      </div>
+      <HeroCtas />
     </section>
   );
 }
@@ -185,7 +189,7 @@ function SolutionSection() {
 
 function PathsSection() {
   return (
-    <section>
+    <section id="trilhas" className="scroll-mt-6">
       <div className="mb-3.5 flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="text-[11.5px] font-bold uppercase tracking-[0.14em] text-terracotta">
@@ -220,7 +224,7 @@ function PathCard({
   return (
     <div
       className={cn(
-        "flex flex-col gap-3 rounded-2 border border-border bg-surface p-[22px] shadow-sm border-l-[3px]",
+        "flex flex-col gap-3 rounded-2 border border-border bg-surface p-[22px] shadow-sm border-l-[3px] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
         accent,
       )}
     >
