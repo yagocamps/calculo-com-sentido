@@ -51,7 +51,12 @@ export function MarkCompleteButton({ lessonPathId }: { lessonPathId: string }) {
         if (new URLSearchParams(window.location.search).get("from") === "level-test") {
           trackCcsEvent(
             ANALYTICS_EVENTS.firstLessonCompleted,
-            { lessonPathId, source: "level_test" },
+            {
+              lesson_id: lessonPathId,
+              recommendation_band:
+                new URLSearchParams(window.location.search).get("band") ?? "unknown",
+              source: "level_test",
+            },
             lessonPathId,
           );
         }
