@@ -53,7 +53,10 @@ export function ResultScreen({
             {result.recommendation.detail}
           </p>
           <div className="mt-6 flex flex-wrap gap-2.5">
-            <Button href={result.recommendation.firstLessonHref} size="lg">
+            <Button
+              href={`${result.recommendation.firstLessonHref}?from=level-test`}
+              size="lg"
+            >
               Começar primeira aula →
             </Button>
             <Button href={result.recommendation.href} variant="soft" size="lg">
