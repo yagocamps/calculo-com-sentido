@@ -53,8 +53,11 @@ export function ResultScreen({
             {result.recommendation.detail}
           </p>
           <div className="mt-6 flex flex-wrap gap-2.5">
-            <Button href={result.recommendation.href} size="lg">
-              {result.recommendation.cta} →
+            <Button href={result.recommendation.firstLessonHref} size="lg">
+              Começar primeira aula →
+            </Button>
+            <Button href={result.recommendation.href} variant="soft" size="lg">
+              Ver trilha completa
             </Button>
             <Button href="/" variant="ghost" size="lg">
               Voltar ao início
