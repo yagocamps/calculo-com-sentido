@@ -12,6 +12,7 @@ import { futureUseDefaults } from "@/data/future-uses";
 import { homeProblem } from "@/data/home";
 import { lessonId, preCalculoModulos } from "@/data/pre-calculo";
 import { visualLabsByLesson } from "@/data/visual-labs";
+import { getSearchIndex } from "@/lib/search";
 
 const errors: string[] = [];
 const registry = {
@@ -144,6 +145,16 @@ for (const kind of requiredVisualKinds) {
   errors.push(`Laboratório visual obrigatório ausente: ${kind}`);
 }
 
+const searchIndex = getSearchIndex();
+const indexedExerciseCount = searchIndex.filter((item) => item.type === "exercicio").length;
+const indexedModuleCount = searchIndex.filter((item) => item.type === "modulo").length;
+if (indexedExerciseCount !== exercicios.length) {
+  errors.push(`Busca indexa ${indexedExerciseCount} de ${exercicios.length} exercícios`);
+}
+if (indexedModuleCount < 10) {
+  errors.push(`Busca indexa poucos módulos: ${indexedModuleCount}`);
+}
+
 const contentText = JSON.stringify(registry);
 const forbiddenClaims = [
   "desce) cada vez mais rápido",
@@ -164,6 +175,7 @@ console.log(`Exercícios únicos: ${exerciseIds.size}`);
 console.log(`Tópicos-gargalo em cinco níveis: ${phase2LevelsByTopic.size}`);
 console.log(`Checkpoints cumulativos: ${Object.keys(moduleCheckpoints).length}`);
 console.log(`Laboratórios visuais centrais: ${Object.keys(visualLabsByLesson).length}`);
+console.log(`Itens na busca global: ${searchIndex.length} (${indexedExerciseCount} exercícios, ${indexedModuleCount} módulos)`);
 console.log(`Falhas: ${errors.length}`);
 for (const error of errors) console.error(`- ${error}`);
 console.log("================================================\n");

@@ -26,6 +26,8 @@ export function ResultScreen({
   const modulosSugeridos = fracos.filter(
     (t, i) => fracos.findIndex((o) => o.modulo.href === t.modulo.href) === i,
   );
+  const firstLessonHref =
+    result.prioritySkill?.href ?? result.recommendation.firstLessonHref;
 
   return (
     <div className="mx-auto max-w-[1080px]">
@@ -52,9 +54,22 @@ export function ResultScreen({
           <p className="mt-2 text-sm font-medium text-ink">
             {result.recommendation.detail}
           </p>
+          {result.prioritySkill && (
+            <div className="mt-4 rounded-2 border border-amber bg-amber-soft/60 px-4 py-3">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-amber-ink">
+                Habilidade prioritária
+              </p>
+              <p className="mt-1 font-semibold text-ink">
+                {result.prioritySkill.label}
+              </p>
+              <p className="mt-1 text-sm text-ink-muted">
+                {result.prioritySkill.reason}
+              </p>
+            </div>
+          )}
           <div className="mt-6 flex flex-wrap gap-2.5">
             <Button
-              href={`${result.recommendation.firstLessonHref}?from=level-test&band=${result.recommendation.band}`}
+              href={`${firstLessonHref}?from=level-test&band=${result.recommendation.band}`}
               size="lg"
             >
               Começar primeira aula →

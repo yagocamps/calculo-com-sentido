@@ -6,6 +6,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { ProgressRing } from "@/components/ui/ProgressRing";
+import { StudentExperiencePanel } from "@/components/progresso/StudentExperiencePanel";
 import { Tag } from "@/components/ui/Tag";
 import {
   buildProgressDashboard,
@@ -255,6 +256,8 @@ export function ProgressoContent() {
               ({dash.trilhaCombinedPercent}%)
             </p>
 
+            <StudentExperiencePanel dash={dash} onRefresh={refresh} />
+
             {dash.reviewTotal > 0 && (
               <Card className="border-l-4 border-l-sage">
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -335,7 +338,7 @@ export function ProgressoContent() {
             {dash.recommendedModule && (
               <Card className="border-l-4 border-l-terracotta">
                 <p className="text-xs font-semibold uppercase tracking-wider text-terracotta">
-                  Módulo recomendado
+                  Continuidade da trilha
                 </p>
                 <div className="mt-2 flex flex-wrap items-center justify-between gap-4">
                   <div>

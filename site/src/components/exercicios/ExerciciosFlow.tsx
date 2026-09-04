@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useDeferredValue, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ExercicioDetail } from "@/components/exercicios/ExercicioDetail";
 import { TypeTag } from "@/components/exercicios/TypeTag";
@@ -41,10 +41,26 @@ export function ExerciciosFlow() {
       : "todos");
   const [tema, setTema] = useState(initialTema);
   const [nivel, setNivel] = useState("todos");
+  const [query, setQuery] = useState(searchParams.get("q") ?? "");
+  const deferredQuery = useDeferredValue(query);
 
   const filtered = useMemo(
-    () => filterExercicios(tema, nivel),
-    [tema, nivel],
+    () => {
+      const normalized = deferredQuery
+        .trim()
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      return filterExercicios(tema, nivel).filter((exercise) => {
+        if (!normalized) return true;
+        return `${exercise.title} ${exercise.tema} ${exercise.area} ${exercise.enunciado}`
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(normalized);
+      });
+    },
+    [tema, nivel, deferredQuery],
   );
 
   const activeId =
@@ -100,6 +116,23 @@ export function ExerciciosFlow() {
             Avance em cinco níveis: fundamento, aplicação direta,
             interpretação, problema e desafio.
           </p>
+
+          <div className="mt-4">
+            <label htmlFor="exercise-search" className="mb-1.5 block text-[10px] font-semibold uppercase tracking-wider text-ink-subtle">
+              Buscar no banco
+            </label>
+            <input
+              id="exercise-search"
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Ex.: frações, velocidade, juros…"
+              className="w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-ink outline-none placeholder:text-ink-subtle focus-visible:border-terracotta"
+            />
+            <p className="mt-1 text-[11px] text-ink-subtle" aria-live="polite">
+              {filtered.length} {filtered.length === 1 ? "exercício encontrado" : "exercícios encontrados"}
+            </p>
+          </div>
 
           <div className="mt-3.5">
             <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-ink-subtle">

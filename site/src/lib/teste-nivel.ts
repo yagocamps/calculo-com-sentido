@@ -1,6 +1,9 @@
 import {
   getRecommendation,
+  scoreByTopic,
   testQuestions,
+  topicoParaModulo,
+  topicosParaReforcar,
   type OptionKey,
   type TestRecommendation,
 } from "@/data/teste-nivel";
@@ -12,6 +15,13 @@ export type TesteNivelResult = {
   total: number;
   completedAt: string;
   recommendation: TestRecommendation;
+  skillScores: ReturnType<typeof scoreByTopic>;
+  prioritySkill?: {
+    label: string;
+    reason: string;
+    href: string;
+    moduleHref: string;
+  };
 };
 
 export function calculateScore(answers: Record<string, OptionKey>): TesteNivelResult {
@@ -22,6 +32,8 @@ export function calculateScore(answers: Record<string, OptionKey>): TesteNivelRe
   const total = testQuestions.length;
   const scorePercent = Math.round((correct / total) * 100);
   const recommendation = getRecommendation(scorePercent);
+  const skillScores = scoreByTopic(answers);
+  const weakest = topicosParaReforcar(answers)[0];
 
   return {
     scorePercent,
@@ -29,6 +41,15 @@ export function calculateScore(answers: Record<string, OptionKey>): TesteNivelRe
     total,
     completedAt: new Date().toISOString(),
     recommendation,
+    skillScores,
+    prioritySkill: weakest
+      ? {
+          label: weakest.label,
+          reason: `${weakest.correct} de ${weakest.total} acertos: esta é a habilidade que mais destrava seu próximo passo.`,
+          href: topicoParaModulo[weakest.topic].firstLessonHref,
+          moduleHref: weakest.modulo.href,
+        }
+      : undefined,
   };
 }
 
@@ -39,6 +60,7 @@ export function saveTestResult(result: TesteNivelResult) {
       levelLabel: result.recommendation.levelLabel,
       band: result.recommendation.band,
       completedAt: result.completedAt,
+      skillScores: result.skillScores,
     },
   });
 }
@@ -55,5 +77,6 @@ export function getLastTestResult(): TesteNivelResult | null {
     total: testQuestions.length,
     completedAt: p.testeNivel.completedAt,
     recommendation,
+    skillScores: p.testeNivel.skillScores ?? ({} as ReturnType<typeof scoreByTopic>),
   };
 }
