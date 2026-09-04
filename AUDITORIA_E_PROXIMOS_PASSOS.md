@@ -34,6 +34,7 @@ Todas carregaram com título e conteúdo principal esperados, sem tela de erro o
 
 A demonstração da aula de Função afim confirmou:
 
+- renderização matemática com KaTeX nas aulas, exercícios e diagnóstico, com leitura acessível;
 - gráfico interativo com controles de taxa e valor inicial;
 - explicação alternativa;
 - exercícios guiados;
@@ -76,7 +77,8 @@ Eventos planejados:
 - `first_lesson_opened`
 - `first_lesson_completed`
 
-A coleta agregada ainda não foi ativada; o MVP atual usa `localStorage`.
+Os quatro eventos do funil já estão instrumentados no Web Analytics da Vercel; o progresso
+individual continua usando `localStorage` e a coleta não envia dados pessoais.
 
 ## Alinhamentos realizados
 
@@ -89,7 +91,8 @@ A coleta agregada ainda não foi ativada; o MVP atual usa `localStorage`.
 ## Próximos passos
 
 1. Manter o foco na versão desktop até a aprovação desta base.
-2. Ativar a coleta agregada da métrica, sem dados pessoais.
+2. Acompanhar a primeira amostra dos eventos do funil no Web Analytics.
 3. Expandir as demonstrações interativas para outras aulas.
 4. Depois, fazer uma rodada dedicada de experiência mobile.
 5. Em uma fase posterior, avaliar autenticação, sincronização do progresso e tutora de IA.
+6. Criar a área “Para professores” em uma fase posterior, conforme combinado.
