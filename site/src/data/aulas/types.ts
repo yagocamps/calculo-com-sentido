@@ -73,6 +73,17 @@ export type AulaContent = {
     formulaAria?: string;
     formulaLegend?: string;
   };
+  /** Demonstração algébrica opcional, exibida na explicação. */
+  demonstracao?: {
+    title: string;
+    intro: string;
+    steps: {
+      title: string;
+      detail: string;
+      formula: string;
+      formulaAria: string;
+    }[];
+  };
   /** Gráfico interativo opcional, exibido na explicação. */
   grafico?: {
     fn: string;
