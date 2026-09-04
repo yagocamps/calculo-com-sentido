@@ -52,7 +52,7 @@ export function PageShell({
         <main
           id="main-content"
           className={cn(
-            "flex-1 overflow-y-auto px-4 pb-9 pt-7 md:px-9 print:overflow-visible",
+            "flex-1 overflow-x-clip overflow-y-auto px-4 pb-9 pt-7 md:px-9 print:overflow-visible",
             className,
           )}
         >
