@@ -30,7 +30,7 @@ export function AulaEmBreve({
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">
             Esta aula faz parte do módulo <b>{modulo.title}</b> e será publicada
-            em breve com o modelo completo (12 seções, exercícios e resumo).
+            em breve com o modelo completo (13 etapas de conteúdo, exercícios e resumo).
           </p>
           <p className="mt-2 text-xs text-ink-subtle">Duração prevista: {aula.duration}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-2">
