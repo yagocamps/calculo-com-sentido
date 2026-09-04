@@ -24,6 +24,10 @@ A janela recomendada é de 7 dias após o início do teste. Isso evita atribuir 
 | `first_lesson_opened` | Ao abrir a aula indicada no resultado | `lesson_id`, `recommendation_band` |
 | `first_lesson_completed` | Ao marcar a primeira aula como concluída | `lesson_id`, `recommendation_band` |
 
+Os eventos são enviados pela integração do Vercel Web Analytics. O CTA da recomendação leva
+`from=level-test` e a faixa recomendada para a primeira aula, permitindo atribuir a abertura
+e a conclusão ao teste sem coletar identidade, nome ou e-mail.
+
 ## Indicadores secundários
 
 - **Conclusão do teste:** `level_test_completed / level_test_started`
@@ -34,9 +38,13 @@ A métrica principal é calculada por usuário único, e não pela quantidade br
 
 ## Estado atual
 
-O progresso do site ainda é salvo apenas no `localStorage`. Isso permite a experiência individual, mas não permite contar pessoas entre navegadores.
+O progresso do site continua salvo no `localStorage`, enquanto os quatro eventos do funil
+já estão instrumentados no Web Analytics da Vercel. Assim, a experiência individual continua
+funcionando sem conta e a análise agregada pode ser feita no painel, sem coletar nome, e-mail
+ou qualquer dado pessoal.
 
-Para obter números agregados, o próximo passo é ativar o Web Analytics da Vercel e enviar esses quatro eventos como eventos personalizados, sem coletar nome, e-mail ou qualquer dado pessoal.
+A disponibilidade de eventos personalizados depende do plano da Vercel; os pageviews do
+Web Analytics continuam sendo úteis para validar a navegação geral.
 
 ## Critério de sucesso inicial
 
