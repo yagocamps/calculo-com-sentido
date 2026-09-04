@@ -30,7 +30,7 @@ export const preCalculoTrilha = {
   stats: [
     { n: "6", label: "Módulos" },
     { n: "59", label: "Aulas" },
-    { n: "240+", label: "Exercícios" },
+    { n: "144", label: "Exercícios" },
     { n: "~8", label: "Semanas" },
   ],
 };
