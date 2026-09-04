@@ -10,6 +10,17 @@ export type AulaExercise = {
   erroComum?: string;
 };
 
+export type AulaDemonstracao = {
+  title: string;
+  intro: string;
+  steps: {
+    title: string;
+    detail: string;
+    formula: string;
+    formulaAria: string;
+  }[];
+};
+
 export type AulaStep = {
   title: string;
   detail: string;
