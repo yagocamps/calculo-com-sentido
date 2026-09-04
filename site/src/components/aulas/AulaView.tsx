@@ -7,6 +7,7 @@ import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FunctionPlot } from "@/components/aulas/FunctionPlot";
 import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
+import { LessonAnalytics } from "@/components/aulas/LessonAnalytics";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
 import { RichText } from "@/components/aulas/RichText";
 import { Section } from "@/components/aulas/Section";
@@ -73,6 +74,7 @@ export function AulaView({
       crumbs={[trilhaRoot, meta.moduleTitle, crumbTitle]}
       right={<MarkCompleteButton lessonPathId={lessonPathId} />}
     >
+      <LessonAnalytics lessonPathId={lessonPathId} />
       <div className="mx-auto grid max-w-[1080px] gap-7 lg:grid-cols-[minmax(0,1fr)_240px]">
         <article className="min-w-0">
           <header className="mb-4">
