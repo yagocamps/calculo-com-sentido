@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { RichText } from "@/components/aulas/RichText";
 import { PageShell } from "@/components/layout/PageShell";
 import { ResultScreen } from "@/components/teste/ResultScreen";
 import { TopicsSidebar } from "@/components/teste/TopicsSidebar";
@@ -17,6 +18,7 @@ import {
   saveTestResult,
   type TesteNivelResult,
 } from "@/lib/teste-nivel";
+import { trackCcsEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 type Phase = "intro" | "quiz" | "result";
@@ -40,6 +42,9 @@ export function TesteNivelFlow() {
   const progressPct = Math.round(((index + (showFeedback ? 1 : 0)) / total) * 100);
 
   const startTest = () => {
+    trackCcsEvent(ANALYTICS_EVENTS.levelTestStarted, {
+      questionCount: total,
+    });
     setPhase("quiz");
     setIndex(0);
     setAnswers({});
@@ -61,6 +66,10 @@ export function TesteNivelFlow() {
     setAnswers(nextAnswers);
     if (index >= total - 1) {
       const r = calculateScore(nextAnswers);
+      trackCcsEvent(ANALYTICS_EVENTS.levelTestCompleted, {
+        scorePercent: r.scorePercent,
+        recommendationBand: r.recommendation.band,
+      });
       setResult(r);
       saveTestResult(r);
       setPhase("result");
@@ -166,19 +175,19 @@ export function TesteNivelFlow() {
             </Tag>
 
             <h2 className="mt-2 font-serif text-[26px] font-medium leading-snug tracking-tight">
-              {question.question}
+              <RichText as="span">{question.question}</RichText>
             </h2>
 
             {question.context && (
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+              <RichText as="p" className="mt-2 text-sm leading-relaxed text-ink-muted">
                 {question.context}
-              </p>
+              </RichText>
             )}
 
             {question.formula && (
-              <code className="mt-3 inline-block rounded-lg border border-border-soft bg-surface-warm px-3.5 py-2 font-mono text-[15px]">
-                {question.formula}
-              </code>
+              <div className="mt-3 inline-block rounded-lg border border-border-soft bg-surface-warm px-3.5 py-2 font-mono text-[15px]">
+                <RichText>{question.formula}</RichText>
+              </div>
             )}
 
             <div className="mt-5 flex flex-col gap-2.5">
@@ -218,7 +227,7 @@ export function TesteNivelFlow() {
                     >
                       {opt.key}
                     </span>
-                    {opt.text}
+                    <RichText as="span">{opt.text}</RichText>
                   </button>
                 );
               })}
@@ -234,7 +243,7 @@ export function TesteNivelFlow() {
                 )}
               >
                 <b>{isCorrect ? "Correto!" : "Não foi dessa vez."}</b>{" "}
-                {question.explanation}
+                <RichText as="span">{question.explanation}</RichText>
               </div>
             )}
 
