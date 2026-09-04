@@ -11,6 +11,7 @@ import { exerciciosFase2 } from "@/data/exercicios-fase2";
 import { futureUseDefaults } from "@/data/future-uses";
 import { homeProblem } from "@/data/home";
 import { lessonId, preCalculoModulos } from "@/data/pre-calculo";
+import { visualLabsByLesson } from "@/data/visual-labs";
 
 const errors: string[] = [];
 const registry = {
@@ -123,6 +124,26 @@ for (const [topic, levels] of phase2LevelsByTopic) {
   }
 }
 
+const requiredVisualKinds = new Set([
+  "limit",
+  "secant",
+  "riemann",
+  "unit-circle",
+  "transformations",
+  "parabola",
+  "product-rule",
+  "ftc",
+]);
+for (const [lessonPath, kind] of Object.entries(visualLabsByLesson)) {
+  if (!catalogSet.has(lessonPath)) {
+    errors.push(`Laboratório visual aponta para aula inexistente: ${lessonPath}`);
+  }
+  requiredVisualKinds.delete(kind);
+}
+for (const kind of requiredVisualKinds) {
+  errors.push(`Laboratório visual obrigatório ausente: ${kind}`);
+}
+
 const contentText = JSON.stringify(registry);
 const forbiddenClaims = [
   "desce) cada vez mais rápido",
@@ -142,6 +163,7 @@ console.log(`Conteúdos registrados: ${registrySet.size}`);
 console.log(`Exercícios únicos: ${exerciseIds.size}`);
 console.log(`Tópicos-gargalo em cinco níveis: ${phase2LevelsByTopic.size}`);
 console.log(`Checkpoints cumulativos: ${Object.keys(moduleCheckpoints).length}`);
+console.log(`Laboratórios visuais centrais: ${Object.keys(visualLabsByLesson).length}`);
 console.log(`Falhas: ${errors.length}`);
 for (const error of errors) console.error(`- ${error}`);
 console.log("================================================\n");
