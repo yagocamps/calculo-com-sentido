@@ -588,7 +588,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Pitágoras dentro do círculo",
       paragraphs: [
-        "No círculo de raio 1, o ponto é (cos θ, sen θ). Esse ponto, a origem e seu reflexo no eixo formam um triângulo retângulo de hipotenusa 1, com catetos cos θ e sen θ.",
+        "No círculo de raio 1, o ponto é \\((\\cos\\theta, \\sin\\theta)\\). Esse ponto, a origem e sua projeção ortogonal no eixo \\(x\\) formam um triângulo retângulo de hipotenusa 1. Os comprimentos dos catetos são \\(|\\cos\\theta|\\) e \\(|\\sin\\theta|\\); seus quadrados não dependem do quadrante.",
         "Aplicando Pitágoras: (cos θ)² + (sen θ)² = 1². Essa é a relação fundamental da trigonometria — vale para qualquer ângulo, sempre.",
       ],
       callout:
@@ -624,7 +624,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         {
           title: "Substituir e isolar passo a passo",
           detail:
-            "\\[\\begin{aligned} 0{,}6^2 + \\cos^2\\theta &= 1 \\\\ \\cos^2\\theta &= 1 - 0{,}36 \\\\ \\cos^2\\theta &= 0{,}64 \\\\ \\cos\\theta &= \\sqrt{0{,}64} = 0{,}8 \\end{aligned}\\]",
+            "\\[\\begin{aligned} 0{,}6^2 + \\cos^2\\theta &= 1 \\\\ \\cos^2\\theta &= 1 - 0{,}36 \\\\ \\cos^2\\theta &= 0{,}64 \\\\ \\cos\\theta &= \\pm\\sqrt{0{,}64} \\end{aligned}\\] Como o enunciado diz que o ângulo é agudo, ele está no primeiro quadrante e o cosseno é positivo: \\(\\cos\\theta = 0{,}8\\).",
         },
         {
           title: "Conferir",

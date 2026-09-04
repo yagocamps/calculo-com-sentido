@@ -1,21 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import { ANALYTICS_EVENTS, trackCcsEvent } from "@/lib/analytics";
+import { trackAttributedFirstLessonOpened } from "@/lib/analytics";
 
 export function LessonAnalytics({ lessonPathId }: { lessonPathId: string }) {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("from") !== "level-test") return;
-
-    trackCcsEvent(
-      ANALYTICS_EVENTS.firstLessonOpened,
-      {
-        lesson_id: lessonPathId,
-        recommendation_band: params.get("band") ?? "unknown",
-        source: "level_test",
-      },
+    trackAttributedFirstLessonOpened(
       lessonPathId,
+      params.get("from") === "level-test" ? params.get("band") : null,
     );
   }, [lessonPathId]);
 

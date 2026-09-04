@@ -139,8 +139,7 @@ export type AulaContent = {
     title: string;
     bullets: string[];
   };
-  /** Vídeo-aulas do YouTube (máx. 3). Quando vazio/ausente, a seção
-   * "Vídeo aula" aparece como "Em breve". */
+  /** Vídeo-aulas do YouTube (máx. 3). Quando vazio/ausente, a seção é ocultada. */
   videos?: AulaVideo[];
   /** Mini-quiz de saída (3 perguntas). 2+ acertos → pronto para a próxima;
    * menos → reforço com link para a seção correspondente. */

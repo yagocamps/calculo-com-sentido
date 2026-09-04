@@ -606,8 +606,8 @@ export const limitesAulas: Record<string, AulaContent> = {
       title: "Comportamento assintótico",
       paragraphs: [
         "\\(\\lim_{x \\to +\\infty} f(x) = L\\): valores de \\(f(x)\\) ficam arbitrariamente perto de \\(L\\) se \\(x\\) for grande o bastante.",
-        "Polinômio vs racional: grau do numerador comparado ao denominador decide se tende a ∞ ou a constante.",
-        "Regra rápida: grau num < grau den → \\(L = 0\\); graus iguais → razão dos coeficientes líderes.",
+        "Em funções racionais, comparar os graus mostra qual termo domina. Se o grau do numerador é menor, o limite é \\(0\\); se os graus são iguais, o limite é a razão dos coeficientes líderes.",
+        "Se o grau do numerador é maior, não basta escrever \\(\\pm\\infty\\): o sinal e o comportamento dependem dos coeficientes, da paridade dos graus e do lado \\(x \\to +\\infty\\) ou \\(x \\to -\\infty\\). A divisão polinomial revela esse comportamento e possíveis assíntotas oblíquas.",
       ],
       callout: "Pense no gráfico \"achatando\" perto de \\(y = L\\).",
       formula: "lim (x→+∞) f(x) = L",
@@ -641,7 +641,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       title: "Leitura",
       paragraphs: [
         "\\(y = 3\\) é o valor de longo prazo do modelo racional.",
-        "Se grau num > grau den, limite no infinito é \\(\\pm\\infty\\) — curva não achata.",
+        "Quando o grau do numerador é maior, os termos líderes determinam a magnitude, mas o sinal deve ser analisado em cada direção. A curva não tem assíntota horizontal finita; uma divisão polinomial pode revelar uma assíntota oblíqua ou polinomial.",
       ],
     },
     erros: {
