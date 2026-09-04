@@ -1046,14 +1046,67 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaAria: "x igual a menos b mais ou menos raiz de b ao quadrado menos quatro a c, tudo sobre dois a",
       formulaLegend: "fórmula de Bhaskara · Δ = b² − 4ac",
     },
-    grafico: {
-      fn: "x^2 - 5 * x + 6",
-      alt: "Parábola de f(x) = x² − 5x + 6, com raízes x = 2 e x = 3 e vértice em (2,5; −0,25).",
-      xDomain: [-1, 6],
-      yDomain: [-4, 12],
-      legend:
-        "Comece com x² − 5x + 6: as raízes são 2 e 3, e o vértice mostra o ponto de menor valor.",
-      interactive: { type: "quadratica", a: 1, b: -5, c: 6 },
+    demonstracao: {
+      title: "De onde vem a fórmula de Bhaskara?",
+      intro:
+        "A fórmula não é uma regra caída do céu. Ela nasce ao transformar a equação geral em um trinômio quadrado perfeito — o método de completar quadrados.",
+      steps: [
+        {
+          title: "Começar pela forma geral",
+          detail:
+            "Considere uma equação do 2º grau qualquer, com a condição essencial de que \\(a \\neq 0\\).",
+          formula: "ax^2 + bx + c = 0,\\qquad a \\\\ne 0",
+          formulaAria: "a x ao quadrado mais b x mais c é igual a zero, com a diferente de zero",
+        },
+        {
+          title: "Dividir tudo por a",
+          detail:
+            "Como \\(a\\) não é zero, podemos dividir cada termo da igualdade pelo mesmo número sem alterar suas soluções.",
+          formula:
+            "x^2 + \\\\frac{b}{a}x + \\\\frac{c}{a} = 0",
+          formulaAria: "x ao quadrado mais b sobre a vezes x mais c sobre a é igual a zero",
+        },
+        {
+          title: "Isolar os termos com x",
+          detail:
+            "Passamos o termo constante para o outro lado. O objetivo é preparar o lado esquerdo para virar um quadrado perfeito.",
+          formula:
+            "x^2 + \\\\frac{b}{a}x = -\\\\frac{c}{a}",
+          formulaAria: "x ao quadrado mais b sobre a vezes x é igual a menos c sobre a",
+        },
+        {
+          title: "Completar o quadrado",
+          detail:
+            "O coeficiente de \\(x\\) é \\(\\frac{b}{a}\\). Tomamos sua metade, \\(\\frac{b}{2a}\\), elevamos ao quadrado e somamos esse mesmo valor nos dois lados.",
+          formula:
+            "x^2 + \\\\frac{b}{a}x + \\\\left(\\\\frac{b}{2a}\\\\right)^2 = -\\\\frac{c}{a} + \\\\left(\\\\frac{b}{2a}\\\\right)^2",
+          formulaAria: "x ao quadrado mais b sobre a vezes x mais b sobre dois a, tudo ao quadrado, é igual a menos c sobre a mais b sobre dois a, tudo ao quadrado",
+        },
+        {
+          title: "Reconhecer o trinômio quadrado perfeito",
+          detail:
+            "O lado esquerdo agora pode ser fatorado. No lado direito, colocamos as frações no mesmo denominador.",
+          formula:
+            "\\\\left(x + \\\\frac{b}{2a}\\\\right)^2 = \\\\frac{b^2 - 4ac}{4a^2}",
+          formulaAria: "x mais b sobre dois a, tudo ao quadrado, é igual a b ao quadrado menos quatro a c sobre quatro a ao quadrado",
+        },
+        {
+          title: "Aplicar a raiz quadrada",
+          detail:
+            "Ao tirar a raiz dos dois lados, aparece o sinal \\(\\pm\\): tanto um número positivo quanto seu oposto têm o mesmo quadrado.",
+          formula:
+            "x + \\\\frac{b}{2a} = \\\\pm \\\\frac{\\\\sqrt{b^2 - 4ac}}{2a}",
+          formulaAria: "x mais b sobre dois a é igual a mais ou menos raiz de b ao quadrado menos quatro a c sobre dois a",
+        },
+        {
+          title: "Isolar x e reorganizar",
+          detail:
+            "Subtraímos \\(\\frac{b}{2a}\\) dos dois lados e juntamos as frações. O resultado é a fórmula de Bhaskara.",
+          formula:
+            "x = \\\\frac{-b \\\\pm \\\\sqrt{b^2 - 4ac}}{2a}",
+          formulaAria: "x é igual a menos b mais ou menos raiz de b ao quadrado menos quatro a c, tudo sobre dois a",
+        },
+      ],
     },
     ondeAparece: {
       title: "Onde isso aparece",
