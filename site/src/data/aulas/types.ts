@@ -82,7 +82,9 @@ export type AulaContent = {
     legend?: string;
     /** Quando presente, o gráfico ganha sliders para manipular os
      * coeficientes (quem não "enxerga" abstração aprende manipulando). */
-    interactive?: { type: "afim"; a: number; b: number };
+    interactive?:
+      | { type: "afim"; a: number; b: number }
+      | { type: "quadratica"; a: number; b: number; c: number };
   };
   ondeAparece: {
     title: string;
