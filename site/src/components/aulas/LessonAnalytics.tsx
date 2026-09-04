@@ -10,7 +10,11 @@ export function LessonAnalytics({ lessonPathId }: { lessonPathId: string }) {
 
     trackCcsEvent(
       ANALYTICS_EVENTS.firstLessonOpened,
-      { lessonPathId, source: "level_test" },
+      {
+        lesson_id: lessonPathId,
+        recommendation_band: params.get("band") ?? "unknown",
+        source: "level_test",
+      },
       lessonPathId,
     );
   }, [lessonPathId]);
