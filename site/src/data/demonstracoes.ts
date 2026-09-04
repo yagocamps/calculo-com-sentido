@@ -8,7 +8,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Inverter a segunda fração",
-          detail: "Mantemos a primeira fração e multiplicamos pelo inverso da segunda: \\\\(\\\\frac{a}{b}\\\\div\\\\frac{c}{d}=\\\\frac{a}{b}\\\\times\\\\frac{d}{c}\\\\).",
+          detail: "Mantemos a primeira fração e multiplicamos pelo inverso da segunda: \\(\\frac{a}{b}\\div\\frac{c}{d}=\\frac{a}{b}\\times\\frac{d}{c}\\).",
           formula: "\\frac{a}{b}\\div\\frac{c}{d}=\\frac{a}{b}\\times\\frac{d}{c}",
           formulaAria: "a sobre b dividido por c sobre d é a sobre b vezes d sobre c",
         },
@@ -54,7 +54,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Escrever a raiz como potência",
-          detail: "A raiz de índice \\\\(n\\\\) equivale a elevar a \\\\(\\\\frac1n\\\\).",
+          detail: "A raiz de índice \\(n\\) equivale a elevar a \\(\\frac1n\\).",
           formula: "\\sqrt[n]{a}=a^{\\frac1n}",
           formulaAria: "raiz n-ésima de a é a elevado a um sobre n",
         },
@@ -80,13 +80,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Abrir o quadrado",
-          detail: "\\\\((a+b)^2\\\\) é o produto \\\\((a+b)(a+b)\\\\).",
+          detail: "\\((a+b)^2\\) é o produto \\((a+b)(a+b)\\).",
           formula: "(a+b)^2=(a+b)(a+b)",
           formulaAria: "a mais b ao quadrado é a mais b vezes a mais b",
         },
         {
           title: "Distribuir e juntar",
-          detail: "Distribuindo, aparecem \\\\(ab\\\\) duas vezes.",
+          detail: "Distribuindo, aparecem \\(ab\\) duas vezes.",
           formula: "(a+b)^2=a^2+ab+ab+b^2=a^2+2ab+b^2",
           formulaAria: "a mais b ao quadrado é a ao quadrado mais dois a b mais b ao quadrado",
         },
@@ -98,13 +98,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Escrever como produto",
-          detail: "\\\\((a-b)^2=(a-b)(a-b)\\\\).",
+          detail: "\\((a-b)^2=(a-b)(a-b)\\).",
           formula: "(a-b)^2=(a-b)(a-b)",
           formulaAria: "a menos b ao quadrado é a menos b vezes a menos b",
         },
         {
           title: "Distribuir os sinais",
-          detail: "Os dois produtos cruzados são \\\\(-ab\\\\).",
+          detail: "Os dois produtos cruzados são \\(-ab\\).",
           formula: "(a-b)^2=a^2-ab-ab+b^2=a^2-2ab+b^2",
           formulaAria: "a menos b ao quadrado é a ao quadrado menos dois a b mais b ao quadrado",
         },
@@ -122,7 +122,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
         },
         {
           title: "Cancelar os opostos",
-          detail: "Como \\\\(-ab+ab=0\\\\), restam apenas os quadrados.",
+          detail: "Como \\(-ab+ab=0\\), restam apenas os quadrados.",
           formula: "(a+b)(a-b)=a^2-b^2",
           formulaAria: "a mais b vezes a menos b é a ao quadrado menos b ao quadrado",
         },
@@ -136,13 +136,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Encontrar o fator comum",
-          detail: "Em \\\\(ax+ay\\\\), o fator \\\\(a\\\\) aparece nos dois termos.",
+          detail: "Em \\(ax+ay\\), o fator \\(a\\) aparece nos dois termos.",
           formula: "ax+ay",
           formulaAria: "a x mais a y",
         },
         {
           title: "Colocar em evidência",
-          detail: "Retiramos \\\\(a\\\\) e deixamos dentro do parêntese o que sobra.",
+          detail: "Retiramos \\(a\\) e deixamos dentro do parêntese o que sobra.",
           formula: "ax+ay=a(x+y)",
           formulaAria: "a x mais a y é a vezes x mais y",
         },
@@ -180,13 +180,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Somar o mesmo valor",
-          detail: "Se \\\\(A=B\\\\), somar \\\\(k\\\\) dos dois lados mantém o equilíbrio.",
+          detail: "Se \\(A=B\\), somar \\(k\\) dos dois lados mantém o equilíbrio.",
           formula: "A=B\\Longrightarrow A+k=B+k",
           formulaAria: "a igual a b implica a mais k igual a b mais k",
         },
         {
           title: "Multiplicar ou dividir",
-          detail: "Multiplicar é sempre permitido; dividir exige \\\\(k\\\\neq0\\\\).",
+          detail: "Multiplicar é sempre permitido; dividir exige \\(k\\neq0\\).",
           formula: "A=B\\Longrightarrow kA=kB,\\qquad\\frac Ak=\\frac Bk\\;(k\\neq0)",
           formulaAria: "a igual a b permite multiplicar por k e dividir por k diferente de zero",
         },
@@ -200,13 +200,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Montar a razão",
-          detail: "Comparamos o desenho \\\\(d\\\\) com a medida real \\\\(D\\\\).",
+          detail: "Comparamos o desenho \\(d\\) com a medida real \\(D\\).",
           formula: "E=\\frac dD",
           formulaAria: "escala é distância do desenho sobre distância real",
         },
         {
           title: "Resolver uma escala 1:n",
-          detail: "Se uma unidade do desenho representa \\\\(n\\\\) unidades reais, multiplicamos por \\\\(n\\\\).",
+          detail: "Se uma unidade do desenho representa \\(n\\) unidades reais, multiplicamos por \\(n\\).",
           formula: "E=\\frac1n\\Longrightarrow D=n\\cdot d",
           formulaAria: "escala um sobre n implica distância real igual a n vezes a desenhada",
         },
@@ -226,7 +226,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
         },
         {
           title: "Isolar a energia",
-          detail: "Multiplicando por \\\\(t\\\\), encontramos a energia.",
+          detail: "Multiplicando por \\(t\\), encontramos a energia.",
           formula: "E=P\\cdot t",
           formulaAria: "energia é potência vezes tempo",
         },
@@ -246,7 +246,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Multiplicar cada termo",
-          detail: "O fator \\\\(a\\\\) não escolhe apenas o primeiro termo; ele alcança \\\\(b\\\\) e \\\\(c\\\\).",
+          detail: "O fator \\(a\\) não escolhe apenas o primeiro termo; ele alcança \\(b\\) e \\(c\\).",
           formula: "a(b+c)=ab+ac",
           formulaAria: "a vezes b mais c é a b mais a c",
         },
@@ -266,13 +266,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Desfazer a soma",
-          detail: "Em \\\\(ax+b=c\\\\), subtraímos \\\\(b\\\\).",
+          detail: "Em \\(ax+b=c\\), subtraímos \\(b\\).",
           formula: "ax+b=c\\Longrightarrow ax=c-b",
           formulaAria: "a x mais b igual a c implica a x igual a c menos b",
         },
         {
           title: "Desfazer a multiplicação",
-          detail: "Depois dividimos por \\\\(a\\\\), com \\\\(a\\\\neq0\\\\).",
+          detail: "Depois dividimos por \\(a\\), com \\(a\\neq0\\).",
           formula: "ax=c-b\\Longrightarrow x=\\frac{c-b}{a}",
           formulaAria: "a x igual a c menos b implica x igual a c menos b sobre a",
         },
@@ -286,13 +286,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Refletir os dois lados",
-          detail: "Ao multiplicar uma desigualdade por \\\\(-1\\\\), os pontos trocam de lado.",
+          detail: "Ao multiplicar uma desigualdade por \\(-1\\), os pontos trocam de lado.",
           formula: "a<b\\Longrightarrow -a>-b",
           formulaAria: "a menor que b implica menos a maior que menos b",
         },
         {
           title: "Aplicar ao isolamento",
-          detail: "Ao dividir por \\\\(-3\\\\), o sinal precisa virar.",
+          detail: "Ao dividir por \\(-3\\), o sinal precisa virar.",
           formula: "-3x\\geq12\\Longrightarrow x\\leq-4",
           formulaAria: "menos três x maior ou igual a doze implica x menor ou igual a menos quatro",
         },
@@ -306,13 +306,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       steps: [
         {
           title: "Escolher termos opostos",
-          detail: "No sistema, \\\\(+y\\\\) e \\\\(-y\\\\) já se anulam ao somar.",
+          detail: "No sistema, \\(+y\\) e \\(-y\\) já se anulam ao somar.",
           formula: "\\begin{cases}x+y=7\\\\x-y=1\\end{cases}",
           formulaAria: "sistema x mais y igual a sete e x menos y igual a um",
         },
         {
           title: "Somar e substituir",
-          detail: "A soma dá \\\\(2x=8\\\\), então \\\\(x=4\\\\); substituindo, \\\\(y=3\\\\).",
+          detail: "A soma dá \\(2x=8\\), então \\(x=4\\); substituindo, \\(y=3\\).",
           formula: "(x+y)+(x-y)=8\\Longrightarrow 2x=8\\Longrightarrow(x,y)=(4,3)",
           formulaAria: "a soma dá dois x igual a oito e a solução é quatro e três",
         },
@@ -332,7 +332,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
         },
         {
           title: "Cancelar e lembrar a restrição",
-          detail: "Cancelamos \\\\(x-3\\\\), mas a expressão original continua proibida em \\\\(x=3\\\\).",
+          detail: "Cancelamos \\(x-3\\), mas a expressão original continua proibida em \\(x=3\\).",
           formula: "\\frac{(x-3)(x+3)}{x-3}=x+3,\\qquad x\\neq3",
           formulaAria: "o resultado é x mais três, com x diferente de três",
         },
@@ -345,7 +345,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Escolher dois pontos",
-        detail: "Considere \\\\(P_1=(x_1,y_1)\\\\) e \\\\(P_2=(x_2,y_2)\\\\), com \\\\(x_2\\\\neq x_1\\\\).",
+        detail: "Considere \\(P_1=(x_1,y_1)\\) e \\(P_2=(x_2,y_2)\\), com \\(x_2\\neq x_1\\).",
         formula: "P_1=(x_1,y_1),\\qquad P_2=(x_2,y_2)",
         formulaAria: "primeiro ponto e segundo ponto",
       },
@@ -357,7 +357,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
       {
         title: "Interpretar o sinal",
-        detail: "\\\\(m>0\\\\) indica reta crescente; \\\\(m<0\\\\), decrescente.",
+        detail: "\\(m>0\\) indica reta crescente; \\(m<0\\), decrescente.",
         formula: "m>0\\Rightarrow\\text{sobe},\\qquad m<0\\Rightarrow\\text{desce}",
         formulaAria: "m positivo sobe e m negativo desce",
       },
@@ -368,13 +368,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Partir da forma ponto-inclinação",
-        detail: "Para um ponto \\\\((x_0,y_0)\\\\), escrevemos a variação vertical em função da horizontal.",
+        detail: "Para um ponto \\((x_0,y_0)\\), escrevemos a variação vertical em função da horizontal.",
         formula: "y-y_0=m(x-x_0)",
         formulaAria: "y menos y zero é m vezes x menos x zero",
       },
       {
         title: "Distribuir e isolar y",
-        detail: "Abrindo o parêntese, a parte constante se reúne em \\\\(b=y_0-mx_0\\\\).",
+        detail: "Abrindo o parêntese, a parte constante se reúne em \\(b=y_0-mx_0\\).",
         formula: "y=mx+y_0-mx_0=mx+b",
         formulaAria: "y é m x mais b",
       },
@@ -393,7 +393,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
       {
         title: "Usar a soma das raízes",
-        detail: "Para \\\\(ax^2+bx+c=0\\\\), a soma das raízes é \\\\(-\\\\frac ba\\\\).",
+        detail: "Para \\(ax^2+bx+c=0\\), a soma das raízes é \\(-\\frac ba\\).",
         formula: "x_1+x_2=-\\frac ba",
         formulaAria: "a soma das raízes é menos b sobre a",
       },
@@ -410,7 +410,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Substituir",
-        detail: "Colocamos \\\\(x_v=-\\\\frac{b}{2a}\\\\) em \\\\(f(x)=ax^2+bx+c\\\\).",
+        detail: "Colocamos \\(x_v=-\\frac{b}{2a}\\) em \\(f(x)=ax^2+bx+c\\).",
         formula: "y_v=f(x_v)=a\\left(-\\frac{b}{2a}\\right)^2+b\\left(-\\frac{b}{2a}\\right)+c",
         formulaAria: "y do vértice é f de x do vértice",
       },
@@ -446,13 +446,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Transformar cada ponto",
-        detail: "Um ponto \\\\((x,y)\\\\) de \\\\(f\\\\) vira \\\\((x,|y|)\\\\).",
+        detail: "Um ponto \\((x,y)\\) de \\(f\\) vira \\((x,|y|)\\).",
         formula: "(x,y)\\longmapsto(x,|y|)",
         formulaAria: "o ponto x y vai para x módulo de y",
       },
       {
         title: "Refletir valores negativos",
-        detail: "Quando \\\\(f(x)<0\\\\), o módulo troca \\\\(y\\\\) por \\\\(-y\\\\).",
+        detail: "Quando \\(f(x)<0\\), o módulo troca \\(y\\) por \\(-y\\).",
         formula: "f(x)<0\\Longrightarrow|f(x)|=-f(x)",
         formulaAria: "se f de x é negativo, módulo de f de x é menos f de x",
       },
@@ -471,7 +471,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Aplicar o fator uma vez",
-        detail: "Um valor inicial \\\\(P_0\\\\), multiplicado por \\\\(r\\\\), vira \\\\(P_1\\\\).",
+        detail: "Um valor inicial \\(P_0\\), multiplicado por \\(r\\), vira \\(P_1\\).",
         formula: "P_1=P_0r",
         formulaAria: "p um é p zero vezes r",
       },
@@ -483,7 +483,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
       {
         title: "Escrever a potência",
-        detail: "A repetição se resume em uma potência; \\\\(r>1\\\\) produz crescimento.",
+        detail: "A repetição se resume em uma potência; \\(r>1\\) produz crescimento.",
         formula: "P_n=P_0r^n",
         formulaAria: "p n é p zero vezes r elevado a n",
       },
@@ -496,13 +496,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Partir da potência",
-        detail: "Começamos com \\\\(a^y=x\\\\), respeitando as restrições da base.",
+        detail: "Começamos com \\(a^y=x\\), respeitando as restrições da base.",
         formula: "a^y=x,\\qquad a>0,\\quad a\\neq1",
         formulaAria: "a elevado a y é x",
       },
       {
         title: "Perguntar pelo expoente",
-        detail: "O logaritmo é o nome dado ao expoente \\\\(y\\\\).",
+        detail: "O logaritmo é o nome dado ao expoente \\(y\\).",
         formula: "\\log_a(x)=y\\Longleftrightarrow a^y=x",
         formulaAria: "logaritmo de x na base a é y se e somente se a elevado a y é x",
       },
@@ -550,7 +550,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
       {
         title: "Generalizar",
-        detail: "Após \\\\(n\\\\) períodos, o fator aparece \\\\(n\\\\) vezes.",
+        detail: "Após \\(n\\) períodos, o fator aparece \\(n\\) vezes.",
         formula: "C_n=C_0(1+i)^n",
         formulaAria: "c n é c zero vezes um mais i elevado a n",
       },
@@ -563,19 +563,19 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Alterar y",
-        detail: "Se \\\\(g(x)=f(x)+k\\\\), cada valor de y recebe o mesmo \\\\(k\\\\).",
+        detail: "Se \\(g(x)=f(x)+k\\), cada valor de y recebe o mesmo \\(k\\).",
         formula: "g(x)=f(x)+k",
         formulaAria: "g de x é f de x mais k",
       },
       {
         title: "Acompanhar um ponto",
-        detail: "Um ponto \\\\((x,y)\\\\) vira \\\\((x,y+k)\\\\).",
+        detail: "Um ponto \\((x,y)\\) vira \\((x,y+k)\\).",
         formula: "(x,y)\\longmapsto(x,y+k)",
         formulaAria: "o ponto x y vai para x y mais k",
       },
       {
         title: "Ler o sinal",
-        detail: "\\\\(k>0\\\\) sobe; \\\\(k<0\\\\) desce; a forma permanece igual.",
+        detail: "\\(k>0\\) sobe; \\(k<0\\) desce; a forma permanece igual.",
         formula: "k>0\\Rightarrow\\text{sobe},\\qquad k<0\\Rightarrow\\text{desce}",
         formulaAria: "k positivo sobe e k negativo desce",
       },
@@ -586,19 +586,19 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Trocar a entrada",
-        detail: "Em \\\\(g(x)=f(x-h)\\\\), usamos o valor antigo em \\\\(x-h\\\\).",
+        detail: "Em \\(g(x)=f(x-h)\\), usamos o valor antigo em \\(x-h\\).",
         formula: "g(x)=f(x-h)",
         formulaAria: "g de x é f de x menos h",
       },
       {
         title: "Acompanhar um ponto",
-        detail: "Um ponto \\\\((u,y)\\\\) de \\\\(f\\\\) vira \\\\((u+h,y)\\\\) em \\\\(g\\\\).",
+        detail: "Um ponto \\((u,y)\\) de \\(f\\) vira \\((u+h,y)\\) em \\(g\\).",
         formula: "(u,y)\\longmapsto(u+h,y)",
         formulaAria: "o ponto u y vai para u mais h y",
       },
       {
         title: "Lembrar o sinal",
-        detail: "O \\\\(x-h\\\\) desloca para a direita quando \\\\(h>0\\\\).",
+        detail: "O \\(x-h\\) desloca para a direita quando \\(h>0\\).",
         formula: "h>0\\Rightarrow\\text{direita}",
         formulaAria: "h positivo desloca para a direita",
       },
@@ -630,7 +630,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Escrever seno e cosseno",
-        detail: "Usamos \\\\(\\\\sin x=\\\\frac oh\\\\) e \\\\(\\\\cos x=\\\\frac ah\\\\).",
+        detail: "Usamos \\(\\sin x=\\frac oh\\) e \\(\\cos x=\\frac ah\\).",
         formula: "\\sin x=\\frac oh,\\qquad\\cos x=\\frac ah",
         formulaAria: "seno é o sobre h e cosseno é a sobre h",
       },
@@ -655,7 +655,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Caso de 45°",
-        detail: "Com catetos 1 e hipotenusa \\\\(\\\\sqrt2\\\\), as duas razões são iguais.",
+        detail: "Com catetos 1 e hipotenusa \\(\\sqrt2\\), as duas razões são iguais.",
         formula: "\\sin45^\\circ=\\cos45^\\circ=\\frac{\\sqrt2}{2}",
         formulaAria: "seno e cosseno de quarenta e cinco são raiz de dois sobre dois",
       },
@@ -678,19 +678,19 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Volta completa",
-        detail: "Uma volta mede \\\\(360^\\\\circ\\\\) e tem arco \\\\(2\\\\pi r\\\\).",
+        detail: "Uma volta mede \\(360^\\circ\\) e tem arco \\(2\\pi r\\).",
         formula: "360^\\circ=2\\pi\\ \\mathrm{rad}",
         formulaAria: "trezentos e sessenta graus são dois pi radianos",
       },
       {
         title: "Meia volta",
-        detail: "Metade da volta corresponde a \\\\(180^\\\\circ\\\\) e \\\\(\\\\pi\\\\) radianos.",
+        detail: "Metade da volta corresponde a \\(180^\\circ\\) e \\(\\pi\\) radianos.",
         formula: "180^\\circ=\\pi\\ \\mathrm{rad}",
         formulaAria: "cento e oitenta graus são pi radianos",
       },
       {
         title: "Converter",
-        detail: "Para passar de graus a radianos, multiplicamos por \\\\(\\\\frac\\\\pi{180}\\\\).",
+        detail: "Para passar de graus a radianos, multiplicamos por \\(\\frac\\pi{180}\\).",
         formula: "\\theta_{\\mathrm{rad}}=\\theta_{\\mathrm{graus}}\\frac{\\pi}{180}",
         formulaAria: "teta em radianos é teta em graus vezes pi sobre cento e oitenta",
       },
@@ -701,13 +701,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Montar a proporção",
-        detail: "A fração do arco é \\\\(\\\\frac{s}{2\\\\pi r}\\\\) e a fração da volta é \\\\(\\\\frac\\\\theta{2\\\\pi}\\\\).",
+        detail: "A fração do arco é \\(\\frac{s}{2\\pi r}\\) e a fração da volta é \\(\\frac\\theta{2\\pi}\\).",
         formula: "\\frac{s}{2\\pi r}=\\frac{\\theta}{2\\pi}",
         formulaAria: "s sobre dois pi r é teta sobre dois pi",
       },
       {
         title: "Simplificar",
-        detail: "Multiplicando pelos denominadores, os \\\\(2\\\\pi\\\\) desaparecem.",
+        detail: "Multiplicando pelos denominadores, os \\(2\\pi\\) desaparecem.",
         formula: "s=r\\theta",
         formulaAria: "s é r vezes teta",
       },
@@ -720,7 +720,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Aplicar Pitágoras",
-        detail: "O ponto \\\\((\\\\cos x,\\\\sin x)\\\\) está na circunferência unitária.",
+        detail: "O ponto \\((\\cos x,\\sin x)\\) está na circunferência unitária.",
         formula: "(\\cos x)^2+(\\sin x)^2=1",
         formulaAria: "cosseno de x ao quadrado mais seno de x ao quadrado é um",
       },
@@ -737,13 +737,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Dividir tudo",
-        detail: "Partimos de \\\\(\\\\sin^2x+\\\\cos^2x=1\\\\).",
+        detail: "Partimos de \\(\\sin^2x+\\cos^2x=1\\).",
         formula: "\\frac{\\sin^2x}{\\cos^2x}+1=\\frac1{\\cos^2x}",
         formulaAria: "seno ao quadrado sobre cosseno ao quadrado mais um é um sobre cosseno ao quadrado",
       },
       {
         title: "Reconhecer as definições",
-        detail: "\\\\(\\\\sin x/\\\\cos x=\\\\tan x\\\\) e \\\\(1/\\\\cos x=\\\\sec x\\\\).",
+        detail: "\\(\\sin x/\\cos x=\\tan x\\) e \\(1/\\cos x=\\sec x\\).",
         formula: "\\tan^2x+1=\\sec^2x",
         formulaAria: "tangente ao quadrado mais um é secante ao quadrado",
       },
@@ -756,19 +756,19 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Associar o ponto",
-        detail: "Para cada ângulo, o ponto é \\\\((\\\\cos x,\\\\sin x)\\\\).",
+        detail: "Para cada ângulo, o ponto é \\((\\cos x,\\sin x)\\).",
         formula: "P(x)=(\\cos x,\\sin x)",
         formulaAria: "p de x é cosseno de x e seno de x",
       },
       {
         title: "Ler a altura",
-        detail: "A coordenada vertical é o seno e fica entre \\\\(-1\\\\) e \\\\(1\\\\).",
+        detail: "A coordenada vertical é o seno e fica entre \\(-1\\) e \\(1\\).",
         formula: "y=\\sin x,\\qquad -1\\leq\\sin x\\leq1",
         formulaAria: "y é seno de x entre menos um e um",
       },
       {
         title: "Marcar pontos",
-        detail: "Os valores \\\\(0,1,0\\\\) em um quarto de volta formam a onda.",
+        detail: "Os valores \\(0,1,0\\) em um quarto de volta formam a onda.",
         formula: "\\sin0=0,\\quad\\sin\\frac\\pi2=1,\\quad\\sin\\pi=0",
         formulaAria: "seno de zero é zero, seno de pi sobre dois é um e seno de pi é zero",
       },
@@ -779,19 +779,19 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Associar o ponto",
-        detail: "O ponto do círculo é \\\\((\\\\cos x,\\\\sin x)\\\\).",
+        detail: "O ponto do círculo é \\((\\cos x,\\sin x)\\).",
         formula: "P(x)=(\\cos x,\\sin x)",
         formulaAria: "p de x é cosseno de x e seno de x",
       },
       {
         title: "Ler a largura",
-        detail: "A coordenada horizontal é o cosseno, entre \\\\(-1\\\\) e \\\\(1\\\\).",
+        detail: "A coordenada horizontal é o cosseno, entre \\(-1\\) e \\(1\\).",
         formula: "y=\\cos x,\\qquad -1\\leq\\cos x\\leq1",
         formulaAria: "y é cosseno de x entre menos um e um",
       },
       {
         title: "Marcar pontos",
-        detail: "Os valores \\\\(1,0,-1\\\\) mostram o início da onda.",
+        detail: "Os valores \\(1,0,-1\\) mostram o início da onda.",
         formula: "\\cos0=1,\\quad\\cos\\frac\\pi2=0,\\quad\\cos\\pi=-1",
         formulaAria: "cosseno de zero é um, cosseno de pi sobre dois é zero e cosseno de pi é menos um",
       },
@@ -804,13 +804,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Aproximar pelo entorno",
-        detail: "Quando \\\\(x\\\\) se aproxima de \\\\(a\\\\), os valores de \\\\(f(x)\\\\) podem se aproximar de \\\\(L\\\\).",
+        detail: "Quando \\(x\\) se aproxima de \\(a\\), os valores de \\(f(x)\\) podem se aproximar de \\(L\\).",
         formula: "\\lim_{x\\to a}f(x)=L",
         formulaAria: "o limite de f de x quando x tende a a é L",
       },
       {
         title: "Separar limite e valor",
-        detail: "Pode haver um furo em \\\\(x=a\\\\) e, ainda assim, o limite existir.",
+        detail: "Pode haver um furo em \\(x=a\\) e, ainda assim, o limite existir.",
         formula: "f(a)\\text{ não existe},\\qquad\\lim_{x\\to a}f(x)=L",
         formulaAria: "f de a não existe, mas o limite pode ser L",
       },
@@ -823,7 +823,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Definir os lados",
-        detail: "Pela esquerda usamos \\\\(x\\\\to a^-\\\\); pela direita, \\\\(x\\\\to a^+\\\\).",
+        detail: "Pela esquerda usamos \\(x\\to a^-\\); pela direita, \\(x\\to a^+\\).",
         formula: "\\lim_{x\\to a^-}f(x),\\qquad\\lim_{x\\to a^+}f(x)",
         formulaAria: "limite pela esquerda e limite pela direita",
       },
@@ -848,13 +848,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Dividir pelo maior grau",
-        detail: "Em um quociente, dividimos todos os termos pela maior potência de \\\\(x\\\\).",
+        detail: "Em um quociente, dividimos todos os termos pela maior potência de \\(x\\).",
         formula: "\\frac{3x^2+2x+1}{x^2-5}=\\frac{3+\\frac2x+\\frac1{x^2}}{1-\\frac5{x^2}}",
         formulaAria: "quociente dividido por x ao quadrado",
       },
       {
         title: "Fazer os termos menores sumirem",
-        detail: "Quando \\\\(x\\\\to\\\\infty\\\\), as frações com x no denominador tendem a zero.",
+        detail: "Quando \\(x\\to\\infty\\), as frações com x no denominador tendem a zero.",
         formula: "\\lim_{x\\to\\infty}\\frac1x=0,\\qquad\\lim_{x\\to\\infty}\\frac1{x^2}=0",
         formulaAria: "esses termos tendem a zero",
       },
@@ -879,7 +879,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
       {
         title: "Encolher o intervalo",
-        detail: "Usamos intervalos cada vez menores ao redor de \\\\(t\\\\).",
+        detail: "Usamos intervalos cada vez menores ao redor de \\(t\\).",
         formula: "v(t)=\\lim_{\\Delta t\\to0}\\frac{s(t+\\Delta t)-s(t)}{\\Delta t}",
         formulaAria: "velocidade em t é o limite",
       },
@@ -898,7 +898,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "O valor precisa existir",
-        detail: "A função precisa ter um valor definido em \\\\(a\\\\).",
+        detail: "A função precisa ter um valor definido em \\(a\\).",
         formula: "f(a)\\text{ existe}",
         formulaAria: "f de a existe",
       },
@@ -923,13 +923,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Começar pela secante",
-        detail: "A inclinação entre \\\\(a\\\\) e \\\\(a+h\\\\) é a variação de f dividida pela variação de x.",
+        detail: "A inclinação entre \\(a\\) e \\(a+h\\) é a variação de f dividida pela variação de x.",
         formula: "\\frac{f(a+h)-f(a)}{h}",
         formulaAria: "f de a mais h menos f de a sobre h",
       },
       {
         title: "Aproximar o ponto",
-        detail: "Fazemos \\\\(h\\\\) tender a zero; a secante vira a tangente.",
+        detail: "Fazemos \\(h\\) tender a zero; a secante vira a tangente.",
         formula: "f'(a)=\\lim_{h\\to0}\\frac{f(a+h)-f(a)}{h}",
         formulaAria: "f linha de a é o limite quando h tende a zero",
       },
@@ -946,19 +946,19 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Substituir a função",
-        detail: "Para \\\\(f(x)=x^2\\\\), temos \\\\(f(x+h)=(x+h)^2\\\\).",
+        detail: "Para \\(f(x)=x^2\\), temos \\(f(x+h)=(x+h)^2\\).",
         formula: "\\frac{(x+h)^2-x^2}{h}",
         formulaAria: "x mais h ao quadrado menos x ao quadrado sobre h",
       },
       {
         title: "Expandir e cancelar",
-        detail: "O \\\\(x^2\\\\) se cancela e colocamos \\\\(h\\\\) em evidência.",
+        detail: "O \\(x^2\\) se cancela e colocamos \\(h\\) em evidência.",
         formula: "\\frac{x^2+2xh+h^2-x^2}{h}=\\frac{h(2x+h)}h=2x+h",
         formulaAria: "a expressão se simplifica para dois x mais h",
       },
       {
         title: "Calcular o limite",
-        detail: "Quando \\\\(h\\\\to0\\\\), sobra \\\\(2x\\\\).",
+        detail: "Quando \\(h\\to0\\), sobra \\(2x\\).",
         formula: "\\lim_{h\\to0}(2x+h)=2x",
         formulaAria: "o limite é dois x",
       },
@@ -971,19 +971,19 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Partir da definição",
-        detail: "Para \\\\(f(x)=x^n\\\\), usamos o quociente de diferenças.",
+        detail: "Para \\(f(x)=x^n\\), usamos o quociente de diferenças.",
         formula: "f'(x)=\\lim_{h\\to0}\\frac{(x+h)^n-x^n}{h}",
         formulaAria: "f linha de x é o limite da diferença",
       },
       {
         title: "Observar o termo de primeira ordem",
-        detail: "No desenvolvimento, o termo linear é \\\\(nx^{n-1}h\\\\); os outros contêm \\\\(h^2\\\\) ou mais.",
+        detail: "No desenvolvimento, o termo linear é \\(nx^{n-1}h\\); os outros contêm \\(h^2\\) ou mais.",
         formula: "(x+h)^n=x^n+nx^{n-1}h+\\text{termos com }h^2",
         formulaAria: "o termo linear é n x elevado a n menos um vezes h",
       },
       {
         title: "Cancelar e limitar",
-        detail: "Após dividir por \\\\(h\\\\), os termos com h desaparecem.",
+        detail: "Após dividir por \\(h\\), os termos com h desaparecem.",
         formula: "\\frac{d}{dx}x^n=nx^{n-1}",
         formulaAria: "a derivada de x elevado a n é n vezes x elevado a n menos um",
       },
@@ -996,7 +996,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Adicionar e retirar um termo",
-        detail: "Separamos a diferença adicionando \\\\(u(x)v(x+h)\\\\) no numerador.",
+        detail: "Separamos a diferença adicionando \\(u(x)v(x+h)\\) no numerador.",
         formula: "\\frac{u(x+h)v(x+h)-u(x)v(x)}h",
         formulaAria: "diferença do produto sobre h",
       },
@@ -1008,7 +1008,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
       {
         title: "Fazer o limite",
-        detail: "Quando \\\\(h\\\\to0\\\\), \\\\(v(x+h)\\\\to v(x)\\\\).",
+        detail: "Quando \\(h\\to0\\), \\(v(x+h)\\to v(x)\\).",
         formula: "(uv)'=u'v+uv'",
         formulaAria: "a derivada do produto é u linha v mais u v linha",
       },
@@ -1019,13 +1019,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Reescrever",
-        detail: "Para \\\\(v\\\\neq0\\\\), escrevemos \\\\(u/v=u\\\\cdot v^{-1}\\\\).",
+        detail: "Para \\(v\\neq0\\), escrevemos \\(u/v=u\\cdot v^{-1}\\).",
         formula: "\\frac uv=u\\,v^{-1}",
         formulaAria: "u sobre v é u vezes v elevado a menos um",
       },
       {
         title: "Derivar o inverso",
-        detail: "A derivada de \\\\(v^{-1}\\\\) é \\\\(-v'/v^2\\\\).",
+        detail: "A derivada de \\(v^{-1}\\) é \\(-v'/v^2\\).",
         formula: "(v^{-1})'=-\\frac{v'}{v^2}",
         formulaAria: "a derivada do inverso de v é menos v linha sobre v ao quadrado",
       },
@@ -1044,7 +1044,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Criar uma variável intermediária",
-        detail: "Escreva \\\\(u=g(x)\\\\) e \\\\(y=f(u)\\\\).",
+        detail: "Escreva \\(u=g(x)\\) e \\(y=f(u)\\).",
         formula: "u=g(x),\\qquad y=f(u)",
         formulaAria: "u é g de x e y é f de u",
       },
@@ -1069,13 +1069,13 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Aproximar por retângulos",
-        detail: "Cada retângulo tem altura \\\\(f(x_i^*)\\\\) e base \\\\(\\\\Delta x\\\\).",
+        detail: "Cada retângulo tem altura \\(f(x_i^*)\\) e base \\(\\Delta x\\).",
         formula: "S_n=\\sum_{i=1}^n f(x_i^*)\\Delta x",
         formulaAria: "s n é a soma das áreas dos retângulos",
       },
       {
         title: "Refinar a divisão",
-        detail: "Dividimos o intervalo em mais partes; assim \\\\(\\\\Delta x\\\\) diminui.",
+        detail: "Dividimos o intervalo em mais partes; assim \\(\\Delta x\\) diminui.",
         formula: "\\Delta x=\\frac{b-a}{n},\\qquad n\\to\\infty",
         formulaAria: "delta x é b menos a sobre n",
       },
@@ -1100,7 +1100,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
       {
         title: "Deixar os retângulos finos",
-        detail: "Quanto menor \\\\(\\\\Delta x\\\\), mais a soma acompanha a curva.",
+        detail: "Quanto menor \\(\\Delta x\\), mais a soma acompanha a curva.",
         formula: "\\Delta x\\to0",
         formulaAria: "delta x tende a zero",
       },
@@ -1119,19 +1119,19 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     steps: [
       {
         title: "Criar uma área acumulada",
-        detail: "Defina \\\\(F(x)\\\\) como a área desde \\\\(a\\\\) até \\\\(x\\\\).",
+        detail: "Defina \\(F(x)\\) como a área desde \\(a\\) até \\(x\\).",
         formula: "F(x)=\\int_a^x f(t)\\,dt",
         formulaAria: "f maiúsculo de x é a integral de a até x",
       },
       {
         title: "Derivar a área",
-        detail: "Ao avançar um pouco em x, acrescentamos um retângulo de altura aproximadamente \\\\(f(x)\\\\).",
+        detail: "Ao avançar um pouco em x, acrescentamos um retângulo de altura aproximadamente \\(f(x)\\).",
         formula: "F'(x)=f(x)",
         formulaAria: "f maiúsculo linha de x é f de x",
       },
       {
         title: "Usar a antiderivada",
-        detail: "Se \\\\(F'=f\\\\), a área entre os limites é a diferença dos valores.",
+        detail: "Se \\(F'=f\\), a área entre os limites é a diferença dos valores.",
         formula: "\\int_a^b f(x)\\,dx=F(b)-F(a)",
         formulaAria: "a integral de a até b é f de b menos f de a",
       },
