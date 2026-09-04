@@ -49,7 +49,7 @@ export const testQuestions: TestQuestion[] = [
     ],
     correct: "B",
     explanation:
-      "Primeiro 7 × 2 = 14, depois 18 + 14 = 32. Erro comum: somar 18 + 7 antes de multiplicar.",
+      "Primeiro \\(7 \\\\times 2 = 14\\), depois \\(18 + 14 = 32\\). Erro comum: somar \\(18 + 7\\) antes de multiplicar.",
   },
   {
     id: "q02",
@@ -78,7 +78,7 @@ export const testQuestions: TestQuestion[] = [
       { key: "D", text: "\\(2^1\\)" },
     ],
     correct: "A",
-    explanation: "Mesma base: somamos os expoentes. 2³ × 2² = 2⁵ = 32.",
+    explanation: "Mesma base: somamos os expoentes. \\\\(2^3 \\\\times 2^2 = 2^5 = 32\\\\).",
   },
   {
     id: "q04",
@@ -93,7 +93,7 @@ export const testQuestions: TestQuestion[] = [
       { key: "D", text: "40,5" },
     ],
     correct: "B",
-    explanation: "9 × 9 = 81, então √81 = 9.",
+    explanation: "\\\\(9 \\\\times 9 = 81\\\\), então \\\\(\\\\sqrt{81} = 9\\\\).",
   },
   {
     id: "q05",
@@ -109,7 +109,7 @@ export const testQuestions: TestQuestion[] = [
       { key: "D", text: "x = 2" },
     ],
     correct: "B",
-    explanation: "2x = 8 → x = 4. Subtraia 6 dos dois lados antes de dividir.",
+    explanation: "\\\\(2x = 8 \\\\Rightarrow x = 4\\\\). Subtraia 6 dos dois lados antes de dividir.",
   },
   {
     id: "q06",
@@ -124,7 +124,7 @@ export const testQuestions: TestQuestion[] = [
       { key: "D", text: "Nenhuma solução real" },
     ],
     correct: "A",
-    explanation: "x² = 9 → x = 3 ou x = −3. São as duas raízes reais.",
+    explanation: "\\\\(x^2 = 9 \\\\Rightarrow x = 3\\\\) ou \\\\(x = -3\\\\). São as duas raízes reais.",
   },
   {
     id: "q07",
@@ -163,7 +163,7 @@ export const testQuestions: TestQuestion[] = [
       { key: "D", text: "27" },
     ],
     correct: "B",
-    explanation: "Substitua x = 3: f(3) = 3² = 9.",
+    explanation: "Substitua \\\\(x = 3\\\\): \\\\(f(3) = 3^2 = 9\\\\).",
   },
   {
     id: "q09",
@@ -180,7 +180,7 @@ export const testQuestions: TestQuestion[] = [
     ],
     correct: "A",
     explanation:
-      "O 2 é o coeficiente angular (inclinação). O +1 é o valor em x = 0 (ordenada na origem).",
+      "O 2 é o coeficiente angular (inclinação). O +1 é o valor em \\\\(x = 0\\\\) (ordenada na origem).",
   },
   {
     id: "q10",
@@ -188,13 +188,13 @@ export const testQuestions: TestQuestion[] = [
     topicLabel: "Trigonometria",
     question: "Em um triângulo retângulo, \\(\\operatorname{sen}(30^\\circ)\\) é igual a:",
     options: [
-      { key: "A", text: "\\frac{1}{2}" },
-      { key: "B", text: "\\frac{\\sqrt{3}}{2}" },
-      { key: "C", text: "\\frac{\\sqrt{2}}{2}" },
+      { key: "A", text: "\\(\\frac{1}{2}\\)" },
+      { key: "B", text: "\\(\\frac{\\sqrt{3}}{2}\\)" },
+      { key: "C", text: "\\(\\frac{\\sqrt{2}}{2}\\)" },
       { key: "D", text: "1" },
     ],
     correct: "A",
-    explanation: "sen(30°) = 1/2 é um valor clássico da trigonometria básica.",
+    explanation: "\\\\(\\\\operatorname{sen}(30^\\\\circ) = \\\\frac{1}{2}\\\\) é um valor clássico da trigonometria básica.",
   },
   {
     id: "q11",
@@ -208,7 +208,7 @@ export const testQuestions: TestQuestion[] = [
       { key: "D", text: "Indefinido" },
     ],
     correct: "B",
-    explanation: "No círculo trigonométrico, cos(0°) = 1.",
+    explanation: "No círculo trigonométrico, \\\\(\\\\cos(0^\\\\circ) = 1\\\\).",
   },
   {
     id: "q12",
@@ -225,7 +225,7 @@ export const testQuestions: TestQuestion[] = [
     ],
     correct: "A",
     explanation:
-      "Substituindo x = 2 em x + 3 obtemos 5. O limite coincide com o valor da função afim.",
+      "Substituindo \\\\(x = 2\\\\) em \\\\(x + 3\\\\) obtemos \\\\(5\\\\). O limite coincide com o valor da função afim.",
   },
   {
     id: "q13",
@@ -241,7 +241,7 @@ export const testQuestions: TestQuestion[] = [
     ],
     correct: "B",
     explanation:
-      "Dentro dos parênteses: 4 − 2 = 2. Depois 3 × 2 = 6. Por fim 20 − 6 = 14. Erro comum: fazer 20 − 3 primeiro.",
+      "Dentro dos parênteses: \\\\(4 - 2 = 2\\\\). Depois \\\\(3 \\\\times 2 = 6\\\\). Por fim \\\\(20 - 6 = 14\\\\). Erro comum: fazer \\\\(20 - 3\\\\) primeiro.",
   },
   {
     id: "q14",
@@ -257,7 +257,7 @@ export const testQuestions: TestQuestion[] = [
     ],
     correct: "A",
     explanation:
-      "Menos com menos dá mais: (−5) × (−4) = 20. Depois 20 + (−10) = 10. Erro comum: manter o sinal negativo no produto.",
+      "Menos com menos dá mais: \\\\((-5) \\\\times (-4) = 20\\\\). Depois \\\\(20 + (-10) = 10\\\\). Erro comum: manter o sinal negativo no produto.",
   },
   {
     id: "q15",
@@ -272,7 +272,7 @@ export const testQuestions: TestQuestion[] = [
     ],
     correct: "A",
     explanation:
-      "Em multiplicação de frações, multiplica-se em linha: (2 × 3)/(3 × 5) = 6/15 = 2/5. Não é preciso igualar denominadores — isso só vale para soma.",
+      "Em multiplicação de frações, multiplica-se em linha: \\\\(\\\\frac{2 \\\\times 3}{3 \\\\times 5} = \\\\frac{6}{15} = \\\\frac{2}{5}\\\\). Não é preciso igualar denominadores — isso só vale para soma.",
   },
   {
     id: "q16",
@@ -319,7 +319,7 @@ export const testQuestions: TestQuestion[] = [
     ],
     correct: "A",
     explanation:
-      "3x − 6 = x + 8 → 3x − x = 8 + 6 → 2x = 14 → x = 7. Erro comum: distribuir o 3 só no x e esquecer o −2.",
+      "\\\\(3x - 6 = x + 8 \\\\Rightarrow 3x - x = 8 + 6 \\\\Rightarrow 2x = 14 \\\\Rightarrow x = 7\\\\). Erro comum: distribuir o 3 só no x e esquecer o \\\\(-2\\\\).",
   },
   {
     id: "q19",
@@ -403,7 +403,7 @@ export const testQuestions: TestQuestion[] = [
     ],
     correct: "B",
     explanation:
-      "Dividir 1 por números cada vez maiores dá resultados cada vez menores: 1/1000 = 0,001. O valor tende a 0 sem nunca chegar lá.",
+      "Dividir \\\\(1\\\\) por números cada vez maiores dá resultados cada vez menores: \\\\(\\\\frac{1}{1000} = 0{,}001\\\\). O valor tende a \\\\(0\\\\) sem nunca chegar lá.",
   },
   {
     id: "q24",
