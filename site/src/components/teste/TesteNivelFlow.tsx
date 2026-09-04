@@ -43,7 +43,7 @@ export function TesteNivelFlow() {
 
   const startTest = () => {
     trackCcsEvent(ANALYTICS_EVENTS.levelTestStarted, {
-      questionCount: total,
+      question_count: total,
     });
     setPhase("quiz");
     setIndex(0);
@@ -67,8 +67,8 @@ export function TesteNivelFlow() {
     if (index >= total - 1) {
       const r = calculateScore(nextAnswers);
       trackCcsEvent(ANALYTICS_EVENTS.levelTestCompleted, {
-        scorePercent: r.scorePercent,
-        recommendationBand: r.recommendation.band,
+        score_percent: r.scorePercent,
+        recommendation_band: r.recommendation.band,
       });
       setResult(r);
       saveTestResult(r);
