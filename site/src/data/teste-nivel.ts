@@ -434,6 +434,7 @@ export type TestRecommendation = {
   detail: string;
   href: string;
   cta: string;
+  firstLessonHref: string;
 };
 
 export function getRecommendation(scorePercent: number): TestRecommendation {
@@ -448,6 +449,7 @@ export function getRecommendation(scorePercent: number): TestRecommendation {
         "Comece pelo Módulo 1 — Fundamentos matemáticos na trilha de Pré-Cálculo.",
       href: "/pre-calculo",
       cta: "Ir para Pré-Cálculo",
+      firstLessonHref: "/pre-calculo/fundamentos/operacoes-basicas",
     };
   }
   if (scorePercent <= 70) {
@@ -461,6 +463,7 @@ export function getRecommendation(scorePercent: number): TestRecommendation {
         "Sugestão: comece pelo módulo Funções ou revise equações se sentir insegurança.",
       href: "/pre-calculo",
       cta: "Acessar trilha Pré-Cálculo",
+      firstLessonHref: "/pre-calculo/fundamentos/operacoes-basicas",
     };
   }
   return {
@@ -473,6 +476,7 @@ export function getRecommendation(scorePercent: number): TestRecommendation {
       "Recomendamos o módulo “Antes do Cálculo” e depois “Limites sem trauma”.",
     href: "/calculo-1",
     cta: "Acessar trilha Cálculo 1",
+    firstLessonHref: "/calculo-1/antes-do-calculo/o-que-e-calculo-1",
   };
 }
 
