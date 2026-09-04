@@ -5,11 +5,11 @@ import { RichText } from "@/components/aulas/RichText";
 import { RevealBlock } from "@/components/exercicios/RevealBlock";
 import { TypeTag } from "@/components/exercicios/TypeTag";
 import { Button } from "@/components/ui/Button";
-import { LevelTag } from "@/components/ui/Tag";
+import { PedagogicalLevelTag } from "@/components/ui/Tag";
 import Link from "next/link";
 import { exercicios, type Exercicio } from "@/data/exercicios";
 import { checkAnswer, type CheckResult } from "@/lib/answer-check";
-import { levelOrder } from "@/lib/exercicios";
+import { levelOrder, pedagogicalLevelOf } from "@/lib/exercicios";
 import {
   isExerciseComplete,
   markExerciseComplete,
@@ -25,7 +25,7 @@ function recommendNext(
   current: Exercicio,
   outcome: "correct" | "incorrect",
 ): Exercicio | null {
-  const idx = levelOrder.indexOf(current.level);
+  const idx = levelOrder.indexOf(pedagogicalLevelOf(current));
   const targetIdx =
     outcome === "correct"
       ? Math.min(idx + 1, levelOrder.length - 1)
@@ -35,8 +35,10 @@ function recommendNext(
     (e) => e.temaSlug === current.temaSlug && e.id !== current.id,
   );
   return (
-    sameTema.find((e) => e.level === targetLevel && !isExerciseComplete(e.id)) ??
-    sameTema.find((e) => e.level === targetLevel) ??
+    sameTema.find(
+      (e) => pedagogicalLevelOf(e) === targetLevel && !isExerciseComplete(e.id),
+    ) ??
+    sameTema.find((e) => pedagogicalLevelOf(e) === targetLevel) ??
     sameTema.find((e) => !isExerciseComplete(e.id)) ??
     null
   );
@@ -143,7 +145,7 @@ export function ExercicioDetail({
             <span className="font-mono text-xs text-ink-subtle">
               {exercicio.num}
             </span>
-            <LevelTag level={exercicio.level} />
+            <PedagogicalLevelTag level={pedagogicalLevelOf(exercicio)} />
             <TypeTag type={exercicio.type} />
           </div>
           <h2 className="mt-2 font-serif text-[22px] font-medium tracking-tight">

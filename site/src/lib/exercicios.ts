@@ -1,8 +1,21 @@
 import {
   exercicios,
-  type ExerciseLevel,
   type Exercicio,
+  type PedagogicalExerciseLevel,
 } from "@/data/exercicios";
+
+export function pedagogicalLevelOf(
+  exercise: Exercicio,
+): PedagogicalExerciseLevel {
+  if (exercise.pedagogicalLevel) return exercise.pedagogicalLevel;
+  if (exercise.level === "facil") return 1;
+  if (exercise.type === "interpretacao" || exercise.type === "compreensao") {
+    return 3;
+  }
+  if (exercise.level === "medio") return 2;
+  if (exercise.level === "dificil") return 4;
+  return 5;
+}
 
 export function getExercicio(id: string): Exercicio | undefined {
   return exercicios.find((e) => e.id === id);
@@ -14,7 +27,8 @@ export function filterExercicios(
 ): Exercicio[] {
   return exercicios.filter((e) => {
     const temaOk = temaSlug === "todos" || e.temaSlug === temaSlug;
-    const levelOk = levelSlug === "todos" || e.level === levelSlug;
+    const levelOk =
+      levelSlug === "todos" || pedagogicalLevelOf(e) === Number(levelSlug);
     return temaOk && levelOk;
   });
 }
@@ -31,9 +45,4 @@ export const typeLabels: Record<Exercicio["type"], string> = {
   interpretacao: "Interpretação",
 };
 
-export const levelOrder: ExerciseLevel[] = [
-  "facil",
-  "medio",
-  "dificil",
-  "desafio",
-];
+export const levelOrder: PedagogicalExerciseLevel[] = [1, 2, 3, 4, 5];

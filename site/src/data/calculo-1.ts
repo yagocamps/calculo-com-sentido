@@ -1,15 +1,16 @@
 import type { TrilhaModuloData } from "@/data/trilha-module";
+import { calculo1Phase2Catalog } from "@/data/aulas/calculo-1/fase2";
 
 export const calculo1Trilha = {
   slug: "calculo-1",
   title: "Cálculo 1",
   eyebrow: "Trilha · A faculdade sem medo",
   description:
-    "Limites, derivadas e integrais explicados primeiro pela ideia, depois pela fórmula. Sete módulos, sempre com aplicação real em engenharia, economia, física e cotidiano.",
+    "Limites, derivadas e integrais completos: primeiro a ideia, depois a técnica, sempre com aplicação, cinco níveis de prática e checkpoints cumulativos.",
   stats: [
     { n: "7", label: "Módulos" },
-    { n: "62", label: "Aulas" },
-    { n: "121", label: "Exercícios" },
+    { n: "91", label: "Aulas" },
+    { n: "176", label: "Exercícios" },
     { n: "~10", label: "Semanas" },
   ],
 };
@@ -74,6 +75,7 @@ export const calculo1Modulos: TrilhaModuloData[] = [
       { slug: "interpretacao-grafica", title: "Interpretar o que o gráfico diz", duration: "10 min", available: true },
       { slug: "custo-receita", title: "Custo, receita e lucro", duration: "12 min", available: true },
       { slug: "velocidade-temperatura", title: "Velocidade e temperatura", duration: "10 min", available: true },
+      ...calculo1Phase2Catalog["funcoes-para-calculo"],
       { slug: "revisao-funcoes-calculo", title: "Revisão do módulo", duration: "8 min", available: true },
     ],
   },
@@ -110,6 +112,7 @@ export const calculo1Modulos: TrilhaModuloData[] = [
       { slug: "assintotas", title: "Assíntotas", duration: "12 min", available: true },
       { slug: "velocidade-instantanea", title: "Velocidade instantânea", duration: "14 min", available: true },
       { slug: "aplicacoes-limites", title: "Aplicações de limites", duration: "10 min", available: true },
+      ...calculo1Phase2Catalog.limites,
       { slug: "revisao-limites", title: "Revisão do módulo", duration: "9 min", available: true },
     ],
   },
@@ -140,6 +143,7 @@ export const calculo1Modulos: TrilhaModuloData[] = [
       { slug: "assintotas-continuidade", title: "Assíntotas e continuidade", duration: "10 min", available: true },
       { slug: "continuidade-ponto", title: "Continuidade em um ponto", duration: "11 min", available: true },
       { slug: "continuidade-intervalo", title: "Continuidade em intervalos", duration: "10 min", available: true },
+      ...calculo1Phase2Catalog.continuidade,
       { slug: "revisao-continuidade", title: "Revisão do módulo", duration: "8 min", available: true },
     ],
   },
@@ -176,6 +180,7 @@ export const calculo1Modulos: TrilhaModuloData[] = [
       { slug: "interpretacao-derivada", title: "Interpretar a derivada", duration: "11 min", available: true },
       { slug: "velocidade-aceleracao", title: "Velocidade e aceleração", duration: "12 min", available: true },
       { slug: "custo-marginal", title: "Custo e lucro marginal", duration: "11 min", available: true },
+      ...calculo1Phase2Catalog.derivadas,
       { slug: "revisao-derivadas", title: "Revisão do módulo", duration: "9 min", available: true },
     ],
   },
@@ -209,6 +214,7 @@ export const calculo1Modulos: TrilhaModuloData[] = [
       { slug: "velocidade-producao", title: "Velocidade e produção", duration: "12 min", available: true },
       { slug: "area-volume-max", title: "Área e volume máximos", duration: "13 min", available: true },
       { slug: "lucro-maximo", title: "Lucro máximo na prática", duration: "12 min", available: true },
+      ...calculo1Phase2Catalog["aplicacoes-derivadas"],
       { slug: "revisao-aplic-derivadas", title: "Revisão do módulo", duration: "8 min", available: true },
     ],
   },
@@ -244,6 +250,7 @@ export const calculo1Modulos: TrilhaModuloData[] = [
       { slug: "consumo-acumulado", title: "Consumo acumulado", duration: "11 min", available: true },
       { slug: "area-volume-integral", title: "Área e volume", duration: "13 min", available: true },
       { slug: "aplicacoes-integrais", title: "Aplicações práticas", duration: "10 min", available: true },
+      ...calculo1Phase2Catalog.integrais,
       { slug: "revisao-integrais", title: "Revisão do módulo", duration: "9 min", available: true },
     ],
   },

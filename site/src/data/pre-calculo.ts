@@ -1,4 +1,5 @@
 import type { ModuleState } from "@/components/trilhas/ModuleCard";
+import { preCalculoPhase2Catalog } from "@/data/aulas/pre-calculo/fase2";
 
 export type PreCalculoAula = {
   slug: string;
@@ -26,11 +27,11 @@ export const preCalculoTrilha = {
   title: "Pré-Cálculo",
   eyebrow: "Trilha · A base que faltava",
   description:
-    "Seis módulos para você revisar (ou aprender do zero) tudo que o ensino médio deveria ter ensinado. Cada módulo tem aulas curtas, exemplos aplicados e exercícios em quatro níveis.",
+    "Sete módulos para revisar a base, preencher as pontes para Cálculo e praticar em cinco níveis. Cada etapa inclui exemplos aplicados e checkpoint cumulativo.",
   stats: [
-    { n: "6", label: "Módulos" },
-    { n: "59", label: "Aulas" },
-    { n: "144", label: "Exercícios" },
+    { n: "7", label: "Módulos" },
+    { n: "75", label: "Aulas" },
+    { n: "164", label: "Exercícios" },
     { n: "~8", label: "Semanas" },
   ],
 };
@@ -64,6 +65,7 @@ export const preCalculoModulos: PreCalculoModulo[] = [
     ],
     lessons: [
       { slug: "operacoes-basicas", title: "Operações básicas e ordem", duration: "10 min", available: true },
+      ...preCalculoPhase2Catalog.fundamentos,
       { slug: "fracoes", title: "Frações na prática", duration: "12 min", available: true },
       { slug: "potenciacao", title: "Potenciação", duration: "11 min", available: true },
       { slug: "radiciacao", title: "Radiciação", duration: "10 min", available: true },
@@ -107,6 +109,7 @@ export const preCalculoModulos: PreCalculoModulo[] = [
       { slug: "inequacoes", title: "Inequações", duration: "13 min", available: true },
       { slug: "sistemas-equacoes", title: "Sistemas de equações", duration: "14 min", available: true },
       { slug: "simplificacao", title: "Simplificação algébrica", duration: "10 min", available: true },
+      ...preCalculoPhase2Catalog.algebra,
       { slug: "orcamentos-planos", title: "Orçamentos e planos", duration: "10 min", available: true },
       { slug: "custos-producao", title: "Custos de produção", duration: "11 min", available: true },
       { slug: "receita-despesa", title: "Receita e despesa", duration: "10 min", available: true },
@@ -141,11 +144,14 @@ export const preCalculoModulos: PreCalculoModulo[] = [
     lessons: [
       { slug: "o-que-e-funcao", title: "O que é uma função?", duration: "10 min", available: true },
       { slug: "dominio-imagem", title: "Domínio e imagem", duration: "11 min", available: true },
+      ...preCalculoPhase2Catalog.funcoes.filter((lesson) => lesson.slug === "polinomios-e-zeros"),
       { slug: "funcao-afim", title: "Função afim", duration: "12 min", available: true },
       { slug: "funcao-quadratica", title: "Função quadrática", duration: "14 min", available: true },
       { slug: "funcao-modular", title: "Função modular", duration: "11 min", available: true },
+      ...preCalculoPhase2Catalog.funcoes.filter((lesson) => ["funcoes-racionais", "funcoes-por-partes"].includes(lesson.slug)),
       { slug: "funcao-exponencial", title: "Função exponencial", duration: "13 min", available: true },
       { slug: "funcao-logaritmica", title: "Função logarítmica", duration: "13 min", available: true },
+      ...preCalculoPhase2Catalog.funcoes.filter((lesson) => ["composicao-funcoes", "funcoes-inversas"].includes(lesson.slug)),
       { slug: "corrida-aplicativo", title: "Aplicação: corrida de app", duration: "9 min", available: true },
       { slug: "juros-compostos", title: "Aplicação: juros compostos", duration: "10 min", available: true },
       { slug: "custo-producao", title: "Aplicação: custo de produção", duration: "10 min", available: true },
@@ -182,14 +188,27 @@ export const preCalculoModulos: PreCalculoModulo[] = [
       { slug: "crescimento-decrescimento", title: "Crescimento e decrescimento", duration: "12 min", available: true },
       { slug: "interpretacao-visual", title: "Interpretação visual", duration: "10 min", available: true },
       { slug: "translacao-graficos", title: "Translação de gráficos", duration: "11 min", available: true },
+      ...preCalculoPhase2Catalog.graficos,
       { slug: "vendas-precos", title: "Vendas e preços", duration: "9 min", available: true },
       { slug: "temperatura-consumo", title: "Temperatura e consumo", duration: "10 min", available: true },
       { slug: "revisao-graficos", title: "Revisão do módulo", duration: "8 min", available: true },
     ],
   },
   {
-    slug: "trigonometria",
+    slug: "geometria-analitica",
     n: 5,
+    shortTitle: "Geometria analítica",
+    title: "Geometria analítica",
+    desc: "Distância, ponto médio, retas e circunferência como ponte entre álgebra e gráficos.",
+    defaultState: "open",
+    apps: ["mapas", "trajetórias", "projetos"],
+    contents: ["Distância entre pontos", "Ponto médio", "Retas paralelas e perpendiculares", "Circunferência"],
+    applications: ["Localização em mapas", "Inclinação de trajetórias", "Alcance de sensores", "Círculo trigonométrico"],
+    lessons: preCalculoPhase2Catalog["geometria-analitica"],
+  },
+  {
+    slug: "trigonometria",
+    n: 6,
     shortTitle: "Trigonometria",
     title: "Trigonometria básica",
     desc: "Seno, cosseno, tangente, ciclo trigonométrico e identidades básicas.",
@@ -217,6 +236,7 @@ export const preCalculoModulos: PreCalculoModulo[] = [
       { slug: "tangente", title: "Tangente", duration: "11 min", available: true },
       { slug: "ciclo-trigonometrico", title: "Ciclo trigonométrico", duration: "14 min", available: true },
       { slug: "identidades-basicas", title: "Identidades básicas", duration: "13 min", available: true },
+      ...preCalculoPhase2Catalog.trigonometria,
       { slug: "graficos-trigonometricos", title: "Gráficos trigonométricos", duration: "11 min", available: true },
       { slug: "rampas-altura", title: "Rampas e altura de prédios", duration: "10 min", available: true },
       { slug: "ondas-movimento", title: "Ondas e movimento circular", duration: "10 min", available: true },
@@ -226,7 +246,7 @@ export const preCalculoModulos: PreCalculoModulo[] = [
   },
   {
     slug: "preparacao-limites",
-    n: 6,
+    n: 7,
     shortTitle: "Preparação p/ limites",
     title: "Preparação para limites",
     desc: "Aproximação, comportamento de funções e tendência — a porta de entrada para Cálculo 1.",
@@ -252,6 +272,7 @@ export const preCalculoModulos: PreCalculoModulo[] = [
       { slug: "valores-proximos", title: "Valores próximos de um ponto", duration: "10 min", available: true },
       { slug: "ideia-tendencia", title: "Ideia de tendência", duration: "11 min", available: true },
       { slug: "interpretacao-grafica", title: "Interpretação gráfica", duration: "10 min", available: true },
+      ...preCalculoPhase2Catalog["preparacao-limites"],
       { slug: "velocidade-tendencia", title: "Velocidade e tendência", duration: "9 min", available: true },
     ],
   },

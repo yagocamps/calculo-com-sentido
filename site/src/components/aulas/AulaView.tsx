@@ -5,6 +5,7 @@ import { AulaQuiz } from "@/components/aulas/AulaQuiz";
 import { AulaToc } from "@/components/aulas/AulaToc";
 import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
+import { FutureUseLinks } from "@/components/aulas/FutureUseLinks";
 import { FunctionPlot } from "@/components/aulas/FunctionPlot";
 import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
 import { BhaskaraDerivation } from "@/components/aulas/BhaskaraDerivation";
@@ -24,11 +25,19 @@ import { glossario, type GlossarioEntry } from "@/data/glossario";
 import { exercicios } from "@/data/exercicios";
 import { demonstrationsForLesson } from "@/data/demonstracoes";
 import { prereqsForModule } from "@/data/prereqs";
+import { futureUsesForLesson } from "@/data/future-uses";
 import {
+  calculo1Modulos,
   calculo1LessonId,
   calculo1ModuloPath,
+  calculo1LessonPath,
 } from "@/data/calculo-1";
-import { lessonId, moduloPath } from "@/data/pre-calculo";
+import {
+  lessonId,
+  lessonPath,
+  moduloPath,
+  preCalculoModulos,
+} from "@/data/pre-calculo";
 
 const glossarioByTerm = new Map(glossario.map((g) => [g.termo, g]));
 
@@ -61,6 +70,11 @@ export function AulaView({
 
   // Pré-requisitos: os da aula, ou os padrão do módulo como fallback.
   const prereqs = meta.prereqs ?? prereqsForModule(trilha, meta.moduleSlug);
+  const futureUses = futureUsesForLesson(
+    trilha,
+    meta.moduleSlug,
+    meta.usedIn,
+  );
   const catalogDemonstrations = demonstrationsForLesson(
     trilha,
     meta.moduleSlug,
@@ -68,6 +82,46 @@ export function AulaView({
   );
   const hasQuiz = Boolean(content.quiz?.length);
   const hasVideos = Boolean(content.videos?.length);
+  const curriculumModules =
+    trilha === "calculo-1" ? calculo1Modulos : preCalculoModulos;
+  const moduleIndex = curriculumModules.findIndex(
+    (module) => module.slug === meta.moduleSlug,
+  );
+  const lessonIndex =
+    moduleIndex >= 0
+      ? curriculumModules[moduleIndex].lessons.findIndex(
+          (lesson) => lesson.slug === aulaSlug,
+        )
+      : -1;
+  const lessonNumber = lessonIndex >= 0 ? lessonIndex + 1 : meta.lessonNumber;
+  const sameModuleNext =
+    lessonIndex >= 0
+      ? curriculumModules[moduleIndex].lessons
+          .slice(lessonIndex + 1)
+          .find((lesson) => lesson.available)
+      : undefined;
+  const nextModuleLesson =
+    !sameModuleNext && moduleIndex >= 0
+      ? curriculumModules
+          .slice(moduleIndex + 1)
+          .flatMap((module) =>
+            module.lessons
+              .filter((lesson) => lesson.available)
+              .map((lesson) => ({ ...lesson, moduleSlug: module.slug })),
+          )[0]
+      : undefined;
+  const nextCatalogLesson = sameModuleNext
+    ? { ...sameModuleNext, moduleSlug: meta.moduleSlug }
+    : nextModuleLesson;
+  const nextLesson = nextCatalogLesson
+    ? {
+        title: nextCatalogLesson.title,
+        href:
+          trilha === "calculo-1"
+            ? calculo1LessonPath(nextCatalogLesson.moduleSlug, nextCatalogLesson.slug)
+            : lessonPath(nextCatalogLesson.moduleSlug, nextCatalogLesson.slug),
+      }
+    : meta.nextLesson;
 
   // Realce inline dos termos do glossário desta aula (1ª ocorrência no texto).
   const glossaryHL = {
@@ -92,7 +146,7 @@ export function AulaView({
               href={backToModulo}
               className="font-serif text-xs italic text-terracotta hover:underline"
             >
-              Aula {String(meta.lessonNumber).padStart(2, "0")} · Módulo{" "}
+              Aula {String(lessonNumber).padStart(2, "0")} · Módulo{" "}
               {meta.moduleTitle}
             </Link>
             <h1 className="mt-2 text-balance font-serif text-[38px] font-medium leading-tight tracking-tight">
@@ -131,6 +185,7 @@ export function AulaView({
                 </p>
               </div>
             )}
+            <FutureUseLinks items={futureUses} />
           </header>
 
           <AulaTocMobile content={content} />
@@ -340,7 +395,7 @@ export function AulaView({
               >
                 <AulaQuiz
                   questions={content.quiz}
-                  nextLesson={meta.nextLesson}
+                  nextLesson={nextLesson}
                 />
               </Section>
             </div>
@@ -358,7 +413,7 @@ export function AulaView({
             </div>
           )}
 
-          {meta.nextLesson && (
+          {nextLesson && (
             <div id="proxima">
               <Section
                 n={11 + Number(hasQuiz) + Number(hasVideos)}
@@ -368,10 +423,10 @@ export function AulaView({
                 <div className="flex flex-wrap items-center gap-4 rounded-2 border border-border bg-surface-warm p-5">
                   <div className="min-w-[200px] flex-1">
                     <p className="font-serif text-lg font-medium">
-                      {meta.nextLesson.title}
+                      {nextLesson.title}
                     </p>
                   </div>
-                  <Button href={meta.nextLesson.href} variant="dark">
+                  <Button href={nextLesson.href} variant="dark">
                     Continuar →
                   </Button>
                 </div>

@@ -16,9 +16,12 @@ const modulePrereqs: Record<Trilha, Record<string, [Trilha, string][]>> = {
     algebra: [["pre-calculo", "fundamentos"]],
     funcoes: [["pre-calculo", "algebra"]],
     graficos: [["pre-calculo", "funcoes"]],
-    trigonometria: [
-      ["pre-calculo", "funcoes"],
+    "geometria-analitica": [
+      ["pre-calculo", "algebra"],
       ["pre-calculo", "graficos"],
+    ],
+    trigonometria: [
+      ["pre-calculo", "geometria-analitica"],
     ],
     "preparacao-limites": [
       ["pre-calculo", "funcoes"],

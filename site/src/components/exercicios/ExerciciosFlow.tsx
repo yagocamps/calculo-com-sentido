@@ -5,14 +5,18 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { ExercicioDetail } from "@/components/exercicios/ExercicioDetail";
 import { TypeTag } from "@/components/exercicios/TypeTag";
 import { PageShell } from "@/components/layout/PageShell";
-import { LevelTag } from "@/components/ui/Tag";
+import { PedagogicalLevelTag } from "@/components/ui/Tag";
 import {
   exercicioNiveis,
   exercicioTemas,
   exercicios,
   type ExerciseType,
 } from "@/data/exercicios";
-import { countByTema, filterExercicios } from "@/lib/exercicios";
+import {
+  countByTema,
+  filterExercicios,
+  pedagogicalLevelOf,
+} from "@/lib/exercicios";
 import { cn } from "@/lib/utils";
 
 const exercicioTipos: ExerciseType[] = [
@@ -93,8 +97,8 @@ export function ExerciciosFlow() {
             Exercícios aplicados
           </h1>
           <p className="mt-1.5 text-sm text-ink-muted">
-            Modelo com 9 partes: enunciado, identificar, dica, resolução,
-            resposta, interpretação e erro comum.
+            Avance em cinco níveis: fundamento, aplicação direta,
+            interpretação, problema e desafio.
           </p>
 
           <div className="mt-3.5">
@@ -173,7 +177,7 @@ export function ExerciciosFlow() {
                     <span className="font-mono text-[11px] font-semibold text-ink-subtle">
                       {ex.num}
                     </span>
-                    <LevelTag level={ex.level} />
+                    <PedagogicalLevelTag level={pedagogicalLevelOf(ex)} />
                     <TypeTag type={ex.type} />
                   </div>
                   <div className="truncate text-[13.5px] font-semibold">
