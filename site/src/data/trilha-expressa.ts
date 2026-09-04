@@ -25,9 +25,21 @@ export type ExpressStage = {
 
 export const expressStages: ExpressStage[] = [
   {
-    titulo: "Base mínima (não pule!)",
-    desc: "Sem isso, limites e derivadas viram decoreba. São as 5 aulas de pré que mais seguram prova.",
+    titulo: "Base algébrica mínima (não pule!)",
+    desc: "Sem isso, limites e derivadas viram decoreba. Estas 7 aulas formam a ponte curta até Cálculo.",
     refs: [
+      {
+        trilha: "pre-calculo",
+        modulo: "fundamentos",
+        aula: "fatoracao",
+        motivo: "fatorar é a chave para simplificar vários limites",
+      },
+      {
+        trilha: "pre-calculo",
+        modulo: "algebra",
+        aula: "simplificacao",
+        motivo: "prepara o cancelamento correto de fatores",
+      },
       { trilha: "pre-calculo", modulo: "funcoes", aula: "o-que-e-funcao" },
       {
         trilha: "pre-calculo",

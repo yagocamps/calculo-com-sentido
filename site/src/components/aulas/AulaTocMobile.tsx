@@ -9,7 +9,8 @@ export function AulaTocMobile({ content }: { content: AulaContent }) {
   const links = sectionLinks.filter(
     (item) =>
       (item.id !== "proxima" || content.meta.nextLesson) &&
-      (item.id !== "quiz" || content.quiz),
+      (item.id !== "quiz" || content.quiz?.length) &&
+      (item.id !== "video" || content.videos?.length),
   );
 
   return (

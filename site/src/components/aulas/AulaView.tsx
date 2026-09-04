@@ -66,6 +66,8 @@ export function AulaView({
     meta.moduleSlug,
     aulaSlug,
   );
+  const hasQuiz = Boolean(content.quiz?.length);
+  const hasVideos = Boolean(content.videos?.length);
 
   // Realce inline dos termos do glossário desta aula (1ª ocorrência no texto).
   const glossaryHL = {
@@ -329,7 +331,7 @@ export function AulaView({
             </Section>
           </div>
 
-          {content.quiz && content.quiz.length > 0 && (
+          {hasQuiz && content.quiz && (
             <div id="quiz">
               <Section
                 n={11}
@@ -344,20 +346,22 @@ export function AulaView({
             </div>
           )}
 
-          <div id="video">
-            <Section
-              n={content.quiz ? 12 : 11}
-              label="Vídeo aula"
-              title="Assista à explicação"
-            >
-              <AulaVideos videos={content.videos} />
-            </Section>
-          </div>
+          {hasVideos && (
+            <div id="video">
+              <Section
+                n={hasQuiz ? 12 : 11}
+                label="Vídeo aula"
+                title="Assista à explicação"
+              >
+                <AulaVideos videos={content.videos} />
+              </Section>
+            </div>
+          )}
 
           {meta.nextLesson && (
             <div id="proxima">
               <Section
-                n={content.quiz ? 13 : 12}
+                n={11 + Number(hasQuiz) + Number(hasVideos)}
                 label="Próxima aula"
                 title="Continue sua trilha"
               >

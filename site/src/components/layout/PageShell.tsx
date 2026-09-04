@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AiTutorTeaser } from "@/components/layout/AiTutorTeaser";
 import { CommandPalette } from "@/components/layout/CommandPalette";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Topbar } from "@/components/layout/Topbar";
@@ -59,8 +58,6 @@ export function PageShell({
           <div className="ccs-fade-up">{children}</div>
         </main>
       </div>
-
-      <AiTutorTeaser />
     </div>
   );
 }

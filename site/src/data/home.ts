@@ -22,9 +22,9 @@ export const homeProblem = {
     "A reprovação não é falta de inteligência na maioria dos casos. É base fraca, ritmo acelerado da turma e explicações que começam pela definição formal em vez do sentido.",
   ],
   stats: [
-    { value: "1 em 3", label: "reprova ou trava em Cálculo no 1º semestre (estimativa comum em cursos de exatas)" },
-    { value: "Medo", label: "de perguntar o básico na sala de aula" },
-    { value: "Gap", label: "entre o que o EM ensinou e o que a faculdade exige" },
+    { value: "Base", label: "operações e álgebra sustentam o conteúdo que vem depois" },
+    { value: "Ritmo", label: "aulas curtas permitem revisar sem pular etapas" },
+    { value: "Sentido", label: "cada fórmula é ligada à interpretação e à aplicação" },
   ],
 };
 

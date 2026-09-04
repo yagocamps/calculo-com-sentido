@@ -18,7 +18,11 @@ import {
   saveTestResult,
   type TesteNivelResult,
 } from "@/lib/teste-nivel";
-import { trackCcsEvent, ANALYTICS_EVENTS } from "@/lib/analytics";
+import {
+  ANALYTICS_EVENTS,
+  saveLevelTestAttribution,
+  trackCcsEvent,
+} from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 type Phase = "intro" | "quiz" | "result";
@@ -70,6 +74,11 @@ export function TesteNivelFlow() {
         score_percent: r.scorePercent,
         recommendation_band: r.recommendation.band,
       });
+      saveLevelTestAttribution(
+        r.recommendation.firstLessonHref,
+        r.recommendation.band,
+        r.completedAt,
+      );
       setResult(r);
       saveTestResult(r);
       setPhase("result");

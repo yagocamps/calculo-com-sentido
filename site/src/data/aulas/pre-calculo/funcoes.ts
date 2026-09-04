@@ -214,7 +214,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       title: "O que esse resultado significa?",
       paragraphs: [
         "O domínio é \"todos os números reais, exceto 2\". Para qualquer outro valor a função funciona; só o 2 quebra a conta.",
-        "No gráfico, isso vira um \"buraco\" ou uma linha que a curva nunca toca em \\(x = 2\\). O domínio antecipa onde a função existe.",
+        "Neste exemplo, o gráfico tem uma assíntota vertical em \\(x = 2\\): a curva se aproxima dessa reta, mas a função não existe ali. Um \"buraco\" ocorre em outro caso, quando um fator que zera pode ser cancelado algebricamente. O domínio antecipa onde a função existe.",
       ],
     },
     erros: {
@@ -587,8 +587,8 @@ export const funcoesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Multiplicar em vez de somar",
       paragraphs: [
-        "Na função afim você soma sempre o mesmo valor. Na exponencial você multiplica sempre pela mesma base. \\(f(x) = a \\cdot b^x\\): \\(a\\) é o valor inicial e \\(b\\) é o fator de multiplicação a cada passo.",
-        "Se \\(b > 1\\), há crescimento (cada passo aumenta); se \\(0 < b < 1\\), há decaimento (cada passo diminui). O gráfico sobe (ou desce) cada vez mais rápido.",
+        "Na função afim você soma sempre o mesmo valor. Na exponencial você multiplica sempre pela mesma base. Em \\(f(x) = a \\cdot b^x\\), para o modelo usual de crescimento ou decaimento, usamos \\(a > 0\\), \\(b > 0\\) e \\(b \\neq 1\\): \\(a\\) é o valor inicial e \\(b\\) é o fator de multiplicação a cada passo.",
+        "Se \\(b > 1\\), há crescimento e os aumentos ficam maiores. Se \\(0 < b < 1\\), há decaimento: o gráfico diminui cada vez menos e se aproxima de zero sem alcançá-lo.",
       ],
       callout:
         "Afim soma a mesma coisa; exponencial multiplica pela mesma coisa. \\(b > 1\\) cresce, \\(0 < b < 1\\) decai.",
@@ -723,15 +723,15 @@ export const funcoesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Log pergunta 'qual é o expoente?'",
       paragraphs: [
-        "\\(\\log_b(N)\\) pergunta: \"a qual expoente preciso elevar a base \\(b\\) para obter \\(N\\)?\". Por exemplo, \\(\\log_2(8) = 3\\), porque \\(2^3 = 8\\).",
+        "\\(\\log_b(N)\\) pergunta: \"a qual expoente preciso elevar a base \\(b\\) para obter \\(N\\)?\". Nos números reais, precisamos de \\(b > 0\\), \\(b \\neq 1\\) e \\(N > 0\\). Por exemplo, \\(\\log_2(8) = 3\\), porque \\(2^3 = 8\\).",
         "É exatamente a operação inversa da exponencial. Onde a exponencial empilha multiplicações, o log conta quantas foram. Por isso elas se desfazem.",
       ],
       callout:
-        "\\(\\log_b(N) = x\\) significa \\(b^x = N\\). Logaritmo é \"qual expoente\"; é a inversa da exponencial.",
+        "\\(\\log_b(N) = x\\) significa \\(b^x = N\\), com \\(b > 0\\), \\(b \\neq 1\\) e \\(N > 0\\). Logaritmo é \"qual expoente\"; é a inversa da exponencial.",
       formula: "log_b(N) = x  ⟺  bˣ = N",
       formulaLatex: "\\log_b(N) = x \\iff b^{x} = N",
       formulaAria: "log na base b de N igual a x se e somente se b elevado a x igual a N",
-      formulaLegend: "a definição do logaritmo como inverso da potência",
+      formulaLegend: "condições reais: b > 0, b ≠ 1 e N > 0",
     },
     ondeAparece: {
       title: "Onde isso aparece",
@@ -834,7 +834,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       bullets: [
         "\\(\\log_b(N)\\) pergunta: qual expoente leva \\(b\\) a \\(N\\)?",
         "Logaritmo é a operação inversa da exponencial.",
-        "\\(\\log_b(N) = x\\) equivale a \\(b^x = N\\).",
+        "\\(\\log_b(N) = x\\) equivale a \\(b^x = N\\), com \\(b > 0\\), \\(b \\neq 1\\) e \\(N > 0\\).",
         "Log comprime números grandes (Richter, decibéis, pH).",
       ],
     },

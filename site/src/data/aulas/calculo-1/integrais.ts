@@ -547,8 +547,8 @@ export const integraisAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Parte I e II (intuição)",
       paragraphs: [
-        "Parte I: \\(F(x)=\\int_a^x f(t)\\,dt\\) tem \\(F'(x)=f(x)\\) (área acumulada varia à taxa f).",
-        "Parte II: se \\(F'=f\\), então \\(\\int_a^b f(x)\\,dx = F(b)-F(a)\\).",
+        "Parte I: se \\(f\\) é contínua em \\([a,b]\\), então a função de área acumulada \\(A(x)=\\int_a^x f(t)\\,dt\\) é derivável no interior do intervalo e \\(A'(x)=f(x)\\).",
+        "Parte II: se \\(f\\) é integrável em \\([a,b]\\) e admite uma antiderivada \\(F\\), isto é, \\(F'=f\\), então \\(\\int_a^b f(x)\\,dx = F(b)-F(a)\\).",
         "Notação: \\(F(b)-F(a) = \\left[F(x)\\right]_a^b\\).",
       ],
       formula: "∫ₐᵇ f(x) dx = F(b) − F(a),  F′=f",
@@ -556,7 +556,7 @@ export const integraisAulas: Record<string, AulaContent> = {
         "\\int_{a}^{b} f(x)\\, dx = F(b) - F(a), \\quad F' = f",
       formulaAria:
         "a integral de a até b de f de x dx é igual a F de b menos F de a, onde F linha é igual a f",
-      callout: "Avalie antiderivada nos limites — não esqueça subtrair F(a).",
+      callout: "Com as hipóteses satisfeitas, avalie a antiderivada nos limites — não esqueça de subtrair F(a).",
     },
     ondeAparece: {
       title: "Tudo que integra",
@@ -627,7 +627,7 @@ export const integraisAulas: Record<string, AulaContent> = {
     resumo: {
       title: "Resumo da aula",
       bullets: [
-        "TFC: \\(\\int_a^b f = F(b)-F(a)\\).",
+        "TFC: para \\(f\\) contínua em \\([a,b]\\), a área acumulada deriva de volta para \\(f\\); se \\(F'=f\\), então \\(\\int_a^b f = F(b)-F(a)\\).",
         "Encontre antiderivada, avalie limites.",
         "Une área e acúmulo ao cálculo simbólico.",
       ],

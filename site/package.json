@@ -6,15 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "validate:katex": "tsx scripts/validate-katex.ts",
+    "validate:aria": "tsx scripts/validate-aria.ts",
+    "validate": "npm run validate:content && npm run validate:katex && npm run validate:aria"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "function-plot": "^1.25.4",
     "katex": "^0.17.0",
-    "next": "16.2.6",
+    "next": "^16.3.4",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "@vercel/analytics": "^2.0.1"
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -23,8 +27,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "^16.3.4",
     "tailwindcss": "^4",
+    "tsx": "^4.23.13",
     "typescript": "^5"
   }
 }

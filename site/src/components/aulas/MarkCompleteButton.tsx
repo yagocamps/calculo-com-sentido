@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { ANALYTICS_EVENTS, trackCcsEvent } from "@/lib/analytics";
+import { trackAttributedFirstLessonCompleted } from "@/lib/analytics";
 import { burstConfetti } from "@/lib/confetti";
 import {
   isLessonComplete,
@@ -48,18 +48,7 @@ export function MarkCompleteButton({ lessonPathId }: { lessonPathId: string }) {
       size="sm"
       onClick={(e) => {
         markLessonComplete(lessonPathId);
-        if (new URLSearchParams(window.location.search).get("from") === "level-test") {
-          trackCcsEvent(
-            ANALYTICS_EVENTS.firstLessonCompleted,
-            {
-              lesson_id: lessonPathId,
-              recommendation_band:
-                new URLSearchParams(window.location.search).get("band") ?? "unknown",
-              source: "level_test",
-            },
-            lessonPathId,
-          );
-        }
+        trackAttributedFirstLessonCompleted(lessonPathId);
         setDone(true);
         const r = (
           e?.currentTarget as HTMLElement | undefined
