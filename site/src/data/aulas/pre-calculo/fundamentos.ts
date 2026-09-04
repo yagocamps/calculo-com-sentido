@@ -1046,6 +1046,15 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaAria: "x igual a menos b mais ou menos raiz de b ao quadrado menos quatro a c, tudo sobre dois a",
       formulaLegend: "fórmula de Bhaskara · Δ = b² − 4ac",
     },
+    grafico: {
+      fn: "x^2 - 5 * x + 6",
+      alt: "Parábola de f(x) = x² − 5x + 6, com raízes x = 2 e x = 3 e vértice em (2,5; −0,25).",
+      xDomain: [-1, 6],
+      yDomain: [-4, 12],
+      legend:
+        "Comece com x² − 5x + 6: as raízes são 2 e 3, e o vértice mostra o ponto de menor valor.",
+      interactive: { type: "quadratica", a: 1, b: -5, c: 6 },
+    },
     ondeAparece: {
       title: "Onde isso aparece",
       items: [
