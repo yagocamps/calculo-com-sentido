@@ -60,4 +60,4 @@ O deploy da branch `main` é acionado pelo GitHub. A versão pública é [calcul
 - **Pré-Cálculo**: Fundamentos, Álgebra, Funções, Gráficos, Trigonometria e Preparação para Limites.
 - **Cálculo 1**: trilha completa de limites, derivadas e integrais.
 
-Cada aula segue uma estrutura de 12 seções (por que aprender, explicação, onde aparece, exemplo, passo a passo, interpretação, erros comuns, exercícios guiados e aplicados, resumo, próxima aula).
+Cada aula tem **13 etapas de conteúdo, além do título**: por que aprender, explicação, onde aparece, exemplo aplicado, passo a passo, interpretação, erros comuns, exercícios guiados, exercícios aplicados, resumo, checagem rápida, vídeo-aula e próxima aula.
