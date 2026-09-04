@@ -190,7 +190,7 @@ export function ProgressoContent() {
                 href="/teste-de-nivel"
                 className="font-semibold text-terracotta hover:underline"
               >
-                Faça o teste de nível (2 min)
+                Faça o teste de nível (10–15 min)
               </Link>
             </p>
           </Card>
