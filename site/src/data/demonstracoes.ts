@@ -339,6 +339,465 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       ],
     },
   ],
+  "pre-calculo/funcoes/funcao-afim": [
+  "Coeficiente angular da reta": {
+    intro: "O coeficiente angular mede quanto y varia quando x avança.",
+    steps: [
+      {
+        title: "Escolher dois pontos",
+        detail: "Considere \\\\(P_1=(x_1,y_1)\\\\) e \\\\(P_2=(x_2,y_2)\\\\), com \\\\(x_2\\\\neq x_1\\\\).",
+        formula: "P_1=(x_1,y_1),\\qquad P_2=(x_2,y_2)",
+        formulaAria: "primeiro ponto e segundo ponto",
+      },
+      {
+        title: "Comparar as variações",
+        detail: "A inclinação é a variação vertical dividida pela horizontal.",
+        formula: "m=\\frac{\\Delta y}{\\Delta x}=\\frac{y_2-y_1}{x_2-x_1}",
+        formulaAria: "m é delta y sobre delta x",
+      },
+      {
+        title: "Interpretar o sinal",
+        detail: "\\\\(m>0\\\\) indica reta crescente; \\\\(m<0\\\\), decrescente.",
+        formula: "m>0\\Rightarrow\\text{sobe},\\qquad m<0\\Rightarrow\\text{desce}",
+        formulaAria: "m positivo sobe e m negativo desce",
+      },
+    ],
+  },
+  "Equação da reta \\(y=mx+b\\)": {
+    intro: "A forma reduzida separa a inclinação da reta do ponto onde ela cruza o eixo y.",
+    steps: [
+      {
+        title: "Partir da forma ponto-inclinação",
+        detail: "Para um ponto \\\\((x_0,y_0)\\\\), escrevemos a variação vertical em função da horizontal.",
+        formula: "y-y_0=m(x-x_0)",
+        formulaAria: "y menos y zero é m vezes x menos x zero",
+      },
+      {
+        title: "Distribuir e isolar y",
+        detail: "Abrindo o parêntese, a parte constante se reúne em \\\\(b=y_0-mx_0\\\\).",
+        formula: "y=mx+y_0-mx_0=mx+b",
+        formulaAria: "y é m x mais b",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/funcoes/funcao-quadratica": [
+  "Fórmula do x do vértice da parábola": {
+    intro: "O vértice está no eixo de simetria, exatamente no meio das duas raízes.",
+    steps: [
+      {
+        title: "Usar o ponto médio",
+        detail: "Se existem duas raízes, o eixo de simetria fica no ponto médio delas.",
+        formula: "x_v=\\frac{x_1+x_2}{2}",
+        formulaAria: "x do vértice é a soma das raízes sobre dois",
+      },
+      {
+        title: "Usar a soma das raízes",
+        detail: "Para \\\\(ax^2+bx+c=0\\\\), a soma das raízes é \\\\(-\\\\frac ba\\\\).",
+        formula: "x_1+x_2=-\\frac ba",
+        formulaAria: "a soma das raízes é menos b sobre a",
+      },
+      {
+        title: "Concluir",
+        detail: "Dividindo por 2, obtemos a coordenada horizontal do vértice.",
+        formula: "x_v=-\\frac{b}{2a}",
+        formulaAria: "x do vértice é menos b sobre dois a",
+      },
+    ],
+  },
+  "Fórmula do y do vértice da parábola": {
+    intro: "A coordenada y é o valor da função no x do vértice.",
+    steps: [
+      {
+        title: "Substituir",
+        detail: "Colocamos \\\\(x_v=-\\\\frac{b}{2a}\\\\) em \\\\(f(x)=ax^2+bx+c\\\\).",
+        formula: "y_v=f(x_v)=a\\left(-\\frac{b}{2a}\\right)^2+b\\left(-\\frac{b}{2a}\\right)+c",
+        formulaAria: "y do vértice é f de x do vértice",
+      },
+      {
+        title: "Simplificar",
+        detail: "Colocando os termos no mesmo denominador, aparece o discriminante.",
+        formula: "y_v=\\frac{4ac-b^2}{4a}=-\\frac{\\Delta}{4a}",
+        formulaAria: "y do vértice é menos delta sobre quatro a",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/funcoes/funcao-modular": [
+  "Definição de módulo": {
+    intro: "O módulo representa a distância de um número até zero, portanto nunca é negativo.",
+    steps: [
+      {
+        title: "Definir por partes",
+        detail: "Para números positivos, mantemos o valor; para negativos, trocamos o sinal.",
+        formula: "|x|=\\begin{cases}x,&x\\geq0\\\\-x,&x<0\\end{cases}",
+        formulaAria: "módulo de x é x se x é maior ou igual a zero e menos x se x é menor que zero",
+      },
+      {
+        title: "Interpretar como distância",
+        detail: "Números opostos ficam à mesma distância da origem.",
+        formula: "|5|=|-5|=5",
+        formulaAria: "módulo de cinco e menos cinco é cinco",
+      },
+    ],
+  },
+  "Reflexão do gráfico pela função módulo": {
+    intro: "Aplicar módulo aos valores de y reflete para cima a parte que estava abaixo do eixo x.",
+    steps: [
+      {
+        title: "Transformar cada ponto",
+        detail: "Um ponto \\\\((x,y)\\\\) de \\\\(f\\\\) vira \\\\((x,|y|)\\\\).",
+        formula: "(x,y)\\longmapsto(x,|y|)",
+        formulaAria: "o ponto x y vai para x módulo de y",
+      },
+      {
+        title: "Refletir valores negativos",
+        detail: "Quando \\\\(f(x)<0\\\\), o módulo troca \\\\(y\\\\) por \\\\(-y\\\\).",
+        formula: "f(x)<0\\Longrightarrow|f(x)|=-f(x)",
+        formulaAria: "se f de x é negativo, módulo de f de x é menos f de x",
+      },
+      {
+        title: "Concluir",
+        detail: "Por isso o gráfico final fica sempre sobre ou no eixo x.",
+        formula: "|f(x)|\\geq0",
+        formulaAria: "módulo de f de x é maior ou igual a zero",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/funcoes/funcao-exponencial": [
+  "Crescimento exponencial": {
+    intro: "O crescimento exponencial repete uma multiplicação pelo mesmo fator em cada período.",
+    steps: [
+      {
+        title: "Aplicar o fator uma vez",
+        detail: "Um valor inicial \\\\(P_0\\\\), multiplicado por \\\\(r\\\\), vira \\\\(P_1\\\\).",
+        formula: "P_1=P_0r",
+        formulaAria: "p um é p zero vezes r",
+      },
+      {
+        title: "Repetir a multiplicação",
+        detail: "Após dois períodos, o fator aparece duas vezes; após n, aparece n vezes.",
+        formula: "P_n=P_0\\underbrace{r\\cdot r\\cdots r}_{n\\text{ fatores}}",
+        formulaAria: "p n é p zero vezes r repetido n vezes",
+      },
+      {
+        title: "Escrever a potência",
+        detail: "A repetição se resume em uma potência; \\\\(r>1\\\\) produz crescimento.",
+        formula: "P_n=P_0r^n",
+        formulaAria: "p n é p zero vezes r elevado a n",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/funcoes/funcao-logaritmica": [
+  "Definição de logaritmo": {
+    intro: "Logaritmo responde qual expoente transforma uma base em determinado resultado.",
+    steps: [
+      {
+        title: "Partir da potência",
+        detail: "Começamos com \\\\(a^y=x\\\\), respeitando as restrições da base.",
+        formula: "a^y=x,\\qquad a>0,\\quad a\\neq1",
+        formulaAria: "a elevado a y é x",
+      },
+      {
+        title: "Perguntar pelo expoente",
+        detail: "O logaritmo é o nome dado ao expoente \\\\(y\\\\).",
+        formula: "\\log_a(x)=y\\Longleftrightarrow a^y=x",
+        formulaAria: "logaritmo de x na base a é y se e somente se a elevado a y é x",
+      },
+    ],
+  },
+  "Propriedades dos logaritmos": {
+    intro: "As propriedades dos logaritmos são as propriedades dos expoentes traduzidas para outra linguagem.",
+    steps: [
+      {
+        title: "Produto",
+        detail: "Como expoentes somam no produto, logaritmos de produtos somam.",
+        formula: "\\log_a(xy)=\\log_a x+\\log_a y",
+        formulaAria: "logaritmo de x y é a soma dos logaritmos",
+      },
+      {
+        title: "Quociente",
+        detail: "Como expoentes subtraem na divisão, logaritmos de quocientes subtraem.",
+        formula: "\\log_a\\left(\\frac{x}{y}\\right)=\\log_a x-\\log_a y",
+        formulaAria: "logaritmo de x sobre y é a diferença dos logaritmos",
+      },
+      {
+        title: "Potência",
+        detail: "O expoente que está fora pode ser colocado como fator.",
+        formula: "\\log_a(x^k)=k\\log_a x",
+        formulaAria: "logaritmo de x elevado a k é k vezes logaritmo de x",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/funcoes/juros-compostos": [
+  "Fórmula dos juros compostos": {
+    intro: "Cada período multiplica o saldo anterior por um fator que inclui a taxa.",
+    steps: [
+      {
+        title: "Calcular o primeiro período",
+        detail: "O capital cresce pelo capital mais os juros.",
+        formula: "C_1=C_0+C_0i=C_0(1+i)",
+        formulaAria: "c um é c zero vezes um mais i",
+      },
+      {
+        title: "Repetir o fator",
+        detail: "No período seguinte, o mesmo fator incide sobre o saldo já aumentado.",
+        formula: "C_2=C_0(1+i)^2",
+        formulaAria: "c dois é c zero vezes um mais i ao quadrado",
+      },
+      {
+        title: "Generalizar",
+        detail: "Após \\\\(n\\\\) períodos, o fator aparece \\\\(n\\\\) vezes.",
+        formula: "C_n=C_0(1+i)^n",
+        formulaAria: "c n é c zero vezes um mais i elevado a n",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/graficos/translacao-graficos": [
+  "Translação vertical de gráficos": {
+    intro: "Somar uma constante às saídas move todos os pontos para cima ou para baixo.",
+    steps: [
+      {
+        title: "Alterar y",
+        detail: "Se \\\\(g(x)=f(x)+k\\\\), cada valor de y recebe o mesmo \\\\(k\\\\).",
+        formula: "g(x)=f(x)+k",
+        formulaAria: "g de x é f de x mais k",
+      },
+      {
+        title: "Acompanhar um ponto",
+        detail: "Um ponto \\\\((x,y)\\\\) vira \\\\((x,y+k)\\\\).",
+        formula: "(x,y)\\longmapsto(x,y+k)",
+        formulaAria: "o ponto x y vai para x y mais k",
+      },
+      {
+        title: "Ler o sinal",
+        detail: "\\\\(k>0\\\\) sobe; \\\\(k<0\\\\) desce; a forma permanece igual.",
+        formula: "k>0\\Rightarrow\\text{sobe},\\qquad k<0\\Rightarrow\\text{desce}",
+        formulaAria: "k positivo sobe e k negativo desce",
+      },
+    ],
+  },
+  "Translação horizontal de gráficos": {
+    intro: "Alterar a entrada da função move o gráfico na horizontal.",
+    steps: [
+      {
+        title: "Trocar a entrada",
+        detail: "Em \\\\(g(x)=f(x-h)\\\\), usamos o valor antigo em \\\\(x-h\\\\).",
+        formula: "g(x)=f(x-h)",
+        formulaAria: "g de x é f de x menos h",
+      },
+      {
+        title: "Acompanhar um ponto",
+        detail: "Um ponto \\\\((u,y)\\\\) de \\\\(f\\\\) vira \\\\((u+h,y)\\\\) em \\\\(g\\\\).",
+        formula: "(u,y)\\longmapsto(u+h,y)",
+        formulaAria: "o ponto u y vai para u mais h y",
+      },
+      {
+        title: "Lembrar o sinal",
+        detail: "O \\\\(x-h\\\\) desloca para a direita quando \\\\(h>0\\\\).",
+        formula: "h>0\\Rightarrow\\text{direita}",
+        formulaAria: "h positivo desloca para a direita",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/trigonometria/seno": [
+  "Razões trigonométricas por semelhança de triângulos": {
+    intro: "Triângulos semelhantes preservam as razões entre lados correspondentes.",
+    steps: [
+      {
+        title: "Comparar lados",
+        detail: "Triângulos com o mesmo ângulo têm a mesma razão entre oposto e hipotenusa.",
+        formula: "\\frac{o_1}{h_1}=\\frac{o_2}{h_2}",
+        formulaAria: "oposto um sobre hipotenusa um é igual a oposto dois sobre hipotenusa dois",
+      },
+      {
+        title: "Dar nome à razão",
+        detail: "Essa razão constante é o seno do ângulo.",
+        formula: "\\sin(\\theta)=\\frac{\\text{cateto oposto}}{\\text{hipotenusa}}",
+        formulaAria: "seno de teta é cateto oposto sobre hipotenusa",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/trigonometria/tangente": [
+  "Relação \\(\\tan x=\\frac{\\sin x}{\\cos x}\\)": {
+    intro: "A tangente surge ao dividir seno por cosseno no mesmo triângulo.",
+    steps: [
+      {
+        title: "Escrever seno e cosseno",
+        detail: "Usamos \\\\(\\\\sin x=\\\\frac oh\\\\) e \\\\(\\\\cos x=\\\\frac ah\\\\).",
+        formula: "\\sin x=\\frac oh,\\qquad\\cos x=\\frac ah",
+        formulaAria: "seno é o sobre h e cosseno é a sobre h",
+      },
+      {
+        title: "Dividir as frações",
+        detail: "A hipotenusa cancela e sobra oposto sobre adjacente.",
+        formula: "\\frac{\\sin x}{\\cos x}=\\frac{o/h}{a/h}=\\frac oa",
+        formulaAria: "seno sobre cosseno é o sobre a",
+      },
+      {
+        title: "Reconhecer a tangente",
+        detail: "Oposto sobre adjacente é a definição da tangente.",
+        formula: "\\tan x=\\frac{\\sin x}{\\cos x}",
+        formulaAria: "tangente é seno sobre cosseno",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/trigonometria/ciclo-trigonometrico": [
+  "Valores trigonométricos de 30°, 45° e 60°": {
+    intro: "Os valores notáveis vêm dos triângulos especiais 45-45-90 e 30-60-90.",
+    steps: [
+      {
+        title: "Caso de 45°",
+        detail: "Com catetos 1 e hipotenusa \\\\(\\\\sqrt2\\\\), as duas razões são iguais.",
+        formula: "\\sin45^\\circ=\\cos45^\\circ=\\frac{\\sqrt2}{2}",
+        formulaAria: "seno e cosseno de quarenta e cinco são raiz de dois sobre dois",
+      },
+      {
+        title: "Caso de 30°",
+        detail: "No triângulo equilátero dividido, o cateto oposto mede 1 e a hipotenusa 2.",
+        formula: "\\sin30^\\circ=\\frac12,\\qquad\\cos30^\\circ=\\frac{\\sqrt3}{2}",
+        formulaAria: "seno de trinta é um meio e cosseno de trinta é raiz de três sobre dois",
+      },
+      {
+        title: "Caso de 60°",
+        detail: "Trocando os catetos, obtemos os valores de 60°.",
+        formula: "\\sin60^\\circ=\\frac{\\sqrt3}{2},\\qquad\\cos60^\\circ=\\frac12",
+        formulaAria: "seno de sessenta é raiz de três sobre dois e cosseno de sessenta é um meio",
+      },
+    ],
+  },
+  "Relação entre graus e radianos": {
+    intro: "Radianos medem o ângulo usando o comprimento do arco.",
+    steps: [
+      {
+        title: "Volta completa",
+        detail: "Uma volta mede \\\\(360^\\\\circ\\\\) e tem arco \\\\(2\\\\pi r\\\\).",
+        formula: "360^\\circ=2\\pi\\ \\mathrm{rad}",
+        formulaAria: "trezentos e sessenta graus são dois pi radianos",
+      },
+      {
+        title: "Meia volta",
+        detail: "Metade da volta corresponde a \\\\(180^\\\\circ\\\\) e \\\\(\\\\pi\\\\) radianos.",
+        formula: "180^\\circ=\\pi\\ \\mathrm{rad}",
+        formulaAria: "cento e oitenta graus são pi radianos",
+      },
+      {
+        title: "Converter",
+        detail: "Para passar de graus a radianos, multiplicamos por \\\\(\\\\frac\\\\pi{180}\\\\).",
+        formula: "\\theta_{\\mathrm{rad}}=\\theta_{\\mathrm{graus}}\\frac{\\pi}{180}",
+        formulaAria: "teta em radianos é teta em graus vezes pi sobre cento e oitenta",
+      },
+    ],
+  },
+  "Comprimento de arco \\(s=r\\theta\\)": {
+    intro: "O arco é a mesma fração da circunferência que o ângulo é da volta.",
+    steps: [
+      {
+        title: "Montar a proporção",
+        detail: "A fração do arco é \\\\(\\\\frac{s}{2\\\\pi r}\\\\) e a fração da volta é \\\\(\\\\frac\\\\theta{2\\\\pi}\\\\).",
+        formula: "\\frac{s}{2\\pi r}=\\frac{\\theta}{2\\pi}",
+        formulaAria: "s sobre dois pi r é teta sobre dois pi",
+      },
+      {
+        title: "Simplificar",
+        detail: "Multiplicando pelos denominadores, os \\\\(2\\\\pi\\\\) desaparecem.",
+        formula: "s=r\\theta",
+        formulaAria: "s é r vezes teta",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/trigonometria/identidades-basicas": [
+  "Identidade fundamental da trigonometria": {
+    intro: "No círculo unitário, seno e cosseno são as coordenadas de um ponto de raio 1.",
+    steps: [
+      {
+        title: "Aplicar Pitágoras",
+        detail: "O ponto \\\\((\\\\cos x,\\\\sin x)\\\\) está na circunferência unitária.",
+        formula: "(\\cos x)^2+(\\sin x)^2=1",
+        formulaAria: "cosseno de x ao quadrado mais seno de x ao quadrado é um",
+      },
+      {
+        title: "Reescrever",
+        detail: "A notação usual produz a identidade fundamental.",
+        formula: "\\sin^2x+\\cos^2x=1",
+        formulaAria: "seno de x ao quadrado mais cosseno de x ao quadrado é um",
+      },
+    ],
+  },
+  "Identidade \\(1+\\tan^2x=\\sec^2x\\)": {
+    intro: "Dividimos a identidade fundamental por \\(\\cos^2x\\), quando o cosseno não é zero.",
+    steps: [
+      {
+        title: "Dividir tudo",
+        detail: "Partimos de \\\\(\\\\sin^2x+\\\\cos^2x=1\\\\).",
+        formula: "\\frac{\\sin^2x}{\\cos^2x}+1=\\frac1{\\cos^2x}",
+        formulaAria: "seno ao quadrado sobre cosseno ao quadrado mais um é um sobre cosseno ao quadrado",
+      },
+      {
+        title: "Reconhecer as definições",
+        detail: "\\\\(\\\\sin x/\\\\cos x=\\\\tan x\\\\) e \\\\(1/\\\\cos x=\\\\sec x\\\\).",
+        formula: "\\tan^2x+1=\\sec^2x",
+        formulaAria: "tangente ao quadrado mais um é secante ao quadrado",
+      },
+    ],
+  },
+  ],
+  "pre-calculo/trigonometria/graficos-trigonometricos": [
+  "Construção do gráfico do seno pelo círculo trigonométrico": {
+    intro: "O gráfico do seno registra a coordenada vertical do ponto que gira no círculo unitário.",
+    steps: [
+      {
+        title: "Associar o ponto",
+        detail: "Para cada ângulo, o ponto é \\\\((\\\\cos x,\\\\sin x)\\\\).",
+        formula: "P(x)=(\\cos x,\\sin x)",
+        formulaAria: "p de x é cosseno de x e seno de x",
+      },
+      {
+        title: "Ler a altura",
+        detail: "A coordenada vertical é o seno e fica entre \\\\(-1\\\\) e \\\\(1\\\\).",
+        formula: "y=\\sin x,\\qquad -1\\leq\\sin x\\leq1",
+        formulaAria: "y é seno de x entre menos um e um",
+      },
+      {
+        title: "Marcar pontos",
+        detail: "Os valores \\\\(0,1,0\\\\) em um quarto de volta formam a onda.",
+        formula: "\\sin0=0,\\quad\\sin\\frac\\pi2=1,\\quad\\sin\\pi=0",
+        formulaAria: "seno de zero é zero, seno de pi sobre dois é um e seno de pi é zero",
+      },
+    ],
+  },
+  "Construção do gráfico do cosseno pelo círculo trigonométrico": {
+    intro: "O gráfico do cosseno registra a coordenada horizontal do ponto que gira.",
+    steps: [
+      {
+        title: "Associar o ponto",
+        detail: "O ponto do círculo é \\\\((\\\\cos x,\\\\sin x)\\\\).",
+        formula: "P(x)=(\\cos x,\\sin x)",
+        formulaAria: "p de x é cosseno de x e seno de x",
+      },
+      {
+        title: "Ler a largura",
+        detail: "A coordenada horizontal é o cosseno, entre \\\\(-1\\\\) e \\\\(1\\\\).",
+        formula: "y=\\cos x,\\qquad -1\\leq\\cos x\\leq1",
+        formulaAria: "y é cosseno de x entre menos um e um",
+      },
+      {
+        title: "Marcar pontos",
+        detail: "Os valores \\\\(1,0,-1\\\\) mostram o início da onda.",
+        formula: "\\cos0=1,\\quad\\cos\\frac\\pi2=0,\\quad\\cos\\pi=-1",
+        formulaAria: "cosseno de zero é um, cosseno de pi sobre dois é zero e cosseno de pi é menos um",
+      },
+    ],
+  },
+  ],
 };
 
 export function demonstrationsForLesson(
