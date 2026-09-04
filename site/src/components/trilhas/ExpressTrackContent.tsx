@@ -62,7 +62,7 @@ export function ExpressTrackContent() {
               href="/teste-de-nivel"
               className="text-[13px] font-semibold text-terracotta hover:underline"
             >
-              Tem 2 min? O teste de nível diz onde focar →
+              Tem alguns minutos? O teste de nível diz onde focar →
             </Link>
           </div>
         </section>
