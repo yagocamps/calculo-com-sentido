@@ -1063,7 +1063,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           detail:
             "Como \\(a\\) não é zero, podemos dividir cada termo da igualdade pelo mesmo número sem alterar suas soluções.",
           formula:
-            "x^2 + \\\\frac{b}{a}x + \\\\frac{c}{a} = 0",
+            "x^2 + \\frac{b}{a}x + \\frac{c}{a} = 0",
           formulaAria: "x ao quadrado mais b sobre a vezes x mais c sobre a é igual a zero",
         },
         {
@@ -1071,7 +1071,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           detail:
             "Passamos o termo constante para o outro lado. O objetivo é preparar o lado esquerdo para virar um quadrado perfeito.",
           formula:
-            "x^2 + \\\\frac{b}{a}x = -\\\\frac{c}{a}",
+            "x^2 + \\frac{b}{a}x = -\\frac{c}{a}",
           formulaAria: "x ao quadrado mais b sobre a vezes x é igual a menos c sobre a",
         },
         {
@@ -1079,7 +1079,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           detail:
             "O coeficiente de \\(x\\) é \\(\\frac{b}{a}\\). Tomamos sua metade, \\(\\frac{b}{2a}\\), elevamos ao quadrado e somamos esse mesmo valor nos dois lados.",
           formula:
-            "x^2 + \\\\frac{b}{a}x + \\\\left(\\\\frac{b}{2a}\\\\right)^2 = -\\\\frac{c}{a} + \\\\left(\\\\frac{b}{2a}\\\\right)^2",
+            "x^2 + \\frac{b}{a}x + \\left(\\frac{b}{2a}\\right)^2 = -\\frac{c}{a} + \\left(\\frac{b}{2a}\\right)^2",
           formulaAria: "x ao quadrado mais b sobre a vezes x mais b sobre dois a, tudo ao quadrado, é igual a menos c sobre a mais b sobre dois a, tudo ao quadrado",
         },
         {
@@ -1087,7 +1087,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           detail:
             "O lado esquerdo agora pode ser fatorado. No lado direito, colocamos as frações no mesmo denominador.",
           formula:
-            "\\\\left(x + \\\\frac{b}{2a}\\\\right)^2 = \\\\frac{b^2 - 4ac}{4a^2}",
+            "\\left(x + \\frac{b}{2a}\\right)^2 = \\frac{b^2 - 4ac}{4a^2}",
           formulaAria: "x mais b sobre dois a, tudo ao quadrado, é igual a b ao quadrado menos quatro a c sobre quatro a ao quadrado",
         },
         {
@@ -1095,7 +1095,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           detail:
             "Ao tirar a raiz dos dois lados, aparece o sinal \\(\\pm\\): tanto um número positivo quanto seu oposto têm o mesmo quadrado.",
           formula:
-            "x + \\\\frac{b}{2a} = \\\\pm \\\\frac{\\\\sqrt{b^2 - 4ac}}{2a}",
+            "x + \\frac{b}{2a} = \\pm \\frac{\\sqrt{b^2 - 4ac}}{2a}",
           formulaAria: "x mais b sobre dois a é igual a mais ou menos raiz de b ao quadrado menos quatro a c sobre dois a",
         },
         {
@@ -1103,7 +1103,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           detail:
             "Subtraímos \\(\\frac{b}{2a}\\) dos dois lados e juntamos as frações. O resultado é a fórmula de Bhaskara.",
           formula:
-            "x = \\\\frac{-b \\\\pm \\\\sqrt{b^2 - 4ac}}{2a}",
+            "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}",
           formulaAria: "x é igual a menos b mais ou menos raiz de b ao quadrado menos quatro a c, tudo sobre dois a",
         },
       ],
