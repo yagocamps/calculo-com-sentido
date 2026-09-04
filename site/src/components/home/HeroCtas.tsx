@@ -45,10 +45,10 @@ export function HeroCtas() {
   return (
     <div className="relative mt-5 flex flex-wrap gap-2.5">
       <Button href="/teste-de-nivel" size="lg">
-        Não sei por onde começar → teste de nível (2 min)
+        Fazer teste e encontrar minha primeira aula (10–15 min) →
       </Button>
       <Button href="#trilhas" variant="ghost" size="lg">
-        Já sei o que quero estudar → ver trilhas
+        Prefiro escolher uma trilha → ver trilhas
       </Button>
     </div>
   );
