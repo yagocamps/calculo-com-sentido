@@ -798,6 +798,346 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     ],
   },
   ],
+  "calculo-1/limites/limite-por-grafico": [
+  "Existência de limite mesmo quando a função não existe no ponto": {
+    intro: "O limite observa o comportamento ao redor de um ponto; não depende de a função ter valor exatamente nele.",
+    steps: [
+      {
+        title: "Aproximar pelo entorno",
+        detail: "Quando \\\\(x\\\\) se aproxima de \\\\(a\\\\), os valores de \\\\(f(x)\\\\) podem se aproximar de \\\\(L\\\\).",
+        formula: "\\lim_{x\\to a}f(x)=L",
+        formulaAria: "o limite de f de x quando x tende a a é L",
+      },
+      {
+        title: "Separar limite e valor",
+        detail: "Pode haver um furo em \\\\(x=a\\\\) e, ainda assim, o limite existir.",
+        formula: "f(a)\\text{ não existe},\\qquad\\lim_{x\\to a}f(x)=L",
+        formulaAria: "f de a não existe, mas o limite pode ser L",
+      },
+    ],
+  },
+  ],
+  "calculo-1/limites/limites-laterais": [
+  "Limites laterais e condição de existência": {
+    intro: "O limite bilateral só existe quando a função chega ao mesmo destino pelos dois lados.",
+    steps: [
+      {
+        title: "Definir os lados",
+        detail: "Pela esquerda usamos \\\\(x\\\\to a^-\\\\); pela direita, \\\\(x\\\\to a^+\\\\).",
+        formula: "\\lim_{x\\to a^-}f(x),\\qquad\\lim_{x\\to a^+}f(x)",
+        formulaAria: "limite pela esquerda e limite pela direita",
+      },
+      {
+        title: "Comparar",
+        detail: "Se os resultados forem diferentes, o gráfico apresenta um salto.",
+        formula: "L_-\\neq L_+\\Longrightarrow\\lim_{x\\to a}f(x)\\text{ não existe}",
+        formulaAria: "limites laterais diferentes implicam que o limite não existe",
+      },
+      {
+        title: "Concluir",
+        detail: "O limite existe exatamente quando os dois limites laterais coincidem.",
+        formula: "\\lim_{x\\to a}f(x)=L\\Longleftrightarrow L_-=L_+=L",
+        formulaAria: "o limite existe se e somente se os limites laterais são iguais",
+      },
+    ],
+  },
+  ],
+  "calculo-1/limites/limite-no-infinito": [
+  "Dominância do termo de maior grau em limites no infinito": {
+    intro: "Para valores enormes de x, o termo de maior grau domina o comportamento do polinômio.",
+    steps: [
+      {
+        title: "Dividir pelo maior grau",
+        detail: "Em um quociente, dividimos todos os termos pela maior potência de \\\\(x\\\\).",
+        formula: "\\frac{3x^2+2x+1}{x^2-5}=\\frac{3+\\frac2x+\\frac1{x^2}}{1-\\frac5{x^2}}",
+        formulaAria: "quociente dividido por x ao quadrado",
+      },
+      {
+        title: "Fazer os termos menores sumirem",
+        detail: "Quando \\\\(x\\\\to\\\\infty\\\\), as frações com x no denominador tendem a zero.",
+        formula: "\\lim_{x\\to\\infty}\\frac1x=0,\\qquad\\lim_{x\\to\\infty}\\frac1{x^2}=0",
+        formulaAria: "esses termos tendem a zero",
+      },
+      {
+        title: "Ler o limite",
+        detail: "Sobra a razão entre os coeficientes dominantes.",
+        formula: "\\lim_{x\\to\\infty}\\frac{3x^2+2x+1}{x^2-5}=3",
+        formulaAria: "o limite é três",
+      },
+    ],
+  },
+  ],
+  "calculo-1/limites/velocidade-instantanea": [
+  "Velocidade instantânea a partir da velocidade média": {
+    intro: "A velocidade instantânea é a velocidade média quando o intervalo de tempo encolhe até zero.",
+    steps: [
+      {
+        title: "Calcular uma média",
+        detail: "Entre dois instantes, dividimos a variação da posição pela variação do tempo.",
+        formula: "v_{\\mathrm{média}}=\\frac{\\Delta s}{\\Delta t}",
+        formulaAria: "velocidade média é delta s sobre delta t",
+      },
+      {
+        title: "Encolher o intervalo",
+        detail: "Usamos intervalos cada vez menores ao redor de \\\\(t\\\\).",
+        formula: "v(t)=\\lim_{\\Delta t\\to0}\\frac{s(t+\\Delta t)-s(t)}{\\Delta t}",
+        formulaAria: "velocidade em t é o limite",
+      },
+      {
+        title: "Interpretar",
+        detail: "O limite da média é a taxa de variação naquele instante.",
+        formula: "v_{\\mathrm{instantânea}}=\\lim_{\\Delta t\\to0}v_{\\mathrm{média}}",
+        formulaAria: "velocidade instantânea é o limite da velocidade média",
+      },
+    ],
+  },
+  ],
+  "calculo-1/continuidade/continuidade-ponto": [
+  "Condições para continuidade de uma função": {
+    intro: "Ser contínua em um ponto significa não haver furo, salto ou valor incompatível.",
+    steps: [
+      {
+        title: "O valor precisa existir",
+        detail: "A função precisa ter um valor definido em \\\\(a\\\\).",
+        formula: "f(a)\\text{ existe}",
+        formulaAria: "f de a existe",
+      },
+      {
+        title: "O limite precisa existir",
+        detail: "Os caminhos pela esquerda e pela direita devem chegar ao mesmo destino.",
+        formula: "\\lim_{x\\to a}f(x)\\text{ existe}",
+        formulaAria: "o limite existe",
+      },
+      {
+        title: "Limite e valor devem coincidir",
+        detail: "A condição final conecta o comportamento ao redor com o ponto.",
+        formula: "\\lim_{x\\to a}f(x)=f(a)",
+        formulaAria: "o limite é igual a f de a",
+      },
+    ],
+  },
+  ],
+  "calculo-1/derivadas/definicao-derivada": [
+  "Definição da derivada": {
+    intro: "A derivada é o limite da inclinação de secantes quando o segundo ponto se aproxima do primeiro.",
+    steps: [
+      {
+        title: "Começar pela secante",
+        detail: "A inclinação entre \\\\(a\\\\) e \\\\(a+h\\\\) é a variação de f dividida pela variação de x.",
+        formula: "\\frac{f(a+h)-f(a)}{h}",
+        formulaAria: "f de a mais h menos f de a sobre h",
+      },
+      {
+        title: "Aproximar o ponto",
+        detail: "Fazemos \\\\(h\\\\) tender a zero; a secante vira a tangente.",
+        formula: "f'(a)=\\lim_{h\\to0}\\frac{f(a+h)-f(a)}{h}",
+        formulaAria: "f linha de a é o limite quando h tende a zero",
+      },
+      {
+        title: "Interpretar",
+        detail: "O resultado é a inclinação instantânea da função.",
+        formula: "f'(a)=\\text{inclinação da tangente em }a",
+        formulaAria: "f linha de a é a inclinação da tangente em a",
+      },
+    ],
+  },
+  "Derivada de \\(x^2\\) pela definição": {
+    intro: "Este exemplo mostra a definição funcionando sem usar uma regra pronta.",
+    steps: [
+      {
+        title: "Substituir a função",
+        detail: "Para \\\\(f(x)=x^2\\\\), temos \\\\(f(x+h)=(x+h)^2\\\\).",
+        formula: "\\frac{(x+h)^2-x^2}{h}",
+        formulaAria: "x mais h ao quadrado menos x ao quadrado sobre h",
+      },
+      {
+        title: "Expandir e cancelar",
+        detail: "O \\\\(x^2\\\\) se cancela e colocamos \\\\(h\\\\) em evidência.",
+        formula: "\\frac{x^2+2xh+h^2-x^2}{h}=\\frac{h(2x+h)}h=2x+h",
+        formulaAria: "a expressão se simplifica para dois x mais h",
+      },
+      {
+        title: "Calcular o limite",
+        detail: "Quando \\\\(h\\\\to0\\\\), sobra \\\\(2x\\\\).",
+        formula: "\\lim_{h\\to0}(2x+h)=2x",
+        formulaAria: "o limite é dois x",
+      },
+    ],
+  },
+  ],
+  "calculo-1/derivadas/derivada-potencia": [
+  "Regra da potência": {
+    intro: "A regra generaliza o padrão observado ao derivar potências pela definição.",
+    steps: [
+      {
+        title: "Partir da definição",
+        detail: "Para \\\\(f(x)=x^n\\\\), usamos o quociente de diferenças.",
+        formula: "f'(x)=\\lim_{h\\to0}\\frac{(x+h)^n-x^n}{h}",
+        formulaAria: "f linha de x é o limite da diferença",
+      },
+      {
+        title: "Observar o termo de primeira ordem",
+        detail: "No desenvolvimento, o termo linear é \\\\(nx^{n-1}h\\\\); os outros contêm \\\\(h^2\\\\) ou mais.",
+        formula: "(x+h)^n=x^n+nx^{n-1}h+\\text{termos com }h^2",
+        formulaAria: "o termo linear é n x elevado a n menos um vezes h",
+      },
+      {
+        title: "Cancelar e limitar",
+        detail: "Após dividir por \\\\(h\\\\), os termos com h desaparecem.",
+        formula: "\\frac{d}{dx}x^n=nx^{n-1}",
+        formulaAria: "a derivada de x elevado a n é n vezes x elevado a n menos um",
+      },
+    ],
+  },
+  ],
+  "calculo-1/derivadas/derivada-produto-quociente": [
+  "Regra do produto": {
+    intro: "A variação de um produto tem duas fontes: a mudança do primeiro fator e a mudança do segundo.",
+    steps: [
+      {
+        title: "Adicionar e retirar um termo",
+        detail: "Separamos a diferença adicionando \\\\(u(x)v(x+h)\\\\) no numerador.",
+        formula: "\\frac{u(x+h)v(x+h)-u(x)v(x)}h",
+        formulaAria: "diferença do produto sobre h",
+      },
+      {
+        title: "Separar as variações",
+        detail: "Isso produz uma variação de u e outra de v.",
+        formula: "\\frac{u(x+h)-u(x)}h\\,v(x+h)+u(x)\\frac{v(x+h)-v(x)}h",
+        formulaAria: "variação de u vezes v mais u vezes variação de v",
+      },
+      {
+        title: "Fazer o limite",
+        detail: "Quando \\\\(h\\\\to0\\\\), \\\\(v(x+h)\\\\to v(x)\\\\).",
+        formula: "(uv)'=u'v+uv'",
+        formulaAria: "a derivada do produto é u linha v mais u v linha",
+      },
+    ],
+  },
+  "Regra do quociente": {
+    intro: "O quociente pode ser visto como um produto pelo inverso do denominador.",
+    steps: [
+      {
+        title: "Reescrever",
+        detail: "Para \\\\(v\\\\neq0\\\\), escrevemos \\\\(u/v=u\\\\cdot v^{-1}\\\\).",
+        formula: "\\frac uv=u\\,v^{-1}",
+        formulaAria: "u sobre v é u vezes v elevado a menos um",
+      },
+      {
+        title: "Derivar o inverso",
+        detail: "A derivada de \\\\(v^{-1}\\\\) é \\\\(-v'/v^2\\\\).",
+        formula: "(v^{-1})'=-\\frac{v'}{v^2}",
+        formulaAria: "a derivada do inverso de v é menos v linha sobre v ao quadrado",
+      },
+      {
+        title: "Organizar",
+        detail: "Aplicando o produto e colocando no mesmo denominador, chegamos à regra.",
+        formula: "\\left(\\frac uv\\right)'=\\frac{u'v-uv'}{v^2}",
+        formulaAria: "a derivada de u sobre v é u linha v menos u v linha sobre v ao quadrado",
+      },
+    ],
+  },
+  ],
+  "calculo-1/derivadas/derivada-composta": [
+  "Regra da cadeia": {
+    intro: "Em uma composição, a variação passa pela função interna antes de chegar à função externa.",
+    steps: [
+      {
+        title: "Criar uma variável intermediária",
+        detail: "Escreva \\\\(u=g(x)\\\\) e \\\\(y=f(u)\\\\).",
+        formula: "u=g(x),\\qquad y=f(u)",
+        formulaAria: "u é g de x e y é f de u",
+      },
+      {
+        title: "Multiplicar taxas",
+        detail: "A taxa de y em relação a x é o produto das duas taxas intermediárias.",
+        formula: "\\frac{dy}{dx}=\\frac{dy}{du}\\cdot\\frac{du}{dx}",
+        formulaAria: "dy sobre dx é dy sobre du vezes du sobre dx",
+      },
+      {
+        title: "Voltar à composição",
+        detail: "Substituindo as funções, derivamos a externa e multiplicamos pela interna.",
+        formula: "\\frac{d}{dx}f(g(x))=f'(g(x))g'(x)",
+        formulaAria: "a derivada de f de g de x é f linha de g de x vezes g linha de x",
+      },
+    ],
+  },
+  ],
+  "calculo-1/integrais/ideia-de-soma": [
+  "Integral como limite de somas": {
+    intro: "A integral definida nasce de somar áreas de retângulos cada vez mais estreitos.",
+    steps: [
+      {
+        title: "Aproximar por retângulos",
+        detail: "Cada retângulo tem altura \\\\(f(x_i^*)\\\\) e base \\\\(\\\\Delta x\\\\).",
+        formula: "S_n=\\sum_{i=1}^n f(x_i^*)\\Delta x",
+        formulaAria: "s n é a soma das áreas dos retângulos",
+      },
+      {
+        title: "Refinar a divisão",
+        detail: "Dividimos o intervalo em mais partes; assim \\\\(\\\\Delta x\\\\) diminui.",
+        formula: "\\Delta x=\\frac{b-a}{n},\\qquad n\\to\\infty",
+        formulaAria: "delta x é b menos a sobre n",
+      },
+      {
+        title: "Tomar o limite",
+        detail: "O limite dessas aproximações define a integral.",
+        formula: "\\int_a^b f(x)\\,dx=\\lim_{n\\to\\infty}\\sum_{i=1}^n f(x_i^*)\\Delta x",
+        formulaAria: "a integral é o limite da soma",
+      },
+    ],
+  },
+  ],
+  "calculo-1/integrais/area-sob-grafico": [
+  "Área sob a curva": {
+    intro: "Para uma função não negativa, a integral acumula a área entre o gráfico e o eixo x.",
+    steps: [
+      {
+        title: "Somar aproximações",
+        detail: "A área aproximada é a soma de bases vezes alturas.",
+        formula: "A\\approx\\sum f(x_i^*)\\Delta x",
+        formulaAria: "a área é aproximadamente a soma",
+      },
+      {
+        title: "Deixar os retângulos finos",
+        detail: "Quanto menor \\\\(\\\\Delta x\\\\), mais a soma acompanha a curva.",
+        formula: "\\Delta x\\to0",
+        formulaAria: "delta x tende a zero",
+      },
+      {
+        title: "Definir a área",
+        detail: "No limite, a aproximação vira a área exata.",
+        formula: "A=\\int_a^b f(x)\\,dx",
+        formulaAria: "a área é a integral de a até b",
+      },
+    ],
+  },
+  ],
+  "calculo-1/integrais/tfc": [
+  "Teorema Fundamental do Cálculo": {
+    intro: "O teorema conecta acumular áreas com derivar: uma operação desfaz a outra.",
+    steps: [
+      {
+        title: "Criar uma área acumulada",
+        detail: "Defina \\\\(F(x)\\\\) como a área desde \\\\(a\\\\) até \\\\(x\\\\).",
+        formula: "F(x)=\\int_a^x f(t)\\,dt",
+        formulaAria: "f maiúsculo de x é a integral de a até x",
+      },
+      {
+        title: "Derivar a área",
+        detail: "Ao avançar um pouco em x, acrescentamos um retângulo de altura aproximadamente \\\\(f(x)\\\\).",
+        formula: "F'(x)=f(x)",
+        formulaAria: "f maiúsculo linha de x é f de x",
+      },
+      {
+        title: "Usar a antiderivada",
+        detail: "Se \\\\(F'=f\\\\), a área entre os limites é a diferença dos valores.",
+        formula: "\\int_a^b f(x)\\,dx=F(b)-F(a)",
+        formulaAria: "a integral de a até b é f de b menos f de a",
+      },
+    ],
+  },
+  ],
 };
 
 export function demonstrationsForLesson(
