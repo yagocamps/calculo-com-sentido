@@ -55,16 +55,16 @@ export const testQuestions: TestQuestion[] = [
     id: "q02",
     topic: "fracoes",
     topicLabel: "Frações",
-    question: "Qual é o valor de \\frac{3}{4} + \\frac{1}{2}?",
+    question: "Qual é o valor de \\(\\frac{3}{4} + \\frac{1}{2}\\)?",
     options: [
-      { key: "A", text: "\\frac{4}{6}" },
-      { key: "B", text: "\\frac{5}{4}" },
-      { key: "C", text: "\\frac{1}{4}" },
-      { key: "D", text: "\\frac{2}{3}" },
+      { key: "A", text: "\\(\\frac{4}{6}\\)" },
+      { key: "B", text: "\\(\\frac{5}{4}\\)" },
+      { key: "C", text: "\\(\\frac{1}{4}\\)" },
+      { key: "D", text: "\\(\\frac{2}{3}\\)" },
     ],
     correct: "B",
     explanation:
-      "\\frac{1}{2} = \\frac{2}{4}, então \\frac{3}{4} + \\frac{2}{4} = \\frac{5}{4} (ou \\(1{,}25\\)). É preciso mesmo denominador.",
+      "Convertendo para o mesmo denominador: \\(\\frac{1}{2} = \\frac{2}{4}\\), então \\(\\frac{3}{4} + \\frac{2}{4} = \\frac{5}{4}\\) (ou \\(1{,}25\\)). É preciso mesmo denominador.",
   },
   {
     id: "q03",
@@ -133,7 +133,7 @@ export const testQuestions: TestQuestion[] = [
     subtopic: "Função afim",
     question:
       "Um plano cobra R$ 40,00 fixos mais R$ 5,00 por pacote extra. A função C(x) = 5x + 40 significa:",
-    formula: "C(x) = 5x + 40",
+    formula: "\\(C(x) = 5x + 40\\)",
     options: [
       {
         key: "A",
@@ -154,8 +154,8 @@ export const testQuestions: TestQuestion[] = [
     id: "q08",
     topic: "funcoes",
     topicLabel: "Funções",
-    question: "Se f(x) = x², qual é f(3)?",
-    formula: "f(x) = x²",
+    question: "Se \\(f(x) = x^2\\), qual é \\(f(3)\\)?",
+    formula: "\\(f(x) = x^2\\)",
     options: [
       { key: "A", text: "6" },
       { key: "B", text: "9" },
@@ -171,7 +171,7 @@ export const testQuestions: TestQuestion[] = [
     topicLabel: "Gráficos",
     question:
       "A reta y = 2x + 1 passa pelo ponto (0, 1). O que o coeficiente 2 representa?",
-    formula: "y = 2x + 1",
+    formula: "\\(y = 2x + 1\\)",
     options: [
       { key: "A", text: "Inclinação da reta (taxa de crescimento)" },
       { key: "B", text: "O valor quando x = 0" },
@@ -200,7 +200,7 @@ export const testQuestions: TestQuestion[] = [
     id: "q11",
     topic: "trigonometria",
     topicLabel: "Trigonometria",
-    question: "O que é cos(0°)?",
+    question: "O que é \\(\\cos(0^\\circ)\\)?",
     options: [
       { key: "A", text: "0" },
       { key: "B", text: "1" },
@@ -265,10 +265,10 @@ export const testQuestions: TestQuestion[] = [
     topicLabel: "Frações",
     question: "Quanto é \\(\\frac{2}{3} \\times \\frac{3}{5}\\)?",
     options: [
-      { key: "A", text: "\\frac{6}{15}, ou seja, \\frac{2}{5}" },
-      { key: "B", text: "\\frac{5}{8}" },
-      { key: "C", text: "\\frac{10}{9}" },
-      { key: "D", text: "\\frac{6}{8}" },
+      { key: "A", text: "\\(\\frac{6}{15}\\), ou seja, \\(\\frac{2}{5}\\)" },
+      { key: "B", text: "\\(\\frac{5}{8}\\)" },
+      { key: "C", text: "\\(\\frac{10}{9}\\)" },
+      { key: "D", text: "\\(\\frac{6}{8}\\)" },
     ],
     correct: "A",
     explanation:
