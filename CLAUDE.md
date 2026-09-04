@@ -51,8 +51,8 @@ Site educacional de Pré-Cálculo e Cálculo 1 para alunos que chegam à faculda
 4. **Erros comuns sempre.** Toda aula lista 2-4 erros típicos.
 5. **Linguagem acolhedora.** Sem academiquês. Como se fosse para alguém com medo de matemática.
 
-Estrutura obrigatória da aula (12 seções):
-1. Título · 2. Por que aprender · 3. Explicação simples · 4. Onde aparece · 5. Exemplo aplicado · 6. Passo a passo · 7. Interpretação · 8. Erros comuns · 9. Exercícios guiados · 10. Exercícios aplicados · 11. Resumo · 12. Próxima aula.
+Estrutura obrigatória da aula (13 etapas de conteúdo, além do título):
+1. Por que aprender · 2. Explicação simples · 3. Onde aparece · 4. Exemplo aplicado · 5. Passo a passo · 6. Interpretação · 7. Erros comuns · 8. Exercícios guiados · 9. Exercícios aplicados · 10. Resumo · 11. Checagem rápida · 12. Vídeo-aula · 13. Próxima aula.
 
 Estrutura obrigatória do exercício (9 campos):
 1. Tema · 2. Área de aplicação · 3. Enunciado · 4. O que identificar · 5. Dica · 6. Resolução · 7. Resposta · 8. Interpretação · 9. Erro comum.
@@ -64,6 +64,7 @@ Veja `tokens.tailwind.md` para o config do Tailwind.
 - **Paleta:** cream warm (`#FAF6EF`) + marrom-tinta (`#2A211A`) + acento terracota (`#C2553D`). Semânticas: sálvia (concluído), azul (info), âmbar (dica/alerta).
 - **Tipografia:** Newsreader (serif, títulos) + DM Sans (UI/body) + JetBrains Mono (fórmulas).
 - **Cantos:** 8/14/20/28px. Sombras suaves.
+
 - **Sidebar fixa de 264px** estilo documentação, com busca, navegação agrupada por trilha e mini-progresso no rodapé.
 - **Callouts** com borda lateral colorida (4px) por intenção: ideia, aplicação, erro, dica.
 
@@ -75,7 +76,7 @@ Trabalhar sempre por etapas pequenas. Uma tela, uma aula, um módulo por vez.
 
 **Ordem sugerida:**
 1. Layout shell (sidebar + topbar) ← portado do protótipo
-2. Componentes UI base (Btn, Card, Tag, Callout, ProgressRing)
+2. Componentes UI base (Btn, Card, Tag, Callout, ProgressRing, ModuleCard)
 3. Home estática
 4. Trilha de Pré-Cálculo (data-driven)
 5. Página de aula (modelo + 1 aula real: Função afim)
@@ -98,7 +99,7 @@ O projeto implementado está em `site/`. Rodar com `cd site && npm run dev`.
 - **Etapa 2:** Home completa em `site/src/components/home/` + `site/src/data/home.ts`
 - **Etapa 3:** Teste de nível em `site/src/components/teste/` + `site/src/data/teste-nivel.ts`
 - **Etapa 4:** Trilha Pré-Cálculo em `site/src/data/pre-calculo.ts` + rotas `/pre-calculo/[modulo]`
-- **Etapa 5:** Aulas em `site/src/data/aulas/` + `AulaView` (12 seções). MD fonte em `site/src/content/aulas/`
+- **Etapa 5:** Aulas em `site/src/data/aulas/` + `AulaView` (13 etapas de conteúdo). MD fonte em `site/src/content/aulas/`
 - **Etapa 6:** Exercícios em `site/src/data/exercicios.ts` + `ExerciciosFlow` (9 partes, filtros, reveal)
 - **Etapa 8:** Progresso em `site/src/components/progresso/` + `site/src/lib/progress-dashboard.ts`
-- **Etapa 9:** Diferenciais para quem trava em matemática: mini-quiz de saída (`AulaQuiz`, campo `quiz` opcional na aula), pré-requisitos por aula (`site/src/data/prereqs.ts`, default por módulo + override em `meta.prereqs`), tooltip "Lê-se" em fórmulas inline (RichText), explicação alternativa (`explicacao.alternativa`), gráfico com sliders (`InteractiveAfimPlot`, via `grafico.interactive`), trilha expressa `/trilha-expressa` e check de seção na TOC.
+- **Etapa 9:** Diferenciais para quem trava em matemática: mini-quiz de saída (`AulaQuiz`, campo `quiz` opcional na aula), pré-requisitos por aula (`site/src/data/prereqs.ts`, default por módulo + override em `meta.prereqs`), tooltip "Lê-se" em fórmulas inline (`RichText`), explicação alternativa (`explicacao.alternativa`), gráfico com sliders (`InteractiveAfimPlot`, via `grafico.interactive`), trilha expressa `/trilha-expressa` e check de seção na TOC.
