@@ -69,15 +69,11 @@ function HeroSection() {
       </span>
 
       <h1 className="relative mt-4 max-w-[720px] text-balance font-serif text-[46px] font-medium leading-[1.05] tracking-tight text-ink">
-        Aprenda Pré-Cálculo e Cálculo 1 de forma{" "}
-        <em className="italic text-terracotta">simples</em>, aplicada e progressiva.
+        Descubra por onde começar em Cálculo — e avance com sentido.
       </h1>
 
       <p className="relative mt-3.5 max-w-[640px] text-base leading-relaxed text-ink-muted">
-        Ideal para quem saiu do ensino médio com dificuldade e quer entrar na
-        faculdade com mais confiança. Antes de cobrar a fórmula, mostramos o
-        sentido. Antes de ensinar o cálculo, mostramos onde ele aparece na vida
-        real.
+        Faça um teste rápido, receba uma trilha recomendada e comece pela aula certa para o seu nível. Pré-Cálculo e Cálculo 1 com sentido, aplicação e passo a passo.
       </p>
 
       <HeroCtas />
@@ -200,7 +196,7 @@ function PathsSection() {
           </h2>
         </div>
         <Button href="/teste-de-nivel" variant="soft" size="sm">
-          Não sei por onde → teste de nível
+          Ainda em dúvida? Faça o teste
         </Button>
       </div>
       <div className="grid gap-3.5 md:grid-cols-2">
@@ -360,15 +356,14 @@ function FinalCtaSection() {
   return (
     <section className="flex flex-col items-center rounded-3 border border-border bg-surface-warm px-8 py-10 text-center">
       <h2 className="max-w-lg text-balance font-serif text-3xl font-medium tracking-tight">
-        Pronto para descobrir por onde começar?
+        Pronto para encontrar sua primeira aula?
       </h2>
       <p className="mt-3 max-w-md text-sm leading-relaxed text-ink-muted">
-        O teste de nível leva poucos minutos e sugere Pré-Cálculo, Cálculo 1 ou
-        uma revisão pontual.
+        Em 10–15 minutos, o teste sugere uma trilha e aponta a primeira aula para você começar.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-2.5">
         <Button href="/teste-de-nivel" size="lg">
-          Descobrir por onde começar (2 min) →
+          Encontrar minha primeira aula (10–15 min) →
         </Button>
         <Button href="/pre-calculo" variant="ghost" size="lg">
           Revisar a base do zero →
