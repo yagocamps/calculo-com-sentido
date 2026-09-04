@@ -340,7 +340,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     },
   ],
   "pre-calculo/funcoes/funcao-afim": [
-  "Coeficiente angular da reta": {
+    { title: "Coeficiente angular da reta",
     intro: "O coeficiente angular mede quanto y varia quando x avança.",
     steps: [
       {
@@ -363,7 +363,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Equação da reta \\(y=mx+b\\)": {
+    { title: "Equação da reta \\(y=mx+b\\)",
     intro: "A forma reduzida separa a inclinação da reta do ponto onde ela cruza o eixo y.",
     steps: [
       {
@@ -382,7 +382,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/funcoes/funcao-quadratica": [
-  "Fórmula do x do vértice da parábola": {
+    { title: "Fórmula do x do vértice da parábola",
     intro: "O vértice está no eixo de simetria, exatamente no meio das duas raízes.",
     steps: [
       {
@@ -405,7 +405,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Fórmula do y do vértice da parábola": {
+    { title: "Fórmula do y do vértice da parábola",
     intro: "A coordenada y é o valor da função no x do vértice.",
     steps: [
       {
@@ -424,7 +424,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/funcoes/funcao-modular": [
-  "Definição de módulo": {
+    { title: "Definição de módulo",
     intro: "O módulo representa a distância de um número até zero, portanto nunca é negativo.",
     steps: [
       {
@@ -441,7 +441,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Reflexão do gráfico pela função módulo": {
+    { title: "Reflexão do gráfico pela função módulo",
     intro: "Aplicar módulo aos valores de y reflete para cima a parte que estava abaixo do eixo x.",
     steps: [
       {
@@ -466,7 +466,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/funcoes/funcao-exponencial": [
-  "Crescimento exponencial": {
+    { title: "Crescimento exponencial",
     intro: "O crescimento exponencial repete uma multiplicação pelo mesmo fator em cada período.",
     steps: [
       {
@@ -491,7 +491,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/funcoes/funcao-logaritmica": [
-  "Definição de logaritmo": {
+    { title: "Definição de logaritmo",
     intro: "Logaritmo responde qual expoente transforma uma base em determinado resultado.",
     steps: [
       {
@@ -508,7 +508,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Propriedades dos logaritmos": {
+    { title: "Propriedades dos logaritmos",
     intro: "As propriedades dos logaritmos são as propriedades dos expoentes traduzidas para outra linguagem.",
     steps: [
       {
@@ -533,7 +533,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/funcoes/juros-compostos": [
-  "Fórmula dos juros compostos": {
+    { title: "Fórmula dos juros compostos",
     intro: "Cada período multiplica o saldo anterior por um fator que inclui a taxa.",
     steps: [
       {
@@ -558,7 +558,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/graficos/translacao-graficos": [
-  "Translação vertical de gráficos": {
+    { title: "Translação vertical de gráficos",
     intro: "Somar uma constante às saídas move todos os pontos para cima ou para baixo.",
     steps: [
       {
@@ -581,7 +581,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Translação horizontal de gráficos": {
+    { title: "Translação horizontal de gráficos",
     intro: "Alterar a entrada da função move o gráfico na horizontal.",
     steps: [
       {
@@ -606,7 +606,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/trigonometria/seno": [
-  "Razões trigonométricas por semelhança de triângulos": {
+    { title: "Razões trigonométricas por semelhança de triângulos",
     intro: "Triângulos semelhantes preservam as razões entre lados correspondentes.",
     steps: [
       {
@@ -625,7 +625,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/trigonometria/tangente": [
-  "Relação \\(\\tan x=\\frac{\\sin x}{\\cos x}\\)": {
+    { title: "Relação \\(\\tan x=\\frac{\\sin x}{\\cos x}\\)",
     intro: "A tangente surge ao dividir seno por cosseno no mesmo triângulo.",
     steps: [
       {
@@ -650,7 +650,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/trigonometria/ciclo-trigonometrico": [
-  "Valores trigonométricos de 30°, 45° e 60°": {
+    { title: "Valores trigonométricos de 30°, 45° e 60°",
     intro: "Os valores notáveis vêm dos triângulos especiais 45-45-90 e 30-60-90.",
     steps: [
       {
@@ -673,7 +673,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Relação entre graus e radianos": {
+    { title: "Relação entre graus e radianos",
     intro: "Radianos medem o ângulo usando o comprimento do arco.",
     steps: [
       {
@@ -696,7 +696,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Comprimento de arco \\(s=r\\theta\\)": {
+    { title: "Comprimento de arco \\(s=r\\theta\\)",
     intro: "O arco é a mesma fração da circunferência que o ângulo é da volta.",
     steps: [
       {
@@ -715,7 +715,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/trigonometria/identidades-basicas": [
-  "Identidade fundamental da trigonometria": {
+    { title: "Identidade fundamental da trigonometria",
     intro: "No círculo unitário, seno e cosseno são as coordenadas de um ponto de raio 1.",
     steps: [
       {
@@ -732,7 +732,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Identidade \\(1+\\tan^2x=\\sec^2x\\)": {
+    { title: "Identidade \\(1+\\tan^2x=\\sec^2x\\)",
     intro: "Dividimos a identidade fundamental por \\(\\cos^2x\\), quando o cosseno não é zero.",
     steps: [
       {
@@ -751,7 +751,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/trigonometria/graficos-trigonometricos": [
-  "Construção do gráfico do seno pelo círculo trigonométrico": {
+    { title: "Construção do gráfico do seno pelo círculo trigonométrico",
     intro: "O gráfico do seno registra a coordenada vertical do ponto que gira no círculo unitário.",
     steps: [
       {
@@ -774,7 +774,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Construção do gráfico do cosseno pelo círculo trigonométrico": {
+    { title: "Construção do gráfico do cosseno pelo círculo trigonométrico",
     intro: "O gráfico do cosseno registra a coordenada horizontal do ponto que gira.",
     steps: [
       {
@@ -799,7 +799,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/limites/limite-por-grafico": [
-  "Existência de limite mesmo quando a função não existe no ponto": {
+    { title: "Existência de limite mesmo quando a função não existe no ponto",
     intro: "O limite observa o comportamento ao redor de um ponto; não depende de a função ter valor exatamente nele.",
     steps: [
       {
@@ -818,7 +818,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/limites/limites-laterais": [
-  "Limites laterais e condição de existência": {
+    { title: "Limites laterais e condição de existência",
     intro: "O limite bilateral só existe quando a função chega ao mesmo destino pelos dois lados.",
     steps: [
       {
@@ -843,7 +843,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/limites/limite-no-infinito": [
-  "Dominância do termo de maior grau em limites no infinito": {
+    { title: "Dominância do termo de maior grau em limites no infinito",
     intro: "Para valores enormes de x, o termo de maior grau domina o comportamento do polinômio.",
     steps: [
       {
@@ -868,7 +868,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/limites/velocidade-instantanea": [
-  "Velocidade instantânea a partir da velocidade média": {
+    { title: "Velocidade instantânea a partir da velocidade média",
     intro: "A velocidade instantânea é a velocidade média quando o intervalo de tempo encolhe até zero.",
     steps: [
       {
@@ -893,7 +893,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/continuidade/continuidade-ponto": [
-  "Condições para continuidade de uma função": {
+    { title: "Condições para continuidade de uma função",
     intro: "Ser contínua em um ponto significa não haver furo, salto ou valor incompatível.",
     steps: [
       {
@@ -918,7 +918,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/derivadas/definicao-derivada": [
-  "Definição da derivada": {
+    { title: "Definição da derivada",
     intro: "A derivada é o limite da inclinação de secantes quando o segundo ponto se aproxima do primeiro.",
     steps: [
       {
@@ -941,7 +941,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Derivada de \\(x^2\\) pela definição": {
+    { title: "Derivada de \\(x^2\\) pela definição",
     intro: "Este exemplo mostra a definição funcionando sem usar uma regra pronta.",
     steps: [
       {
@@ -966,7 +966,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/derivadas/derivada-potencia": [
-  "Regra da potência": {
+    { title: "Regra da potência",
     intro: "A regra generaliza o padrão observado ao derivar potências pela definição.",
     steps: [
       {
@@ -991,7 +991,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/derivadas/derivada-produto-quociente": [
-  "Regra do produto": {
+    { title: "Regra do produto",
     intro: "A variação de um produto tem duas fontes: a mudança do primeiro fator e a mudança do segundo.",
     steps: [
       {
@@ -1014,7 +1014,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
-  "Regra do quociente": {
+    { title: "Regra do quociente",
     intro: "O quociente pode ser visto como um produto pelo inverso do denominador.",
     steps: [
       {
@@ -1039,7 +1039,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/derivadas/derivada-composta": [
-  "Regra da cadeia": {
+    { title: "Regra da cadeia",
     intro: "Em uma composição, a variação passa pela função interna antes de chegar à função externa.",
     steps: [
       {
@@ -1064,7 +1064,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/integrais/ideia-de-soma": [
-  "Integral como limite de somas": {
+    { title: "Integral como limite de somas",
     intro: "A integral definida nasce de somar áreas de retângulos cada vez mais estreitos.",
     steps: [
       {
@@ -1089,7 +1089,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/integrais/area-sob-grafico": [
-  "Área sob a curva": {
+    { title: "Área sob a curva",
     intro: "Para uma função não negativa, a integral acumula a área entre o gráfico e o eixo x.",
     steps: [
       {
@@ -1114,7 +1114,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "calculo-1/integrais/tfc": [
-  "Teorema Fundamental do Cálculo": {
+    { title: "Teorema Fundamental do Cálculo",
     intro: "O teorema conecta acumular áreas com derivar: uma operação desfaz a outra.",
     steps: [
       {
