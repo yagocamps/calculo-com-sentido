@@ -22,6 +22,7 @@ import { Tag } from "@/components/ui/Tag";
 import type { AulaContent } from "@/data/aulas/types";
 import { glossario, type GlossarioEntry } from "@/data/glossario";
 import { exercicios } from "@/data/exercicios";
+import { demonstrationsForLesson } from "@/data/demonstracoes";
 import { prereqsForModule } from "@/data/prereqs";
 import {
   calculo1LessonId,
@@ -60,6 +61,11 @@ export function AulaView({
 
   // Pré-requisitos: os da aula, ou os padrão do módulo como fallback.
   const prereqs = meta.prereqs ?? prereqsForModule(trilha, meta.moduleSlug);
+  const catalogDemonstrations = demonstrationsForLesson(
+    trilha,
+    meta.moduleSlug,
+    aulaSlug,
+  );
 
   // Realce inline dos termos do glossário desta aula (1ª ocorrência no texto).
   const glossaryHL = {
@@ -180,9 +186,9 @@ export function AulaView({
                   steps={content.demonstracao.steps}
                 />
               )}
-              {content.demonstracoes && content.demonstracoes.length > 0 && (
+              {catalogDemonstrations.length > 0 && (
                 <DemonstrationDisclosure
-                  demonstrations={content.demonstracoes}
+                  demonstrations={catalogDemonstrations}
                 />
               )}
               {content.grafico &&
