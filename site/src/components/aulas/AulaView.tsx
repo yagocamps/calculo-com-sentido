@@ -7,6 +7,7 @@ import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FunctionPlot } from "@/components/aulas/FunctionPlot";
 import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
+import { InteractiveQuadraticPlot } from "@/components/aulas/InteractiveQuadraticPlot";
 import { LessonAnalytics } from "@/components/aulas/LessonAnalytics";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
 import { RichText } from "@/components/aulas/RichText";
@@ -176,6 +177,14 @@ export function AulaView({
                   <InteractiveAfimPlot
                     initialA={content.grafico.interactive.a}
                     initialB={content.grafico.interactive.b}
+                    xDomain={content.grafico.xDomain}
+                    yDomain={content.grafico.yDomain}
+                  />
+                ) : content.grafico.interactive?.type === "quadratica" ? (
+                  <InteractiveQuadraticPlot
+                    initialA={content.grafico.interactive.a}
+                    initialB={content.grafico.interactive.b}
+                    initialC={content.grafico.interactive.c}
                     xDomain={content.grafico.xDomain}
                     yDomain={content.grafico.yDomain}
                   />
