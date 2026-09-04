@@ -113,13 +113,13 @@ export function BhaskaraDerivation({
         </p>
         <div className="mt-2 text-center">
           <MathFormula
-            latex="x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}"
+            latex={"x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}"}
             text="x é igual a menos b mais ou menos a raiz quadrada de b ao quadrado menos quatro a c, tudo sobre dois a"
             display
           />
         </div>
         <p className="mt-2 text-[13px] leading-relaxed text-ink-muted">
-          O discriminante <RichText>\(\Delta = b^2 - 4ac\)</RichText> não
+          O discriminante <RichText>{"\\(\\Delta = b^2 - 4ac\\)"}</RichText> não
           apareceu por acaso: ele é exatamente o numerador que sobra dentro da
           raiz depois de completar o quadrado.
         </p>
