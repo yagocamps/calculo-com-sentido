@@ -24,9 +24,9 @@ Site educacional de **Pré-Cálculo e Cálculo 1** para estudantes que chegam à
 .
 ├── site/                 # Aplicação Next.js (código que roda)
 │   ├── src/app/          # Rotas (App Router)
-│   ├── src/components/    # Componentes (layout, aulas, exercícios, UI)
+│   ├── src/components/    # Componentes (layout, aulas, UI)
 │   └── src/data/          # Conteúdo data-driven das aulas e exercícios
-├── index.html            # Protótipo visual (source-of-truth de design)
+├── index.html            # Protótipo visual (não é o app publicado)
 ├── design-canvas.jsx     # Protótipo de telas
 ├── tokens.tailwind.md    # Tokens do design system
 └── CLAUDE.md             # Convenções do projeto
@@ -41,6 +41,19 @@ npm run dev
 ```
 
 Acesse http://localhost:3000.
+
+## Publicação na Vercel
+
+A Vercel deve usar **`site` como Root Directory**, porque essa é a aplicação Next.js publicada. O protótipo visual em `src/` na raiz não participa do deploy.
+
+Configuração esperada:
+
+- Root Directory: `site`
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Framework Preset: Next.js
+
+O deploy da branch `main` é acionado pelo GitHub. A versão pública é [calculo-com-sentido.vercel.app](https://calculo-com-sentido.vercel.app/).
 
 ## Conteúdo
 
