@@ -1055,7 +1055,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           title: "Começar pela forma geral",
           detail:
             "Considere uma equação do 2º grau qualquer, com a condição essencial de que \\(a \\neq 0\\).",
-          formula: "ax^2 + bx + c = 0,\\qquad a \\\\ne 0",
+          formula: "ax^2 + bx + c = 0,\\qquad a \\ne 0",
           formulaAria: "a x ao quadrado mais b x mais c é igual a zero, com a diferente de zero",
         },
         {
