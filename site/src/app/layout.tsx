@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono, Newsreader } from "next/font/google";
 import "katex/dist/katex.min.css";
+import { Analytics } from "@vercel/analytics/next";
 import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -57,7 +58,10 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="h-full antialiased">{children}</body>
+      <body className="h-full antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
