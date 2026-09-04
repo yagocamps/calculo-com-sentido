@@ -8,6 +8,7 @@ import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FunctionPlot } from "@/components/aulas/FunctionPlot";
 import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
 import { InteractiveQuadraticPlot } from "@/components/aulas/InteractiveQuadraticPlot";
+import { BhaskaraDerivation } from "@/components/aulas/BhaskaraDerivation";
 import { LessonAnalytics } from "@/components/aulas/LessonAnalytics";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
 import { RichText } from "@/components/aulas/RichText";
@@ -172,6 +173,13 @@ export function AulaView({
                 formulaAria={content.explicacao.formulaAria}
                 legend={content.explicacao.formulaLegend}
               />
+              {content.demonstracao && (
+                <BhaskaraDerivation
+                  title={content.demonstracao.title}
+                  intro={content.demonstracao.intro}
+                  steps={content.demonstracao.steps}
+                />
+              )}
               {content.grafico &&
                 (content.grafico.interactive?.type === "afim" ? (
                   <InteractiveAfimPlot
