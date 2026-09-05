@@ -199,7 +199,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
         },
         {
           title: "Usar Pré-Cálculo",
-          detail: "Trilha de 6 módulos neste site cobre o essencial.",
+          detail: "Trilha de 7 módulos neste site cobre o essencial.",
         },
         {
           title: "Módulo 2 aqui",

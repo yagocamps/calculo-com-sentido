@@ -81,7 +81,7 @@ export const homeBenefits = [
   {
     num: "02 · RITMO",
     title: "Passo a passo, sem pular",
-    text: "Aulas curtas, exercícios guiados e desafios em quatro níveis. Você só avança quando a base está firme.",
+    text: "Aulas curtas, exercícios guiados e desafios em cinco níveis. Você avança no seu ritmo e pode revisar quando precisar.",
   },
   {
     num: "03 · ERROS",
@@ -119,7 +119,7 @@ export const homeAudience = [
 export const homePaths = [
   {
     title: "Pré-Cálculo",
-    tag: "Base · 6 módulos",
+    tag: "Base · 7 módulos",
     tagTone: "sage" as const,
     meta: "~ 8 semanas",
     desc: "Funções, gráficos, álgebra e trigonometria. A base sólida que falta para entender Cálculo 1 sem trauma.",

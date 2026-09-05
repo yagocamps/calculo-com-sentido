@@ -6,18 +6,19 @@ import { continuidadeAulas } from "@/data/aulas/calculo-1/continuidade";
 import { derivadasAulas } from "@/data/aulas/calculo-1/derivadas";
 import { aplicacoesDerivadasAulas } from "@/data/aulas/calculo-1/aplicacoes-derivadas";
 import { integraisAulas } from "@/data/aulas/calculo-1/integrais";
+import { calculo1Phase2Registry } from "@/data/aulas/calculo-1/fase2";
 
 export function buildCalculo1Registry(): Record<string, AulaContent> {
   const entries: Record<string, AulaContent> = {};
 
   const bundles: { modulo: string; aulas: Record<string, AulaContent> }[] = [
     { modulo: "antes-do-calculo", aulas: antesDoCalculoAulas },
-    { modulo: "funcoes-para-calculo", aulas: funcoesParaCalculoAulas },
-    { modulo: "limites", aulas: limitesAulas },
-    { modulo: "continuidade", aulas: continuidadeAulas },
-    { modulo: "derivadas", aulas: derivadasAulas },
-    { modulo: "aplicacoes-derivadas", aulas: aplicacoesDerivadasAulas },
-    { modulo: "integrais", aulas: integraisAulas },
+    { modulo: "funcoes-para-calculo", aulas: { ...funcoesParaCalculoAulas, ...calculo1Phase2Registry["funcoes-para-calculo"] } },
+    { modulo: "limites", aulas: { ...limitesAulas, ...calculo1Phase2Registry.limites } },
+    { modulo: "continuidade", aulas: { ...continuidadeAulas, ...calculo1Phase2Registry.continuidade } },
+    { modulo: "derivadas", aulas: { ...derivadasAulas, ...calculo1Phase2Registry.derivadas } },
+    { modulo: "aplicacoes-derivadas", aulas: { ...aplicacoesDerivadasAulas, ...calculo1Phase2Registry["aplicacoes-derivadas"] } },
+    { modulo: "integrais", aulas: { ...integraisAulas, ...calculo1Phase2Registry.integrais } },
   ];
 
   for (const { modulo, aulas } of bundles) {

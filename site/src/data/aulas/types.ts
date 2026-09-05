@@ -50,6 +50,11 @@ export type AulaPrereq = {
   href: string;
 };
 
+/** Conexão explícita com conteúdos futuros que dependem desta aula. */
+export type AulaFutureUse = AulaPrereq & {
+  detail: string;
+};
+
 export type AulaContent = {
   meta: {
     title: string;
@@ -64,6 +69,8 @@ export type AulaContent = {
     /** Pré-requisitos específicos da aula. Quando ausente, a aula usa os
      * pré-requisitos padrão do módulo (ver `src/data/prereqs.ts`). */
     prereqs?: AulaPrereq[];
+    /** De duas a quatro aplicações futuras da habilidade estudada. */
+    usedIn?: AulaFutureUse[];
   };
   porQue: {
     title: string;

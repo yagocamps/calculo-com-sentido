@@ -12,6 +12,7 @@ import { exerciciosPreparacaoLimites } from "@/data/exercicios-preparacao-limite
 import { exerciciosTrigonometria } from "@/data/exercicios-trigonometria";
 import { exerciciosFundamentos } from "@/data/exercicios-fundamentos";
 import { exerciciosLimites } from "@/data/exercicios-limites";
+import { exerciciosFase2 } from "@/data/exercicios-fase2";
 
 export type ExerciseType =
   | "compreensao"
@@ -20,6 +21,7 @@ export type ExerciseType =
   | "interpretacao";
 
 export type ExerciseLevel = "facil" | "medio" | "dificil" | "desafio";
+export type PedagogicalExerciseLevel = 1 | 2 | 3 | 4 | 5;
 
 export type Exercicio = {
   id: string;
@@ -30,6 +32,8 @@ export type Exercicio = {
   area: string;
   type: ExerciseType;
   level: ExerciseLevel;
+  /** Escala pedagógica da Fase 2. Itens legados recebem nível por regra de migração. */
+  pedagogicalLevel?: PedagogicalExerciseLevel;
   enunciado: string;
   identificar: string | string[];
   dica: string;
@@ -60,10 +64,11 @@ export const exercicioTemas = [
 
 export const exercicioNiveis = [
   { slug: "todos", label: "Todos" },
-  { slug: "facil", label: "Fácil" },
-  { slug: "medio", label: "Médio" },
-  { slug: "dificil", label: "Difícil" },
-  { slug: "desafio", label: "Desafio" },
+  { slug: "1", label: "1 · Fundamentos" },
+  { slug: "2", label: "2 · Aplicação direta" },
+  { slug: "3", label: "3 · Interpretação" },
+  { slug: "4", label: "4 · Problema" },
+  { slug: "5", label: "5 · Desafio" },
 ] as const;
 
 export const exercicios: Exercicio[] = [
@@ -244,4 +249,5 @@ export const exercicios: Exercicio[] = [
   ...exerciciosAplicacoesDerivadas,
   ...exerciciosIntegrais,
   ...exerciciosDesafios,
+  ...exerciciosFase2,
 ];

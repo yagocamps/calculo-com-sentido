@@ -48,3 +48,15 @@ export function LevelTag({
   const { label, tone } = map[level];
   return <Tag tone={tone}>{label}</Tag>;
 }
+
+export function PedagogicalLevelTag({ level }: { level: 1 | 2 | 3 | 4 | 5 }) {
+  const map = {
+    1: { label: "Nível 1 · Fundamentos", tone: "sage" as const },
+    2: { label: "Nível 2 · Aplicação", tone: "sky" as const },
+    3: { label: "Nível 3 · Interpretação", tone: "verde" as const },
+    4: { label: "Nível 4 · Problema", tone: "amber" as const },
+    5: { label: "Nível 5 · Desafio", tone: "terracotta" as const },
+  };
+  const { label, tone } = map[level];
+  return <Tag tone={tone}>{label}</Tag>;
+}

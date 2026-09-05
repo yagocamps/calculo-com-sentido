@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ModuleFlashcards } from "@/components/flashcards/ModuleFlashcards";
+import { ModuleCheckpoint } from "@/components/trilhas/ModuleCheckpoint";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { ProgressRing } from "@/components/ui/ProgressRing";
@@ -7,6 +8,7 @@ import { Tag } from "@/components/ui/Tag";
 import type { ModuleState } from "@/components/trilhas/ModuleCard";
 import type { GlossarioEntry } from "@/data/glossario";
 import type { TrilhaModuloData } from "@/data/trilha-module";
+import { getModuleCheckpoint } from "@/data/checkpoints";
 import { isLessonAccessible } from "@/lib/aulas";
 import { moduleStateTag } from "@/lib/progress-utils";
 import { cn } from "@/lib/utils";
@@ -33,6 +35,7 @@ export function ModuloPageContent({
   flashcards?: GlossarioEntry[];
 }) {
   const stateLabel = moduleStateTag(moduleState);
+  const checkpoint = getModuleCheckpoint(trilhaSlug, modulo.slug);
 
   return (
     <div className="mx-auto max-w-[1080px]">
@@ -144,6 +147,13 @@ export function ModuloPageContent({
           })}
         </ol>
       </section>
+
+      {checkpoint && (
+        <ModuleCheckpoint
+          data={checkpoint}
+          storageKey={`${trilhaSlug}/${modulo.slug}`}
+        />
+      )}
     </div>
   );
 }
