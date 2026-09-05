@@ -8,6 +8,7 @@ import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FutureUseLinks } from "@/components/aulas/FutureUseLinks";
 import { FunctionPlot } from "@/components/aulas/FunctionPlot";
 import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
+import { InteractiveConceptLab } from "@/components/aulas/InteractiveConceptLab";
 import { BhaskaraDerivation } from "@/components/aulas/BhaskaraDerivation";
 import { DemonstrationDisclosure } from "@/components/aulas/DemonstrationDisclosure";
 import { LessonAnalytics } from "@/components/aulas/LessonAnalytics";
@@ -26,6 +27,7 @@ import { exercicios } from "@/data/exercicios";
 import { demonstrationsForLesson } from "@/data/demonstracoes";
 import { prereqsForModule } from "@/data/prereqs";
 import { futureUsesForLesson } from "@/data/future-uses";
+import { visualLabForLesson } from "@/data/visual-labs";
 import {
   calculo1Modulos,
   calculo1LessonId,
@@ -80,6 +82,7 @@ export function AulaView({
     meta.moduleSlug,
     aulaSlug,
   );
+  const visualLab = visualLabForLesson(trilha, meta.moduleSlug, aulaSlug);
   const hasQuiz = Boolean(content.quiz?.length);
   const hasVideos = Boolean(content.videos?.length);
   const curriculumModules =
@@ -236,6 +239,7 @@ export function AulaView({
                 formulaAria={content.explicacao.formulaAria}
                 legend={content.explicacao.formulaLegend}
               />
+              {visualLab && <InteractiveConceptLab kind={visualLab} />}
               {content.demonstracao && (
                 <BhaskaraDerivation
                   title={content.demonstracao.title}
