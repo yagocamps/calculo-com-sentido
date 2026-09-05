@@ -75,7 +75,7 @@ export function TesteNivelFlow() {
         recommendation_band: r.recommendation.band,
       });
       saveLevelTestAttribution(
-        r.recommendation.firstLessonHref,
+        r.prioritySkill?.href ?? r.recommendation.firstLessonHref,
         r.recommendation.band,
         r.completedAt,
       );

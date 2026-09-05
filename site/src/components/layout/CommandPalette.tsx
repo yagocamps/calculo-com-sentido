@@ -5,6 +5,13 @@ import { useRouter } from "next/navigation";
 import { searchItems, type SearchItem } from "@/lib/search";
 import { cn } from "@/lib/utils";
 
+const searchTypeMeta: Record<SearchItem["type"], { label: string; className: string }> = {
+  aula: { label: "Aula", className: "bg-sage-soft text-sage-ink" },
+  modulo: { label: "Módulo", className: "bg-terracotta-soft text-terracotta" },
+  exercicio: { label: "Exercício", className: "bg-amber-soft text-amber-ink" },
+  glossario: { label: "Termo", className: "bg-sky-soft text-sky-ink" },
+};
+
 export function CommandPalette() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -140,8 +147,8 @@ export function CommandPalette() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={onInputKey}
-            placeholder="Buscar aulas, módulos, termos…"
-            aria-label="Buscar aulas, módulos e termos"
+            placeholder="Buscar aulas, módulos, exercícios, termos…"
+            aria-label="Buscar aulas, módulos, exercícios e termos"
             aria-controls="ccs-search-results"
             className="h-12 flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-ink-subtle"
           />
@@ -159,7 +166,7 @@ export function CommandPalette() {
         >
           {query.trim() === "" ? (
             <li className="px-4 py-6 text-center text-sm text-ink-subtle">
-              Digite para buscar entre aulas, módulos e termos do glossário.
+              Digite para buscar entre aulas, módulos, exercícios e termos do glossário.
             </li>
           ) : results.length === 0 ? (
             <li className="px-4 py-6 text-center text-sm text-ink-subtle">
@@ -188,12 +195,10 @@ export function CommandPalette() {
                   <span
                     className={cn(
                       "shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
-                      item.type === "glossario"
-                        ? "bg-sky-soft text-sky-ink"
-                        : "bg-sage-soft text-sage-ink",
+                      searchTypeMeta[item.type].className,
                     )}
                   >
-                    {item.type === "glossario" ? "Termo" : "Aula"}
+                    {searchTypeMeta[item.type].label}
                   </span>
                 </button>
               </li>

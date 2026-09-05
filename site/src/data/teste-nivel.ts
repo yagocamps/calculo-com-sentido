@@ -494,15 +494,15 @@ export function scoreByTopic(
 
 /** Onde estudar cada tópico do teste. Serve para transformar "você foi mal em
  * frações" num link concreto, em vez de só uma nota. */
-export const topicoParaModulo: Record<TopicId, { label: string; href: string }> = {
-  operacoes: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos" },
-  fracoes: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos" },
-  potencias: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos" },
-  equacoes: { label: "Álgebra essencial", href: "/pre-calculo/algebra" },
-  funcoes: { label: "Funções", href: "/pre-calculo/funcoes" },
-  graficos: { label: "Gráficos", href: "/pre-calculo/graficos" },
-  trigonometria: { label: "Trigonometria", href: "/pre-calculo/trigonometria" },
-  limites: { label: "Preparação para limites", href: "/pre-calculo/preparacao-limites" },
+export const topicoParaModulo: Record<TopicId, { label: string; href: string; firstLessonHref: string; exerciseTemaSlug: string }> = {
+  operacoes: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos", firstLessonHref: "/pre-calculo/fundamentos/operacoes-basicas", exerciseTemaSlug: "fundamentos" },
+  fracoes: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos", firstLessonHref: "/pre-calculo/fundamentos/fracoes", exerciseTemaSlug: "fundamentos" },
+  potencias: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos", firstLessonHref: "/pre-calculo/fundamentos/potenciacao", exerciseTemaSlug: "fundamentos" },
+  equacoes: { label: "Álgebra essencial", href: "/pre-calculo/algebra", firstLessonHref: "/pre-calculo/fundamentos/equacao-primeiro-grau", exerciseTemaSlug: "algebra" },
+  funcoes: { label: "Funções", href: "/pre-calculo/funcoes", firstLessonHref: "/pre-calculo/funcoes/o-que-e-funcao", exerciseTemaSlug: "funcoes" },
+  graficos: { label: "Gráficos", href: "/pre-calculo/graficos", firstLessonHref: "/pre-calculo/graficos/leitura-graficos", exerciseTemaSlug: "graficos" },
+  trigonometria: { label: "Trigonometria", href: "/pre-calculo/trigonometria", firstLessonHref: "/pre-calculo/trigonometria/seno", exerciseTemaSlug: "trigonometria" },
+  limites: { label: "Preparação para limites", href: "/pre-calculo/preparacao-limites", firstLessonHref: "/calculo-1/limites/ideia-de-limite", exerciseTemaSlug: "limites" },
 };
 
 /** Tópicos com menos de 60% de acerto, do mais fraco para o menos fraco.

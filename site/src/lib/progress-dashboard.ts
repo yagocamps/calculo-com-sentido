@@ -6,16 +6,22 @@ import {
 } from "@/data/calculo-1";
 import { exercicios, type ExerciseType } from "@/data/exercicios";
 import {
+  testTopics,
+  topicoParaModulo,
+  type TopicId,
+} from "@/data/teste-nivel";
+import {
   lessonId,
   lessonPath,
   moduloPath,
   preCalculoModulos,
 } from "@/data/pre-calculo";
-import { typeLabels } from "@/lib/exercicios";
+import { pedagogicalLevelOf, typeLabels } from "@/lib/exercicios";
 import {
   localDateISO,
   type ExerciseAttemptsMap,
   type ProgressState,
+  type StudyPlan,
   type TesteNivelStored,
 } from "@/lib/progress";
 import { isLessonAccessible } from "@/lib/aulas";
@@ -61,6 +67,7 @@ export type ReviewQueueItem = {
  */
 export type WeakSpot = {
   key: string;
+  temaSlug: string;
   label: string;
   attempts: number;
   incorrect: number;
@@ -69,6 +76,50 @@ export type WeakSpot = {
   lessonTitle: string;
   lessonHref: string;
   exercisesHref: string;
+};
+
+export type SkillRecommendation = {
+  skill: string;
+  title: string;
+  reason: string;
+  href: string;
+  practiceHref?: string;
+  source: "exercise-errors" | "level-test" | "review" | "path";
+};
+
+export type AdaptiveSessionItem = {
+  id: string;
+  title: string;
+  href: string;
+  skill: string;
+  level: number;
+  reason: string;
+};
+
+export type ErrorHistoryItem = {
+  key: string;
+  title: string;
+  skill: string;
+  attemptedAt: string;
+  href: string;
+  lessonHref?: string;
+};
+
+export type SavedLessonItem = {
+  id: string;
+  title: string;
+  href: string;
+  moduleTitle: string;
+  favorite: boolean;
+  note?: string;
+};
+
+export type StudyPlanStep = {
+  label: string;
+  title: string;
+  reason: string;
+  href: string;
+  minutes: number;
 };
 
 export type ProgressDashboard = {
@@ -95,6 +146,12 @@ export type ProgressDashboard = {
   } | null;
   strengths: string[];
   weakSpots: WeakSpot[];
+  skillRecommendation: SkillRecommendation | null;
+  adaptiveSession: AdaptiveSessionItem[];
+  errorHistory: ErrorHistoryItem[];
+  savedLessons: SavedLessonItem[];
+  studyPlan?: StudyPlan;
+  studyPlanSteps: StudyPlanStep[];
   /** Total de tentativas registradas (acertos + erros) — para mensagens de estado vazio. */
   attemptsTotal: number;
   /** Dias com estudo nos últimos 7 dias — streak suave, só mensagem positiva. */
@@ -337,6 +394,7 @@ function getWeakSpots(
     if (!lesson) return null;
     return {
       key,
+      temaSlug: agg.temaSlug,
       label,
       attempts: agg.attempts,
       incorrect: agg.incorrect,
@@ -551,6 +609,220 @@ function getReviewQueue(
   return { due: due.slice(0, limit), dueCount: due.length, total };
 }
 
+function weakestTestSkill(testeNivel?: TesteNivelStored) {
+  if (!testeNivel?.skillScores) return null;
+  return testTopics
+    .map((topic) => {
+      const score = testeNivel.skillScores?.[topic.id];
+      const accuracy = score?.total
+        ? Math.round((score.correct / score.total) * 100)
+        : 100;
+      return { topic, score, accuracy };
+    })
+    .filter((item) => item.score?.total && item.accuracy < 70)
+    .sort((a, b) => a.accuracy - b.accuracy)[0] ?? null;
+}
+
+function getSkillRecommendation(
+  state: ProgressState,
+  weakSpots: WeakSpot[],
+  reviewQueue: ReviewQueueItem[],
+  nextLesson: NextLessonInfo | null,
+): SkillRecommendation | null {
+  const weak = weakSpots[0];
+  if (weak) {
+    return {
+      skill: weak.label,
+      title: `Reforce ${weak.label}`,
+      reason: `${weak.incorrect} erros em ${weak.attempts} tentativas (${weak.accuracy}% de acerto). Revisar a explicação antes de praticar tende a corrigir a causa, não só a resposta.`,
+      href: weak.lessonHref,
+      practiceHref: weak.exercisesHref,
+      source: "exercise-errors",
+    };
+  }
+
+  const testWeak = weakestTestSkill(state.testeNivel);
+  if (testWeak) {
+    const destination = topicoParaModulo[testWeak.topic.id];
+    return {
+      skill: testWeak.topic.label,
+      title: `Comece por ${testWeak.topic.label}`,
+      reason: `Seu teste marcou ${testWeak.accuracy}% nesta habilidade. Ela foi priorizada porque sustenta os conteúdos seguintes.`,
+      href: destination.firstLessonHref,
+      practiceHref: `/exercicios?tema=${destination.exerciseTemaSlug}`,
+      source: "level-test",
+    };
+  }
+
+  const review = reviewQueue[0];
+  if (review) {
+    return {
+      skill: review.moduleTitle,
+      title: `Revise ${review.title}`,
+      reason: "Esta aula chegou ao momento de revisão espaçada; retomá-la agora ajuda a consolidar a memória antes de avançar.",
+      href: review.href,
+      source: "review",
+    };
+  }
+
+  return nextLesson
+    ? {
+        skill: nextLesson.moduleTitle,
+        title: nextLesson.title,
+        reason: "É a próxima habilidade disponível na ordem de pré-requisitos da sua trilha.",
+        href: nextLesson.href,
+        source: "path",
+      }
+    : null;
+}
+
+const moduleToExerciseTema: Record<string, string> = {
+  fundamentos: "fundamentos",
+  algebra: "algebra",
+  funcoes: "funcoes",
+  graficos: "graficos",
+  trigonometria: "trigonometria",
+  "preparacao-limites": "preparacao-limites",
+  "funcoes-para-calculo": "funcoes-calculo",
+  limites: "limites",
+  continuidade: "continuidade",
+  derivadas: "derivadas",
+  "aplicacoes-derivadas": "aplicacoes-derivadas",
+  integrais: "integrais",
+};
+
+function getAdaptiveSession(
+  state: ProgressState,
+  weakSpots: WeakSpot[],
+  nextLesson: NextLessonInfo | null,
+): AdaptiveSessionItem[] {
+  const testWeak = weakestTestSkill(state.testeNivel);
+  const testDestination = testWeak
+    ? topicoParaModulo[testWeak.topic.id as TopicId]
+    : undefined;
+  const temaSlug =
+    weakSpots[0]?.temaSlug ??
+    testDestination?.exerciseTemaSlug ??
+    (nextLesson ? moduleToExerciseTema[nextLesson.moduleSlug] : undefined);
+  const completed = new Set(state.completedExercises);
+  const targetLevel = weakSpots[0]
+    ? weakSpots[0].accuracy < 50
+      ? 1
+      : 2
+    : 2;
+
+  return exercicios
+    .filter((exercise) => !temaSlug || exercise.temaSlug === temaSlug)
+    .map((exercise) => {
+      const stats = state.exerciseAttempts[exercise.id];
+      const incorrect = stats?.incorrect ?? 0;
+      const level = pedagogicalLevelOf(exercise);
+      const score =
+        (completed.has(exercise.id) ? 100 : 0) +
+        Math.abs(level - targetLevel) * 10 -
+        incorrect * 3;
+      return { exercise, level, score, incorrect };
+    })
+    .sort((a, b) => a.score - b.score || a.exercise.id.localeCompare(b.exercise.id))
+    .slice(0, 5)
+    .map(({ exercise, level, incorrect }, index) => ({
+      id: exercise.id,
+      title: exercise.title,
+      href: `/exercicios?id=${exercise.id}&session=adaptativa`,
+      skill: exercise.tema,
+      level,
+      reason:
+        incorrect > 0
+          ? "Retoma um erro anterior com dificuldade adequada."
+          : index === 0
+            ? "Começa no nível indicado pelo seu desempenho."
+            : "Aumenta a variedade e a dificuldade aos poucos.",
+    }));
+}
+
+function getErrorHistory(state: ProgressState): ErrorHistoryItem[] {
+  return [...state.attemptHistory]
+    .reverse()
+    .filter((event) => event.outcome === "incorrect")
+    .slice(0, 8)
+    .flatMap((event, index) => {
+      const exercise = getExercicioById(event.exerciseId);
+      if (!exercise) return [];
+      const lesson = lessonLinkForTema(exercise.temaSlug);
+      return [{
+        key: `${event.exerciseId}-${event.attemptedAt}-${index}`,
+        title: exercise.title,
+        skill: `${exercise.tema} · ${typeLabels[exercise.type]}`,
+        attemptedAt: event.attemptedAt,
+        href: `/exercicios?id=${exercise.id}`,
+        lessonHref: lesson?.href,
+      }];
+    });
+}
+
+function getSavedLessons(state: ProgressState): SavedLessonItem[] {
+  const meta = getLessonMetaById();
+  const ids = new Set([
+    ...state.favoriteLessons,
+    ...Object.keys(state.lessonNotes),
+  ]);
+  return [...ids].flatMap((id) => {
+    const lesson = meta.get(id);
+    if (!lesson) return [];
+    return [{
+      id,
+      title: lesson.title,
+      href: lesson.href,
+      moduleTitle: `${lesson.trilha} · ${lesson.moduleTitle}`,
+      favorite: state.favoriteLessons.includes(id),
+      note: state.lessonNotes[id],
+    }];
+  });
+}
+
+function getStudyPlanSteps(
+  plan: StudyPlan | undefined,
+  recommendation: SkillRecommendation | null,
+  session: AdaptiveSessionItem[],
+  reviewQueue: ReviewQueueItem[],
+  nextLesson: NextLessonInfo | null,
+): StudyPlanStep[] {
+  if (!plan) return [];
+  const minutes = plan.minutesPerSession;
+  const steps: StudyPlanStep[] = [];
+  if (recommendation) {
+    steps.push({
+      label: "Sessão 1 · habilidade prioritária",
+      title: recommendation.title,
+      reason: recommendation.reason,
+      href: recommendation.href,
+      minutes,
+    });
+  }
+  if (session[0]) {
+    steps.push({
+      label: "Sessão 2 · prática adaptativa",
+      title: `Pratique ${session[0].skill}`,
+      reason: "Uma sequência de cinco questões ajusta a dificuldade conforme seus acertos e erros.",
+      href: session[0].href,
+      minutes,
+    });
+  }
+  const consolidation = reviewQueue[0];
+  if (consolidation || nextLesson) {
+    steps.push({
+      label: "Sessão 3 · consolidar e avançar",
+      title: consolidation?.title ?? nextLesson?.title ?? "Continue a trilha",
+      reason: consolidation
+        ? "Revisão espaçada prevista para esta semana."
+        : "Avanço na ordem dos pré-requisitos da trilha.",
+      href: consolidation?.href ?? nextLesson?.href ?? "/pre-calculo",
+      minutes,
+    });
+  }
+  return steps;
+}
+
 function countStudyDaysThisWeek(activityDays: string[]): number {
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - 6);
@@ -567,6 +839,15 @@ export function buildProgressDashboard(
   const trilhaCalculo1Percent = computeCalculo1TrilhaProgress(completedLessons);
   const trilhaCombinedPercent = computeCombinedTrilhaPercent(completedLessons);
   const review = getReviewQueue(completedLessons, state.reviews ?? {});
+  const nextLesson = getNextLessonInfo(completedLessons);
+  const weakSpots = getWeakSpots(exerciseAttempts);
+  const skillRecommendation = getSkillRecommendation(
+    state,
+    weakSpots,
+    review.due,
+    nextLesson,
+  );
+  const adaptiveSession = getAdaptiveSession(state, weakSpots, nextLesson);
   const lessonsTotal =
     preCalculoModulos.reduce((s, m) => s + m.lessons.length, 0) +
     calculo1Modulos.reduce((s, m) => s + m.lessons.length, 0);
@@ -617,14 +898,26 @@ export function buildProgressDashboard(
     lessonsTotal,
     exercisesCompleted: completedExercises.length,
     exercisesTotal: exercicios.length,
-    nextLesson: getNextLessonInfo(completedLessons),
+    nextLesson,
     recommendedModule: getRecommendedModule(completedLessons),
     // Desempenho real nos exercícios vem primeiro; conclusão de módulos complementa.
     strengths: [
       ...getExerciseStrengths(exerciseAttempts),
       ...getStrengths(completedLessons),
     ].slice(0, 6),
-    weakSpots: getWeakSpots(exerciseAttempts),
+    weakSpots,
+    skillRecommendation,
+    adaptiveSession,
+    errorHistory: getErrorHistory(state),
+    savedLessons: getSavedLessons(state),
+    studyPlan: state.studyPlan,
+    studyPlanSteps: getStudyPlanSteps(
+      state.studyPlan,
+      skillRecommendation,
+      adaptiveSession,
+      review.due,
+      nextLesson,
+    ),
     attemptsTotal: aggregateAttempts(exerciseAttempts).total,
     studyDaysThisWeek: countStudyDaysThisWeek(state.activityDays ?? []),
     toReview: getToReview(completedLessons),

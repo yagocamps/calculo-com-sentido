@@ -19,6 +19,7 @@ import {
 } from "@/lib/review";
 
 const STORAGE_KEY = "ccs-progress";
+const CURRENT_SCHEMA_VERSION = 2;
 
 function computeNextLessonTitle(completedLessons: string[]): string {
   const normalized = normalizeLessonIds(completedLessons);
@@ -52,6 +53,7 @@ export type TesteNivelStored = {
   levelLabel: string;
   band: "base" | "pre-calculo" | "calculo-1";
   completedAt: string;
+  skillScores?: Record<string, { correct: number; total: number }>;
 };
 
 /** Acertos e erros acumulados de um exercício (alimenta "Pontos fortes" e "O que revisar"). */
@@ -62,12 +64,30 @@ export type ExerciseAttemptStats = {
 
 export type ExerciseAttemptsMap = Record<string, ExerciseAttemptStats>;
 
+export type ExerciseAttemptEvent = {
+  exerciseId: string;
+  outcome: "correct" | "incorrect";
+  attemptedAt: string;
+};
+
+export type StudyPlan = {
+  durationWeeks: 2 | 4 | 8;
+  sessionsPerWeek: 3 | 4 | 5;
+  minutesPerSession: 15 | 25 | 40;
+  startedAt: string;
+};
+
 export type ProgressState = {
+  schemaVersion: number;
   percent: number;
   nextLesson: string;
   completedLessons: string[];
   completedExercises: string[];
   exerciseAttempts: ExerciseAttemptsMap;
+  attemptHistory: ExerciseAttemptEvent[];
+  favoriteLessons: string[];
+  lessonNotes: Record<string, string>;
+  studyPlan?: StudyPlan;
   /** Dias (YYYY-MM-DD locais) com atividade de estudo — alimenta o "streak suave". */
   activityDays: string[];
   reviews: ReviewMap;
@@ -75,11 +95,15 @@ export type ProgressState = {
 };
 
 const defaultProgress: ProgressState = {
+  schemaVersion: CURRENT_SCHEMA_VERSION,
   percent: 0,
   nextLesson: "Função afim",
   completedLessons: [],
   completedExercises: [],
   exerciseAttempts: {},
+  attemptHistory: [],
+  favoriteLessons: [],
+  lessonNotes: {},
   activityDays: [],
   reviews: {},
 };
@@ -118,6 +142,48 @@ function normalizeExerciseAttempts(raw: unknown): ExerciseAttemptsMap {
   return out;
 }
 
+function normalizeAttemptHistory(raw: unknown): ExerciseAttemptEvent[] {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .filter((item): item is ExerciseAttemptEvent => {
+      if (!item || typeof item !== "object") return false;
+      const event = item as Partial<ExerciseAttemptEvent>;
+      return (
+        typeof event.exerciseId === "string" &&
+        (event.outcome === "correct" || event.outcome === "incorrect") &&
+        typeof event.attemptedAt === "string" &&
+        !Number.isNaN(Date.parse(event.attemptedAt))
+      );
+    })
+    .slice(-200);
+}
+
+function normalizeLessonNotes(raw: unknown): Record<string, string> {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return {};
+  const known = new Set(normalizeLessonIds(Object.keys(raw)));
+  const notes: Record<string, string> = {};
+  for (const [id, value] of Object.entries(raw as Record<string, unknown>)) {
+    if (known.has(id) && typeof value === "string" && value.trim()) {
+      notes[id] = value.trim().slice(0, 1500);
+    }
+  }
+  return notes;
+}
+
+function normalizeStudyPlan(raw: unknown): StudyPlan | undefined {
+  if (!raw || typeof raw !== "object") return undefined;
+  const plan = raw as Partial<StudyPlan>;
+  if (
+    ![2, 4, 8].includes(plan.durationWeeks ?? 0) ||
+    ![3, 4, 5].includes(plan.sessionsPerWeek ?? 0) ||
+    ![15, 25, 40].includes(plan.minutesPerSession ?? 0) ||
+    typeof plan.startedAt !== "string"
+  ) {
+    return undefined;
+  }
+  return plan as StudyPlan;
+}
+
 function persistProgress(state: ProgressState) {
   if (typeof window === "undefined") return;
   try {
@@ -143,11 +209,13 @@ export function syncDerivedFields() {
     if (
       parsed.percent !== percent ||
       parsed.nextLesson !== nextTitle ||
+      parsed.schemaVersion !== CURRENT_SCHEMA_VERSION ||
       completedLessons.length !== (parsed.completedLessons?.length ?? 0)
     ) {
       const updated: ProgressState = {
         ...defaultProgress,
         ...parsed,
+        schemaVersion: CURRENT_SCHEMA_VERSION,
         completedLessons,
         completedExercises,
         reviews,
@@ -170,14 +238,22 @@ export function getProgress(): ProgressState {
     const completedLessons = normalizeLessonIds(parsed.completedLessons);
     const completedExercises = normalizeExerciseIds(parsed.completedExercises);
     const exerciseAttempts = normalizeExerciseAttempts(parsed.exerciseAttempts);
+    const attemptHistory = normalizeAttemptHistory(parsed.attemptHistory);
+    const favoriteLessons = normalizeLessonIds(parsed.favoriteLessons);
+    const lessonNotes = normalizeLessonNotes(parsed.lessonNotes);
     const activityDays = normalizeActivityDays(parsed.activityDays);
     const reviews = normalizeReviews(parsed.reviews);
     return {
       ...defaultProgress,
       ...parsed,
+      schemaVersion: CURRENT_SCHEMA_VERSION,
       completedLessons,
       completedExercises,
       exerciseAttempts,
+      attemptHistory,
+      favoriteLessons,
+      lessonNotes,
+      studyPlan: normalizeStudyPlan(parsed.studyPlan),
       activityDays,
       reviews,
       percent: computeCombinedTrilhaPercent(completedLessons),
@@ -197,6 +273,7 @@ export function saveProgress(state: Partial<ProgressState>) {
   const merged: ProgressState = {
     ...current,
     ...state,
+    schemaVersion: CURRENT_SCHEMA_VERSION,
     completedLessons: state.completedLessons
       ? normalizeLessonIds(state.completedLessons)
       : current.completedLessons,
@@ -206,6 +283,19 @@ export function saveProgress(state: Partial<ProgressState>) {
     exerciseAttempts: state.exerciseAttempts
       ? normalizeExerciseAttempts(state.exerciseAttempts)
       : current.exerciseAttempts,
+    attemptHistory: state.attemptHistory
+      ? normalizeAttemptHistory(state.attemptHistory)
+      : current.attemptHistory,
+    favoriteLessons: state.favoriteLessons
+      ? normalizeLessonIds(state.favoriteLessons)
+      : current.favoriteLessons,
+    lessonNotes: state.lessonNotes
+      ? normalizeLessonNotes(state.lessonNotes)
+      : current.lessonNotes,
+    studyPlan:
+      state.studyPlan === undefined
+        ? current.studyPlan
+        : normalizeStudyPlan(state.studyPlan),
     activityDays: state.activityDays
       ? normalizeActivityDays(state.activityDays)
       : current.activityDays,
@@ -273,7 +363,47 @@ export function recordExerciseAttempt(
         incorrect: prev.incorrect + (outcome === "incorrect" ? 1 : 0),
       },
     },
+    attemptHistory: [
+      ...current.attemptHistory,
+      { exerciseId, outcome, attemptedAt: new Date().toISOString() },
+    ].slice(-200),
     activityDays: withToday(current.activityDays),
+  });
+}
+
+export function toggleLessonFavorite(lessonPathId: string): boolean {
+  const current = getProgress();
+  const favorites = normalizeLessonIds(current.favoriteLessons);
+  const isFavorite = favorites.includes(lessonPathId);
+  saveProgress({
+    favoriteLessons: isFavorite
+      ? favorites.filter((id) => id !== lessonPathId)
+      : [...favorites, lessonPathId],
+  });
+  return !isFavorite;
+}
+
+export function saveLessonNote(lessonPathId: string, note: string) {
+  const current = getProgress();
+  const notes = { ...current.lessonNotes };
+  const clean = note.trim().slice(0, 1500);
+  if (clean) notes[lessonPathId] = clean;
+  else delete notes[lessonPathId];
+  saveProgress({ lessonNotes: notes });
+}
+
+export function configureStudyPlan(durationWeeks: 2 | 4 | 8) {
+  const presets: Record<2 | 4 | 8, Omit<StudyPlan, "durationWeeks" | "startedAt">> = {
+    2: { sessionsPerWeek: 5, minutesPerSession: 40 },
+    4: { sessionsPerWeek: 4, minutesPerSession: 25 },
+    8: { sessionsPerWeek: 3, minutesPerSession: 15 },
+  };
+  saveProgress({
+    studyPlan: {
+      durationWeeks,
+      ...presets[durationWeeks],
+      startedAt: new Date().toISOString(),
+    },
   });
 }
 
@@ -333,12 +463,19 @@ export function importProgressFromJson(raw: string): {
     const completedLessons = normalizeLessonIds(parsed.completedLessons);
     const completedExercises = normalizeExerciseIds(parsed.completedExercises);
     const exerciseAttempts = normalizeExerciseAttempts(parsed.exerciseAttempts);
+    const attemptHistory = normalizeAttemptHistory(parsed.attemptHistory);
+    const favoriteLessons = normalizeLessonIds(parsed.favoriteLessons);
+    const lessonNotes = normalizeLessonNotes(parsed.lessonNotes);
     const activityDays = normalizeActivityDays(parsed.activityDays);
     const reviews = normalizeReviews(parsed.reviews);
     saveProgress({
       completedLessons,
       completedExercises,
       exerciseAttempts,
+      attemptHistory,
+      favoriteLessons,
+      lessonNotes,
+      studyPlan: normalizeStudyPlan(parsed.studyPlan),
       activityDays,
       reviews,
       testeNivel:

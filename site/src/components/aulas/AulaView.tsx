@@ -12,6 +12,7 @@ import { InteractiveConceptLab } from "@/components/aulas/InteractiveConceptLab"
 import { BhaskaraDerivation } from "@/components/aulas/BhaskaraDerivation";
 import { DemonstrationDisclosure } from "@/components/aulas/DemonstrationDisclosure";
 import { LessonAnalytics } from "@/components/aulas/LessonAnalytics";
+import { LessonWorkspace } from "@/components/aulas/LessonWorkspace";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
 import { RichText } from "@/components/aulas/RichText";
 import { Section } from "@/components/aulas/Section";
@@ -165,6 +166,7 @@ export function AulaView({
               ))}
               <Tag tone="sage">Nível: {meta.level}</Tag>
             </div>
+            <LessonWorkspace lessonPathId={lessonPathId} />
 
             {prereqs.length > 0 && (
               <div className="mt-4 rounded-2 border border-sky/50 bg-sky-soft/40 px-4 py-3">

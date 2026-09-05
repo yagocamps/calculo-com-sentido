@@ -1,12 +1,17 @@
-import { calculo1LessonPath, calculo1Modulos } from "@/data/calculo-1";
+import {
+  calculo1LessonPath,
+  calculo1ModuloPath,
+  calculo1Modulos,
+} from "@/data/calculo-1";
+import { exercicios } from "@/data/exercicios";
 import { glossario } from "@/data/glossario";
 import { isLessonAccessible } from "@/lib/aulas";
-import { lessonPath, preCalculoModulos } from "@/data/pre-calculo";
+import { lessonPath, moduloPath, preCalculoModulos } from "@/data/pre-calculo";
 import { slugify } from "@/lib/utils";
 
 export type SearchItem = {
   id: string;
-  type: "aula" | "glossario";
+  type: "aula" | "modulo" | "exercicio" | "glossario";
   title: string;
   subtitle: string;
   href: string;
@@ -27,6 +32,14 @@ export function getSearchIndex(): SearchItem[] {
   const items: SearchItem[] = [];
 
   for (const modulo of preCalculoModulos) {
+    items.push({
+      id: `pre-module/${modulo.slug}`,
+      type: "modulo",
+      title: modulo.title,
+      subtitle: `Módulo · Pré-Cálculo · ${modulo.lessons.length} aulas`,
+      href: moduloPath(modulo.slug),
+      haystack: normalize(`${modulo.title} ${modulo.shortTitle} ${modulo.desc} ${modulo.contents.join(" ")}`),
+    });
     for (const lesson of modulo.lessons) {
       if (!isLessonAccessible("pre-calculo", modulo.slug, lesson)) {
         continue;
@@ -44,6 +57,14 @@ export function getSearchIndex(): SearchItem[] {
 
   for (const modulo of calculo1Modulos) {
     if (modulo.defaultState === "locked") continue;
+    items.push({
+      id: `calc-module/${modulo.slug}`,
+      type: "modulo",
+      title: modulo.title,
+      subtitle: `Módulo · Cálculo 1 · ${modulo.lessons.length} aulas`,
+      href: calculo1ModuloPath(modulo.slug),
+      haystack: normalize(`${modulo.title} ${modulo.shortTitle} ${modulo.desc} ${modulo.contents.join(" ")}`),
+    });
     for (const lesson of modulo.lessons) {
       if (!isLessonAccessible("calculo-1", modulo.slug, lesson)) {
         continue;
@@ -67,6 +88,17 @@ export function getSearchIndex(): SearchItem[] {
       subtitle: "Glossário",
       href: `/glossario#${slugify(entry.termo)}`,
       haystack: normalize(`${entry.termo} ${entry.definicao}`),
+    });
+  }
+
+  for (const exercise of exercicios) {
+    items.push({
+      id: `exercise/${exercise.id}`,
+      type: "exercicio",
+      title: exercise.title,
+      subtitle: `Exercício · ${exercise.tema} · ${exercise.area}`,
+      href: `/exercicios?id=${exercise.id}`,
+      haystack: normalize(`${exercise.title} ${exercise.tema} ${exercise.area} ${exercise.enunciado} ${exercise.interpretacao}`),
     });
   }
 
