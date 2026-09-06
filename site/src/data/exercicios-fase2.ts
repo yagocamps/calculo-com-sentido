@@ -138,7 +138,7 @@ const blueprints: Blueprint[] = [
       ["Para \\(x^2+y^2=25\\), encontre \\(y'\\).", "\\(-x/y\\)", "Derive e isole: \\(2x+2yy'=0\\)."],
       ["Qual a inclinação da circunferência no ponto \\((0,5)\\)?", "0", "Substitua em \\(-x/y\\)."],
       ["Derive \\(xy=10\\).", "\\(y'=-y/x\\)", "Produto: \\(y+xy'=0\\)."],
-      ["Para \\(x^2+xy+y^2=7\\), isole \\(y'\\).", "\\(-(2x+y)/(x+2y))\\", "Derive termo a termo, usando produto em \\(xy\\), e agrupe \\(y'\\)."],
+      ["Para \\(x^2+xy+y^2=7\\), isole \\(y'\\) onde \\(x+2y\\ne0\\).", "\\(-\\frac{2x+y}{x+2y}\\)", "Derive termo a termo: \\(2x+y+xy'+2yy'=0\\). Agrupe \\(y'\\) e divida por \\(x+2y\\ne0\\)."],
     ],
   },
   {

@@ -14,6 +14,7 @@ import {
 } from "@/lib/progress-dashboard";
 import {
   getProgress,
+  exportProgressJson,
   importProgressFromJson,
   markReviewed,
   resetProgress,
@@ -68,6 +69,7 @@ export function ProgressoContent() {
   }
 
   const isEmpty =
+    dash.savedAssessmentCount === 0 &&
     dash.lessonsCompleted === 0 &&
     dash.exercisesCompleted === 0 &&
     dash.attemptsTotal === 0 &&
@@ -99,11 +101,7 @@ export function ProgressoContent() {
               size="sm"
               onClick={() => {
                 try {
-                  const raw = localStorage.getItem("ccs-progress");
-                  if (!raw) {
-                    alert("Não há progresso registrado para exportar.");
-                    return;
-                  }
+                  const raw = exportProgressJson();
                   const blob = new Blob([raw], { type: "application/json" });
                   const url = URL.createObjectURL(blob);
                   const a = document.createElement("a");
@@ -121,19 +119,26 @@ export function ProgressoContent() {
               Exportar Backup (JSON)
             </Button>
 
-            <label className="inline-flex items-center gap-2 rounded-[10px] border border-border bg-surface px-3 py-1.5 text-[12.5px] font-semibold cursor-pointer transition-opacity hover:opacity-90 shadow-sm select-none">
+            <label className="inline-flex items-center gap-2 rounded-[10px] border border-border bg-surface px-3 py-1.5 text-[12.5px] font-semibold cursor-pointer transition-opacity hover:opacity-90 shadow-sm select-none focus-within:ring-2 focus-within:ring-terracotta">
               Importar Backup (JSON)
               <input
                 type="file"
                 accept=".json"
-                className="hidden"
+                className="sr-only"
                 onChange={(e) => {
                   const file = e.target.files?.[0];
                   if (!file) return;
+                  const input = e.currentTarget;
+                  if (file.size > 20_000_000) { alert("Arquivo muito grande (máx. 20 MB)."); input.value = ""; return; }
                   const reader = new FileReader();
+                  reader.onerror = () => {
+                    input.value = "";
+                    alert("Não foi possível ler o arquivo. Selecione o backup novamente.");
+                  };
                   reader.onload = (event) => {
                     const text = event.target?.result as string;
                     const result = importProgressFromJson(text);
+                    input.value = "";
                     if (result.ok) {
                       refresh();
                       alert("Progresso importado com sucesso!");

@@ -1,0 +1,91 @@
+import type { CurriculumLessonSpec } from "@/data/aulas/lesson-factory";
+
+// Editorial reference: OpenStax Calculus Vol. 1, 2.3 The Limit Laws.
+// https://openstax.org/books/calculus-volume-1/pages/2-3-the-limit-laws
+export const propriedadesDosLimites: CurriculumLessonSpec = {
+  track: "calculo-1", moduleSlug: "limites", moduleTitle: "Limites sem trauma",
+  lessonNumber: 4, slug: "propriedades-dos-limites", title: "Propriedades dos limites",
+  duration: "25 min", level: "universitário introdutório",
+  notes: ["regras e hipóteses", "potências e raízes", "contraexemplos"],
+  prereqs: [
+    { label: "Ideia de limite", href: "/calculo-1/limites/ideia-de-limite" },
+    { label: "Potências e raízes", href: "/pre-calculo/fundamentos/potenciacao" },
+  ],
+  usedIn: [
+    { label: "Limite por substituição", href: "/calculo-1/limites/limite-substituicao", detail: "justificar o cálculo direto em polinômios e quocientes" },
+    { label: "Continuidade", href: "/calculo-1/continuidade/continuidade-ponto", detail: "comparar o limite com o valor da função e trabalhar com composições" },
+    { label: "Confronto", href: "/calculo-1/limites/teorema-do-confronto", detail: "controlar limites quando não é possível separar os fatores" },
+  ],
+  why: ["As propriedades permitem calcular uma expressão por partes e explicar por que cada passo é válido. A habilidade inclui reconhecer quando uma regra não pode ser usada: dividir por uma tendência nula ou separar funções sem limite pode produzir uma conclusão falsa."],
+  explanation: [
+    "Hipóteses comuns: considere funções reais definidas perto de um ponto de acumulação a do domínio, talvez sem valor no próprio ponto. Na mesma aproximação x→a, suponha que f(x)→L e g(x)→M, com L e M números reais finitos. As constantes c e k não variam com x.",
+    "Ler f(x)→L significa: os valores de f ficam tão próximos de L quanto desejarmos quando x se aproxima suficientemente de a, com x diferente de a. Não precisamos conhecer f(a). Aplicamos as regras no domínio comum das expressões.",
+    "As regras também valem em uma aproximação lateral, como x→a pela direita, ou quando x→+∞ ou x→−∞, desde que todos os limites usados sejam finitos e correspondam à mesma aproximação. Não combine um limite pela esquerda com outro pela direita. O limite bilateral exige concordância dos dois lados quando ambos fazem parte da aproximação considerada.",
+  ],
+  callout: "Antes de calcular: os limites das partes existem e são finitos? A aproximação é a mesma? O denominador tende a algo não nulo? A raiz está definida nos reais?",
+  formula: "Na mesma aproximação: f tende a L e g tende a M, com L e M reais finitos.",
+  formulaLatex: "\\lim_{x\\to a}f(x)=L,\\quad \\lim_{x\\to a}g(x)=M",
+  formulaAria: "Quando x tende a a, o limite de f de x é L e o limite de g de x é M. Ambos são finitos.",
+  rules: [
+    { id: "constante", title: "1. Constante", formulaLatex: "\\lim_{x\\to a}c=c", formulaAria: "O limite de uma constante c é a própria constante c.", conditions: "A constante não depende de x. Esta regra é diferente de multiplicar uma função por uma constante.", example: "Se a função vale −7 em todos os pontos próximos, sua tendência também é −7: \\[\\lim_{x\\to2}(-7)=-7.\\]" },
+    { id: "identidade", title: "2. Identidade", formulaLatex: "\\lim_{x\\to a}x=a", formulaAria: "O limite de x, quando x tende a a, é a.", conditions: "Aqui a é um número real. Esta é a base do cálculo de limites de polinômios por substituição.", example: "Quando a entrada se aproxima de 3, a função identidade devolve essa mesma entrada: \\[\\lim_{x\\to3}x=3.\\]" },
+    { id: "soma", title: "3. Soma", formulaLatex: "\\lim_{x\\to a}(f(x)+g(x))=L+M", formulaAria: "O limite da soma de f e g é L mais M.", conditions: "Os dois limites precisam existir como números finitos na mesma aproximação. A existência do limite da soma, sozinha, não garante os limites das parcelas.", example: "Se f tende a 2 e g tende a −3, a soma tende a 2+(−3)=−1. Já 1/x+(−1/x)=0 para x≠0 tem limite 0 em 0, embora cada parcela não tenha limite bilateral finito." },
+    { id: "diferenca", title: "4. Diferença", formulaLatex: "\\lim_{x\\to a}(f(x)-g(x))=L-M", formulaAria: "O limite da diferença de f e g é L menos M.", conditions: "Mantenha a ordem da subtração e confira o sinal do segundo limite.", example: "Com f tendendo a 2 e g a −3, a diferença tende a 2−(−3)=5. Não resulta em −1: subtrair um número negativo equivale a somar seu oposto." },
+    { id: "multiplo", title: "5. Múltiplo constante", formulaLatex: "\\lim_{x\\to a}k f(x)=kL", formulaAria: "O limite de k vezes f de x é k vezes L.", conditions: "k é uma constante real; não use esta regra se o suposto coeficiente também depender de x.", example: "Se f tende a 2, então −4f tende a −8. Se o coeficiente fosse x, seria necessário usar a regra do produto, com o limite de x." },
+    { id: "produto", title: "6. Produto", formulaLatex: "\\lim_{x\\to a}f(x)g(x)=LM", formulaAria: "O limite do produto de f e g é L vezes M.", conditions: "Cada fator deve ter limite finito. Um produto pode ter limite mesmo quando seus fatores não têm; nesse caso, esta regra não justifica separá-los.", example: "Com f tendendo a 2 e g a −3, fg tende a −6. Em contraste, x vezes 1/x vale 1 para x≠0: em x→0, não se pode calcular isso como zero vezes infinito." },
+    { id: "quociente", title: "7. Quociente", formulaLatex: "\\lim_{x\\to a}\\frac{f(x)}{g(x)}=\\frac{L}{M},\\quad M\\ne0", formulaAria: "O limite de f dividido por g é L dividido por M, desde que M seja diferente de zero.", conditions: "M≠0 garante que g não zera suficientemente perto de a no domínio considerado. Se M=0, a regra não decide o limite: investigue sinais, laterais ou uma transformação algébrica.", example: "Em x→2, o numerador x+1 tende a 3 e o denominador x²+1 tende a 5, que não é zero. Portanto: \\[\\lim_{x\\to2}\\frac{x+1}{x^2+1}=\\frac35.\\] Já x/x em x→0 tem forma 0/0, mas simplifica para 1 com x≠0; 1/x tem laterais diferentes." },
+    { id: "potencia", title: "8. Potências inteiras", formulaLatex: "\\lim_{x\\to a}[f(x)]^n=L^n", formulaAria: "O limite de f de x elevado a n é L elevado a n.", conditions: "Para n inteiro positivo, basta o limite finito de f. Para expoentes inteiros negativos, exija também L≠0 e use o recíproco. Uma potência com expoente variável exige outra análise.", example: "Se f tende a −2, f³ tende a −8, enquanto f² tende a 4. Como −2≠0, f elevado a −2 tende a 1/4. Confira: (−2)²=4, mas −2²=−4, pois sem parênteses a potência age antes do sinal." },
+    { id: "raiz", title: "9. Raízes reais", formulaLatex: "\\lim_{x\\to a}\\sqrt[n]{f(x)}=\\sqrt[n]{L}", formulaAria: "O limite da raiz de índice n de f de x é a raiz de índice n de L.", conditions: "n é inteiro, n≥2. Se n é ímpar, L pode ser qualquer real. Se n é par, exija L≥0 e f(x)≥0 nos pontos da aproximação em que usa a expressão; quando L=0, essa condição perto do ponto não pode ser esquecida. Respeite o domínio e, quando necessário, use limite lateral.", example: "A raiz cúbica é real para números negativos: \\[\\lim_{x\\to-8}\\sqrt[3]{x}=-2.\\] Para a raiz quadrada na origem, consideramos x≥0: \\[\\lim_{x\\to0^+}\\sqrt{x}=0.\\] Saber apenas que f tende a 0 não garante que a raiz quadrada de f esteja definida nos dois lados: f(x)=x é um exemplo." },
+    { id: "modulo", title: "10. Valor absoluto", formulaLatex: "\\lim_{x\\to a}|f(x)|=|L|", formulaAria: "O limite do módulo de f de x é o módulo de L.", conditions: "O limite finito de f garante o do módulo. O sentido inverso não vale em geral: o módulo perde a informação do sinal.", example: "Se f tende a −3, seu módulo tende a 3. Mas para f(x)=x/|x|, com x≠0, o módulo é sempre 1 e tende a 1 em 0; f tem lateral −1 pela esquerda e 1 pela direita, portanto não tem limite bilateral." },
+    { id: "composicao", title: "11. Composição com função contínua", formulaLatex: "\\lim_{x\\to a}h(f(x))=h(L)", formulaAria: "O limite da composição de h com f é h de L.", conditions: "Além de f(x)→L, h deve ser contínua em L e a composição deve estar definida nos pontos considerados. Ter apenas um limite de h perto de L não basta se f assume exatamente L repetidas vezes.", example: "Se f(x)=x²+1 e x→1, então f tende a 2. A raiz quadrada é contínua em 2, logo a raiz de x²+1 tende à raiz de 2. Para a condição importar: tome f(x)=0 e h(0)=7, mas h(u)=1 para u≠0. A composição vale 7; o limite de h(u) quando u→0 é 1, que não pode substituí-la." },
+  ],
+  appearances: [
+    { label: "Polinômios", detail: "constante, identidade, potências e somas justificam substituir x por a" },
+    { label: "Funções racionais", detail: "o quociente exige denominador com limite não nulo" },
+    { label: "Comparação e Confronto", detail: "se p≤f≤q perto de a e p e q tendem ao mesmo L, f também tende a L" },
+  ],
+  exampleTitle: "Combinando regras com uma verificação de domínio",
+  example: "Calcule o limite, quando x→2, de (3x²−x+1)/√(x+7). Antes de substituir, justifique as operações e a raiz.",
+  steps: [
+    { title: "Verificar a raiz", detail: "Perto de 2, x+7 é positivo e tende a 9. Pela regra da raiz, √(x+7) tende a 3." },
+    { title: "Montar o numerador", detail: "Identidade: x→2. Potência: x²→4. Múltiplo, diferença e constante: 3x²−x+1→3·4−2+1=11." },
+    { title: "Conferir o denominador", detail: "O limite do denominador é 3, que não é zero. Portanto a regra do quociente pode ser aplicada." },
+    { title: "Calcular e interpretar", detail: "\\[\\lim_{x\\to2}\\frac{3x^2-x+1}{\\sqrt{x+7}}=\\frac{11}{3}.\\] A função se aproxima de 11/3, cerca de 3,667, quando x se aproxima de 2." },
+  ],
+  interpretation: [
+    "Substituição direta não é um truque sem justificativa: aqui ela reúne regras cujas hipóteses foram conferidas. A existência do valor da função no ponto não é exigida pelas propriedades.",
+    "Comparação preserva a ordem: se f(x)≤g(x) perto de a e os limites são finitos, então L≤M. Uma desigualdade estrita pode virar igualdade no limite: para x≠0, 0<x², mas ambos tendem a 0. Para cercar uma função com duas barreiras de mesmo limite, use o Teorema do Confronto, indicado nos próximos estudos.",
+    "Limites infinitos não são números reais a inserir mecanicamente nas regras acima. As formas ∞−∞, 0·∞ e ∞/∞ não determinam um valor; compare, por exemplo, x/x→1 e x²/x→+∞ quando x→+∞. As duas razões têm forma ∞/∞ e resultados diferentes.",
+  ],
+  errors: [
+    "Tratar limite de constante e múltiplo constante como a mesma regra.",
+    "Dividir L por zero ou escrever 0/0 como resultado final.",
+    "Aplicar raiz de índice par fora do domínio real ou esquecer a aproximação lateral na borda.",
+    "Usar expoente negativo quando a base tende a zero.",
+    "Concluir a existência dos limites dos fatores a partir do limite do produto.",
+    "Combinar limites tomados em pontos ou lados diferentes.",
+  ],
+  guided: [
+    { question: "Se f→5 e g→−2 na mesma aproximação, calcule a tendência de 3f−g+1.", hint: "Separe múltiplo, diferença e constante.", solution: "3·5−(−2)+1=18.", answer: "18", interpretation: "O sinal de g precisa ser preservado na subtração." },
+    { question: "Quando x→1, calcule o limite de (2x+1)/(x²+2).", hint: "Confira se o limite do denominador é zero.", solution: "O numerador tende a 3 e o denominador também a 3. Como 3≠0, o limite é 3/3=1.", answer: "1", interpretation: "O quociente depende da hipótese do denominador." },
+    { question: "Se f→−2, qual o limite de f elevado a −3?", hint: "Escreva como o recíproco do cubo.", solution: "Como −2≠0, usamos 1/(−2)³=−1/8.", answer: "-1/8", interpretation: "Expoente negativo exige limite da base diferente de zero." },
+    { question: "Calcule o limite da raiz cúbica de x quando x→−27.", hint: "Raiz de índice ímpar aceita radicando negativo.", solution: "O limite é a raiz cúbica de −27, que vale −3.", answer: "-3", interpretation: "Não aplique à raiz ímpar a restrição da raiz par." },
+    { question: "Qual o limite de √x quando x→0 pela direita?", solution: "No domínio x≥0, √x tende a √0=0.", answer: "0", interpretation: "Na borda do domínio, declaramos o lado pelo qual nos aproximamos." },
+    { type: "interpretacao", question: "Saber que o módulo de f tende a 1 garante que f tenha limite?", solution: "Não. Para f(x)=x/|x| em x→0, o módulo vale 1, mas os limites laterais de f são −1 e 1.", answer: "Não", interpretation: "O módulo elimina o sinal e pode esconder uma diferença entre os lados." },
+    { type: "interpretacao", question: "Se o denominador tende a zero, podemos concluir que o quociente tende a infinito?", solution: "Não. x/x tende a 1 em 0, x²/x tende a 0 e 1/x tem laterais infinitas de sinais diferentes. É necessário investigar a expressão.", answer: "Não", interpretation: "Denominador com limite zero é uma condição de análise, não um resultado." },
+    { question: "Calcule o limite de √(2x²+7) quando x→1.", hint: "Encontre primeiro o limite da expressão dentro da raiz.", solution: "2x²+7 tende a 9. É positivo perto de 1; a raiz é contínua em 9, então o resultado é 3.", answer: "3", interpretation: "A composição liga o limite da função interna à continuidade da externa." },
+  ],
+  exerciseIds: Array.from({ length: 10 }, (_, i) => `lim-prop-${String(i + 1).padStart(2, "0")}`),
+  summary: [
+    "Declare a mesma aproximação e os limites finitos das partes antes de separar uma expressão.",
+    "Constante, identidade, soma, diferença, múltiplo e produto formam a base; quociente exige M≠0.",
+    "Potências negativas exigem base com limite não nulo; raízes pares exigem domínio real adequado.",
+    "Módulo preserva limites, mas a recíproca falha. Composição exige continuidade da função externa.",
+    "Indeterminações pedem outra ferramenta; desigualdades e confronto podem controlar a expressão inteira.",
+  ],
+  quiz: [
+    { pergunta: "Se f→2 e g→0, a regra do quociente permite calcular L/M?", opcoes: ["Sim, o resultado é sempre zero", "Sim, o resultado é sempre infinito", "Não; a hipótese M≠0 falhou"], corretaIndex: 2, critical: true, explicacao: "É necessário investigar a expressão e os lados da aproximação. Divisão por zero não é uma operação com números reais.", reforcoSectionId: "regra-quociente", reforcoLabel: "Condição do quociente" },
+    { pergunta: "Se f→0, o que ainda conferir para a raiz quadrada de f?", opcoes: ["Se f está não negativa nos pontos da aproximação", "Nada: toda raiz existe nos reais", "Se f(0)=1"], corretaIndex: 0, critical: true, explicacao: "O limite do radicando não substitui a verificação do domínio perto do ponto.", reforcoSectionId: "regra-raiz", reforcoLabel: "Domínio das raízes" },
+    { pergunta: "Se f→−2, qual o limite de f³?", opcoes: ["8", "−8", "−6"], corretaIndex: 1, explicacao: "(−2)³=−8: a regra da potência preserva o sinal para expoente ímpar.", reforcoSectionId: "regra-potencia", reforcoLabel: "Potências e sinais" },
+  ],
+};

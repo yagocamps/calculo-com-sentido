@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run validate && npm run lint",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "tsx --test tests/*.test.ts",
     "validate:content": "tsx scripts/validate-content.ts",
     "validate:katex": "tsx scripts/validate-katex.ts",
     "validate:aria": "tsx scripts/validate-aria.ts",
-    "validate": "npm run validate:content && npm run validate:katex && npm run validate:aria"
+    "validate": "npm run test && npm run validate:content && npm run validate:katex && npm run validate:aria"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

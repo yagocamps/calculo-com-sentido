@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RichText } from "@/components/aulas/RichText";
 import { Tag } from "@/components/ui/Tag";
 import type { AulaExercise } from "@/data/aulas/types";
-import { checkAnswer, type CheckResult } from "@/lib/answer-check";
+import { type CheckResult } from "@/lib/answer-check";
+import { clearGuidedAnswer, getProgress, submitGuidedAttempt } from "@/lib/progress";
+import { guidedAnchor, guidedAttemptId } from "@/lib/learning-assessments";
 import { cn } from "@/lib/utils";
 
 const typeLabels = {
@@ -14,22 +16,47 @@ const typeLabels = {
   interpretacao: "Interpretação",
 } as const;
 
-export function AulaExerciseCard({ exercise }: { exercise: AulaExercise }) {
+export function AulaExerciseCard({ exercise, lessonPathId }: { exercise: AulaExercise; lessonPathId: string }) {
   const [showDica, setShowDica] = useState(false);
   const [showResposta, setShowResposta] = useState(false);
   const [attempt, setAttempt] = useState("");
   const [result, setResult] = useState<CheckResult | null>(null);
+  const [method, setMethod] = useState<"automatic" | "self-assessment">("automatic");
+  const [saveError, setSaveError] = useState(false);
+  const id = guidedAttemptId(lessonPathId, exercise.id);
+  const anchorId = guidedAnchor(exercise.id);
+
+  useEffect(() => {
+    const restored = getProgress().guidedRecords[id];
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- restore browser-only assessment after SSR
+    setAttempt(restored?.attempt ?? "");
+    setResult(restored?.result ?? null);
+    setMethod(restored?.method ?? "automatic");
+    setShowResposta(Boolean(restored));
+    // Saved solutions change card heights after hydration; align the deep link afterwards.
+    if (window.location.hash === `#${anchorId}`) {
+      let frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(() => document.getElementById(anchorId)?.scrollIntoView({ block: "start" }));
+      });
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [id, anchorId]);
 
   // Aprendizado ativo: o aluno tenta responder antes de revelar a solução,
   // com feedback imediato — em vez de só ler a resolução passivamente.
-  const handleVerify = () => {
-    const r = checkAnswer(attempt, exercise.resposta);
-    setResult(r);
+  const handleVerify = (selfAssessment?: "correct" | "incorrect") => {
+    if (!attempt.trim()) return;
+    const retryAssessment = saveError && method === "self-assessment" && result !== "manual" && result !== null ? result : undefined;
+    const submitted = submitGuidedAttempt(lessonPathId, exercise.id, attempt, selfAssessment ?? retryAssessment);
+    if (!submitted) return;
+    setResult(submitted.record.result);
+    setMethod(submitted.record.method);
+    setSaveError(!submitted.saved);
     setShowResposta(true);
   };
 
   return (
-    <div className="rounded-2 border border-border bg-surface-soft/60 p-4">
+    <div id={anchorId} className="scroll-mt-20 rounded-2 border border-border bg-surface-soft/60 p-4">
       <div className="mb-2 flex items-center gap-2">
         <Tag tone="sky">{typeLabels[exercise.type]}</Tag>
       </div>
@@ -47,7 +74,8 @@ export function AulaExerciseCard({ exercise }: { exercise: AulaExercise }) {
         <input
           type="text"
           value={attempt}
-          onChange={(e) => setAttempt(e.target.value)}
+          maxLength={2000}
+          onChange={(e) => { setAttempt(e.target.value); setResult(null); setSaveError(false); }}
           onKeyDown={(e) => {
             if (e.key === "Enter") handleVerify();
           }}
@@ -57,23 +85,35 @@ export function AulaExerciseCard({ exercise }: { exercise: AulaExercise }) {
         />
         <button
           type="button"
-          onClick={handleVerify}
+          onClick={() => handleVerify()}
+          disabled={!attempt.trim() || (result !== null && !saveError)}
           className="rounded-full bg-terracotta px-3.5 py-1.5 text-xs font-semibold text-bg hover:opacity-90"
         >
           Verificar
         </button>
       </div>
 
+      <p className="mt-2 text-xs text-ink-subtle">
+        Use ponto ou vírgula para decimais, sem separador de milhar. Preserve símbolos e unidades.
+        {exercise.answerCheck?.absoluteTolerance !== undefined && ` Tolerância absoluta: ${exercise.answerCheck.absoluteTolerance}.`}
+      </p>
+      {saveError && <p role="alert" className="mt-2 text-xs text-amber-ink">Resposta avaliada, mas não foi possível salvar neste navegador. Tente verificar novamente quando houver armazenamento disponível.</p>}
+      {result && !saveError && <p role="status" className="mt-2 text-xs text-ink-muted">Resposta salva · {result === "manual" ? "aguardando sua comparação com o gabarito" : method === "self-assessment" ? "autoavaliação" : "conferência automática"}. Reenviar a mesma resposta não cria outra tentativa.</p>}
+      {result && <button type="button" className="mt-2 text-xs font-semibold text-terracotta underline" onClick={() => {
+        if (clearGuidedAnswer(id)) { setAttempt(""); setResult(null); setShowResposta(false); setSaveError(false); }
+        else setSaveError(true);
+      }}>Tentar novamente</button>}
+
       {result === "correct" && (
         <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-sage-soft px-3 py-1 text-[13px] font-semibold text-sage-ink">
-          ✓ Correto! Mandou bem.
+          {method === "self-assessment" ? "✓ Marcada como correta por você." : "✓ Resposta correta."}
         </p>
       )}
       {result === "incorrect" && (
         <div className="mt-2 space-y-1.5 text-[13px]">
           <p className="text-ink-muted">
-            <span className="font-semibold text-amber-ink">Quase!</span> Errar
-            faz parte — veja abaixo onde costuma escapar.
+            <span className="font-semibold text-amber-ink">{method === "self-assessment" ? "Você indicou que precisa revisar." : "Resposta diferente do gabarito."}</span>{" "}
+            Compare sua tentativa com a resolução abaixo.
           </p>
           {exercise.erroComum && (
             <p className="rounded-xl border border-amber bg-amber-soft/60 px-3 py-2 leading-relaxed text-amber-ink">
@@ -84,9 +124,12 @@ export function AulaExerciseCard({ exercise }: { exercise: AulaExercise }) {
         </div>
       )}
       {result === "manual" && (
-        <p className="mt-2 text-[13px] text-ink-muted">
-          Compare sua resposta com o gabarito abaixo.
-        </p>
+        <div className="mt-2 text-[13px] text-ink-muted"><p>
+          Não foi possível conferir automaticamente. Compare os símbolos, as unidades e as condições da sua resposta com o gabarito abaixo.
+        </p><div className="mt-2 flex flex-wrap gap-2">
+          <button type="button" onClick={() => handleVerify("correct")} className="rounded border border-sage px-3 py-2 text-sage-ink">Minha resposta está correta</button>
+          <button type="button" onClick={() => handleVerify("incorrect")} className="rounded border border-amber px-3 py-2 text-amber-ink">Preciso revisar minha resposta</button>
+        </div></div>
       )}
 
       <div className="mt-3 flex flex-wrap gap-2">

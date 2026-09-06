@@ -25,6 +25,8 @@ import {
   type TesteNivelStored,
 } from "@/lib/progress";
 import { isLessonAccessible } from "@/lib/aulas";
+import { getLearningItem } from "@/lib/learning-assessments";
+import { normalizeStudyPlan, type StudyPlanSession } from "@/lib/study-plan";
 import { isDue, type ReviewMap } from "@/lib/review";
 import {
   computeCombinedTrilhaPercent,
@@ -84,7 +86,7 @@ export type SkillRecommendation = {
   reason: string;
   href: string;
   practiceHref?: string;
-  source: "exercise-errors" | "level-test" | "review" | "path";
+  source: "exercise-errors" | "guided-errors" | "checkpoint-errors" | "level-test" | "review" | "path";
 };
 
 export type AdaptiveSessionItem = {
@@ -114,7 +116,7 @@ export type SavedLessonItem = {
   note?: string;
 };
 
-export type StudyPlanStep = {
+export type StudyPlanStep = StudyPlanSession & {
   label: string;
   title: string;
   reason: string;
@@ -123,6 +125,7 @@ export type StudyPlanStep = {
 };
 
 export type ProgressDashboard = {
+  savedAssessmentCount: number;
   trilhaPreCalculoPercent: number;
   trilhaCalculo1Percent: number;
   trilhaCombinedPercent: number;
@@ -313,13 +316,8 @@ type AttemptAgg = {
   type?: ExerciseType;
 };
 
-let exercicioByIdCache: Map<string, (typeof exercicios)[number]> | null = null;
-
 function getExercicioById(id: string) {
-  if (!exercicioByIdCache) {
-    exercicioByIdCache = new Map(exercicios.map((e) => [e.id, e]));
-  }
-  return exercicioByIdCache.get(id);
+  return getLearningItem(id);
 }
 
 /** Agrega tentativas por tema e por célula tema × tipo de questão. */
@@ -436,7 +434,7 @@ function getExerciseStrengths(
     .slice(0, limit)
     .map(
       (t) =>
-        `${t.temaLabel} · ${accuracyOf(t)}% de acerto nos exercícios (${t.correct} de ${t.attempts})`,
+        `${t.temaLabel} · ${accuracyOf(t)}% de acerto nas tentativas registradas (${t.correct} de ${t.attempts})`,
     );
 }
 
@@ -629,6 +627,19 @@ function getSkillRecommendation(
   reviewQueue: ReviewQueueItem[],
   nextLesson: NextLessonInfo | null,
 ): SkillRecommendation | null {
+  const latest = new Map<string, ProgressState["attemptHistory"][number]>();
+  for (const event of state.attemptHistory) latest.set(event.exerciseId, event);
+  const lessonError = [...latest.values()].sort((a, b) => Date.parse(b.attemptedAt) - Date.parse(a.attemptedAt))
+    .filter((event) => event.outcome === "incorrect")
+    .map((event) => getLearningItem(event.exerciseId))
+    .filter((item) => item && item.source !== "bank" && item.lessonHref)
+    .sort((a, b) => Number(Boolean(b?.critical)) - Number(Boolean(a?.critical)))[0];
+  if (lessonError && lessonError.source !== "bank") return {
+    skill: lessonError.tema, title: `Revise ${lessonError.title}`,
+    reason: `${lessonError.critical ? "Uma condição essencial ainda precisa de revisão. " : ""}A última tentativa registrada nesta questão teve erro. Volte à explicação e tente novamente; a marcação de aula concluída é independente desse resultado.`,
+    href: lessonError.lessonHref!, practiceHref: lessonError.href,
+    source: lessonError.source === "checkpoint" ? "checkpoint-errors" : "guided-errors",
+  };
   const weak = weakSpots[0];
   if (weak) {
     return {
@@ -696,6 +707,15 @@ function getAdaptiveSession(
   weakSpots: WeakSpot[],
   nextLesson: NextLessonInfo | null,
 ): AdaptiveSessionItem[] {
+  const saved = state.adaptiveSession;
+  const savedExercise = saved && exercicios.find((e) => e.id === saved.currentId);
+  if (saved && savedExercise) return [{
+    id: savedExercise.id, title: savedExercise.title,
+    href: `/exercicios?id=${savedExercise.id}&session=adaptativa`, skill: savedExercise.tema,
+    level: pedagogicalLevelOf(savedExercise),
+    reason: saved.answers.length >= saved.targetCount ? "Sessão concluída: veja o resumo ou comece outra."
+      : `${saved.answers.length} de ${saved.targetCount} respostas salvas. Continue de onde parou.`,
+  }];
   const testWeak = weakestTestSkill(state.testeNivel);
   const testDestination = testWeak
     ? topicoParaModulo[testWeak.topic.id as TopicId]
@@ -724,8 +744,8 @@ function getAdaptiveSession(
       return { exercise, level, score, incorrect };
     })
     .sort((a, b) => a.score - b.score || a.exercise.id.localeCompare(b.exercise.id))
-    .slice(0, 5)
-    .map(({ exercise, level, incorrect }, index) => ({
+    .slice(0, 1)
+    .map(({ exercise, level, incorrect }) => ({
       id: exercise.id,
       title: exercise.title,
       href: `/exercicios?id=${exercise.id}&session=adaptativa`,
@@ -734,9 +754,7 @@ function getAdaptiveSession(
       reason:
         incorrect > 0
           ? "Retoma um erro anterior com dificuldade adequada."
-          : index === 0
-            ? "Começa no nível indicado pelo seu desempenho."
-            : "Aumenta a variedade e a dificuldade aos poucos.",
+          : "Ponto de partida indicado pelo desempenho; as próximas questões dependem das respostas.",
     }));
 }
 
@@ -752,10 +770,10 @@ function getErrorHistory(state: ProgressState): ErrorHistoryItem[] {
       return [{
         key: `${event.exerciseId}-${event.attemptedAt}-${index}`,
         title: exercise.title,
-        skill: `${exercise.tema} · ${typeLabels[exercise.type]}`,
+        skill: `${exercise.tema} · ${exercise.source === "checkpoint" ? "Checkpoint" : exercise.source === "guided" ? "Exercício guiado" : "Banco"} · ${event.method === "self-assessment" ? "Autoavaliação" : event.method === "choice" ? "Alternativas" : event.method === "automatic" ? "Conferência automática" : "Método não registrado"}`,
         attemptedAt: event.attemptedAt,
-        href: `/exercicios?id=${exercise.id}`,
-        lessonHref: lesson?.href,
+        href: exercise.href,
+        lessonHref: exercise.lessonHref ?? lesson?.href,
       }];
     });
 }
@@ -782,45 +800,12 @@ function getSavedLessons(state: ProgressState): SavedLessonItem[] {
 
 function getStudyPlanSteps(
   plan: StudyPlan | undefined,
-  recommendation: SkillRecommendation | null,
-  session: AdaptiveSessionItem[],
-  reviewQueue: ReviewQueueItem[],
-  nextLesson: NextLessonInfo | null,
 ): StudyPlanStep[] {
-  if (!plan) return [];
-  const minutes = plan.minutesPerSession;
-  const steps: StudyPlanStep[] = [];
-  if (recommendation) {
-    steps.push({
-      label: "Sessão 1 · habilidade prioritária",
-      title: recommendation.title,
-      reason: recommendation.reason,
-      href: recommendation.href,
-      minutes,
-    });
-  }
-  if (session[0]) {
-    steps.push({
-      label: "Sessão 2 · prática adaptativa",
-      title: `Pratique ${session[0].skill}`,
-      reason: "Uma sequência de cinco questões ajusta a dificuldade conforme seus acertos e erros.",
-      href: session[0].href,
-      minutes,
-    });
-  }
-  const consolidation = reviewQueue[0];
-  if (consolidation || nextLesson) {
-    steps.push({
-      label: "Sessão 3 · consolidar e avançar",
-      title: consolidation?.title ?? nextLesson?.title ?? "Continue a trilha",
-      reason: consolidation
-        ? "Revisão espaçada prevista para esta semana."
-        : "Avanço na ordem dos pré-requisitos da trilha.",
-      href: consolidation?.href ?? nextLesson?.href ?? "/pre-calculo",
-      minutes,
-    });
-  }
-  return steps;
+  const normalized = normalizeStudyPlan(plan);
+  if (!normalized) return [];
+  return normalized.sessions!.map((session) => ({ ...session,
+    label: `Semana ${session.week} · sessão ${session.slot}`, minutes: normalized.minutesPerSession,
+  }));
 }
 
 function countStudyDaysThisWeek(activityDays: string[]): number {
@@ -909,14 +894,11 @@ export function buildProgressDashboard(
     skillRecommendation,
     adaptiveSession,
     errorHistory: getErrorHistory(state),
+    savedAssessmentCount: Object.keys(state.guidedRecords ?? {}).length + Object.keys(state.checkpointRecords ?? {}).length,
     savedLessons: getSavedLessons(state),
-    studyPlan: state.studyPlan,
+    studyPlan: normalizeStudyPlan(state.studyPlan),
     studyPlanSteps: getStudyPlanSteps(
       state.studyPlan,
-      skillRecommendation,
-      adaptiveSession,
-      review.due,
-      nextLesson,
     ),
     attemptsTotal: aggregateAttempts(exerciseAttempts).total,
     studyDaysThisWeek: countStudyDaysThisWeek(state.activityDays ?? []),

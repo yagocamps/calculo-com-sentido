@@ -1,0 +1,40 @@
+import type { Exercicio } from "@/data/exercicios";
+
+const common = {
+  tema: "Limites", temaSlug: "limites", area: "Limites · propriedades e hipóteses",
+  identificar: "Declare a aproximação e confira os limites das partes antes de aplicar uma propriedade.",
+  erroComum: "Aplicar uma regra sem conferir a existência dos limites, o denominador ou o domínio real.",
+};
+
+export const exerciciosPropriedadesLimites: Exercicio[] = [
+  { ...common, id: "lim-prop-01", num: "LPR-01", title: "Constante e identidade", type: "calculo", level: "facil", pedagogicalLevel: 1,
+    enunciado: "Calcule o limite de 7+x quando x→−2.", dica: "Separe a função constante 7 e a identidade x.",
+    resolucao: "A constante tende a 7 e x tende a −2. Pela soma, o limite é 7+(−2)=5.", resposta: "5", interpretacao: "Duas regras básicas justificam a substituição." },
+  { ...common, id: "lim-prop-02", num: "LPR-02", title: "Potência e sinal", type: "calculo", level: "facil", pedagogicalLevel: 1,
+    enunciado: "Se f(x)→−3 quando x→a, qual o limite de [f(x)]²?", dica: "Eleve o número inteiro −3 ao quadrado, com parênteses.",
+    resolucao: "A potência inteira positiva passa ao limite: (−3)²=9.", resposta: "9", interpretacao: "O quadrado da base negativa é positivo." },
+  { ...common, id: "lim-prop-03", num: "LPR-03", title: "Combinação de propriedades", type: "calculo", level: "medio", pedagogicalLevel: 2,
+    enunciado: "Na mesma aproximação, f→2 e g→−3. Calcule o limite de 4f−g+fg.", dica: "Calcule primeiro o múltiplo e o produto, preservando o sinal de g.",
+    resolucao: "4·2−(−3)+2·(−3)=8+3−6=5. Os limites das duas funções são finitos.", resposta: "5", interpretacao: "Soma, diferença, múltiplo e produto podem ser combinados sob as mesmas hipóteses." },
+  { ...common, id: "lim-prop-04", num: "LPR-04", title: "Raiz no denominador", type: "calculo", level: "medio", pedagogicalLevel: 2,
+    enunciado: "Calcule o limite de (x+1)/√(x+7) quando x→2.", dica: "Verifique a raiz e depois o denominador.",
+    resolucao: "O radicando é positivo perto de 2 e tende a 9. A raiz tende a 3≠0. O numerador tende a 3, logo o quociente tende a 1.", resposta: "1", interpretacao: "A regra da raiz e a do quociente têm condições diferentes, ambas necessárias." },
+  { ...common, id: "lim-prop-05", num: "LPR-05", title: "Raiz na borda do domínio", type: "interpretacao", level: "medio", pedagogicalLevel: 3,
+    enunciado: "Um colega diz: 'Se f(x)→0, √f(x) está definida nos reais dos dois lados de a'. A afirmação é verdadeira? Justifique com um exemplo.", dica: "Use f(x)=x perto de 0.",
+    resolucao: "Não. f(x)=x tende a 0, mas √x não é real para x<0. O limite de √x em 0 é tomado pelo domínio x≥0, isto é, pela direita.", resposta: "Não; f(x)=x em a=0 é um contraexemplo.", interpretacao: "O limite do radicando não dispensa a verificação do domínio na aproximação." },
+  { ...common, id: "lim-prop-06", num: "LPR-06", title: "O módulo esconde o sinal", type: "interpretacao", level: "medio", pedagogicalLevel: 3,
+    enunciado: "Para f(x)=x/|x|, x≠0, compare o limite do módulo de f e o limite bilateral de f em 0.", dica: "Separe x<0 e x>0.",
+    resolucao: "Pela esquerda, f=−1; pela direita, f=1. Assim, f não tem limite bilateral. O módulo de f é 1 dos dois lados e tem limite 1.", resposta: "O módulo tende a 1; f não tem limite bilateral.", interpretacao: "A passagem ao módulo não pode ser usada ao contrário para concluir a existência do limite original." },
+  { ...common, id: "lim-prop-07", num: "LPR-07", title: "Concentração de uma mistura", type: "aplicada", level: "dificil", pedagogicalLevel: 4,
+    enunciado: "Quando t→5 minutos, a massa de soluto tende a 12 g e o volume da solução tende a 3 L. Para qual concentração em g/L a mistura tende? Inclua a unidade.", dica: "Concentração é massa dividida pelo volume; confira o limite do volume.",
+    resolucao: "Como o volume tende a 3 L, diferente de zero, a razão tende a 12/3=4 g/L.", resposta: "4 g/L", interpretacao: "O quociente combina os valores e as unidades das duas grandezas." },
+  { ...common, id: "lim-prop-08", num: "LPR-08", title: "Área de uma seção circular", type: "aplicada", level: "dificil", pedagogicalLevel: 4,
+    enunciado: "Quando t→t₀, o raio de uma seção circular tende a 2 cm. Qual o limite de sua área em cm²? Preserve a constante π e a unidade.", dica: "Use A=πr²: potência seguida de múltiplo constante.",
+    resolucao: "O raio ao quadrado tende a 4 cm². Multiplicando por π, a área tende a 4π cm².", resposta: "4π cm²", interpretacao: "A constante π faz parte do resultado; 4 cm² não é a mesma área." },
+  { ...common, id: "lim-prop-09", num: "LPR-09", title: "Nem toda composição permite substituir", type: "interpretacao", level: "desafio", pedagogicalLevel: 5,
+    enunciado: "Se f(x)=0 para todo x e h(u)=1 para u≠0, mas h(0)=7, qual é o limite de h(f(x)) quando x→0?", dica: "A função interna assume exatamente 0; qual regra de h é usada?",
+    resolucao: "h(f(x))=h(0)=7 para todo x. Seu limite é 7. O limite de h(u) em u→0 é 1, mas h não é contínua em 0; não podemos substituir a composição por esse limite.", resposta: "7", interpretacao: "A continuidade da função externa evita confundir o valor no ponto com os valores próximos." },
+  { ...common, id: "lim-prop-10", num: "LPR-10", title: "Um produto sem limites dos fatores", type: "interpretacao", level: "desafio", pedagogicalLevel: 5,
+    enunciado: "Quando x→0, x·(1/x) tem limite? É possível justificar separando o produto em dois limites finitos? Explique.", dica: "Simplifique a expressão no domínio x≠0 e examine o segundo fator.",
+    resolucao: "O produto vale 1 para x≠0, portanto seu limite é 1. Mas 1/x não tem limite bilateral finito em 0; a regra do produto de limites finitos não se aplica aos fatores separados.", resposta: "O limite é 1; não se pode separar em dois limites finitos.", interpretacao: "A ausência das hipóteses de uma regra não significa que a expressão inteira não tenha limite." },
+];

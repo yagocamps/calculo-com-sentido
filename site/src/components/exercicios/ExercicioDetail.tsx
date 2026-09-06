@@ -9,6 +9,7 @@ import { PedagogicalLevelTag } from "@/components/ui/Tag";
 import Link from "next/link";
 import { exercicios, type Exercicio } from "@/data/exercicios";
 import { checkAnswer, type CheckResult } from "@/lib/answer-check";
+import type { AdaptiveAnswer } from "@/lib/adaptive-session";
 import { levelOrder, pedagogicalLevelOf } from "@/lib/exercicios";
 import {
   isExerciseComplete,
@@ -68,6 +69,8 @@ export function ExercicioDetail({
   hasPrev,
   hasNext,
   onReset,
+  assessment,
+  onAssess,
 }: {
   exercicio: Exercicio;
   onPrev?: () => void;
@@ -75,14 +78,26 @@ export function ExercicioDetail({
   hasPrev: boolean;
   hasNext: boolean;
   onReset: () => void;
+  assessment?: AdaptiveAnswer;
+  onAssess?: (answer: AdaptiveAnswer) => void;
 }) {
   const [showDica, setShowDica] = useState(false);
-  const [showResolucao, setShowResolucao] = useState(false);
-  const [showResposta, setShowResposta] = useState(false);
+  const [showResolucao, setShowResolucao] = useState(Boolean(assessment));
+  const [showResposta, setShowResposta] = useState(Boolean(assessment));
   const [showErro, setShowErro] = useState(false);
   const [exerciseDone, setExerciseDone] = useState(false);
-  const [attempt, setAttempt] = useState("");
-  const [result, setResult] = useState<CheckResult | null>(null);
+  const [attempt, setAttempt] = useState(assessment?.attempt ?? "");
+  const [localResult, setResult] = useState<CheckResult | null>(null);
+  const result = assessment?.outcome ?? localResult;
+
+  function record(outcome: "correct" | "incorrect", method: AdaptiveAnswer["method"]) {
+    if (assessment) return;
+    if (onAssess) onAssess({ exerciseId: exercicio.id, outcome, attempt, method });
+    else {
+      recordExerciseAttempt(exercicio.id, outcome, method);
+      if (outcome === "correct") markExerciseComplete(exercicio.id);
+    }
+  }
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- leitura do estado de conclusão (localStorage) client-only
@@ -106,26 +121,26 @@ export function ExercicioDetail({
   };
 
   const handleVerify = () => {
-    const r = checkAnswer(attempt, exercicio.resposta);
+    if (!attempt.trim() || assessment) return;
+    const r = checkAnswer(attempt, exercicio.resposta, exercicio.answerCheck);
     setResult(r);
     setShowResposta(true);
     setShowResolucao(true);
     // "manual" só conta depois da autoavaliação (selfAssess).
     if (r === "correct" || r === "incorrect") {
-      recordExerciseAttempt(exercicio.id, r);
+      record(r, "automatic");
     }
     if (r === "correct") {
-      markExerciseComplete(exercicio.id);
       setExerciseDone(true);
     }
     if (r === "incorrect") setShowErro(true);
   };
 
   const selfAssess = (acertou: boolean) => {
+    if (assessment) return;
     setResult(acertou ? "correct" : "incorrect");
-    recordExerciseAttempt(exercicio.id, acertou ? "correct" : "incorrect");
+    record(acertou ? "correct" : "incorrect", "self-assessment");
     if (acertou) {
-      markExerciseComplete(exercicio.id);
       setExerciseDone(true);
     } else {
       setShowErro(true);
@@ -133,7 +148,7 @@ export function ExercicioDetail({
   };
 
   const recommended =
-    result === "correct" || result === "incorrect"
+    !onAssess && (result === "correct" || result === "incorrect")
       ? recommendNext(exercicio, result)
       : null;
 
@@ -156,11 +171,11 @@ export function ExercicioDetail({
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          {exerciseDone ? (
+          {exerciseDone || assessment?.outcome === "correct" ? (
             <span className="inline-flex items-center rounded-full bg-sage-soft px-3 py-1 text-xs font-semibold text-sage-ink">
               ✓ Resolvido
             </span>
-          ) : (
+          ) : !onAssess ? (
             <Button
               variant="soft"
               size="sm"
@@ -171,10 +186,10 @@ export function ExercicioDetail({
             >
               Marcar como resolvido
             </Button>
-          )}
-          <Button variant="ghost" size="sm" onClick={handleReset}>
+          ) : null}
+          {!onAssess && <Button variant="ghost" size="sm" onClick={handleReset}>
             ↺ Reiniciar
-          </Button>
+          </Button>}
         </div>
       </header>
 
@@ -199,7 +214,8 @@ export function ExercicioDetail({
           <input
             type="text"
             value={attempt}
-            onChange={(e) => setAttempt(e.target.value)}
+            disabled={Boolean(assessment)}
+            onChange={(e) => { setAttempt(e.target.value); setResult(null); }}
             onKeyDown={(e) => {
               if (e.key === "Enter") handleVerify();
             }}
@@ -207,10 +223,15 @@ export function ExercicioDetail({
             aria-label="Sua resposta"
             className="min-w-0 flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm text-ink outline-none transition-colors placeholder:text-ink-subtle focus-visible:border-terracotta"
           />
-          <Button variant="primary" size="sm" onClick={handleVerify}>
+          <Button variant="primary" size="sm" onClick={handleVerify} disabled={!attempt.trim() || Boolean(assessment)}>
             Verificar
           </Button>
         </div>
+
+        <p className="mt-2 text-xs text-ink-subtle">
+          Use ponto ou vírgula para decimais, sem separador de milhar. Preserve símbolos e unidades.
+          {exercicio.answerCheck?.absoluteTolerance !== undefined && ` Tolerância absoluta: ${exercicio.answerCheck.absoluteTolerance}.`}
+        </p>
 
         {result === "correct" && (
           <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-sage-soft px-3 py-1 text-[13px] font-semibold text-sage-ink">
@@ -235,7 +256,7 @@ export function ExercicioDetail({
         )}
         {result === "manual" && (
           <div className="mt-2 text-[13px] text-ink-muted">
-            Compare sua resposta com o gabarito abaixo. Você acertou?
+            Não foi possível conferir automaticamente. Compare os símbolos, as unidades e as condições com o gabarito abaixo. Você acertou?
             <span className="mt-2 flex gap-2">
               <Button variant="soft" size="sm" onClick={() => selfAssess(true)}>
                 ✓ Acertei

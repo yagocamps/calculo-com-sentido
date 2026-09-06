@@ -1,3 +1,5 @@
+import type { AnswerCheckOptions } from "@/lib/answer-check";
+
 export type AulaExercise = {
   id: string;
   type: "compreensao" | "calculo" | "aplicada" | "interpretacao";
@@ -6,6 +8,7 @@ export type AulaExercise = {
   dica?: string;
   resolucao: string;
   resposta: string;
+  answerCheck?: AnswerCheckOptions;
   interpretacao: string;
   erroComum?: string;
 };
@@ -38,6 +41,8 @@ export type AulaQuizQuestion = {
   pergunta: string;
   opcoes: string[];
   corretaIndex: number;
+  critical?: boolean;
+  reforcoLabel?: string;
   /** Por que a resposta certa é certa (mostrado após conferir). */
   explicacao: string;
   /** Seção da aula para revisar em caso de erro (id da TOC, ex.: "explicacao"). */
@@ -90,6 +95,14 @@ export type AulaContent = {
     /** Leitura textual customizada (sobrescreve `formula` no aria-label). */
     formulaAria?: string;
     formulaLegend?: string;
+    rules?: {
+      id: string;
+      title: string;
+      formulaLatex: string;
+      formulaAria: string;
+      conditions: string;
+      example: string;
+    }[];
   };
   /** Demonstração algébrica opcional, exibida na explicação. */
   demonstracao?: {

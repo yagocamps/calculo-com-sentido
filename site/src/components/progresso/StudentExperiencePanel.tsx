@@ -4,10 +4,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { ProgressDashboard } from "@/lib/progress-dashboard";
-import { configureStudyPlan } from "@/lib/progress";
+import { configureStudyPlan, updateStudyPlanSession } from "@/lib/progress";
 
 const sourceLabel = {
   "exercise-errors": "Com base nos seus erros",
+  "guided-errors": "Com base nos exercícios guiados",
+  "checkpoint-errors": "Com base no checkpoint",
   "level-test": "Com base no teste de nível",
   review: "Com base na revisão espaçada",
   path: "Com base nos pré-requisitos",
@@ -68,20 +70,20 @@ export function StudentExperiencePanel({
             Sessão adaptativa
           </p>
           <h2 className="mt-1 font-serif text-xl font-medium">
-            5 exercícios escolhidos para você
+            Cinco questões, uma de cada vez
           </h2>
           <p className="mt-1 text-sm text-ink-muted">
-            A dificuldade começa perto do seu nível e muda depois de cada resposta.
+            A próxima questão é escolhida após cada resposta, buscando subir no acerto e reforçar no erro. Uma sessão salva é retomada ao entrar.
           </p>
           <ol className="mt-4 space-y-2">
-            {dash.adaptiveSession.map((item, index) => (
+            {dash.adaptiveSession.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.href}
                   className="grid grid-cols-[28px_1fr_auto] items-start gap-2 rounded-xl border border-border bg-surface-soft px-3 py-2.5 transition-colors hover:border-sky"
                 >
                   <span className="font-mono text-xs font-bold text-sky-ink">
-                    {index + 1}
+                    →
                   </span>
                   <span>
                     <span className="block text-sm font-semibold text-ink">
@@ -100,7 +102,7 @@ export function StudentExperiencePanel({
           </ol>
           {dash.adaptiveSession[0] && (
             <Button href={dash.adaptiveSession[0].href} className="mt-4">
-              Iniciar sessão →
+              Abrir sessão →
             </Button>
           )}
         </Card>
@@ -119,7 +121,7 @@ export function StudentExperiencePanel({
                 type="button"
                 aria-pressed={dash.studyPlan?.durationWeeks === weeks}
                 onClick={() => {
-                  configureStudyPlan(weeks);
+                  configureStudyPlan(weeks, recommendation?.href);
                   onRefresh();
                 }}
                 className={`rounded-xl border px-2 py-2 text-center text-sm font-semibold transition-colors ${
@@ -132,6 +134,7 @@ export function StudentExperiencePanel({
               </button>
             ))}
           </div>
+          <p className="mt-2 text-xs text-ink-muted">Trocar o ritmo cria um novo plano. O histórico de aulas e exercícios é preservado.</p>
           {dash.studyPlan ? (
             <>
               <p className="mt-3 text-xs text-ink-muted">
@@ -139,9 +142,15 @@ export function StudentExperiencePanel({
                 {dash.studyPlan.minutesPerSession} min por sessão ·{" "}
                 {dash.studyPlan.durationWeeks * dash.studyPlan.sessionsPerWeek} sessões no total
               </p>
-              <ol className="mt-3 space-y-2">
-                {dash.studyPlanSteps.map((step) => (
-                  <li key={step.label}>
+              <p className="mt-2 text-sm font-semibold" role="status">{dash.studyPlanSteps.filter((s) => s.completed).length} de {dash.studyPlanSteps.length} sessões concluídas</p>
+              <p className="mt-1 text-xs text-ink-muted">Marque a sessão depois de estudar. Isso acompanha sua rotina e não certifica domínio. Para reagendar, escolha a data e clique em Salvar data.</p>
+              <div className="mt-3 space-y-3">
+                {Array.from({ length: dash.studyPlan.durationWeeks }, (_, i) => i + 1).map((week) => (
+                  <details key={week} open={week === 1} className="rounded-xl border border-border p-3">
+                    <summary className="cursor-pointer font-semibold">Semana {week} · {dash.studyPlanSteps.filter((s) => s.week === week && s.completed).length}/{dash.studyPlan!.sessionsPerWeek} concluídas</summary>
+                    <ol className="mt-3 space-y-3">
+                {dash.studyPlanSteps.filter((step) => step.week === week).map((step) => (
+                  <li key={step.id}>
                     <Link
                       href={step.href}
                       className="block rounded-xl border border-border bg-surface-soft px-3 py-2.5 hover:border-sage"
@@ -156,14 +165,34 @@ export function StudentExperiencePanel({
                         {step.reason}
                       </span>
                     </Link>
+                    <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+                      <label className="flex cursor-pointer items-center gap-2"><input type="checkbox" checked={step.completed}
+                        onChange={(event) => { updateStudyPlanSession(step.id, { completed: event.target.checked }); onRefresh(); }} />
+                        Concluí a sessão {step.slot} da semana {step.week}</label>
+                      <form key={`${dash.studyPlan!.startedAt}:${step.id}:${step.date}`} className="flex flex-wrap items-center gap-2"
+                        onSubmit={(event) => {
+                          event.preventDefault();
+                          const date = new FormData(event.currentTarget).get("date");
+                          if (typeof date === "string") { updateStudyPlanSession(step.id, { date }); onRefresh(); }
+                        }}>
+                        <label className="flex items-center gap-2">Reagendar
+                          <input type="date" name="date" required defaultValue={step.date} aria-label={`Data da sessão ${step.slot} da semana ${step.week}`}
+                            className="min-w-0 rounded border border-border bg-surface p-1 text-ink" />
+                        </label>
+                        <button type="submit" aria-label={`Salvar data da sessão ${step.slot} da semana ${step.week}`} className="rounded border border-border px-2 py-1 font-semibold text-sage-ink hover:bg-sage-soft">Salvar data</button>
+                      </form>
+                    </div>
                   </li>
                 ))}
-              </ol>
+                    </ol>
+                  </details>
+                ))}
+              </div>
             </>
           ) : (
             <p className="mt-3 text-sm leading-relaxed text-ink-muted">
               O plano combina sua habilidade prioritária, prática adaptativa e revisão.
-              Escolha 2, 4 ou 8 semanas para montar a primeira semana.
+              Escolha 2, 4 ou 8 semanas para montar todas as sessões do plano.
             </p>
           )}
         </Card>
@@ -245,7 +274,7 @@ export function StudentExperiencePanel({
               Sincronização opcional, sem conta
             </p>
             <p className="mt-1 text-sm text-ink-muted">
-              O backup JSON no topo inclui progresso, teste, histórico, plano, favoritos e anotações.
+              O backup JSON no topo inclui progresso, teste, respostas de checkpoints e exercícios guiados, histórico, sessão adaptativa, plano, favoritos e anotações.
               Exporte neste computador e importe em outro quando quiser.
             </p>
           </div>

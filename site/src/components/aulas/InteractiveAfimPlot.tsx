@@ -62,8 +62,10 @@ export function InteractiveAfimPlot({
             max={5}
             step={0.1}
             value={a}
+            aria-label="Coeficiente a: inclinação da reta"
+            aria-valuetext={fmt(a)}
             onChange={(e) => setA(Number(e.target.value))}
-            className="mt-1 w-full accent-[var(--terracotta)]"
+            className="mt-1 h-6 w-full accent-[var(--terracotta)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
           />
         </div>
         <div>
@@ -85,8 +87,10 @@ export function InteractiveAfimPlot({
             max={20}
             step={0.5}
             value={b}
+            aria-label="Coeficiente b: intercepto no eixo y"
+            aria-valuetext={fmt(b)}
             onChange={(e) => setB(Number(e.target.value))}
-            className="mt-1 w-full accent-[var(--sage)]"
+            className="mt-1 h-6 w-full accent-[var(--sage)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
           />
         </div>
       </div>

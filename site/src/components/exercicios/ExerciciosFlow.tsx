@@ -3,6 +3,7 @@
 import { useCallback, useDeferredValue, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ExercicioDetail } from "@/components/exercicios/ExercicioDetail";
+import { AdaptivePractice } from "@/components/exercicios/AdaptivePractice";
 import { TypeTag } from "@/components/exercicios/TypeTag";
 import { PageShell } from "@/components/layout/PageShell";
 import { PedagogicalLevelTag } from "@/components/ui/Tag";
@@ -27,6 +28,16 @@ const exercicioTipos: ExerciseType[] = [
 ];
 
 export function ExerciciosFlow() {
+  const params = useSearchParams();
+  if (params.get("session") === "adaptativa") {
+    const seed = exercicios.find((e) => e.id === params.get("id")) ??
+      exercicios.find((e) => e.temaSlug === params.get("tema")) ?? exercicios[0];
+    return <AdaptivePractice seedId={seed.id} />;
+  }
+  return <ExerciseBank />;
+}
+
+function ExerciseBank() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const paramId = searchParams.get("id");
@@ -82,31 +93,8 @@ export function ExerciciosFlow() {
     [router, searchParams],
   );
 
-  if (filtered.length === 0 || !active) {
-    return (
-      <PageShell crumbs={["Início", "Exercícios"]}>
-        <div className="mx-auto max-w-lg">
-          <h1 className="font-serif text-2xl font-medium">Exercícios</h1>
-          <p className="mt-2 text-ink-muted">
-            Nenhum exercício com esses filtros. Tente outro tema ou nível.
-          </p>
-          <button
-            type="button"
-            className="mt-4 text-sm font-semibold text-terracotta hover:underline"
-            onClick={() => {
-              setTema("todos");
-              setNivel("todos");
-            }}
-          >
-            Ver todos os exercícios →
-          </button>
-        </div>
-      </PageShell>
-    );
-  }
-
   return (
-    <PageShell crumbs={["Início", "Exercícios", active.tema]}>
+    <PageShell crumbs={["Início", "Exercícios", ...(active ? [active.tema] : [])]}>
       <div className="mx-auto grid max-w-[1080px] gap-5 lg:grid-cols-[320px_1fr]">
         <aside>
           <h1 className="font-serif text-2xl font-medium tracking-tight">
@@ -201,7 +189,7 @@ export function ExerciciosFlow() {
                   onClick={() => selectExercicio(ex.id)}
                   className={cn(
                     "w-full rounded-2 border px-3.5 py-3 text-left transition-colors",
-                    ex.id === active.id
+                    ex.id === active?.id
                       ? "border-border bg-surface shadow-sm"
                       : "border-transparent hover:border-border hover:bg-surface-soft",
                   )}
@@ -229,7 +217,7 @@ export function ExerciciosFlow() {
           )}
         </aside>
 
-        <ExercicioDetail
+        {active ? <ExercicioDetail
           key={active.id}
           exercicio={active}
           hasPrev={activeIndex > 0}
@@ -243,7 +231,14 @@ export function ExerciciosFlow() {
             if (next) selectExercicio(next.id);
           }}
           onReset={() => {}}
-        />
+        /> : <section className="rounded-3 border border-border bg-surface p-6">
+          <h2 className="font-serif text-xl">Nenhum exercício encontrado</h2>
+          <p className="mt-2 text-sm text-ink-muted">Edite a busca, tente outro tema ou nível, ou limpe todos os filtros.</p>
+          <button type="button" className="mt-4 text-sm font-semibold text-terracotta underline" onClick={() => {
+            setTema("todos"); setNivel("todos"); setQuery("");
+            router.replace("/exercicios", { scroll: false });
+          }}>Ver todos os exercícios →</button>
+        </section>}
       </div>
     </PageShell>
   );
@@ -261,6 +256,7 @@ function FilterChip({
   return (
     <button
       type="button"
+      aria-pressed={active}
       onClick={onClick}
       className={cn(
         "rounded-full border px-2.5 py-1 text-xs font-semibold transition-colors",

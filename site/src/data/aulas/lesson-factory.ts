@@ -4,6 +4,7 @@ import type {
   AulaPrereq,
   AulaQuizQuestion,
 } from "@/data/aulas/types";
+import type { AnswerCheckOptions } from "@/lib/answer-check";
 
 type Track = "pre-calculo" | "calculo-1";
 
@@ -27,6 +28,7 @@ export type CurriculumLessonSpec = {
   formulaLatex?: string;
   formulaAria?: string;
   formulaLegend?: string;
+  rules?: AulaContent["explicacao"]["rules"];
   appearances: { label: string; detail: string }[];
   exampleTitle: string;
   example: string;
@@ -40,6 +42,7 @@ export type CurriculumLessonSpec = {
     hint?: string;
     solution: string;
     answer: string;
+    answerCheck?: AnswerCheckOptions;
     interpretation: string;
     commonError?: string;
   }[];
@@ -84,6 +87,7 @@ export function createCurriculumLesson(
       formulaLatex: spec.formulaLatex,
       formulaAria: spec.formulaAria,
       formulaLegend: spec.formulaLegend,
+      rules: spec.rules,
     },
     ondeAparece: {
       title: "Onde esta habilidade reaparece",
@@ -115,6 +119,7 @@ export function createCurriculumLesson(
         dica: exercise.hint,
         resolucao: exercise.solution,
         resposta: exercise.answer,
+        answerCheck: exercise.answerCheck,
         interpretacao: exercise.interpretation,
         erroComum: exercise.commonError,
       })),

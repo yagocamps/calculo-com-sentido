@@ -13,6 +13,9 @@ import { exerciciosTrigonometria } from "@/data/exercicios-trigonometria";
 import { exerciciosFundamentos } from "@/data/exercicios-fundamentos";
 import { exerciciosLimites } from "@/data/exercicios-limites";
 import { exerciciosFase2 } from "@/data/exercicios-fase2";
+import type { AnswerCheckOptions } from "@/lib/answer-check";
+import { exerciciosPropriedadesLimites } from "@/data/exercicios-propriedades-limites";
+import { exerciciosRevisaoCurricular } from "@/data/exercicios-revisao-curricular";
 
 export type ExerciseType =
   | "compreensao"
@@ -40,6 +43,7 @@ export type Exercicio = {
   resolucao: string;
   resolucaoSteps?: string[];
   resposta: string;
+  answerCheck?: AnswerCheckOptions;
   interpretacao: string;
   erroComum: string;
 };
@@ -250,4 +254,6 @@ export const exercicios: Exercicio[] = [
   ...exerciciosIntegrais,
   ...exerciciosDesafios,
   ...exerciciosFase2,
+  ...exerciciosPropriedadesLimites,
+  ...exerciciosRevisaoCurricular,
 ];

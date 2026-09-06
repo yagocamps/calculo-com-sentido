@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { RichText } from "@/components/aulas/RichText";
 import { Button } from "@/components/ui/Button";
 import type { ModuleCheckpointData } from "@/data/checkpoints";
 import { cn } from "@/lib/utils";
+import { evaluateCheckpoint } from "@/lib/checkpoint";
+import { getProgress, submitModuleCheckpoint } from "@/lib/progress";
 
 export function ModuleCheckpoint({
   data,
@@ -16,35 +18,40 @@ export function ModuleCheckpoint({
 }) {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [submitted, setSubmitted] = useState(false);
-  const score = data.questions.reduce(
-    (total, question, index) =>
-      total + Number(answers[index] === question.correctIndex),
-    0,
-  );
-  const percent = Math.round((score / data.questions.length) * 100);
-  const passed = percent >= data.passPercent;
+  const [saveError, setSaveError] = useState(false);
+  const { percent, passed, complete, criticalErrors } = evaluateCheckpoint(data, answers);
+  const hasCritical = data.questions.some((question) => question.critical);
+
+  useEffect(() => {
+    const restored = getProgress().checkpointRecords[storageKey]?.answers ?? null;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrate browser storage after SSR
+    setAnswers(restored ?? {});
+    setSubmitted(restored !== null);
+    if (window.location.hash === "#checkpoint") {
+      let frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(() => document.getElementById("checkpoint")?.scrollIntoView({ block: "start" }));
+      });
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [data, storageKey]);
 
   function submit() {
+    if (!complete) return;
     setSubmitted(true);
-    try {
-      window.localStorage.setItem(
-        `ccs-checkpoint:v1:${storageKey}`,
-        JSON.stringify({ percent, completedAt: new Date().toISOString() }),
-      );
-    } catch {
-      // O checkpoint continua funcionando sem armazenamento local.
-    }
+    setSaveError(!submitModuleCheckpoint(storageKey, answers));
   }
 
   return (
-    <section className="mt-6 rounded-3 border border-border bg-surface-warm p-6">
+    <section id="checkpoint" className="mt-6 scroll-mt-20 rounded-3 border border-border bg-surface-warm p-6">
       <p className="text-[11px] font-bold uppercase tracking-wider text-terracotta">
         Revisão cumulativa
       </p>
+      <p className="mt-2 text-xs text-ink-muted">As respostas conferidas entram no histórico e no backup. Ao corrigir uma questão, somente a resposta alterada conta como nova tentativa.</p>
+      {saveError && <p role="alert" className="mt-2 text-xs text-amber-ink">Resultado calculado, mas o navegador não conseguiu salvá-lo. Tente conferir novamente quando houver armazenamento disponível.</p>}
       <h2 className="mt-1 font-serif text-2xl font-medium">{data.title}</h2>
       <p className="mt-1 text-sm text-ink-muted">{data.description}</p>
       <p className="mt-2 text-xs font-semibold text-ink-subtle">
-        Meta sugerida: {data.passPercent}% · você pode continuar mesmo sem atingir a meta.
+        Meta sugerida: {data.passPercent}%{hasCritical ? " e acerto nas habilidades essenciais" : ""} · você pode continuar mesmo sem atingir a meta.
       </p>
 
       <ol className="mt-5 space-y-4">
@@ -53,30 +60,35 @@ export function ModuleCheckpoint({
             <RichText as="p" className="text-sm font-semibold">
               {`${questionIndex + 1}. ${question.prompt}`}
             </RichText>
+            {question.critical && <p className="mt-1 text-xs font-semibold text-terracotta">Habilidade essencial para avançar com segurança</p>}
             <div
               className="mt-3 grid gap-2 sm:grid-cols-2"
               role="radiogroup"
               aria-label={`Respostas da questão ${questionIndex + 1}`}
             >
               {question.options.map((option, optionIndex) => (
-                <button
+                <label
                   key={option}
-                  type="button"
-                  role="radio"
-                  aria-checked={answers[questionIndex] === optionIndex}
-                  onClick={() => {
-                    setAnswers((current) => ({ ...current, [questionIndex]: optionIndex }));
-                    setSubmitted(false);
-                  }}
                   className={cn(
-                    "rounded-xl border px-3 py-2 text-left text-[13px] transition-colors",
+                    "flex cursor-pointer items-start gap-2 rounded-xl border px-3 py-2 text-left text-[13px] transition-colors focus-within:ring-2 focus-within:ring-terracotta",
                     answers[questionIndex] === optionIndex
                       ? "border-terracotta bg-terracotta-soft/40"
                       : "border-border hover:border-terracotta",
                   )}
                 >
+                  <input
+                    type="radio"
+                    name={`checkpoint-${storageKey}-${questionIndex}`}
+                    value={optionIndex}
+                    checked={answers[questionIndex] === optionIndex}
+                    onChange={() => {
+                      setAnswers((current) => ({ ...current, [questionIndex]: optionIndex }));
+                      setSubmitted(false);
+                    }}
+                    className="mt-1 shrink-0 accent-terracotta"
+                  />
                   <RichText>{option}</RichText>
-                </button>
+                </label>
               ))}
             </div>
             {submitted && answers[questionIndex] !== question.correctIndex && (
@@ -95,7 +107,7 @@ export function ModuleCheckpoint({
         <Button
           variant="primary"
           onClick={submit}
-          disabled={Object.keys(answers).length < data.questions.length}
+          disabled={!complete || (submitted && !saveError)}
         >
           Conferir checkpoint
         </Button>
@@ -109,7 +121,9 @@ export function ModuleCheckpoint({
           >
             {passed
               ? `✓ ${percent}% — base pronta para avançar`
-              : `${percent}% — vale revisar os pontos indicados`}
+              : criticalErrors.length > 0
+                ? `${percent}% — revise a habilidade essencial indicada antes de considerar a base pronta`
+                : `${percent}% — vale revisar os pontos indicados`}
           </p>
         )}
       </div>

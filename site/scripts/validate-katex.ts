@@ -12,6 +12,8 @@ import { resumos } from "@/data/resumos";
 import { buildPreCalculoRegistry } from "@/data/aulas/pre-calculo/register";
 import { buildCalculo1Registry } from "@/data/aulas/calculo-1/register";
 import { funcaoAfimAula } from "@/data/aulas/funcao-afim";
+import { moduleCheckpoints } from "@/data/checkpoints";
+import { mathDelimiterErrors } from "@/lib/math-delimiters";
 
 type Issue = {
   kind: "erro" | "aviso";
@@ -86,6 +88,9 @@ function walk(value: unknown, source: string, key?: string) {
       return;
     }
     let m: RegExpExecArray | null;
+    for (const message of mathDelimiterErrors(value)) {
+      issues.push({ kind: "erro", source, latex: value, mode: "delimitadores", message });
+    }
     mathToken.lastIndex = 0;
     while ((m = mathToken.exec(value)) !== null) {
       if (m[1] !== undefined) checkLatex(m[1], true, source);
@@ -105,6 +110,7 @@ function walk(value: unknown, source: string, key?: string) {
 glossario.forEach((g) => walk(g, `glossario:${g.termo}`));
 exercicios.forEach((e) => walk(e, `exercicio:${e.id}`));
 resumos.forEach((r) => walk(r, `resumo:${r.slug}`));
+walk(moduleCheckpoints, "checkpoints");
 
 const registry: Record<string, unknown> = {
   "pre-calculo/funcoes/funcao-afim": funcaoAfimAula,
@@ -147,3 +153,4 @@ if (legib.length) {
   }
 }
 console.log(`\n===========================`);
+process.exitCode = erros.length ? 1 : 0;

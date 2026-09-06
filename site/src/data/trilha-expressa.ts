@@ -26,7 +26,7 @@ export type ExpressStage = {
 export const expressStages: ExpressStage[] = [
   {
     titulo: "Base algébrica mínima (não pule!)",
-    desc: "Sem isso, limites e derivadas viram decoreba. Estas 7 aulas formam a ponte curta até Cálculo.",
+    desc: "Fatoração, restrições, cancelamento e racionalização preparam as técnicas de limites. Reserve tempo para praticar cada transformação.",
     refs: [
       {
         trilha: "pre-calculo",
@@ -41,11 +41,14 @@ export const expressStages: ExpressStage[] = [
         motivo: "prepara o cancelamento correto de fatores",
       },
       { trilha: "pre-calculo", modulo: "funcoes", aula: "o-que-e-funcao" },
+      { trilha: "pre-calculo", modulo: "algebra", aula: "fracoes-algebricas", motivo: "registrar restrições antes de simplificar" },
+      { trilha: "pre-calculo", modulo: "preparacao-limites", aula: "cancelamento-com-restricao", motivo: "cancelar fatores, preservando o domínio" },
+      { trilha: "pre-calculo", modulo: "preparacao-limites", aula: "racionalizacao", motivo: "usar o conjugado quando a diferença de raízes produz 0/0" },
       {
         trilha: "pre-calculo",
         modulo: "funcoes",
         aula: "funcao-afim",
-        motivo: "a função mais cobrada em problemas aplicados",
+        motivo: "modelar uma taxa constante e interpretar seus parâmetros",
       },
       { trilha: "pre-calculo", modulo: "funcoes", aula: "funcao-quadratica" },
       {
@@ -62,16 +65,19 @@ export const expressStages: ExpressStage[] = [
   },
   {
     titulo: "Limites: o essencial",
-    desc: "Tendência, substituição, 0/0 e laterais — o que toda P1 cobra.",
+    desc: "Tendência, propriedades, substituição, fatoração, racionalização e laterais. Compare esta seleção com o programa da sua prova.",
     refs: [
       { trilha: "calculo-1", modulo: "limites", aula: "ideia-de-limite" },
+      { trilha: "calculo-1", modulo: "limites", aula: "propriedades-dos-limites" },
       {
         trilha: "calculo-1",
         modulo: "limites",
         aula: "limite-substituicao",
-        motivo: "o método que resolve a maioria das questões",
+        motivo: "reconhecer quando a continuidade permite substituir diretamente",
       },
       { trilha: "calculo-1", modulo: "limites", aula: "limites-laterais" },
+      { trilha: "calculo-1", modulo: "limites", aula: "indeterminacao-fatoracao" },
+      { trilha: "calculo-1", modulo: "limites", aula: "racionalizacao-em-limites" },
       { trilha: "calculo-1", modulo: "limites", aula: "limite-no-infinito" },
     ],
   },
@@ -85,7 +91,7 @@ export const expressStages: ExpressStage[] = [
         trilha: "calculo-1",
         modulo: "derivadas",
         aula: "regras-derivacao",
-        motivo: "regra da potência resolve 70% das derivadas de prova",
+        motivo: "dominar potência, soma e múltiplo antes de combinar regras",
       },
       { trilha: "calculo-1", modulo: "derivadas", aula: "derivada-composta" },
       {
@@ -105,6 +111,7 @@ export const expressStages: ExpressStage[] = [
         aula: "maximos-minimos",
       },
       { trilha: "calculo-1", modulo: "aplicacoes-derivadas", aula: "otimizacao" },
+      { trilha: "calculo-1", modulo: "integrais", aula: "somas-de-riemann" },
       { trilha: "calculo-1", modulo: "integrais", aula: "integral-definida" },
       { trilha: "calculo-1", modulo: "integrais", aula: "tfc" },
     ],

@@ -4,6 +4,8 @@ export type CheckpointQuestion = {
   correctIndex: number;
   explanation: string;
   reviewHref: string;
+  /** Must be correct before declaring readiness; navigation remains open. */
+  critical?: boolean;
 };
 
 export type ModuleCheckpointData = {
@@ -65,7 +67,7 @@ export const moduleCheckpoints: Record<string, ModuleCheckpointData> = {
     passPercent: 80,
     questions: [
       { prompt: "Em um limite \\(0/0\\), a primeira atitude é...", options: ["concluir zero", "concluir infinito", "procurar uma transformação algébrica", "cancelar parcelas"], correctIndex: 2, explanation: "\\(0/0\\) é indeterminação; fatorar ou racionalizar pode revelar o comportamento.", reviewHref: "/pre-calculo/preparacao-limites/fatoracao-em-limites" },
-      { prompt: "Pode cancelar o \\(x\\) em \\((x+2)/x\\)?", options: ["sim, sempre", "não, pois não é fator do numerador inteiro", "só se x=0", "só em limites"], correctIndex: 1, explanation: "Cancelamento vale para fatores, não para parcelas de uma soma.", reviewHref: "/pre-calculo/preparacao-limites/cancelamento-com-restricao" },
+      { prompt: "Pode cancelar o \\(x\\) em \\((x+2)/x\\)?", options: ["sim, sempre", "não, pois não é fator do numerador inteiro", "só se x=0", "só em limites"], correctIndex: 1, critical: true, explanation: "Cancelamento vale para fatores, não para parcelas de uma soma.", reviewHref: "/pre-calculo/preparacao-limites/cancelamento-com-restricao" },
       { prompt: "O conjugado de \\(\\sqrt{x}-2\\) é...", options: ["√x-2", "√x+2", "x+4", "2-√x"], correctIndex: 1, explanation: "O conjugado troca o sinal entre os termos.", reviewHref: "/pre-calculo/preparacao-limites/racionalizacao" },
       { prompt: "Se limites laterais são diferentes, o limite bilateral...", options: ["é a média", "é zero", "não existe", "é o maior"], correctIndex: 2, explanation: "O limite bilateral exige a mesma aproximação pelos dois lados.", reviewHref: "/pre-calculo/preparacao-limites/valores-proximos" },
       { prompt: "Em \\((x^2-1)/(x-1)\\), para \\(x\\neq1\\), a forma simplificada é...", options: ["x-1", "x+1", "x²+1", "1"], correctIndex: 1, explanation: "Fatoramos \\(x^2-1=(x-1)(x+1)\\).", reviewHref: "/pre-calculo/preparacao-limites/fatoracao-em-limites" },

@@ -4,6 +4,8 @@ import {
 } from "@/data/aulas/lesson-factory";
 import type { AulaContent } from "@/data/aulas/types";
 import type { TrilhaAula } from "@/data/trilha-module";
+import { propriedadesDosLimites } from "@/data/aulas/calculo-1/propriedades-dos-limites";
+import { derivadaInversaSpec, reviseCurriculum } from "@/data/aulas/revisao-curricular";
 
 type Practice = [question: string, solution: string, answer: string, meaning: string];
 type CompactSpec = {
@@ -95,6 +97,7 @@ function compact(spec: CompactSpec): CurriculumLessonSpec {
 }
 
 const specs: CurriculumLessonSpec[] = [
+  derivadaInversaSpec,
   compact({
     moduleSlug: "funcoes-para-calculo", moduleTitle: "Funções para Cálculo", lessonNumber: 9,
     slug: "composicao-e-inversa", title: "Composição e inversa para Cálculo", notes: ["camadas", "desfazer funções"],
@@ -175,22 +178,7 @@ const specs: CurriculumLessonSpec[] = [
       ["Que técnica usar em \\((\\sqrt{x+1}-2)/(x-3)\\)?", "Conjugado da diferença de raízes.", "racionalização", "O produto cria \\(x-3\\)."],
     ],
   }),
-  compact({
-    moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 12,
-    slug: "propriedades-dos-limites", title: "Propriedades dos limites", notes: ["soma", "produto", "quociente"],
-    why: "As propriedades permitem desmontar expressões complexas em limites simples, desde que as hipóteses sejam respeitadas.",
-    concept: "Quando os limites existem, soma, diferença, constante e produto passam ao limite. No quociente, o limite do denominador precisa ser diferente de zero.",
-    callout: "A regra do quociente para limites falha quando o denominador tende a zero; então é necessário outro diagnóstico.",
-    formula: "lim(fg)=(lim f)(lim g); lim(f/g)=lim f/lim g se lim g≠0", formulaLatex: "\\lim(fg)=(\\lim f)(\\lim g),\\qquad \\lim\\frac fg=\\frac{\\lim f}{\\lim g}\\quad\\text{se }\\lim g\\ne0",
-    example: "Sabendo que \\(\\lim f=2\\) e \\(\\lim g=-3\\), encontre \\(\\lim(4f-g)\\) e \\(\\lim(fg)\\).",
-    steps: ["Separe constante, soma e produto.", "\\(4(2)-(-3)=11\\).", "\\((2)(-3)=-6\\).", "As hipóteses informam que os limites básicos existem."],
-    result: "As propriedades funcionam como regras de montagem de limites.",
-    pitfall: "Dividir por um limite de denominador igual a zero.",
-    practice: [
-      ["Se \\(\\lim f=5\\), quanto vale \\(\\lim(3f+1)\\)?", "\\(3(5)+1=16\\).", "16", "Constantes atravessam o limite."],
-      ["Podemos usar quociente se \\(\\lim g=0\\)?", "Não diretamente; a forma precisa ser analisada.", "Não", "Zero no denominador muda o problema."],
-    ],
-  }),
+  propriedadesDosLimites,
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 13,
     slug: "indeterminacao-fatoracao", title: "Indeterminação \\(0/0\\) e fatoração", notes: ["diferença de quadrados", "trinômios"],
@@ -564,7 +552,8 @@ const specs: CurriculumLessonSpec[] = [
 export const calculo1Phase2Catalog: Record<string, TrilhaAula[]> = {};
 export const calculo1Phase2Registry: Record<string, Record<string, AulaContent>> = {};
 
-for (const spec of specs) {
+for (const original of specs) {
+  const spec = reviseCurriculum(original);
   (calculo1Phase2Catalog[spec.moduleSlug] ??= []).push({
     slug: spec.slug,
     title: spec.title,

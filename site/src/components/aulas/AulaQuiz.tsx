@@ -7,6 +7,7 @@ import { sectionLinks } from "@/components/aulas/toc-sections";
 import { Button } from "@/components/ui/Button";
 import type { AulaQuizQuestion } from "@/data/aulas/types";
 import { cn } from "@/lib/utils";
+import { evaluateLessonQuiz } from "@/lib/checkpoint";
 
 const sectionLabelById = new Map(
   sectionLinks.map((s) => [s.id as string, s.label]),
@@ -31,10 +32,7 @@ export function AulaQuiz({
   const [checked, setChecked] = useState(false);
 
   const allAnswered = answers.every((a) => a !== null);
-  const score = checked
-    ? questions.filter((q, i) => answers[i] === q.corretaIndex).length
-    : 0;
-  const passed = score >= Math.min(2, questions.length);
+  const { score, passed } = evaluateLessonQuiz(questions, answers);
 
   const missedSections = checked
     ? [
@@ -58,6 +56,9 @@ export function AulaQuiz({
         Sem nota, sem pressão — é só para você saber se vale avançar ou reler
         um trecho antes.
       </p>
+      {questions.some((q) => q.critical) && (
+        <p className="text-sm text-ink-muted">Para indicar prontidão, as questões marcadas como essenciais também precisam estar corretas.</p>
+      )}
 
       {questions.map((q, qi) => {
         const chosen = answers[qi];
@@ -138,6 +139,7 @@ export function AulaQuiz({
                 {q.explicacao}
               </RichText>
             )}
+            {q.critical && <p className="mt-2 text-xs font-semibold text-terracotta">Condição essencial para aplicar a regra</p>}
           </fieldset>
         );
       })}
@@ -191,7 +193,7 @@ export function AulaQuiz({
                       href={`#${id}`}
                       className="rounded-full border border-border bg-surface px-3 py-1 text-[12.5px] font-semibold text-ink-muted transition-colors hover:border-terracotta hover:text-terracotta"
                     >
-                      ↥ {sectionLabelById.get(id) ?? id}
+                      ↥ {questions.find((q) => q.reforcoSectionId === id)?.reforcoLabel ?? sectionLabelById.get(id) ?? id}
                     </Link>
                   ))}
                 </div>

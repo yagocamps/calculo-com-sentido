@@ -125,7 +125,7 @@ function RangeControl({
     <div>
       <label htmlFor={id} className="flex justify-between gap-3 text-xs font-semibold text-ink-muted">
         <span>{label}</span>
-        <output htmlFor={id} className="font-mono text-terracotta">
+        <output htmlFor={id} aria-live="off" className="font-mono text-terracotta">
           {valueLabel}
         </output>
       </label>
@@ -136,10 +136,33 @@ function RangeControl({
         max={max}
         step={step}
         value={value}
+        aria-label={label}
+        aria-valuetext={valueLabel}
         onChange={(event) => onChange(Number(event.target.value))}
-        className="mt-1 w-full accent-[var(--terracotta)]"
+        className="mt-1 h-6 w-full accent-[var(--terracotta)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
       />
     </div>
+  );
+}
+
+function NonZeroCoefficientControl({ label, value, max, step, onChange }: {
+  label: string; value: number; max: number; step: number; onChange: (value: number) => void;
+}) {
+  const id = useId();
+  return (
+    <fieldset className="min-w-0 space-y-2 rounded-xl border border-border p-3">
+      <legend className="px-1 text-xs font-semibold text-ink-muted">{label}: {fmt(value)}</legend>
+      <label htmlFor={id} className="block text-xs font-semibold text-ink-muted">Sinal de a</label>
+      <select id={id} value={value < 0 ? "negative" : "positive"}
+        onChange={(event) => onChange(Math.abs(value) * (event.target.value === "negative" ? -1 : 1))}
+        className="w-full rounded-lg border border-border bg-surface p-2 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+        <option value="positive">Positivo (a &gt; 0)</option>
+        <option value="negative">Negativo (a &lt; 0)</option>
+      </select>
+      <RangeControl label="Módulo de a" valueLabel={fmt(Math.abs(value))} min={step} max={max} step={step}
+        value={Math.abs(value)} onChange={(magnitude) => onChange(magnitude * Math.sign(value))} />
+      <p className="text-xs text-ink-subtle">Mude o sinal para inverter a concavidade. O módulo permanece positivo, pois a ≠ 0 nesta parábola.</p>
+    </fieldset>
   );
 }
 
@@ -167,6 +190,7 @@ function LabShell({
       </p>
       <h3 className="mt-1 font-serif text-xl font-medium">{title}</h3>
       <p className="mt-1 text-sm leading-relaxed text-ink-muted">{intro}</p>
+      <p className="mt-2 text-xs text-ink-subtle">Nos controles deslizantes, use as setas para ajustar e Home/End para ir aos extremos.</p>
       <p className="sr-only" aria-live="polite" aria-atomic="true">
         {status}
       </p>
@@ -191,8 +215,8 @@ function LabShell({
 }
 
 function LimitLab() {
-  const [offset, setOffset] = useState(-0.8);
-  const x = 1 + offset;
+  const [x, setX] = useState(0.2);
+  const offset = x - 1;
   const y = x + 1;
   const point = xy(x, y, -1, 3, -1, 5);
   const hole = xy(1, 2, -1, 3, -1, 5);
@@ -209,9 +233,9 @@ function LimitLab() {
       practiceHref="/exercicios?id=p2-limites-laterais-3"
     >
       <div className="mt-4">
-        <RangeControl label="Posição de x" valueLabel={`x = ${fmt(x)}`} min={-1.5} max={1.5} step={0.05} value={offset} onChange={setOffset} />
+        <RangeControl label="Posição de x" valueLabel={`x = ${fmt(x)}`} min={-0.5} max={2.5} step={0.05} value={x} onChange={setX} />
       </div>
-      <p className="mt-2 text-sm font-semibold" aria-live="polite">{status}</p>
+      <p className="mt-2 text-sm font-semibold">{status}</p>
       <Graph label={`Gráfico de uma reta com círculo vazio em x igual a 1 e y igual a 2. ${status}`}>
         <Axes xMin={-1} xMax={3} yMin={-1} yMax={5} />
         <path d={pointPath((value) => value + 1, -1, 3, -1, 5)} fill="none" stroke="var(--terracotta)" strokeWidth="4" />
@@ -243,7 +267,7 @@ function SecantLab() {
       <div className="mt-4">
         <RangeControl label="Distância entre os pontos (h)" valueLabel={fmt(h)} min={0.1} max={2.5} step={0.1} value={h} onChange={setH} />
       </div>
-      <p className="mt-2 text-sm font-semibold" aria-live="polite">m secante = {fmt(slope)} · m tangente = 2</p>
+      <p className="mt-2 text-sm font-semibold">m secante = {fmt(slope)} · m tangente = 2</p>
       <Graph label={`Parábola y igual a x ao quadrado, secante com inclinação ${fmt(slope)} e tangente com inclinação 2.`}>
         <Axes xMin={-1} xMax={4} yMin={-1} yMax={10} />
         <path d={pointPath((x) => x * x, -1, 4, -1, 10)} fill="none" stroke="var(--terracotta)" strokeWidth="4" />
@@ -273,7 +297,7 @@ function RiemannLab() {
       <div className="mt-4">
         <RangeControl label="Quantidade de retângulos" valueLabel={`n = ${n}`} min={2} max={20} step={1} value={n} onChange={setN} />
       </div>
-      <p className="mt-2 text-sm font-semibold" aria-live="polite">Soma à direita ≈ {fmt(sum, 4)} · área exata = 0,3333…</p>
+      <p className="mt-2 text-sm font-semibold">Soma à direita ≈ {fmt(sum, 4)} · área exata = 0,3333…</p>
       <Graph label={`Curva y igual a x ao quadrado entre zero e um, aproximada por ${n} retângulos. Soma ${fmt(sum, 4)}.`}>
         <Axes xMin={-0.05} xMax={1.05} yMin={-0.05} yMax={1.1} />
         {Array.from({ length: n }, (_, index) => {
@@ -312,7 +336,7 @@ function UnitCircleLab() {
       <div className="mt-4">
         <RangeControl label="Ângulo" valueLabel={`${angle}°`} min={0} max={360} step={5} value={angle} onChange={setAngle} />
       </div>
-      <p className="mt-2 text-sm font-semibold" aria-live="polite">(cos θ, sen θ) = ({fmt(cosine, 3)}; {fmt(sine, 3)})</p>
+      <p className="mt-2 text-sm font-semibold">(cos θ, sen θ) = ({fmt(cosine, 3)}; {fmt(sine, 3)})</p>
       <Graph label={`Círculo trigonométrico com ponto no ângulo ${angle} graus. Cosseno ${fmt(cosine, 3)} e seno ${fmt(sine, 3)}.`}>
         <line x1={cx - 150} x2={cx + 150} y1={cy} y2={cy} stroke="var(--ink-subtle)" />
         <line x1={cx} x2={cx} y1={cy - 130} y2={cy + 130} stroke="var(--ink-subtle)" />
@@ -343,11 +367,11 @@ function TransformationsLab() {
       practiceHref="/exercicios?tema=graficos"
     >
       <div className="mt-4 grid gap-3 sm:grid-cols-3">
-        <RangeControl label="Escala/reflexão (a)" valueLabel={fmt(a)} min={-2} max={2} step={0.25} value={a} onChange={(value) => setA(value === 0 ? 0.25 : value)} />
+        <NonZeroCoefficientControl label="Escala/reflexão (a)" value={a} max={2} step={0.25} onChange={setA} />
         <RangeControl label="Horizontal (h)" valueLabel={fmt(h)} min={-3} max={3} step={0.5} value={h} onChange={setH} />
         <RangeControl label="Vertical (k)" valueLabel={fmt(k)} min={-4} max={4} step={0.5} value={k} onChange={setK} />
       </div>
-      <p className="mt-2 font-mono text-sm font-semibold" aria-live="polite">{formula}</p>
+      <p className="mt-2 font-mono text-sm font-semibold">{formula}</p>
       <Graph label={`Gráfico transformado ${status} A parábola base y igual a x ao quadrado aparece tracejada.`}>
         <Axes xMin={-4} xMax={4} yMin={-5} yMax={8} />
         <path d={pointPath((x) => x * x, -4, 4, -5, 8)} fill="none" stroke="var(--ink-subtle)" strokeWidth="2" strokeDasharray="7 6" />
@@ -378,11 +402,11 @@ function ParabolaLab() {
       practiceHref="/exercicios?tema=funcao-quadratica"
     >
       <div className="mt-4 grid gap-3 sm:grid-cols-3">
-        <RangeControl label="Coeficiente a" valueLabel={fmt(a)} min={-3} max={3} step={0.5} value={a} onChange={(value) => setA(value === 0 ? 0.5 : value)} />
+        <NonZeroCoefficientControl label="Coeficiente a" value={a} max={3} step={0.5} onChange={setA} />
         <RangeControl label="Coeficiente b" valueLabel={fmt(b)} min={-6} max={6} step={0.5} value={b} onChange={setB} />
         <RangeControl label="Coeficiente c" valueLabel={fmt(c)} min={-6} max={6} step={0.5} value={c} onChange={setC} />
       </div>
-      <p className="mt-2 text-sm font-semibold" aria-live="polite">V = ({fmt(xv)}; {fmt(yv)}) · Δ = {fmt(delta)} · {roots}</p>
+      <p className="mt-2 text-sm font-semibold">V = ({fmt(xv)}; {fmt(yv)}) · Δ = {fmt(delta)} · {roots}</p>
       <Graph label={`Parábola y igual a ${fmt(a)} x ao quadrado mais ${fmt(b)} x mais ${fmt(c)}. ${status}`}>
         <Axes xMin={-5} xMax={5} yMin={-8} yMax={10} />
         <path d={pointPath((x) => a * x * x + b * x + c, -5, 5, -8, 10)} fill="none" stroke="var(--terracotta)" strokeWidth="4" />
@@ -418,7 +442,7 @@ function ProductRuleLab() {
       <div className="mt-4">
         <RangeControl label="Pequeno aumento (h)" valueLabel={fmt(h)} min={0.05} max={1.2} step={0.05} value={h} onChange={setH} />
       </div>
-      <p className="mt-2 text-sm font-semibold" aria-live="polite">ΔA/Δx = {fmt(approxRate)} → (fg)′ = {fmt(exactRate)}</p>
+      <p className="mt-2 text-sm font-semibold">ΔA/Δx = {fmt(approxRate)} → (fg)′ = {fmt(exactRate)}</p>
       <Graph label={`Retângulo original de lados ${fmt(width)} e ${fmt(height)}, acrescido de duas faixas e um canto para incremento ${fmt(h)}. ${status}`}>
         <rect x={left} y={top + extra} width={baseWidth} height={baseHeight} fill="var(--terracotta-soft)" stroke="var(--terracotta)" strokeWidth="3" />
         <rect x={left + baseWidth} y={top + extra} width={extra} height={baseHeight} fill="var(--sage-soft)" stroke="var(--sage)" strokeWidth="3" />
@@ -470,7 +494,7 @@ function FtcLab() {
       <div className="mt-4">
         <RangeControl label="Limite superior da integral" valueLabel={`x = ${fmt(x)}`} min={0.1} max={3} step={0.1} value={x} onChange={setX} />
       </div>
-      <p className="mt-2 text-sm font-semibold" aria-live="polite">A(x) = {fmt(area, 3)} · A′(x) = f(x) = {fmt(slope, 3)}</p>
+      <p className="mt-2 text-sm font-semibold">A(x) = {fmt(area, 3)} · A′(x) = f(x) = {fmt(slope, 3)}</p>
       <Graph label={`Dois gráficos. À esquerda, área sob t ao quadrado de zero até ${fmt(x)}. À direita, acumuladora x ao cubo sobre três. ${status}`}>
         <line x1={chartLeft} x2={chartLeft + chartWidth} y1={sy(0)} y2={sy(0)} stroke="var(--ink-subtle)" />
         <line x1={chartLeft} x2={chartLeft} y1={chartTop} y2={sy(0)} stroke="var(--ink-subtle)" />

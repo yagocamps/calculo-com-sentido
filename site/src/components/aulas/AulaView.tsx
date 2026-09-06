@@ -242,6 +242,21 @@ export function AulaView({
                 legend={content.explicacao.formulaLegend}
               />
               {visualLab && <InteractiveConceptLab kind={visualLab} />}
+              {content.explicacao.rules && (
+                <div className="mt-5 space-y-4" aria-label="Propriedades e condições de aplicação">
+                  {content.explicacao.rules.map((rule) => (
+                    <section key={rule.id} id={`regra-${rule.id}`} className="min-w-0 scroll-mt-24 rounded-2 border border-border p-4">
+                      <h3 className="font-serif text-xl font-medium">{rule.title}</h3>
+                      <div className="max-w-full overflow-x-auto">
+                        <FormulaBlock formula={rule.formulaAria} formulaLatex={rule.formulaLatex} formulaAria={rule.formulaAria} />
+                      </div>
+                      <RichText as="p" className="text-sm leading-relaxed">{rule.conditions}</RichText>
+                      <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-terracotta">Exemplo comentado</p>
+                      <RichText as="div" className="mt-1 max-w-full overflow-x-auto text-sm leading-relaxed">{rule.example}</RichText>
+                    </section>
+                  ))}
+                </div>
+              )}
               {content.demonstracao && (
                 <BhaskaraDerivation
                   title={content.demonstracao.title}
@@ -344,7 +359,7 @@ export function AulaView({
             >
               <div className="space-y-3">
                 {content.exerciciosGuiados.exercises.map((ex) => (
-                  <AulaExerciseCard key={ex.id} exercise={ex} />
+                  <AulaExerciseCard key={`${lessonPathId}:${ex.id}`} exercise={ex} lessonPathId={lessonPathId} />
                 ))}
               </div>
             </Section>

@@ -4,6 +4,7 @@ import {
 } from "@/data/aulas/lesson-factory";
 import type { AulaContent } from "@/data/aulas/types";
 import type { TrilhaAula } from "@/data/trilha-module";
+import { reviseCurriculum } from "@/data/aulas/revisao-curricular";
 
 type PreSpec = Omit<CurriculumLessonSpec, "track" | "usedIn"> & {
   usedIn?: CurriculumLessonSpec["usedIn"];
@@ -314,7 +315,8 @@ const specs: CurriculumLessonSpec[] = [
 export const preCalculoPhase2Catalog: Record<string, TrilhaAula[]> = {};
 export const preCalculoPhase2Registry: Record<string, Record<string, AulaContent>> = {};
 
-for (const spec of specs) {
+for (const original of specs) {
+  const spec = reviseCurriculum(original);
   (preCalculoPhase2Catalog[spec.moduleSlug] ??= []).push({
     slug: spec.slug,
     title: spec.title,
