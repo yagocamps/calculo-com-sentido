@@ -1,4 +1,5 @@
 export type VisualLabKind =
+  | "motion-limit"
   | "limit"
   | "secant"
   | "riemann"
@@ -9,6 +10,7 @@ export type VisualLabKind =
   | "ftc";
 
 export const visualLabsByLesson: Record<string, VisualLabKind> = {
+  "calculo-1/limites/ideia-de-limite": "motion-limit",
   "calculo-1/limites/limite-por-grafico": "limit",
   "calculo-1/derivadas/reta-secante-tangente": "secant",
   "calculo-1/integrais/somas-de-riemann": "riemann",

@@ -5,9 +5,10 @@ import type { AulaContent } from "@/data/aulas/types";
  * Índice da aula colapsável, exibido só no mobile (no desktop a TOC fica fixa
  * na coluna lateral). Usa <details> nativo — sem JS, fecha ao tocar num link.
  */
-export function AulaTocMobile({ content }: { content: AulaContent }) {
+export function AulaTocMobile({ content, hasSimulation = false }: { content: AulaContent; hasSimulation?: boolean }) {
   const links = sectionLinks.filter(
     (item) =>
+      (item.id !== "simulacao" || hasSimulation) &&
       (item.id !== "proxima" || content.meta.nextLesson) &&
       (item.id !== "quiz" || content.quiz?.length) &&
       (item.id !== "video" || content.videos?.length),

@@ -10,10 +10,11 @@ import { slugify } from "@/lib/utils";
 
 const glossarioByTerm = new Map(glossario.map((g) => [g.termo, g]));
 
-export function AulaToc({ content }: { content: AulaContent }) {
+export function AulaToc({ content, hasSimulation = false }: { content: AulaContent; hasSimulation?: boolean }) {
   const pathname = usePathname();
   const links = sectionLinks.filter(
     (item) =>
+      (item.id !== "simulacao" || hasSimulation) &&
       (item.id !== "proxima" || content.meta.nextLesson) &&
       (item.id !== "quiz" || content.quiz?.length) &&
       (item.id !== "video" || content.videos?.length),

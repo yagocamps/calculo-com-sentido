@@ -9,6 +9,7 @@ export const sectionLinks = [
   { id: "passos", label: "Passo a passo" },
   { id: "interpretacao", label: "Interpretação" },
   { id: "erros", label: "Erros comuns" },
+  { id: "simulacao", label: "Simulação (Aplicabilidade)" },
   { id: "guiados", label: "Exercícios guiados" },
   { id: "aplicados", label: "Exercícios aplicados" },
   { id: "resumo", label: "Resumo" },

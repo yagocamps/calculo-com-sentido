@@ -84,6 +84,8 @@ export function AulaView({
     aulaSlug,
   );
   const visualLab = visualLabForLesson(trilha, meta.moduleSlug, aulaSlug);
+  const hasSimulation = visualLab === "motion-limit";
+  const simulationOffset = Number(hasSimulation);
   const hasQuiz = Boolean(content.quiz?.length);
   const hasVideos = Boolean(content.videos?.length);
   const curriculumModules =
@@ -193,7 +195,7 @@ export function AulaView({
             <FutureUseLinks items={futureUses} />
           </header>
 
-          <AulaTocMobile content={content} />
+          <AulaTocMobile content={content} hasSimulation={hasSimulation} />
 
           <div id="porque">
             <Section n={1} label="Por que aprender isso" title={content.porQue.title}>
@@ -241,7 +243,7 @@ export function AulaView({
                 formulaAria={content.explicacao.formulaAria}
                 legend={content.explicacao.formulaLegend}
               />
-              {visualLab && <InteractiveConceptLab kind={visualLab} />}
+              {visualLab && !hasSimulation && <InteractiveConceptLab kind={visualLab} />}
               {content.explicacao.rules && (
                 <div className="mt-5 space-y-4" aria-label="Propriedades e condições de aplicação">
                   {content.explicacao.rules.map((rule) => (
@@ -351,9 +353,17 @@ export function AulaView({
             </Section>
           </div>
 
+          {hasSimulation && visualLab && (
+            <div id="simulacao" className="scroll-mt-24">
+              <Section n={8} label="Simulação (Aplicabilidade)" title="Experimente os limites na bancada de movimento">
+                <InteractiveConceptLab kind={visualLab} />
+              </Section>
+            </div>
+          )}
+
           <div id="guiados">
             <Section
-              n={8}
+              n={8 + simulationOffset}
               label="Exercícios guiados"
               title={content.exerciciosGuiados.title}
             >
@@ -367,7 +377,7 @@ export function AulaView({
 
           <div id="aplicados">
             <Section
-              n={9}
+              n={9 + simulationOffset}
               label="Exercícios aplicados"
               title={content.exerciciosAplicados.title}
             >
@@ -396,7 +406,7 @@ export function AulaView({
           </div>
 
           <div id="resumo">
-            <Section n={10} label="Resumo da aula" title={content.resumo.title}>
+            <Section n={10 + simulationOffset} label="Resumo da aula" title={content.resumo.title}>
               <ul className="list-disc space-y-2 pl-5 text-[15px] leading-relaxed">
                 {content.resumo.bullets.map((b) => (
                   <RichText as="li" key={b} glossary={glossaryHL}>
@@ -410,7 +420,7 @@ export function AulaView({
           {hasQuiz && content.quiz && (
             <div id="quiz">
               <Section
-                n={11}
+                n={11 + simulationOffset}
                 label="Checagem rápida"
                 title="Pronto para a próxima?"
               >
@@ -425,7 +435,7 @@ export function AulaView({
           {hasVideos && (
             <div id="video">
               <Section
-                n={hasQuiz ? 12 : 11}
+                n={(hasQuiz ? 12 : 11) + simulationOffset}
                 label="Vídeo aula"
                 title="Assista à explicação"
               >
@@ -437,7 +447,7 @@ export function AulaView({
           {nextLesson && (
             <div id="proxima">
               <Section
-                n={11 + Number(hasQuiz) + Number(hasVideos)}
+                n={11 + Number(hasQuiz) + Number(hasVideos) + simulationOffset}
                 label="Próxima aula"
                 title="Continue sua trilha"
               >
@@ -465,7 +475,7 @@ export function AulaView({
           </div>
         </article>
 
-        <AulaToc content={content} />
+        <AulaToc content={content} hasSimulation={hasSimulation} />
       </div>
     </PageShell>
   );
