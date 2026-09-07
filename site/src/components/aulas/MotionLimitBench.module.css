@@ -85,3 +85,35 @@
 @media (max-width: 650px) { .readings { grid-template-columns: 1fr; } .instrument { border-left: 0; border-top: 1px solid var(--border); } .scenarios { gap: 4px; padding: 8px; } .scenarios button { flex-direction: column; align-items: flex-start; font-size: 11px; padding: 8px; } .header, .tableSection, .model, .quiz, .transfer { padding: 20px; } }
 @container (max-width: 560px) { .readings { grid-template-columns: 1fr; } .instrument { border-left: 0; border-top: 1px solid var(--border); } .scenarios button { flex-direction: column; align-items: flex-start; } .header h3 { font-size: 28px; } }
 @media (prefers-reduced-motion: reduce) { .moving { transition: none; } }
+
+.header { padding: 18px 22px; }
+.header .eyebrow { margin-bottom: 6px; }
+.header h3 { font-size: 23px; margin: 0; }
+.question { font-size: 13px; font-weight: 650; padding-top: 14px; }
+.scene, .sceneLoading { position: relative; height: 450px; background: #e8edf2; color: #34485c; }
+.sceneLoading { display: grid; place-items: center; font-size: 14px; }
+.sceneCanvas { position: absolute; inset: 0; }
+.sceneCanvas canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.sceneCanvas canvas:active { cursor: grabbing; }
+.sceneHeading { pointer-events: none; position: absolute; top: 18px; left: 20px; right: 20px; display: flex; justify-content: space-between; font-size: 10px; font-weight: 750; letter-spacing: .13em; }
+.sceneHeading b { background: #d1dce7; border: 1px solid #bfcdda; border-radius: 5px; padding: 4px 7px; }
+.sceneLegend { position: absolute; pointer-events: none; top: 49px; left: 20px; display: flex; gap: 15px; font-size: 10px; color: #4b5e71; }
+.cameraTools { position: absolute; bottom: 31px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 4px; padding: 4px; border: 1px solid #cdd6df; background: #ffffffd9; border-radius: 10px; white-space: nowrap; }
+.bench .cameraTools button { color: #34485c; background: transparent; border-color: transparent; padding: 8px; font-size: 11px; min-width: 44px; }
+.bench .cameraTools button:hover { background: #dce7f1; }
+.cameraHint { position: absolute; bottom: 9px; left: 0; right: 0; text-align: center; font-size: 10px; pointer-events: none; color: #556a7e; }
+.sceneUnavailable { position: absolute; inset: 70px 30px 100px; display: grid; place-content: center; text-align: center; font-size: 14px; }
+.quickReadings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--border); background: var(--surface-soft); }
+.quickReadings > div { padding: 16px; border-right: 1px solid var(--border); }
+.quickReadings > div:last-child { border-right: 0; }
+.quickReadings span { display: block; font-size: 11px; color: var(--ink-muted); margin-bottom: 5px; }
+.quickReadings strong, .quickReadings output { display: block; font-size: clamp(20px, 3cqw, 29px); font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.03em; color: var(--terracotta-ink); }
+.quickReadings small { font-size: 12px; font-weight: 500; }
+.controls { margin-top: 18px; margin-bottom: 16px; }
+.message:empty { display: none; }
+.dataDetails { padding: 0 22px 20px; }
+.dataDetails summary { min-height: 44px; display: list-item; align-content: center; font-size: 13px; font-weight: 650; cursor: pointer; color: var(--terracotta-ink); }
+.dataDetails .graph { max-width: 600px; margin-inline: auto; }
+.firmware { padding: 0 22px 16px; margin: 0; }
+.firmware p { font-size: 12px; line-height: 1.7; }
+@container (max-width: 560px) { .scene, .sceneLoading { height: 350px; } .cameraTools { gap: 0; padding: 2px; } .bench .cameraTools button { font-size: 10px; padding: 6px; min-width: 40px; } .quickReadings > div { padding: 12px 8px; } .quickReadings strong, .quickReadings output { font-size: 19px; } .sceneLegend { flex-direction: column; gap: 3px; } }

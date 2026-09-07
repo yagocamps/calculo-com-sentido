@@ -11,8 +11,10 @@ com entrada própria no índice em `#simulacao`.
 - B: mesmo experimento, com inspeção separada do retorno 0 do firmware em Δt = 0. O gráfico mantém o furo (0, 6) e o ponto preenchido (0, 0).
 - C: ensaios de velocidade comandada no mesmo aparato; força cinética oposta ao movimento, com limites laterais +5 N e −5 N. Os ramos e o marcador não são animados através da descontinuidade.
 - Arraste contínuo com atração às marcas, parada antes de atravessar zero, entrada decimal com aplicação explícita, aproximação por passos, setas do teclado e reinício.
-- Histórico por cenário, tabela acessível, leitura com três casas decimais, perguntas com feedback e transferência para LMTD.
-- SVG próprio, temas existentes, adaptação à largura da coluna, alvos de 44 px e respeito a `prefers-reduced-motion`.
+- Histórico por cenário, tabela acessível e leitura com três casas decimais. Gráfico e tabela ficam em um painel recolhível.
+- Bancada 3D em Three.js, com câmera orbital, zoom, vistas de frente/topo/perspectiva, materiais metálicos, luz e sombras. O gráfico matemático continua em SVG.
+- Conforme o pedido posterior de focar somente na simulação, foram retirados do simulador o quiz, os textos extensos e a transferência para LMTD. As seções da aula permanecem independentes.
+- A cena mostra posições de ensaio, sem alegar reprodução em tempo real. As transições de posição duram 400 ms e respeitam `prefers-reduced-motion`.
 
 ## Ajustes de precisão em relação ao texto recebido
 
@@ -24,9 +26,10 @@ com entrada própria no índice em `#simulacao`.
 ## Estrutura e verificação
 
 `src/lib/motion-limit.ts` contém as regras de domínio, leitura, limites do controle e passos.
-`MotionLimitBench.tsx` deriva bancada, gráfico e leitura de um único estado físico; histórico, rascunho de entrada, inspeção e respostas são estado de interface. A chave do cenário reinicia a experiência inteira.
+`MotionLimitBench.tsx` deriva bancada, gráfico e leitura de um único estado físico; histórico, rascunho de entrada e inspeção são estado de interface. A chave do cenário reinicia a experiência inteira.
+`MotionBenchScene.tsx` carrega em um módulo separado no navegador, renderiza sob demanda e libera geometria, materiais, texturas, controles e observadores ao desmontar. Sem WebGL, informa a indisponibilidade e mantém os controles e leituras textuais.
 
 `npm run build` executa testes, conteúdo, KaTeX, leitura acessível, ESLint, TypeScript e geração de páginas.
 `tests/motion-limit.test.ts` cobre quociente original versus simplificação, exclusão de zero, retorno do firmware, sinais do atrito, limites de entrada, magnetismo e navegação por teclado.
 
-Verificação funcional realizada no navegador integrado: aproximações completas dos dois lados, rejeição de zero digitado, arraste através de zero, ajuste de entrada fora da faixa, teclado, inspeção do firmware, troca de cenário sem resíduos, três respostas por teclado, reinício do histórico e ausência de erros no console. Redimensionamento conferido em larguras de desktop.
+As regras matemáticas já foram verificadas no navegador integrado: aproximações dos dois lados, rejeição de zero digitado, arraste através de zero, ajuste de entrada fora da faixa, teclado, inspeção do firmware, troca de cenário e reinício. Na versão 3D, a inspeção visual confirmou o modelo, a vista superior, o deslocamento até a referência e as forças opostas ao movimento. Entrada zero, inspeção do firmware e remoção do quiz foram conferidas novamente. Build, TypeScript, lint e 46 testes aprovados.
