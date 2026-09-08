@@ -92,7 +92,7 @@
 .controls { margin: 16px 24px; padding: 0; background: transparent; border: 0; }
 .actions { gap: 10px; }
 .actions button { flex: 0 1 auto; padding-inline: 18px; font-size: 13px; }
-.bench .primaryAction { background: var(--terracotta); color: white; border-color: var(--terracotta); }
+.bench .primaryAction { background: var(--terracotta); color: var(--surface); border-color: var(--terracotta); }
 .bench .primaryAction:hover { background: var(--terracotta-ink); }
 .bench button:disabled { cursor: default; opacity: .65; }
 .bench .primaryAction:disabled:hover { background: var(--terracotta); }
