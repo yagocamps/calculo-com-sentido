@@ -1,6 +1,18 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { approachValue, constrainValue, formatReading, keyboardValue, measurement, type MotionScenario } from "../src/lib/motion-limit";
+import { approachValue, cartPosition, intervalAtPosition, constrainValue, formatReading, keyboardValue, measurement, type MotionScenario } from "../src/lib/motion-limit";
+
+test("dragged positions recover the physical interval and respect the rail and missing point", () => {
+  for (const dt of [-0.5, -0.37, -0.1, -0.001, 0.001, 0.1, 0.29, 0.5]) {
+    assert.ok(Math.abs(intervalAtPosition(cartPosition(dt)) - dt) < 1e-12);
+    assert.equal(constrainValue(intervalAtPosition(cartPosition(dt)), dt, "encoder", true).value, dt);
+  }
+  assert.equal(intervalAtPosition(-100), -0.5);
+  assert.equal(intervalAtPosition(100), 0.5);
+  assert.equal(constrainValue(intervalAtPosition(0), -0.1, "encoder", true).value, -0.001);
+  assert.equal(constrainValue(intervalAtPosition(1), -0.1, "encoder", true).value, -0.001);
+  assert.ok(Number.isNaN(intervalAtPosition(NaN)));
+});
 
 test("encoder preserves the hole while both sides converge with three-digit precision", () => {
   assert.equal(measurement("encoder", 0), null);

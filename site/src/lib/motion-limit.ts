@@ -4,6 +4,16 @@ export const APPROACH_VALUES = [0.5, 0.1, 0.01, 0.001] as const;
 export const KEY_VALUES = [-0.5, -0.1, -0.01, -0.001, 0.001, 0.01, 0.1, 0.5];
 export const MIN_DISTANCE = 0.001;
 
+export function cartPosition(interval: number) {
+  return ((3 + interval) ** 2 - 9) * 1.05;
+}
+
+export function intervalAtPosition(position: number) {
+  if (!Number.isFinite(position)) return NaN;
+  const bounded = Math.max(cartPosition(-0.5), Math.min(cartPosition(0.5), position));
+  return Math.sqrt(9 + bounded / 1.05) - 3;
+}
+
 export function measurement(scenario: MotionScenario, value: number): number | null {
   if (!Number.isFinite(value)) return null;
   if (value === 0) return scenario === "firmware" ? 0 : null;

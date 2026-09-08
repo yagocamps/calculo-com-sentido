@@ -5,7 +5,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
-import type { MotionScenario } from "@/lib/motion-limit";
+import { cartPosition, intervalAtPosition, type MotionScenario } from "@/lib/motion-limit";
 import styles from "./MotionLimitBench.module.css";
 
 type SceneControl = {
@@ -15,10 +15,12 @@ type SceneControl = {
   rotate: (angle: number) => void;
 };
 
-export default function MotionBenchScene({ value, scenario }: { value: number; scenario: MotionScenario }) {
+export default function MotionBenchScene({ value, scenario, onValueChange }: { value: number; scenario: MotionScenario; onValueChange: (value: number) => void }) {
   const host = useRef<HTMLDivElement>(null);
   const control = useRef<SceneControl | null>(null);
   const [unavailable, setUnavailable] = useState(false);
+  const interaction = useRef({ scenario, onValueChange });
+  useEffect(() => { interaction.current = { scenario, onValueChange }; }, [scenario, onValueChange]);
 
   useEffect(() => {
     const container = host.current;
@@ -36,8 +38,9 @@ export default function MotionBenchScene({ value, scenario }: { value: number; s
     renderer.shadowMap.type = THREE.PCFShadowMap;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.35;
-    renderer.domElement.setAttribute("aria-label", "Bancada tridimensional: arraste para girar a câmera. Os controles abaixo alteram o ensaio.");
+    renderer.domElement.setAttribute("aria-label", "Bancada 3D. Arraste o carrinho para medir ou o fundo para girar. Com foco aqui, as setas giram a câmera. Os botões abaixo também controlam a experiência.");
     renderer.domElement.setAttribute("role", "img");
+    renderer.domElement.tabIndex = 0;
     container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
@@ -120,7 +123,7 @@ export default function MotionBenchScene({ value, scenario }: { value: number; s
       cylinder(scene, 0.055, 0.018, [x, 0.444, z], materials.steel);
     }
     for (let i = 0; i <= 64; i++) box(scene, [0.012, 0.009, i % 8 === 0 ? 0.18 : 0.08], [-3.36 + i * 0.105, 0.519, 0.89], materials.steel, 0.002);
-    label("TRILHO LINEAR  /  s (m)", [0, 0.24, 1.7], "#566678", 0.8);
+    label("POSIÇÃO EM METROS", [0, 0.24, 1.7], "#566678", 0.8);
     label("6", [-3.15, 0.6, 1.16], "#566678", 0.55);
     label("9", [0, 0.6, 1.16], "#566678", 0.55);
     label("12", [3.15, 0.6, 1.16], "#566678", 0.55);
@@ -144,7 +147,7 @@ export default function MotionBenchScene({ value, scenario }: { value: number; s
     box(scene, [0.35, 0.65, 0.65], [-4.02, 0.95, 0], materials.dark);
     cylinder(scene, 0.13, 0.11, [-3.79, 1.13, 0], materials.steel, "x");
     cylinder(scene, 0.095, 0.13, [-3.74, 1.13, 0], materials.cyan, "x");
-    const encoderLabel = label("ENCODER", [-4, 1.82, 0], "#227b80", 0.8);
+    const encoderLabel = label("SENSOR", [-4, 1.82, 0], "#227b80", 0.8);
     const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 1, 8), new THREE.MeshBasicMaterial({color:0x14baba, transparent:true, opacity:0.65}));
     beam.rotation.z = Math.PI / 2; scene.add(beam);
 
@@ -152,13 +155,63 @@ export default function MotionBenchScene({ value, scenario }: { value: number; s
     box(reference, [0.012, 1.8, 1.8], [0, 1.22, 0], new THREE.MeshBasicMaterial({color:0x8675bc, transparent:true, opacity:0.1, depthWrite:false}), 0.001);
     const frame = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(0.012, 1.8, 1.8)), new THREE.LineBasicMaterial({color:0x8675bc, transparent:true, opacity:0.65}));
     frame.position.set(0, 1.22, 0); reference.add(frame);
-    const referenceLabel = label("t₀ = 3 s  ·  s = 9 m", [0, 2.5, 0], "#66548f", 1);
+    const referenceLabel = label("MARCA ROXA", [0, 2.5, 0], "#66548f", 1);
     const velocityArrow = new THREE.ArrowHelper(new THREE.Vector3(1,0,0), new THREE.Vector3(0,2.15,0), 2, 0x286696, 0.2, 0.12);
     const frictionArrow = new THREE.ArrowHelper(new THREE.Vector3(-1,0,0), new THREE.Vector3(0,1.9,0.3), 2, 0xd67829, 0.2, 0.12);
     scene.add(velocityArrow, frictionArrow);
 
     let animation = 0;
     let active = true;
+    let dragging: { pointer: number; offset: number } | null = null;
+    const raycaster = new THREE.Raycaster();
+    const pointer = new THREE.Vector2();
+    const dragPlane = new THREE.Plane();
+    const hit = new THREE.Vector3();
+    function cast(event: PointerEvent) {
+      const rect = renderer.domElement.getBoundingClientRect();
+      pointer.set((event.clientX - rect.left) / rect.width * 2 - 1, -(event.clientY - rect.top) / rect.height * 2 + 1);
+      raycaster.setFromCamera(pointer, camera);
+    }
+    function pointerDown(event: PointerEvent) {
+      if (event.button !== 0 || dragging || interaction.current.scenario === "friction") return;
+      cast(event);
+      if (!raycaster.intersectObject(cart, true).length) return;
+      // A camera-facing plane containing the rail keeps dragging stable after orbiting.
+      const normal = camera.getWorldDirection(new THREE.Vector3());
+      normal.x = 0;
+      if (normal.lengthSq() < 0.0001) return;
+      dragPlane.setFromNormalAndCoplanarPoint(normal.normalize(), new THREE.Vector3(cart.position.x, 1.1, 0));
+      if (!raycaster.ray.intersectPlane(dragPlane, hit)) return;
+      dragging = { pointer: event.pointerId, offset: cart.position.x - hit.x };
+      cancelAnimationFrame(animation);
+      orbit.enabled = false;
+      renderer.domElement.setPointerCapture(event.pointerId);
+      renderer.domElement.style.cursor = "grabbing";
+      event.preventDefault(); event.stopImmediatePropagation();
+    }
+    function pointerMove(event: PointerEvent) {
+      if (!dragging || event.pointerId !== dragging.pointer) return;
+      cast(event);
+      if (raycaster.ray.intersectPlane(dragPlane, hit)) interaction.current.onValueChange(intervalAtPosition(hit.x + dragging.offset));
+      event.preventDefault(); event.stopImmediatePropagation();
+    }
+    function pointerEnd(event: PointerEvent) {
+      if (!dragging || event.pointerId !== dragging.pointer) return;
+      dragging = null; orbit.enabled = true; renderer.domElement.style.cursor = "grab";
+      if (renderer.domElement.hasPointerCapture(event.pointerId)) renderer.domElement.releasePointerCapture(event.pointerId);
+      event.stopImmediatePropagation();
+    }
+    function cameraKey(event: KeyboardEvent) {
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault(); control.current?.rotate(event.key === "ArrowLeft" ? -Math.PI / 8 : Math.PI / 8);
+      }
+    }
+    renderer.domElement.addEventListener("pointerdown", pointerDown, true);
+    renderer.domElement.addEventListener("pointermove", pointerMove, true);
+    renderer.domElement.addEventListener("pointerup", pointerEnd, true);
+    renderer.domElement.addEventListener("pointercancel", pointerEnd, true);
+    renderer.domElement.addEventListener("lostpointercapture", pointerEnd, true);
+    renderer.domElement.addEventListener("keydown", cameraKey);
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     function render() { if (active) renderer.render(scene, camera); }
     orbit.addEventListener("change", render);
@@ -183,7 +236,7 @@ export default function MotionBenchScene({ value, scenario }: { value: number; s
       update: (next, mode) => {
         cancelAnimationFrame(animation);
         const isFriction = mode === "friction";
-        const target = isFriction ? 0 : ((3 + next) ** 2 - 9) * 1.05;
+        const target = isFriction ? 0 : cartPosition(next);
         reference.visible = referenceLabel.visible = beam.visible = encoderLabel.visible = !isFriction;
         velocityArrow.visible = frictionArrow.visible = isFriction;
         velocityArrow.setDirection(new THREE.Vector3(Math.sign(next), 0, 0));
@@ -198,7 +251,7 @@ export default function MotionBenchScene({ value, scenario }: { value: number; s
           beam.scale.y = length; beam.position.set(-3.68 + length / 2, 1.13, 0);
         }
         function animate(now: number) {
-          const progress = reducedMotion.matches || isFriction || !active ? 1 : Math.min((now - start) / 400, 1);
+          const progress = reducedMotion.matches || isFriction || dragging || !active ? 1 : Math.min((now - start) / 400, 1);
           position(THREE.MathUtils.lerp(from, target, 1 - (1 - progress) ** 3)); render();
           if (progress < 1 && active) animation = requestAnimationFrame(animate);
         }
@@ -208,6 +261,12 @@ export default function MotionBenchScene({ value, scenario }: { value: number; s
     view("perspective"); resize();
     return () => {
       active = false; cancelAnimationFrame(animation); observer.disconnect(); orbit.dispose(); control.current = null;
+      renderer.domElement.removeEventListener("pointerdown", pointerDown, true);
+      renderer.domElement.removeEventListener("pointermove", pointerMove, true);
+      renderer.domElement.removeEventListener("pointerup", pointerEnd, true);
+      renderer.domElement.removeEventListener("pointercancel", pointerEnd, true);
+      renderer.domElement.removeEventListener("lostpointercapture", pointerEnd, true);
+      renderer.domElement.removeEventListener("keydown", cameraKey);
       renderer.domElement.removeEventListener("webglcontextlost", lost); renderer.domElement.removeEventListener("webglcontextrestored", restored);
       const geometries = new Set<THREE.BufferGeometry>(); const disposableMaterials = new Set<THREE.Material>();
       scene.traverse(object => {
@@ -224,18 +283,14 @@ export default function MotionBenchScene({ value, scenario }: { value: number; s
 
   return <div className={styles.scene}>
     <div ref={host} className={styles.sceneCanvas} />
-    <div className={styles.sceneHeading}><span>BANCADA DE MOVIMENTO</span><b>3D</b></div>
-    <div className={styles.sceneLegend}>{scenario === "friction" ? <><span>Azul · velocidade</span><span>Laranja · força de atrito</span></> : <><span>Violeta · posição de referência</span><span>Azul · posição medida</span></>}</div>
+    <div className={styles.sceneHeading}><span>{scenario === "friction" ? "OBSERVE AS SETAS" : "EXPLORE COM O MOUSE"}</span><b>3D</b></div>
+    <div className={styles.sceneLegend}>{scenario === "friction" ? <><span>Azul · movimento</span><span>Laranja · atrito</span></> : <span>O carrinho azul pode ser arrastado</span>}</div>
     {unavailable && <p className={styles.sceneUnavailable} role="status">A cena 3D não pôde ser exibida neste navegador. As leituras e os controles do ensaio continuam disponíveis abaixo.</p>}
     <div className={styles.cameraTools} role="group" aria-label="Câmera 3D">
-      <button type="button" onClick={() => control.current?.view("perspective")}>Perspectiva</button>
-      <button type="button" onClick={() => control.current?.view("front")}>Frente</button>
-      <button type="button" onClick={() => control.current?.view("top")}>Topo</button>
-      <button type="button" aria-label="Girar câmera para a esquerda" onClick={() => control.current?.rotate(-Math.PI / 8)}>↶</button>
-      <button type="button" aria-label="Girar câmera para a direita" onClick={() => control.current?.rotate(Math.PI / 8)}>↷</button>
+      <button type="button" onClick={() => control.current?.view("perspective")}>Restaurar visão</button>
       <button type="button" aria-label="Aproximar câmera" onClick={() => control.current?.zoom(0.85)}>+</button>
       <button type="button" aria-label="Afastar câmera" onClick={() => control.current?.zoom(1.18)}>−</button>
     </div>
-    <p className={styles.cameraHint}>Arraste para girar · role para aproximar</p>
+    <p className={styles.cameraHint}>Arraste o fundo para girar · role para aproximar</p>
   </div>;
 }

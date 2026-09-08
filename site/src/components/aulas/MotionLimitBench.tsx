@@ -1,14 +1,14 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { APPROACH_VALUES, approachValue, constrainValue, formatReading as fmt, keyboardValue, measurement, type MotionScenario } from "@/lib/motion-limit";
 import styles from "./MotionLimitBench.module.css";
 
 const scenarios = [
-  { id: "encoder", letter: "A", title: "Intervalo impossível", question: "Como medir uma velocidade em um instante?" },
-  { id: "firmware", letter: "B", title: "O zero do firmware", question: "Mudar o valor no ponto muda o limite?" },
-  { id: "friction", letter: "C", title: "Inversão do atrito", question: "E quando cada lado conta uma história?" },
+  { id: "encoder", title: "Chegando mais perto", question: "De qual velocidade estamos chegando perto?" },
+  { id: "firmware", title: "Um valor diferente no ponto", question: "E se o visor mostrar zero exatamente na marca?" },
+  { id: "friction", title: "Mudando de direção", question: "O atrito aponta para o mesmo lado quando o carrinho muda de direção?" },
 ] as const;
 
 const MotionBenchScene = dynamic(() => import("./MotionBenchScene"), {
@@ -54,7 +54,7 @@ function MeasurementGraph({ scenario, value }: { scenario: MotionScenario; value
 function BenchExperiment({ scenario }: { scenario: MotionScenario }) {
   const [experiment, setExperiment] = useState({ cenario: scenario, valor: -0.5, ruidoLigado: false });
   const [draft, setDraft] = useState("-0,500");
-  const [visited, setVisited] = useState<number[]>([]);
+  const [visited, setVisited] = useState<number[]>([-0.5]);
   const [message, setMessage] = useState("");
   const [inspectZero, setInspectZero] = useState(false);
   const id = useId();
@@ -64,7 +64,7 @@ function BenchExperiment({ scenario }: { scenario: MotionScenario }) {
   const unit = friction ? "m/s" : "s";
   const outputUnit = friction ? "N" : "m/s";
   const max = friction ? 2 : 0.5;
-  const zeroMessage = friction ? "A lei do atrito cinético não vale em v = 0." : "O encoder não mede em intervalo zero. O limite descreve a aproximação, não o ponto.";
+  const zeroMessage = friction ? "Com o carrinho parado, esta regra de atrito deixa de valer. Use Mudar direção para experimentar o outro lado." : "Para medir, precisamos de duas posições em instantes diferentes. Chegamos bem perto da marca! Use Trocar de lado para explorar o outro lado.";
 
   function update(raw: number, drag = false) {
     const next = constrainValue(raw, value, scenario, drag);
@@ -78,7 +78,7 @@ function BenchExperiment({ scenario }: { scenario: MotionScenario }) {
 
   function reset() {
     setExperiment({ cenario: scenario, valor: -0.5, ruidoLigado: false });
-    setDraft("-0,500"); setVisited([]); setMessage(""); setInspectZero(false);
+    setDraft("-0,500"); setVisited([-0.5]); setMessage(""); setInspectZero(false);
   }
 
   function approach(side: -1 | 1) {
@@ -86,52 +86,61 @@ function BenchExperiment({ scenario }: { scenario: MotionScenario }) {
     update(approachValue(value, side));
   }
 
+  const close = Math.abs(value) === 0.001;
+  const side = value < 0 ? -1 : 1;
+  const trail = APPROACH_VALUES.filter(mark => mark >= Math.abs(value) && visited.includes(side * mark)).map(mark => side * mark);
+  if (!trail.includes(value)) trail.push(value);
   const phrase = friction
-    ? `Com v = ${fmt(value)} m/s, o carrinho se move para a ${value < 0 ? "esquerda" : "direita"}, e o atrito aponta para a ${value < 0 ? "direita" : "esquerda"}: ${value < 0 ? "+" : ""}${fmt(output)} N.`
-    : `O intervalo está a ${fmt(Math.abs(value))} s de zero, e a velocidade medida está a ${fmt(Math.abs(value))} m/s de 6.`;
+    ? `O carrinho vai para a ${value < 0 ? "esquerda" : "direita"}. O atrito empurra para a ${value < 0 ? "direita" : "esquerda"}, sempre contra o movimento.`
+    : close ? "Quase lá: a leitura está muito perto de 6 m/s. Experimente o outro lado e compare."
+    : `Ao ${value < 0 ? "avançar" : "recuar"} até a marca roxa, a leitura chega cada vez mais perto de 6 m/s.`;
 
   return <div>
-    <div className={styles.calibration}>
-      <span>{friction ? "N = 20 N · μₖ = 0,25" : "s(t) = t² · t₀ = 3 s · s(t₀) = 9 m"}</span>
-      <span className={styles.live}>Modelo ideal</span>
+    <p className={styles.instruction}>{friction ? "Mude a direção e observe a seta laranja." : "Arraste o carrinho para perto da marca roxa."}</p>
+    <MotionBenchScene scenario={scenario} value={value} onValueChange={raw => update(raw, true)} />
+    <div className={styles.readingFocus} aria-label="Resultado da experiência">
+      <div><span>{friction ? "O atrito empurra para a" : "Velocidade medida agora"}</span><output data-reading="output">{friction ? (output > 0 ? "Direita" : "Esquerda") : fmt(output)} {!friction && <small>m/s</small>}</output></div>
+      <div className={styles.target}><span>{friction ? "Força do atrito" : "Estamos chegando perto de"}</span><strong>{friction ? "5 N" : "6 m/s"}</strong></div>
     </div>
-    <MotionBenchScene scenario={scenario} value={value} />
-    <div className={styles.quickReadings} aria-label="Leituras do ensaio">
-      <div><span>{friction ? "Velocidade comandada" : "Intervalo Δt"}</span><strong>{fmt(value)} <small>{unit}</small></strong></div>
-      <div><span>{friction ? "Força de atrito" : "Velocidade média"}</span><output data-reading="output">{friction && output > 0 ? "+" : ""}{fmt(output)} <small>{outputUnit}</small></output></div>
-      <div><span>{friction ? "Limite bilateral" : "Limite da velocidade"}</span><strong>{friction ? "Não existe" : "6 m/s"}</strong></div>
-    </div>
+    {!friction && <div className={styles.progress} aria-label="Leituras já exploradas deste lado">
+      <span>Seu caminho</span><p>{trail.map((mark, index) => <span key={mark}>{index > 0 && <i aria-hidden="true"> → </i>}{fmt(measurement(scenario, mark)!)}</span>)} <small>m/s</small></p>
+    </div>}
     <div className={styles.controls}>
-      <div className={styles.controlTop}>
-        <label htmlFor={`${id}-range`}>{friction ? "Velocidade do carrinho" : "Intervalo entre medições"} <span>{friction ? "v" : "Δt"} ({unit})</span></label>
-        <form onSubmit={event => { event.preventDefault(); update(draft.trim() ? Number(draft.replace(",", ".")) : NaN); }} className={styles.numberForm}>
-          <label className={styles.srOnly} htmlFor={`${id}-number`}>Valor numérico {friction ? "da velocidade" : "do intervalo"} em {unit}</label>
-          <input id={`${id}-number`} inputMode="decimal" value={draft} onChange={event => setDraft(event.target.value)} aria-describedby={`${id}-help ${id}-message`} />
-          <button type="submit">Aplicar</button>
-        </form>
-      </div>
-      <input id={`${id}-range`} className={styles.slider} type="range" min={-max} max={max} step={0.001} value={value} aria-valuetext={`${fmt(value)} ${unit}; zero excluído`} aria-describedby={`${id}-help ${id}-message`} onChange={event => update(Number(event.target.value), true)} onKeyDown={event => {
-        if (["ArrowLeft", "ArrowDown", "ArrowRight", "ArrowUp"].includes(event.key)) {
-          event.preventDefault(); update(keyboardValue(value, ["ArrowLeft", "ArrowDown"].includes(event.key) ? -1 : 1, scenario));
-        } else if (event.key === "Home" || event.key === "End") { event.preventDefault(); update(event.key === "Home" ? -max : max); }
-      }} />
-      <div className={styles.rangeLabels}><span>−{max.toLocaleString("pt-BR")} {unit}</span><span>0 · fora do domínio</span><span>+{max.toLocaleString("pt-BR")} {unit}</span></div>
       <div className={styles.actions}>
-        <button type="button" onClick={() => approach(-1)}>Aproximar pela esquerda <span>→ 0⁻</span></button>
-        <button type="button" onClick={() => approach(1)}>Aproximar pela direita <span>0⁺ ←</span></button>
-        <button type="button" onClick={reset}>Reiniciar</button>
+        <button className={styles.primaryAction} type="button" disabled={close} onClick={() => approach(side)}>{close ? (friction ? "Bem perto de parar" : "Bem perto da marca") : friction ? "Diminuir velocidade" : "Chegar mais perto"}</button>
+        <button type="button" onClick={() => update(-value)}>{friction ? "Mudar direção" : "Trocar de lado"}</button>
+        <button type="button" onClick={reset}>Recomeçar</button>
       </div>
-      <p id={`${id}-help`} className={styles.help}>Passos: 0,5 → 0,1 → 0,01 → 0,001. Use os botões ou as setas para trocar de lado sem passar por zero.</p>
+      <p className={styles.explanation} aria-live="polite" aria-atomic="true">{phrase}</p>
       <p id={`${id}-message`} role="status" className={styles.message}>{message}</p>
+      <details className={styles.adjustments}>
+        <summary>{friction ? "Ajustar a velocidade" : "Ajustar pelos números"}</summary>
+        <div className={styles.controlTop}>
+          <label htmlFor={`${id}-range`}>{friction ? "Velocidade do carrinho" : "Tempo em relação à marca roxa"} <span>em {friction ? "metros por segundo" : "segundos"}</span></label>
+          <form onSubmit={event => { event.preventDefault(); update(draft.trim() ? Number(draft.replace(",", ".")) : NaN); }} className={styles.numberForm}>
+            <label className={styles.srOnly} htmlFor={`${id}-number`}>Valor numérico {friction ? "da velocidade" : "do intervalo"} em {unit}</label>
+            <input id={`${id}-number`} inputMode="decimal" value={draft} onChange={event => setDraft(event.target.value)} aria-describedby={`${id}-help ${id}-message`} />
+            <button type="submit">Aplicar</button>
+          </form>
+        </div>
+        <input id={`${id}-range`} className={styles.slider} type="range" min={-max} max={max} step={0.001} value={value} aria-valuetext={`${fmt(value)} ${unit}; ${friction ? value < 0 ? "para a esquerda" : "para a direita" : value < 0 ? "antes da marca" : "depois da marca"}`} aria-describedby={`${id}-help ${id}-message`} onChange={event => update(Number(event.target.value), true)} onKeyDown={event => {
+          if (["ArrowLeft", "ArrowDown", "ArrowRight", "ArrowUp"].includes(event.key)) {
+            event.preventDefault(); update(keyboardValue(value, ["ArrowLeft", "ArrowDown"].includes(event.key) ? -1 : 1, scenario));
+          } else if (event.key === "Home" || event.key === "End") { event.preventDefault(); update(event.key === "Home" ? -max : max); }
+        }} />
+        <div className={styles.rangeLabels}><span>{friction ? "← Esquerda" : "Antes da marca"}</span><span>{friction ? "Direita →" : "Depois da marca"}</span></div>
+        <p id={`${id}-help`} className={styles.help}>{friction ? "O sinal indica a direção do movimento." : "Números negativos representam instantes antes da marca; positivos, depois. Quanto mais perto de zero, mais próximas ficam as duas posições."} Use as setas do teclado para percorrer os valores.</p>
+      </details>
     </div>
-    <p className={styles.explanation} aria-live="polite" aria-atomic="true">{phrase}</p>
-    <p className={styles.caption}>{friction ? "Ensaios de velocidade comandada, independentes da trajetória s(t) = t². O carrinho indica a posição de ensaio; as setas mostram velocidade e força. Em v = 0, a lei cinética não se aplica." : `As marcas representam duas posições medidas, não uma reprodução em tempo real. ${value < 0 ? "Δt negativo compara um instante anterior com t₀ = 3 s." : "Δt positivo compara um instante posterior com t₀ = 3 s."} Em Δt = 0, o encoder fica sem leitura.`}</p>
     {scenario === "firmware" && <div className={styles.firmware}>
-      <button type="button" aria-expanded={inspectZero} onClick={() => setInspectZero(!inspectZero)}>Inspecionar Δt = 0</button>
-      {inspectZero && <p role="status"><strong>Firmware: 0 m/s · Limite: 6 m/s.</strong> O retorno especial do código muda o valor no ponto, mas não muda as leituras próximas. O ensaio continua em Δt = {fmt(value)} s.</p>}
+      <button type="button" aria-expanded={inspectZero} onClick={() => setInspectZero(!inspectZero)}>{inspectZero ? "Fechar o visor da marca" : "Ver o valor exatamente na marca"}</button>
+      {inspectZero && <p role="status"><strong>Na marca: 0 m/s. Perto dela: quase 6 m/s.</strong> Neste experimento, o visor foi programado para mostrar zero exatamente na marca. Isso não muda os valores ao redor. O carrinho continua na posição que você escolheu.</p>}
     </div>}
     <details className={styles.dataDetails}>
-      <summary>Gráfico e medições do ensaio</summary>
+      <summary>Entender a matemática</summary>
+      <p className={styles.caption}>{friction ? "Cada ajuste representa um ensaio independente: o carrinho fica na posição de ensaio e as setas indicam o movimento e o atrito. A seta azul varia com a velocidade; a laranja mantém 5 N. Como os lados chegam a +5 N e −5 N, o limite bilateral não existe. Em repouso, esta lei do atrito cinético não se aplica." : "O carrinho representa uma posição medida, não uma animação em tempo real. A marca roxa é a posição de 9 m, atingida aos 3 s. Diminuir o intervalo entre duas medições faz a velocidade média se aproximar da velocidade naquele instante: esse valor é o limite."}</p>
+      <p className={styles.formula}>{friction ? "N = 20 N · μₖ = 0,25 · F = −5 sign(v), para v ≠ 0" : "s(t) = t² · Δt ≠ 0 · v média = [(3 + Δt)² − 9] / Δt = 6 + Δt"}</p>
+      {!friction && <p className={styles.caption}>Intervalo atual: {fmt(value)} s · Posição do carrinho: {fmt((3 + value) ** 2)} m. Com intervalo zero, a medição produz 0/0 e não fornece uma velocidade.{scenario === "firmware" && " O valor especial 0 é uma escolha do programa, não uma medição. O limite continua sendo 6 m/s."}</p>}
       <MeasurementGraph scenario={scenario} value={value} />
       <div className={styles.tableScroll}><table>
         <caption>Aproximações pelos dois lados. Traço: ainda não medido.</caption>
@@ -151,17 +160,27 @@ function CellPair({ value, selected, visited, scenario }: { value: number; selec
 
 export function MotionLimitBench() {
   const [scenario, setScenario] = useState<MotionScenario>("encoder");
+  const title = useRef<HTMLHeadingElement>(null);
+  const previousScenario = useRef(scenario);
+  useEffect(() => {
+    if (previousScenario.current === scenario) return;
+    previousScenario.current = scenario;
+    title.current?.focus({ preventScroll: true });
+    title.current?.closest("section")?.scrollIntoView({ block: "start", behavior: "instant" });
+  }, [scenario]);
   const id = useId();
-  const active = scenarios.find(item => item.id === scenario)!;
+  const index = scenarios.findIndex(item => item.id === scenario);
+  const active = scenarios[index];
   return <section id="bancada-limites" className={styles.bench} aria-labelledby={`${id}-title`}>
     <header className={styles.header}>
-      <p className={styles.eyebrow}>LABORATÓRIO 3D / LIMITES</p>
-      <h3 id={`${id}-title`}>Bancada de movimento</h3>
+      <p className={styles.eyebrow}>EXPLORE EM 3D · EXPERIÊNCIA {index + 1} DE 3</p>
+      <h3 ref={title} tabIndex={-1} id={`${id}-title`}>{active.title}</h3>
+      <p className={styles.question}>{active.question}</p>
     </header>
-    <div className={styles.scenarios} role="group" aria-label="Cenário do experimento">
-      {scenarios.map(item => <button key={item.id} type="button" aria-pressed={scenario === item.id} onClick={() => setScenario(item.id)}><span>{item.letter}</span>{item.title}</button>)}
-    </div>
-    <p className={styles.question}>{active.question}</p>
     <BenchExperiment key={scenario} scenario={scenario} />
+    <nav className={styles.nextExperiment} aria-label="Outras experiências de limites">
+      {index > 0 && <button type="button" onClick={() => setScenario(scenarios[index - 1].id)}>← Experiência anterior</button>}
+      <button type="button" onClick={() => setScenario(scenarios[(index + 1) % scenarios.length].id)}>{index < 2 ? `Próxima: ${scenarios[index + 1].title} →` : "Voltar à primeira experiência"}</button>
+    </nav>
   </section>;
 }

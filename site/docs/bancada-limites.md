@@ -12,7 +12,7 @@ com entrada própria no índice em `#simulacao`.
 - C: ensaios de velocidade comandada no mesmo aparato; força cinética oposta ao movimento, com limites laterais +5 N e −5 N. Os ramos e o marcador não são animados através da descontinuidade.
 - Arraste contínuo com atração às marcas, parada antes de atravessar zero, entrada decimal com aplicação explícita, aproximação por passos, setas do teclado e reinício.
 - Histórico por cenário, tabela acessível e leitura com três casas decimais. Gráfico e tabela ficam em um painel recolhível.
-- Bancada 3D em Three.js, com câmera orbital, zoom, vistas de frente/topo/perspectiva, materiais metálicos, luz e sombras. O gráfico matemático continua em SVG.
+- Bancada 3D em Three.js, com câmera orbital, zoom e restauração de visão, materiais metálicos, luz e sombras. O gráfico matemático continua em SVG.
 - Conforme o pedido posterior de focar somente na simulação, foram retirados do simulador o quiz, os textos extensos e a transferência para LMTD. As seções da aula permanecem independentes.
 - A cena mostra posições de ensaio, sem alegar reprodução em tempo real. As transições de posição duram 400 ms e respeitam `prefers-reduced-motion`.
 
@@ -32,4 +32,15 @@ com entrada própria no índice em `#simulacao`.
 `npm run build` executa testes, conteúdo, KaTeX, leitura acessível, ESLint, TypeScript e geração de páginas.
 `tests/motion-limit.test.ts` cobre quociente original versus simplificação, exclusão de zero, retorno do firmware, sinais do atrito, limites de entrada, magnetismo e navegação por teclado.
 
-As regras matemáticas já foram verificadas no navegador integrado: aproximações dos dois lados, rejeição de zero digitado, arraste através de zero, ajuste de entrada fora da faixa, teclado, inspeção do firmware, troca de cenário e reinício. Na versão 3D, a inspeção visual confirmou o modelo, a vista superior, o deslocamento até a referência e as forças opostas ao movimento. Entrada zero, inspeção do firmware e remoção do quiz foram conferidas novamente. Build, TypeScript, lint e 46 testes aprovados.
+As regras matemáticas já foram verificadas no navegador integrado: aproximações dos dois lados, rejeição de zero digitado, arraste através de zero, ajuste de entrada fora da faixa, teclado, inspeção do firmware, troca de cenário e reinício. Na versão 3D, a inspeção visual confirmou o modelo, a vista superior, o deslocamento até a referência e as forças opostas ao movimento. Entrada zero, inspeção do firmware e remoção do quiz foram conferidas novamente. Build, TypeScript, lint e 47 testes aprovados.
+
+## Interação simplificada — 8 de setembro de 2026
+
+- A primeira experiência começa com “Arraste o carrinho para perto da marca roxa”. O arraste na própria geometria 3D converte posição em intervalo pela inversa de s(t) = t², com atualização imediata e proteção contra atravessar zero. Arrastar o fundo continua girando a câmera.
+- “Chegar mais perto”, “Trocar de lado” e “Recomeçar” são as ações principais. A velocidade atual aparece em destaque ao lado do alvo de 6 m/s; as aproximações exploradas formam uma sequência visual.
+- Entrada numérica e controle deslizante ficam em “Ajustar pelos números”; fórmulas, gráfico e tabela ficam em “Entender a matemática”. Nenhum dos dois painéis começa aberto.
+- As experiências “Um valor diferente no ponto” e “Mudando de direção” aparecem como próximos passos. A troca reinicia o ensaio, retorna ao cabeçalho e posiciona o foco no título.
+- A câmera oferece “Restaurar visão” e zoom. As setas esquerda/direita do teclado giram a câmera quando a cena tem foco. Os controles HTML oferecem alternativa completa ao arraste do carrinho.
+- No atrito, a direção e os 5 N substituem a apresentação inicial de sinais e limite bilateral. Os ensaios independentes continuam explicados no painel matemático.
+
+Verificação local: arraste direto de 5,500 para 5,888 m/s; tentativa de cruzar a marca limitada a 5,999 m/s; botões produzindo 5,900 → 5,990 → 5,999, troca para 6,001; zero digitado rejeitado; teclado trocando os lados; inspeção do valor especial; atrito invertendo direção; reinício entre experiências; ausência de erros no console. Teste automatizado adicional cobre a conversão inversa da posição, extremos do trilho e proteção de zero.
