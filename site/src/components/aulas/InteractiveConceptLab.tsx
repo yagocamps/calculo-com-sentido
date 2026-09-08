@@ -1,6 +1,7 @@
 "use client";
 
 import { MotionLimitBench } from "./MotionLimitBench";
+import { ContinuityBridge } from "./ContinuityBridge";
 
 import Link from "next/link";
 import { useId, useState, type ReactNode } from "react";
@@ -516,6 +517,7 @@ function FtcLab() {
 export function InteractiveConceptLab({ kind }: { kind: VisualLabKind }) {
   switch (kind) {
     case "motion-limit": return <MotionLimitBench />;
+    case "continuity-bridge": return <ContinuityBridge />;
     case "limit": return <LimitLab />;
     case "secant": return <SecantLab />;
     case "riemann": return <RiemannLab />;

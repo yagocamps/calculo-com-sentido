@@ -84,7 +84,7 @@ export function AulaView({
     aulaSlug,
   );
   const visualLab = visualLabForLesson(trilha, meta.moduleSlug, aulaSlug);
-  const hasSimulation = visualLab === "motion-limit";
+  const hasSimulation = visualLab === "motion-limit" || visualLab === "continuity-bridge";
   const simulationOffset = Number(hasSimulation);
   const hasQuiz = Boolean(content.quiz?.length);
   const hasVideos = Boolean(content.videos?.length);
@@ -355,7 +355,7 @@ export function AulaView({
 
           {hasSimulation && visualLab && (
             <div id="simulacao" className="scroll-mt-24">
-              <Section n={8} label="Simulação (Aplicabilidade)" title="Experimente os limites na bancada de movimento">
+              <Section n={8} label="Simulação (Aplicabilidade)" title={visualLab === "continuity-bridge" ? "Conecte as partes da ponte" : "Experimente os limites na bancada de movimento"}>
                 <InteractiveConceptLab kind={visualLab} />
               </Section>
             </div>
