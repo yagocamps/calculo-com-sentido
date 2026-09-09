@@ -1,0 +1,14 @@
+.readings { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
+.readings > div { padding: 20px 24px; }
+.readings > div + div { border-left: 1px solid var(--border); background: var(--surface-soft); }
+.readings span { display: block; font-size: 12px; color: var(--ink-muted); margin-bottom: 6px; }
+.readings output { font-size: clamp(25px, 4.5cqw, 36px); color: var(--terracotta-ink); font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.035em; }
+.readings small { font-size: 13px; font-weight: 500; letter-spacing: 0; }
+.timeControl { padding-bottom: 18px; }
+.timeControl label { display: flex; justify-content: space-between; font-size: 13px; }
+.timeControl strong { font-variant-numeric: tabular-nums; color: var(--terracotta-ink); }
+.comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px; margin-bottom: 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-warm); }
+.comparison span, .comparison small { display: block; font-size: 11px; color: var(--ink-muted); line-height: 1.6; }
+.comparison strong { display: block; margin-block: 5px; font-size: 23px; font-variant-numeric: tabular-nums; color: var(--sage-ink); }
+@container (max-width: 560px) { .readings > div { padding: 16px; } .readings output { font-size: 25px; } .comparison { gap: 10px; } }
+

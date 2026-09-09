@@ -1,6 +1,7 @@
 export type VisualLabKind =
   | "motion-limit"
   | "continuity-bridge"
+  | "derivative-tank"
   | "limit"
   | "secant"
   | "riemann"
@@ -13,6 +14,7 @@ export type VisualLabKind =
 export const visualLabsByLesson: Record<string, VisualLabKind> = {
   "calculo-1/limites/ideia-de-limite": "motion-limit",
   "calculo-1/continuidade/ideia-continuidade": "continuity-bridge",
+  "calculo-1/derivadas/variacao-instantanea": "derivative-tank",
   "calculo-1/limites/limite-por-grafico": "limit",
   "calculo-1/derivadas/reta-secante-tangente": "secant",
   "calculo-1/integrais/somas-de-riemann": "riemann",
