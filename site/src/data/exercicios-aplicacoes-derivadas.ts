@@ -253,8 +253,8 @@ export const exerciciosAplicacoesDerivadas: Exercicio[] = [
       "Concavidade para cima: \\(x = 2\\) é mínimo.",
     ],
     resposta: "Mínimo em \\(x = 2\\) (\\(f'' > 0\\)).",
-    interpretacao: "\\(f'' > 0\\) no crítico indica mínimo; \\(f'' < 0\\), máximo.",
-    erroComum: "Concluir máximo mesmo com \\(f'' > 0\\).",
+    interpretacao: "Num ponto crítico (com \\(f'(c) = 0\\)), \\(f''(c) > 0\\) indica mínimo local e \\(f''(c) < 0\\) indica máximo local. Se \\(f''(c) = 0\\) o teste não decide — aí volte para o sinal de \\(f'\\) em torno do ponto.",
+    erroComum: "Concluir máximo mesmo com \\(f'' > 0\\), ou aplicar o teste num ponto onde \\(f'\\) não zera.",
   },
   // ── Otimização ──────────────────────────────────────────────────
   {
@@ -417,10 +417,11 @@ export const exerciciosAplicacoesDerivadas: Exercicio[] = [
     resolucao: "Ver passos abaixo.",
     resolucaoSteps: [
       "\\(L(x) = 50x - (x^2 + 10x + 200) = -x^2 + 40x - 200\\).",
-      "\\(L'(x) = -2x + 40 = 0 \\Rightarrow x = 20\\).",
+      "\\(L'(x) = -2x + 40 = 0 \\Rightarrow x = 20\\) (ponto crítico).",
+      "Confirme que é máximo: \\(L''(x) = -2 < 0\\), então \\(x = 20\\) é máximo local — e, como a parábola abre para baixo, também o máximo global.",
     ],
     resposta: "\\(20\\) unidades",
-    interpretacao: "No máximo do lucro, a receita marginal iguala o custo marginal.",
+    interpretacao: "No máximo do lucro vale \\(R' = C'\\), mas a recíproca não: \\(R' = C'\\) só entrega um candidato. Foi \\(L'' < 0\\) que confirmou o máximo.",
     erroComum: "Maximizar a receita (\\(R\\)) em vez do lucro (\\(L\\)).",
   },
   // ── Revisão ─────────────────────────────────────────────────────

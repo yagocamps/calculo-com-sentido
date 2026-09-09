@@ -517,6 +517,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       title: "Análise",
       steps: [
         { title: "Denominador", detail: "→ 0 quando \\(x \\to 3\\)." },
+        { title: "Numerador", detail: "Vale \\(1\\), não vai a zero. Esse par (numerador fixo, denominador \\(\\to 0\\)) é o que gera explosão. Se o numerador também fosse a zero, teríamos \\(\\frac{0}{0}\\) e o limite poderia ser finito." },
         { title: "Sinal", detail: "\\((x-3)^2 > 0\\) para \\(x \\neq 3 \\to f(x) > 0\\)." },
         { title: "Magnitude", detail: "Quanto menor \\(|x-3|\\), maior \\(f(x)\\)." },
         { title: "Conclusão", detail: "\\(\\lim_{x \\to 3} f(x) = +\\infty\\); \\(x = 3\\) é assíntota vertical." },
@@ -534,6 +535,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       items: [
         "Tratar \\(\\infty\\) como valor numérico para operar.",
         "Esquecer de verificar sinal (\\(+\\infty\\) vs \\(-\\infty\\)).",
+        "Concluir \"limite infinito\" só porque o denominador vai a zero. Se o numerador for junto, é \\(\\frac{0}{0}\\) e o limite pode ser finito: \\(\\lim_{x \\to 1} \\frac{x^2-1}{x-1} = \\lim_{x \\to 1}(x+1) = 2\\).",
         "Confundir limite infinito (\\(f \\to \\infty\\)) com limite no infinito (\\(x \\to \\infty\\)).",
       ],
     },
@@ -712,7 +714,7 @@ export const limitesAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Assíntota é reta guia: o gráfico se aproxima dela, mas não precisa tocá-la.",
+        "Assíntota é reta guia: o gráfico se aproxima dela. Aproximar-se não significa ficar proibido de encostar — a curva pode até cruzar uma assíntota horizontal ou oblíqua.",
         "Organiza limites infinitos e no infinito num vocabulário visual único.",
         "Em modelos aplicados, assíntotas indicam limites físicos, capacidade ou custo marginal estável.",
       ],
@@ -720,11 +722,11 @@ export const limitesAulas: Record<string, AulaContent> = {
     explicacao: {
       title: "Três tipos (introdução)",
       paragraphs: [
-        "Vertical \\(x = a\\): \\(\\lim_{x \\to a} |f(x)| = \\infty\\) — denominador zero, explosão local.",
-        "Horizontal \\(y = L\\): \\(\\lim_{x \\to \\pm\\infty} f(x) = L\\) — comportamento de longo prazo.",
+        "Vertical \\(x = a\\): \\(\\lim_{x \\to a} |f(x)| = \\infty\\). Numa função racional, isso costuma vir do denominador zerando — mas só quando o numerador não zera junto. Se ambos zeram, o fator cancela e pode virar um buraco, não uma assíntota: \\(\\frac{x^2-1}{x-1}\\) não tem assíntota em \\(x = 1\\).",
+        "Horizontal \\(y = L\\): \\(\\lim_{x \\to \\pm\\infty} f(x) = L\\) — comportamento de longo prazo. Nada impede a curva de cruzar essa reta no meio do caminho.",
         "Oblíqua \\(y = mx + b\\): quando grau num = grau den + 1, a curva aproxima uma reta inclinada (divisão polinomial).",
       ],
-      callout: "Assíntota descreve tendência do gráfico, não interseção obrigatória.",
+      callout: "Assíntota descreve tendência, não barreira. \\(f(x) = \\frac{x}{x^2+1}\\) tem assíntota horizontal \\(y = 0\\) e passa exatamente por \\((0,0)\\) — cruza a própria assíntota. Quem nunca é cruzada é a vertical, porque ali a função sequer existe.",
       formula: "y = L · y = mx + b · x = a",
       formulaLatex: "y = L \\quad y = mx + b \\quad x = a",
       formulaAria: "y igual a L; y igual a m x mais b; x igual a a",

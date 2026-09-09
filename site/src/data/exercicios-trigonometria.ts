@@ -328,8 +328,8 @@ export const exerciciosTrigonometria: Exercicio[] = [
     dica: "\\(100 \\times 0{,}5\\).",
     resolucao: "\\(F_y = 100 \\times 0{,}5 = 50\\) N.",
     resposta: "\\(50\\) N",
-    interpretacao: "Horizontal usa cosseno; vertical usa seno — não troque.",
-    erroComum: "Trocar seno e cosseno entre as componentes.",
+    interpretacao: "Aqui o ângulo é medido a partir da horizontal, então a horizontal é o cateto adjacente (cosseno) e a vertical é o oposto (seno). Se o enunciado desse o ângulo com a vertical, a associação se inverteria — sempre olhe de onde o ângulo é medido.",
+    erroComum: "Aplicar \"horizontal é cosseno\" como regra fixa, sem verificar em relação a qual eixo o ângulo foi dado.",
   },
   // ── Revisão ─────────────────────────────────────────────────────
   {

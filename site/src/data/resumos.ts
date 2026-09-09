@@ -140,7 +140,7 @@ export const resumos: Resumo[] = [
       "Inclinação de uma reta = taxa de variação (semente da derivada).",
     ],
     formulas: [
-      "\\text{inclinação} = \\frac{\\Delta y}{\\Delta x}",
+      "\\text{inclinação} = m = \\frac{\\Delta y}{\\Delta x} = \\frac{y_2 - y_1}{x_2 - x_1}",
       "f(x) + k\\ \\text{(sobe } k\\text{)};\\quad f(x - h)\\ \\text{(direita } h\\text{)}",
     ],
     erros: [
@@ -159,6 +159,43 @@ export const resumos: Resumo[] = [
     ],
   },
   {
+    slug: "geometria-analitica",
+    titulo: "Geometria analítica",
+    trilha: "Pré-Cálculo",
+    href: "/pre-calculo/geometria-analitica",
+    tempo: "3 min",
+    intro: "Medir no plano cartesiano: distância entre pontos, ponto médio, inclinação de retas e a equação da circunferência.",
+    pontos: [
+      "Distância entre dois pontos é Pitágoras no plano: \\(\\Delta x\\) e \\(\\Delta y\\) são os catetos, a distância é a hipotenusa.",
+      "Ponto médio é a média das coordenadas, uma a uma — não a média de tudo junto.",
+      "Coeficiente angular \\(m\\) mede quanto o \\(y\\) muda por unidade de \\(x\\); é a mesma ideia de taxa que vira derivada.",
+      "Retas paralelas (não verticais) têm \\(m_1 = m_2\\); perpendiculares (não verticais) têm \\(m_1 m_2 = -1\\).",
+      "Reta vertical não tem coeficiente angular definido — as duas regras acima não se aplicam a ela.",
+      "Circunferência é o conjunto dos pontos a distância \\(r\\) do centro: a fórmula da distância elevada ao quadrado.",
+      "Na forma padrão, os sinais do centro aparecem trocados: \\((x-h)^2\\) tem centro em \\(h = +2\\) quando se lê \\((x-2)^2\\).",
+    ],
+    formulas: [
+      "d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}",
+      "M = \\left(\\frac{x_1 + x_2}{2},\\ \\frac{y_1 + y_2}{2}\\right)",
+      "m = \\frac{y_2 - y_1}{x_2 - x_1}\\quad;\\quad y - y_0 = m(x - x_0)",
+      "(x - h)^2 + (y - k)^2 = r^2",
+    ],
+    erros: [
+      {
+        faz: "Somar as coordenadas dentro da raiz: \\(d = \\sqrt{(x_2 + x_1)^2 + (y_2 + y_1)^2}\\).",
+        correto: "A distância usa as diferenças: \\(d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\).",
+      },
+      {
+        faz: "Perpendicular de \\(m = \\tfrac{1}{4}\\) é \\(-\\tfrac{1}{4}\\).",
+        correto: "É o oposto do recíproco: \\(m_2 = -4\\), porque \\(\\tfrac{1}{4}\\cdot(-4) = -1\\).",
+      },
+      {
+        faz: "Ler \\((x - 2)^2 + (y + 3)^2 = 25\\) como centro \\((-2, 3)\\) e raio \\(25\\).",
+        correto: "Centro \\((2, -3)\\) e raio \\(r = \\sqrt{25} = 5\\) — os sinais invertem e o lado direito é \\(r^2\\).",
+      },
+    ],
+  },
+  {
     slug: "trigonometria",
     titulo: "Trigonometria",
     trilha: "Pré-Cálculo",
@@ -170,11 +207,13 @@ export const resumos: Resumo[] = [
       "Ângulos notáveis: \\(\\sin 30^\\circ = \\tfrac{1}{2}\\), \\(\\cos 60^\\circ = \\tfrac{1}{2}\\).",
       "No ciclo, cosseno é a coordenada \\(x\\) e seno é a coordenada \\(y\\).",
       "Senoide: período é onde repete; amplitude é o quanto sobe/desce.",
-      "Forças se decompõem em componentes com seno e cosseno.",
+      "Forças se decompõem em componentes: a componente adjacente ao ângulo usa cosseno; a oposta usa seno. Qual delas é a horizontal depende de onde o ângulo foi medido.",
     ],
     formulas: [
       "\\sin\\theta = \\frac{\\text{op}}{\\text{hip}},\\quad \\cos\\theta = \\frac{\\text{adj}}{\\text{hip}},\\quad \\tan\\theta = \\frac{\\text{op}}{\\text{adj}}",
       "\\sin^2\\theta + \\cos^2\\theta = 1",
+      "\\theta \\text{ medido da horizontal:}\\quad F_x = F\\cos\\theta,\\ F_y = F\\sin\\theta",
+      "\\theta \\text{ medido da vertical:}\\quad F_x = F\\sin\\theta,\\ F_y = F\\cos\\theta",
     ],
     erros: [
       {
@@ -182,8 +221,8 @@ export const resumos: Resumo[] = [
         correto: "Seno usa o oposto: \\(\\sin\\theta = \\tfrac{\\text{op}}{\\text{hip}}\\) (SOH).",
       },
       {
-        faz: "Decompor a componente horizontal com seno.",
-        correto: "Horizontal usa cosseno; vertical usa seno.",
+        faz: "Decorar \"horizontal é cosseno, vertical é seno\" sem olhar o desenho.",
+        correto: "Cosseno vai no cateto adjacente ao ângulo, seno no oposto. Com \\(\\theta\\) medido da horizontal, \\(F_x = F\\cos\\theta\\); medido da vertical, inverte.",
       },
       {
         faz: "Escrever \\(\\sin\\theta + \\cos\\theta = 1\\).",
@@ -211,7 +250,7 @@ export const resumos: Resumo[] = [
     erros: [
       {
         faz: "Ver \\(\\tfrac{0}{0}\\) e concluir que o limite não existe.",
-        correto: "\\(\\tfrac{0}{0}\\) é indeterminação: simplifique e tente de novo.",
+        correto: "\\(\\tfrac{0}{0}\\) é indeterminação: simplifique e tente de novo. Em \\(\\tfrac{x^2-1}{x-1}\\) perto de \\(1\\), o limite é \\(2\\).",
       },
       {
         faz: "Tirar a média quando cada lado aponta para um valor.",
@@ -308,11 +347,13 @@ export const resumos: Resumo[] = [
       "Primeiro passo: tente substituir \\(x = a\\).",
       "Se der \\(\\frac{0}{0}\\), fatore e simplifique.",
       "Limite bilateral só existe se os laterais coincidem.",
-      "Denominador \\(\\to 0\\): limite infinito (assíntota vertical).",
+      "Denominador \\(\\to 0\\) não conclui nada sozinho: olhe também o numerador. Se ele não tende a zero, o limite é infinito (assíntota vertical); se tende a zero, é \\(\\frac{0}{0}\\) — fatore e simplifique, e o limite pode ser finito.",
+      "Se depois de simplificar os laterais discordarem em sinal, o limite bilateral não existe.",
       "No infinito com graus iguais: razão dos coeficientes líderes (assíntota horizontal).",
     ],
     formulas: [
       "\\lim_{x \\to a} f(x) = L",
+      "\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = \\lim_{x \\to 1} (x + 1) = 2",
       "\\lim_{x \\to \\infty} \\frac{3x^2 + 1}{x^2 + 4} = \\frac{3}{1} = 3",
     ],
     erros: [
@@ -325,8 +366,12 @@ export const resumos: Resumo[] = [
         correto: "Se \\(\\lim_{x \\to a^-} \\neq \\lim_{x \\to a^+}\\), o limite não existe.",
       },
       {
-        faz: "Achar que o gráfico encosta na assíntota.",
-        correto: "A curva se aproxima cada vez mais sem precisar tocá-la.",
+        faz: "Ver denominador \\(\\to 0\\) e responder \"infinito\" na hora.",
+        correto: "Cheque o numerador: se ele também vai a zero, é \\(\\tfrac{0}{0}\\) e o limite pode ser finito.",
+      },
+      {
+        faz: "Achar que o gráfico nunca pode cruzar a assíntota.",
+        correto: "Assíntota é comportamento de aproximação, não barreira: \\(f(x) = \\tfrac{x}{x^2+1}\\) tem assíntota horizontal \\(y = 0\\) e passa por \\((0,0)\\).",
       },
     ],
   },
@@ -408,14 +453,16 @@ export const resumos: Resumo[] = [
     pontos: [
       "\\(f' > 0\\): cresce; \\(f' < 0\\): decresce.",
       "Pontos críticos: \\(f'(x) = 0\\) ou \\(f'\\) não existe.",
-      "Teste da 2ª derivada: \\(f'' > 0\\) mínimo, \\(f'' < 0\\) máximo.",
+      "Teste da 2ª derivada (só em crítico com \\(f'(c) = 0\\)): \\(f''(c) > 0\\) é mínimo local; \\(f''(c) < 0\\) é máximo local; \\(f''(c) = 0\\) é inconclusivo — volte ao sinal de \\(f'\\).",
       "Concavidade: \\(f'' > 0\\) para cima (\\(\\cup\\)); \\(f'' < 0\\) para baixo (\\(\\cap\\)).",
       "Otimizar: modelar \\(\\to\\) derivar \\(\\to\\) testar críticos e bordas \\(\\to\\) interpretar.",
-      "Lucro máximo quando receita marginal iguala custo marginal (\\(R' = C'\\)).",
+      "\\(R' = C'\\) dá \\(L' = 0\\): é candidato a lucro máximo, não garantia. Confirme com o sinal de \\(L'\\), com \\(L''\\) ou comparando com as bordas do domínio.",
     ],
     formulas: [
       "\\text{crítico: } f'(x) = 0",
-      "f'' (c) > 0 \\Rightarrow \\text{mínimo}; \\quad f''(c) < 0 \\Rightarrow \\text{máximo}",
+      "f'(c) = 0 \\text{ e } f''(c) > 0 \\Rightarrow \\text{mínimo local}",
+      "f'(c) = 0 \\text{ e } f''(c) < 0 \\Rightarrow \\text{máximo local}",
+      "L = R - C \\Rightarrow (R' = C' \\iff L' = 0)",
     ],
     erros: [
       {
@@ -429,6 +476,14 @@ export const resumos: Resumo[] = [
       {
         faz: "Parar no \\(x\\) ótimo.",
         correto: "Substituir o \\(x\\) e responder o valor pedido (lucro, área, volume).",
+      },
+      {
+        faz: "Usar \\(f''(c) > 0\\) para concluir mínimo sem checar se \\(f'(c) = 0\\).",
+        correto: "O teste da 2ª derivada só classifica ponto crítico. Sem \\(f'(c) = 0\\), o sinal de \\(f''\\) só informa concavidade.",
+      },
+      {
+        faz: "Tratar \\(R' = C'\\) como prova de lucro máximo.",
+        correto: "É só \\(L' = 0\\): pode ser mínimo ou inflexão. Verifique \\(L''\\), o sinal de \\(L'\\) ou as bordas.",
       },
     ],
   },

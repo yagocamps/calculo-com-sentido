@@ -1028,7 +1028,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     porQue: {
       title: "Antes da fórmula, o sentido",
       paragraphs: [
-        "Quando o x aparece ao quadrado, a coisa que cresce não cresce de forma constante — acelera. É o caso de área, trajetória de uma bola, lucro com preço variável.",
+        "Quando o \\(x\\) aparece ao quadrado, a taxa de variação deixa de ser constante e o gráfico deixa de ser uma reta: o mesmo passo em \\(x\\) produz saltos cada vez maiores (ou cada vez menores) em \\(y\\). É o caso de área, trajetória de uma bola, lucro com preço variável.",
         "A equação de 2º grau responde \"para quais valores isso vale zero?\". Por exemplo: em que instante a bola toca o chão, ou em que preço o lucro é nulo.",
         "Bhaskara é só uma receita pronta que sempre funciona, mesmo quando a fatoração é difícil de enxergar.",
       ],
@@ -1155,14 +1155,16 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     interpretacao: {
       title: "O que esse resultado significa?",
       paragraphs: [
-        "As soluções \\(x = 2\\) e \\(x = 3\\) são os valores que zeram a expressão. Se fosse a altura de uma bola, seriam os dois instantes em que ela está na altura zero (saída e chegada ao chão).",
+        "As soluções \\(x = 2\\) e \\(x = 3\\) são os valores que zeram a expressão \\(x^2 - 5x + 6\\) — nada além disso. Aqui a equação é abstrata: \\(x\\) não é tempo, nem altura, nem preço.",
         "Repare que poderíamos ter fatorado: \\(x^2 - 5x + 6 = (x - 2)(x - 3)\\). Bhaskara e fatoração levam ao mesmo lugar — a fórmula é o caminho garantido quando a fatoração não salta aos olhos.",
+        "Quando a mesma ferramenta vira modelo físico, os números precisam fazer sentido físico. Uma bola lançada para cima a 20 m/s tem altura aproximada \\(h(t) = -5t^2 + 20t\\) (em metros, com \\(t\\) em segundos). Resolvendo \\(h(t) = 0\\): \\(t(-5t + 20) = 0\\), ou seja, \\(t = 0\\) (o lançamento) e \\(t = 4\\) (a volta ao chão). Repare no sinal de \\(a\\): ele é negativo, e é por isso que a parábola abre para baixo, com a bola subindo, atingindo o topo e caindo. Uma parábola que abre para cima (como \\(x^2 - 5x + 6\\)) descreveria uma bola que desce, passa por baixo do chão e volta — o que não corresponde ao lançamento.",
       ],
     },
     erros: {
       title: "Cuidado com",
       items: [
         "Errar o sinal de \\(b\\): em \\(x^2 - 5x + 6\\), \\(b = -5\\), então \\(-b = +5\\).",
+        "Colar uma história física em qualquer parábola. Para altura de um projétil, \\(a\\) precisa ser negativo (a gravidade puxa para baixo); com \\(a > 0\\) o gráfico abre para cima e não descreve um lançamento.",
         "Esquecer o \"\\(4ac\\)\" ou multiplicar errado no \\(\\Delta\\).",
         "Dividir só o \\(\\sqrt{\\Delta}\\) por \\(2a\\) e esquecer de dividir o \\(-b\\) também.",
         "Forçar resposta quando \\(\\Delta < 0\\) (não há raiz real).",
