@@ -1,4 +1,5 @@
 import { exerciciosAlgebra } from "@/data/exercicios-algebra";
+import { exerciciosSinais } from "@/data/exercicios-sinais";
 import { exerciciosAplicacoesDerivadas } from "@/data/exercicios-aplicacoes-derivadas";
 import { exerciciosContinuidade } from "@/data/exercicios-continuidade";
 import { exerciciosDerivadas } from "@/data/exercicios-derivadas";
@@ -246,6 +247,7 @@ export const exercicios: Exercicio[] = [
   },
   ...exerciciosFundamentos,
   ...exerciciosAlgebra,
+  ...exerciciosSinais,
   ...exerciciosFuncoes,
   ...exerciciosFuncaoQuadratica,
   ...exerciciosFuncoesCalculo,

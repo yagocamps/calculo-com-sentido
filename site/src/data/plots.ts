@@ -685,6 +685,39 @@ export const plots = {
       { kind: "point", at: [-2, -5], tone: "aplicacao", label: "(−2, −5)" },
     ],
   },
+
+  // ── Estudo de sinal ──────────────────────────────────────────────────
+  "sinal-parabola": {
+    alt: "Parábola de (x menos 1) vezes (x mais 3), com as raízes em menos três e um. Os dois trechos das pontas ficam acima do eixo, pintados como positivos, e o trecho do meio fica abaixo, pintado como negativo.",
+    x: [-4.5, 2.5], y: [-5, 9],
+    legend: "Positivo é acima do eixo. O sinal só muda ao passar por uma raiz — por isso basta testar um ponto de cada trecho.",
+    marks: [
+      { kind: "area", top: (x) => (x - 1) * (x + 3), from: -4.5, to: -3, tone: "aplicacao" },
+      { kind: "area", top: (x) => (x - 1) * (x + 3), from: -3, to: 1, tone: "alerta" },
+      { kind: "area", top: (x) => (x - 1) * (x + 3), from: 1, to: 2.5, tone: "aplicacao" },
+      { kind: "curve", f: (x) => (x - 1) * (x + 3), tone: "principal" },
+      { kind: "point", at: [-3, 0], tone: "neutro" },
+      { kind: "point", at: [1, 0], tone: "neutro" },
+      { kind: "text", at: [-3.9, 5], text: "+", tone: "aplicacao" },
+      { kind: "text", at: [-1, -2.2], text: "−", tone: "alerta" },
+      { kind: "text", at: [2, 5], text: "+", tone: "aplicacao" },
+    ],
+  },
+
+  "sinal-racional": {
+    alt: "Gráfico de (x mais 1) sobre (x menos 2): a curva cruza o eixo em menos um e tem assíntota vertical em dois. Fica positiva antes de menos um, negativa entre menos um e dois, e positiva depois de dois.",
+    x: [-6, 7], y: [-6, 7],
+    legend: "A curva toca o eixo em −1, que entra na resposta, e some perto de 2, que nunca entra.",
+    marks: [
+      { kind: "vline", at: 2, tone: "alerta", label: "x = 2" },
+      { kind: "curve", f: (x) => (x + 1) / (x - 2), from: -6, to: 1.5, tone: "principal" },
+      { kind: "curve", f: (x) => (x + 1) / (x - 2), from: 2.5, to: 7, tone: "principal" },
+      { kind: "point", at: [-1, 0], tone: "aplicacao", label: "entra" },
+      { kind: "text", at: [-4, 2.2], text: "+", tone: "aplicacao" },
+      { kind: "text", at: [0.4, -2.6], text: "−", tone: "alerta" },
+      { kind: "text", at: [5, 2.6], text: "+", tone: "aplicacao" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;

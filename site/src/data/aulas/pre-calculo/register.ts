@@ -2,6 +2,7 @@ import type { AulaContent } from "@/data/aulas/types";
 import { applyPdfAudit } from "@/data/aulas/auditoria-pdf";
 import { fundamentosAulas } from "@/data/aulas/pre-calculo/fundamentos";
 import { algebraAulas } from "@/data/aulas/pre-calculo/algebra";
+import { sinaisAulas } from "@/data/aulas/pre-calculo/sinais";
 import { funcoesAulas } from "@/data/aulas/pre-calculo/funcoes";
 import { graficosAulas } from "@/data/aulas/pre-calculo/graficos";
 import { trigonometriaAulas } from "@/data/aulas/pre-calculo/trigonometria";
@@ -13,7 +14,7 @@ export function buildPreCalculoRegistry(): Record<string, AulaContent> {
 
   const bundles: { modulo: string; aulas: Record<string, AulaContent> }[] = [
     { modulo: "fundamentos", aulas: { ...fundamentosAulas, ...preCalculoPhase2Registry.fundamentos } },
-    { modulo: "algebra", aulas: { ...algebraAulas, ...preCalculoPhase2Registry.algebra } },
+    { modulo: "algebra", aulas: { ...algebraAulas, ...sinaisAulas, ...preCalculoPhase2Registry.algebra } },
     { modulo: "funcoes", aulas: { ...funcoesAulas, ...preCalculoPhase2Registry.funcoes } },
     { modulo: "graficos", aulas: { ...graficosAulas, ...preCalculoPhase2Registry.graficos } },
     { modulo: "geometria-analitica", aulas: preCalculoPhase2Registry["geometria-analitica"] },
