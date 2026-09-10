@@ -113,6 +113,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "area-sob-grafico": {
+    plot: "area-constante-6",
     meta: c1Meta({
       title: "Área sob o gráfico",
       moduleSlug: MOD,

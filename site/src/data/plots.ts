@@ -410,6 +410,130 @@ export const plots = {
       { kind: "point", at: [Math.sqrt(3), 0], tone: "neutro" },
     ],
   },
+  // ── Limites e continuidade: os defeitos do gráfico ──────────────────
+  "buraco-e-salto": {
+    alt: "Uma função com dois defeitos: em x igual a menos dois há uma bolinha vazada no meio da reta, um buraco; em x igual a zero a curva salta da altura três para a altura um, com bolinha vazada em cima e cheia embaixo.",
+    x: [-5, 4], y: [-3, 6],
+    legend: "Buraco: a curva aponta para a altura, mas não a assume. Salto: os dois lados apontam para alturas diferentes.",
+    marks: [
+      { kind: "curve", f: (x) => x + 3, from: -5, to: 0, tone: "principal" },
+      { kind: "curve", f: (x) => 1 + x, from: 0, to: 4, tone: "aplicacao" },
+      { kind: "point", at: [-2, 1], open: true, tone: "principal", label: "buraco" },
+      { kind: "point", at: [0, 3], open: true, tone: "principal" },
+      { kind: "point", at: [0, 1], tone: "aplicacao", label: "salto" },
+    ],
+  },
+
+  "tendencia-ponto-aberto": {
+    alt: "Curva que sobe pela esquerda e desce pela direita, encontrando a altura quatro em x igual a dois, onde há uma bolinha vazada.",
+    x: [-1, 5], y: [0, 5],
+    legend: "Os dois lados miram a mesma altura, 4. A bolinha aberta diz que a função não assume esse valor em x = 2.",
+    marks: [
+      { kind: "hline", at: 4, tone: "neutro" },
+      { kind: "curve", f: (x) => 4 - Math.abs(x - 2), from: -1, to: 2, tone: "principal" },
+      { kind: "curve", f: (x) => 4 - Math.abs(x - 2), from: 2, to: 5, tone: "principal" },
+      { kind: "point", at: [2, 4], open: true, tone: "principal" },
+      { kind: "text", at: [0.6, 2.1], text: "pela esquerda ↗", tone: "aplicacao" },
+      { kind: "text", at: [3.6, 2.1], text: "↘ pela direita", tone: "aplicacao" },
+    ],
+  },
+
+  "explosao-perto-de-3": {
+    alt: "Gráfico de um dividido por (x menos três) ao quadrado: os dois ramos sobem verticalmente ao se aproximarem de x igual a três, sempre acima do eixo.",
+    x: [0, 6], y: [0, 12],
+    legend: "Numerador fixo e denominador tendendo a zero: a curva cresce além de qualquer valor, pelos dois lados.",
+    marks: [
+      { kind: "vline", at: 3, tone: "alerta", label: "x = 3" },
+      { kind: "curve", f: (x) => 1 / ((x - 3) * (x - 3)), from: 0, to: 2.71, tone: "principal" },
+      { kind: "curve", f: (x) => 1 / ((x - 3) * (x - 3)), from: 3.29, to: 6, tone: "principal" },
+    ],
+  },
+
+  "limite-no-infinito-racional": {
+    alt: "Gráfico de (3x ao quadrado mais 1) sobre (x ao quadrado mais 4): a curva se achata na altura três tanto para a direita quanto para a esquerda.",
+    x: [-20, 20], y: [0, 4],
+    xTicks: [-20, -10, 0, 10, 20], yTicks: [0, 1, 2, 3, 4],
+    legend: "Graus iguais no numerador e no denominador: a curva tende à razão dos coeficientes líderes, 3.",
+    marks: [
+      { kind: "hline", at: 3, tone: "ideia", label: "y = 3" },
+      { kind: "curve", f: (x) => (3 * x * x + 1) / (x * x + 4), tone: "principal" },
+    ],
+  },
+
+  "assintota-obliqua": {
+    alt: "Gráfico de x mais um sobre x: dois ramos separados pela assíntota vertical em x igual a zero, ambos encostando na reta inclinada y igual a x quando se afastam da origem.",
+    x: [-6, 6], y: [-9, 9],
+    legend: "Longe da origem a curva acompanha a reta y = x (assíntota oblíqua); perto de zero, explode.",
+    marks: [
+      { kind: "vline", at: 0, tone: "alerta", label: "x = 0" },
+      { kind: "curve", f: (x) => x, tone: "ideia", dashed: true },
+      { kind: "curve", f: (x) => x + 1 / x, from: -6, to: -0.15, tone: "principal" },
+      { kind: "curve", f: (x) => x + 1 / x, from: 0.15, to: 6, tone: "principal" },
+      { kind: "text", at: [4.2, 2.6], text: "y = x", tone: "ideia" },
+    ],
+  },
+
+  "racional-furo-e-assintota": {
+    alt: "Gráfico de (x menos dois) sobre (x menos dois)(x mais um): há assíntota vertical em x igual a menos um, onde o fator não cancela, e um buraco em x igual a dois, onde o fator cancela.",
+    x: [-5, 5], y: [-5, 5],
+    legend: "O fator que cancela vira buraco (x = 2); o que fica no denominador vira assíntota (x = −1).",
+    marks: [
+      { kind: "vline", at: -1, tone: "alerta", label: "assíntota" },
+      { kind: "curve", f: (x) => 1 / (x + 1), from: -5, to: -1.25, tone: "principal" },
+      { kind: "curve", f: (x) => 1 / (x + 1), from: -0.75, to: 5, tone: "principal" },
+      { kind: "point", at: [2, 1 / 3], open: true, tone: "aplicacao", label: "buraco em x = 2" },
+    ],
+  },
+
+  "funcao-por-partes-troca": {
+    alt: "Função definida por partes: a reta y igual a x mais um vale para x negativo e a parábola y igual a x ao quadrado vale de zero em diante. Em x igual a zero há bolinha vazada na altura um e bolinha cheia na altura zero.",
+    x: [-3, 3], y: [-2, 9],
+    legend: "Pela esquerda a tendência é 1; pela direita, 0. A bolinha cheia mostra qual regra vale exatamente em x = 0.",
+    marks: [
+      { kind: "curve", f: (x) => x + 1, from: -3, to: 0, tone: "principal" },
+      { kind: "curve", f: (x) => x * x, from: 0, to: 3, tone: "aplicacao" },
+      { kind: "point", at: [0, 1], open: true, tone: "principal", label: "esquerda → 1" },
+      { kind: "point", at: [0, 0], tone: "aplicacao", label: "f(0) = 0" },
+    ],
+  },
+
+  // ── Derivadas e integrais ───────────────────────────────────────────
+  "maximo-local-parabola": {
+    alt: "Parábola de menos x ao quadrado mais 4x mais 1, com o ponto mais alto em x igual a dois, altura cinco. Antes do vértice a curva sobe; depois, desce.",
+    x: [-1, 5], y: [-4, 6],
+    legend: "A derivada é positiva antes de x = 2 e negativa depois: por isso ali está o máximo, de valor 5.",
+    marks: [
+      { kind: "curve", f: (x) => -x * x + 4 * x + 1, tone: "principal" },
+      { kind: "segment", from: [2, -4], to: [2, 5], tone: "neutro", dashed: true },
+      { kind: "point", at: [2, 5], tone: "aplicacao", label: "máximo (2, 5)" },
+      { kind: "text", at: [0.3, 3.2], text: "f ′ > 0", tone: "ideia" },
+      { kind: "text", at: [3.9, 3.2], text: "f ′ < 0", tone: "ideia" },
+    ],
+  },
+
+  "concavidade-x3": {
+    alt: "Gráfico de x ao cubo: à esquerda da origem a curva é côncava para baixo e à direita é côncava para cima. Na origem está o ponto de inflexão, onde a concavidade troca.",
+    x: [-2, 2], y: [-8, 8],
+    legend: "f″ < 0 à esquerda (concavidade para baixo) e f″ > 0 à direita (para cima). Em x = 0 a concavidade troca: é a inflexão.",
+    marks: [
+      { kind: "curve", f: (x) => x * x * x, tone: "principal" },
+      { kind: "point", at: [0, 0], tone: "ideia", label: "inflexão" },
+      { kind: "text", at: [-1.15, -5.4], text: "∩ para baixo", tone: "alerta" },
+      { kind: "text", at: [1.15, 5.4], text: "∪ para cima", tone: "aplicacao" },
+    ],
+  },
+
+  "area-constante-6": {
+    alt: "Reta horizontal na altura dois, com a região entre ela e o eixo x pintada de zero a três, formando um retângulo de área seis.",
+    x: [0, 4], y: [0, 4],
+    xTicks: [0, 1, 2, 3, 4], yTicks: [0, 1, 2, 3, 4],
+    legend: "A integral de 0 a 3 de f(x) = 2 é a área do retângulo: 2 × 3 = 6.",
+    marks: [
+      { kind: "area", top: () => 2, from: 0, to: 3, tone: "aplicacao" },
+      { kind: "curve", f: () => 2, tone: "principal" },
+      { kind: "text", at: [1.5, 0.9], text: "área = 6", tone: "aplicacao" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;

@@ -118,6 +118,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
   },
 
   "furos-saltos": {
+    plot: "buraco-e-salto",
     meta: c1Meta({
       title: "Furos e saltos no gráfico",
       moduleSlug: MOD,
