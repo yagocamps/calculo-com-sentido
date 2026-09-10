@@ -6,6 +6,7 @@ const MOD_TITLE = "Trigonometria básica";
 
 export const trigonometriaAulas: Record<string, AulaContent> = {
   seno: {
+    plot: "triangulo-seno",
     meta: preMeta({
       title: "Seno: o cateto oposto sobre a hipotenusa",
       moduleSlug: MOD,
@@ -147,6 +148,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   cosseno: {
+    plot: "triangulo-cosseno",
     meta: preMeta({
       title: "Cosseno: o cateto adjacente sobre a hipotenusa",
       moduleSlug: MOD,
@@ -288,6 +290,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   tangente: {
+    plot: "triangulo-tangente",
     meta: preMeta({
       title: "Tangente: oposto sobre adjacente",
       moduleSlug: MOD,
@@ -567,6 +570,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   "identidades-basicas": {
+    plot: "circulo-unitario-identidade",
     meta: preMeta({
       title: "Identidades básicas: a relação fundamental",
       moduleSlug: MOD,
@@ -848,6 +852,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   "rampas-altura": {
+    plot: "elevacao-torre",
     meta: preMeta({
       title: "Rampas e altura de prédios",
       moduleSlug: MOD,

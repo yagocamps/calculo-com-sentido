@@ -6,6 +6,7 @@ export const exerciciosTrigonometria: Exercicio[] = [
   // ── Seno ────────────────────────────────────────────────────────
   {
     id: "trig-ap-01",
+    grafico: "triangulo-3-4-5",
     num: "TRIG-01",
     title: "Seno num triângulo retângulo",
     tema: "Trigonometria",
@@ -23,6 +24,7 @@ export const exerciciosTrigonometria: Exercicio[] = [
   },
   {
     id: "trig-ap-02",
+    grafico: "rampa-anatomia",
     num: "TRIG-02",
     title: "Altura de uma rampa pelo seno",
     tema: "Trigonometria",
@@ -41,6 +43,7 @@ export const exerciciosTrigonometria: Exercicio[] = [
   // ── Cosseno ─────────────────────────────────────────────────────
   {
     id: "trig-ap-03",
+    grafico: "triangulo-3-4-5",
     num: "TRIG-03",
     title: "Cosseno num triângulo retângulo",
     tema: "Trigonometria",
@@ -76,6 +79,7 @@ export const exerciciosTrigonometria: Exercicio[] = [
   // ── Tangente ────────────────────────────────────────────────────
   {
     id: "trig-ap-05",
+    grafico: "triangulo-3-4-5",
     num: "TRIG-05",
     title: "Tangente num triângulo",
     tema: "Trigonometria",
@@ -93,6 +97,7 @@ export const exerciciosTrigonometria: Exercicio[] = [
   },
   {
     id: "trig-ap-06",
+    grafico: "rampa-anatomia",
     num: "TRIG-06",
     title: "Inclinação de uma rampa",
     tema: "Trigonometria",
@@ -334,6 +339,7 @@ export const exerciciosTrigonometria: Exercicio[] = [
   // ── Revisão ─────────────────────────────────────────────────────
   {
     id: "trig-ap-19",
+    grafico: "triangulo-3-4-5",
     num: "TRIG-19",
     title: "Seno, cosseno e tangente de uma vez",
     tema: "Trigonometria",

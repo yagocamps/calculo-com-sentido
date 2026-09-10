@@ -65,6 +65,23 @@ test("pontos, retas de apoio e retângulos ficam dentro do quadro", () => {
       if (mark.kind === "area") {
         assert.ok(mark.from < mark.to, `${id}: área com intervalo invertido`);
       }
+      if (mark.kind === "polygon") {
+        assert.ok(mark.points.length >= 3, `${id}: polígono precisa de ao menos três vértices`);
+        for (const [x, y] of mark.points) {
+          assert.ok(x >= spec.x[0] && x <= spec.x[1], `${id}: vértice fora do domínio x`);
+          assert.ok(y >= spec.y[0] && y <= spec.y[1], `${id}: vértice fora do domínio y`);
+        }
+      }
+      if (mark.kind === "text") {
+        const [x, y] = mark.at;
+        assert.ok(x >= spec.x[0] && x <= spec.x[1], `${id}: anotação "${mark.text}" fora do domínio x`);
+        assert.ok(y >= spec.y[0] && y <= spec.y[1], `${id}: anotação "${mark.text}" fora do domínio y`);
+      }
+      if (mark.kind === "angle" || mark.kind === "rightAngle") {
+        // Um vértice coincidente com uma das pontas não define direção alguma.
+        assert.notDeepEqual(mark.at, mark.from, `${id}: ângulo sem direção (at = from)`);
+        assert.notDeepEqual(mark.at, mark.to, `${id}: ângulo sem direção (at = to)`);
+      }
     }
   }
 });
@@ -78,6 +95,17 @@ test("nenhum gráfico fica órfão e toda referência aponta para um id existent
   }
   const orfaos = entradas.map(([id]) => id).filter((id) => !usados.has(id));
   assert.deepEqual(orfaos, [], "gráficos criados e não usados por nenhum exercício nem aula");
+});
+
+test("as aulas que definem seno, cosseno e tangente mostram um triângulo", () => {
+  // O módulo definia as três razões em palavras — "o cateto oposto, na frente
+  // do ângulo" — sem desenhar triângulo nenhum em lugar algum.
+  for (const slug of ["seno", "cosseno", "tangente", "rampas-altura", "identidades-basicas"]) {
+    const c = registry[`pre-calculo/trigonometria/${slug}`];
+    assert.ok(c.plot, `${slug}: aula de trigonometria sem figura`);
+    const temTriangulo = plots[c.plot!].marks.some((m) => m.kind === "polygon");
+    assert.ok(temTriangulo, `${slug}: a figura precisa mostrar o triângulo`);
+  }
 });
 
 test("as aulas do módulo Gráficos têm figura", () => {

@@ -25,7 +25,13 @@ export type PlotMark =
   | { kind: "area"; top: (x: number) => number; bottom?: (x: number) => number; from: number; to: number; tone?: PlotTone }
   | { kind: "segment"; from: [number, number]; to: [number, number]; tone?: PlotTone; dashed?: boolean; label?: string }
   /** Anotação livre ancorada num ponto do gráfico ("crescente", "pico"). */
-  | { kind: "text"; at: [number, number]; text: string; tone?: PlotTone; anchor?: "start" | "middle" | "end" };
+  | { kind: "text"; at: [number, number]; text: string; tone?: PlotTone; anchor?: "start" | "middle" | "end" }
+  /** Figura fechada — o triângulo retângulo da trigonometria, por exemplo. */
+  | { kind: "polygon"; points: [number, number][]; tone?: PlotTone; fill?: boolean; dashed?: boolean }
+  /** Arco marcando um ângulo no vértice `at`, entre as direções de `from` e `to`. */
+  | { kind: "angle"; at: [number, number]; from: [number, number]; to: [number, number]; label?: string; tone?: PlotTone }
+  /** Quadradinho do ângulo reto. */
+  | { kind: "rightAngle"; at: [number, number]; from: [number, number]; to: [number, number]; tone?: PlotTone };
 
 export type PlotSpec = {
   /** Leitura para quem não vê a figura. Descreve o que ela mostra, não o que ela é. */
@@ -39,6 +45,12 @@ export type PlotSpec = {
    *  quando o texto da aula cita valores específicos (90°, 6h, junho). */
   xTicks?: number[];
   yTicks?: number[];
+  /** Uma figura de geometria (triângulo, rampa) não quer eixos nem malha:
+   *  eles só acrescentam ruído a um desenho que não é um gráfico de função. */
+  axes?: "cartesiano" | "nenhum";
+  /** Mesma escala nos dois eixos. Obrigatório quando a forma é o argumento:
+   *  sem isto o círculo de raio 1 sai como elipse e Pitágoras não se enxerga. */
+  aspect?: "igual";
   marks: PlotMark[];
 };
 
@@ -532,6 +544,145 @@ export const plots = {
       { kind: "area", top: () => 2, from: 0, to: 3, tone: "aplicacao" },
       { kind: "curve", f: () => 2, tone: "principal" },
       { kind: "text", at: [1.5, 0.9], text: "área = 6", tone: "aplicacao" },
+    ],
+  },
+  // ── Trigonometria: o modulo definia seno e cosseno como razoes entre
+  //    lados de um triangulo e nao desenhava triangulo nenhum ────────────
+  "triangulo-seno": {
+    alt: "Triângulo retângulo com o ângulo teta no vértice da esquerda. O lado vertical, na frente do ângulo, é o cateto oposto; o lado inclinado mais longo é a hipotenusa. Os dois estão destacados.",
+    x: [-0.6, 5.4], y: [-0.9, 3.6],
+    axes: "nenhum",
+    aspect: "igual",
+    legend: "Seno é o cateto oposto dividido pela hipotenusa — os dois lados destacados.",
+    marks: [
+      { kind: "polygon", points: [[0, 0], [4, 0], [4, 3]], tone: "neutro" },
+      { kind: "segment", from: [4, 0], to: [4, 3], tone: "principal" },
+      { kind: "segment", from: [0, 0], to: [4, 3], tone: "principal" },
+      { kind: "rightAngle", at: [4, 0], from: [0, 0], to: [4, 3], tone: "neutro" },
+      { kind: "angle", at: [0, 0], from: [4, 0], to: [4, 3], label: "θ", tone: "aplicacao" },
+      { kind: "text", at: [4.55, 1.5], text: "oposto", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [1.6, 2.05], text: "hipotenusa", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [2, -0.45], text: "adjacente", tone: "neutro", anchor: "middle" },
+    ],
+  },
+
+  "triangulo-cosseno": {
+    alt: "O mesmo triângulo retângulo, agora com o cateto adjacente ao ângulo teta e a hipotenusa destacados.",
+    x: [-0.6, 5.4], y: [-0.9, 3.6],
+    axes: "nenhum",
+    aspect: "igual",
+    legend: "Cosseno é o cateto adjacente dividido pela hipotenusa — o lado que forma o ângulo, junto com a hipotenusa.",
+    marks: [
+      { kind: "polygon", points: [[0, 0], [4, 0], [4, 3]], tone: "neutro" },
+      { kind: "segment", from: [0, 0], to: [4, 0], tone: "principal" },
+      { kind: "segment", from: [0, 0], to: [4, 3], tone: "principal" },
+      { kind: "rightAngle", at: [4, 0], from: [0, 0], to: [4, 3], tone: "neutro" },
+      { kind: "angle", at: [0, 0], from: [4, 0], to: [4, 3], label: "θ", tone: "aplicacao" },
+      { kind: "text", at: [4.55, 1.5], text: "oposto", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [1.6, 2.05], text: "hipotenusa", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [2, -0.45], text: "adjacente", tone: "principal", anchor: "middle" },
+    ],
+  },
+
+  "triangulo-tangente": {
+    alt: "O mesmo triângulo retângulo, agora com os dois catetos destacados: o oposto ao ângulo teta e o adjacente a ele.",
+    x: [-0.6, 5.4], y: [-0.9, 3.6],
+    axes: "nenhum",
+    aspect: "igual",
+    legend: "Tangente é o cateto oposto dividido pelo adjacente: o quanto sobe sobre o quanto anda.",
+    marks: [
+      { kind: "polygon", points: [[0, 0], [4, 0], [4, 3]], tone: "neutro" },
+      { kind: "segment", from: [4, 0], to: [4, 3], tone: "principal" },
+      { kind: "segment", from: [0, 0], to: [4, 0], tone: "principal" },
+      { kind: "rightAngle", at: [4, 0], from: [0, 0], to: [4, 3], tone: "neutro" },
+      { kind: "angle", at: [0, 0], from: [4, 0], to: [4, 3], label: "θ", tone: "aplicacao" },
+      { kind: "text", at: [4.75, 1.5], text: "sobe", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [2, -0.45], text: "anda", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [1.6, 2.05], text: "hipotenusa", tone: "neutro", anchor: "middle" },
+    ],
+  },
+
+  "triangulo-3-4-5": {
+    alt: "Triângulo retângulo de catetos três e quatro e hipotenusa cinco, com o ângulo teta oposto ao cateto de medida três.",
+    x: [-0.7, 5.3], y: [-0.9, 3.6],
+    axes: "nenhum",
+    aspect: "igual",
+    legend: "O triângulo 3–4–5: oposto a θ mede 3, adjacente mede 4 e a hipotenusa mede 5.",
+    marks: [
+      { kind: "polygon", points: [[0, 0], [4, 0], [4, 3]], tone: "aplicacao" },
+      { kind: "rightAngle", at: [4, 0], from: [0, 0], to: [4, 3], tone: "neutro" },
+      { kind: "angle", at: [0, 0], from: [4, 0], to: [4, 3], label: "θ", tone: "principal" },
+      { kind: "text", at: [4.45, 1.5], text: "3", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [2, -0.45], text: "4", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [1.7, 2.05], text: "5", tone: "principal", anchor: "middle" },
+    ],
+  },
+
+  "rampa-anatomia": {
+    alt: "Uma rampa vista de lado: o comprimento da rampa é a hipotenusa, a altura vencida é o cateto oposto ao ângulo de inclinação e o avanço horizontal é o cateto adjacente.",
+    x: [-0.6, 6.4], y: [-0.9, 3.2],
+    axes: "nenhum",
+    aspect: "igual",
+    legend: "Comprimento da rampa = hipotenusa · altura vencida = oposto · avanço no chão = adjacente.",
+    marks: [
+      { kind: "polygon", points: [[0, 0], [5, 0], [5, 2]], tone: "neutro" },
+      { kind: "segment", from: [0, 0], to: [5, 2], tone: "principal" },
+      { kind: "rightAngle", at: [5, 0], from: [0, 0], to: [5, 2], tone: "neutro" },
+      { kind: "angle", at: [0, 0], from: [5, 0], to: [5, 2], label: "θ", tone: "aplicacao" },
+      { kind: "text", at: [5.65, 1], text: "altura", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [2.2, 1.4], text: "comprimento", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [2.5, -0.45], text: "avanço no chão", tone: "neutro", anchor: "middle" },
+    ],
+  },
+
+  "elevacao-torre": {
+    alt: "Uma torre vertical e um observador a trinta metros da base. A linha de visão até o topo forma um ângulo de elevação de quarenta e cinco graus com o chão.",
+    x: [-0.6, 6.6], y: [-0.9, 4.2],
+    axes: "nenhum",
+    aspect: "igual",
+    legend: "Distância no chão (30 m) é o adjacente; a altura da torre é o oposto. Com 45°, tangente vale 1 e altura = distância.",
+    marks: [
+      { kind: "polygon", points: [[0, 0], [5, 0], [5, 3.4]], tone: "neutro", fill: false },
+      { kind: "segment", from: [5, 0], to: [5, 3.4], tone: "aplicacao" },
+      { kind: "segment", from: [0, 0], to: [5, 3.4], tone: "principal", dashed: true },
+      { kind: "rightAngle", at: [5, 0], from: [0, 0], to: [5, 3.4], tone: "neutro" },
+      { kind: "angle", at: [0, 0], from: [5, 0], to: [5, 3.4], label: "45°", tone: "principal" },
+      { kind: "text", at: [5.75, 1.7], text: "altura?", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [2.5, -0.45], text: "30 m", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [2.1, 2.3], text: "linha de visão", tone: "principal", anchor: "middle" },
+    ],
+  },
+
+  "circulo-unitario-identidade": {
+    alt: "Círculo de raio um centrado na origem. Um ponto sobre o círculo no primeiro quadrante tem coordenadas cosseno de teta e seno de teta, formando com a origem e sua projeção no eixo x um triângulo retângulo de hipotenusa um.",
+    x: [-1.4, 1.4], y: [-1.4, 1.4],
+    xTicks: [-1, 0, 1], yTicks: [-1, 0, 1],
+    aspect: "igual",
+    legend: "Os catetos medem |cos θ| e |sen θ| e a hipotenusa mede 1: Pitágoras vira sen²θ + cos²θ = 1.",
+    marks: [
+      { kind: "curve", f: (x) => Math.sqrt(Math.max(0, 1 - x * x)), from: -1, to: 1, tone: "neutro" },
+      { kind: "curve", f: (x) => -Math.sqrt(Math.max(0, 1 - x * x)), from: -1, to: 1, tone: "neutro" },
+      { kind: "polygon", points: [[0, 0], [0.8, 0], [0.8, 0.6]], tone: "aplicacao" },
+      { kind: "rightAngle", at: [0.8, 0], from: [0, 0], to: [0.8, 0.6], tone: "neutro" },
+      { kind: "angle", at: [0, 0], from: [0.8, 0], to: [0.8, 0.6], label: "θ", tone: "principal" },
+      { kind: "point", at: [0.8, 0.6], tone: "principal", label: "(cos θ, sen θ)" },
+      { kind: "text", at: [1.02, 0.3], text: "sen θ", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.4, -0.16], text: "cos θ", tone: "aplicacao", anchor: "middle" },
+    ],
+  },
+
+  "quadrantes": {
+    alt: "Plano cartesiano com os quatro quadrantes numerados: primeiro à direita e acima, segundo à esquerda e acima, terceiro à esquerda e abaixo, quarto à direita e abaixo.",
+    x: [-6, 6], y: [-6, 6],
+    xTicks: [-6, -3, 0, 3, 6], yTicks: [-6, -3, 0, 3, 6],
+    legend: "O sinal de cada coordenada decide o quadrante: (−, +) fica no 2º e (−, −) no 3º.",
+    marks: [
+      { kind: "text", at: [3, 3], text: "1º (+, +)", tone: "neutro" },
+      { kind: "text", at: [-3, 3], text: "2º (−, +)", tone: "neutro" },
+      { kind: "text", at: [-3, -3], text: "3º (−, −)", tone: "neutro" },
+      { kind: "text", at: [3, -3], text: "4º (+, −)", tone: "neutro" },
+      { kind: "point", at: [-3, 5], tone: "principal", label: "(−3, 5)" },
+      { kind: "point", at: [-2, -5], tone: "aplicacao", label: "(−2, −5)" },
     ],
   },
 } satisfies Record<string, PlotSpec>;

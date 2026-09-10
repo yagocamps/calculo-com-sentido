@@ -50,6 +50,17 @@ type Escala = {
 function criarEscala(spec: PlotSpec): Escala {
   const [xMin, xMax] = spec.x;
   const [yMin, yMax] = spec.y;
+  if (spec.aspect === "igual") {
+    // Um único fator para os dois eixos, com o desenho centralizado no quadro.
+    const k = Math.min(PLOT_W / (xMax - xMin), PLOT_H / (yMax - yMin));
+    const sobraX = (PLOT_W - (xMax - xMin) * k) / 2;
+    const sobraY = (PLOT_H - (yMax - yMin) * k) / 2;
+    return {
+      xMin, xMax, yMin, yMax,
+      x: (v) => PAD.left + sobraX + (v - xMin) * k,
+      y: (v) => PAD.top + PLOT_H - sobraY - (v - yMin) * k,
+    };
+  }
   return {
     xMin, xMax, yMin, yMax,
     x: (v) => PAD.left + ((v - xMin) / (xMax - xMin)) * PLOT_W,
@@ -231,6 +242,86 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
         </text>
       );
     }
+    case "polygon": {
+      return (
+        <polygon
+          points={mark.points.map(([x, y]) => `${esc.x(x).toFixed(1)},${esc.y(y).toFixed(1)}`).join(" ")}
+          fill={mark.fill === false ? "none" : cor}
+          fillOpacity={mark.fill === false ? 0 : 0.14}
+          stroke={cor}
+          strokeWidth={2.5}
+          strokeLinejoin="round"
+          strokeDasharray={mark.dashed ? "6 5" : undefined}
+        />
+      );
+    }
+    case "angle": {
+      // O arco é calculado em pixels para sair redondo mesmo quando as escalas
+      // de x e y são diferentes.
+      const v = { x: esc.x(mark.at[0]), y: esc.y(mark.at[1]) };
+      const dir = (p: [number, number]) => {
+        const dx = esc.x(p[0]) - v.x;
+        const dy = esc.y(p[1]) - v.y;
+        const n = Math.hypot(dx, dy) || 1;
+        return { x: dx / n, y: dy / n };
+      };
+      const a = dir(mark.from);
+      const b = dir(mark.to);
+      const r = 30;
+      const p1 = { x: v.x + a.x * r, y: v.y + a.y * r };
+      const p2 = { x: v.x + b.x * r, y: v.y + b.y * r };
+      // `sweep` escolhe o lado curto do arco, que é sempre o ângulo interno.
+      const cruz = a.x * b.y - a.y * b.x;
+      const meio = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      const nm = Math.hypot(meio.x, meio.y) || 1;
+      return (
+        <g>
+          <path
+            d={`M${p1.x.toFixed(1)},${p1.y.toFixed(1)} A${r},${r} 0 0 ${cruz > 0 ? 1 : 0} ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`}
+            fill="none"
+            stroke={cor}
+            strokeWidth={2}
+          />
+          {mark.label && (
+            <text
+              x={v.x + (meio.x / nm) * (r + 16)}
+              y={v.y + (meio.y / nm) * (r + 16) + 5}
+              textAnchor="middle"
+              fill={cor}
+              fontSize={15}
+              fontWeight={600}
+              fontFamily="var(--font-sans)"
+            >
+              {mark.label}
+            </text>
+          )}
+        </g>
+      );
+    }
+    case "rightAngle": {
+      const v = { x: esc.x(mark.at[0]), y: esc.y(mark.at[1]) };
+      const dir = (p: [number, number]) => {
+        const dx = esc.x(p[0]) - v.x;
+        const dy = esc.y(p[1]) - v.y;
+        const n = Math.hypot(dx, dy) || 1;
+        return { x: dx / n, y: dy / n };
+      };
+      const a = dir(mark.from);
+      const b = dir(mark.to);
+      const s = 15;
+      return (
+        <polyline
+          points={[
+            `${(v.x + a.x * s).toFixed(1)},${(v.y + a.y * s).toFixed(1)}`,
+            `${(v.x + (a.x + b.x) * s).toFixed(1)},${(v.y + (a.y + b.y) * s).toFixed(1)}`,
+            `${(v.x + b.x * s).toFixed(1)},${(v.y + b.y * s).toFixed(1)}`,
+          ].join(" ")}
+          fill="none"
+          stroke={cor}
+          strokeWidth={2}
+        />
+      );
+    }
     case "segment": {
       const [x1, y1] = mark.from;
       const [x2, y2] = mark.to;
@@ -274,6 +365,7 @@ export function StaticPlot({ spec, className }: { spec: PlotSpec; className?: st
           aria-label={spec.alt}
           className="block h-auto w-full min-w-[320px]"
         >
+          {spec.axes !== "nenhum" && (
           <g aria-hidden="true">
             {xTicks.map((t) => (
               <line key={`gx-${t}`} x1={esc.x(t)} x2={esc.x(t)} y1={PAD.top} y2={PAD.top + PLOT_H}
@@ -315,6 +407,7 @@ export function StaticPlot({ spec, className }: { spec: PlotSpec; className?: st
               {spec.yLabel ?? "y"}
             </text>
           </g>
+          )}
 
           {spec.marks.map((mark, i) => (
             <Marca key={i} mark={mark} esc={esc} />

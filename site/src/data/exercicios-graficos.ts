@@ -6,6 +6,7 @@ export const exerciciosGraficos: Exercicio[] = [
   // ── Plano cartesiano ────────────────────────────────────────────
   {
     id: "graf-ap-01",
+    grafico: "quadrantes",
     num: "GRAF-01",
     title: "Identificar o quadrante",
     tema: "Gráficos",
@@ -255,6 +256,7 @@ export const exerciciosGraficos: Exercicio[] = [
   // ── Revisão ─────────────────────────────────────────────────────
   {
     id: "graf-ap-15",
+    grafico: "quadrantes",
     num: "GRAF-15",
     title: "Quadrante e distância ao eixo",
     tema: "Gráficos",

@@ -142,6 +142,7 @@ export const exerciciosFundamentos: Exercicio[] = [
   },
   {
     id: "fund-ap-08",
+    grafico: "triangulo-3-4-5",
     num: "FUND-08",
     title: "Hipotenusa pelo Teorema de Pitágoras",
     tema: "Fundamentos",
