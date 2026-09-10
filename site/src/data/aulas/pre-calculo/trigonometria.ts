@@ -735,13 +735,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaAria: "y igual a seno de x, período dois pi, amplitude um",
       formulaLegend: "a curva do seno sobe a 1, desce a menos 1 e se repete",
     },
-    grafico: {
-      fn: "sin(x)",
-      alt: "Curva ondulada do seno: parte de zero, sobe até 1, desce até −1 e repete suavemente.",
-      xDomain: [0, 12.6],
-      yDomain: [-1.5, 1.5],
-      legend: "y = sen(x) — a senoide oscila entre −1 e 1 e se repete a cada 2π.",
-    },
+    plot: "senoide-em-graus",
     ondeAparece: {
       title: "Onde isso aparece",
       items: [

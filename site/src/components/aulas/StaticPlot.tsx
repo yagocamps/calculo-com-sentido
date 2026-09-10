@@ -17,7 +17,9 @@ const W = 600;
 const H = 340;
 // `bottom` acomoda duas linhas: os números do eixo e, abaixo deles, o nome da
 // variável — que senão fica por cima da última marca de escala.
-const PAD = { top: 18, right: 18, bottom: 48, left: 46 };
+// `top` deixa o nome do eixo y acima da marca de escala mais alta, que senão
+// escreve por cima dele.
+const PAD = { top: 34, right: 18, bottom: 48, left: 46 };
 const PLOT_W = W - PAD.left - PAD.right;
 const PLOT_H = H - PAD.top - PAD.bottom;
 
@@ -214,6 +216,21 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
         />
       );
     }
+    case "text": {
+      return (
+        <text
+          x={esc.x(mark.at[0])}
+          y={esc.y(mark.at[1])}
+          textAnchor={mark.anchor ?? "middle"}
+          fill={cor}
+          fontSize={14}
+          fontWeight={600}
+          fontFamily="var(--font-sans)"
+        >
+          {mark.text}
+        </text>
+      );
+    }
     case "segment": {
       const [x1, y1] = mark.from;
       const [x2, y2] = mark.to;
@@ -241,8 +258,8 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
 
 export function StaticPlot({ spec, className }: { spec: PlotSpec; className?: string }) {
   const esc = criarEscala(spec);
-  const xTicks = ticks(esc.xMin, esc.xMax);
-  const yTicks = ticks(esc.yMin, esc.yMax);
+  const xTicks = spec.xTicks ?? ticks(esc.xMin, esc.xMax);
+  const yTicks = spec.yTicks ?? ticks(esc.yMin, esc.yMax);
   const eixoX = esc.y(0);
   const eixoY = esc.x(0);
   const temEixoX = esc.yMin <= 0 && esc.yMax >= 0;
@@ -293,7 +310,7 @@ export function StaticPlot({ spec, className }: { spec: PlotSpec; className?: st
               fill="var(--ink-muted)" fontSize={13} fontStyle="italic" fontFamily="var(--font-serif)">
               {spec.xLabel ?? "x"}
             </text>
-            <text x={PAD.left - 8} y={PAD.top - 4} textAnchor="end"
+            <text x={PAD.left - 8} y={PAD.top - 18} textAnchor="end"
               fill="var(--ink-muted)" fontSize={13} fontStyle="italic" fontFamily="var(--font-serif)">
               {spec.yLabel ?? "y"}
             </text>

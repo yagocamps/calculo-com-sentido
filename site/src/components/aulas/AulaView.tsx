@@ -6,7 +6,8 @@ import { AulaToc } from "@/components/aulas/AulaToc";
 import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FutureUseLinks } from "@/components/aulas/FutureUseLinks";
-import { FunctionPlot } from "@/components/aulas/FunctionPlot";
+import { StaticPlot } from "@/components/aulas/StaticPlot";
+import { getPlot } from "@/data/plots";
 import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
 import { InteractiveConceptLab } from "@/components/aulas/InteractiveConceptLab";
 import { BhaskaraDerivation } from "@/components/aulas/BhaskaraDerivation";
@@ -274,23 +275,15 @@ export function AulaView({
                   demonstrations={catalogDemonstrations}
                 />
               )}
-              {content.grafico &&
-                (content.grafico.interactive?.type === "afim" ? (
-                  <InteractiveAfimPlot
-                    initialA={content.grafico.interactive.a}
-                    initialB={content.grafico.interactive.b}
-                    xDomain={content.grafico.xDomain}
-                    yDomain={content.grafico.yDomain}
-                  />
-                ) : (
-                  <FunctionPlot
-                    fn={content.grafico.fn}
-                    alt={content.grafico.alt}
-                    xDomain={content.grafico.xDomain}
-                    yDomain={content.grafico.yDomain}
-                    legend={content.grafico.legend}
-                  />
-                ))}
+              {content.plot && <StaticPlot spec={getPlot(content.plot)} className="my-4" />}
+              {content.grafico?.interactive?.type === "afim" && (
+                <InteractiveAfimPlot
+                  initialA={content.grafico.interactive.a}
+                  initialB={content.grafico.interactive.b}
+                  xDomain={content.grafico.xDomain}
+                  yDomain={content.grafico.yDomain}
+                />
+              )}
             </Section>
           </div>
 

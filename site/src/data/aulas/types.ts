@@ -1,4 +1,5 @@
 import type { AnswerCheckOptions } from "@/lib/answer-check";
+import type { PlotId } from "@/data/plots";
 
 export type AulaExercise = {
   id: string;
@@ -115,6 +116,10 @@ export type AulaContent = {
       formulaAria: string;
     }[];
   };
+  /** Figura estática da explicação (ver `@/data/plots`). É a forma padrão
+   *  de ilustrar uma aula: renderiza no servidor, sai na impressão e não
+   *  depende de JavaScript. */
+  plot?: PlotId;
   /** Gráfico interativo opcional, exibido na explicação. */
   grafico?: {
     fn: string;

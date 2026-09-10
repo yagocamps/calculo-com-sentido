@@ -23,7 +23,9 @@ export type PlotMark =
   /** Retângulos de Riemann; `edges` permite partição desigual. */
   | { kind: "rects"; f: (x: number) => number; edges: number[]; side: "left" | "right"; tone?: PlotTone }
   | { kind: "area"; top: (x: number) => number; bottom?: (x: number) => number; from: number; to: number; tone?: PlotTone }
-  | { kind: "segment"; from: [number, number]; to: [number, number]; tone?: PlotTone; dashed?: boolean; label?: string };
+  | { kind: "segment"; from: [number, number]; to: [number, number]; tone?: PlotTone; dashed?: boolean; label?: string }
+  /** Anotação livre ancorada num ponto do gráfico ("crescente", "pico"). */
+  | { kind: "text"; at: [number, number]; text: string; tone?: PlotTone; anchor?: "start" | "middle" | "end" };
 
 export type PlotSpec = {
   /** Leitura para quem não vê a figura. Descreve o que ela mostra, não o que ela é. */
@@ -33,6 +35,10 @@ export type PlotSpec = {
   xLabel?: string;
   yLabel?: string;
   legend?: string;
+  /** Marcas de escala fixas. Sem isto a escala é automática, o que não serve
+   *  quando o texto da aula cita valores específicos (90°, 6h, junho). */
+  xTicks?: number[];
+  yTicks?: number[];
   marks: PlotMark[];
 };
 
@@ -225,6 +231,183 @@ export const plots = {
     marks: [
       { kind: "curve", f: (x) => (x - 2) * (x - 2) * (x * x + 1), tone: "principal" },
       { kind: "point", at: [2, 0], tone: "aplicacao", label: "toca sem atravessar" },
+    ],
+  },
+  // ── Módulo Gráficos: um módulo sobre gráficos precisa ter gráficos ───
+  "plano-cartesiano-par-ordenado": {
+    alt: "Plano cartesiano com dois pontos marcados: (3, 2) três casas à direita e duas acima, e (2, 3) duas à direita e três acima. São lugares diferentes.",
+    x: [-1, 5], y: [-1, 5],
+    xTicks: [-1, 0, 1, 2, 3, 4, 5], yTicks: [-1, 0, 1, 2, 3, 4, 5],
+    legend: "Trocar a ordem muda o endereço: (3, 2) e (2, 3) são pontos distintos.",
+    marks: [
+      { kind: "segment", from: [0, 2], to: [3, 2], tone: "neutro", dashed: true },
+      { kind: "segment", from: [3, 0], to: [3, 2], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 3], to: [2, 3], tone: "neutro", dashed: true },
+      { kind: "segment", from: [2, 0], to: [2, 3], tone: "neutro", dashed: true },
+      { kind: "point", at: [3, 2], tone: "principal", label: "(3, 2)" },
+      { kind: "point", at: [2, 3], tone: "aplicacao", label: "(2, 3)" },
+    ],
+  },
+
+  "leitura-temperatura-hora": {
+    alt: "Curva de temperatura ao longo do dia. Linhas tracejadas mostram como subir do eixo das horas até a curva e ler a altura: às 6 horas, 18 graus; às 14 horas, 30 graus.",
+    x: [0, 24], y: [10, 34],
+    xLabel: "hora", yLabel: "°C",
+    xTicks: [0, 6, 12, 14, 18, 24], yTicks: [10, 18, 22, 26, 30, 34],
+    legend: "Suba do eixo x até a curva e leia a altura no eixo y. Às 6 h, 18 °C; às 14 h, 30 °C.",
+    marks: [
+      { kind: "curve", f: (h) => 24 - 6 * Math.cos(((h - 14) * Math.PI) / 12), tone: "principal" },
+      { kind: "segment", from: [6, 10], to: [6, 18], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 18], to: [6, 18], tone: "neutro", dashed: true },
+      { kind: "segment", from: [14, 10], to: [14, 30], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 30], to: [14, 30], tone: "neutro", dashed: true },
+      { kind: "point", at: [6, 18], tone: "aplicacao", label: "(6, 18)" },
+      { kind: "point", at: [14, 30], tone: "aplicacao", label: "(14, 30)" },
+    ],
+  },
+
+  "vendas-cresce-estabiliza-cai": {
+    alt: "Gráfico de vendas ao longo do ano: sobe de janeiro a junho, fica horizontal de junho a agosto e desce de agosto a dezembro.",
+    x: [1, 12], y: [0, 120],
+    xLabel: "mês",
+    xTicks: [1, 6, 8, 12], yTicks: [0, 40, 80, 120],
+    legend: "Lendo da esquerda para a direita: crescente até junho, constante até agosto, decrescente até dezembro.",
+    marks: [
+      { kind: "curve", f: (m) => 30 + 14 * (m - 1), from: 1, to: 6, tone: "principal" },
+      { kind: "curve", f: () => 100, from: 6, to: 8, tone: "principal" },
+      { kind: "curve", f: (m) => 100 - 15 * (m - 8), from: 8, to: 12, tone: "principal" },
+      { kind: "text", at: [3.4, 78], text: "crescente", tone: "aplicacao" },
+      { kind: "text", at: [7, 110], text: "constante", tone: "neutro" },
+      { kind: "text", at: [10.4, 68], text: "decrescente", tone: "alerta" },
+      { kind: "point", at: [6, 100], tone: "neutro" },
+      { kind: "point", at: [8, 100], tone: "neutro" },
+    ],
+  },
+
+  "dois-planos-cruzam": {
+    alt: "Duas retas de custo por gigabyte no mesmo gráfico, cruzando-se no ponto (20, 70). Antes do cruzamento a reta mais baixa é a mais barata; depois, elas trocam de posição.",
+    x: [0, 40], y: [0, 120],
+    xLabel: "GB", yLabel: "R$",
+    xTicks: [0, 10, 20, 30, 40], yTicks: [0, 30, 70, 100, 120],
+    legend: "Em 20 GB os dois planos custam R$ 70. Antes disso um é mais barato; depois, o outro.",
+    marks: [
+      { kind: "curve", f: (x) => 30 + 2 * x, tone: "principal" },
+      { kind: "curve", f: (x) => 50 + x, tone: "aplicacao" },
+      { kind: "segment", from: [20, 0], to: [20, 70], tone: "neutro", dashed: true },
+      { kind: "point", at: [20, 70], tone: "ideia", label: "(20, 70)" },
+      { kind: "text", at: [8, 22], text: "plano A", tone: "principal", anchor: "start" },
+      { kind: "text", at: [30, 92], text: "plano B", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "translacao-vertical": {
+    alt: "Duas parábolas iguais: a de baixo com vértice na origem e a de cima três unidades acima, com vértice em (0, 3). A forma não muda, só a altura.",
+    x: [-3, 3], y: [-1, 12],
+    legend: "Somar 3 fora da função sobe o gráfico inteiro: o vértice vai de (0, 0) para (0, 3).",
+    marks: [
+      { kind: "curve", f: (x) => x * x, tone: "neutro", dashed: true },
+      { kind: "curve", f: (x) => x * x + 3, tone: "principal" },
+      { kind: "segment", from: [0, 0], to: [0, 3], tone: "aplicacao", label: "+3" },
+      { kind: "point", at: [0, 0], tone: "neutro" },
+      { kind: "point", at: [0, 3], tone: "principal", label: "(0, 3)" },
+    ],
+  },
+
+  "receita-preco-ingresso": {
+    alt: "Parábola de receita por preço do ingresso, abrindo para baixo, com pico no ponto (50, 5000).",
+    x: [0, 100], y: [0, 6000],
+    xLabel: "preço (R$)", yLabel: "receita (R$)",
+    xTicks: [0, 25, 50, 75, 100], yTicks: [0, 2000, 4000, 5000, 6000],
+    legend: "O pico da parábola é o preço que maximiza a receita: R$ 50, gerando R$ 5.000.",
+    marks: [
+      { kind: "curve", f: (p) => -2 * p * p + 200 * p, tone: "principal" },
+      { kind: "segment", from: [50, 0], to: [50, 5000], tone: "neutro", dashed: true },
+      { kind: "point", at: [50, 5000], tone: "aplicacao", label: "(50, 5000)" },
+    ],
+  },
+
+  "consumo-por-temperatura": {
+    alt: "Reta crescente de consumo por temperatura passando pelos pontos (20, 100) e (30, 200): cada grau a mais custa cerca de 10 quilowatt-hora por dia.",
+    x: [10, 40], y: [0, 300],
+    xLabel: "°C", yLabel: "kWh/dia",
+    xTicks: [10, 20, 30, 40], yTicks: [0, 100, 200, 300],
+    legend: "Relação direta: as duas grandezas sobem juntas. A inclinação, 10 kWh por grau, mede a intensidade.",
+    marks: [
+      { kind: "curve", f: (t) => 10 * t - 100, tone: "principal" },
+      { kind: "segment", from: [20, 100], to: [30, 100], tone: "neutro", dashed: true, label: "+10 °C" },
+      { kind: "segment", from: [30, 100], to: [30, 200], tone: "aplicacao", dashed: true, label: "+100 kWh" },
+      { kind: "point", at: [20, 100], tone: "principal", label: "(20, 100)" },
+      { kind: "point", at: [30, 200], tone: "principal", label: "(30, 200)" },
+    ],
+  },
+
+  // ── Migrações dos gráficos que usavam a biblioteca cliente ──────────
+  "reta-2x-menos-6": {
+    alt: "Reta de f(x) igual a 2x menos 6 cruzando o eixo x em 3: é ali que a equação 2x menos 6 igual a zero tem solução.",
+    x: [-1, 6], y: [-8, 6],
+    legend: "Resolver 2x − 6 = 0 é procurar onde a reta cruza o eixo x. Aqui, em x = 3.",
+    marks: [
+      { kind: "curve", f: (x) => 2 * x - 6, tone: "principal" },
+      { kind: "point", at: [3, 0], tone: "aplicacao", label: "x = 3" },
+    ],
+  },
+
+  "custo-por-kwh": {
+    alt: "Reta que sai da origem: o custo cresce proporcionalmente ao consumo, a 75 centavos por quilowatt-hora.",
+    x: [0, 200], y: [0, 160],
+    xLabel: "kWh", yLabel: "R$",
+    xTicks: [0, 50, 100, 150, 200], yTicks: [0, 40, 80, 120, 160],
+    legend: "Proporção direta: dobrar o consumo dobra a conta. A reta passa pela origem.",
+    marks: [
+      { kind: "curve", f: (x) => 0.75 * x, tone: "principal" },
+      { kind: "point", at: [100, 75], tone: "aplicacao", label: "100 kWh → R$ 75" },
+    ],
+  },
+
+  "altura-da-bola": {
+    alt: "Parábola da altura de uma bola em função do tempo, subindo da origem até 20 metros aos 2 segundos e voltando ao chão aos 4 segundos.",
+    x: [0, 4.5], y: [0, 24],
+    xLabel: "t (s)", yLabel: "altura (m)",
+    xTicks: [0, 1, 2, 3, 4], yTicks: [0, 5, 10, 15, 20],
+    legend: "O pico da parábola é a altura máxima: 20 m aos 2 s. A bola toca o chão de novo aos 4 s.",
+    marks: [
+      { kind: "curve", f: (t) => -5 * t * t + 20 * t, from: 0, to: 4, tone: "principal" },
+      { kind: "segment", from: [2, 0], to: [2, 20], tone: "neutro", dashed: true },
+      { kind: "point", at: [2, 20], tone: "aplicacao", label: "20 m em t = 2 s" },
+      { kind: "point", at: [4, 0], tone: "neutro" },
+    ],
+  },
+
+  "senoide-em-graus": {
+    alt: "Uma volta e meia da curva do seno, com o eixo horizontal marcado em graus: parte de zero, sobe a 1 aos 90 graus, volta a zero aos 180, desce a menos 1 aos 270 e retorna a zero aos 360.",
+    x: [0, 540], y: [-1.5, 1.5],
+    xLabel: "graus",
+    xTicks: [0, 90, 180, 270, 360, 450, 540],
+    yTicks: [-1, 0, 1],
+    // O eixo vai em graus porque é assim que a aula narra a curva ("sobe até 1
+    // em 90°"). Antes o texto falava em graus e a figura vinha em radianos.
+    legend: "A senoide oscila entre −1 e 1 e repete a cada volta: período de 360° (ou 2π rad). Amplitude 1.",
+    marks: [
+      { kind: "curve", f: (g) => Math.sin((g * Math.PI) / 180), tone: "principal" },
+      { kind: "point", at: [90, 1], tone: "aplicacao", label: "90°" },
+      { kind: "point", at: [270, -1], tone: "aplicacao", label: "270°" },
+      { kind: "point", at: [180, 0], tone: "neutro" },
+      { kind: "point", at: [360, 0], tone: "neutro" },
+    ],
+  },
+
+  // ── Cálculo 1: a aula sobre desenhar curvas precisava de uma curva ──
+  "esboco-x3-menos-3x": {
+    alt: "Gráfico de x ao cubo menos 3x, com zeros em menos raiz de três, zero e raiz de três, máximo local em menos um, mínimo local em um e ponto de inflexão na origem.",
+    x: [-2.4, 2.4], y: [-4, 4],
+    legend: "Cada linha do roteiro vira algo visível: zeros no eixo, críticos em ±1, inflexão em 0 — onde a concavidade troca.",
+    marks: [
+      { kind: "curve", f: (x) => x * x * x - 3 * x, tone: "principal" },
+      { kind: "point", at: [-1, 2], tone: "aplicacao", label: "máximo local" },
+      { kind: "point", at: [1, -2], tone: "aplicacao", label: "mínimo local" },
+      { kind: "point", at: [0, 0], tone: "ideia", label: "inflexão" },
+      { kind: "point", at: [-Math.sqrt(3), 0], tone: "neutro" },
+      { kind: "point", at: [Math.sqrt(3), 0], tone: "neutro" },
     ],
   },
 } satisfies Record<string, PlotSpec>;

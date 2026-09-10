@@ -2,6 +2,11 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { plots, type PlotSpec } from "@/data/plots";
 import { exercicios } from "@/data/exercicios";
+import { visualLabsByLesson } from "@/data/visual-labs";
+import { buildPreCalculoRegistry } from "@/data/aulas/pre-calculo/register";
+import { buildCalculo1Registry } from "@/data/aulas/calculo-1/register";
+
+const registry = { ...buildPreCalculoRegistry(), ...buildCalculo1Registry() };
 
 const entradas = Object.entries(plots) as [string, PlotSpec][];
 
@@ -64,13 +69,25 @@ test("pontos, retas de apoio e retângulos ficam dentro do quadro", () => {
   }
 });
 
-test("nenhum gráfico fica órfão e todo exercício aponta para um id existente", () => {
-  const usados = new Set(exercicios.map((e) => e.grafico).filter(Boolean));
+test("nenhum gráfico fica órfão e toda referência aponta para um id existente", () => {
+  const usados = new Set<string>();
+  for (const e of exercicios) if (e.grafico) usados.add(e.grafico);
+  for (const c of Object.values(registry)) if (c.plot) usados.add(c.plot);
   for (const id of usados) {
-    assert.ok(id! in plots, `exercício aponta para o gráfico inexistente "${id}"`);
+    assert.ok(id in plots, `algo aponta para o gráfico inexistente "${id}"`);
   }
-  const orfaos = entradas.map(([id]) => id).filter((id) => !usados.has(id as never));
-  assert.deepEqual(orfaos, [], "gráficos criados e não usados por nenhum exercício");
+  const orfaos = entradas.map(([id]) => id).filter((id) => !usados.has(id));
+  assert.deepEqual(orfaos, [], "gráficos criados e não usados por nenhum exercício nem aula");
+});
+
+test("as aulas do módulo Gráficos têm figura", () => {
+  // Um módulo sobre ler gráficos sem gráfico algum era a contradição mais
+  // visível do site. A revisão do módulo segue sem figura, de propósito.
+  const semFigura = Object.entries(registry)
+    .filter(([id]) => id.startsWith("pre-calculo/graficos/") && !id.endsWith("/revisao-graficos"))
+    .filter(([id, c]) => !c.plot && !(id in visualLabsByLesson))
+    .map(([id]) => id);
+  assert.deepEqual(semFigura, [], "aula do módulo Gráficos sem nenhuma figura");
 });
 
 test("os retângulos de Riemann reproduzem a soma do gabarito", () => {
