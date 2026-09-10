@@ -312,13 +312,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaAria: "f de x igual a a x ao quadrado mais b x mais c; x do vértice igual a menos b sobre dois a",
       formulaLegend: "a fórmula geral e a abscissa do vértice",
     },
-    grafico: {
-      fn: "-5 * x^2 + 20 * x",
-      alt: "Parábola de boca para baixo: a altura de uma bola sobe, atinge o pico em x = 2 e desce de volta ao chão.",
-      xDomain: [0, 4],
-      yDomain: [0, 25],
-      legend: "h(t) = −5t² + 20t — altura de uma bola; pico de 20 m em t = 2 s.",
-    },
+    plot: "altura-da-bola",
     ondeAparece: {
       title: "Onde isso aparece",
       items: [

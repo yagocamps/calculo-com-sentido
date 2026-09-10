@@ -92,7 +92,7 @@ const specs: CurriculumLessonSpec[] = [
   }),
   make({
     moduleSlug: "funcoes", moduleTitle: "Funções", lessonNumber: 14,
-    slug: "funcoes-racionais", title: "Funções racionais", notes: ["restrições", "assíntotas"], glossary: ["Assíntota", "Domínio"],
+    slug: "funcoes-racionais", title: "Funções racionais", plot: "racional-furo-e-assintota", notes: ["restrições", "assíntotas"], glossary: ["Assíntota", "Domínio"],
     why: ["Quocientes de polinômios concentram três ideias centrais de Cálculo: domínio, descontinuidade e comportamento assintótico."],
     explanation: ["Uma função racional tem forma \\(p(x)/q(x)\\), com \\(q(x)\\ne0\\). Fator cancelado costuma gerar furo; fator não cancelado no denominador costuma gerar assíntota vertical."],
     callout: "Analise a expressão original para o domínio e a simplificada para o comportamento.",
@@ -110,7 +110,7 @@ const specs: CurriculumLessonSpec[] = [
   }),
   make({
     moduleSlug: "funcoes", moduleTitle: "Funções", lessonNumber: 15,
-    slug: "funcoes-por-partes", title: "Funções definidas por partes", notes: ["condições", "laterais"],
+    slug: "funcoes-por-partes", title: "Funções definidas por partes", plot: "funcao-por-partes-troca", notes: ["condições", "laterais"],
     why: ["Tarifas, impostos e fenômenos com regras diferentes usam funções por partes. Elas preparam diretamente limites laterais e continuidade."],
     explanation: ["Cada expressão vale apenas na condição escrita ao lado. Para calcular, primeiro localize a entrada no intervalo correto; depois use somente aquela regra."],
     callout: "No ponto de troca, observe com cuidado quem usa \\( < \\) e quem usa \\(\\le\\).",

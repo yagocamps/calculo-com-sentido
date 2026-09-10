@@ -6,6 +6,7 @@ const MOD_TITLE = "Trigonometria básica";
 
 export const trigonometriaAulas: Record<string, AulaContent> = {
   seno: {
+    plot: "triangulo-seno",
     meta: preMeta({
       title: "Seno: o cateto oposto sobre a hipotenusa",
       moduleSlug: MOD,
@@ -148,6 +149,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   cosseno: {
+    plot: "triangulo-cosseno",
     meta: preMeta({
       title: "Cosseno: o cateto adjacente sobre a hipotenusa",
       moduleSlug: MOD,
@@ -290,6 +292,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   tangente: {
+    plot: "triangulo-tangente",
     meta: preMeta({
       title: "Tangente: oposto sobre adjacente",
       moduleSlug: MOD,
@@ -569,6 +572,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   "identidades-basicas": {
+    plot: "circulo-unitario-identidade",
     meta: preMeta({
       title: "Identidades básicas: a relação fundamental",
       moduleSlug: MOD,
@@ -737,13 +741,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaAria: "y igual a seno de x, período dois pi, amplitude um",
       formulaLegend: "a curva do seno sobe a 1, desce a menos 1 e se repete",
     },
-    grafico: {
-      fn: "sin(x)",
-      alt: "Curva ondulada do seno: parte de zero, sobe até 1, desce até −1 e repete suavemente.",
-      xDomain: [0, 12.6],
-      yDomain: [-1.5, 1.5],
-      legend: "y = sen(x) — a senoide oscila entre −1 e 1 e se repete a cada 2π.",
-    },
+    plot: "senoide-em-graus",
     ondeAparece: {
       title: "Onde isso aparece",
       items: [
@@ -857,6 +855,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   "rampas-altura": {
+    plot: "elevacao-torre",
     meta: preMeta({
       title: "Rampas e altura de prédios",
       moduleSlug: MOD,

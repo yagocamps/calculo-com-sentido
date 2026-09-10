@@ -59,6 +59,7 @@ export const exerciciosIntegrais: Exercicio[] = [
   },
   {
     id: "int-ap-04",
+    grafico: "area-sob-velocidade",
     num: "INT-04",
     title: "Área sob a velocidade",
     tema: "Integrais",
@@ -385,6 +386,7 @@ export const exerciciosIntegrais: Exercicio[] = [
   },
   {
     id: "int-ap-20",
+    grafico: "velocidade-com-sinal",
     num: "INT-20",
     title: "Distância total a partir do gráfico",
     tema: "Integrais",

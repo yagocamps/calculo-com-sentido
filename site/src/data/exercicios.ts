@@ -14,6 +14,7 @@ import { exerciciosFundamentos } from "@/data/exercicios-fundamentos";
 import { exerciciosLimites } from "@/data/exercicios-limites";
 import { exerciciosFase2 } from "@/data/exercicios-fase2";
 import type { AnswerCheckOptions } from "@/lib/answer-check";
+import type { PlotId } from "@/data/plots";
 import { exerciciosPropriedadesLimites } from "@/data/exercicios-propriedades-limites";
 import { exerciciosRevisaoCurricular } from "@/data/exercicios-revisao-curricular";
 
@@ -38,6 +39,10 @@ export type Exercicio = {
   /** Escala pedagógica da Fase 2. Itens legados recebem nível por regra de migração. */
   pedagogicalLevel?: PedagogicalExerciseLevel;
   enunciado: string;
+  /** Figura do enunciado (ver `@/data/plots`). Obrigatória quando o enunciado
+   *  manda o aluno ler um gráfico — antes esses exercícios só descreviam a
+   *  curva em palavras. */
+  grafico?: PlotId;
   identificar: string | string[];
   dica: string;
   resolucao: string;

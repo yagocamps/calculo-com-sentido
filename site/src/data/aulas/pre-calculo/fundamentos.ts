@@ -896,13 +896,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaAria: "a x mais b igual a zero implica x igual a menos b sobre a",
       formulaLegend: "solução geral da equação do 1º grau (a ≠ 0)",
     },
-    grafico: {
-      fn: "2 * x - 6",
-      alt: "Reta de f(x) = 2x − 6 cruzando o eixo x em x = 3, que é a solução de 2x − 6 = 0.",
-      xDomain: [-1, 7],
-      yDomain: [-10, 10],
-      legend: "f(x) = 2x − 6: a solução de 2x − 6 = 0 é onde a reta cruza o eixo x (x = 3).",
-    },
+    plot: "reta-2x-menos-6",
     ondeAparece: {
       title: "Onde isso aparece",
       items: [
@@ -1687,13 +1681,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaAria: "energia igual a potência vezes tempo",
       formulaLegend: "E em kWh, P em kW, t em horas",
     },
-    grafico: {
-      fn: "0.75 * x",
-      alt: "Reta do custo em função do consumo: cada kWh custa R$ 0,75, então o custo sobe proporcionalmente ao consumo.",
-      xDomain: [0, 200],
-      yDomain: [0, 150],
-      legend: "Custo(x) = 0,75·x — R$ 0,75 por kWh consumido (proporção direta).",
-    },
+    plot: "custo-por-kwh",
     ondeAparece: {
       title: "Onde isso aparece",
       items: [

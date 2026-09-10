@@ -566,6 +566,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
   },
 
   "interpretacao-grafica": {
+    plot: "tendencia-ponto-aberto",
     meta: preMeta({
       title: "Interpretação gráfica: enxergar a tendência no desenho",
       moduleSlug: MOD,
@@ -611,14 +612,14 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
     exemplo: {
       title: "Curva com ponto aberto",
       situacao:
-        "Um gráfico mostra uma reta passando por \\(y = 4\\) em \\(x = 2\\), mas com uma bolinha aberta exatamente nesse ponto. Qual a tendência de \\(f(x)\\) quando \\(x \\to 2\\)?",
+        "Um gráfico mostra uma curva que atinge a altura \\(y = 4\\) em \\(x = 2\\), mas com uma bolinha aberta exatamente nesse ponto. Qual a tendência de \\(f(x)\\) quando \\(x \\to 2\\)?",
     },
     passos: {
       title: "Como pensar e resolver",
       steps: [
         {
           title: "Aproximar pela esquerda",
-          detail: "Seguindo a reta por valores \\(< 2\\), a curva sobe rumo à altura 4.",
+          detail: "Seguindo a curva por valores \\(< 2\\), a curva sobe rumo à altura 4.",
         },
         {
           title: "Aproximar pela direita",

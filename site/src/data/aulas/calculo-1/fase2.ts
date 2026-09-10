@@ -6,6 +6,7 @@ import type { AulaContent } from "@/data/aulas/types";
 import type { TrilhaAula } from "@/data/trilha-module";
 import { propriedadesDosLimites } from "@/data/aulas/calculo-1/propriedades-dos-limites";
 import { derivadaInversaSpec, reviseCurriculum } from "@/data/aulas/revisao-curricular";
+import type { PlotId } from "@/data/plots";
 
 type Practice = [question: string, solution: string, answer: string, meaning: string];
 type CompactSpec = {
@@ -27,6 +28,7 @@ type CompactSpec = {
   practice: Practice[];
   exerciseIds?: string[];
   level?: string;
+  plot?: PlotId;
 };
 
 const appearances: Record<string, { label: string; detail: string }[]> = {
@@ -73,6 +75,7 @@ function compact(spec: CompactSpec): CurriculumLessonSpec {
     callout: spec.callout,
     formula: spec.formula,
     formulaLatex: spec.formulaLatex,
+    plot: spec.plot,
     appearances: appearances[spec.moduleSlug],
     exampleTitle: "Exemplo em três leituras",
     example: spec.example,
@@ -407,7 +410,7 @@ const specs: CurriculumLessonSpec[] = [
   }),
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 11,
-    slug: "esboco-completo-curvas", title: "Esboço completo de curvas", notes: ["domínio", "assíntotas", "sinais"],
+    slug: "esboco-completo-curvas", title: "Esboço completo de curvas", notes: ["domínio", "assíntotas", "sinais"], plot: "esboco-x3-menos-3x",
     why: "Um bom esboço reúne tudo: domínio, interceptos, limites, derivadas e concavidade.",
     concept: "Siga uma ordem: domínio e simetrias; interceptos; limites e assíntotas; sinal de \\(f'\\); sinal de \\(f''\\); pontos notáveis; desenho coerente.",
     callout: "Cada linha da tabela deve virar uma característica visível no gráfico.",

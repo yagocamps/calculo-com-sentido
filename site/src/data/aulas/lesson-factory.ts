@@ -5,6 +5,7 @@ import type {
   AulaQuizQuestion,
 } from "@/data/aulas/types";
 import type { AnswerCheckOptions } from "@/lib/answer-check";
+import type { PlotId } from "@/data/plots";
 
 type Track = "pre-calculo" | "calculo-1";
 
@@ -28,6 +29,8 @@ export type CurriculumLessonSpec = {
   formulaLatex?: string;
   formulaAria?: string;
   formulaLegend?: string;
+  /** Figura estática da aula (ver `@/data/plots`). */
+  plot?: PlotId;
   rules?: AulaContent["explicacao"]["rules"];
   appearances: { label: string; detail: string }[];
   exampleTitle: string;
@@ -124,6 +127,7 @@ export function createCurriculumLesson(
         erroComum: exercise.commonError,
       })),
     },
+    plot: spec.plot,
     exerciciosAplicados: {
       title: "Continue praticando",
       intro:

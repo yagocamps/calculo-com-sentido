@@ -6,6 +6,7 @@ const MOD_TITLE = "Gráficos";
 
 export const graficosAulas: Record<string, AulaContent> = {
   "plano-cartesiano": {
+    plot: "plano-cartesiano-par-ordenado",
     meta: preMeta({
       title: "Plano cartesiano: o mapa dos números",
       moduleSlug: MOD,
@@ -145,6 +146,7 @@ export const graficosAulas: Record<string, AulaContent> = {
   },
 
   "leitura-graficos": {
+    plot: "leitura-temperatura-hora",
     meta: preMeta({
       title: "Leitura de gráficos",
       moduleSlug: MOD,
@@ -282,6 +284,7 @@ export const graficosAulas: Record<string, AulaContent> = {
   },
 
   "crescimento-decrescimento": {
+    plot: "vendas-cresce-estabiliza-cai",
     meta: preMeta({
       title: "Crescimento e decrescimento",
       moduleSlug: MOD,
@@ -425,6 +428,7 @@ export const graficosAulas: Record<string, AulaContent> = {
   },
 
   "interpretacao-visual": {
+    plot: "dois-planos-cruzam",
     meta: preMeta({
       title: "Interpretação visual de gráficos",
       moduleSlug: MOD,
@@ -568,6 +572,7 @@ export const graficosAulas: Record<string, AulaContent> = {
   },
 
   "translacao-graficos": {
+    plot: "translacao-vertical",
     meta: preMeta({
       title: "Translação de gráficos",
       moduleSlug: MOD,
@@ -707,6 +712,7 @@ export const graficosAulas: Record<string, AulaContent> = {
   },
 
   "vendas-precos": {
+    plot: "receita-preco-ingresso",
     meta: preMeta({
       title: "Aplicação: vendas e preços",
       moduleSlug: MOD,
@@ -850,6 +856,7 @@ export const graficosAulas: Record<string, AulaContent> = {
   },
 
   "temperatura-consumo": {
+    plot: "consumo-por-temperatura",
     meta: preMeta({
       title: "Aplicação: temperatura e consumo",
       moduleSlug: MOD,

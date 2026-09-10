@@ -469,6 +469,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   },
 
   "limite-infinito": {
+    plot: "explosao-perto-de-3",
     meta: c1Meta({
       title: "Limites infinitos",
       moduleSlug: MOD,
@@ -586,6 +587,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   },
 
   "limite-no-infinito": {
+    plot: "limite-no-infinito-racional",
     meta: c1Meta({
       title: "Limites no infinito",
       moduleSlug: MOD,
@@ -701,6 +703,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   },
 
   "assintotas": {
+    plot: "assintota-obliqua",
     meta: c1Meta({
       title: "Assíntotas",
       moduleSlug: MOD,

@@ -297,6 +297,7 @@ export const exerciciosDesafios: Exercicio[] = [
   },
   {
     id: "dsf-int-01",
+    grafico: "area-entre-curvas",
     num: "DSF-11",
     title: "Área entre duas curvas",
     tema: "Integrais",

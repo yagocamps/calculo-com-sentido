@@ -113,6 +113,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   },
 
   "maximos-minimos": {
+    plot: "maximo-local-parabola",
     meta: c1Meta({
       title: "Máximos e mínimos",
       moduleSlug: MOD,
@@ -322,6 +323,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   },
 
   "concavidade": {
+    plot: "concavidade-x3",
     meta: c1Meta({
       title: "Concavidade e segunda derivada",
       moduleSlug: MOD,

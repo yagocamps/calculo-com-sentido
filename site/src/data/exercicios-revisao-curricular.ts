@@ -1,11 +1,13 @@
 import type { Exercicio, ExerciseType, PedagogicalExerciseLevel } from "@/data/exercicios";
+import type { PlotId } from "@/data/plots";
 
 const m = String.raw;
 function exercise(id: string, tema: string, temaSlug: string, title: string, pedagogicalLevel: PedagogicalExerciseLevel,
-  type: ExerciseType, enunciado: string, dica: string, resolucao: string, resposta: string, interpretacao: string): Exercicio {
+  type: ExerciseType, enunciado: string, dica: string, resolucao: string, resposta: string, interpretacao: string,
+  grafico?: PlotId): Exercicio {
   return { id, num: id.toUpperCase(), tema, temaSlug, title, pedagogicalLevel, type,
     level: pedagogicalLevel === 1 ? "facil" : pedagogicalLevel < 4 ? "medio" : pedagogicalLevel === 4 ? "dificil" : "desafio",
-    area: `${tema} · hipóteses e aplicações`, enunciado, dica, resolucao, resposta, interpretacao,
+    area: `${tema} · hipóteses e aplicações`, enunciado, dica, resolucao, resposta, interpretacao, grafico,
     identificar: dica, erroComum: "Aplicar a fórmula sem conferir as condições e o ponto ou intervalo do enunciado." };
 }
 
@@ -16,7 +18,7 @@ export const exerciciosRevisaoCurricular: Exercicio[] = [
   exercise("cur-pol-2", "Funções", "funcoes", "Uma raiz e um fator quadrático", 3, "interpretacao",
     m`Em p(x)=(x−2)²(x²+1), quais são os zeros reais e o gráfico atravessa o eixo neles?`, "Verifique separadamente cada fator real.",
     "x²+1 é sempre positivo. O único zero real é 2, com multiplicidade dois; o gráfico toca e não atravessa o eixo nesse ponto.",
-    "Apenas 2, multiplicidade 2; toca sem atravessar", "Grau quatro não significa quatro zeros reais distintos."),
+    "Apenas 2, multiplicidade 2; toca sem atravessar", "Grau quatro não significa quatro zeros reais distintos.", "multiplicidade-par"),
   exercise("cur-inv-1", "Funções", "funcoes", "Escolher o conjunto de chegada", 3, "compreensao",
     m`f(x)=x², de [0,+∞) para R, tem inversa definida em todo R? Como ajustar o contradomínio?`, "Quais saídas essa função atinge?",
     "Não atinge negativos. Restrinja o contradomínio a [0,+∞); a função passa a ser bijetiva e a inversa é a raiz quadrada.",
@@ -81,9 +83,9 @@ export const exerciciosRevisaoCurricular: Exercicio[] = [
     m`\(A=\int_{-1}^0(x^2-x)dx+\int_0^1(x-x^2)dx=5/6+1/6=1\).`, "1", "Cada região precisa ser calculada com a ordem correta das curvas."),
   exercise("cur-rie-1", "Integrais", "integrais", "Altura vezes largura", 2, "calculo",
     "Use três retângulos à direita para aproximar a integral de f(x)=x em [0,3].", "A largura é 1; os pontos à direita são 1, 2 e 3.",
-    "A soma é 1·1+2·1+3·1=6. A função é crescente; essa soma superestima a integral.", "6", "Uma soma finita aproxima; não é necessariamente o valor da integral."),
+    "A soma é 1·1+2·1+3·1=6. A função é crescente; essa soma superestima a integral.", "6", "Uma soma finita aproxima; não é necessariamente o valor da integral.", "riemann-direita-3"),
   exercise("cur-rie-2", "Integrais", "integrais", "Muitas partes ainda podem ser largas", 3, "interpretacao",
     "Uma partição de [0,1] mantém [0,1/2] inteiro e divide apenas [1/2,1] em mais partes. Isso garante refinamento suficiente para qualquer função contínua?", "Acompanhe a maior largura da partição.",
     "Não. A maior largura permanece 1/2. Para garantir a convergência das somas independentemente dos pontos escolhidos, a maior largura deve tender a zero.",
-    "Não; a maior largura não tende a zero", "Contar retângulos não substitui verificar a malha da partição."),
+    "Não; a maior largura não tende a zero", "Contar retângulos não substitui verificar a malha da partição.", "riemann-particao-desigual"),
 ];
