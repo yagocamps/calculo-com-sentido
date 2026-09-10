@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { RichText } from "@/components/aulas/RichText";
+import { StaticPlot } from "@/components/aulas/StaticPlot";
+import { getPlot } from "@/data/plots";
 import { RevealBlock } from "@/components/exercicios/RevealBlock";
 import { TypeTag } from "@/components/exercicios/TypeTag";
 import { Button } from "@/components/ui/Button";
@@ -199,6 +201,9 @@ export function ExercicioDetail({
         <RichText as="p" className="whitespace-pre-line">
           {exercicio.enunciado}
         </RichText>
+        {exercicio.grafico && (
+          <StaticPlot spec={getPlot(exercicio.grafico)} className="mt-3" />
+        )}
       </Field>
 
       <Field label="O que identificar">

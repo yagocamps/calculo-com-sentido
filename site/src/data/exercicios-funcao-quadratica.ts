@@ -81,6 +81,7 @@ export const exerciciosFuncaoQuadratica: Exercicio[] = [
   },
   {
     id: "fq-04",
+    grafico: "parabola-sem-raiz",
     num: "FQ-04",
     title: "Quando não há raiz real",
     tema: "Função quadrática",
@@ -186,6 +187,7 @@ export const exerciciosFuncaoQuadratica: Exercicio[] = [
   },
   {
     id: "fq-08",
+    grafico: "parabola-raiz-dupla",
     num: "FQ-08",
     title: "Raiz dupla",
     tema: "Função quadrática",
@@ -238,6 +240,7 @@ export const exerciciosFuncaoQuadratica: Exercicio[] = [
   },
   {
     id: "fq-10",
+    grafico: "parabola-vertice-3-8",
     num: "FQ-10",
     title: "Ler a parábola no gráfico",
     tema: "Função quadrática",

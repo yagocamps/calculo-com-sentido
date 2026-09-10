@@ -5,6 +5,7 @@ import type { Exercicio } from "@/data/exercicios";
 export const exerciciosLimites: Exercicio[] = [
   {
     id: "lim-ap-01",
+    grafico: "limite-buraco-2-5",
     num: "LIM-01",
     title: "O que o limite descreve",
     tema: "Limites",
@@ -91,6 +92,7 @@ export const exerciciosLimites: Exercicio[] = [
   },
   {
     id: "lim-ap-05",
+    grafico: "limite-buraco-1-3",
     num: "LIM-05",
     title: "Ler o limite num gráfico com buraco",
     tema: "Limites",
@@ -110,6 +112,7 @@ export const exerciciosLimites: Exercicio[] = [
   },
   {
     id: "lim-ap-06",
+    grafico: "limite-salto-x0",
     num: "LIM-06",
     title: "Limites laterais diferentes no gráfico",
     tema: "Limites",
@@ -297,6 +300,7 @@ export const exerciciosLimites: Exercicio[] = [
   },
   {
     id: "lim-ap-15",
+    grafico: "assintotas-racional",
     num: "LIM-15",
     title: "Achar as assíntotas",
     tema: "Limites",

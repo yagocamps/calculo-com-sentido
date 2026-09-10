@@ -159,6 +159,7 @@ export const exerciciosPreparacaoLimites: Exercicio[] = [
   // ── Interpretação gráfica ───────────────────────────────────────
   {
     id: "prep-ap-09",
+    grafico: "limite-buraco-1-3",
     num: "PREP-09",
     title: "Tendência num ponto aberto",
     tema: "Preparação p/ limites",
@@ -176,6 +177,7 @@ export const exerciciosPreparacaoLimites: Exercicio[] = [
   },
   {
     id: "prep-ap-10",
+    grafico: "limite-salto-x2",
     num: "PREP-10",
     title: "Lados que discordam",
     tema: "Preparação p/ limites",

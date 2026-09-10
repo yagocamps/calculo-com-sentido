@@ -23,6 +23,7 @@ export const exerciciosContinuidade: Exercicio[] = [
   },
   {
     id: "cont-ap-02",
+    grafico: "continua-em-2-5",
     num: "CONT-02",
     title: "Continuidade lendo o gráfico",
     tema: "Continuidade",
@@ -41,6 +42,7 @@ export const exerciciosContinuidade: Exercicio[] = [
   // ── Furos e saltos ──────────────────────────────────────────────
   {
     id: "cont-ap-03",
+    grafico: "buraco-removivel",
     num: "CONT-03",
     title: "Preencher um buraco",
     tema: "Continuidade",

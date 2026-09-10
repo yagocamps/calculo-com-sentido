@@ -17,6 +17,11 @@ export const visualLabsByLesson: Record<string, VisualLabKind> = {
   "calculo-1/derivadas/variacao-instantanea": "derivative-tank",
   "calculo-1/limites/limite-por-grafico": "limit",
   "calculo-1/derivadas/reta-secante-tangente": "secant",
+  // A aula que formaliza o quociente incremental precisa mostrar o quociente
+  // incremental. O laboratório aparece duas vezes de propósito: em "reta
+  // secante e tangente" para construir a ideia, e aqui para o aluno ver a
+  // inclinação estabilizar antes de receber a notação f'(a).
+  "calculo-1/derivadas/definicao-derivada": "secant",
   "calculo-1/integrais/somas-de-riemann": "riemann",
   "pre-calculo/trigonometria/ciclo-trigonometrico": "unit-circle",
   "pre-calculo/graficos/reflexoes-e-escalas": "transformations",
