@@ -107,13 +107,19 @@ export const calculo1Modulos: TrilhaModuloData[] = [
       { slug: "limite-por-grafico", title: "Limite por gráfico", duration: "12 min", available: true },
       ...calculo1Phase2Catalog.limites.filter((lesson) => lesson.slug === "propriedades-dos-limites"),
       { slug: "limite-substituicao", title: "Limite por substituição", duration: "13 min", available: true },
+      // As duas técnicas para 0/0 vêm logo depois da substituição, que é onde
+      // a indeterminação aparece pela primeira vez — antes ficavam atrás das
+      // aulas de aplicação, que já dependiam delas.
+      ...calculo1Phase2Catalog.limites.filter((lesson) =>
+        ["indeterminacao-fatoracao", "racionalizacao-em-limites"].includes(lesson.slug),
+      ),
       { slug: "limites-laterais", title: "Limites laterais", duration: "11 min", available: true },
       { slug: "limite-infinito", title: "Limites infinitos", duration: "12 min", available: true },
       { slug: "limite-no-infinito", title: "Limites no infinito", duration: "11 min", available: true },
       { slug: "assintotas", title: "Assíntotas", duration: "12 min", available: true },
       { slug: "velocidade-instantanea", title: "Velocidade instantânea", duration: "14 min", available: true },
       { slug: "aplicacoes-limites", title: "Aplicações de limites", duration: "10 min", available: true },
-      ...calculo1Phase2Catalog.limites.filter((lesson) => !["propriedades-dos-limites", "classificacao-indeterminacoes", "epsilon-delta-intuicao"].includes(lesson.slug)),
+      ...calculo1Phase2Catalog.limites.filter((lesson) => !["propriedades-dos-limites", "indeterminacao-fatoracao", "racionalizacao-em-limites", "classificacao-indeterminacoes", "epsilon-delta-intuicao"].includes(lesson.slug)),
       ...calculo1Phase2Catalog.limites.filter((lesson) => ["classificacao-indeterminacoes", "epsilon-delta-intuicao"].includes(lesson.slug)),
       { slug: "revisao-limites", title: "Revisão do módulo", duration: "9 min", available: true },
     ],

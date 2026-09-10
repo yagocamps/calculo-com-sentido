@@ -817,6 +817,7 @@ export const algebraAulas: Record<string, AulaContent> = {
           resolucao:
             "\\[\\begin{aligned} 5 + 2x &= 8 + 1{,}5x \\\\ 0{,}5x &= 3 \\\\ x &= 6 \\end{aligned}\\]",
           resposta: "6 km",
+          answerCheck: { unit: "km" },
           interpretacao: "Até 6 km o App A é mais barato; acima, o B.",
           erroComum: "Subtrair os fixos no lado errado e achar x negativo.",
         },
@@ -1099,6 +1100,7 @@ export const algebraAulas: Record<string, AulaContent> = {
           dica: "Margem \\(= 20 - 4 = 16\\).",
           resolucao: "\\(x = \\frac{800}{16} = 50\\).",
           resposta: "50 ingressos",
+          answerCheck: { unit: "ingressos" },
           interpretacao: "Do 51º em diante, cada ingresso rende R$ 16 de lucro.",
           erroComum: "Dividir 800 por 20 (preço) em vez da margem.",
         },
