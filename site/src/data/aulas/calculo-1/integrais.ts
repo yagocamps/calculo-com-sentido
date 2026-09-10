@@ -6,6 +6,7 @@ const MOD_TITLE = "Integrais com sentido";
 
 export const integraisAulas: Record<string, AulaContent> = {
   "ideia-de-soma": {
+    plot: "soma-de-riemann-2x",
     meta: c1Meta({
       title: "Ideia de soma acumulada",
       moduleSlug: MOD,

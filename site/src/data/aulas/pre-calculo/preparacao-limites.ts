@@ -6,6 +6,7 @@ const MOD_TITLE = "Preparação para limites";
 
 export const preparacaoLimitesAulas: Record<string, AulaContent> = {
   "ideia-aproximacao": {
+    plot: "aproximacao-buraco-em-1",
     meta: preMeta({
       title: "Ideia de aproximação: chegar perto sem precisar tocar",
       moduleSlug: MOD,

@@ -997,6 +997,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   "ondas-movimento": {
+    plot: "roda-gigante-altura",
     meta: preMeta({
       title: "Ondas e movimento circular",
       moduleSlug: MOD,

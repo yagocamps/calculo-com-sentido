@@ -218,6 +218,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
   },
 
   "reta-secante-tangente": {
+    plot: "secante-vira-tangente",
     meta: c1Meta({
       title: "Reta secante e reta tangente",
       moduleSlug: MOD,
