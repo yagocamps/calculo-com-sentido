@@ -30,7 +30,7 @@ export function DemonstrationDisclosure({
                   Demonstração disponível
                 </p>
                 <h3 className="mt-1 font-serif text-[21px] font-medium text-ink">
-                  {demo.title}
+                  <RichText as="span">{demo.title}</RichText>
                 </h3>
               </div>
               <button
@@ -60,7 +60,9 @@ export function DemonstrationDisclosure({
                         {stepIndex + 1}
                       </span>
                       <div>
-                        <h4 className="font-semibold text-ink">{step.title}</h4>
+                        <h4 className="font-semibold text-ink">
+                          <RichText as="span">{step.title}</RichText>
+                        </h4>
                         <RichText
                           as="p"
                           className="mt-1 text-[13px] leading-relaxed text-ink-muted"

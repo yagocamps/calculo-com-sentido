@@ -181,7 +181,9 @@ const specs: CurriculumLessonSpec[] = [
   propriedadesDosLimites,
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 13,
-    slug: "indeterminacao-fatoracao", title: "Indeterminação \\(0/0\\) e fatoração", notes: ["diferença de quadrados", "trinômios"],
+    // Sem LaTeX: este título também vai para a aba do navegador, a barra
+    // lateral, o breadcrumb, o sitemap e a busca — lugares que exibem texto puro.
+    slug: "indeterminacao-fatoracao", title: "Indeterminação 0/0 e fatoração", notes: ["diferença de quadrados", "trinômios"],
     why: "Fatoração é a técnica principal para limites algébricos com fatores ocultos.",
     concept: "\\(0/0\\) informa que substituição direta não decidiu o limite. Fatore a expressão, cancele apenas fatores comuns com a restrição adequada e reavalie.",
     callout: "Indeterminação não é resultado; é um pedido de investigação.",
