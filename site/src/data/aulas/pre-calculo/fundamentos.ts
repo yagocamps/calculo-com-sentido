@@ -987,6 +987,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           resolucao:
             "\\[\\begin{aligned} 2x + 5 &= 19 \\\\ 2x &= 19 - 5 \\\\ 2x &= 14 \\\\ x &= \\frac{14}{2} \\\\ x &= 7 \\end{aligned}\\]",
           resposta: "7 km",
+          answerCheck: { unit: "km" },
           interpretacao: "Com 7 km: \\(2 \\cdot 7 + 5 = 19\\). A corrida tem 7 quilômetros.",
           erroComum: "Dividir \\(19\\) por \\(2\\) antes de tirar o \\(5\\).",
         },
@@ -1470,6 +1471,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           resolucao:
             "\\[\\begin{aligned} 4x &= 200 \\cdot 6 \\\\ 4x &= 1200 \\\\ x &= 300 \\end{aligned}\\]",
           resposta: "300 g",
+          answerCheck: { unit: "g" },
           interpretacao: "\\(50\\) g por pessoa; \\(6\\) pessoas → \\(300\\) g.",
           erroComum: "Somar 100 g \"porque são 2 pessoas a mais\".",
         },
@@ -1482,6 +1484,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           resolucao:
             "\\[\\begin{aligned} 3 \\times 1000 &= 3000 \\text{ cm} \\\\ &= 30 \\text{ m} \\end{aligned}\\]",
           resposta: "30 metros",
+          answerCheck: { unit: "metros" },
           interpretacao: "A escala diz quantas vezes a realidade foi reduzida.",
           erroComum: "Esquecer de converter cm para metros.",
         },
@@ -1745,6 +1748,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           resolucao:
             "\\[\\begin{aligned} E &= 0{,}1 \\times 10 \\\\ &= 1 \\text{ kWh} \\end{aligned}\\]",
           resposta: "1 kWh",
+          answerCheck: { unit: "kWh" },
           interpretacao: "Equivale a 1 kW por 1 hora — daí dar exatamente 1 kWh.",
           erroComum: "Multiplicar \\(100 \\times 10\\) e responder \\(1000\\) kWh.",
         },
@@ -1768,6 +1772,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
           resolucao:
             "\\[\\begin{aligned} E &= 0{,}2 \\times 150 \\\\ &= 30 \\text{ kWh} \\end{aligned}\\]",
           resposta: "30 kWh",
+          answerCheck: { unit: "kWh" },
           interpretacao: "Aparelho de baixa potência, mas o uso longo acumula.",
           erroComum: "Esquecer de multiplicar os \\(5\\) h pelos \\(30\\) dias.",
         },

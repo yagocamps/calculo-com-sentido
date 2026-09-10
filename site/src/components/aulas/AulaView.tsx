@@ -13,6 +13,7 @@ import { InteractiveConceptLab } from "@/components/aulas/InteractiveConceptLab"
 import { BhaskaraDerivation } from "@/components/aulas/BhaskaraDerivation";
 import { DemonstrationDisclosure } from "@/components/aulas/DemonstrationDisclosure";
 import { LessonAnalytics } from "@/components/aulas/LessonAnalytics";
+import { LessonMastery } from "@/components/aulas/LessonMastery";
 import { LessonWorkspace } from "@/components/aulas/LessonWorkspace";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
 import { RichText } from "@/components/aulas/RichText";
@@ -24,8 +25,9 @@ import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
 import { Tag } from "@/components/ui/Tag";
 import type { AulaContent } from "@/data/aulas/types";
+import { durationLabel } from "@/lib/reading-time";
 import { glossario, type GlossarioEntry } from "@/data/glossario";
-import { exercicios } from "@/data/exercicios";
+import { exercicioTemas, exercicios } from "@/data/exercicios";
 import { demonstrationsForLesson } from "@/data/demonstracoes";
 import { prereqsForModule } from "@/data/prereqs";
 import { futureUsesForLesson } from "@/data/future-uses";
@@ -90,6 +92,14 @@ export function AulaView({
     : visualLab === "derivative-tank" ? "Veja o volume mudar no reservatório" : null;
   const hasSimulation = simulationTitle !== null;
   const simulationOffset = Number(hasSimulation);
+  // O banco usa "funcoes-calculo" onde a trilha usa "funcoes-para-calculo";
+  // módulos sem tema correspondente no banco (ex.: geometria analítica) ficam
+  // sem o atalho, em vez de levar a um filtro vazio.
+  const temaSlug =
+    meta.moduleSlug === "funcoes-para-calculo" ? "funcoes-calculo" : meta.moduleSlug;
+  const temaHref = exercicioTemas.some((t) => t.slug === temaSlug)
+    ? `/exercicios?tema=${temaSlug}`
+    : undefined;
   const hasQuiz = Boolean(content.quiz?.length);
   const hasVideos = Boolean(content.videos?.length);
   const curriculumModules =
@@ -163,7 +173,7 @@ export function AulaView({
               {meta.title}
             </h1>
             <div className="mt-3 flex flex-wrap items-center gap-3 text-[13px] text-ink-muted">
-              <span>⏱ {meta.duration} de leitura</span>
+              <span>⏱ {durationLabel(content)} de leitura</span>
               {meta.readingNotes.map((note) => (
                 <span key={note} className="flex items-center gap-3">
                   <span className="h-1 w-1 rounded-full bg-ink-subtle" />
@@ -381,6 +391,7 @@ export function AulaView({
                   <AulaExerciseCard key={`${lessonPathId}:${ex.id}`} exercise={ex} lessonPathId={lessonPathId} />
                 ))}
               </div>
+              <LessonMastery lessonPathId={lessonPathId} temaHref={temaHref} />
             </Section>
           </div>
 

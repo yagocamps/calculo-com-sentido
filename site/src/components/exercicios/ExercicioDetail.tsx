@@ -11,7 +11,7 @@ import { PedagogicalLevelTag } from "@/components/ui/Tag";
 import Link from "next/link";
 import { exercisePath } from "@/lib/exercise-url";
 import { exercicios, type Exercicio } from "@/data/exercicios";
-import { checkAnswer, type CheckResult } from "@/lib/answer-check";
+import { answerHint, checkAnswer, type CheckResult } from "@/lib/answer-check";
 import type { AdaptiveAnswer } from "@/lib/adaptive-session";
 import { levelOrder, pedagogicalLevelOf } from "@/lib/exercicios";
 import {
@@ -235,10 +235,7 @@ export function ExercicioDetail({
           </Button>
         </div>
 
-        <p className="mt-2 text-xs text-ink-subtle">
-          Use ponto ou vírgula para decimais, sem separador de milhar. Preserve símbolos e unidades.
-          {exercicio.answerCheck?.absoluteTolerance !== undefined && ` Tolerância absoluta: ${exercicio.answerCheck.absoluteTolerance}.`}
-        </p>
+        <p className="mt-2 text-xs text-ink-subtle">{answerHint(exercicio.answerCheck)}</p>
 
         {result === "correct" && (
           <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-sage-soft px-3 py-1 text-[13px] font-semibold text-sage-ink">

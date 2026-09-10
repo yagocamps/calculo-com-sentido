@@ -362,6 +362,7 @@ export const exerciciosLimites: Exercicio[] = [
       "\\(\\lim_{h \\to 0}(6 + h) = 6\\).",
     ],
     resposta: "\\(6\\) m/s",
+    answerCheck: { unit: "m/s" },
     interpretacao:
       "Esse limite é exatamente a derivada de \\(s\\) em \\(t = 3\\) — a ponte entre limites e derivadas.",
     erroComum: "Tentar \\(h = 0\\) cedo demais e travar em \\(\\frac{0}{0}\\).",

@@ -6,6 +6,7 @@ import {
   getCalculo1Aula,
 } from "@/data/calculo-1";
 import { getAulaContent } from "@/lib/aulas";
+import { lessonMetadata } from "@/lib/lesson-seo";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -19,7 +20,7 @@ export async function generateMetadata({
 }) {
   const { modulo, aula } = await params;
   const content = getAulaContent("calculo-1", modulo, aula);
-  if (content) return { title: content.meta.title };
+  if (content) return lessonMetadata(content, "calculo-1", aula);
   const data = getCalculo1Aula(modulo, aula);
   if (!data) return { title: "Aula" };
   return { title: `${data.aula.title} · Cálculo 1` };

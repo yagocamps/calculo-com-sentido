@@ -71,6 +71,7 @@ export const exerciciosGraficos: Exercicio[] = [
     dica: "\\(\\frac{120 - 0}{2 - 0}\\).",
     resolucao: "\\(\\frac{120 - 0}{2 - 0} = \\frac{120}{2} = 60\\).",
     resposta: "\\(60\\) km/h",
+    answerCheck: { unit: "km/h" },
     interpretacao: "A inclinação da reta no gráfico posição × tempo é a velocidade.",
     erroComum: "Dividir tempo por distância em vez do contrário.",
   },

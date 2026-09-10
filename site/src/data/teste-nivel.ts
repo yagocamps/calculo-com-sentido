@@ -117,10 +117,10 @@ export const testQuestions: TestQuestion[] = [
     question: "Resolva: \\(2x + 6 = 14\\)",
     formula: "\\(2x + 6 = 14\\)",
     options: [
-      { key: "A", text: "x = 10" },
-      { key: "B", text: "x = 4" },
-      { key: "C", text: "x = 8" },
-      { key: "D", text: "x = 2" },
+      { key: "A", text: String.raw`\(x = 10\)` },
+      { key: "B", text: String.raw`\(x = 4\)` },
+      { key: "C", text: String.raw`\(x = 8\)` },
+      { key: "D", text: String.raw`\(x = 2\)` },
     ],
     correct: "B",
     explanation: "\\(2x = 8 \\Rightarrow x = 4\\). Subtraia 6 dos dois lados antes de dividir.",
@@ -132,9 +132,9 @@ export const testQuestions: TestQuestion[] = [
     subtopic: "2º grau",
     question: "Uma equação \\(x^2 - 9 = 0\\) tem como soluções reais:",
     options: [
-      { key: "A", text: "x = 3 e x = −3" },
-      { key: "B", text: "x = 9 e x = −9" },
-      { key: "C", text: "x = 3 apenas" },
+      { key: "A", text: String.raw`\(x = 3\) e \(x = -3\)` },
+      { key: "B", text: String.raw`\(x = 9\) e \(x = -9\)` },
+      { key: "C", text: String.raw`\(x = 3\) apenas` },
       { key: "D", text: "Nenhuma solução real" },
     ],
     correct: "A",
@@ -188,7 +188,7 @@ export const testQuestions: TestQuestion[] = [
     formula: "\\(y = 2x + 1\\)",
     options: [
       { key: "A", text: "Inclinação da reta (taxa de crescimento)" },
-      { key: "B", text: "O valor quando x = 0" },
+      { key: "B", text: String.raw`O valor quando \(x = 0\)` },
       { key: "C", text: "A distância até a origem" },
       { key: "D", text: "O eixo vertical do gráfico" },
     ],
@@ -200,7 +200,7 @@ export const testQuestions: TestQuestion[] = [
     id: "q10",
     topic: "trigonometria",
     topicLabel: "Trigonometria",
-    question: "Em um triângulo retângulo, \\(\\operatorname{sen}(30^\\circ)\\) é igual a:",
+    question: "Em um triângulo retângulo, \\(\\sin(30^\\circ)\\) é igual a:",
     options: [
       { key: "A", text: "\\(\\frac{1}{2}\\)" },
       { key: "B", text: "\\(\\frac{\\sqrt{3}}{2}\\)" },
@@ -208,7 +208,7 @@ export const testQuestions: TestQuestion[] = [
       { key: "D", text: "1" },
     ],
     correct: "A",
-    explanation: "\\(\\operatorname{sen}(30^\\circ) = \\frac{1}{2}\\) é um valor clássico da trigonometria básica.",
+    explanation: "\\(\\sin(30^\\circ) = \\frac{1}{2}\\) é um valor clássico da trigonometria básica.",
   },
   {
     id: "q11",
@@ -326,10 +326,10 @@ export const testQuestions: TestQuestion[] = [
     subtopic: "1º grau",
     question: "Resolva: \\(3(x - 2) = x + 8\\)",
     options: [
-      { key: "A", text: "x = 7" },
-      { key: "B", text: "x = 3" },
-      { key: "C", text: "x = 5" },
-      { key: "D", text: "x = 1" },
+      { key: "A", text: String.raw`\(x = 7\)` },
+      { key: "B", text: String.raw`\(x = 3\)` },
+      { key: "C", text: String.raw`\(x = 5\)` },
+      { key: "D", text: String.raw`\(x = 1\)` },
     ],
     correct: "A",
     explanation:
@@ -341,16 +341,15 @@ export const testQuestions: TestQuestion[] = [
     topicLabel: "Funções",
     subtopic: "Leitura de função",
     question:
-      "Um plano cobra R$ 50,00 fixos mais R$ 3,00 por GB. Qual função dá o custo de x GB?",
+      "Um plano cobra R$ 50,00 fixos mais R$ 3,00 por GB. Qual função dá o custo de \\(x\\) GB?",
     options: [
-      { key: "A", text: "C(x) = 50x + 3" },
-      { key: "B", text: "C(x) = 3x + 50" },
-      { key: "C", text: "C(x) = 53x" },
-      { key: "D", text: "C(x) = 3x − 50" },
+      { key: "A", text: String.raw`\(C(x) = 50x + 3\)` },
+      { key: "B", text: String.raw`\(C(x) = 3x + 50\)` },
+      { key: "C", text: String.raw`\(C(x) = 53x\)` },
+      { key: "D", text: String.raw`\(C(x) = 3x - 50\)` },
     ],
     correct: "B",
-    explanation:
-      "O que varia com o consumo multiplica x (3x); o que é fixo entra somando (50). Erro comum: trocar os papéis do fixo e do variável.",
+    explanation: String.raw`O que varia com o consumo multiplica \(x\) (\(3x\)); o que é fixo entra somando (\(50\)). Erro comum: trocar os papéis do fixo e do variável.`,
   },
   {
     id: "q20",
@@ -427,10 +426,10 @@ export const testQuestions: TestQuestion[] = [
     question:
       "Uma função tem um furo em \\(x = 4\\), mas perto de \\(4\\) ela vale sempre algo próximo de \\(7\\). O que se pode dizer?",
     options: [
-      { key: "A", text: "A função não pode ter tendência em x = 4" },
-      { key: "B", text: "A tendência em x = 4 é 7, mesmo sem a função valer 7 ali" },
-      { key: "C", text: "A tendência em x = 4 é 4" },
-      { key: "D", text: "A função vale 7 em x = 4" },
+      { key: "A", text: String.raw`A função não pode ter tendência em \(x = 4\)` },
+      { key: "B", text: String.raw`A tendência em \(x = 4\) é \(7\), mesmo sem a função valer \(7\) ali` },
+      { key: "C", text: String.raw`A tendência em \(x = 4\) é \(4\)` },
+      { key: "D", text: String.raw`A função vale \(7\) em \(x = 4\)` },
     ],
     correct: "B",
     explanation:

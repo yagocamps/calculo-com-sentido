@@ -9,7 +9,7 @@ import type { ModuleState } from "@/components/trilhas/ModuleCard";
 import type { GlossarioEntry } from "@/data/glossario";
 import type { TrilhaModuloData } from "@/data/trilha-module";
 import { getModuleCheckpoint } from "@/data/checkpoints";
-import { isLessonAccessible } from "@/lib/aulas";
+import { isLessonAccessible, lessonDuration } from "@/lib/aulas";
 import { moduleStateTag } from "@/lib/progress-utils";
 import { cn } from "@/lib/utils";
 
@@ -122,7 +122,7 @@ export function ModuloPageContent({
                     <LessonRow
                       index={i + 1}
                       title={aula.title}
-                      duration={aula.duration}
+                      duration={lessonDuration(trilhaSlug, modulo.slug, aula)}
                       done={done}
                       available
                     />
@@ -136,7 +136,7 @@ export function ModuloPageContent({
                     <LessonRow
                       index={i + 1}
                       title={aula.title}
-                      duration={aula.duration}
+                      duration={lessonDuration(trilhaSlug, modulo.slug, aula)}
                       done={false}
                       available={false}
                     />

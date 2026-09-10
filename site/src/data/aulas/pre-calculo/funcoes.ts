@@ -674,6 +674,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
           dica: "Multiplique por \\(\\frac{1}{2}\\) duas vezes.",
           resolucao: "\\(80 \\to 40\\) (4h) \\(\\to 20\\) (8h).",
           resposta: "20 mg",
+          answerCheck: { unit: "mg" },
           interpretacao: "Decaimento exponencial: metade, depois metade da metade.",
           erroComum: "Subtrair sempre 40 mg em vez de multiplicar por \\(\\frac{1}{2}\\).",
         },
@@ -945,6 +946,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
           resolucao:
             "\\[\\begin{aligned} 2{,}5x + 6 &= 21 \\\\ 2{,}5x &= 15 \\\\ x &= 6 \\end{aligned}\\]",
           resposta: "6 km",
+          answerCheck: { unit: "km" },
           interpretacao: "Verificando: \\(2{,}5 \\cdot 6 + 6 = 21\\). Confere.",
           erroComum: "Dividir 21 por 2,5 sem tirar a bandeirada.",
         },

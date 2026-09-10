@@ -42,6 +42,36 @@ test("rounding requires an explicit tolerance", () => {
   }
 });
 
+test("the site's own LaTeX decimal is recognised", () => {
+  for (const [attempt, answer] of [
+    ["0,5", "\\(0{,}5\\)"], ["0.5", "\\(0{,}5\\)"], ["1/2", "\\(0{,}5\\)"],
+    ["\\(0{,}5\\)", "0,5"], ["2,40", "\\(2{,}40\\)"],
+  ]) assert.equal(checkAnswer(attempt, answer), "correct", `${attempt} = ${answer}`);
+  assert.equal(checkAnswer("0,6", "\\(0{,}5\\)"), "incorrect");
+});
+
+test("a declared unit becomes optional, never interchangeable", () => {
+  // Declarada: vale com e sem a unidade.
+  for (const [attempt, answer, unit] of [
+    ["9", "\\(9\\) km", "km"], ["9 km", "\\(9\\) km", "km"], ["9km", "\\(9\\) km", "km"],
+    ["6", "\\(6\\) m/s", "m/s"], ["165", "\\(165\\) kWh", "kWh"],
+    ["0,5", "\\(0{,}5\\) m", "m"],
+  ] as [string, string, string][]) {
+    assert.equal(checkAnswer(attempt, answer, { unit }), "correct", `${attempt} = ${answer}`);
+  }
+  // Outra unidade nunca é aceita, mesmo com a unidade declarada.
+  for (const [attempt, answer, unit] of [
+    ["9 cm", "\\(9\\) km", "km"], ["9 m", "\\(9\\) km", "km"],
+    ["6 km/h", "\\(6\\) m/s", "m/s"],
+  ] as [string, string, string][]) {
+    assert.notEqual(checkAnswer(attempt, answer, { unit }), "correct", `${attempt} ≠ ${answer}`);
+  }
+  // Número errado continua errado.
+  assert.equal(checkAnswer("8 km", "\\(9\\) km", { unit: "km" }), "incorrect");
+  // Sem declarar a unidade, o comportamento conservador permanece.
+  assert.notEqual(checkAnswer("9", "\\(9\\) km"), "correct");
+});
+
 test("empty, undefined, unsupported and hostile expressions are not auto-approved", () => {
   for (const [attempt, answer] of [
     ["", "0"], ["\\(\\)", "\\(\\)"], ["1/0", "1/0"],
