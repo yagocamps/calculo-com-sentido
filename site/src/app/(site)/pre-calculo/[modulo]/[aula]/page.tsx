@@ -2,6 +2,7 @@ import { AulaEmBreve } from "@/components/aulas/AulaEmBreve";
 import { AulaView } from "@/components/aulas/AulaView";
 import { getAllAulaParams, getAula, moduloPath } from "@/data/pre-calculo";
 import { getAulaContent } from "@/lib/aulas";
+import { lessonMetadata } from "@/lib/lesson-seo";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -15,7 +16,7 @@ export async function generateMetadata({
 }) {
   const { modulo, aula } = await params;
   const content = getAulaContent("pre-calculo", modulo, aula);
-  if (content) return { title: content.meta.title };
+  if (content) return lessonMetadata(content, "pre-calculo", aula);
   const data = getAula(modulo, aula);
   if (!data) return { title: "Aula" };
   return { title: `${data.aula.title} · Pré-Cálculo` };

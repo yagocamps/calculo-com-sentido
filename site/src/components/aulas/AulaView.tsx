@@ -24,6 +24,7 @@ import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
 import { Tag } from "@/components/ui/Tag";
 import type { AulaContent } from "@/data/aulas/types";
+import { durationLabel } from "@/lib/reading-time";
 import { glossario, type GlossarioEntry } from "@/data/glossario";
 import { exercicioTemas, exercicios } from "@/data/exercicios";
 import { demonstrationsForLesson } from "@/data/demonstracoes";
@@ -171,7 +172,7 @@ export function AulaView({
               {meta.title}
             </h1>
             <div className="mt-3 flex flex-wrap items-center gap-3 text-[13px] text-ink-muted">
-              <span>⏱ {meta.duration} de leitura</span>
+              <span>⏱ {durationLabel(content)} de leitura</span>
               {meta.readingNotes.map((note) => (
                 <span key={note} className="flex items-center gap-3">
                   <span className="h-1 w-1 rounded-full bg-ink-subtle" />

@@ -4,6 +4,7 @@ import { preCalculoPhase2Catalog } from "@/data/aulas/pre-calculo/fase2";
 export type PreCalculoAula = {
   slug: string;
   title: string;
+  /** Reserva: a duração exibida é calculada do conteúdo (ver `lessonDuration`). */
   duration: string;
   /** Aula com conteúdo completo (Etapa 5+) */
   available: boolean;

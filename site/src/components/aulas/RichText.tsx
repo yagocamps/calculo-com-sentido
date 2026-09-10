@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import katex from "katex";
 import { GlossaryInline } from "@/components/glossario/GlossaryInline";
-import { addAlignedRowGap, ariaFromLatex } from "@/lib/katex-format";
+import { ariaFromLatex, prepareForKatex } from "@/lib/katex-format";
 import type { GlossarioEntry } from "@/data/glossario";
 
 export type GlossaryHighlight = {
@@ -80,7 +80,7 @@ function highlightTerms(
  */
 
 function renderMath(latex: string, display: boolean, key: number): ReactNode {
-  const html = katex.renderToString(addAlignedRowGap(latex), {
+  const html = katex.renderToString(prepareForKatex(latex), {
     throwOnError: false,
     displayMode: display,
     output: "htmlAndMathml",

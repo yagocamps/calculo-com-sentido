@@ -1,5 +1,5 @@
 import katex from "katex";
-import { addAlignedRowGap } from "@/lib/katex-format";
+import { prepareForKatex } from "@/lib/katex-format";
 
 /**
  * Renderiza uma fórmula com KaTeX de forma acessível.
@@ -31,7 +31,7 @@ export function MathFormula({
     );
   }
 
-  const html = katex.renderToString(addAlignedRowGap(latex), {
+  const html = katex.renderToString(prepareForKatex(latex), {
     throwOnError: false,
     displayMode: display,
     output: "htmlAndMathml",

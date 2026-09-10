@@ -18,6 +18,40 @@ export function addAlignedRowGap(latex: string): string {
   );
 }
 
+/**
+ * Notação trigonométrica em português. O conteúdo é escrito com os comandos
+ * padrão do LaTeX (`\sin`, `\tan`) — que é o que `ariaFromLatex` entende e lê
+ * como "seno de", "tangente de" — e a troca acontece só na hora de renderizar.
+ *
+ * Sem isto o site mostrava "sin x" na aula de trigonometria e "sen(30°)" no
+ * teste de nível, duas grafias para a mesma função. Prova e livro no Brasil
+ * escrevem "sen" e "tg"; para voltar a "sin"/"tan", basta esvaziar este mapa.
+ */
+const NOTACAO_PT_BR: Record<string, string> = {
+  sin: "sen",
+  tan: "tg",
+  cot: "cotg",
+  csc: "cossec",
+};
+
+const COMANDOS_TRIG = new RegExp(
+  `\\\\(${Object.keys(NOTACAO_PT_BR).join("|")})(?![a-zA-Z])`,
+  "g",
+);
+
+/** Reescreve os comandos trigonométricos para a grafia usada no Brasil. */
+export function trigNotationPtBr(latex: string): string {
+  return latex.replace(COMANDOS_TRIG, (_full, cmd: string) => `\\operatorname{${NOTACAO_PT_BR[cmd]}}`);
+}
+
+/**
+ * Único preparo aplicado antes de todo render KaTeX do site: espaçamento das
+ * quebras em `aligned` e a grafia trigonométrica em português.
+ */
+export function prepareForKatex(latex: string): string {
+  return trigNotationPtBr(addAlignedRowGap(latex));
+}
+
 /** Símbolos que viram uma palavra só, sem argumento. */
 const ARIA_SIMBOLOS: Record<string, string> = {
   to: " tende a ",
