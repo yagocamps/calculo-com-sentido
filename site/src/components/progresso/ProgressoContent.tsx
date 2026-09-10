@@ -84,7 +84,7 @@ export function ProgressoContent() {
               Meu progresso
             </h1>
             <p className="mt-2 text-sm text-ink-muted">
-              Seus dados ficam salvos neste navegador (localStorage).
+              Seu progresso, favoritos, anotações e revisões ficam apenas neste navegador. Não há conta nem sincronização automática entre dispositivos. Limpar os dados do navegador pode apagá-los; use Exportar para guardar uma cópia e Importar para levá-la a outro dispositivo.
             </p>
             {/* Streak suave: só celebra, nunca cobra (público já chega ansioso). */}
             {dash.studyDaysThisWeek > 0 && (

@@ -27,7 +27,7 @@ export function PageShell({
 
   return (
     <div className="flex h-screen overflow-hidden bg-bg text-ink print:block print:h-auto print:overflow-visible">
-      <a href="#main-content" className="sr-only">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[100] focus:rounded-lg focus:bg-surface focus:px-4 focus:py-3 focus:text-ink focus:ring-2 focus:ring-terracotta">
         Pular para o conteúdo
       </a>
       <CommandPalette />
@@ -50,6 +50,7 @@ export function PageShell({
         />
         <main
           id="main-content"
+          tabIndex={-1}
           className={cn(
             "flex-1 overflow-x-clip overflow-y-auto px-4 pb-9 pt-7 md:px-9 print:overflow-visible",
             className,

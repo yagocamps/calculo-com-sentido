@@ -7,6 +7,7 @@ import { TypeTag } from "@/components/exercicios/TypeTag";
 import { Button } from "@/components/ui/Button";
 import { PedagogicalLevelTag } from "@/components/ui/Tag";
 import Link from "next/link";
+import { exercisePath } from "@/lib/exercise-url";
 import { exercicios, type Exercicio } from "@/data/exercicios";
 import { checkAnswer, type CheckResult } from "@/lib/answer-check";
 import type { AdaptiveAnswer } from "@/lib/adaptive-session";
@@ -154,6 +155,7 @@ export function ExercicioDetail({
 
   return (
     <article className="rounded-3 border border-border bg-surface p-7 shadow-sm">
+      <Link href={exercisePath(exercicio.id)} className="mb-4 inline-block text-sm text-sky-ink underline">Link permanente deste exercício</Link>
       <header className="mb-4 flex flex-wrap justify-between gap-4 border-b border-border-soft pb-4">
         <div>
           <div className="flex flex-wrap items-center gap-2">

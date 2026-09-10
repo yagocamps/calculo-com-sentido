@@ -7,6 +7,8 @@ import {
   preCalculoModulos,
 } from "@/data/pre-calculo";
 import { getSiteUrl } from "@/lib/site";
+import { exercicios } from "@/data/exercicios";
+import { exercisePath } from "@/lib/exercise-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
@@ -68,5 +70,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  entries.push(...exercicios.map(e => ({ url: `${base}${exercisePath(e.id)}`, changeFrequency: "monthly" as const, priority: 0.5 })));
   return entries;
 }

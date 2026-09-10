@@ -318,6 +318,19 @@ export function AulaView({
               >
                 {content.exemplo.situacao}
               </RichText>
+              {content.exemplo.diagram === "growing-circle" && (
+                <figure className="mt-5 rounded-xl border border-border bg-surface p-4">
+                  <svg viewBox="0 0 400 200" role="img" aria-label="Círculo em expansão. O segmento vai do centro até a borda e representa o raio variável. O contorno tracejado mostra um instante posterior." className="mx-auto w-full max-w-sm">
+                    <circle cx="150" cy="100" r="80" fill="none" stroke="var(--sky-ink)" strokeWidth="2" strokeDasharray="6 5" />
+                    <circle cx="150" cy="100" r="60" fill="var(--sky-soft)" stroke="var(--sky-ink)" strokeWidth="3" />
+                    <line x1="150" y1="100" x2="210" y2="100" stroke="var(--ink)" strokeWidth="3" />
+                    <circle cx="150" cy="100" r="4" fill="var(--ink)" />
+                    <text x="174" y="90" fill="var(--ink)" fontSize="14">raio</text>
+                    <text x="245" y="60" fill="var(--ink)" fontSize="14">depois</text>
+                  </svg>
+                  <figcaption className="text-sm text-ink-muted"><RichText>{String.raw`O raio \(r(t)\) e a área \(A(t)\) mudam juntos. O tracejado representa a expansão, sem fixar os valores antes da derivação.`}</RichText></figcaption>
+                </figure>
+              )}
             </Section>
           </div>
 

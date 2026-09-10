@@ -446,6 +446,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       title: "Roteiro em 5 passos",
       paragraphs: [
         "1) Desenho e variável x. 2) Restrição → relação. 3) Função objetivo (área, lucro…). 4) Domínio. 5) Derivada, críticos, comparar valores.",
+        "Teste da segunda derivada: para uma função duas vezes derivável perto de um ponto interior \\(c\\), se \\(f'(c)=0\\) e \\(f''(c)>0\\), há mínimo local; se \\(f''(c)<0\\), há máximo local. Se \\(f''(c)=0\\), o teste é inconclusivo. Para um máximo absoluto, compare todos os candidatos e as bordas que pertencem ao domínio.",
       ],
       formula: "objetivo(x) → derive → teste críticos + bordas",
       callout: "Unidades e frase final valem pontos.",
@@ -460,7 +461,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
     },
     exemplo: {
       title: "Campo retangular",
-      situacao: "Cercar 40 m de tela contra um muro (sem tela no muro). Largura \\(x\\), comprimento \\(y\\). Área máxima?",
+      situacao: "Cercar 40 m de tela contra um muro, sem colocar tela no muro. Chame de \\(x\\) o lado paralelo ao muro e de \\(y\\) cada um dos dois lados perpendiculares. Qual é a área máxima?",
     },
     passos: {
       title: "Modelar",
@@ -469,12 +470,13 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         { title: "Área", detail: "\\[A=xy = \\frac{x(40-x)}{2} = 20x - \\frac{x^2}{2}\\]" },
         { title: "Domínio", detail: "\\(x \\in (0,40)\\)." },
         { title: "A′=0", detail: "\\(20-x=0 \\Rightarrow x=20,\\ y=10,\\ A=200\\) m²." },
+        { title: "Confirmar o máximo", detail: "\\(A''(x)=-1<0\\) e \\(A'(20)=0\\): há máximo local. Além disso, \\(A'>0\\) antes de \\(20\\) e \\(A'<0\\) depois, em todo o domínio \\((0,40)\\). Logo é o máximo absoluto entre os retângulos permitidos." },
       ],
     },
     interpretacao: {
       title: "Resposta",
       paragraphs: [
-        "Retângulo 20 m perpendicular ao muro, 10 m paralelo — área máxima 200 m².",
+        "Retângulo com 20 m paralelos ao muro e 10 m perpendiculares — área máxima de 200 m². A tela cobre um lado de 20 m e dois de 10 m.",
         "Sempre verifique se \\(x=20\\) respeita contexto.",
       ],
     },

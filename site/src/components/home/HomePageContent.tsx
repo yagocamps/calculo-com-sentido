@@ -15,7 +15,7 @@ import {
   homeSocialProof,
   homeSolution,
 } from "@/data/home";
-import { countPublishedLessons } from "@/lib/progress-utils";
+import { catalogStats } from "@/lib/catalog-stats";
 import { cn } from "@/lib/utils";
 
 export function HomePageContent() {
@@ -82,9 +82,10 @@ function HeroSection() {
 }
 
 function SocialProofSection() {
-  const published = countPublishedLessons();
+  const published = catalogStats.publishedLessonCount;
   const bullets = [
     `${published} aulas com conteúdo publicado nas trilhas`,
+    `${catalogStats.moduleCount} módulos e ${catalogStats.exerciseCount} exercícios`,
     ...homeSocialProof,
   ];
   return (

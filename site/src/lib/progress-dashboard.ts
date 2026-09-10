@@ -25,6 +25,7 @@ import {
   type TesteNivelStored,
 } from "@/lib/progress";
 import { isLessonAccessible } from "@/lib/aulas";
+import { buildLearningEvidence, prerequisiteRecovery } from "@/lib/learning-evidence";
 import { getLearningItem } from "@/lib/learning-assessments";
 import { normalizeStudyPlan, type StudyPlanSession } from "@/lib/study-plan";
 import { isDue, type ReviewMap } from "@/lib/review";
@@ -125,6 +126,7 @@ export type StudyPlanStep = StudyPlanSession & {
 };
 
 export type ProgressDashboard = {
+  learningEvidence: ReturnType<typeof buildLearningEvidence>;
   savedAssessmentCount: number;
   trilhaPreCalculoPercent: number;
   trilhaCalculo1Percent: number;
@@ -627,6 +629,12 @@ function getSkillRecommendation(
   reviewQueue: ReviewQueueItem[],
   nextLesson: NextLessonInfo | null,
 ): SkillRecommendation | null {
+  const recovery = prerequisiteRecovery(state);
+  if (recovery) return {
+    skill: recovery.prerequisite.title, title: `Reforce ${recovery.prerequisite.title}`,
+    reason: `Há erros registrados nesta base e em ${recovery.current.title}, que depende dela. Revise este pré-requisito antes de retomar o assunto seguinte.`,
+    href: recovery.prerequisite.href, source: "exercise-errors",
+  };
   const latest = new Map<string, ProgressState["attemptHistory"][number]>();
   for (const event of state.attemptHistory) latest.set(event.exerciseId, event);
   const lessonError = [...latest.values()].sort((a, b) => Date.parse(b.attemptedAt) - Date.parse(a.attemptedAt))
@@ -871,6 +879,7 @@ export function buildProgressDashboard(
 
   return {
     trilhaPreCalculoPercent,
+    learningEvidence: buildLearningEvidence(state),
     trilhaCalculo1Percent,
     trilhaCombinedPercent,
     publishedLessonsTotal: countPublishedLessons(),

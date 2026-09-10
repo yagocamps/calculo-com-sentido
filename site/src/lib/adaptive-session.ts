@@ -1,5 +1,6 @@
 import { exercicios, type Exercicio } from "@/data/exercicios";
 import { pedagogicalLevelOf } from "@/lib/exercicios";
+import { exerciseSkillIds } from "@/lib/learning-evidence";
 
 export type AdaptiveAnswer = {
   exerciseId: string;
@@ -38,8 +39,11 @@ export function nextAdaptiveExercise(session: AdaptiveSession, completed: string
   if (!answer || !current) return null;
   const target = Math.max(1, Math.min(5, pedagogicalLevelOf(current) + (answer.outcome === "correct" ? 1 : -1)));
   const seen = new Set(session.answers.map((a) => a.exerciseId));
+  const currentSkills = exerciseSkillIds(current.id);
+  const sharedSkill = (id: string) => exerciseSkillIds(id).some(s => currentSkills.includes(s));
   return bank.filter((e) => e.temaSlug === session.temaSlug && !seen.has(e.id))
     .sort((a, b) => Math.abs(pedagogicalLevelOf(a) - target) - Math.abs(pedagogicalLevelOf(b) - target) ||
+      Number(sharedSkill(b.id)) - Number(sharedSkill(a.id)) ||
       Number(completed.includes(a.id)) - Number(completed.includes(b.id)) || a.id.localeCompare(b.id))[0] ?? null;
 }
 

@@ -69,12 +69,13 @@ export function getLastTestResult(): TesteNivelResult | null {
   const p = getProgress();
   if (!p.testeNivel) return null;
   const recommendation = getRecommendation(p.testeNivel.scorePercent);
+  const storedScores = Object.values(p.testeNivel.skillScores ?? {});
+  const total = storedScores.length ? storedScores.reduce((sum,s) => sum+s.total,0) : testQuestions.length;
+  const correctCount = storedScores.length ? storedScores.reduce((sum,s) => sum+s.correct,0) : Math.round(p.testeNivel.scorePercent / 100 * total);
   return {
     scorePercent: p.testeNivel.scorePercent,
-    correctCount: Math.round(
-      (p.testeNivel.scorePercent / 100) * testQuestions.length,
-    ),
-    total: testQuestions.length,
+    correctCount,
+    total,
     completedAt: p.testeNivel.completedAt,
     recommendation,
     skillScores: p.testeNivel.skillScores ?? ({} as ReturnType<typeof scoreByTopic>),

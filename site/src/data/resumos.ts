@@ -347,7 +347,8 @@ export const resumos: Resumo[] = [
       "Primeiro passo: tente substituir \\(x = a\\).",
       "Se der \\(\\frac{0}{0}\\), fatore e simplifique.",
       "Limite bilateral só existe se os laterais coincidem.",
-      "Denominador \\(\\to 0\\) não conclui nada sozinho: olhe também o numerador. Se ele não tende a zero, o limite é infinito (assíntota vertical); se tende a zero, é \\(\\frac{0}{0}\\) — fatore e simplifique, e o limite pode ser finito.",
+      "Denominador tendendo a zero exige investigar numerador, domínio e limites laterais. Se o numerador tende a uma constante não nula, confira o sinal de cada lado antes de concluir um limite infinito. Se ambos tendem a zero, a forma \\(\\frac{0}{0}\\) pode levar a limite finito, infinito ou inexistente.",
+      "Em \\(1/x\\), os limites em zero são \\(-\\infty\\) pela esquerda e \\(+\\infty\\) pela direita: há assíntota vertical, mas não há um único limite bilateral. Em \\(1/x^2\\), ambos tendem a \\(+\\infty\\).",
       "Se depois de simplificar os laterais discordarem em sinal, o limite bilateral não existe.",
       "No infinito com graus iguais: razão dos coeficientes líderes (assíntota horizontal).",
     ],
@@ -367,7 +368,7 @@ export const resumos: Resumo[] = [
       },
       {
         faz: "Ver denominador \\(\\to 0\\) e responder \"infinito\" na hora.",
-        correto: "Cheque o numerador: se ele também vai a zero, é \\(\\tfrac{0}{0}\\) e o limite pode ser finito.",
+        correto: "Cheque numerador e laterais. A forma \\(\\tfrac{0}{0}\\) não decide o resultado; mesmo com numerador não nulo, \\(1/x\\) tem limites laterais de sinais diferentes em zero.",
       },
       {
         faz: "Achar que o gráfico nunca pode cruzar a assíntota.",

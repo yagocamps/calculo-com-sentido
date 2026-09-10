@@ -133,6 +133,7 @@ export type AulaContent = {
   exemplo: {
     title: string;
     situacao: string;
+    diagram?: "growing-circle";
   };
   passos: {
     title: string;

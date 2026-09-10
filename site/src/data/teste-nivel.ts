@@ -3,6 +3,7 @@ export type TopicId =
   | "fracoes"
   | "potencias"
   | "equacoes"
+  | "fatoracao"
   | "funcoes"
   | "graficos"
   | "trigonometria"
@@ -28,6 +29,7 @@ export const testTopics: { id: TopicId; label: string }[] = [
   { id: "fracoes", label: "Frações" },
   { id: "potencias", label: "Potências e raízes" },
   { id: "equacoes", label: "Equações" },
+  { id: "fatoracao", label: "Fatoração" },
   { id: "funcoes", label: "Funções" },
   { id: "graficos", label: "Gráficos" },
   { id: "trigonometria", label: "Trigonometria" },
@@ -35,6 +37,18 @@ export const testTopics: { id: TopicId; label: string }[] = [
 ];
 
 export const testQuestions: TestQuestion[] = [
+  {
+    id: "q-fatoracao-1", topic: "fatoracao", topicLabel: "Fatoração",
+    question: String.raw`Qual fatoração de \(x^2-9\) é válida para todo real?`,
+    options: [{ key: "A", text: String.raw`\((x-3)^2\)` }, { key: "B", text: String.raw`\((x-3)(x+3)\)` }, { key: "C", text: String.raw`\(x(x-9)\)` }, { key: "D", text: String.raw`\((x+3)^2\)` }],
+    correct: "B", explanation: String.raw`Diferença de quadrados: \(x^2-3^2=(x-3)(x+3)\). O produto elimina os termos cruzados.`,
+  },
+  {
+    id: "q-fatoracao-2", topic: "fatoracao", topicLabel: "Fatoração",
+    question: String.raw`Como simplificar \((x^2-x)/x\) preservando o domínio?`,
+    options: [{ key: "A", text: String.raw`\(x-1\), para todo real` }, { key: "B", text: String.raw`\(x\), para \(x\ne0\)` }, { key: "C", text: String.raw`\(x-1\), para \(x\ne0\)` }, { key: "D", text: String.raw`\(x^2-1\), para \(x\ne0\)` }],
+    correct: "C", explanation: String.raw`Fatore \(x^2-x=x(x-1)\). O fator \(x\) só pode ser cancelado quando \(x\ne0\); a restrição permanece.`,
+  },
   {
     id: "q01",
     topic: "operacoes",
@@ -495,6 +509,7 @@ export function scoreByTopic(
 /** Onde estudar cada tópico do teste. Serve para transformar "você foi mal em
  * frações" num link concreto, em vez de só uma nota. */
 export const topicoParaModulo: Record<TopicId, { label: string; href: string; firstLessonHref: string; exerciseTemaSlug: string }> = {
+  fatoracao: { label: "Fatoração", href: "/pre-calculo/fundamentos", firstLessonHref: "/pre-calculo/fundamentos/fatoracao", exerciseTemaSlug: "fundamentos" },
   operacoes: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos", firstLessonHref: "/pre-calculo/fundamentos/operacoes-basicas", exerciseTemaSlug: "fundamentos" },
   fracoes: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos", firstLessonHref: "/pre-calculo/fundamentos/fracoes", exerciseTemaSlug: "fundamentos" },
   potencias: { label: "Fundamentos matemáticos", href: "/pre-calculo/fundamentos", firstLessonHref: "/pre-calculo/fundamentos/potenciacao", exerciseTemaSlug: "fundamentos" },
@@ -505,7 +520,7 @@ export const topicoParaModulo: Record<TopicId, { label: string; href: string; fi
   limites: { label: "Preparação para limites", href: "/pre-calculo/preparacao-limites", firstLessonHref: "/calculo-1/limites/ideia-de-limite", exerciseTemaSlug: "limites" },
 };
 
-/** Tópicos com menos de 60% de acerto, do mais fraco para o menos fraco.
+/** Tópicos com menos de 60% de acerto, das bases para suas aplicações.
  * É a lista de "estude isto primeiro" — mais útil que a nota global, porque
  * a nota esconde em qual assunto está o buraco. */
 export function topicosParaReforcar(
@@ -524,5 +539,5 @@ export function topicosParaReforcar(
       };
     })
     .filter((t) => t.total > 0 && t.correct / t.total < 0.6)
-    .sort((a, b) => a.correct / a.total - b.correct / b.total);
+    .sort((a, b) => testTopics.findIndex(t => t.id === a.topic) - testTopics.findIndex(t => t.id === b.topic));
 }

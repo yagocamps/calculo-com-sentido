@@ -431,7 +431,7 @@ const specs: CurriculumLessonSpec[] = [
     result: "Em algum ponto, a inclinação da tangente iguala a inclinação da secante do intervalo.",
     pitfall: "Usar o TVM em ponto de descontinuidade ou não derivabilidade.",
     practice: [
-      ["Qual a taxa média de \\(x^2\\) em \\([0,2]\\)?", "\\((4-0)/(2-0))=2\\).", "2", "O TVM procura uma tangente com essa inclinação."],
+      ["Qual a taxa média de \\(x^2\\) em \\([0,2]\\)?", "\\((4-0)/(2-0)=2\\).", "2", "O TVM procura uma tangente com essa inclinação."],
       ["Rolle exige qual relação adicional?", "\\(f(a)=f(b)\\).", "\\(f(a)=f(b)\\)", "A taxa média então é zero."],
     ],
   }),

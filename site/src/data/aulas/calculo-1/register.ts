@@ -1,4 +1,5 @@
 import type { AulaContent } from "@/data/aulas/types";
+import { applyPdfAudit } from "@/data/aulas/auditoria-pdf";
 import { antesDoCalculoAulas } from "@/data/aulas/calculo-1/antes-do-calculo";
 import { funcoesParaCalculoAulas } from "@/data/aulas/calculo-1/funcoes-para-calculo";
 import { limitesAulas } from "@/data/aulas/calculo-1/limites";
@@ -23,7 +24,8 @@ export function buildCalculo1Registry(): Record<string, AulaContent> {
 
   for (const { modulo, aulas } of bundles) {
     for (const [aulaSlug, content] of Object.entries(aulas)) {
-      entries[`calculo-1/${modulo}/${aulaSlug}`] = content;
+      const key = `calculo-1/${modulo}/${aulaSlug}`;
+      entries[key] = applyPdfAudit(key, content);
     }
   }
 

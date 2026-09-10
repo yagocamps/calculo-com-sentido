@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { ProgressDashboard } from "@/lib/progress-dashboard";
 import { configureStudyPlan, updateStudyPlanSession } from "@/lib/progress";
+import { getLearningItem } from "@/lib/learning-assessments";
 
 const sourceLabel = {
   "exercise-errors": "Com base nos seus erros",
@@ -35,6 +36,23 @@ export function StudentExperiencePanel({
 
   return (
     <div className="space-y-5">
+      <Card>
+        <h2 className="font-serif text-xl font-medium">Estudo e domínio</h2>
+        <p className="mt-2 text-sm text-ink-muted">Marcar uma aula registra estudo. O domínio exige acertos verificados em pelo menos três questões distintas, novo acerto após 24 horas, pelo menos 80% nas últimas dez tentativas e nenhum erro pendente. Autoavaliações não certificam domínio.</p>
+        <p className="mt-3 font-semibold">{dash.learningEvidence.filter(s => s.state === "Dominado").length} assuntos dominados · {dash.learningEvidence.filter(s => s.state === "Estudado").length} estudados</p>
+        <details className="mt-4">
+          <summary className="cursor-pointer font-semibold">Ver evidências por assunto</summary>
+          <ul className="mt-3 divide-y divide-border">
+            {dash.learningEvidence.map(skill => <li key={skill.id} className="py-3 text-sm">
+              <Link href={skill.href} className="font-semibold text-sky-ink underline">{skill.title}</Link>
+              <p>{skill.state} · {skill.accuracy === null ? "Sem tentativas verificadas" : `${skill.accuracy}% nas tentativas recentes · ${skill.correctCount} questões com último resultado correto`}</p>
+              {skill.state === "Estudado" && <p className="text-ink-muted">{skill.reviewed ? "Revisão posterior registrada." : "Ainda falta um acerto em revisão após 24 horas."} {skill.unresolved > 0 && `${skill.unresolved} questões com erro pendente.`}</p>}
+              {skill.prerequisites.length > 0 && <p className="text-ink-muted">Base: {skill.prerequisites.map((id, index) => <span key={id}>{index > 0 && " · "}<Link className="underline" href={`/${id}`}>{dash.learningEvidence.find(s => s.id === id)?.title ?? "Revisar pré-requisito"}</Link></span>)}</p>}
+              {skill.dueErrors.length > 0 && <div className="mt-1">Hora de revisitar: {skill.dueErrors.map((id,index) => { const item = getLearningItem(id); return item && <span key={id}>{index > 0 && " · "}<Link className="text-terracotta underline" href={item.href}>{item.title}</Link></span>; })}</div>}
+            </li>)}
+          </ul>
+        </details>
+      </Card>
       {recommendation && (
         <Card className="border-l-4 border-l-terracotta">
           <p className="text-[11px] font-bold uppercase tracking-wider text-terracotta">

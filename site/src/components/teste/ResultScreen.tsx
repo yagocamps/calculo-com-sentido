@@ -5,6 +5,7 @@ import { Tag } from "@/components/ui/Tag";
 import {
   scoreByTopic,
   testTopics,
+  topicoParaModulo,
   topicosParaReforcar,
   type OptionKey,
 } from "@/data/teste-nivel";
@@ -128,14 +129,14 @@ export function ResultScreen({
             Por onde começar
           </h3>
           <p className="mt-1 text-sm text-ink-muted">
-            Você acertou menos da metade nestes assuntos. Eles são o caminho mais
-            curto para destravar o resto — comece por aqui, na ordem.
+            Estes assuntos ficaram abaixo de 60% neste teste. Revise somente estas
+            bases, na ordem sugerida, e depois retome sua trilha. Um teste curto orienta a revisão; não certifica domínio.
           </p>
           <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
             {modulosSugeridos.map((t, i) => (
               <a
                 key={t.topic}
-                href={t.modulo.href}
+                href={topicoParaModulo[t.topic].firstLessonHref}
                 className="flex items-baseline gap-3 rounded-2 border border-border bg-surface p-4 transition-colors hover:border-terracotta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta"
               >
                 <span className="font-serif text-sm italic text-terracotta">
