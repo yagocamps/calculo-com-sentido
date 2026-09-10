@@ -49,10 +49,10 @@ export function ExpressTrackContent() {
           </h1>
           <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-ink-muted">
             Este é o corte mínimo para sobreviver a limites e derivadas:{" "}
-            {allLessons.length} aulas (~{readingHours.toLocaleString("pt-BR")}h
-            de leitura, uns 10h de estudo com exercícios). Não substitui a
-            trilha completa — mas resolve a urgência. Depois da prova, volta
-            com calma.
+            {allLessons.length} aulas, cerca de{" "}
+            {readingHours.toLocaleString("pt-BR")}h somando leitura e os
+            exercícios guiados de cada aula. Não substitui a trilha completa —
+            mas resolve a urgência. Depois da prova, volta com calma.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <Tag tone="sage">

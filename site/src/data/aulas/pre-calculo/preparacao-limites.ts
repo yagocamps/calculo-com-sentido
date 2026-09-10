@@ -804,6 +804,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
           dica: "\\(s(2{,}001) = 4{,}004001\\).",
           resolucao: "\\(\\frac{4{,}004001 - 4}{0{,}001} = 4{,}001\\) m/s.",
           resposta: "4,001 m/s",
+          answerCheck: { unit: "m/s" },
           interpretacao: "Cada vez mais perto de 4 m/s.",
           erroComum: "Errar o quadrado de \\(2{,}001\\).",
         },

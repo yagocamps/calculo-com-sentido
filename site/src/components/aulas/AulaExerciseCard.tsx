@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { RichText } from "@/components/aulas/RichText";
 import { Tag } from "@/components/ui/Tag";
 import type { AulaExercise } from "@/data/aulas/types";
-import { type CheckResult } from "@/lib/answer-check";
+import { answerHint, type CheckResult } from "@/lib/answer-check";
 import { clearGuidedAnswer, getProgress, submitGuidedAttempt } from "@/lib/progress";
 import { guidedAnchor, guidedAttemptId } from "@/lib/learning-assessments";
 import { cn } from "@/lib/utils";
@@ -93,10 +93,7 @@ export function AulaExerciseCard({ exercise, lessonPathId }: { exercise: AulaExe
         </button>
       </div>
 
-      <p className="mt-2 text-xs text-ink-subtle">
-        Use ponto ou vírgula para decimais, sem separador de milhar. Preserve símbolos e unidades.
-        {exercise.answerCheck?.absoluteTolerance !== undefined && ` Tolerância absoluta: ${exercise.answerCheck.absoluteTolerance}.`}
-      </p>
+      <p className="mt-2 text-xs text-ink-subtle">{answerHint(exercise.answerCheck)}</p>
       {saveError && <p role="alert" className="mt-2 text-xs text-amber-ink">Resposta avaliada, mas não foi possível salvar neste navegador. Tente verificar novamente quando houver armazenamento disponível.</p>}
       {result && !saveError && <p role="status" className="mt-2 text-xs text-ink-muted">Resposta salva · {result === "manual" ? "aguardando sua comparação com o gabarito" : method === "self-assessment" ? "autoavaliação" : "conferência automática"}. Reenviar a mesma resposta não cria outra tentativa.</p>}
       {result && <button type="button" className="mt-2 text-xs font-semibold text-terracotta underline" onClick={() => {

@@ -114,9 +114,11 @@ function ResumoCard({ resumo }: { resumo: Resumo }) {
       <SectionLabel>Fórmulas</SectionLabel>
       <div className="mt-2 grid gap-2.5 sm:grid-cols-2">
         {resumo.formulas.map((f, i) => (
+          // `min-w-0` deixa o card encolher dentro do grid e `overflow-x-auto`
+          // dá rolagem à fórmula longa em vez de cortá-la no celular.
           <div
             key={`${slugify(resumo.slug)}-f${i}`}
-            className="flex items-center justify-center rounded-2 border border-border-soft bg-surface-soft px-4 py-3 text-center"
+            className="min-w-0 overflow-x-auto rounded-2 border border-border-soft bg-surface-soft px-4 py-3 text-center"
           >
             <RichText>{`\\[${f}\\]`}</RichText>
           </div>

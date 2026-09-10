@@ -4,6 +4,13 @@ export type CheckResult = "correct" | "incorrect" | "manual";
 export type AnswerCheckOptions = {
   /** Absolute error in the answer's units. Omit for exact numeric comparison. */
   absoluteTolerance?: number;
+  /**
+   * Unidade que acompanha o gabarito ("km", "m/s", "kWh"). Declarar aqui torna
+   * a unidade opcional na resposta do aluno: "9" e "9 km" valem para o gabarito
+   * "\\(9\\) km". Sem esta opção a unidade continua obrigatória — escrever outra
+   * unidade nunca é aceito, em nenhum dos dois casos.
+   */
+  unit?: string;
 };
 
 /** Remove presentation only. Never discard functions, constants, units or case. */
@@ -14,6 +21,10 @@ export function normalizeAnswer(value: string): string {
     text = text.slice(2, -2).trim();
   }
   return text
+    // `0{,}5` é a forma que o site usa para o decimal em LaTeX (a chave dá o
+    // espaçamento correto à vírgula). Sem esta linha o próprio gabarito do site
+    // deixa de ser reconhecido pela comparação numérica.
+    .replace(/\{,\}/g, ",")
     .replace(/−/g, "-")
     .replace(/\\(?:left|right)(?=[()\[\]{}|])/g, "")
     .replace(/\\dfrac\b/g, "\\frac")
@@ -91,10 +102,47 @@ function divide(top: Rational | null, bottom: Rational | null): Rational | null 
   return { numerator: top.numerator * bottom.denominator, denominator: top.denominator * bottom.numerator };
 }
 
+/**
+ * Instrução do campo de resposta. Fica junto das regras de conferência para que
+ * o que o aluno lê e o que o verificador aceita não saiam de sincronia.
+ */
+export function answerHint(options?: AnswerCheckOptions): string {
+  const parts = ["Use ponto ou vírgula para decimais, sem separador de milhar."];
+  const unit = options?.unit?.trim();
+  parts.push(
+    unit
+      ? `Preserve os símbolos; a unidade (${unit}) é opcional.`
+      : "Preserve símbolos e unidades.",
+  );
+  if (options?.absoluteTolerance !== undefined) {
+    parts.push(`Tolerância absoluta: ${options.absoluteTolerance}.`);
+  }
+  return parts.join(" ");
+}
+
+/**
+ * Retira a unidade declarada quando ela está no fim do texto e colada a um
+ * número. Devolve `null` quando não há o que retirar — inclusive quando o texto
+ * termina em outra unidade ("2 cm" com `unit: "m"`), para que uma unidade
+ * trocada nunca vire acerto.
+ */
+function withoutUnit(text: string, unit: string): string | null {
+  const trimmed = text.trim();
+  if (!trimmed.endsWith(unit)) return null;
+  const head = trimmed.slice(0, trimmed.length - unit.length).trim();
+  // `head` precisa terminar em algo que encerre um número; assim "2 km" com
+  // `unit: "m"` não vira "2 k", e "2cm" com `unit: "m"` não vira "2c".
+  if (!/[\d)}\]π∞%]$/u.test(head)) return null;
+  return head;
+}
+
 export function checkAnswer(attempt: string, answer: string, options: AnswerCheckOptions = {}): CheckResult {
   if (!attempt.trim() || !answer.trim() || attempt.length > 2000 || answer.length > 2000) return "manual";
-  const normalizedAttempt = normalizeAnswer(attempt);
-  const normalizedAnswer = normalizeAnswer(answer);
+  const unit = options.unit?.trim();
+  const attemptText = unit ? withoutUnit(attempt, unit) ?? attempt : attempt;
+  const answerText = unit ? withoutUnit(answer, unit) ?? answer : answer;
+  const normalizedAttempt = normalizeAnswer(attemptText);
+  const normalizedAnswer = normalizeAnswer(answerText);
   const a = rational(normalizedAttempt);
   const b = rational(normalizedAnswer);
   if (a && b) {

@@ -8,6 +8,7 @@ import {
   calculo1Modulos,
 } from "@/data/calculo-1";
 import { lessonId, lessonPath, preCalculoModulos } from "@/data/pre-calculo";
+import { lessonDuration, lessonMinutes } from "@/lib/aulas";
 
 export type ExpressRef = {
   trilha: "pre-calculo" | "calculo-1";
@@ -139,7 +140,7 @@ export function resolveExpressRef(ref: ExpressRef): ExpressLesson | null {
         ? lessonId(ref.modulo, ref.aula)
         : calculo1LessonId(ref.modulo, ref.aula),
     title: lesson.title,
-    duration: lesson.duration,
+    duration: lessonDuration(ref.trilha, ref.modulo, lesson),
     href:
       ref.trilha === "pre-calculo"
         ? lessonPath(ref.modulo, ref.aula)
@@ -153,8 +154,11 @@ export function expressReadingMinutes(): number {
   let total = 0;
   for (const stage of expressStages) {
     for (const ref of stage.refs) {
-      const lesson = resolveExpressRef(ref);
-      if (lesson) total += parseInt(lesson.duration, 10) || 0;
+      const modulos = ref.trilha === "pre-calculo" ? preCalculoModulos : calculo1Modulos;
+      const lesson = modulos
+        .find((m) => m.slug === ref.modulo)
+        ?.lessons.find((l) => l.slug === ref.aula);
+      if (lesson) total += lessonMinutes(ref.trilha, ref.modulo, lesson);
     }
   }
   return total;

@@ -5,7 +5,7 @@
  * o KaTeX com throwOnError:true + strict:"warn" para capturar erros e avisos.
  */
 import katex from "katex";
-import { addAlignedRowGap } from "@/lib/katex-format";
+import { prepareForKatex } from "@/lib/katex-format";
 import { glossario } from "@/data/glossario";
 import { exercicios } from "@/data/exercicios";
 import { resumos } from "@/data/resumos";
@@ -14,6 +14,9 @@ import { buildCalculo1Registry } from "@/data/aulas/calculo-1/register";
 import { funcaoAfimAula } from "@/data/aulas/funcao-afim";
 import { moduleCheckpoints } from "@/data/checkpoints";
 import { mathDelimiterErrors } from "@/lib/math-delimiters";
+import { preCalculoModulos } from "@/data/pre-calculo";
+import { calculo1Modulos } from "@/data/calculo-1";
+import type { AulaContent } from "@/data/aulas/types";
 
 type Issue = {
   kind: "erro" | "aviso";
@@ -53,7 +56,7 @@ function checkLatex(latex: string, display: boolean, source: string) {
   const origWarn = console.warn;
   console.warn = (...args: unknown[]) => warnings.push(args.join(" "));
   try {
-    katex.renderToString(addAlignedRowGap(latex), {
+    katex.renderToString(prepareForKatex(latex), {
       throwOnError: true,
       displayMode: display,
       strict: "warn",
@@ -118,6 +121,53 @@ const registry: Record<string, unknown> = {
   ...buildCalculo1Registry(),
 };
 for (const [k, content] of Object.entries(registry)) walk(content, `aula:${k}`);
+
+/**
+ * Campos que a interface imprime como texto puro (sem `RichText`). LaTeX aqui
+ * aparece na tela com os delimitadores à mostra — foi o defeito de
+ * "Indeterminação \(0/0\) e fatoração". Quando um destes campos passar a ser
+ * renderizado com `RichText`, remova-o desta lista.
+ */
+const camposTextoPuro: { source: string; value: string }[] = [];
+
+for (const [track, modules] of [
+  ["pre-calculo", preCalculoModulos],
+  ["calculo-1", calculo1Modulos],
+] as const) {
+  for (const m of modules) {
+    for (const l of m.lessons) {
+      camposTextoPuro.push({ source: `trilha:${track}/${m.slug}/${l.slug}.title`, value: l.title });
+    }
+  }
+}
+for (const [key, content] of Object.entries(registry)) {
+  const c = content as AulaContent;
+  camposTextoPuro.push({ source: `aula:${key}.meta.title`, value: c.meta.title });
+  if (c.explicacao.formulaLegend)
+    camposTextoPuro.push({ source: `aula:${key}.explicacao.formulaLegend`, value: c.explicacao.formulaLegend });
+  if (c.grafico?.legend)
+    camposTextoPuro.push({ source: `aula:${key}.grafico.legend`, value: c.grafico.legend });
+  c.ondeAparece.items.forEach((item, i) =>
+    camposTextoPuro.push({ source: `aula:${key}.ondeAparece.items[${i}].label`, value: item.label }),
+  );
+  c.passos.steps.forEach((step, i) =>
+    camposTextoPuro.push({ source: `aula:${key}.passos.steps[${i}].title`, value: step.title }),
+  );
+}
+for (const e of exercicios) camposTextoPuro.push({ source: `exercicio:${e.id}.title`, value: e.title });
+
+for (const campo of camposTextoPuro) {
+  if (!/\\\(|\\\[/.test(campo.value)) continue;
+  issues.push({
+    kind: "erro",
+    source: campo.source,
+    latex: campo.value,
+    mode: "texto puro",
+    message:
+      "Campo renderizado sem RichText: o delimitador apareceria literalmente na tela. " +
+      "Reescreva sem LaTeX ou passe o campo a renderizar com RichText.",
+  });
+}
 
 const erros = issues.filter((i) => i.kind === "erro");
 const avisos = issues.filter((i) => i.kind === "aviso");
