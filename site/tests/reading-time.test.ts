@@ -11,9 +11,12 @@ const registry = { ...buildPreCalculoRegistry(), ...buildCalculo1Registry() };
 
 test("a duração acompanha o tamanho real da aula", () => {
   const densa = estimateMinutes(registry["calculo-1/limites/propriedades-dos-limites"]);
-  const curta = estimateMinutes(registry["pre-calculo/geometria-analitica/distancia-e-ponto-medio"]);
+  // Referência de aula curta: uma aula compacta de uma frase de explicação e
+  // dois exercícios guiados. (A referência anterior, Distância e ponto médio,
+  // foi reforçada e deixou de ser curta.) Se esta também for reforçada, troque-a
+  // por outra que continue curta — o que o teste cobra é o estimador separar as duas.
+  const curta = estimateMinutes(registry["pre-calculo/fundamentos/conjuntos-e-intervalos"]);
   assert.ok(densa > curta * 3, `aula densa (${densa} min) deveria superar a curta (${curta} min)`);
-  // A aula curta declarava "13 min" à mão; o conteúdo não sustenta esse número.
   assert.ok(curta < 13, `aula de ~200 palavras não leva ${curta} min`);
 });
 

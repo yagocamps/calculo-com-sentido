@@ -1336,6 +1336,140 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       ],
     },
   ],
+  "pre-calculo/geometria-analitica/distancia-e-ponto-medio": [
+    {
+      title: "De onde vem a fórmula da distância",
+      intro: "A fórmula é o Teorema de Pitágoras escrito com coordenadas.",
+      steps: [
+        {
+          title: "Montar o triângulo retângulo",
+          detail: "Com \\(A = (x_1, y_1)\\) e \\(B = (x_2, y_2)\\), o ponto \\(C = (x_2, y_1)\\) fecha um triângulo com ângulo reto em \\(C\\): o lado \\(AC\\) é horizontal e o lado \\(CB\\) é vertical.",
+          formula: "\\begin{aligned} |AC| &= |x_2 - x_1| \\\\ |CB| &= |y_2 - y_1| \\end{aligned}",
+          formulaAria: "o lado AC mede o módulo de x2 menos x1; o lado CB mede o módulo de y2 menos y1",
+        },
+        {
+          title: "Aplicar Pitágoras",
+          detail: "A hipotenusa é o segmento \\(AB\\). Ao elevar ao quadrado, o módulo desaparece, porque \\(|u|^2 = u^2\\).",
+          formula: "d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2",
+          formulaAria: "d ao quadrado é igual a x2 menos x1 ao quadrado mais y2 menos y1 ao quadrado",
+        },
+        {
+          title: "Tirar a raiz",
+          detail: "Como distância não é negativa, fica a raiz positiva.",
+          formula: "d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}",
+          formulaAria: "d é a raiz quadrada de x2 menos x1 ao quadrado mais y2 menos y1 ao quadrado",
+        },
+      ],
+    },
+    {
+      title: "Por que o ponto médio é a média",
+      intro: "O ponto que divide o segmento ao meio divide também ao meio o trecho horizontal e o trecho vertical.",
+      steps: [
+        {
+          title: "Andar metade de cada trecho",
+          detail: "Saindo de \\(A\\), o meio do caminho fica metade do avanço e metade da subida adiante.",
+          formula: "\\begin{aligned} x_M &= x_1 + \\frac{x_2 - x_1}{2} \\\\ y_M &= y_1 + \\frac{y_2 - y_1}{2} \\end{aligned}",
+          formulaAria: "x de M é x1 mais metade de x2 menos x1; y de M é y1 mais metade de y2 menos y1",
+        },
+        {
+          title: "Simplificar",
+          detail: "\\(x_1 + \\frac{x_2 - x_1}{2} = \\frac{2x_1 + x_2 - x_1}{2} = \\frac{x_1 + x_2}{2}\\), e o mesmo para \\(y\\).",
+          formula: "\\begin{aligned} x_M &= \\frac{x_1 + x_2}{2} \\\\ y_M &= \\frac{y_1 + y_2}{2} \\end{aligned}",
+          formulaAria: "x de M é x1 mais x2 sobre 2; y de M é y1 mais y2 sobre 2",
+        },
+      ],
+    },
+  ],
+  "pre-calculo/geometria-analitica/equacao-da-reta": [
+    {
+      title: "Por que a inclinação é a mesma em toda a reta",
+      intro: "Dois degraus desenhados sobre a mesma reta formam triângulos semelhantes; por isso a razão entre subida e avanço não depende dos pontos escolhidos.",
+      steps: [
+        {
+          title: "Dois degraus na mesma reta",
+          detail: "Escolha dois pares de pontos na reta e desenhe, para cada par, o degrau horizontal e vertical. Os dois triângulos têm um ângulo reto e o mesmo ângulo de inclinação.",
+          formula: "\\triangle_1 \\sim \\triangle_2",
+          formulaAria: "o triângulo 1 é semelhante ao triângulo 2",
+        },
+        {
+          title: "Lados proporcionais",
+          detail: "Em triângulos semelhantes, a razão entre lados correspondentes é a mesma.",
+          formula: "\\frac{\\Delta y_1}{\\Delta x_1} = \\frac{\\Delta y_2}{\\Delta x_2} = m",
+          formulaAria: "delta y1 sobre delta x1 é igual a delta y2 sobre delta x2, que é igual a m",
+        },
+        {
+          title: "Chegar à forma ponto-inclinação",
+          detail: "Com um ponto fixo \\((x_0, y_0)\\) e um ponto qualquer \\((x, y)\\) da reta, com \\(x \\neq x_0\\), a razão também vale \\(m\\). Multiplicando por \\(x - x_0\\) — e notando que o próprio \\((x_0, y_0)\\) satisfaz a igualdade —:",
+          formula: "y - y_0 = m(x - x_0)",
+          formulaAria: "y menos y0 é igual a m vezes x menos x0",
+        },
+      ],
+    },
+  ],
+  "pre-calculo/geometria-analitica/retas-paralelas-perpendiculares": [
+    {
+      title: "Por que perpendiculares têm m₁m₂ = −1",
+      intro: "Girar um degrau um quarto de volta troca avanço e subida de lugar e inverte um dos sentidos.",
+      steps: [
+        {
+          title: "Um degrau da primeira reta",
+          detail: "Na reta de inclinação \\(m\\), andar 1 para a direita faz subir \\(m\\): o degrau vai de \\((0, 0)\\) a \\((1, m)\\).",
+          formula: "(1,\\ m)",
+          formulaAria: "o degrau: 1 para a direita, m para cima",
+        },
+        {
+          title: "Girar 90 graus",
+          detail: "Um quarto de volta no sentido anti-horário leva \\((a, b)\\) em \\((-b, a)\\). Por exemplo, \\((1, 2)\\) vira \\((-2, 1)\\): o que era avanço vira subida, e o que era subida vira avanço para trás.",
+          formula: "(1,\\ m) \\;\\longmapsto\\; (-m,\\ 1)",
+          formulaAria: "o degrau 1, m vira menos m, 1",
+        },
+        {
+          title: "Ler a nova inclinação",
+          detail: "Inclinação é subida sobre avanço. Para \\(m \\neq 0\\):",
+          formula: "\\begin{aligned} m_2 &= \\frac{1}{-m} = -\\frac{1}{m} \\\\ m \\cdot m_2 &= -1 \\end{aligned}",
+          formulaAria: "m2 é 1 sobre menos m, igual a menos 1 sobre m; portanto m vezes m2 é menos 1",
+        },
+      ],
+    },
+  ],
+  "pre-calculo/geometria-analitica/circunferencia": [
+    {
+      title: "Da distância à equação",
+      intro: "A equação é só a fórmula da distância com o raio no lugar de \\(d\\).",
+      steps: [
+        {
+          title: "Escrever a condição",
+          detail: "O ponto \\((x, y)\\) está na circunferência quando está a \\(r\\) do centro \\((h, k)\\).",
+          formula: "\\sqrt{(x - h)^2 + (y - k)^2} = r",
+          formulaAria: "a raiz quadrada de x menos h ao quadrado mais y menos k ao quadrado é igual a r",
+        },
+        {
+          title: "Elevar ao quadrado",
+          detail: "Os dois lados são positivos, então elevar ao quadrado não cria nem perde solução.",
+          formula: "(x - h)^2 + (y - k)^2 = r^2",
+          formulaAria: "x menos h ao quadrado mais y menos k ao quadrado é igual a r ao quadrado",
+        },
+      ],
+    },
+    {
+      title: "Completar quadrados",
+      intro: "Para voltar da forma expandida à forma padrão, cada grupo precisa virar um quadrado perfeito.",
+      steps: [
+        {
+          title: "O pedaço que falta",
+          detail: "\\((x + p)^2 = x^2 + 2px + p^2\\). Então \\(x^2 + bx\\) vira um quadrado perfeito quando se soma \\(\\left(\\frac{b}{2}\\right)^2\\).",
+          formula: "\\begin{aligned} &x^2 + bx + \\left(\\frac{b}{2}\\right)^2 \\\\ &= \\left(x + \\frac{b}{2}\\right)^2 \\end{aligned}",
+          formulaAria: "x ao quadrado mais b x mais b sobre 2 ao quadrado é igual a x mais b sobre 2, ao quadrado",
+        },
+        {
+          title: "Somar dos dois lados",
+          detail: "O que foi somado a um lado precisa ser somado ao outro. No exemplo da aula, 4 e 9:",
+          formula: "\\begin{aligned} &(x^2 - 4x + 4) + (y^2 + 6y + 9) \\\\ &= 12 + 4 + 9 = 25 \\end{aligned}",
+          formulaAria: "x ao quadrado menos 4x mais 4, mais y ao quadrado mais 6y mais 9, é igual a 12 mais 4 mais 9, que é 25",
+        },
+      ],
+    },
+  ],
 };
 
 export function demonstrationsForLesson(

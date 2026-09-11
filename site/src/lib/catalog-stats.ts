@@ -19,7 +19,7 @@ export const catalogStats = {
  * "75 aulas" com 77 no ar, e "164 exercícios" com 169 no banco daquela trilha.
  */
 const TEMAS_PRE = ["fundamentos", "algebra", "funcoes", "graficos", "trigonometria",
-  "preparacao-limites", "funcao-afim", "funcao-quadratica"];
+  "preparacao-limites", "funcao-afim", "funcao-quadratica", "geometria-analitica"];
 
 function contar(modules: { lessons: unknown[] }[], temas: string[], semanas: string) {
   const aulas = modules.reduce((n, m) => n + m.lessons.length, 0);

@@ -1074,6 +1074,80 @@ export const plots = {
       { kind: "text", at: [0.5, -0.12], text: "1", tone: "neutro", anchor: "middle" },
     ],
   },
+
+  // ── Geometria analítica: Pitágoras, degrau, ângulo reto e raio ───────
+  "distancia-pitagoras": {
+    alt: "Os pontos A, em um vírgula dois, e B, em quatro vírgula seis, ligados por um segmento. Um trecho horizontal de comprimento três e um vertical de comprimento quatro formam com ele um triângulo retângulo, cuja hipotenusa mede cinco. O ponto médio M fica no meio do segmento.",
+    x: [0.3, 5], y: [1.3, 6.6],
+    xTicks: [1, 2, 3, 4], yTicks: [2, 3, 4, 5, 6],
+    aspect: "igual",
+    legend: "Δx = 3 e Δy = 4 são os catetos; a distância é a hipotenusa, √(3² + 4²) = 5. O ponto médio M = (5/2, 4) fica a 2,5 de cada ponta.",
+    marks: [
+      { kind: "segment", from: [1, 2], to: [4, 2], tone: "ideia", dashed: true },
+      { kind: "segment", from: [4, 2], to: [4, 6], tone: "ideia", dashed: true },
+      { kind: "rightAngle", at: [4, 2], from: [1, 2], to: [4, 6], tone: "neutro" },
+      { kind: "segment", from: [1, 2], to: [4, 6], tone: "principal" },
+      { kind: "point", at: [1, 2], tone: "principal" },
+      { kind: "point", at: [4, 6], tone: "principal" },
+      { kind: "point", at: [2.5, 4], tone: "aplicacao" },
+      { kind: "text", at: [0.8, 2.05], text: "A", tone: "principal", anchor: "end" },
+      { kind: "text", at: [4.2, 6.15], text: "B", tone: "principal", anchor: "start" },
+      { kind: "text", at: [2.3, 4.35], text: "M", tone: "aplicacao", anchor: "end" },
+      { kind: "text", at: [2.5, 1.62], text: "Δx = 3", tone: "ideia" },
+      { kind: "text", at: [4.2, 4], text: "Δy = 4", tone: "ideia", anchor: "start" },
+      { kind: "text", at: [2, 4.8], text: "d = 5", tone: "principal", anchor: "end" },
+    ],
+  },
+
+  "reta-ponto-inclinacao": {
+    alt: "A reta y igual a dois x mais um, passando pelos pontos A, em um vírgula três, e B, em quatro vírgula nove. A partir de A, um degrau marca uma unidade para a direita e duas para cima, voltando à reta.",
+    x: [-1, 5], y: [-1, 11],
+    xTicks: [-1, 0, 1, 2, 3, 4, 5], yTicks: [0, 3, 6, 9],
+    legend: "Inclinação 2: cada unidade para a direita sobe 2. Com o ponto A, a reta é y − 3 = 2(x − 1), ou y = 2x + 1.",
+    marks: [
+      { kind: "curve", f: (x) => 2 * x + 1, tone: "principal" },
+      { kind: "segment", from: [1, 3], to: [2, 3], tone: "aplicacao" },
+      { kind: "segment", from: [2, 3], to: [2, 5], tone: "aplicacao" },
+      { kind: "point", at: [1, 3], tone: "principal" },
+      { kind: "point", at: [4, 9], tone: "principal" },
+      { kind: "text", at: [1.5, 2.1], text: "1", tone: "aplicacao" },
+      { kind: "text", at: [2.2, 4], text: "2", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.85, 3.7], text: "A (1, 3)", tone: "principal", anchor: "end" },
+      { kind: "text", at: [3.8, 9.6], text: "B (4, 9)", tone: "principal", anchor: "end" },
+    ],
+  },
+
+  "retas-perpendiculares": {
+    alt: "A reta y igual a dois x mais um e a reta y igual a menos meio x mais cinco, que se cruzam no ponto um vírgula seis, quatro vírgula dois, formando um ângulo reto marcado. A segunda reta passa pelo ponto quatro vírgula três. Os dois eixos usam a mesma escala.",
+    x: [-1, 7], y: [0, 7],
+    aspect: "igual",
+    legend: "Inclinações 2 e −1/2: o produto é −1, e o ângulo é reto. Com escalas iguais nos eixos, o ângulo reto aparece como ângulo reto.",
+    marks: [
+      { kind: "curve", f: (x) => 2 * x + 1, from: -0.5, to: 3, tone: "principal" },
+      { kind: "curve", f: (x) => -x / 2 + 5, from: -1, to: 7, tone: "aplicacao" },
+      { kind: "rightAngle", at: [1.6, 4.2], from: [0, 1], to: [4, 3], tone: "neutro" },
+      { kind: "point", at: [4, 3], tone: "aplicacao" },
+      { kind: "text", at: [2.9, 6.3], text: "y = 2x + 1", tone: "principal", anchor: "start" },
+      { kind: "text", at: [5.6, 3.1], text: "y = −x/2 + 5", tone: "aplicacao" },
+      { kind: "text", at: [4.1, 2.35], text: "(4, 3)", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "circunferencia-centro-raio": {
+    alt: "A circunferência de centro dois vírgula menos três e raio cinco. Um segmento liga o centro ao ponto sete vírgula menos três, na borda, marcando o raio.",
+    x: [-4, 8.5], y: [-8.5, 2.5],
+    aspect: "igual",
+    legend: "(x − 2)² + (y + 3)² = 25: todos os pontos a 5 unidades de (2, −3). O centro aparece com os sinais trocados na equação.",
+    marks: [
+      { kind: "curve", f: (x) => -3 + Math.sqrt(Math.max(0, 25 - (x - 2) * (x - 2))), from: -3, to: 7, tone: "principal" },
+      { kind: "curve", f: (x) => -3 - Math.sqrt(Math.max(0, 25 - (x - 2) * (x - 2))), from: -3, to: 7, tone: "principal" },
+      { kind: "segment", from: [2, -3], to: [7, -3], tone: "aplicacao", label: "r = 5" },
+      { kind: "point", at: [2, -3], tone: "aplicacao" },
+      { kind: "point", at: [7, -3], tone: "principal" },
+      { kind: "text", at: [1.8, -3.8], text: "centro (2, −3)", tone: "aplicacao", anchor: "end" },
+      { kind: "text", at: [7.3, -2.3], text: "(7, −3)", tone: "principal", anchor: "start" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;
