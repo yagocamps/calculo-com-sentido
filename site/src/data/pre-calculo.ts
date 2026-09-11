@@ -243,6 +243,8 @@ export const preCalculoModulos: PreCalculoModulo[] = [
       { slug: "identidades-basicas", title: "Identidades básicas", duration: "13 min", available: true },
       ...preCalculoPhase2Catalog.trigonometria,
       { slug: "graficos-trigonometricos", title: "Gráficos trigonométricos", duration: "11 min", available: true },
+      { slug: "equacoes-trigonometricas", title: "Equações trigonométricas", duration: "15 min", available: true },
+      { slug: "equacoes-trigonometricas-passos", title: "Equações trigonométricas com mais passos", duration: "15 min", available: true },
       { slug: "rampas-altura", title: "Rampas e altura de prédios", duration: "10 min", available: true },
       { slug: "ondas-movimento", title: "Ondas e movimento circular", duration: "10 min", available: true },
       { slug: "engenharia-arquitetura", title: "Engenharia e arquitetura", duration: "9 min", available: true },
