@@ -4,6 +4,7 @@ import { fundamentosAulas } from "@/data/aulas/pre-calculo/fundamentos";
 import { algebraAulas } from "@/data/aulas/pre-calculo/algebra";
 import { sinaisAulas } from "@/data/aulas/pre-calculo/sinais";
 import { valorAbsolutoAulas } from "@/data/aulas/pre-calculo/valor-absoluto";
+import { trigEquacoesAulas } from "@/data/aulas/pre-calculo/trig-equacoes";
 import { funcoesAulas } from "@/data/aulas/pre-calculo/funcoes";
 import { graficosAulas } from "@/data/aulas/pre-calculo/graficos";
 import { trigonometriaAulas } from "@/data/aulas/pre-calculo/trigonometria";
@@ -19,7 +20,7 @@ export function buildPreCalculoRegistry(): Record<string, AulaContent> {
     { modulo: "funcoes", aulas: { ...funcoesAulas, ...preCalculoPhase2Registry.funcoes } },
     { modulo: "graficos", aulas: { ...graficosAulas, ...preCalculoPhase2Registry.graficos } },
     { modulo: "geometria-analitica", aulas: preCalculoPhase2Registry["geometria-analitica"] },
-    { modulo: "trigonometria", aulas: { ...trigonometriaAulas, ...preCalculoPhase2Registry.trigonometria } },
+    { modulo: "trigonometria", aulas: { ...trigonometriaAulas, ...trigEquacoesAulas, ...preCalculoPhase2Registry.trigonometria } },
     { modulo: "preparacao-limites", aulas: { ...preparacaoLimitesAulas, ...preCalculoPhase2Registry["preparacao-limites"] } },
   ];
 

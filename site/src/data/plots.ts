@@ -1003,6 +1003,53 @@ export const plots = {
       { kind: "text", at: [10, 2.3], text: "x = 10 → 2,594", tone: "neutro" },
     ],
   },
+
+  // ── Equações trigonométricas: o círculo e a onda comprimida ──────────
+  "seno-igual-meio-ciclo": {
+    alt: "Círculo de raio um centrado na origem, cortado por uma linha horizontal na altura um meio. A linha encontra o círculo em dois pontos simétricos em relação ao eixo vertical: o do ângulo de trinta graus, à direita, e o do ângulo de cento e cinquenta graus, à esquerda. Cada raio forma trinta graus com o seu lado do eixo horizontal.",
+    x: [-1.5, 1.5], y: [-1.3, 1.3],
+    xTicks: [-1, 0, 1], yTicks: [-1, 0, 1],
+    aspect: "igual",
+    legend: "A altura 1/2 aparece duas vezes por volta: em 30° e em 180° − 30° = 150°. Os dois raios fazem o mesmo ângulo com o eixo horizontal, um de cada lado.",
+    marks: [
+      { kind: "curve", f: (x) => Math.sqrt(Math.max(0, 1 - x * x)), from: -1, to: 1, tone: "neutro" },
+      { kind: "curve", f: (x) => -Math.sqrt(Math.max(0, 1 - x * x)), from: -1, to: 1, tone: "neutro" },
+      { kind: "hline", at: 0.5, tone: "alerta", label: "altura 1/2" },
+      { kind: "segment", from: [0, 0], to: [0.866, 0.5], tone: "principal" },
+      { kind: "segment", from: [0, 0], to: [-0.866, 0.5], tone: "aplicacao" },
+      { kind: "angle", at: [0, 0], from: [1, 0], to: [0.866, 0.5], label: "30°", tone: "principal" },
+      { kind: "angle", at: [0, 0], from: [-1, 0], to: [-0.866, 0.5], label: "30°", tone: "aplicacao" },
+      { kind: "point", at: [0.866, 0.5], tone: "principal", label: "x = 30°" },
+      { kind: "point", at: [-0.866, 0.5], tone: "aplicacao", label: "x = 150°" },
+    ],
+  },
+
+  "seno-2x-igual-meio": {
+    alt: "Duas ondas no intervalo de zero a trezentos e sessenta graus: a do seno de x, tracejada, faz uma volta completa; a do seno de dois x, contínua, faz duas no mesmo espaço. Uma linha horizontal na altura um meio corta a onda de seno de dois x em quatro pontos: quinze, setenta e cinco, cento e noventa e cinco e duzentos e cinquenta e cinco graus.",
+    x: [0, 360], y: [-1.5, 1.5],
+    xLabel: "x (graus)",
+    xTicks: [0, 90, 180, 270, 360], yTicks: [-1, 0, 1],
+    legend: "Comprimida pela metade, a onda de sen 2x passa pela altura 1/2 quatro vezes numa volta de x. Resolver sen u = 1/2 só na primeira volta de u encontraria metade delas.",
+    marks: [
+      { kind: "curve", f: (g) => Math.sin((g * Math.PI) / 180), tone: "neutro", dashed: true },
+      { kind: "curve", f: (g) => Math.sin((2 * g * Math.PI) / 180), tone: "principal" },
+      { kind: "hline", at: 0.5, tone: "alerta", label: "altura 1/2" },
+      { kind: "segment", from: [15, 0.5], to: [15, -0.6], tone: "neutro", dashed: true },
+      { kind: "segment", from: [75, 0.5], to: [75, -0.6], tone: "neutro", dashed: true },
+      { kind: "segment", from: [195, 0.5], to: [195, -0.6], tone: "neutro", dashed: true },
+      { kind: "segment", from: [255, 0.5], to: [255, -0.6], tone: "neutro", dashed: true },
+      { kind: "point", at: [15, 0.5], tone: "aplicacao" },
+      { kind: "point", at: [75, 0.5], tone: "aplicacao" },
+      { kind: "point", at: [195, 0.5], tone: "aplicacao" },
+      { kind: "point", at: [255, 0.5], tone: "aplicacao" },
+      { kind: "text", at: [15, -0.8], text: "15°", tone: "aplicacao" },
+      { kind: "text", at: [75, -0.8], text: "75°", tone: "aplicacao" },
+      { kind: "text", at: [195, -0.8], text: "195°", tone: "aplicacao" },
+      { kind: "text", at: [255, -0.8], text: "255°", tone: "aplicacao" },
+      { kind: "text", at: [45, 1.25], text: "sen 2x", tone: "principal" },
+      { kind: "text", at: [100, 1.25], text: "sen x", tone: "neutro" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;
