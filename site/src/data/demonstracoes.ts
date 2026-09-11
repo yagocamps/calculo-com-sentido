@@ -714,7 +714,7 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
     ],
   },
   ],
-  "pre-calculo/trigonometria/identidades-basicas": [
+  "pre-calculo/trigonometria/soma-de-arcos": [
     {
       title: "Seno e cosseno da soma de dois ângulos",
       intro: "A derivada do seno, em Cálculo, depende destas duas fórmulas. Elas saem do círculo de raio 1 e da fórmula da distância entre dois pontos.",
@@ -745,6 +745,8 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
         },
       ],
     },
+  ],
+  "pre-calculo/trigonometria/identidades-basicas": [
     { title: "Identidade fundamental da trigonometria",
     intro: "No círculo unitário, seno e cosseno são as coordenadas de um ponto de raio 1.",
     steps: [

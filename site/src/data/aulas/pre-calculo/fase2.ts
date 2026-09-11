@@ -194,7 +194,7 @@ const specs: CurriculumLessonSpec[] = [
     ],
     usedIn: [
       { label: "Circunferência", href: "/pre-calculo/geometria-analitica/circunferencia", detail: "a equação é a distância ao centro, elevada ao quadrado" },
-      { label: "Seno e cosseno da soma", href: "/pre-calculo/trigonometria/identidades-basicas", detail: "a demonstração mede a mesma corda de dois jeitos" },
+      { label: "Seno e cosseno da soma", href: "/pre-calculo/trigonometria/soma-de-arcos", detail: "a demonstração mede a mesma corda de dois jeitos" },
     ],
     why: [
       "Num mapa, num jogo ou num GPS, a pergunta \"quão longe estão dois pontos?\" aparece o tempo todo. Com coordenadas, ela vira uma conta — a mesma conta que depois define a circunferência e mede o erro de uma aproximação.",
@@ -534,6 +534,98 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Qual arco para \\(r=5\\) e \\(\\theta=2\\) rad?", solution: "\\(s=r\\theta=10\\).", answer: "10", interpretation: "O arco tem duas vezes o comprimento do raio." },
     ],
     summary: ["\\(180^\\circ=\\pi\\) rad.", "Radiano mede arco dividido pelo raio.", "\\(s=r\\theta\\) usa \\(\\theta\\) em radianos."],
+  }),
+  make({
+    moduleSlug: "trigonometria", moduleTitle: "Trigonometria básica", lessonNumber: 12,
+    slug: "soma-de-arcos", title: "Seno e cosseno da soma de dois arcos", duration: "14 min",
+    notes: ["girar duas vezes no círculo", "as duas fórmulas que o Cálculo usa"],
+    glossary: ["Identidade", "Ciclo trigonométrico"],
+    prereqs: [
+      { label: "Ciclo trigonométrico", href: "/pre-calculo/trigonometria/ciclo-trigonometrico" },
+      { label: "Identidades básicas", href: "/pre-calculo/trigonometria/identidades-basicas" },
+    ],
+    usedIn: [
+      { label: "Equações trigonométricas", href: "/pre-calculo/trigonometria/equacoes-trigonometricas", detail: "abrir um ângulo composto antes de resolver" },
+      { label: "Definição de derivada", href: "/calculo-1/derivadas/definicao-derivada", detail: "a derivada do seno abre \\(\\sin(x+h)\\) com esta fórmula" },
+    ],
+    plot: "circulo-soma-de-arcos",
+    why: [
+      "A tabela de ângulos notáveis tem poucas linhas: \\(30^\\circ\\), \\(45^\\circ\\), \\(60^\\circ\\). Com a soma de arcos, ela alcança \\(75^\\circ\\), \\(15^\\circ\\), \\(105^\\circ\\) e muitos outros, sem calculadora.",
+      "Mais adiante, a derivada do seno começa abrindo \\(\\sin(x+h)\\). Sem esta fórmula, aquela conta simplesmente não sai — é por isso que ela aparece aqui, antes do Cálculo.",
+    ],
+    explanation: [
+      "Somar arcos é girar duas vezes. No círculo de raio 1, o ângulo \\(a\\) leva ao ponto \\((\\cos a, \\sin a)\\); girar mais \\(b\\) leva ao ponto do ângulo \\(a+b\\). A pergunta é: como escrever as coordenadas do segundo ponto usando as do primeiro?",
+      "A resposta são duas fórmulas: \\(\\sin(a+b) = \\sin a\\cos b + \\cos a\\sin b\\) e \\(\\cos(a+b) = \\cos a\\cos b - \\sin a\\sin b\\). No seno os termos somam e misturam seno com cosseno; no cosseno eles subtraem e mantêm cada função com a sua.",
+      "Para a diferença, troque \\(b\\) por \\(-b\\). Como \\(\\cos(-b) = \\cos b\\) e \\(\\sin(-b) = -\\sin b\\), os sinais viram: \\(\\sin(a-b) = \\sin a\\cos b - \\cos a\\sin b\\) e \\(\\cos(a-b) = \\cos a\\cos b + \\sin a\\sin b\\).",
+    ],
+    alternative: [
+      "Pense em duas caminhadas seguidas na borda de uma praça circular. A primeira te deixa numa posição; a segunda continua dali. Sua posição final não é a soma das duas posições — é o resultado de aplicar o segundo giro sobre o ponto onde você já estava. As fórmulas fazem exatamente essa combinação, misturando as coordenadas do primeiro ponto com o seno e o cosseno do segundo giro.",
+    ],
+    callout: "No seno, soma e mistura (\\(\\sin\\cos + \\cos\\sin\\)). No cosseno, subtrai e não mistura (\\(\\cos\\cos - \\sin\\sin\\)).",
+    formula: "sen(a+b) = sen a·cos b + cos a·sen b; cos(a+b) = cos a·cos b − sen a·sen b",
+    formulaLatex: "\\sin(a+b)=\\sin a\\cos b+\\cos a\\sin b,\\qquad\\cos(a+b)=\\cos a\\cos b-\\sin a\\sin b",
+    formulaAria: "seno de a mais b é igual a seno de a cosseno de b mais cosseno de a seno de b; cosseno de a mais b é igual a cosseno de a cosseno de b menos seno de a seno de b",
+    formulaLegend: "duas fórmulas irmãs: repare no sinal de menos só no cosseno",
+    appearances: [
+      { label: "Cálculo", detail: "a derivada do seno abre \\(\\sin(x+h)\\)" },
+      { label: "Física", detail: "somar ondas com defasagem" },
+      { label: "Computação gráfica", detail: "girar um ponto em torno da origem" },
+      { label: "Provas", detail: "achar ângulos fora da tabela de notáveis" },
+    ],
+    exampleTitle: "Um ângulo que não está na tabela",
+    example: "Calcule \\(\\cos 75^\\circ\\) sem calculadora, usando \\(75^\\circ = 45^\\circ + 30^\\circ\\).",
+    steps: [
+      { title: "Escolher a decomposição", detail: "Procure dois notáveis que somem \\(75^\\circ\\): \\(45^\\circ + 30^\\circ\\) serve." },
+      { title: "Escrever a fórmula", detail: "\\(\\cos(a+b) = \\cos a\\cos b - \\sin a\\sin b\\), com \\(a = 45^\\circ\\) e \\(b = 30^\\circ\\)." },
+      { title: "Substituir os valores", detail: "\\(\\frac{\\sqrt{2}}{2} \\cdot \\frac{\\sqrt{3}}{2} - \\frac{\\sqrt{2}}{2} \\cdot \\frac{1}{2} = \\frac{\\sqrt{6}}{4} - \\frac{\\sqrt{2}}{4}\\)." },
+      { title: "Concluir e conferir", detail: "\\(\\cos 75^\\circ = \\frac{\\sqrt{6}-\\sqrt{2}}{4} \\approx 0{,}259\\): positivo e pequeno, como se espera de um ângulo perto de \\(90^\\circ\\)." },
+    ],
+    interpretation: [
+      "O sinal de menos no cosseno tem significado: somar ângulos derruba o cosseno (o ponto anda para a esquerda) enquanto levanta o seno. Por isso uma fórmula soma e a outra subtrai.",
+      "Dá para conferir o par de resultados na relação fundamental: com \\(\\sin 75^\\circ = \\frac{\\sqrt{6}+\\sqrt{2}}{4}\\) e \\(\\cos 75^\\circ = \\frac{\\sqrt{6}-\\sqrt{2}}{4}\\), a soma dos quadrados é \\(\\frac{(8+4\\sqrt{3})+(8-4\\sqrt{3})}{16} = 1\\).",
+    ],
+    errors: [
+      "Distribuir a função sobre a soma: \\(\\sin(a+b)\\) não é \\(\\sin a + \\sin b\\).",
+      "Trocar os sinais entre as duas fórmulas e somar no cosseno.",
+      "No seno, esquecer de cruzar as funções e escrever \\(\\sin a\\sin b + \\cos a\\cos b\\).",
+      "Misturar graus e radianos no meio da mesma conta.",
+    ],
+    guided: [
+      { question: "Calcule \\(\\sin 75^\\circ\\) usando \\(45^\\circ + 30^\\circ\\).", identify: "Use a fórmula do seno da soma.", solution: "\\(\\sin 45^\\circ\\cos 30^\\circ + \\cos 45^\\circ\\sin 30^\\circ = \\frac{\\sqrt{2}}{2} \\cdot \\frac{\\sqrt{3}}{2} + \\frac{\\sqrt{2}}{2} \\cdot \\frac{1}{2} = \\frac{\\sqrt{6}+\\sqrt{2}}{4} \\approx 0{,}966\\).", answer: "\\(\\frac{\\sqrt{6}+\\sqrt{2}}{4} \\approx 0{,}966\\)", interpretation: "Perto de 1, como esperado para um ângulo quase reto.", commonError: "Somar os senos dos dois ângulos." },
+      { type: "compreensao", question: "Por que a fórmula do cosseno leva um sinal de menos?", solution: "A demonstração produz primeiro \\(\\cos(a-b) = \\cos a\\cos b + \\sin a\\sin b\\). Trocando \\(b\\) por \\(-b\\), o seno muda de sinal e o termo \\(\\sin a\\sin b\\) passa a subtrair.", answer: "Porque a fórmula da diferença vem primeiro, e trocar \\(b\\) por \\(-b\\) inverte o sinal do seno.", interpretation: "As quatro fórmulas (soma e diferença, seno e cosseno) são a mesma conta vista de quatro jeitos." },
+      { question: "Escreva \\(\\sin(x + 90^\\circ)\\) em função de \\(\\cos x\\).", identify: "Aplique a fórmula com \\(b = 90^\\circ\\).", solution: "\\(\\sin x\\cos 90^\\circ + \\cos x\\sin 90^\\circ = \\sin x \\cdot 0 + \\cos x \\cdot 1 = \\cos x\\).", answer: "\\(\\cos x\\)", interpretation: "Adiantar o seno em um quarto de volta produz o cosseno: é a mesma onda deslocada.", commonError: "Trocar os valores de \\(\\sin 90^\\circ\\) e \\(\\cos 90^\\circ\\)." },
+    ],
+    exerciseIds: ["trig-ap-21", "trig-ap-22", "trig-ap-23", "trig-ap-24"],
+    summary: [
+      "\\(\\sin(a+b) = \\sin a\\cos b + \\cos a\\sin b\\): soma e cruza as funções.",
+      "\\(\\cos(a+b) = \\cos a\\cos b - \\sin a\\sin b\\): subtrai e não cruza.",
+      "Para a diferença, troque \\(b\\) por \\(-b\\) e inverta o sinal do termo com seno.",
+      "Somar arcos é girar duas vezes no círculo — não é distribuir a função sobre a soma.",
+    ],
+    quiz: [
+      {
+        pergunta: "Quanto vale \\(\\sin(a+b)\\)?",
+        opcoes: ["\\(\\sin a + \\sin b\\)", "\\(\\sin a\\cos b + \\cos a\\sin b\\)", "\\(\\cos a\\cos b - \\sin a\\sin b\\)", "\\(\\sin a\\sin b + \\cos a\\cos b\\)"],
+        corretaIndex: 1,
+        critical: true,
+        explicacao: "No seno da soma os termos somam e cada parcela cruza seno com cosseno.",
+        reforcoSectionId: "explicacao",
+      },
+      {
+        pergunta: "Na fórmula de \\(\\cos(a+b)\\), qual é o sinal entre os dois termos?",
+        opcoes: ["Mais", "Menos", "Depende do quadrante", "Não há dois termos"],
+        corretaIndex: 1,
+        explicacao: "\\(\\cos(a+b) = \\cos a\\cos b - \\sin a\\sin b\\). O mais aparece na fórmula da diferença.",
+        reforcoSectionId: "explicacao",
+      },
+      {
+        pergunta: "Qual decomposição ajuda a calcular \\(\\cos 15^\\circ\\) com valores notáveis?",
+        opcoes: ["\\(15^\\circ = 45^\\circ - 30^\\circ\\)", "\\(15^\\circ = 30^\\circ - 45^\\circ\\)", "\\(15^\\circ = 10^\\circ + 5^\\circ\\)", "Não é possível"],
+        corretaIndex: 0,
+        explicacao: "\\(45^\\circ\\) e \\(30^\\circ\\) são notáveis e a diferença dá \\(15^\\circ\\); a fórmula da diferença resolve.",
+        reforcoSectionId: "passos",
+      },
+    ],
   }),
 ];
 
