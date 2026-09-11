@@ -37,8 +37,12 @@ export const exerciciosAplicacoesDerivadas: Exercicio[] = [
     enunciado: "Para \\(f(x) = x^2 - 6x\\), encontre o valor de \\(x\\) onde \\(f'(x) = 0\\).",
     identificar: "Derive e iguale a zero.",
     dica: "A derivada de \\(x^2\\) é \\(2x\\); a de \\(-6x\\) é \\(-6\\).",
-    resolucao:
-      "\\(f'(x) = 2x - 6\\). Igualando a zero: \\(2x - 6 = 0 \\Rightarrow x = 3\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Derive termo a termo: \\((x^2)' = 2x\\) e \\((-6x)' = -6\\), então \\(f'(x) = 2x - 6\\).",
+      "Iguale a zero: \\(2x - 6 = 0 \\Rightarrow 2x = 6\\).",
+      "\\(x = 3\\).",
+    ],
     resposta: "\\(x = 3\\)",
     interpretacao:
       "Nesse ponto a função para de descer e começa a subir — é o fundo da parábola. Ponto crítico é onde a taxa de variação zera.",
@@ -57,8 +61,12 @@ export const exerciciosAplicacoesDerivadas: Exercicio[] = [
       "A derivada de uma função é positiva antes de \\(x = 4\\) e negativa depois. O que acontece em \\(x = 4\\)?",
     identificar: "Antes: subindo. Depois: descendo.",
     dica: "Desenhe mentalmente: o que fica no topo de uma subida seguida de descida?",
-    resolucao:
-      "Se a função sobe até \\(x = 4\\) e desce a partir dali, o valor em \\(x = 4\\) é o mais alto da vizinhança: um máximo local.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Antes de \\(x = 4\\), \\(f' > 0\\): a função sobe.",
+      "Depois de \\(x = 4\\), \\(f' < 0\\): a função desce.",
+      "Sobe até \\(x = 4\\) e desce depois: o valor em \\(x = 4\\) é o mais alto da vizinhança, um máximo local.",
+    ],
     resposta: "É um ponto de máximo local",
     interpretacao:
       "O sinal da derivada mudando de \\(+\\) para \\(-\\) é a assinatura de um pico. De \\(-\\) para \\(+\\) seria um vale.",
@@ -81,8 +89,12 @@ export const exerciciosAplicacoesDerivadas: Exercicio[] = [
       "Velocidade negativa significa posição diminuindo.",
     ],
     dica: "Pense no sinal da velocidade como o sentido do movimento.",
-    resolucao:
-      "Velocidade zero: o carro parou naquele instante. Velocidade negativa em seguida: a posição passa a diminuir, ou seja, ele começou a voltar.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "A velocidade é a taxa de variação da posição.",
+      "Velocidade zero naquele instante: a posição não está mudando, o carro parou.",
+      "Velocidade negativa depois: a posição passa a diminuir, e o carro anda no sentido contrário.",
+    ],
     resposta: "O carro parou e passou a andar no sentido contrário",
     interpretacao:
       "Esse instante de velocidade zero é um ponto crítico da posição — exatamente a mesma matemática do máximo de uma função, aplicada a movimento.",
@@ -123,7 +135,12 @@ export const exerciciosAplicacoesDerivadas: Exercicio[] = [
     enunciado: "Sabe-se que \\(f'(x) > 0\\) para todo \\(x\\) em \\((1, 5)\\). O que se conclui sobre \\(f\\) nesse intervalo?",
     identificar: "Sinal positivo da derivada indica crescimento.",
     dica: "Derivada positiva = subindo.",
-    resolucao: "Como \\(f'(x) > 0\\) em todo o intervalo, \\(f\\) é crescente em \\((1, 5)\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "\\(f'(x) > 0\\) diz que, em cada ponto de \\((1, 5)\\), a reta tangente sobe.",
+      "Somando essas pequenas subidas ao longo do intervalo, para \\(1 < a < b < 5\\) vale \\(f(a) < f(b)\\).",
+      "Logo \\(f\\) é crescente em \\((1, 5)\\).",
+    ],
     resposta: "\\(f\\) é crescente em \\((1, 5)\\).",
     interpretacao: "O sinal da derivada governa a direção do gráfico.",
     erroComum: "Concluir que \\(f\\) é positiva (confundir \\(f\\) com \\(f'\\)).",
@@ -335,7 +352,12 @@ export const exerciciosAplicacoesDerivadas: Exercicio[] = [
     enunciado: "Um tanque enche com volume \\(V(t) = 2t^2\\) litros (\\(t\\) em minutos). Qual a vazão (taxa de entrada) em \\(t = 3\\)?",
     identificar: "Vazão é \\(V'(t)\\).",
     dica: "\\(V'(t) = 4t\\).",
-    resolucao: "\\(V'(t) = 4t\\); \\(V'(3) = 12\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "A vazão é a taxa de variação do volume: \\(V'(t)\\).",
+      "\\(V'(t) = 2 \\cdot 2t = 4t\\).",
+      "\\(V'(3) = 4 \\cdot 3 = 12\\): entram \\(12\\) litros por minuto em \\(t = 3\\).",
+    ],
     resposta: "\\(12\\) litros por minuto",
     interpretacao: "A derivada do volume é a vazão instantânea naquele momento.",
     erroComum: "Calcular \\(V(3) = 18\\) (volume) e chamar de vazão.",
@@ -375,7 +397,13 @@ export const exerciciosAplicacoesDerivadas: Exercicio[] = [
     enunciado: "Em problemas de área máxima de um retângulo com perímetro fixo, que forma é sempre a ótima e por quê?",
     identificar: "Pense no que a derivada nula indica.",
     dica: "Lados iguais aparecem na solução.",
-    resolucao: "O quadrado: ao montar \\(A(x) = x(P/2 - x)\\) e zerar \\(A'\\), encontra-se \\(x = P/4\\), ou seja, lados iguais.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Com perímetro \\(P\\), dois lados vizinhos somam \\(\\frac{P}{2}\\): se um lado é \\(x\\), o outro é \\(\\frac{P}{2} - x\\).",
+      "Área: \\(A(x) = x\\left(\\frac{P}{2} - x\\right) = \\frac{P}{2}x - x^2\\).",
+      "\\(A'(x) = \\frac{P}{2} - 2x = 0 \\Rightarrow x = \\frac{P}{4}\\). Como \\(A''(x) = -2 < 0\\), é um máximo.",
+      "O outro lado é \\(\\frac{P}{2} - \\frac{P}{4} = \\frac{P}{4}\\): lados iguais, ou seja, um quadrado.",
+    ],
     resposta: "O quadrado (lados iguais).",
     interpretacao: "A otimização confirma a intuição: simetria maximiza a área.",
     erroComum: "Achar que um retângulo bem alongado teria mais área.",

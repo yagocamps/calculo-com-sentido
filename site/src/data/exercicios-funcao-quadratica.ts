@@ -21,8 +21,12 @@ export const exerciciosFuncaoQuadratica: Exercicio[] = [
       "Qual é o termo sem \\(x\\)?",
     ],
     dica: "O sinal de \\(a\\) sozinho já decide para onde a parábola abre.",
-    resolucao:
-      "Comparando com \\(ax^2 + bx + c\\): \\(a = 2\\), \\(b = -5\\), \\(c = 3\\). Como \\(a = 2 > 0\\), a parábola abre para cima.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Compare com \\(ax^2 + bx + c\\): o coeficiente de \\(x^2\\) é \\(a = 2\\).",
+      "O coeficiente de \\(x\\) é \\(b = -5\\), com o sinal junto; o termo sem \\(x\\) é \\(c = 3\\).",
+      "Como \\(a = 2 > 0\\), a parábola abre para cima.",
+    ],
     resposta: "\\(a = 2\\), \\(b = -5\\), \\(c = 3\\); abre para cima",
     interpretacao:
       "Abrir para cima significa que a função tem um ponto de mínimo — existe um valor mais baixo, e daí em diante ela só cresce.",
@@ -93,8 +97,13 @@ export const exerciciosFuncaoQuadratica: Exercicio[] = [
       "Calcule \\(\\Delta\\) de \\(x^2 + 2x + 5 = 0\\) e explique o que o resultado diz sobre o gráfico.",
     identificar: "\\(a = 1\\), \\(b = 2\\), \\(c = 5\\).",
     dica: "Raiz quadrada de número negativo não existe nos reais.",
-    resolucao:
-      "\\(\\Delta = 2^2 - 4 \\cdot 1 \\cdot 5 = 4 - 20 = -16\\). Como \\(\\Delta < 0\\), não há raiz real.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Coeficientes: \\(a = 1\\), \\(b = 2\\), \\(c = 5\\).",
+      "\\(\\Delta = b^2 - 4ac = 2^2 - 4 \\cdot 1 \\cdot 5 = 4 - 20 = -16\\).",
+      "\\(\\Delta < 0\\): a equação não tem raiz real, então a parábola não toca o eixo \\(x\\).",
+      "Como \\(a = 1 > 0\\), ela abre para cima e fica inteira acima do eixo; o vértice é \\((-1, 4)\\).",
+    ],
     resposta: "\\(\\Delta = -16\\); nenhuma raiz real",
     interpretacao:
       "A parábola abre para cima e fica inteira acima do eixo \\(x\\): nunca o toca. \"Sem raiz real\" é uma informação sobre o gráfico, não um erro de conta.",
@@ -255,8 +264,14 @@ export const exerciciosFuncaoQuadratica: Exercicio[] = [
       "A abscissa do vértice fica no meio das raízes.",
     ],
     dica: "Se o vértice está acima do eixo e a curva desce até cortá-lo dos dois lados, para onde ela abre?",
-    resolucao:
-      "As raízes são \\(1\\) e \\(5\\), e o meio delas é \\(\\frac{1 + 5}{2} = 3\\) — coerente com o vértice dado. Como o vértice está em \\(y = 8\\) (acima do eixo) e a curva desce até cortar o eixo nos dois lados, ela abre para baixo: \\(a < 0\\). Logo \\(8\\) é o valor máximo.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "O meio das raízes é \\(\\frac{1 + 5}{2} = 3\\): coerente com o vértice em \\(x = 3\\).",
+      "O vértice está em \\(y = 8\\), acima do eixo, e a curva desce dos dois lados até cortar o eixo em \\(1\\) e em \\(5\\).",
+      "(a) Uma parábola que desce dos dois lados do vértice abre para baixo: \\(a < 0\\).",
+      "(b) O vértice é o ponto mais alto: o valor máximo é \\(8\\), em \\(x = 3\\).",
+      "Conferência: \\(f(x) = a(x-1)(x-5)\\) e \\(f(3) = a \\cdot 2 \\cdot (-2) = -4a = 8\\) dão \\(a = -2 < 0\\).",
+    ],
     resposta: "\\(a < 0\\); valor máximo igual a \\(8\\), em \\(x = 3\\)",
     interpretacao:
       "Dá para descrever a função inteira sem ter a fórmula: raízes, sentido da abertura e vértice já contam a história do gráfico.",
