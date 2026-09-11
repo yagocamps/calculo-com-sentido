@@ -129,7 +129,13 @@ export const exercicios: Exercicio[] = [
       "Um plano cobra R$ 40,00 fixos mais R$ 5,00 por pacote extra de dados. Monte a função \\(C(x)\\) do custo total.",
     identificar: "Fixo mensal e preço por pacote extra.",
     dica: "\\(x\\) = número de pacotes extras. Parte fixa é \\(b\\), preço por pacote é \\(a\\).",
-    resolucao: "\\(C(x) = 5x + 40\\)",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Parte fixa, paga mesmo sem pacote extra: \\(b = 40\\).",
+      "Parte que cresce com o número \\(x\\) de pacotes extras: \\(a = 5\\) por pacote.",
+      "\\(C(x) = ax + b = 5x + 40\\).",
+      "Conferência: \\(C(0) = 40\\) (só o fixo) e \\(C(2) = 5 \\cdot 2 + 40 = 50\\).",
+    ],
     resposta: "\\(C(x) = 5x + 40\\)",
     interpretacao:
       "Os R$ 40 existem mesmo com \\(x = 0\\); cada pacote adiciona R$ 5 linearmente.",
@@ -148,7 +154,12 @@ export const exercicios: Exercicio[] = [
       "Salário fixo de R$ 1.800 + 4% sobre vendas. Quanto recebe com vendas de R$ 12.000?",
     identificar: "Fixo + percentual aplicado sobre as vendas, não sobre o salário.",
     dica: "Comissão \\(= 0{,}04 \\times 12000\\). Some ao fixo de 1800.",
-    resolucao: "\\(S(v) = 1800 + 0{,}04v \\Rightarrow S(12000) = 1800 + 480 = 2280\\)",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Salário em função das vendas: \\(S(v) = 1800 + 0{,}04v\\), pois \\(4\\% = 0{,}04\\).",
+      "Comissão: \\(0{,}04 \\cdot 12\\,000 = 480\\).",
+      "\\(S(12\\,000) = 1800 + 480 = 2280\\): recebe R$ 2.280,00.",
+    ],
     resposta: "R$ 2.280,00",
     interpretacao:
       "A comissão cresce proporcionalmente às vendas — comportamento afim quando a taxa é constante.",
@@ -186,8 +197,12 @@ export const exercicios: Exercicio[] = [
     enunciado: "Na função \\(C(x) = 5x + 40\\), o que significa o 40? E o 5?",
     identificar: "Relacione cada número com a situação do plano de internet.",
     dica: "Compare com fixo + variável.",
-    resolucao:
-      "\\(40\\) = custo fixo (sem pacotes extras). \\(5\\) = preço de cada pacote adicional.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Sem pacotes extras: \\(C(0) = 5 \\cdot 0 + 40 = 40\\). O \\(40\\) é o custo fixo do plano.",
+      "Um pacote a mais: \\(C(x + 1) - C(x) = 5\\). O \\(5\\) é o preço de cada pacote adicional.",
+      "Em resumo: \\(40\\) não depende de \\(x\\); \\(5\\) multiplica \\(x\\) e é a taxa por pacote.",
+    ],
     resposta: "\\(40 \\to\\) fixo · \\(5 \\to\\) taxa por pacote",
     interpretacao:
       "Interpretar coeficientes é tão importante quanto calcular — é o que a prova cobra em contexto.",
@@ -203,10 +218,15 @@ export const exercicios: Exercicio[] = [
     type: "aplicada",
     level: "medio",
     enunciado:
-      "Custo fixo de R$ 500 + R$ 12 por unidade produzida. Qual o custo de 80 unidades? Qual o custo fixo por unidade se produzir 0?",
+      "Custo fixo de R$ 500 + R$ 12 por unidade produzida. Qual o custo de 80 unidades? E quanto custa produzir 0 unidades?",
     identificar: "\\(C(x) = 12x + 500\\). Custo com \\(x = 0\\) revela só o fixo.",
     dica: "Substitua \\(x = 80\\). Para \\(x = 0\\), só resta \\(b\\).",
-    resolucao: "\\(C(80) = 12 \\cdot 80 + 500 = 960 + 500 = 1460\\). \\(C(0) = 500\\)",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Função custo: \\(C(x) = 12x + 500\\).",
+      "\\(C(80) = 12 \\cdot 80 + 500 = 960 + 500 = 1460\\): R$ 1.460,00.",
+      "\\(C(0) = 12 \\cdot 0 + 500 = 500\\): mesmo sem produzir nada, o fixo de R$ 500 é pago.",
+    ],
     resposta: "R$ 1.460,00 para 80 un. · R$ 500,00 de fixo total",
     interpretacao:
       "O fixo não se divide automaticamente por unidade — é um custo global da operação.",
@@ -225,7 +245,13 @@ export const exercicios: Exercicio[] = [
       "Plano A: R$ 30 + R$ 0,80 por minuto. Plano B: R$ 50 + R$ 0,50 por minuto. Para quantos minutos os planos custam igual?",
     identificar: "Monte \\(C_A(x)\\) e \\(C_B(x)\\) e iguale.",
     dica: "\\(30 + 0{,}80x = 50 + 0{,}50x \\Rightarrow\\) isole \\(x\\).",
-    resolucao: "\\(0{,}30x = 20 \\Rightarrow x = \\frac{20}{0{,}30} \\approx 66{,}67\\) minutos",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "\\(C_A(x) = 30 + 0{,}80x\\) e \\(C_B(x) = 50 + 0{,}50x\\), com \\(x\\) em minutos.",
+      "Iguale: \\(30 + 0{,}80x = 50 + 0{,}50x \\Rightarrow 0{,}30x = 20\\).",
+      "\\(x = \\frac{20}{0{,}30} \\approx 66{,}67\\) minutos, isto é, 66 min 40 s.",
+      "Conferência: \\(C_A \\approx 30 + 53{,}33 = 83{,}33\\) e \\(C_B \\approx 50 + 33{,}33 = 83{,}33\\).",
+    ],
     resposta: "\\(\\approx 66{,}7\\) minutos (ou 66 min 40 s)",
     interpretacao:
       "Antes do ponto de equilíbrio um plano é melhor; depois, o outro — típico de funções afins.",
@@ -244,7 +270,13 @@ export const exercicios: Exercicio[] = [
       "Frete: R$ 120 de taxa fixa + R$ 3,50 por km. Orçamento máximo R$ 500. Qual a distância máxima possível?",
     identificar: "Inequação \\(C(x) \\leq 500\\) com \\(C(x) = 3{,}50x + 120\\).",
     dica: "\\(500 \\geq 3{,}50x + 120 \\Rightarrow\\) isole \\(x\\).",
-    resolucao: "\\(380 \\geq 3{,}50x \\Rightarrow x \\leq \\frac{380}{3{,}50} \\approx 108{,}57\\) km",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Custo do frete: \\(C(x) = 3{,}50x + 120\\). O orçamento exige \\(3{,}50x + 120 \\leq 500\\).",
+      "Tire a taxa fixa: \\(3{,}50x \\leq 500 - 120 = 380\\).",
+      "Divida por \\(3{,}50\\), que é positivo (o sinal não inverte): \\(x \\leq \\frac{380}{3{,}50} \\approx 108{,}57\\) km.",
+      "A distância máxima é de cerca de \\(108{,}6\\) km; acima disso o frete passa de R$ 500.",
+    ],
     resposta: "\\(\\approx 108{,}6\\) km (máximo)",
     interpretacao:
       "Problemas de orçamento máximo são inequações disfarçadas de função afim.",
