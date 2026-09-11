@@ -150,7 +150,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Qual o domínio de \\(1/(x^2-4)\\)?", "Exclua os zeros \\(x=\\pm2\\).", "\\(x\\ne-2,2\\)", "Os dois fatores permanecem no denominador."],
       ["Em \\((x-5)/(x-5)\\), há o quê em \\(x=5\\)?", "A expressão vale 1 para \\(x\\ne5\\), mas não existe em 5: furo.", "furo", "O limite é 1."],
-    ], exerciseIds: ["p2-polinomios-racionais-1", "p2-polinomios-racionais-4"],
+    ], exerciseIds: ["p2-polinomios-racionais-1", "p2-polinomios-racionais-2", "p2-polinomios-racionais-3", "p2-polinomios-racionais-4", "p2-polinomios-racionais-5"],
   }),
   compact({
     moduleSlug: "funcoes-para-calculo", moduleTitle: "Funções para Cálculo", lessonNumber: 12,
@@ -201,7 +201,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Calcule \\(\\lim_{x\\to1}(x^2-1)/(x-1)\\).", "Fatore e cancele: \\(x+1\\to2\\).", "2", "O furo tem tendência 2."],
       ["O que significa obter \\(0/0\\)?", "Que a substituição é inconclusiva e outra técnica é necessária.", "indeterminação", "Diferentes funções com \\(0/0\\) podem ter limites distintos."],
-    ], exerciseIds: ["p2-limites-fatoracao-2", "p2-limites-fatoracao-4"],
+    ], exerciseIds: ["p2-limites-fatoracao-2", "p2-limites-fatoracao-3", "p2-limites-fatoracao-4"],
   }),
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 14,
@@ -217,7 +217,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Calcule \\(\\lim_{x\\to9}(\\sqrt{x}-3)/(x-9)\\).", "Racionalize e obtenha \\(1/(\\sqrt{x}+3)\\to1/6\\).", "\\(1/6\\)", "A técnica revela uma taxa local."],
       ["Qual o conjugado de \\(2-\\sqrt{x}\\)?", "Troque o sinal entre os termos.", "\\(2+\\sqrt{x}\\)", "O produto vira \\(4-x\\)."],
-    ], exerciseIds: ["p2-racionalizacao-2", "p2-racionalizacao-4"],
+    ], exerciseIds: ["p2-racionalizacao-2", "p2-racionalizacao-3", "p2-racionalizacao-4"],
   }),
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 15,
@@ -250,7 +250,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Calcule \\(\\lim_{x\\to0}\\sin(3x)/(3x)\\).", "É exatamente a forma fundamental.", "1", "Argumento e denominador coincidem."],
       ["Calcule \\(\\lim_{x\\to0}\\sin(2x)/x\\).", "Escreva \\(2\\sin(2x)/(2x)\\).", "2", "O fator 2 fica fora do limite."],
-    ], exerciseIds: ["p2-limites-trig-1", "p2-limites-trig-4"],
+    ], exerciseIds: ["p2-limites-trig-1", "p2-limites-trig-2", "p2-limites-trig-3", "p2-limites-trig-4", "p2-limites-trig-5"],
   }),
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 17,
@@ -350,7 +350,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Derive \\(\\cos(4x)\\).", "Use cadeia: \\(-4\\sin(4x)\\).", "\\(-4\\sin(4x)\\)", "A frequência aparece como fator."],
       ["Derive \\(\\tan x\\).", "A regra direta é \\(\\sec^2x\\).", "\\(\\sec^2x\\)", "A identidade trigonométrica surge na taxa."],
-    ], exerciseIds: ["p2-derivadas-trig-1", "p2-derivadas-trig-5"],
+    ], exerciseIds: ["p2-derivadas-trig-1", "p2-derivadas-trig-2", "p2-derivadas-trig-3", "p2-derivadas-trig-4", "p2-derivadas-trig-5"],
   }),
   compact({
     moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 14,
@@ -366,7 +366,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Derive \\(2^x\\).", "Use base geral: \\(2^x\\ln2\\).", "\\(2^x\\ln2\\)", "A base altera a taxa por \\(\\ln2\\)."],
       ["Derive \\(\\ln(5x)\\), para \\(x>0\\).", "\\(5)/(5x)=1/x\\).", "\\(1/x\\)", "A constante interna cancela neste caso."],
-    ], exerciseIds: ["p2-derivadas-exp-log-1", "p2-derivadas-exp-log-4"],
+    ], exerciseIds: ["p2-derivadas-exp-log-1", "p2-derivadas-exp-log-2", "p2-derivadas-exp-log-3", "p2-derivadas-exp-log-4", "p2-derivadas-exp-log-5"],
   }),
   compact({
     moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 15,
@@ -382,7 +382,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Derive \\(xy=6\\) implicitamente.", "Produto: \\(y+xy'=0\\), então \\(y'=-y/x\\).", "\\(-y/x\\)", "As duas variáveis mudam juntas."],
       ["Em \\(x^2+y^2=1\\), qual inclinação em \\((0,1)\\)?", "\\(y'=-x/y=0\\).", "0", "A tangente é horizontal no topo."],
-    ], exerciseIds: ["p2-derivacao-implicita-1", "p2-derivacao-implicita-4"],
+    ], exerciseIds: ["p2-derivacao-implicita-1", "p2-derivacao-implicita-2", "p2-derivacao-implicita-3", "p2-derivacao-implicita-4", "p2-derivacao-implicita-5"],
   }),
   compact({
     moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 16,
@@ -462,7 +462,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Se \\(V=s^3\\), relacione \\(dV/dt\\) e \\(ds/dt\\).", "Derive: \\(dV/dt=3s^2 ds/dt\\).", "\\(3s^2 ds/dt\\)", "O tamanho atual multiplica a taxa do lado."],
       ["Por que as unidades ajudam?", "Elas distinguem comprimento/tempo de área/tempo e detectam fórmulas incompletas.", "Para conferir a interpretação", "Análise dimensional é uma checagem de sentido."],
-    ], exerciseIds: ["p2-taxas-relacionadas-1", "p2-taxas-relacionadas-5"],
+    ], exerciseIds: ["p2-taxas-relacionadas-1", "p2-taxas-relacionadas-2", "p2-taxas-relacionadas-3", "p2-taxas-relacionadas-4", "p2-taxas-relacionadas-5"],
   }),
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 14,
@@ -510,7 +510,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Calcule \\(\\int 3x^2 e^{x^3}dx\\).", "Use \\(u=x^3\\), \\(du=3x^2dx\\): resultado \\(e^{x^3}+C\\).", "\\(e^{x^3}+C\\)", "É a cadeia ao contrário."],
       ["Qual escolha de \\(u\\) em \\(\\int x/(x^2+4)dx\\)?", "Use \\(u=x^2+4\\).", "\\(u=x^2+4\\)", "A derivada interna é proporcional a \\(x\\)."],
-    ], exerciseIds: ["p2-substituicao-1", "p2-substituicao-5"],
+    ], exerciseIds: ["p2-substituicao-1", "p2-substituicao-2", "p2-substituicao-3", "p2-substituicao-4", "p2-substituicao-5"],
   }),
   compact({
     moduleSlug: "integrais", moduleTitle: "Integrais", lessonNumber: 14,
@@ -542,7 +542,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Entre \\(y=4\\) e \\(y=x^2\\) em \\([-2,2]\\), qual integrando?", "A curva de cima é 4: use \\(4-x^2\\).", "\\(4-x^2\\)", "As interseções são as bordas."],
       ["Se as curvas cruzam no meio, o que fazer?", "Dividir o intervalo e trocar a ordem onde necessário.", "dividir a integral", "Isso mantém a área positiva."],
-    ], exerciseIds: ["p2-area-entre-curvas-1", "p2-area-entre-curvas-5"],
+    ], exerciseIds: ["p2-area-entre-curvas-1", "p2-area-entre-curvas-2", "p2-area-entre-curvas-3", "p2-area-entre-curvas-4", "p2-area-entre-curvas-5"],
   }),
   compact({
     moduleSlug: "integrais", moduleTitle: "Integrais", lessonNumber: 16,

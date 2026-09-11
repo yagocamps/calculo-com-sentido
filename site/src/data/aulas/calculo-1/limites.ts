@@ -455,7 +455,7 @@ export const limitesAulas: Record<string, AulaContent> = {
     exerciciosAplicados: {
       title: "Exercícios aplicados",
       intro: "Pratique com exercícios resolvidos passo a passo.",
-      exerciseIds: ["lim-ap-09", "lim-ap-10"],
+      exerciseIds: ["lim-ap-09", "lim-ap-10", "p2-limites-laterais-1", "p2-limites-laterais-2", "p2-limites-laterais-4", "p2-limites-laterais-5"],
     },
     resumo: {
       title: "Resumo da aula",

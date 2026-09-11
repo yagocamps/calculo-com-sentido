@@ -5,7 +5,9 @@ import type {
   PedagogicalExerciseLevel,
 } from "@/data/exercicios";
 
-type Task = [question: string, answer: string, solution: string];
+/** O quarto elemento corrige o tipo quando o nível sozinho não o descreve:
+ *  "Derive sen 3x" é nível 4, mas é cálculo, não aplicação. */
+type Task = [question: string, answer: string, solution: string, type?: ExerciseType];
 type Blueprint = {
   slug: string;
   title: string;
@@ -27,8 +29,8 @@ const blueprints: Blueprint[] = [
       ["Simplifique \\(\\frac{6x}{3x}\\), com \\(x\\ne0\\).", "2", "Divida os fatores 6 por 3 e \\(x\\) por \\(x\\): resultado 2."],
       ["Simplifique \\(\\frac{x^2-4}{x-2}\\) e registre a restrição.", "\\(x+2,\\ x\\ne2\\)", "Fatore \\(x^2-4=(x-2)(x+2)\\) e cancele o fator para \\(x\\ne2\\)."],
       ["Explique por que \\(x=2\\) continua proibido após a simplificação anterior.", "Porque zerava o denominador original", "A expressão simplificada descreve os mesmos valores apenas no domínio original."],
-      ["Simplifique \\(\\frac{x^2-9}{x^2+x-6}\\).", "\\(\\frac{x-3}{x-2}\\), com \\(x\\ne-3,2\\)", "Fatore: numerador \\((x-3)(x+3)\\), denominador \\((x+3)(x-2)\\); sobra \\((x-3)/(x-2)\\), com \\(x\\ne-3,2\\)."],
-      ["Resolva \\(\\frac{x}{x-1}+\\frac1{x+1}\\) em uma única fração.", "\\(\\frac{x^2+x-1}{x^2-1}\\), \\(x\\ne\\pm1\\)", "Use denominador comum \\((x-1)(x+1)\\), some os numeradores e mantenha as restrições."],
+      ["Simplifique \\(\\frac{x^2-9}{x^2+x-6}\\).", "\\(\\frac{x-3}{x-2}\\), com \\(x\\ne-3,2\\)", "Fatore: numerador \\((x-3)(x+3)\\), denominador \\((x+3)(x-2)\\); sobra \\((x-3)/(x-2)\\), com \\(x\\ne-3,2\\).", "calculo"],
+      ["Escreva \\(\\frac{x}{x-1}+\\frac1{x+1}\\) como uma única fração.", "\\(\\frac{x^2+2x-1}{x^2-1}\\), \\(x\\ne\\pm1\\)", "Com denominador comum \\((x-1)(x+1)\\), o numerador fica \\(x(x+1)+(x-1)=x^2+2x-1\\). As restrições \\(x\\ne\\pm1\\) continuam valendo.", "calculo"],
     ],
   },
   {
@@ -38,7 +40,7 @@ const blueprints: Blueprint[] = [
       ["Se \\(f(x)=x+1\\) para \\(x<0\\) e \\(f(x)=x^2\\) para \\(x\\ge0\\), calcule \\(f(-2)\\).", "-1", "Como -2 é negativo, use \\(x+1\\)."],
       ["Na mesma função, calcule \\(f(0)\\).", "0", "A igualdade pertence à regra \\(x^2\\)."],
       ["Os limites laterais em 0 coincidem?", "Não", "Pela esquerda a tendência é 1; pela direita é 0."],
-      ["Escolha \\(k\\) para tornar contínua em 1: \\(f(x)=x+k\\) se \\(x<1\\), e \\(f(x)=3x\\) se \\(x\\ge1\\).", "2", "Iguale as tendências: \\(1+k=3\\)."],
+      ["Escolha \\(k\\) para tornar contínua em 1: \\(f(x)=x+k\\) se \\(x<1\\), e \\(f(x)=3x\\) se \\(x\\ge1\\).", "2", "Iguale as tendências: \\(1+k=3\\).", "calculo"],
       ["Crie uma função por partes para frete grátis acima de R$ 100 e taxa de R$ 15 abaixo disso.", "\\(F(v)=15\\) se \\(v<100\\), \\(F(v)=0\\) se \\(v\\ge100\\)", "Use o valor da compra como entrada e escreva uma regra para cada faixa."],
     ],
   },
@@ -49,7 +51,7 @@ const blueprints: Blueprint[] = [
       ["Se \\(f(x)=x+2\\) e \\(g(x)=3x\\), calcule \\(f(g(1))\\).", "5", "\\(g(1)=3\\) e \\(f(3)=5\\)."],
       ["Escreva \\(f(g(x))\\) para as funções anteriores.", "\\(3x+2\\)", "Substitua a entrada de \\(f\\) por \\(3x\\)."],
       ["Explique por que \\(f\\circ g\\) pode diferir de \\(g\\circ f\\).", "Porque a ordem das etapas muda", "\\(f(g(x))=3x+2\\), enquanto \\(g(f(x))=3x+6\\)."],
-      ["Decomponha \\(h(x)=\\sqrt{2x+1}\\) em interna e externa.", "interna \\(2x+1\\); externa \\(\\sqrt{u}\\)", "A expressão dentro da raiz é a função interna."],
+      ["Decomponha \\(h(x)=\\sqrt{2x+1}\\) em interna e externa.", "interna \\(2x+1\\); externa \\(\\sqrt{u}\\)", "A expressão dentro da raiz é a função interna.", "compreensao"],
       ["Um preço recebe 10% de desconto e depois taxa fixa de R$ 5. Modele a composição.", "\\(C(p)=0{,}9p+5\\)", "Aplique primeiro \\(g(p)=0{,}9p\\) e depois \\(f(u)=u+5\\)."],
     ],
   },
@@ -60,8 +62,8 @@ const blueprints: Blueprint[] = [
       ["Calcule \\(\\lim_{x\\to2}\\frac{x^2-4}{x-2}\\).", "4", "Fatore e cancele: \\(x+2\\to4\\)."],
       ["Calcule \\(\\lim_{x\\to-3}\\frac{x^2-9}{x+3}\\).", "-6", "Sobra \\(x-3\\), que tende a -6."],
       ["O que informa a forma \\(0/0\\)?", "Que o método direto é inconclusivo", "É uma indeterminação, não um valor."],
-      ["Calcule \\(\\lim_{x\\to1}\\frac{x^3-1}{x-1}\\).", "3", "Use \\(x^3-1=(x-1)(x^2+x+1)\\)."],
-      ["Calcule \\(\\lim_{h\\to0}\\frac{(x+h)^2-x^2}{h}\\).", "\\(2x\\)", "Expanda, fatore \\(h\\), cancele e faça \\(h\\to0\\)."],
+      ["Calcule \\(\\lim_{x\\to1}\\frac{x^3-1}{x-1}\\).", "3", "Use \\(x^3-1=(x-1)(x^2+x+1)\\).", "calculo"],
+      ["Calcule \\(\\lim_{h\\to0}\\frac{(x+h)^2-x^2}{h}\\).", "\\(2x\\)", "Expanda, fatore \\(h\\), cancele e faça \\(h\\to0\\).", "calculo"],
     ],
   },
   {
@@ -71,8 +73,8 @@ const blueprints: Blueprint[] = [
       ["Qual o conjugado de \\(\\sqrt{x}-2\\)?", "\\(\\sqrt{x}+2\\)", "Troque o sinal entre os termos."],
       ["Calcule \\(\\lim_{x\\to4}\\frac{\\sqrt{x}-2}{x-4}\\).", "\\(1/4\\)", "Racionalize; sobra \\(1/(\\sqrt{x}+2)\\)."],
       ["Por que multiplicar pelo conjugado não muda o valor?", "Porque multiplicamos por 1", "O conjugado sobre ele mesmo vale 1 onde está definido."],
-      ["Calcule \\(\\lim_{x\\to0}\\frac{\\sqrt{1+x}-1}{x}\\).", "\\(1/2\\)", "Racionalize e obtenha \\(1/(\\sqrt{1+x}+1)\\)."],
-      ["Calcule \\(\\lim_{x\\to9}\\frac{x-9}{\\sqrt{x}-3}\\).", "6", "Fatore via conjugado: a expressão equivale a \\(\\sqrt{x}+3\\)."],
+      ["Calcule \\(\\lim_{x\\to0}\\frac{\\sqrt{1+x}-1}{x}\\).", "\\(1/2\\)", "Racionalize e obtenha \\(1/(\\sqrt{1+x}+1)\\).", "calculo"],
+      ["Calcule \\(\\lim_{x\\to9}\\frac{x-9}{\\sqrt{x}-3}\\).", "6", "Fatore via conjugado: a expressão equivale a \\(\\sqrt{x}+3\\).", "calculo"],
     ],
   },
   {
@@ -82,19 +84,19 @@ const blueprints: Blueprint[] = [
       ["Qual o grau de \\(4x^3-x+2\\)?", "3", "O maior expoente com coeficiente não nulo é 3."],
       ["Quais zeros de \\((x-1)(x+4)\\)?", "1 e -4", "Zere cada fator."],
       ["Um zero de multiplicidade par toca ou cruza o eixo?", "Toca", "O sinal tende a permanecer o mesmo nos dois lados."],
-      ["Classifique \\(x=2\\) em \\((x-2)/(x^2-4)\\).", "furo", "O fator cancela; a restrição permanece."],
-      ["Descreva o comportamento de \\((2x^3+x)/(x^2+1)\\) no infinito.", "cresce como \\(2x\\)", "Divisão ou termos dominantes dão razão aproximada \\(2x^3/x^2=2x\\)."],
+      ["Classifique \\(x=2\\) em \\((x-2)/(x^2-4)\\).", "furo", "O fator cancela; a restrição permanece.", "interpretacao"],
+      ["Descreva o comportamento de \\((2x^3+x)/(x^2+1)\\) no infinito.", "cresce como \\(2x\\)", "Divisão ou termos dominantes dão razão aproximada \\(2x^3/x^2=2x\\).", "interpretacao"],
     ],
   },
   {
     slug: "limites-laterais", title: "Limites laterais", tema: "Limites", temaSlug: "limites", area: "Limites · gráficos",
     identify: "Separe aproximação pela esquerda e pela direita.", hint: "O limite bilateral só existe se os dois lados coincidirem.", meaning: "Os lados descrevem o que acontece antes e depois do ponto.", error: "Fazer média entre limites laterais diferentes.",
     tasks: [
-      ["Se esquerda e direita tendem a 3, qual o limite?", "3", "Os dois lados coincidem."],
-      ["Se esquerda tende a 1 e direita a 4, o limite bilateral existe?", "Não", "As tendências laterais discordam."],
+      ["Se esquerda e direita tendem a 3, qual o limite?", "3", "Os dois lados coincidem.", "compreensao"],
+      ["Se esquerda tende a 1 e direita a 4, o limite bilateral existe?", "Não", "As tendências laterais discordam.", "compreensao"],
       ["Uma função pode ter limite em \\(a\\) sem estar definida em \\(a\\)?", "Sim", "O limite observa os valores próximos."],
-      ["Analise \\(1/x\\) quando \\(x\\to0^-\\) e \\(x\\to0^+\\).", "\\(-\\infty\\) e \\(+\\infty\\)", "O sinal do denominador pequeno muda com o lado."],
-      ["Construa uma função por partes com limite 2 em 0, mas valor \\(f(0)=7\\).", "Por exemplo \\(f(x)=2\\) se \\(x\\ne0\\), e \\(f(0)=7\\)", "Os valores próximos ficam em 2; o ponto isolado vale 7."],
+      ["Analise \\(1/x\\) quando \\(x\\to0^-\\) e \\(x\\to0^+\\).", "\\(-\\infty\\) e \\(+\\infty\\)", "O sinal do denominador pequeno muda com o lado.", "interpretacao"],
+      ["Construa uma função por partes com limite 2 em 0, mas valor \\(f(0)=7\\).", "Por exemplo \\(f(x)=2\\) se \\(x\\ne0\\), e \\(f(0)=7\\)", "Os valores próximos ficam em 2; o ponto isolado vale 7.", "compreensao"],
     ],
   },
   {
@@ -104,8 +106,8 @@ const blueprints: Blueprint[] = [
       ["Calcule \\(\\lim_{x\\to0}\\sin x/x\\).", "1", "É o limite fundamental em radianos."],
       ["Calcule \\(\\lim_{x\\to0}\\sin(4x)/x\\).", "4", "Escreva \\(4[\\sin(4x)/(4x)]\\)."],
       ["Por que radianos são essenciais nesta fórmula?", "Porque em radianos a razão tende a 1", "Outra unidade introduz um fator de conversão."],
-      ["Calcule \\(\\lim_{x\\to0}\\tan x/x\\).", "1", "Use \\(\\tan x=\\sin x/\\cos x\\), com \\(\\cos x\\to1\\)."],
-      ["Calcule \\(\\lim_{x\\to0}\\sin(3x)/\\sin(5x)\\).", "\\(3/5\\)", "Crie dois quocientes fundamentais e compare os fatores."],
+      ["Calcule \\(\\lim_{x\\to0}\\tan x/x\\).", "1", "Use \\(\\tan x=\\sin x/\\cos x\\), com \\(\\cos x\\to1\\).", "calculo"],
+      ["Calcule \\(\\lim_{x\\to0}\\sin(3x)/\\sin(5x)\\).", "\\(3/5\\)", "Crie dois quocientes fundamentais e compare os fatores.", "calculo"],
     ],
   },
   {
@@ -115,8 +117,8 @@ const blueprints: Blueprint[] = [
       ["Derive \\(\\sin x\\).", "\\(\\cos x\\)", "Regra direta em radianos."],
       ["Derive \\(\\cos x\\).", "\\(-\\sin x\\)", "Regra direta com sinal negativo."],
       ["Interprete o que ocorre com a inclinação do seno em \\(x=\\pi/2\\).", "É zero", "\\(\\cos(\\pi/2)=0\\); o seno tem máximo local."],
-      ["Derive \\(\\sin(3x)\\).", "\\(3\\cos(3x)\\)", "Aplique a cadeia."],
-      ["Derive \\(x^2\\cos x\\).", "\\(2x\\cos x-x^2\\sin x\\)", "Use produto e a derivada do cosseno."],
+      ["Derive \\(\\sin(3x)\\).", "\\(3\\cos(3x)\\)", "Aplique a cadeia.", "calculo"],
+      ["Derive \\(x^2\\cos x\\).", "\\(2x\\cos x-x^2\\sin x\\)", "Use produto e a derivada do cosseno.", "calculo"],
     ],
   },
   {
@@ -126,8 +128,8 @@ const blueprints: Blueprint[] = [
       ["Derive \\(e^x\\).", "\\(e^x\\)", "A exponencial natural é sua própria derivada."],
       ["Derive \\(2^x\\).", "\\(2^x\\ln2\\)", "Use a regra para base geral."],
       ["Qual o domínio de \\((\\ln x)'=1/x\\)?", "\\(x>0\\)", "O logaritmo real exige argumento positivo."],
-      ["Derive \\(\\ln(x^2+1)\\).", "\\(2x/(x^2+1)\\)", "Use cadeia: interna sobre a própria função."],
-      ["Derive \\(e^{x^2}\\ln x\\).", "\\(2xe^{x^2}\\ln x+e^{x^2}/x\\)", "Combine produto e cadeia, com \\(x>0\\)."],
+      ["Derive \\(\\ln(x^2+1)\\).", "\\(2x/(x^2+1)\\)", "Use cadeia: interna sobre a própria função.", "calculo"],
+      ["Derive \\(e^{x^2}\\ln x\\).", "\\(2xe^{x^2}\\ln x+e^{x^2}/x\\)", "Combine produto e cadeia, com \\(x>0\\).", "calculo"],
     ],
   },
   {
@@ -137,8 +139,8 @@ const blueprints: Blueprint[] = [
       ["Derive \\(y^2\\) em relação a \\(x\\).", "\\(2yy'\\)", "A regra da cadeia produz \\(y'\\)."],
       ["Para \\(x^2+y^2=25\\), encontre \\(y'\\).", "\\(-x/y\\)", "Derive e isole: \\(2x+2yy'=0\\)."],
       ["Qual a inclinação da circunferência no ponto \\((0,5)\\)?", "0", "Substitua em \\(-x/y\\)."],
-      ["Derive \\(xy=10\\).", "\\(y'=-y/x\\)", "Produto: \\(y+xy'=0\\)."],
-      ["Para \\(x^2+xy+y^2=7\\), isole \\(y'\\) onde \\(x+2y\\ne0\\).", "\\(-\\frac{2x+y}{x+2y}\\)", "Derive termo a termo: \\(2x+y+xy'+2yy'=0\\). Agrupe \\(y'\\) e divida por \\(x+2y\\ne0\\)."],
+      ["Derive \\(xy=10\\).", "\\(y'=-y/x\\)", "Produto: \\(y+xy'=0\\).", "calculo"],
+      ["Para \\(x^2+xy+y^2=7\\), isole \\(y'\\) onde \\(x+2y\\ne0\\).", "\\(-\\frac{2x+y}{x+2y}\\)", "Derive termo a termo: \\(2x+y+xy'+2yy'=0\\). Agrupe \\(y'\\) e divida por \\(x+2y\\ne0\\).", "calculo"],
     ],
   },
   {
@@ -159,8 +161,8 @@ const blueprints: Blueprint[] = [
       ["Em \\(\\int2x(x^2+1)^3dx\\), escolha \\(u\\).", "\\(u=x^2+1\\)", "A derivada \\(2x\\) aparece no integrando."],
       ["Calcule a integral anterior.", "\\((x^2+1)^4/4+C\\)", "A integral vira \\(\\int u^3du\\)."],
       ["Como conferir uma substituição?", "Derivando a resposta", "A derivada deve recuperar o integrando."],
-      ["Calcule \\(\\int x/(x^2+4)dx\\).", "\\(\\frac12\\ln(x^2+4)+C\\)", "Use \\(u=x^2+4\\), \\(du=2x dx\\)."],
-      ["Calcule \\(\\int_0^1 2x e^{x^2}dx\\).", "\\(e-1\\)", "Use \\(u=x^2\\) e transforme também os limites: 0 a 1."],
+      ["Calcule \\(\\int x/(x^2+4)dx\\).", "\\(\\frac12\\ln(x^2+4)+C\\)", "Use \\(u=x^2+4\\), \\(du=2x dx\\).", "calculo"],
+      ["Calcule \\(\\int_0^1 2x e^{x^2}dx\\).", "\\(e-1\\)", "Use \\(u=x^2\\) e transforme também os limites: 0 a 1.", "calculo"],
     ],
   },
   {
@@ -170,15 +172,15 @@ const blueprints: Blueprint[] = [
       ["Entre \\(y=2\\) e \\(y=x\\) em \\([0,1]\\), qual integrando?", "\\(2-x\\)", "A reta horizontal está acima."],
       ["Calcule essa área.", "\\(3/2\\)", "\\(\\int_0^1(2-x)dx=2-1/2\\)."],
       ["Por que 'cima menos baixo'?", "Para medir distância vertical positiva", "A ordem preserva a interpretação geométrica."],
-      ["Calcule a área entre \\(y=x\\) e \\(y=x^2\\) em \\([0,1]\\).", "\\(1/6\\)", "Integre \\(x-x^2\\)."],
-      ["Ache a área entre \\(y=x^2\\) e \\(y=2x\\) entre as interseções.", "\\(4/3\\)", "Interseções 0 e 2; integre \\(2x-x^2\\) nesse intervalo."],
+      ["Calcule a área entre \\(y=x\\) e \\(y=x^2\\) em \\([0,1]\\).", "\\(1/6\\)", "Integre \\(x-x^2\\).", "calculo"],
+      ["Ache a área entre \\(y=x^2\\) e \\(y=2x\\) entre as interseções.", "\\(4/3\\)", "Interseções 0 e 2; integre \\(2x-x^2\\) nesse intervalo.", "calculo"],
     ],
   },
   {
     slug: "otimizacao", title: "Otimização com modelagem", tema: "Aplic. derivadas", temaSlug: "aplicacoes-derivadas", area: "Aplicações · decisão",
     identify: "Defina variáveis, escreva restrição e objetivo, reduza a uma variável.", hint: "Só derive depois de construir e restringir o modelo.", meaning: "O extremo matemático precisa responder à pergunta e respeitar o domínio físico.", error: "Derivar a restrição em vez da função objetivo ou ignorar endpoints.",
     tasks: [
-      ["Qual o primeiro passo de um problema de otimização?", "Definir variáveis e a grandeza a otimizar", "Antes da derivada, traduza o contexto."],
+      ["Qual o primeiro passo de um problema de otimização?", "Definir variáveis e a grandeza a otimizar", "Antes da derivada, traduza o contexto.", "compreensao"],
       ["Retângulo de perímetro 20: escreva a área em função de \\(x\\).", "\\(A(x)=x(10-x)\\)", "Da restrição \\(2x+2y=20\\), obtemos \\(y=10-x\\)."],
       ["Qual domínio físico para a função anterior?", "\\(0<x<10\\)", "Os dois lados precisam ser positivos."],
       ["Encontre as dimensões de área máxima.", "5 por 5", "\\(A'=10-2x=0\\Rightarrow x=5\\), então \\(y=5\\)."],
@@ -195,7 +197,7 @@ const types: Record<PedagogicalExerciseLevel, ExerciseType> = {
 };
 
 export const exerciciosFase2: Exercicio[] = blueprints.flatMap((blueprint, topicIndex) =>
-  blueprint.tasks.map(([question, answer, solution], taskIndex) => {
+  blueprint.tasks.map(([question, answer, solution, taskType], taskIndex) => {
     const level = (taskIndex + 1) as PedagogicalExerciseLevel;
     return {
       id: `p2-${blueprint.slug}-${level}`,
@@ -204,7 +206,7 @@ export const exerciciosFase2: Exercicio[] = blueprints.flatMap((blueprint, topic
       tema: blueprint.tema,
       temaSlug: blueprint.temaSlug,
       area: blueprint.area,
-      type: types[level],
+      type: taskType ?? types[level],
       level: legacyLevels[level],
       pedagogicalLevel: level,
       enunciado: question,

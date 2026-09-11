@@ -522,7 +522,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-09", "ad-ap-10"] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-09", "ad-ap-10", "p2-otimizacao-1", "p2-otimizacao-2", "p2-otimizacao-3"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
@@ -731,7 +731,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-13", "ad-ap-14"] },
+    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-13", "ad-ap-14", "p2-otimizacao-4", "p2-otimizacao-5"] },
     resumo: {
       title: "Resumo da aula",
       bullets: [
