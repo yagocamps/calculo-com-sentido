@@ -187,7 +187,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       duration: "15 min",
       readingNotes: ["Tudo para um lado", "O denominador nunca entra"],
       glossaryTerms: ["Inequação", "Raiz de uma função", "Intervalo"],
-      next: { slug: "sistemas-equacoes", title: "Sistemas de equações" },
+      next: { slug: "valor-absoluto-distancia", title: "Valor absoluto como distância" },
     }),
     plot: "sinal-racional",
     porQue: {
@@ -333,7 +333,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
         "Fatore, marque os zeros e monte o quadro de sinais.",
         "Numa fração, o denominador corta a reta mas nunca entra na resposta.",
         "Nunca multiplique os dois lados pelo denominador de sinal desconhecido.",
-        "Próximo: sistemas de equações.",
+        "Próximo: valor absoluto como distância.",
       ],
     },
   },
