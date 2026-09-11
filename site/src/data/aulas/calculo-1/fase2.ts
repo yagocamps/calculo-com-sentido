@@ -2,7 +2,7 @@ import {
   createCurriculumLesson,
   type CurriculumLessonSpec,
 } from "@/data/aulas/lesson-factory";
-import type { AulaContent } from "@/data/aulas/types";
+import type { AulaContent, AulaPrereq } from "@/data/aulas/types";
 import type { TrilhaAula } from "@/data/trilha-module";
 import { propriedadesDosLimites } from "@/data/aulas/calculo-1/propriedades-dos-limites";
 import { derivadaInversaSpec, reviseCurriculum } from "@/data/aulas/revisao-curricular";
@@ -29,6 +29,8 @@ type CompactSpec = {
   exerciseIds?: string[];
   level?: string;
   plot?: PlotId;
+  /** Chips específicos; sem isto a aula herda os pré-requisitos do módulo. */
+  prereqs?: AulaPrereq[];
 };
 
 const appearances: Record<string, { label: string; detail: string }[]> = {
@@ -76,6 +78,7 @@ function compact(spec: CompactSpec): CurriculumLessonSpec {
     formula: spec.formula,
     formulaLatex: spec.formulaLatex,
     plot: spec.plot,
+    prereqs: spec.prereqs,
     appearances: appearances[spec.moduleSlug],
     exampleTitle: "Exemplo em três leituras",
     example: spec.example,
@@ -267,6 +270,10 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 18,
     slug: "epsilon-delta-intuicao", title: "Epsilon e delta — leitura opcional", notes: ["definição formal", "opcional"], level: "aprofundamento opcional",
+    prereqs: [
+      { label: "Inequações modulares", href: "/pre-calculo/algebra/inequacoes-modulares" },
+      { label: "Ideia de limite", href: "/calculo-1/limites/ideia-de-limite" },
+    ],
     why: "A definição formal transforma a frase 'tão perto quanto quisermos' em um compromisso verificável.",
     concept: "Dado qualquer erro vertical \\(\\varepsilon>0\\), procuramos uma tolerância horizontal \\(\\delta>0\\) que garanta \\(|f(x)-L|<\\varepsilon\\) sempre que \\(0<|x-a|<\\delta\\).",
     callout: "Epsilon controla a saída; delta controla a entrada.",

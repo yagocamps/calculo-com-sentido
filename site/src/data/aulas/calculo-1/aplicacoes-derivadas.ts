@@ -134,7 +134,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       paragraphs: [
         "Máximo local: \\(f(a) \\geq f(x)\\) perto de \\(a\\).",
         "Mínimo local: \\(f(a) \\leq f(x)\\) perto de \\(a\\).",
-        "Em interior de intervalo, extremo local frequentemente tem \\(f'(a)=0\\) ou \\(f'\\) indefinida.",
+        "Em interior de intervalo, todo extremo local tem \\(f'(a)=0\\) ou \\(f'\\) indefinida.",
       ],
       formula: "Extremo local interior ⟹ f′(a)=0 ou f′(a) não existe",
       formulaLatex: "\\text{extremo local interior} \\Rightarrow f'(a)=0 \\text{ ou } f'(a) \\text{ não existe}",

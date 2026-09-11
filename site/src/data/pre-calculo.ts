@@ -110,6 +110,8 @@ export const preCalculoModulos: PreCalculoModulo[] = [
       { slug: "inequacoes", title: "Inequações", duration: "13 min", available: true },
       { slug: "quadro-de-sinais", title: "Quadro de sinais", duration: "14 min", available: true },
       { slug: "inequacoes-quadraticas", title: "Inequações quadráticas e racionais", duration: "15 min", available: true },
+      { slug: "valor-absoluto-distancia", title: "Valor absoluto como distância", duration: "13 min", available: true },
+      { slug: "inequacoes-modulares", title: "Inequações modulares", duration: "15 min", available: true },
       { slug: "sistemas-equacoes", title: "Sistemas de equações", duration: "14 min", available: true },
       { slug: "simplificacao", title: "Simplificação algébrica", duration: "10 min", available: true },
       ...preCalculoPhase2Catalog.algebra,

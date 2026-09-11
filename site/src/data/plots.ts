@@ -59,6 +59,19 @@ export function particaoUniforme(de: number, ate: number, n: number): number[] {
   return Array.from({ length: n + 1 }, (_, i) => de + ((ate - de) * i) / n);
 }
 
+/** Reta numérica desenhada à mão, para figuras em que o plano cartesiano só
+ *  acrescentaria ruído: a linha, uma marca em cada inteiro e o número embaixo. */
+export function retaNumerica(de: number, ate: number): PlotMark[] {
+  const marcas: PlotMark[] = [
+    { kind: "segment", from: [de - 0.4, 0], to: [ate + 0.4, 0], tone: "neutro" },
+  ];
+  for (let k = de; k <= ate; k++) {
+    marcas.push({ kind: "segment", from: [k, -0.12], to: [k, 0.12], tone: "neutro" });
+    marcas.push({ kind: "text", at: [k, -0.55], text: String(k).replace("-", "−"), tone: "neutro" });
+  }
+  return marcas;
+}
+
 export const plots = {
   // ── Limites: o buraco e o salto ──────────────────────────────────────
   "limite-buraco-1-3": {
@@ -910,6 +923,48 @@ export const plots = {
       { kind: "text", at: [-3.4, 17], text: "cresce ↗", tone: "neutro" },
       { kind: "text", at: [0, 17], text: "decresce ↘", tone: "neutro" },
       { kind: "text", at: [3.5, -17], text: "cresce ↗", tone: "neutro" },
+    ],
+  },
+
+  // ── Valor absoluto: distância e faixa ────────────────────────────────
+  "distancia-na-reta": {
+    alt: "Reta numérica de menos cinco a seis. Os pontos menos três e quatro estão marcados, e o trecho entre eles, que atravessa o zero, está destacado. Uma chave acima do trecho indica que a distância entre eles é sete: três passos até o zero e mais quatro depois dele.",
+    x: [-5.6, 6.6], y: [-1.4, 1.5],
+    axes: "nenhum",
+    legend: "Do −3 ao zero são 3 passos; do zero ao 4, mais 4. O módulo faz a mesma conta: |4 − (−3)| = 7.",
+    marks: [
+      ...retaNumerica(-5, 6),
+      { kind: "segment", from: [-3, 0], to: [4, 0], tone: "aplicacao" },
+      { kind: "segment", from: [-3, 0.7], to: [4, 0.7], tone: "aplicacao" },
+      { kind: "segment", from: [-3, 0.52], to: [-3, 0.88], tone: "aplicacao" },
+      { kind: "segment", from: [4, 0.52], to: [4, 0.88], tone: "aplicacao" },
+      { kind: "text", at: [0.5, 1.08], text: "distância = |4 − (−3)| = 7", tone: "aplicacao" },
+      { kind: "point", at: [-3, 0], tone: "principal" },
+      { kind: "point", at: [4, 0], tone: "principal" },
+      { kind: "text", at: [-1.5, -1.05], text: "3 passos", tone: "neutro" },
+      { kind: "text", at: [2, -1.05], text: "4 passos", tone: "neutro" },
+    ],
+  },
+
+  "faixa-modular": {
+    alt: "Gráfico em V do módulo de x menos três, com o bico no ponto três do eixo e uma linha horizontal na altura dois. O V fica abaixo da linha entre x igual a um e x igual a cinco, trecho pintado que resolve módulo de x menos três menor ou igual a dois. À esquerda de um e à direita de cinco o V passa acima da linha: são as duas pontas que resolvem módulo de x menos três maior que dois.",
+    x: [-1.5, 7.5], y: [-0.5, 4.5],
+    xTicks: [-1, 0, 1, 2, 3, 4, 5, 6, 7], yTicks: [0, 1, 2, 3, 4],
+    legend: "A distância até 3 fica abaixo do raio 2 só na faixa [1, 5]. Fora dela sobram as duas pontas, que são a resposta de |x − 3| > 2.",
+    marks: [
+      { kind: "area", top: () => 2, bottom: (x) => Math.abs(x - 3), from: 1, to: 5, tone: "aplicacao" },
+      { kind: "hline", at: 2, tone: "alerta", label: "raio = 2" },
+      { kind: "segment", from: [1, 0], to: [1, 2], tone: "neutro", dashed: true },
+      { kind: "segment", from: [5, 0], to: [5, 2], tone: "neutro", dashed: true },
+      { kind: "segment", from: [-1.5, 0], to: [1, 0], tone: "alerta", dashed: true },
+      { kind: "segment", from: [5, 0], to: [7.5, 0], tone: "alerta", dashed: true },
+      { kind: "segment", from: [1, 0], to: [5, 0], tone: "aplicacao" },
+      { kind: "curve", f: (x) => Math.abs(x - 3), tone: "principal" },
+      { kind: "point", at: [1, 0], tone: "aplicacao" },
+      { kind: "point", at: [5, 0], tone: "aplicacao" },
+      { kind: "text", at: [3, 1.25], text: "|x − 3| ≤ 2", tone: "aplicacao" },
+      { kind: "text", at: [-0.25, 0.9], text: "|x − 3| > 2", tone: "alerta" },
+      { kind: "text", at: [6.25, 0.9], text: "|x − 3| > 2", tone: "alerta" },
     ],
   },
 } satisfies Record<string, PlotSpec>;
