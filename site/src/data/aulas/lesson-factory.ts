@@ -24,6 +24,8 @@ export type CurriculumLessonSpec = {
   usedIn: AulaFutureUse[];
   why: string[];
   explanation: string[];
+  /** Outra analogia, atrás do botão "Não entendi — explica de outro jeito". */
+  alternative?: string[];
   callout: string;
   formula: string;
   formulaLatex?: string;
@@ -85,6 +87,7 @@ export function createCurriculumLesson(
     explicacao: {
       title: "A ideia antes da técnica",
       paragraphs: spec.explanation,
+      alternativa: spec.alternative,
       callout: spec.callout,
       formula: spec.formula,
       formulaLatex: spec.formulaLatex,

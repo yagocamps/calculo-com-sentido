@@ -3,6 +3,7 @@ import { exerciciosSinais } from "@/data/exercicios-sinais";
 import { exerciciosModulo } from "@/data/exercicios-modulo";
 import { exerciciosLhopital } from "@/data/exercicios-lhopital";
 import { exerciciosTrigEquacoes } from "@/data/exercicios-trig-equacoes";
+import { exerciciosGeometria } from "@/data/exercicios-geometria";
 import { exerciciosAplicacoesDerivadas } from "@/data/exercicios-aplicacoes-derivadas";
 import { exerciciosContinuidade } from "@/data/exercicios-continuidade";
 import { exerciciosDerivadas } from "@/data/exercicios-derivadas";
@@ -64,6 +65,7 @@ export const exercicioTemas = [
   { slug: "funcoes", label: "Funções" },
   { slug: "funcoes-calculo", label: "Funções p/ cálculo" },
   { slug: "graficos", label: "Gráficos" },
+  { slug: "geometria-analitica", label: "Geometria analítica" },
   { slug: "trigonometria", label: "Trigonometria" },
   { slug: "preparacao-limites", label: "Preparação p/ limites" },
   { slug: "funcao-afim", label: "Função afim" },
@@ -254,6 +256,7 @@ export const exercicios: Exercicio[] = [
   ...exerciciosModulo,
   ...exerciciosLhopital,
   ...exerciciosTrigEquacoes,
+  ...exerciciosGeometria,
   ...exerciciosFuncoes,
   ...exerciciosFuncaoQuadratica,
   ...exerciciosFuncoesCalculo,

@@ -269,6 +269,7 @@ const temaAulaMap: Record<
     aula: "funcao-quadratica",
   },
   graficos: { trilha: "pre-calculo", modulo: "graficos" },
+  "geometria-analitica": { trilha: "pre-calculo", modulo: "geometria-analitica" },
   trigonometria: { trilha: "pre-calculo", modulo: "trigonometria" },
   "preparacao-limites": { trilha: "pre-calculo", modulo: "preparacao-limites" },
   "funcoes-calculo": { trilha: "calculo-1", modulo: "funcoes-para-calculo" },
