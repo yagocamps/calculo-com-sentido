@@ -6,6 +6,7 @@ import { limitesAulas } from "@/data/aulas/calculo-1/limites";
 import { continuidadeAulas } from "@/data/aulas/calculo-1/continuidade";
 import { derivadasAulas } from "@/data/aulas/calculo-1/derivadas";
 import { aplicacoesDerivadasAulas } from "@/data/aulas/calculo-1/aplicacoes-derivadas";
+import { lhopitalAulas } from "@/data/aulas/calculo-1/lhopital";
 import { integraisAulas } from "@/data/aulas/calculo-1/integrais";
 import { calculo1Phase2Registry } from "@/data/aulas/calculo-1/fase2";
 
@@ -18,7 +19,7 @@ export function buildCalculo1Registry(): Record<string, AulaContent> {
     { modulo: "limites", aulas: { ...limitesAulas, ...calculo1Phase2Registry.limites } },
     { modulo: "continuidade", aulas: { ...continuidadeAulas, ...calculo1Phase2Registry.continuidade } },
     { modulo: "derivadas", aulas: { ...derivadasAulas, ...calculo1Phase2Registry.derivadas } },
-    { modulo: "aplicacoes-derivadas", aulas: { ...aplicacoesDerivadasAulas, ...calculo1Phase2Registry["aplicacoes-derivadas"] } },
+    { modulo: "aplicacoes-derivadas", aulas: { ...aplicacoesDerivadasAulas, ...lhopitalAulas, ...calculo1Phase2Registry["aplicacoes-derivadas"] } },
     { modulo: "integrais", aulas: { ...integraisAulas, ...calculo1Phase2Registry.integrais } },
   ];
 

@@ -156,6 +156,7 @@ export const glossario: GlossarioEntry[] = [
 
   // ── Limites e continuidade ──────────────────────────────────────
   { termo: "Limite", definicao: "O valor de que \\(f(x)\\) se aproxima quando \\(x\\) se aproxima de um ponto, mesmo que não chegue nele.", exemplo: "\\(\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} = 4\\)." },
+  { termo: "Forma indeterminada", definicao: "Resultado como \\(\\frac{0}{0}\\), \\(\\frac{\\infty}{\\infty}\\), \\(0 \\cdot \\infty\\), \\(\\infty - \\infty\\) ou \\(1^\\infty\\) que aparece ao substituir num limite e não decide a resposta: dependendo das funções, o limite pode dar qualquer valor ou nem existir.", exemplo: "\\(\\frac{x^2 - 4}{x - 2}\\) dá \\(\\frac{0}{0}\\) em \\(x = 2\\), mas o limite é \\(4\\)." },
   { termo: "Aproximação", definicao: "Chegar cada vez mais perto de um valor sem necessariamente atingi-lo." },
   { termo: "Aproximação lateral", definicao: "Aproximar-se de um ponto só por um lado: pela esquerda ou pela direita." },
   { termo: "Tendência", definicao: "Para onde os valores de uma função 'apontam' perto de um ponto." },

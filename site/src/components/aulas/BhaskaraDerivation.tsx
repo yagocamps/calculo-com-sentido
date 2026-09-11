@@ -15,10 +15,13 @@ export function BhaskaraDerivation({
   title,
   intro,
   steps,
+  tag,
 }: {
   title: string;
   intro: string;
   steps: BhaskaraDerivationStep[];
+  /** Selo curto com o método ("completar quadrados"). Sem ele, não há selo. */
+  tag?: string;
 }) {
   const [show, setShow] = useState(false);
   const panelId = useId();
@@ -34,9 +37,11 @@ export function BhaskaraDerivation({
             {title}
           </h3>
         </div>
-        <span className="rounded-full border border-terracotta/30 bg-surface px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-terracotta">
-          completar quadrados
-        </span>
+        {tag && (
+          <span className="rounded-full border border-terracotta/30 bg-surface px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-terracotta">
+            {tag}
+          </span>
+        )}
       </div>
 
       <RichText as="p" className="mt-3 text-[14px] leading-relaxed text-ink-muted">

@@ -277,6 +277,7 @@ export function AulaView({
                 <BhaskaraDerivation
                   title={content.demonstracao.title}
                   intro={content.demonstracao.intro}
+                  tag={content.demonstracao.tag}
                   steps={content.demonstracao.steps}
                 />
               )}

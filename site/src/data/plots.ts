@@ -967,6 +967,42 @@ export const plots = {
       { kind: "text", at: [6.25, 0.9], text: "|x − 3| > 2", tone: "alerta" },
     ],
   },
+
+  // ── L'Hôpital: razão de inclinações e 1 elevado a infinito ───────────
+  "lhopital-razao-inclinacoes": {
+    alt: "Duas curvas que passam juntas pelo ponto x igual a dois, na altura zero: x ao cubo menos oito, mais inclinada, e x ao quadrado menos quatro, mais deitada. Cada uma vem com a sua reta tangente tracejada, de inclinações doze e quatro. Um pouco à direita de dois, um traço vertical mostra a altura de cada curva: a primeira fica perto de três vezes a segunda.",
+    x: [1.4, 2.6], y: [-6, 10],
+    xTicks: [1.5, 2, 2.5], yTicks: [-5, 0, 5, 10],
+    legend: "Perto de x = 2 as duas funções se comportam como as suas tangentes, de inclinações 12 e 4. Por isso (x³ − 8)/(x² − 4) tende a 12/4 = 3.",
+    marks: [
+      { kind: "curve", f: (x) => 12 * (x - 2), tone: "principal", dashed: true },
+      { kind: "curve", f: (x) => 4 * (x - 2), tone: "aplicacao", dashed: true },
+      { kind: "curve", f: (x) => x * x * x - 8, tone: "principal" },
+      { kind: "curve", f: (x) => x * x - 4, tone: "aplicacao" },
+      { kind: "segment", from: [2.3, 0], to: [2.3, 4.167], tone: "principal" },
+      { kind: "segment", from: [2.3, 0], to: [2.3, 1.29], tone: "aplicacao" },
+      { kind: "point", at: [2, 0], tone: "neutro" },
+      { kind: "text", at: [2.47, 8.6], text: "f", tone: "principal", anchor: "start" },
+      { kind: "text", at: [2.5, 3.1], text: "g", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [1.45, 8.3], text: "perto de 2: altura de f ÷ altura de g → 12 ÷ 4 = 3", tone: "neutro", anchor: "start" },
+    ],
+  },
+
+  "um-elevado-a-infinito": {
+    alt: "Curva que parte da altura dois em x igual a um e sobe cada vez mais devagar, aproximando-se de uma linha tracejada na altura do número e, cerca de dois vírgula setenta e dois. Bem mais abaixo, outra linha tracejada marca a altura um, o valor que a intuição sugere e que a curva nunca alcança.",
+    x: [0, 40], y: [0, 3.2],
+    xTicks: [0, 10, 20, 30, 40], yTicks: [0, 1, 2, 3],
+    legend: "(1 + 1/x)ˣ sobe devagar em direção a e ≈ 2,718, e não a 1. A base encolhe para 1, mas o expoente cresce na mesma medida.",
+    marks: [
+      { kind: "hline", at: 1, tone: "alerta", label: "a intuição: 1" },
+      { kind: "hline", at: Math.E, tone: "aplicacao", label: "e ≈ 2,718" },
+      { kind: "curve", f: (x) => Math.pow(1 + 1 / x, x), from: 1, to: 40, tone: "principal" },
+      { kind: "point", at: [1, 2], tone: "principal" },
+      { kind: "point", at: [10, Math.pow(1.1, 10)], tone: "principal" },
+      { kind: "text", at: [1.6, 1.75], text: "x = 1 → 2", tone: "neutro", anchor: "start" },
+      { kind: "text", at: [10, 2.3], text: "x = 10 → 2,594", tone: "neutro" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;
