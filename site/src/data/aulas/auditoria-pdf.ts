@@ -10,7 +10,7 @@ export const auditPrerequisites: Record<string, [string, string][]> = {
   "calculo-1/limites/limites-laterais": [["Funções por partes", "pre-calculo/funcoes/funcoes-por-partes"]],
   "calculo-1/continuidade/ideia-continuidade": [["Funções por partes", "pre-calculo/funcoes/funcoes-por-partes"], ["Limites laterais", "calculo-1/limites/limites-laterais"]],
   "calculo-1/derivadas/derivada-composta": [["Composição de funções", "pre-calculo/funcoes/composicao-funcoes"], ["Regras de derivação", "calculo-1/derivadas/regras-derivacao"]],
-  "calculo-1/derivadas/derivadas-trigonometricas": [["Graus e radianos", "pre-calculo/trigonometria/graus-e-radianos"], ["Regra da cadeia", "calculo-1/derivadas/derivada-composta"]],
+  "calculo-1/derivadas/derivadas-trigonometricas": [["Graus e radianos", "pre-calculo/trigonometria/graus-e-radianos"], ["Limite trigonométrico fundamental", "calculo-1/limites/limite-trigonometrico-fundamental"], ["Regra da cadeia", "calculo-1/derivadas/derivada-composta"]],
   "calculo-1/derivadas/derivadas-exponenciais-logaritmicas": [["Limites exponenciais e logarítmicos", "calculo-1/limites/limites-exponenciais-logaritmicos"], ["Regra da cadeia", "calculo-1/derivadas/derivada-composta"]],
   "calculo-1/derivadas/derivacao-implicita": [["Regra da cadeia", "calculo-1/derivadas/derivada-composta"], ["Produto e quociente", "calculo-1/derivadas/derivada-produto-quociente"]],
   "calculo-1/aplicacoes-derivadas/taxas-relacionadas": [["Derivação implícita", "calculo-1/derivadas/derivacao-implicita"]],
