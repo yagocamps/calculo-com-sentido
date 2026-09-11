@@ -131,6 +131,58 @@ export const moduleCheckpoints: Record<string, ModuleCheckpointData> = {
       { prompt: "Se velocidade muda de sinal, distância total usa...", options: ["\\(\\int v\\)", "\\(\\int |v|\\)", "\\(v(b)-v(a)\\)", "\\(v'\\)"], correctIndex: 1, explanation: "O módulo impede cancelamento entre trechos em sentidos opostos.", reviewHref: "/calculo-1/integrais/distancia-total" },
     ],
   },
+
+  // Os quatro módulos que ainda não tinham checkpoint. Cada pergunta cobra o
+  // que a aula de revisão indicada ensina — inclusive em Antes do Cálculo, que
+  // é um módulo de orientação: ali o checkpoint confere a base e o mapa.
+  "pre-calculo/graficos": {
+    title: "Checkpoint · Leitura de gráficos",
+    description: "Mistura coordenadas, crescimento, interseções e transformações.",
+    passPercent: 75,
+    questions: [
+      { prompt: "O ponto \\((2, -3)\\) fica...", options: ["2 à direita e 3 para cima", "2 à direita e 3 para baixo", "2 à esquerda e 3 para baixo", "3 à direita e 2 para baixo"], correctIndex: 1, explanation: "Primeiro o horizontal (\\(x = 2\\), para a direita), depois o vertical (\\(y = -3\\), para baixo).", reviewHref: "/pre-calculo/graficos/plano-cartesiano" },
+      { prompt: "Lendo da esquerda para a direita, um trecho em que o gráfico desce é...", options: ["crescente", "decrescente", "constante", "descontínuo"], correctIndex: 1, explanation: "Quando \\(x\\) aumenta e \\(f(x)\\) diminui, a função decresce naquele trecho.", reviewHref: "/pre-calculo/graficos/crescimento-decrescimento" },
+      { prompt: "Duas retas de custo por GB se cruzam em \\((20, 70)\\). O cruzamento indica que...", options: ["com 20 GB os dois planos custam 70", "o plano mais barato custa 20", "os planos custam 20 e 70", "acima de 70 GB os planos se igualam"], correctIndex: 0, explanation: "No cruzamento \\(f(x) = g(x)\\): para \\(x = 20\\), os dois custos valem 70.", reviewHref: "/pre-calculo/graficos/interpretacao-visual" },
+      { prompt: "Comparado ao gráfico de \\(f(x) = x^2\\), o de \\(g(x) = (x - 3)^2\\) está...", options: ["3 para a esquerda", "3 para a direita", "3 para cima", "refletido no eixo \\(x\\)"], correctIndex: 1, critical: true, explanation: "Dentro da função o deslocamento é horizontal e no sentido contrário ao sinal: \\(x - 3\\) leva o vértice para \\(x = 3\\).", reviewHref: "/pre-calculo/graficos/translacao-graficos" },
+      { prompt: "O gráfico de \\(-f(x)\\) é o de \\(f(x)\\)...", options: ["refletido no eixo \\(x\\)", "refletido no eixo \\(y\\)", "deslocado para baixo", "ampliado na vertical"], correctIndex: 0, explanation: "Multiplicar a saída por \\(-1\\) troca o sinal de cada altura.", reviewHref: "/pre-calculo/graficos/reflexoes-e-escalas" },
+    ],
+  },
+  "pre-calculo/geometria-analitica": {
+    title: "Checkpoint · Geometria analítica",
+    description: "Distância, ponto médio, inclinação de retas e circunferência.",
+    passPercent: 75,
+    questions: [
+      { prompt: "A distância entre \\((1, 2)\\) e \\((4, 6)\\) é...", options: ["5", "7", "\\(\\sqrt{7}\\)", "25"], correctIndex: 0, explanation: "Pitágoras nas diferenças: \\(\\sqrt{3^2 + 4^2} = \\sqrt{25} = 5\\).", reviewHref: "/pre-calculo/geometria-analitica/distancia-e-ponto-medio" },
+      { prompt: "O ponto médio entre \\((2, 8)\\) e \\((6, 4)\\) é...", options: ["\\((4, 6)\\)", "\\((8, 12)\\)", "\\((2, 2)\\)", "\\((4, 2)\\)"], correctIndex: 0, explanation: "É a média de cada coordenada: \\(\\left(\\frac{2 + 6}{2}, \\frac{8 + 4}{2}\\right) = (4, 6)\\).", reviewHref: "/pre-calculo/geometria-analitica/distancia-e-ponto-medio" },
+      { prompt: "Uma reta tem coeficiente angular \\(2\\). Uma reta perpendicular a ela tem coeficiente...", options: ["\\(2\\)", "\\(-2\\)", "\\(\\frac{1}{2}\\)", "\\(-\\frac{1}{2}\\)"], correctIndex: 3, critical: true, explanation: "Para retas não verticais, perpendiculares têm \\(m_1 m_2 = -1\\): \\(m_2 = -\\frac{1}{2}\\).", reviewHref: "/pre-calculo/geometria-analitica/retas-paralelas-perpendiculares" },
+      { prompt: "Duas retas paralelas não verticais têm...", options: ["o mesmo coeficiente angular", "coeficientes angulares opostos", "coeficientes com produto \\(-1\\)", "o mesmo ponto de corte no eixo \\(y\\)"], correctIndex: 0, explanation: "Paralelas têm a mesma inclinação; se forem retas distintas, cortam o eixo \\(y\\) em pontos diferentes.", reviewHref: "/pre-calculo/geometria-analitica/retas-paralelas-perpendiculares" },
+      { prompt: "A circunferência \\((x - 2)^2 + (y + 1)^2 = 9\\) tem...", options: ["centro \\((2, -1)\\) e raio 3", "centro \\((-2, 1)\\) e raio 3", "centro \\((2, -1)\\) e raio 9", "centro \\((2, 1)\\) e raio 3"], correctIndex: 0, explanation: "Na forma padrão os sinais do centro aparecem trocados, e o lado direito é \\(r^2\\): \\(r = 3\\).", reviewHref: "/pre-calculo/geometria-analitica/circunferencia" },
+    ],
+  },
+  "calculo-1/antes-do-calculo": {
+    title: "Checkpoint · Pronto para começar",
+    description: "Confere a base mínima e o mapa da disciplina antes dos limites.",
+    passPercent: 75,
+    questions: [
+      { prompt: "Se \\(f(x) = 3x - 1\\), quanto vale \\(f(2)\\)?", options: ["5", "6", "\\(2f\\)", "\\(-1\\)"], correctIndex: 0, critical: true, explanation: "Troque \\(x\\) por 2: \\(3 \\cdot 2 - 1 = 5\\). A notação \\(f(2)\\) não é multiplicação.", reviewHref: "/calculo-1/antes-do-calculo/pre-requisitos" },
+      { prompt: "As soluções de \\(x^2 - 4 = 0\\) são...", options: ["só \\(x = 2\\)", "\\(x = 2\\) e \\(x = -2\\)", "\\(x = 4\\)", "\\(x = \\pm 4\\)"], correctIndex: 1, explanation: "\\(x^2 = 4\\) tem duas raízes, \\(2\\) e \\(-2\\).", reviewHref: "/calculo-1/antes-do-calculo/pre-requisitos" },
+      { prompt: "Na trilha, a derivada é construída a partir de...", options: ["integrais", "limites", "áreas", "equações do 2º grau"], correctIndex: 1, explanation: "A derivada é o limite das taxas médias; por isso limites vêm antes.", reviewHref: "/calculo-1/antes-do-calculo/mapa-da-trilha" },
+      { prompt: "Se \\(s(t)\\) é a posição de um carro, a velocidade instantânea é...", options: ["a integral de \\(s\\)", "a derivada de \\(s\\)", "o valor \\(s(0)\\)", "a média de \\(s\\)"], correctIndex: 1, explanation: "A derivada mede a taxa instantânea; a integral da velocidade recupera a distância.", reviewHref: "/calculo-1/antes-do-calculo/mapa-da-trilha" },
+      { prompt: "Qual ciclo de estudo a trilha recomenda?", options: ["reler o material três vezes", "ideia → guiado → sozinho → interpretar", "decorar as fórmulas na véspera", "assistir às aulas sem resolver exercícios"], correctIndex: 1, explanation: "Fechar o material e tentar sozinho vale mais que reler; interpretar o resultado fecha o ciclo.", reviewHref: "/calculo-1/antes-do-calculo/como-estudar" },
+    ],
+  },
+  "calculo-1/continuidade": {
+    title: "Checkpoint · Continuidade",
+    description: "Três condições, tipos de quebra, intervalos e o Valor Intermediário.",
+    passPercent: 75,
+    questions: [
+      { prompt: "A condição que garante que \\(f\\) é contínua em \\(a\\) é...", options: ["\\(f(a)\\) existir", "o limite em \\(a\\) existir", "\\(\\lim_{x \\to a} f(x) = f(a)\\)", "o gráfico ser crescente"], correctIndex: 2, critical: true, explanation: "A igualdade resume as três condições: o valor existe, o limite existe e os dois coincidem. Só uma das duas primeiras não basta.", reviewHref: "/calculo-1/continuidade/continuidade-ponto" },
+      { prompt: "Em \\(f(x) = \\frac{x^2 - 1}{x - 1}\\), a descontinuidade em \\(x = 1\\) é...", options: ["um salto", "um buraco (removível)", "infinita", "oscilatória"], correctIndex: 1, explanation: "O limite existe e vale 2, mas \\(f(1)\\) não está definida: redefinir \\(f(1) = 2\\) conserta.", reviewHref: "/calculo-1/continuidade/furos-saltos" },
+      { prompt: "Limites laterais que existem, mas são diferentes, indicam...", options: ["um buraco", "um salto", "uma assíntota vertical", "continuidade"], correctIndex: 1, explanation: "Cada lado aponta para um valor; redefinir um único ponto não resolve.", reviewHref: "/calculo-1/continuidade/furos-saltos" },
+      { prompt: "\\(|x|\\) é contínua em \\(x = 0\\)?", options: ["não, porque tem uma quina", "sim, mesmo com a quina", "não, porque não é derivável ali", "só pela direita"], correctIndex: 1, explanation: "O gráfico não se quebra em 0; a quina impede a derivada, não a continuidade. Derivável implica contínua, mas não o contrário.", reviewHref: "/calculo-1/continuidade/continuidade-intervalo" },
+      { prompt: "Se \\(f\\) é contínua em \\([0, 1]\\), com \\(f(0) = -1\\) e \\(f(1) = 1\\), então...", options: ["\\(f\\) tem ao menos uma raiz em \\([0, 1]\\)", "\\(f\\) tem exatamente uma raiz", "\\(f(0{,}5) = 0\\)", "nada se pode concluir"], correctIndex: 0, explanation: "Pelo Teorema do Valor Intermediário, o valor 0 é atingido ao menos uma vez — sem garantia de unicidade nem de onde.", reviewHref: "/calculo-1/continuidade/teorema-valor-intermediario" },
+    ],
+  },
 };
 
 export function getModuleCheckpoint(track: string, moduleSlug: string) {
