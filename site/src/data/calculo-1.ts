@@ -224,6 +224,8 @@ export const calculo1Modulos: TrilhaModuloData[] = [
       { slug: "area-volume-max", title: "Área e volume máximos", duration: "13 min", available: true },
       { slug: "lucro-maximo", title: "Lucro máximo na prática", duration: "12 min", available: true },
       ...calculo1Phase2Catalog["aplicacoes-derivadas"].filter(lesson => lesson.slug !== "extremos-intervalo-fechado"),
+      { slug: "regra-de-lhopital", title: "Regra de L’Hôpital", duration: "16 min", available: true },
+      { slug: "outras-indeterminacoes", title: "Outras indeterminações", duration: "15 min", available: true },
       { slug: "revisao-aplic-derivadas", title: "Revisão do módulo", duration: "8 min", available: true },
     ],
   },

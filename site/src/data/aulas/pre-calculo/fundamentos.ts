@@ -1043,6 +1043,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     },
     demonstracao: {
       title: "De onde vem a fórmula de Bhaskara?",
+      tag: "completar quadrados",
       intro:
         "A fórmula não é uma regra caída do céu. Ela nasce ao transformar a equação geral em um trinômio quadrado perfeito — o método de completar quadrados.",
       steps: [

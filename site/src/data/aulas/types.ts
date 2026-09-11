@@ -108,6 +108,8 @@ export type AulaContent = {
   /** Demonstração algébrica opcional, exibida na explicação. */
   demonstracao?: {
     title: string;
+    /** Selo curto com o método da demonstração ("completar quadrados"). */
+    tag?: string;
     intro: string;
     steps: {
       title: string;
