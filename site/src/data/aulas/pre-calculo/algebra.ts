@@ -291,7 +291,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       duration: "13 min",
       readingNotes: ["A regra do sinal ao multiplicar por negativo", "Resposta é um intervalo"],
       glossaryTerms: ["Inequação", "Intervalo", "Desigualdade"],
-      next: { slug: "sistemas-equacoes", title: "Sistemas de equações" },
+      next: { slug: "quadro-de-sinais", title: "Quadro de sinais" },
     }),
     porQue: {
       title: "Antes da fórmula, o sentido",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { calculo1Stats } from "@/lib/catalog-stats";
 import { PageShell } from "@/components/layout/PageShell";
 import { TrilhaPage } from "@/components/trilhas/TrilhaPage";
 import { calculo1Trilha } from "@/data/calculo-1";
@@ -37,7 +38,7 @@ export function TrilhaCalculo1Content() {
         eyebrow={calculo1Trilha.eyebrow}
         title={calculo1Trilha.title}
         description={calculo1Trilha.description}
-        stats={calculo1Trilha.stats}
+        stats={calculo1Stats}
         progress={progress}
         progressLabel="SEU PROGRESSO"
         modules={modules}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { preCalculoStats } from "@/lib/catalog-stats";
 import { PageShell } from "@/components/layout/PageShell";
 import { TrilhaPage } from "@/components/trilhas/TrilhaPage";
 import type { TrilhaModulo } from "@/data/trilhas";
@@ -50,7 +51,7 @@ export function TrilhaPreCalculoContent() {
         eyebrow={preCalculoTrilha.eyebrow}
         title={preCalculoTrilha.title}
         description={preCalculoTrilha.description}
-        stats={preCalculoTrilha.stats}
+        stats={preCalculoStats}
         progress={progress}
         progressLabel="SEU PROGRESSO"
         modules={modules}

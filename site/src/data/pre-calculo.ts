@@ -108,6 +108,8 @@ export const preCalculoModulos: PreCalculoModulo[] = [
       { slug: "expressoes-algebricas", title: "Manipulação de expressões", duration: "12 min", available: true },
       { slug: "isolamento-variaveis", title: "Isolamento de variáveis", duration: "11 min", available: true },
       { slug: "inequacoes", title: "Inequações", duration: "13 min", available: true },
+      { slug: "quadro-de-sinais", title: "Quadro de sinais", duration: "14 min", available: true },
+      { slug: "inequacoes-quadraticas", title: "Inequações quadráticas e racionais", duration: "15 min", available: true },
       { slug: "sistemas-equacoes", title: "Sistemas de equações", duration: "14 min", available: true },
       { slug: "simplificacao", title: "Simplificação algébrica", duration: "10 min", available: true },
       ...preCalculoPhase2Catalog.algebra,
