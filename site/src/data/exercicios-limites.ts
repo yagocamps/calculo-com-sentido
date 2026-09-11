@@ -36,7 +36,12 @@ export const exerciciosLimites: Exercicio[] = [
     enunciado: "Para \\(f(x) = 3x + 1\\), de qual valor \\(f(x)\\) se aproxima quando \\(x \\to 2\\)?",
     identificar: "Função afim é contínua: dá para substituir direto.",
     dica: "Substitua \\(x = 2\\) em \\(3x + 1\\).",
-    resolucao: "\\(3 \\cdot 2 + 1 = 7\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "\\(f(x) = 3x + 1\\) é uma função afim, contínua em todo ponto: o limite em \\(x = 2\\) é o próprio valor \\(f(2)\\).",
+      "\\(f(2) = 3 \\cdot 2 + 1 = 6 + 1 = 7\\).",
+      "Conferindo perto: \\(f(1{,}99) = 6{,}97\\) e \\(f(2{,}01) = 7{,}03\\), os dois perto de \\(7\\).",
+    ],
     resposta: "\\(\\lim_{x \\to 2}(3x+1) = 7\\)",
     interpretacao: "Em funções contínuas simples o limite coincide com o valor no ponto.",
     erroComum: "Esquecer o \\(+1\\) e responder \\(6\\).",
@@ -104,8 +109,12 @@ export const exerciciosLimites: Exercicio[] = [
       "Ao chegar perto de \\(x = 1\\) pelos dois lados, a curva tende à altura \\(3\\), mas o ponto \\((1, 3)\\) está aberto (vazio). Qual é \\(\\lim_{x \\to 1} f(x)\\)?",
     identificar: "Ponto aberto não muda a tendência da curva.",
     dica: "O limite olha para onde a curva aponta, não se o ponto está preenchido.",
-    resolucao:
-      "Os dois lados tendem a \\(3\\), então \\(\\lim_{x \\to 1} f(x) = 3\\), mesmo com o ponto aberto.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Pela esquerda de \\(x = 1\\), a curva tende à altura \\(3\\).",
+      "Pela direita, também tende a \\(3\\).",
+      "Os dois lados coincidem, então \\(\\lim_{x \\to 1} f(x) = 3\\). O ponto aberto fala do valor em \\(x = 1\\), não da tendência.",
+    ],
     resposta: "\\(3\\)",
     interpretacao: "Buraco no gráfico = função indefinida ali, mas o limite existe.",
     erroComum: "Dizer que o limite não existe porque o ponto está aberto.",
@@ -124,8 +133,12 @@ export const exerciciosLimites: Exercicio[] = [
       "Num gráfico, pela esquerda de \\(x = 0\\) a curva tende a \\(2\\) e pela direita tende a \\(5\\) (um salto). O que se pode dizer de \\(\\lim_{x \\to 0} f(x)\\)?",
     identificar: "Compare os dois limites laterais.",
     dica: "O limite bilateral só existe se os dois lados coincidem.",
-    resolucao:
-      "\\(\\lim_{x \\to 0^-} f(x) = 2\\) e \\(\\lim_{x \\to 0^+} f(x) = 5\\). Como \\(2 \\neq 5\\), o limite bilateral não existe.",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Pela esquerda: \\(\\lim_{x \\to 0^-} f(x) = 2\\).",
+      "Pela direita: \\(\\lim_{x \\to 0^+} f(x) = 5\\).",
+      "Como \\(2 \\neq 5\\), os lados discordam e o limite bilateral \\(\\lim_{x \\to 0} f(x)\\) não existe.",
+    ],
     resposta: "Não existe (laterais diferentes: \\(2\\) e \\(5\\)).",
     interpretacao: "Saltos são descontinuidades onde o limite bilateral falha.",
     erroComum: "Tirar a média dos lados e responder \\(3{,}5\\).",
@@ -142,7 +155,13 @@ export const exerciciosLimites: Exercicio[] = [
     enunciado: "Calcule \\(\\lim_{x \\to 3} (x^2 - 2x + 1)\\).",
     identificar: "Polinômios são contínuos: substitua.",
     dica: "Troque \\(x\\) por \\(3\\).",
-    resolucao: "\\(3^2 - 2 \\cdot 3 + 1 = 9 - 6 + 1 = 4\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Polinômios são contínuos: basta substituir \\(x = 3\\).",
+      "\\(3^2 - 2 \\cdot 3 + 1 = 9 - 6 + 1\\).",
+      "Da esquerda para a direita: \\(9 - 6 = 3\\) e \\(3 + 1 = 4\\).",
+      "Conferência: \\(x^2 - 2x + 1 = (x-1)^2\\), e \\((3-1)^2 = 4\\).",
+    ],
     resposta: "\\(4\\)",
     interpretacao: "Sempre tente substituir primeiro; só investigue mais se der indeterminação.",
     erroComum: "Errar sinais e fazer \\(9 - 6 + 1 = 9 - 7\\).",
@@ -227,8 +246,12 @@ export const exerciciosLimites: Exercicio[] = [
     enunciado: "O que acontece com \\(f(x) = \\frac{1}{(x-3)^2}\\) quando \\(x \\to 3\\)?",
     identificar: "Denominador positivo tendendo a zero.",
     dica: "\\((x-3)^2\\) é sempre \\(\\geq 0\\) e fica minúsculo perto de \\(3\\).",
-    resolucao:
-      "Conforme \\(x \\to 3\\), \\((x-3)^2 \\to 0^+\\), então \\(\\frac{1}{(x-3)^2} \\to +\\infty\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "Perto de \\(x = 3\\), \\(x - 3\\) é um número pequeno, positivo ou negativo.",
+      "Ao quadrado, fica pequeno e positivo dos dois lados: \\((x-3)^2 \\to 0^+\\). Com \\(x = 3{,}01\\), \\((0{,}01)^2 = 0{,}0001\\).",
+      "Dividir \\(1\\) por um positivo cada vez menor dá um número cada vez maior: \\(\\frac{1}{0{,}0001} = 10\\,000\\). Logo \\(\\frac{1}{(x-3)^2} \\to +\\infty\\).",
+    ],
     resposta: "\\(\\lim_{x \\to 3} \\frac{1}{(x-3)^2} = +\\infty\\)",
     interpretacao: "O gráfico dispara para cima dos dois lados — assíntota vertical em \\(x = 3\\).",
     erroComum: "Achar que dá um número; dividir por algo \\(\\to 0\\) faz explodir.",
@@ -246,7 +269,12 @@ export const exerciciosLimites: Exercicio[] = [
       "O tempo médio de espera num sistema é \\(T(u) = \\frac{1}{1 - u}\\) horas, onde \\(u\\) é a taxa de ocupação (\\(0 \\leq u < 1\\)). O que acontece com \\(T\\) quando \\(u \\to 1^-\\)?",
     identificar: "Denominador \\(1 - u \\to 0^+\\).",
     dica: "Quanto mais perto de \\(100\\%\\) de ocupação, menor o denominador.",
-    resolucao: "Quando \\(u \\to 1^-\\), \\(1 - u \\to 0^+\\), logo \\(T(u) \\to +\\infty\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "\\(u \\to 1^-\\): a ocupação se aproxima de \\(100\\%\\) por baixo, com \\(u < 1\\).",
+      "O denominador fica positivo e cada vez menor: \\(1 - u \\to 0^+\\). Com \\(u = 0{,}99\\), \\(1 - u = 0{,}01\\).",
+      "Então \\(T(u) = \\frac{1}{1 - u}\\) cresce sem limite: \\(T(0{,}99) = 100\\) horas e \\(T(u) \\to +\\infty\\).",
+    ],
     resposta: "\\(T \\to +\\infty\\): a espera cresce sem limite.",
     interpretacao:
       "Operar perto de \\(100\\%\\) de capacidade faz a fila explodir — por isso sistemas deixam folga.",
@@ -335,8 +363,12 @@ export const exerciciosLimites: Exercicio[] = [
       "Um custo médio por unidade é \\(\\bar{C}(q) = 5 + \\frac{1000}{q}\\) reais. Qual a assíntota horizontal quando \\(q \\to \\infty\\) e o que ela representa?",
     identificar: "\\(\\frac{1000}{q} \\to 0\\) quando \\(q\\) cresce.",
     dica: "Veja para onde \\(\\bar{C}\\) tende com muita produção.",
-    resolucao:
-      "Quando \\(q \\to \\infty\\), \\(\\frac{1000}{q} \\to 0\\), então \\(\\bar{C}(q) \\to 5\\). Assíntota horizontal \\(y = 5\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "O custo médio tem uma parte que não muda, \\(5\\), e uma que se dilui com a produção: \\(\\frac{1000}{q}\\).",
+      "Quando \\(q \\to \\infty\\), \\(\\frac{1000}{q} \\to 0\\). Com \\(q = 10\\,000\\), essa parte vale só \\(0{,}10\\).",
+      "Então \\(\\bar{C}(q) \\to 5\\): a assíntota horizontal é \\(y = 5\\), o custo por unidade quando o custo fixo de R$ 1000 está diluído em muita produção.",
+    ],
     resposta: "\\(y = 5\\): custo médio tende a R$ 5 por unidade.",
     interpretacao:
       "Produzir muito dilui o custo fixo; o custo médio se aproxima do custo variável por unidade.",
@@ -380,8 +412,12 @@ export const exerciciosLimites: Exercicio[] = [
       "A velocidade média de um carro numa viagem foi \\(60\\) km/h. Isso garante que o velocímetro marcou \\(60\\) o tempo todo? E como o limite define a velocidade \"no instante\"?",
     identificar: "Diferença entre média do trecho e valor instantâneo.",
     dica: "Pense em acelerar e frear em torno de \\(60\\).",
-    resolucao:
-      "A média \\(60\\) km/h descreve o percurso inteiro, não cada instante — o carro pode ter acelerado e freado. A velocidade instantânea num momento é a média em intervalos cada vez menores: \\(\\lim_{\\Delta t \\to 0} \\frac{\\Delta s}{\\Delta t}\\).",
+    resolucao: "Ver passos abaixo.",
+    resolucaoSteps: [
+      "A média de \\(60\\) km/h é a distância total dividida pelo tempo total: descreve o percurso inteiro, não cada instante.",
+      "O carro pode ter andado metade do tempo a \\(80\\) km/h e metade a \\(40\\) km/h e ainda assim ter média \\(60\\). A média não garante o velocímetro parado em \\(60\\).",
+      "Para um instante, calcule a média em intervalos cada vez menores em torno dele: \\(\\lim_{\\Delta t \\to 0} \\frac{\\Delta s}{\\Delta t}\\).",
+    ],
     resposta: "Não garante marcação constante; a instantânea é \\(\\lim_{\\Delta t \\to 0} \\frac{\\Delta s}{\\Delta t}\\).",
     interpretacao: "Média resume; o limite detalha o instante. É a ideia que leva à derivada.",
     erroComum: "Achar que velocidade média = velocidade constante em todo instante.",
