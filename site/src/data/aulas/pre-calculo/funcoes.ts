@@ -425,6 +425,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "funcao-modular": {
+    plot: "modulo-v",
     meta: preMeta({
       title: "Função modular: distância sem sinal",
       moduleSlug: MOD,
@@ -560,6 +561,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "funcao-exponencial": {
+    plot: "exponencial-dobra",
     meta: preMeta({
       title: "Função exponencial: crescimento que acelera",
       moduleSlug: MOD,
@@ -697,6 +699,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "funcao-logaritmica": {
+    plot: "logaritmo-desfaz-exponencial",
     meta: preMeta({
       title: "Função logarítmica: a operação inversa",
       moduleSlug: MOD,
@@ -980,6 +983,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "juros-compostos": {
+    plot: "juros-composto-contra-simples",
     meta: preMeta({
       title: "Aplicação: juros compostos",
       moduleSlug: MOD,

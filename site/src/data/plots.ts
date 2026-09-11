@@ -391,20 +391,23 @@ export const plots = {
   },
 
   "senoide-em-graus": {
-    alt: "Uma volta e meia da curva do seno, com o eixo horizontal marcado em graus: parte de zero, sobe a 1 aos 90 graus, volta a zero aos 180, desce a menos 1 aos 270 e retorna a zero aos 360.",
+    alt: "Uma volta e meia da curva do seno, com o eixo horizontal marcado em graus: parte de zero, sobe a 1 aos 90 graus, volta a zero aos 180, desce a menos 1 aos 270 e retorna a zero aos 360. Uma segunda curva tracejada, o cosseno, tem exatamente a mesma forma mas começa no alto, em 1.",
     x: [0, 540], y: [-1.5, 1.5],
     xLabel: "graus",
     xTicks: [0, 90, 180, 270, 360, 450, 540],
     yTicks: [-1, 0, 1],
     // O eixo vai em graus porque é assim que a aula narra a curva ("sobe até 1
     // em 90°"). Antes o texto falava em graus e a figura vinha em radianos.
-    legend: "A senoide oscila entre −1 e 1 e repete a cada volta: período de 360° (ou 2π rad). Amplitude 1.",
+    legend: "A senoide oscila entre −1 e 1 e repete a cada volta: período de 360° (ou 2π rad). Amplitude 1. O cosseno (tracejado) é a mesma onda começando do alto: em 0° ele vale 1.",
     marks: [
       { kind: "curve", f: (g) => Math.sin((g * Math.PI) / 180), tone: "principal" },
+      { kind: "curve", f: (g) => Math.cos((g * Math.PI) / 180), tone: "ideia", dashed: true },
       { kind: "point", at: [90, 1], tone: "aplicacao", label: "90°" },
       { kind: "point", at: [270, -1], tone: "aplicacao", label: "270°" },
       { kind: "point", at: [180, 0], tone: "neutro" },
       { kind: "point", at: [360, 0], tone: "neutro" },
+      { kind: "text", at: [455, 1.28], text: "cosseno", tone: "ideia" },
+      { kind: "text", at: [140, 1.28], text: "seno", tone: "principal" },
     ],
   },
 
@@ -716,6 +719,197 @@ export const plots = {
       { kind: "text", at: [-4, 2.2], text: "+", tone: "aplicacao" },
       { kind: "text", at: [0.4, -2.6], text: "−", tone: "alerta" },
       { kind: "text", at: [5, 2.6], text: "+", tone: "aplicacao" },
+    ],
+  },
+
+  // ── Pré-cálculo: as funções elementares que faltavam ────────────────
+  "modulo-v": {
+    alt: "Gráfico em forma de V: os valores descem até zero em x igual a zero e sobem do outro lado, nunca ficando negativos. Os pontos em menos três e em três estão os dois na altura três.",
+    x: [-6, 6], y: [-1, 6],
+    xTicks: [-6, -4, -2, 0, 2, 4, 6], yTicks: [0, 2, 4, 6],
+    legend: "y = |x| — o módulo devolve a distância até zero, então o resultado nunca é negativo. Errar 3 para menos e errar 3 para mais dão o mesmo |x| = 3.",
+    marks: [
+      { kind: "curve", f: (x) => Math.abs(x), tone: "principal" },
+      { kind: "point", at: [-3, 3], tone: "aplicacao", label: "|−3| = 3" },
+      { kind: "point", at: [3, 3], tone: "aplicacao", label: "|3| = 3" },
+      { kind: "point", at: [0, 0], tone: "neutro" },
+      { kind: "text", at: [0, -0.55], text: "bico na origem", tone: "neutro" },
+    ],
+  },
+
+  "exponencial-dobra": {
+    alt: "Curva que sobe muito devagar à esquerda, quase encostando no eixo horizontal, e dispara para cima à direita. Os pontos marcados em x igual a zero, um, dois, três, quatro e cinco valem um, dois, quatro, oito, dezesseis e trinta e dois.",
+    x: [-3, 5.5], y: [-5, 40],
+    xTicks: [-3, -2, -1, 0, 1, 2, 3, 4, 5], yTicks: [0, 10, 20, 30, 40],
+    legend: "y = 2ˣ — a cada passo em x o valor dobra: 1, 2, 4, 8, 16, 32. O crescimento acelera, e à esquerda a curva chega perto de zero sem nunca tocar.",
+    marks: [
+      { kind: "curve", f: (x) => Math.pow(2, x), tone: "principal" },
+      { kind: "point", at: [0, 1], tone: "aplicacao" },
+      { kind: "point", at: [1, 2], tone: "aplicacao" },
+      { kind: "point", at: [2, 4], tone: "aplicacao" },
+      { kind: "point", at: [3, 8], tone: "aplicacao" },
+      { kind: "point", at: [4, 16], tone: "aplicacao" },
+      { kind: "point", at: [5, 32], tone: "aplicacao", label: "32" },
+      { kind: "text", at: [-1.6, 4.5], text: "quase encosta no eixo", tone: "neutro" },
+    ],
+  },
+
+  "logaritmo-desfaz-exponencial": {
+    alt: "Curva que sobe rápido perto de zero e vai achatando. Os pontos marcados mostram que, para o resultado subir de um em um, o x precisa dobrar: 1, 2, 4, 8 e 16 dão 0, 1, 2, 3 e 4.",
+    x: [0, 17], y: [-4, 5],
+    xTicks: [0, 1, 2, 4, 8, 16], yTicks: [-4, -2, 0, 2, 4],
+    legend: "y = log₂(x) — o espelho da exponencial: desfaz o que 2ˣ faz. Cada vez que x dobra, o log sobe exatamente 1.",
+    marks: [
+      { kind: "curve", f: (x) => Math.log(x) / Math.LN2, from: 0.07, to: 17, tone: "principal" },
+      { kind: "point", at: [1, 0], tone: "aplicacao" },
+      { kind: "point", at: [2, 1], tone: "aplicacao" },
+      { kind: "point", at: [4, 2], tone: "aplicacao" },
+      { kind: "point", at: [8, 3], tone: "aplicacao" },
+      { kind: "point", at: [16, 4], tone: "aplicacao" },
+      { kind: "text", at: [9.5, -1.6], text: "x dobra ⇒ y sobe 1", tone: "neutro" },
+    ],
+  },
+
+  "juros-composto-contra-simples": {
+    alt: "Duas linhas partindo de mil reais: a reta tracejada do juro simples sobe sempre no mesmo ritmo e chega a três mil em vinte anos, enquanto a curva do juro composto vai encurvando para cima e passa de seis mil e setecentos no mesmo prazo.",
+    x: [0, 20], y: [0, 7000],
+    xLabel: "anos",
+    xTicks: [0, 5, 10, 15, 20], yTicks: [0, 2000, 4000, 6000],
+    legend: "R$ 1.000 a 10% ao ano. A distância entre as duas linhas é o juro sobre juro: em 2 anos são só R$ 10, em 20 anos passam de R$ 3.700.",
+    marks: [
+      { kind: "curve", f: (t) => 1000 * Math.pow(1.1, t), tone: "principal" },
+      { kind: "curve", f: (t) => 1000 + 100 * t, tone: "neutro", dashed: true },
+      { kind: "point", at: [20, 6727.5], tone: "principal" },
+      { kind: "point", at: [20, 3000], tone: "neutro" },
+      { kind: "text", at: [18.5, 6100], text: "composto: R$ 6.727", tone: "principal", anchor: "end" },
+      { kind: "text", at: [18.5, 1700], text: "simples: R$ 3.000", tone: "neutro", anchor: "end" },
+    ],
+  },
+
+  // ── Preparação para limites: a tendência com buraco ──────────────────
+  "aproximacao-buraco-em-1": {
+    alt: "Reta crescente com uma bolinha vazada em x igual a um, na altura dois. Pela esquerda os valores sobem para 1,9 e pela direita descem para 2,1: os dois lados cercam a altura dois, que a função não assume.",
+    x: [-1, 3], y: [0, 4.5],
+    legend: "f(x) = (x² − 1)/(x − 1) vale x + 1 em todo ponto menos em x = 1, onde dá 0/0. A tendência é 2 mesmo sem o ponto existir.",
+    marks: [
+      { kind: "hline", at: 2, tone: "neutro", label: "a tendência é 2" },
+      { kind: "vline", at: 1, tone: "neutro" },
+      { kind: "curve", f: (x) => x + 1, from: -1, to: 1, tone: "principal" },
+      { kind: "curve", f: (x) => x + 1, from: 1, to: 3, tone: "principal" },
+      { kind: "point", at: [0.9, 1.9], tone: "aplicacao" },
+      { kind: "point", at: [1.1, 2.1], tone: "aplicacao" },
+      { kind: "point", at: [1, 2], open: true, tone: "principal" },
+      { kind: "text", at: [-0.9, 3.3], text: "1,9 pela esquerda ↗", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [2.9, 0.9], text: "↘ 2,1 pela direita", tone: "aplicacao", anchor: "end" },
+    ],
+  },
+
+  // ── Trigonometria: a onda com amplitude e eixo deslocado ─────────────
+  "roda-gigante-altura": {
+    alt: "Onda que sobe e desce duas vezes ao longo de duas voltas completas. Ela oscila em torno da linha dos doze metros, atinge vinte e dois metros aos noventa graus e dois metros aos duzentos e setenta.",
+    x: [0, 720], y: [0, 26],
+    xLabel: "ângulo (graus)",
+    xTicks: [0, 90, 180, 270, 360, 450, 540, 630, 720],
+    yTicks: [0, 2, 12, 22],
+    legend: "altura = 12 + 10·sen(θ). O 10 é o raio (amplitude, o quanto sobe e desce); o 12 é a altura do centro, que levanta a onda inteira do chão.",
+    marks: [
+      { kind: "hline", at: 12, tone: "neutro", label: "centro da roda: 12 m" },
+      { kind: "curve", f: (g) => 12 + 10 * Math.sin((g * Math.PI) / 180), tone: "principal" },
+      { kind: "point", at: [90, 22], tone: "aplicacao", label: "topo: 22 m" },
+      { kind: "point", at: [270, 2], tone: "aplicacao", label: "base: 2 m" },
+    ],
+  },
+
+  // ── Derivadas: a secante virando tangente ────────────────────────────
+  "secante-vira-tangente": {
+    alt: "Parábola aberta para cima com dois pontos marcados, em x igual a um e em x igual a três. A reta que liga os dois é a secante; a outra reta, mais deitada, toca a parábola só no ponto de x igual a um e é a tangente.",
+    x: [-0.5, 3.5], y: [-2, 10],
+    legend: "Sobre f(x) = x², a secante liga (1,1) a (3,9) e tem inclinação 4. Aproximando o segundo ponto do primeiro, ela tomba até virar a tangente, de inclinação 2.",
+    marks: [
+      { kind: "curve", f: (x) => x * x, tone: "principal" },
+      { kind: "segment", from: [1, 1], to: [3, 9], tone: "ideia", label: "secante (m = 4)" },
+      { kind: "curve", f: (x) => 2 * x - 1, tone: "aplicacao", dashed: true },
+      { kind: "point", at: [1, 1], tone: "principal" },
+      { kind: "point", at: [3, 9], tone: "ideia" },
+      { kind: "text", at: [1.95, 1.1], text: "tangente (m = 2)", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  // ── Aplicações da derivada ───────────────────────────────────────────
+  "pontos-criticos-x4": {
+    alt: "Curva em forma de W: desce até um vale à esquerda, sobe até um topo na origem, desce até outro vale à direita e volta a subir. Nos três pontos de virada a tangente é horizontal.",
+    x: [-2.6, 2.6], y: [-6, 6],
+    legend: "f(x) = x⁴ − 4x² tem f′ = 0 em x = −√2, 0 e √2. Os três são pontos críticos; só depois de classificar se sabe que os laterais são mínimos e o do meio é máximo.",
+    marks: [
+      { kind: "segment", from: [-1.95, -4], to: [-0.9, -4], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0.9, -4], to: [1.95, -4], tone: "neutro", dashed: true },
+      { kind: "curve", f: (x) => x * x * x * x - 4 * x * x, tone: "principal" },
+      { kind: "point", at: [0, 0], tone: "aplicacao", label: "x = 0" },
+      { kind: "point", at: [-1.414, -4], tone: "principal" },
+      { kind: "point", at: [1.414, -4], tone: "principal" },
+      { kind: "text", at: [0, 3.4], text: "tangente horizontal nos três", tone: "neutro" },
+      { kind: "text", at: [0, -5.3], text: "mínimos em x = ±√2", tone: "neutro" },
+    ],
+  },
+
+  "otimizacao-cerca-muro": {
+    alt: "Parábola aberta para baixo partindo da origem: a área do cercado cresce até o pico de duzentos metros quadrados, quando o lado paralelo ao muro mede vinte metros, e volta a cair até zerar em quarenta.",
+    x: [0, 40], y: [0, 240],
+    xLabel: "x (m paralelos ao muro)",
+    xTicks: [0, 10, 20, 30, 40], yTicks: [0, 50, 100, 150, 200],
+    legend: "A(x) = 20x − x²/2, com x entre 0 e 40. Fora desse intervalo não há cercado possível — por isso o domínio faz parte do problema.",
+    marks: [
+      { kind: "vline", at: 20, tone: "neutro" },
+      { kind: "curve", f: (x) => 20 * x - (x * x) / 2, tone: "principal" },
+      { kind: "point", at: [20, 200], tone: "aplicacao", label: "x = 20 → A = 200 m²" },
+      { kind: "text", at: [7, 40], text: "cresce", tone: "neutro" },
+      { kind: "text", at: [33, 40], text: "decresce", tone: "neutro" },
+    ],
+  },
+
+  "lucro-maximo-marginais": {
+    alt: "Parábola aberta para baixo: o lucro começa negativo, cruza o zero perto de cinquenta unidades, sobe até dezoito mil reais em mil unidades e volta a cair, ficando negativo de novo depois de cerca de mil novecentas e cinquenta.",
+    x: [0, 2000], y: [-2500, 20000],
+    xLabel: "unidades produzidas",
+    xTicks: [0, 500, 1000, 1500, 2000],
+    yTicks: [0, 5000, 10000, 15000, 20000],
+    legend: "L(x) = 40x − 2000 − 0,02x². No pico, L′ = 0 — é onde a receita marginal iguala o custo marginal. Produzir além disso derruba o lucro.",
+    marks: [
+      { kind: "curve", f: (x) => 40 * x - 2000 - 0.02 * x * x, tone: "principal" },
+      { kind: "point", at: [1000, 18000], tone: "aplicacao", label: "x = 1000 → R$ 18.000" },
+      { kind: "point", at: [51.3, 0], tone: "neutro" },
+      { kind: "point", at: [1948.7, 0], tone: "neutro" },
+      { kind: "text", at: [1900, 4500], text: "volta a cair", tone: "alerta", anchor: "end" },
+    ],
+  },
+
+  // ── Integrais: a soma que vira área ──────────────────────────────────
+  "soma-de-riemann-2x": {
+    alt: "Reta crescente partindo da origem, com a região abaixo dela pintada entre zero e quatro. Quatro retângulos de mesma largura, com a altura tomada na borda esquerda de cada pedaço, preenchem a região por baixo e deixam de fora um triângulo em cada topo.",
+    x: [0, 4.5], y: [0, 9],
+    xTicks: [0, 1, 2, 3, 4], yTicks: [0, 2, 4, 6, 8],
+    legend: "A área sob a reta, entre 0 e 4, é o total acumulado — o que os retângulos tentam estimar. Quanto mais fino o corte, menor a sobra branca no topo.",
+    marks: [
+      { kind: "area", top: (x) => 2 * x, from: 0, to: 4, tone: "aplicacao" },
+      { kind: "rects", f: (x) => 2 * x, edges: particaoUniforme(0, 4, 4), side: "left", tone: "ideia" },
+      { kind: "curve", f: (x) => 2 * x, from: 0, to: 4, tone: "principal" },
+      { kind: "text", at: [1.9, 1.1], text: "área = total acumulado", tone: "aplicacao" },
+    ],
+  },
+
+  // ── Funções para o cálculo: crescimento é por intervalo ──────────────
+  "crescimento-por-intervalo": {
+    alt: "Curva que sobe, atinge um topo em x igual a menos dois, desce até um vale em x igual a dois e volta a subir: a mesma função tem trechos de crescimento e de decrescimento.",
+    x: [-4, 4], y: [-20, 20],
+    xTicks: [-4, -2, 0, 2, 4], yTicks: [-20, -10, 0, 10, 20],
+    legend: "A mesma função pode crescer num trecho e decrescer em outro — por isso se fala em crescimento por intervalo, não da função inteira.",
+    marks: [
+      { kind: "curve", f: (x) => x * x * x - 12 * x, tone: "principal" },
+      { kind: "point", at: [-2, 16], tone: "aplicacao" },
+      { kind: "point", at: [2, -16], tone: "aplicacao" },
+      { kind: "text", at: [-3.4, 17], text: "cresce ↗", tone: "neutro" },
+      { kind: "text", at: [0, 17], text: "decresce ↘", tone: "neutro" },
+      { kind: "text", at: [3.5, -17], text: "cresce ↗", tone: "neutro" },
     ],
   },
 } satisfies Record<string, PlotSpec>;

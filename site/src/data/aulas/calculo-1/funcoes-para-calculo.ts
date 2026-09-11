@@ -331,6 +331,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
   },
 
   "crescimento-decrescimento": {
+    plot: "crescimento-por-intervalo",
     meta: c1Meta({
       title: "Crescimento e decrescimento",
       moduleSlug: MOD,

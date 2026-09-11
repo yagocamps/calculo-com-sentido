@@ -219,6 +219,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   },
 
   "pontos-criticos": {
+    plot: "pontos-criticos-x4",
     meta: c1Meta({
       title: "Pontos críticos",
       moduleSlug: MOD,
@@ -429,6 +430,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   },
 
   "otimizacao": {
+    plot: "otimizacao-cerca-muro",
     meta: c1Meta({
       title: "Problemas de otimização",
       moduleSlug: MOD,
@@ -741,6 +743,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   },
 
   "lucro-maximo": {
+    plot: "lucro-maximo-marginais",
     meta: c1Meta({
       title: "Lucro máximo na prática",
       moduleSlug: MOD,
