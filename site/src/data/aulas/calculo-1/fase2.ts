@@ -238,6 +238,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 16,
     slug: "limite-trigonometrico-fundamental", title: "Limite trigonométrico fundamental", notes: ["radianos", "seno"],
+    plot: "seno-sobre-h-areas",
     why: "A derivada do seno nasce deste limite; ele explica por que radianos são a unidade natural do Cálculo.",
     concept: "No círculo unitário, comparações geométricas espremem \\(\\sin x/x\\) até 1 quando \\(x\\to0\\), desde que \\(x\\) esteja em radianos.",
     callout: "Em graus, a constante seria diferente; a forma simples vale em radianos.",

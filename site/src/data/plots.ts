@@ -1050,6 +1050,30 @@ export const plots = {
       { kind: "text", at: [100, 1.25], text: "sen x", tone: "neutro" },
     ],
   },
+
+  // ── Limite trigonométrico fundamental: três áreas encaixadas ─────────
+  "seno-sobre-h-areas": {
+    alt: "Um quarto do círculo de raio um, com um ângulo h marcado a partir do centro. Dentro dele há três regiões encaixadas: um triângulo de altura seno de h, a fatia do círculo com o mesmo ângulo e, por fora, um triângulo maior de altura tangente de h, desenhado tracejado.",
+    x: [-0.15, 1.35], y: [-0.25, 1.05],
+    axes: "nenhum",
+    aspect: "igual",
+    legend: "De dentro para fora: triângulo de altura sen h (área sen h/2), fatia do círculo (área h/2) e triângulo de altura tg h (área tg h/2). Dividindo por sen h/2 e invertendo: cos h ≤ sen h/h ≤ 1.",
+    marks: [
+      { kind: "area", top: (x) => x * Math.tan(0.7), from: 0, to: Math.cos(0.7), tone: "ideia" },
+      { kind: "area", top: (x) => Math.sqrt(Math.max(0, 1 - x * x)), from: Math.cos(0.7), to: 1, tone: "ideia" },
+      { kind: "polygon", points: [[0, 0], [1, 0], [Math.cos(0.7), Math.sin(0.7)]], tone: "aplicacao" },
+      { kind: "polygon", points: [[0, 0], [1, 0], [1, Math.tan(0.7)]], tone: "alerta", fill: false, dashed: true },
+      { kind: "segment", from: [0, 0], to: [1.25, 0], tone: "neutro" },
+      { kind: "curve", f: (x) => Math.sqrt(Math.max(0, 1 - x * x)), from: 0, to: 1, tone: "neutro" },
+      { kind: "segment", from: [Math.cos(0.7), 0], to: [Math.cos(0.7), Math.sin(0.7)], tone: "neutro", dashed: true },
+      { kind: "angle", at: [0, 0], from: [1, 0], to: [Math.cos(0.7), Math.sin(0.7)], label: "h", tone: "principal" },
+      { kind: "point", at: [Math.cos(0.7), Math.sin(0.7)], tone: "principal" },
+      { kind: "point", at: [1, Math.tan(0.7)], tone: "alerta" },
+      { kind: "text", at: [Math.cos(0.7) - 0.03, 0.3], text: "sen h", tone: "aplicacao", anchor: "end" },
+      { kind: "text", at: [1.05, 0.42], text: "tg h", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [0.5, -0.12], text: "1", tone: "neutro", anchor: "middle" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;

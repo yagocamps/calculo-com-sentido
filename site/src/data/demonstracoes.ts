@@ -715,6 +715,36 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
   },
   ],
   "pre-calculo/trigonometria/identidades-basicas": [
+    {
+      title: "Seno e cosseno da soma de dois ângulos",
+      intro: "A derivada do seno, em Cálculo, depende destas duas fórmulas. Elas saem do círculo de raio 1 e da fórmula da distância entre dois pontos.",
+      steps: [
+        {
+          title: "Medir a mesma corda de dois jeitos",
+          detail: "Os pontos dos ângulos \\(a\\) e \\(b\\) no círculo são \\((\\cos a, \\sin a)\\) e \\((\\cos b, \\sin b)\\). Girando a figura até o ângulo \\(b\\) cair em \\(0^\\circ\\), eles viram \\((\\cos(a - b), \\sin(a - b))\\) e \\((1, 0)\\). Girar não muda distâncias, então as duas cordas têm o mesmo comprimento.",
+          formula: "\\begin{aligned} &(\\cos a - \\cos b)^2 \\\\ &\\quad + (\\sin a - \\sin b)^2 \\\\ &= (\\cos(a - b) - 1)^2 \\\\ &\\quad + \\sin^2(a - b) \\end{aligned}",
+          formulaAria: "o quadrado de cosseno de a menos cosseno de b, mais o quadrado de seno de a menos seno de b, é igual ao quadrado de cosseno de a menos b menos 1, mais seno ao quadrado de a menos b",
+        },
+        {
+          title: "Expandir os quadrados",
+          detail: "Dos dois lados aparece \\(\\sin^2 + \\cos^2 = 1\\) duas vezes. Sobram só os termos cruzados.",
+          formula: "\\begin{aligned} &2 - 2(\\cos a\\cos b \\\\ &\\qquad + \\sin a\\sin b) \\\\ &= 2 - 2\\cos(a - b) \\end{aligned}",
+          formulaAria: "2 menos 2 vezes, cosseno de a cosseno de b mais seno de a seno de b, é igual a 2 menos 2 cosseno de a menos b",
+        },
+        {
+          title: "Cosseno da diferença e da soma",
+          detail: "Comparando, \\(\\cos(a - b) = \\cos a\\cos b + \\sin a\\sin b\\). Trocando \\(b\\) por \\(-b\\), com \\(\\cos(-b) = \\cos b\\) e \\(\\sin(-b) = -\\sin b\\), sai a fórmula da soma.",
+          formula: "\\begin{aligned} \\cos(a + b) &= \\cos a\\cos b \\\\ &\\quad - \\sin a\\sin b \\end{aligned}",
+          formulaAria: "cosseno de a mais b é igual a cosseno de a cosseno de b menos seno de a seno de b",
+        },
+        {
+          title: "Passar para o seno",
+          detail: "O seno de um ângulo é o cosseno do seu complemento: \\(\\sin\\theta = \\cos(90^\\circ - \\theta)\\). Aplicando o cosseno da diferença a \\(90^\\circ - a\\) e \\(b\\):",
+          formula: "\\begin{aligned} &\\sin(a + b) \\\\ &= \\cos\\big((90^\\circ - a) - b\\big) \\\\ &= \\sin a\\cos b + \\cos a\\sin b \\end{aligned}",
+          formulaAria: "seno de a mais b é igual ao cosseno de 90 graus menos a, menos b, que é seno de a cosseno de b mais cosseno de a seno de b",
+        },
+      ],
+    },
     { title: "Identidade fundamental da trigonometria",
     intro: "No círculo unitário, seno e cosseno são as coordenadas de um ponto de raio 1.",
     steps: [
@@ -1137,6 +1167,174 @@ export const demonstracoes: Record<string, AulaDemonstracao[]> = {
       },
     ],
   },
+  ],
+  "calculo-1/limites/limite-trigonometrico-fundamental": [
+    {
+      title: "Por que sen h / h tende a 1",
+      intro: "A figura da aula compara três regiões no círculo de raio 1, para um ângulo \\(h\\) entre \\(0\\) e \\(\\frac{\\pi}{2}\\) medido em radianos. O Teorema do Confronto faz o resto.",
+      steps: [
+        {
+          title: "Comparar as três áreas",
+          detail: "O triângulo de dentro, de base 1 e altura \\(\\sin h\\), cabe na fatia do círculo, que cabe no triângulo de fora, de base 1 e altura \\(\\tan h\\). A fatia de ângulo \\(h\\) num círculo de raio 1 tem área \\(\\frac{h}{2}\\) — é aqui que o radiano entra.",
+          formula: "\\frac{\\sin h}{2} \\leq \\frac{h}{2} \\leq \\frac{\\tan h}{2}",
+          formulaAria: "seno de h sobre 2 é menor ou igual a h sobre 2, que é menor ou igual a tangente de h sobre 2",
+        },
+        {
+          title: "Dividir e inverter",
+          detail: "Como \\(\\sin h > 0\\), dividir tudo por \\(\\frac{\\sin h}{2}\\) mantém o sentido: \\(1 \\leq \\frac{h}{\\sin h} \\leq \\frac{1}{\\cos h}\\). Inverter três números positivos troca o sentido das desigualdades.",
+          formula: "\\cos h \\leq \\frac{\\sin h}{h} \\leq 1",
+          formulaAria: "cosseno de h é menor ou igual a seno de h sobre h, que é menor ou igual a 1",
+        },
+        {
+          title: "Espremer",
+          detail: "Quando \\(h \\to 0^+\\), \\(\\cos h \\to 1\\): o quociente fica preso entre duas coisas que tendem a 1. Para \\(h < 0\\), \\(\\frac{\\sin h}{h}\\) vale o mesmo que em \\(-h\\), porque o seno é ímpar; o limite pela esquerda é igual.",
+          formula: "\\lim_{h \\to 0} \\frac{\\sin h}{h} = 1",
+          formulaAria: "o limite de seno de h sobre h, quando h tende a zero, é 1",
+        },
+      ],
+    },
+    {
+      title: "O limite irmão: (cos h − 1) / h tende a 0",
+      intro: "A derivada do seno precisa também deste limite. Ele sai do anterior multiplicando pelo conjugado.",
+      steps: [
+        {
+          title: "Multiplicar pelo conjugado",
+          detail: "Multiplique em cima e embaixo por \\(\\cos h + 1\\), que perto de zero vale quase 2, e use \\(\\cos^2 h - 1 = -\\sin^2 h\\).",
+          formula: "\\begin{aligned} &\\frac{\\cos h - 1}{h} \\\\ &= \\frac{\\cos^2 h - 1}{h(\\cos h + 1)} \\\\ &= -\\frac{\\sin h}{h} \\cdot \\frac{\\sin h}{\\cos h + 1} \\end{aligned}",
+          formulaAria: "cosseno de h menos 1, sobre h, é igual a menos seno de h sobre h, vezes seno de h sobre cosseno de h mais 1",
+        },
+        {
+          title: "Passar ao limite",
+          detail: "O primeiro fator tende a \\(1\\); o segundo tende a \\(\\frac{0}{2} = 0\\).",
+          formula: "\\lim_{h \\to 0} \\frac{\\cos h - 1}{h} = -1 \\cdot 0 = 0",
+          formulaAria: "o limite de cosseno de h menos 1, sobre h, quando h tende a zero, é menos 1 vezes zero, igual a zero",
+        },
+      ],
+    },
+  ],
+  "calculo-1/derivadas/derivadas-trigonometricas": [
+    {
+      title: "Derivada do seno pela definição",
+      intro: "Com a fórmula do seno da soma (demonstrada em Identidades básicas) e os dois limites da aula do limite trigonométrico fundamental, a regra sai da definição de derivada. Ângulos em radianos.",
+      steps: [
+        {
+          title: "Expandir o seno da soma",
+          detail: "No quociente da definição, \\(\\frac{\\sin(x + h) - \\sin x}{h}\\), troque \\(\\sin(x + h)\\) pela fórmula do seno da soma.",
+          formula: "\\begin{aligned} \\sin(x + h) &= \\sin x\\cos h \\\\ &\\quad + \\cos x\\sin h \\end{aligned}",
+          formulaAria: "seno de x mais h é igual a seno de x cosseno de h mais cosseno de x seno de h",
+        },
+        {
+          title: "Separar o que depende de h",
+          detail: "Agrupe os termos com \\(\\sin x\\) e os com \\(\\cos x\\). O \\(x\\) fica fixo enquanto \\(h \\to 0\\).",
+          formula: "\\begin{aligned} &\\frac{\\sin(x + h) - \\sin x}{h} \\\\ &= \\sin x\\,\\frac{\\cos h - 1}{h} + \\cos x\\,\\frac{\\sin h}{h} \\end{aligned}",
+          formulaAria: "seno de x mais h menos seno de x, sobre h, é igual a seno de x vezes cosseno de h menos 1 sobre h, mais cosseno de x vezes seno de h sobre h",
+        },
+        {
+          title: "Usar os dois limites",
+          detail: "\\(\\frac{\\cos h - 1}{h} \\to 0\\) e \\(\\frac{\\sin h}{h} \\to 1\\). Em graus o segundo limite não seria 1, e a regra ganharia um fator \\(\\frac{\\pi}{180}\\).",
+          formula: "\\begin{aligned} (\\sin x)' &= \\sin x \\cdot 0 + \\cos x \\cdot 1 \\\\ &= \\cos x \\end{aligned}",
+          formulaAria: "a derivada de seno de x é seno de x vezes zero mais cosseno de x vezes 1, igual a cosseno de x",
+        },
+      ],
+    },
+    {
+      title: "Derivada do cosseno, pelo mesmo caminho",
+      intro: "Troque o seno da soma pelo cosseno da soma e repita os passos.",
+      steps: [
+        {
+          title: "Montar e separar",
+          detail: "Use \\(\\cos(x + h) = \\cos x\\cos h - \\sin x\\sin h\\) e agrupe como antes.",
+          formula: "\\begin{aligned} &\\frac{\\cos(x + h) - \\cos x}{h} \\\\ &= \\cos x\\,\\frac{\\cos h - 1}{h} - \\sin x\\,\\frac{\\sin h}{h} \\end{aligned}",
+          formulaAria: "cosseno de x mais h menos cosseno de x, sobre h, é igual a cosseno de x vezes cosseno de h menos 1 sobre h, menos seno de x vezes seno de h sobre h",
+        },
+        {
+          title: "Passar ao limite",
+          detail: "O sinal de menos da resposta vem direto da fórmula do cosseno da soma.",
+          formula: "\\begin{aligned} (\\cos x)' &= \\cos x \\cdot 0 - \\sin x \\cdot 1 \\\\ &= -\\sin x \\end{aligned}",
+          formulaAria: "a derivada de cosseno de x é cosseno de x vezes zero menos seno de x vezes 1, igual a menos seno de x",
+        },
+      ],
+    },
+    {
+      title: "Derivada da tangente pela regra do quociente",
+      intro: "Com as duas derivadas acima, a da tangente é uma conta de quociente, válida onde \\(\\cos x \\neq 0\\).",
+      steps: [
+        {
+          title: "Aplicar a regra do quociente",
+          detail: "Com \\(f = \\sin x\\) e \\(g = \\cos x\\), a regra é \\(\\frac{f'g - fg'}{g^2}\\).",
+          formula: "\\begin{aligned} &(\\tan x)' \\\\ &= \\frac{\\cos x\\cos x - \\sin x(-\\sin x)}{\\cos^2 x} \\end{aligned}",
+          formulaAria: "a derivada de tangente de x é cosseno de x vezes cosseno de x menos seno de x vezes menos seno de x, tudo sobre cosseno ao quadrado de x",
+        },
+        {
+          title: "Usar a identidade fundamental",
+          detail: "\\(\\sin^2 x + \\cos^2 x = 1\\).",
+          formula: "\\begin{aligned} &= \\frac{\\cos^2 x + \\sin^2 x}{\\cos^2 x} \\\\ &= \\frac{1}{\\cos^2 x} = \\sec^2 x \\end{aligned}",
+          formulaAria: "igual a cosseno ao quadrado mais seno ao quadrado, sobre cosseno ao quadrado, que é 1 sobre cosseno ao quadrado de x, igual a secante ao quadrado de x",
+        },
+      ],
+    },
+  ],
+  "calculo-1/derivadas/derivadas-exponenciais-logaritmicas": [
+    {
+      title: "Derivada de eˣ pela definição",
+      intro: "A regra sai de uma propriedade das potências e do limite \\(\\frac{e^h - 1}{h} \\to 1\\), estabelecido na aula de limites exponenciais e logarítmicos sem usar derivadas.",
+      steps: [
+        {
+          title: "Fatorar eˣ",
+          detail: "\\(e^{x + h} = e^x e^h\\): a potência de uma soma vira produto, e \\(e^x\\) sai como fator fixo.",
+          formula: "\\frac{e^{x + h} - e^x}{h} = e^x \\cdot \\frac{e^h - 1}{h}",
+          formulaAria: "e elevado a x mais h, menos e elevado a x, sobre h, é igual a e elevado a x vezes e elevado a h menos 1 sobre h",
+        },
+        {
+          title: "Usar o limite fundamental",
+          detail: "Quando \\(h \\to 0\\), \\(\\frac{e^h - 1}{h} \\to 1\\). A taxa de \\(e^x\\) em cada ponto é o próprio valor da função.",
+          formula: "(e^x)' = e^x \\cdot 1 = e^x",
+          formulaAria: "a derivada de e elevado a x é e elevado a x vezes 1, igual a e elevado a x",
+        },
+      ],
+    },
+    {
+      title: "Derivada de aˣ, para qualquer base",
+      intro: "O mesmo cálculo, agora com o limite \\(\\frac{a^h - 1}{h} \\to \\ln a\\), da mesma aula de limites. Vale para \\(a > 0\\).",
+      steps: [
+        {
+          title: "Fatorar aˣ",
+          detail: "Como antes, \\(a^{x + h} = a^x a^h\\).",
+          formula: "\\frac{a^{x + h} - a^x}{h} = a^x \\cdot \\frac{a^h - 1}{h}",
+          formulaAria: "a elevado a x mais h, menos a elevado a x, sobre h, é igual a a elevado a x vezes a elevado a h menos 1 sobre h",
+        },
+        {
+          title: "Usar o limite da base geral",
+          detail: "Com \\(a = e\\), \\(\\ln e = 1\\) e voltamos à regra anterior. Para \\(0 < a < 1\\), \\(\\ln a < 0\\): a função decresce, e a derivada negativa registra isso.",
+          formula: "(a^x)' = a^x \\ln a",
+          formulaAria: "a derivada de a elevado a x é a elevado a x vezes logaritmo natural de a",
+        },
+      ],
+    },
+    {
+      title: "Derivada de ln x pela definição",
+      intro: "Aqui o limite usado é o do logaritmo, \\(\\frac{\\ln(1 + t)}{t} \\to 1\\), para \\(x > 0\\).",
+      steps: [
+        {
+          title: "Juntar os logaritmos",
+          detail: "\\(\\ln(x + h) - \\ln x = \\ln\\frac{x + h}{x} = \\ln\\left(1 + \\frac{h}{x}\\right)\\).",
+          formula: "\\frac{\\ln(x + h) - \\ln x}{h} = \\frac{1}{h}\\ln\\left(1 + \\frac{h}{x}\\right)",
+          formulaAria: "logaritmo de x mais h menos logaritmo de x, sobre h, é igual a 1 sobre h vezes logaritmo de 1 mais h sobre x",
+        },
+        {
+          title: "Trocar h por t = h/x",
+          detail: "Como \\(h = xt\\), o fator \\(\\frac{1}{h}\\) vira \\(\\frac{1}{x} \\cdot \\frac{1}{t}\\). E \\(t \\to 0\\) quando \\(h \\to 0\\), porque \\(x\\) está fixo.",
+          formula: "= \\frac{1}{x} \\cdot \\frac{\\ln(1 + t)}{t}, \\qquad t = \\frac{h}{x}",
+          formulaAria: "igual a 1 sobre x vezes logaritmo de 1 mais t sobre t, com t igual a h sobre x",
+        },
+        {
+          title: "Usar o limite do logaritmo",
+          detail: "O domínio \\(x > 0\\) garante que \\(1 + \\frac{h}{x}\\) é positivo para \\(h\\) pequeno.",
+          formula: "(\\ln x)' = \\frac{1}{x} \\cdot 1 = \\frac{1}{x}",
+          formulaAria: "a derivada de logaritmo natural de x é 1 sobre x vezes 1, igual a 1 sobre x",
+        },
+      ],
+    },
   ],
 };
 
