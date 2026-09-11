@@ -69,7 +69,7 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Simplifique \\(\\frac{x^2-x}{x}\\), registrando a restrição.", solution: "\\(x(x-1)/x=x-1\\), com \\(x\\ne0\\).", answer: "\\(x-1,\\ x\\ne0\\)", interpretation: "O zero continua proibido." },
       { type: "compreensao", question: "Por que não podemos cancelar \\(x\\) em \\(\\frac{x+2}{x}\\)?", solution: "Porque \\(x\\) não é fator de todo o numerador.", answer: "Porque x é parcela, não fator comum", interpretation: "Cancelamento é uma divisão do numerador e denominador inteiros." },
     ],
-    exerciseIds: ["p2-fracoes-algebricas-1", "p2-fracoes-algebricas-3"],
+    exerciseIds: ["p2-fracoes-algebricas-1", "p2-fracoes-algebricas-2", "p2-fracoes-algebricas-3", "p2-fracoes-algebricas-4", "p2-fracoes-algebricas-5"],
     summary: ["Declare restrições antes de simplificar.", "Fatore antes de cancelar.", "Cancele fatores, nunca parcelas."],
   }),
   make({
@@ -93,6 +93,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "funcoes", moduleTitle: "Funções", lessonNumber: 14,
     slug: "funcoes-racionais", title: "Funções racionais", plot: "racional-furo-e-assintota", notes: ["restrições", "assíntotas"], glossary: ["Assíntota", "Domínio"],
+    exerciseIds: ["p2-polinomios-racionais-4", "alg-sin-05"],
     why: ["Quocientes de polinômios concentram três ideias centrais de Cálculo: domínio, descontinuidade e comportamento assintótico."],
     explanation: ["Uma função racional tem forma \\(p(x)/q(x)\\), com \\(q(x)\\ne0\\). Fator cancelado costuma gerar furo; fator não cancelado no denominador costuma gerar assíntota vertical."],
     callout: "Analise a expressão original para o domínio e a simplificada para o comportamento.",
@@ -124,7 +125,7 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Se \\(g(x)=2x\\) para \\(x\\le1\\) e \\(g(x)=x+3\\) para \\(x>1\\), calcule \\(g(1)\\).", solution: "Use a primeira regra: \\(2(1)=2\\).", answer: "2", interpretation: "A igualdade pertence à primeira parte." },
       { type: "interpretacao", question: "Os limites laterais de \\(g\\) em 1 coincidem?", solution: "Esquerda tende a 2; direita tende a 4. Não coincidem.", answer: "Não", interpretation: "Há um salto em \\(x=1\\)." },
     ],
-    exerciseIds: ["p2-funcoes-por-partes-1", "p2-funcoes-por-partes-4"],
+    exerciseIds: ["p2-funcoes-por-partes-1", "p2-funcoes-por-partes-3", "p2-funcoes-por-partes-4", "p2-funcoes-por-partes-5"],
     summary: ["A condição escolhe a expressão.", "O ponto de troca exige atenção à igualdade.", "Partes diferentes criam limites laterais."],
   }),
   make({
@@ -143,7 +144,7 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Com \\(f(x)=x+4\\) e \\(g(x)=3x\\), calcule \\((f\\circ g)(2)\\).", solution: "\\(g(2)=6\\) e \\(f(6)=10\\).", answer: "10", interpretation: "A saída 6 vira a entrada de \\(f\\)." },
       { question: "Escreva \\(g(f(x))\\).", solution: "\\(g(x+4)=3(x+4)=3x+12\\).", answer: "\\(3x+12\\)", interpretation: "A ordem diferente gera outra expressão." },
     ],
-    exerciseIds: ["p2-composicao-1", "p2-composicao-5"],
+    exerciseIds: ["p2-composicao-1", "p2-composicao-3", "p2-composicao-5"],
     summary: ["Compor é encadear funções.", "A função interna age primeiro.", "A ordem da composição importa."],
   }),
   make({
