@@ -2149,6 +2149,170 @@ export const plots = {
       { kind: "text", at: [-0.6, 3.5], text: "7", tone: "neutro", anchor: "end" },
     ],
   },
+
+  "juntar-termos-semelhantes": {
+    alt: "Uma expressão algébrica simplificada em quatro linhas: primeiro o parêntese é aberto, depois os termos com x ficam juntos e os números também, até sobrar seis x mais um.",
+    x: [0, 12], y: [0, 5],
+    axes: "nenhum",
+    legend: "Abrir o parêntese primeiro, juntar só o que é semelhante depois: x com x, número com número.",
+    marks: [
+      { kind: "text", at: [0.3, 4.2], text: "2(x + 3) + 4x − 5", tone: "neutro", anchor: "start" },
+      { kind: "text", at: [0.3, 3.2], text: "= 2x + 6 + 4x − 5", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.3, 2.2], text: "= (2x + 4x) + (6 − 5)", tone: "principal", anchor: "start" },
+      { kind: "text", at: [0.3, 1.2], text: "= 6x + 1", tone: "ideia", anchor: "start" },
+      { kind: "text", at: [0.3, 0.35], text: "6x e 1 não se juntam: um tem x, o outro não", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "isolar-para-atingir-a-meta": {
+    alt: "Reta crescente que parte de duzentos. Linhas tracejadas mostram que a altura mil é atingida no décimo sexto mês.",
+    x: [0, 20], y: [0, 1200],
+    xTicks: [0, 4, 8, 12, 16, 20], yTicks: [200, 600, 1000],
+    legend: "Isolar a variável responde à pergunta ao contrário: não é quanto tenho no mês m, e sim em que mês chego a R$ 1.000.",
+    marks: [
+      { kind: "curve", f: (m) => 200 + 50 * m, from: 0, to: 20, tone: "principal" },
+      { kind: "segment", from: [16, 0], to: [16, 1000], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 1000], to: [16, 1000], tone: "neutro", dashed: true },
+      { kind: "point", at: [0, 200], tone: "aplicacao" },
+      { kind: "point", at: [16, 1000], tone: "alerta" },
+      { kind: "text", at: [0.4, 300], text: "começa com 200", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [15.4, 1090], text: "meta em 16 meses", tone: "alerta", anchor: "end" },
+    ],
+  },
+
+  "inequacao-na-reta": {
+    alt: "Reta numérica de zero a oito com um traço forte cobrindo de zero até cinco e uma bolinha cheia no cinco.",
+    x: [-0.8, 8.8], y: [-1.4, 1.4],
+    axes: "nenhum",
+    legend: "A conta dá x ≤ 5: como ingresso é inteiro, dá para comprar até 5. O 5 entra porque gasta exatamente os R$ 100.",
+    marks: [
+      ...retaNumerica(0, 8),
+      { kind: "segment", from: [0, 0.35], to: [5, 0.35], tone: "principal" },
+      { kind: "point", at: [5, 0.35], tone: "principal" },
+      { kind: "text", at: [2.5, 0.95], text: "x ≤ 5", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [6.6, 0.95], text: "não cabe no orçamento", tone: "alerta", anchor: "middle" },
+    ],
+  },
+
+  "sistema-duas-retas": {
+    alt: "Duas retas descendentes que se cruzam num único ponto do primeiro quadrante.",
+    x: [0, 12], y: [0, 16],
+    xTicks: [0, 3, 6, 9, 12], yTicks: [0, 5, 10, 15],
+    legend: "Cada equação é uma reta de possibilidades; a solução do sistema é o único par que serve às duas.",
+    marks: [
+      { kind: "curve", f: (x) => 17 - 2 * x, from: 0, to: 8.5, tone: "principal" },
+      { kind: "curve", f: (x) => 11 - x, from: 0, to: 11, tone: "aplicacao" },
+      { kind: "segment", from: [6, 0], to: [6, 5], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 5], to: [6, 5], tone: "neutro", dashed: true },
+      { kind: "point", at: [6, 5], tone: "alerta" },
+      { kind: "text", at: [6.3, 6.2], text: "café 6, pão 5", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [1.3, 13.6], text: "2x + y = 17", tone: "principal", anchor: "start" },
+      { kind: "text", at: [8.4, 3.4], text: "x + y = 11", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "fator-comum-em-area": {
+    alt: "Retângulo dividido por uma linha vertical em duas partes, uma quadrada e outra mais estreita.",
+    x: [-1.6, 8.4], y: [-1.6, 5.6],
+    axes: "nenhum",
+    aspect: "igual",
+    legend: "x² + 3x é a área de um retângulo de altura x: os lados são x e x + 3, e é esse x comum que sai em evidência.",
+    marks: [
+      { kind: "polygon", points: [[0, 0], [7, 0], [7, 4], [0, 4]], tone: "neutro" },
+      { kind: "segment", from: [4, 0], to: [4, 4], tone: "neutro" },
+      { kind: "text", at: [2, 1.85], text: "x²", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [5.5, 1.85], text: "3x", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [3.5, -0.9], text: "x + 3", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [-0.4, 2], text: "x", tone: "neutro", anchor: "end" },
+      { kind: "text", at: [3.5, 4.9], text: "área = x(x + 3)", tone: "ideia", anchor: "middle" },
+    ],
+  },
+
+  "dois-planos-cruzando": {
+    alt: "Duas retas crescentes: uma começa mais embaixo e sobe rápido, a outra começa mais alto e sobe devagar. Elas se cruzam no meio do gráfico.",
+    x: [0, 40], y: [0, 120],
+    xTicks: [0, 10, 20, 30, 40], yTicks: [0, 30, 50, 70, 100],
+    legend: "Antes de 20 GB o plano A é mais barato; depois disso, o B compensa. No cruzamento, os dois custam R$ 70.",
+    marks: [
+      { kind: "curve", f: (x) => 30 + 2 * x, from: 0, to: 40, tone: "principal" },
+      { kind: "curve", f: (x) => 50 + x, from: 0, to: 40, tone: "aplicacao" },
+      { kind: "segment", from: [20, 0], to: [20, 70], tone: "neutro", dashed: true },
+      { kind: "point", at: [20, 70], tone: "alerta" },
+      { kind: "text", at: [21, 78], text: "empate em 20 GB", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [33, 105], text: "plano A", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [34, 78], text: "plano B", tone: "aplicacao", anchor: "middle" },
+    ],
+  },
+
+  "custo-fixo-mais-variavel": {
+    alt: "Reta crescente que não parte do zero: ela começa numa altura marcada por uma linha tracejada horizontal, que representa o custo fixo.",
+    x: [0, 30], y: [0, 500],
+    xTicks: [0, 10, 20, 30], yTicks: [0, 200, 360],
+    legend: "O custo fixo existe mesmo sem produzir nada; cada bolo acrescenta R$ 8 sobre ele.",
+    marks: [
+      { kind: "hline", at: 200, tone: "alerta" },
+      { kind: "curve", f: (x) => 200 + 8 * x, from: 0, to: 30, tone: "principal" },
+      { kind: "segment", from: [20, 200], to: [20, 360], tone: "aplicacao" },
+      { kind: "point", at: [0, 200], tone: "alerta" },
+      { kind: "point", at: [20, 360], tone: "principal" },
+      { kind: "text", at: [0.8, 165], text: "fixo: R$ 200", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [20.8, 290], text: "20 bolos: +R$ 160", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "ponto-de-equilibrio-lucro": {
+    alt: "Duas retas partindo de alturas diferentes que se cruzam; depois do cruzamento, a região entre elas está pintada.",
+    x: [0, 110], y: [0, 350],
+    xTicks: [0, 30, 60, 90], yTicks: [0, 120, 180, 300],
+    legend: "Antes de 60 unidades a despesa é maior; a partir daí a receita passa à frente e a distância entre as retas é o lucro.",
+    marks: [
+      { kind: "area", top: (x) => 3 * x, bottom: (x) => 120 + x, from: 60, to: 110, tone: "ideia" },
+      { kind: "curve", f: (x) => 3 * x, from: 0, to: 110, tone: "principal" },
+      { kind: "curve", f: (x) => 120 + x, from: 0, to: 110, tone: "aplicacao" },
+      { kind: "point", at: [60, 180], tone: "alerta" },
+      { kind: "text", at: [58, 205], text: "equilíbrio: 60", tone: "alerta", anchor: "end" },
+      { kind: "text", at: [95, 320], text: "receita", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [97, 195], text: "despesa", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [88, 255], text: "lucro", tone: "ideia", anchor: "middle" },
+    ],
+  },
+
+  "roteiro-do-problema-algebrico": {
+    alt: "Quatro caixas ligadas por setas, na ordem: situação, expressão, isolar ou igualar, e resposta com unidade.",
+    x: [0, 13], y: [0, 3.4],
+    axes: "nenhum",
+    legend: "O roteiro é sempre o mesmo: o enunciado vira expressão, a expressão vira equação e a conta termina com unidade.",
+    marks: [
+      { kind: "polygon", points: [[0.2, 1.7], [2.8, 1.7], [2.8, 2.9], [0.2, 2.9]], tone: "neutro" },
+      { kind: "text", at: [1.5, 2.25], text: "situação", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [3.15, 2.3], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[3.5, 1.7], [6.1, 1.7], [6.1, 2.9], [3.5, 2.9]], tone: "aplicacao" },
+      { kind: "text", at: [4.8, 2.25], text: "expressão", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [6.45, 2.3], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[6.8, 1.7], [9.7, 1.7], [9.7, 2.9], [6.8, 2.9]], tone: "principal" },
+      { kind: "text", at: [8.25, 2.25], text: "isolar ou igualar", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [10.05, 2.3], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[10.4, 1.7], [12.8, 1.7], [12.8, 2.9], [10.4, 2.9]], tone: "ideia" },
+      { kind: "text", at: [11.6, 2.25], text: "resposta", tone: "ideia", anchor: "middle" },
+      { kind: "text", at: [0.2, 0.8], text: "exemplo: 60 + 40h = 100 + 30h → h = 4 horas", tone: "neutro", anchor: "start" },
+    ],
+  },
+
+  "restricoes-da-fracao-algebrica": {
+    alt: "Curva com dois ramos separados por uma linha vertical. No ramo da direita há um ponto vazado, e ao longe os dois ramos se aproximam de uma altura fixa.",
+    x: [-6, 8], y: [-4, 8],
+    xTicks: [-4, -2, 0, 3, 6], yTicks: [-2, 0, 1, 2, 4],
+    legend: "Duas restrições, dois efeitos: em x = 0 o denominador zera e vira assíntota; em x = 3 o fator cancela e sobra um furo.",
+    marks: [
+      { kind: "vline", at: 0, tone: "alerta", label: "x = 0" },
+      { kind: "hline", at: 1, tone: "ideia" },
+      { kind: "curve", f: (x) => (x + 3) / x, from: -6, to: -0.42, tone: "principal" },
+      { kind: "curve", f: (x) => (x + 3) / x, from: 0.42, to: 8, tone: "principal" },
+      { kind: "point", at: [3, 2], open: true, tone: "aplicacao" },
+      { kind: "text", at: [3.3, 2.6], text: "furo em x = 3", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [-5.8, 1.7], text: "tende a y = 1", tone: "ideia", anchor: "start" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;
