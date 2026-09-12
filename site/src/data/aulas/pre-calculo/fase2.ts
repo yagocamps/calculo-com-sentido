@@ -60,6 +60,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "algebra", moduleTitle: "Álgebra essencial", lessonNumber: 10,
     slug: "fracoes-algebricas", title: "Frações algébricas e restrições", notes: ["fatores", "domínio"], glossary: ["Domínio", "Restrição"],
+    plot: "restricoes-da-fracao-algebrica",
     why: ["Frações algébricas aparecem em funções racionais, limites e regra do quociente. Simplificar sem registrar restrições cria respostas falsas."],
     explanation: ["Primeiro encontre os valores que zeram cada denominador. Depois fatore numerador e denominador. Só fatores inteiros comuns podem ser cancelados; parcelas de uma soma não podem."],
     callout: "Simplificar muda a aparência, não recupera valores proibidos da expressão original.",

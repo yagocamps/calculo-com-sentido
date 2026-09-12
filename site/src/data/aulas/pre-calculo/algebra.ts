@@ -6,6 +6,7 @@ const MOD_TITLE = "Álgebra essencial";
 
 export const algebraAulas: Record<string, AulaContent> = {
   "expressoes-algebricas": {
+    plot: "juntar-termos-semelhantes",
     meta: preMeta({
       title: "Manipulação de expressões algébricas",
       moduleSlug: MOD,
@@ -145,6 +146,7 @@ export const algebraAulas: Record<string, AulaContent> = {
   },
 
   "isolamento-variaveis": {
+    plot: "isolar-para-atingir-a-meta",
     meta: preMeta({
       title: "Isolamento de variáveis",
       moduleSlug: MOD,
@@ -283,6 +285,7 @@ export const algebraAulas: Record<string, AulaContent> = {
   },
 
   inequacoes: {
+    plot: "inequacao-na-reta",
     meta: preMeta({
       title: "Inequações: quando não é igual",
       moduleSlug: MOD,
@@ -426,6 +429,7 @@ export const algebraAulas: Record<string, AulaContent> = {
   },
 
   "sistemas-equacoes": {
+    plot: "sistema-duas-retas",
     meta: preMeta({
       title: "Sistemas de equações",
       moduleSlug: MOD,
@@ -570,6 +574,7 @@ export const algebraAulas: Record<string, AulaContent> = {
   },
 
   simplificacao: {
+    plot: "fator-comum-em-area",
     meta: preMeta({
       title: "Simplificação algébrica",
       moduleSlug: MOD,
@@ -708,6 +713,7 @@ export const algebraAulas: Record<string, AulaContent> = {
   },
 
   "orcamentos-planos": {
+    plot: "dois-planos-cruzando",
     meta: preMeta({
       title: "Orçamentos e planos: parte fixa + parte variável",
       moduleSlug: MOD,
@@ -851,6 +857,7 @@ export const algebraAulas: Record<string, AulaContent> = {
   },
 
   "custos-producao": {
+    plot: "custo-fixo-mais-variavel",
     meta: preMeta({
       title: "Custos de produção",
       moduleSlug: MOD,
@@ -996,6 +1003,7 @@ export const algebraAulas: Record<string, AulaContent> = {
   },
 
   "receita-despesa": {
+    plot: "ponto-de-equilibrio-lucro",
     meta: preMeta({
       title: "Receita, despesa e ponto de equilíbrio",
       moduleSlug: MOD,
@@ -1135,6 +1143,7 @@ export const algebraAulas: Record<string, AulaContent> = {
   },
 
   "revisao-algebra": {
+    plot: "roteiro-do-problema-algebrico",
     meta: preMeta({
       title: "Revisão do módulo: álgebra essencial",
       moduleSlug: MOD,
