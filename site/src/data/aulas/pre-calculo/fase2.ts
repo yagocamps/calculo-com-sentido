@@ -473,6 +473,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "preparacao-limites", moduleTitle: "Preparação para limites", lessonNumber: 7,
     slug: "fatoracao-em-limites", title: "Fatoração em limites", notes: ["indeterminação 0/0", "escolha de técnica"],
+    plot: "furo-em-tres-apos-simplificar",
     why: ["Muitos limites introdutórios parecem impossíveis apenas porque um fator comum está escondido. Fatorar revela a função que governa os valores próximos."],
     explanation: ["Substitua primeiro. Se aparecer \\(0/0\\), classifique a expressão e escolha uma fatoração: diferença de quadrados, fator comum ou trinômio. Depois simplifique para \\(x\\ne a\\)."],
     callout: "\\(0/0\\) não é resposta: é um aviso para transformar a expressão.",
@@ -492,6 +493,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "preparacao-limites", moduleTitle: "Preparação para limites", lessonNumber: 8,
     slug: "cancelamento-com-restricao", title: "Cancelamento com restrição", notes: ["fatores", "funções equivalentes perto do ponto"],
+    plot: "cancelar-guarda-a-restricao",
     why: ["O cancelamento correto explica como um limite pode existir mesmo quando a função não está definida no ponto."],
     explanation: ["Quando cancelamos um fator \\(x-a\\), obtemos uma expressão equivalente apenas para \\(x\\ne a\\). Isso basta para o limite, que observa valores próximos, mas não redefine automaticamente a função."],
     callout: "Igualdade algébrica vem acompanhada da condição \\(x\\ne a\\).",
@@ -511,6 +513,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "preparacao-limites", moduleTitle: "Preparação para limites", lessonNumber: 9,
     slug: "racionalizacao", title: "Racionalização para limites", notes: ["conjugado", "raízes"],
+    plot: "furo-da-racionalizacao-em-quatro",
     why: ["Quando uma indeterminação envolve diferença de raízes, fatoração comum pode não ajudar. O conjugado transforma radicais em uma diferença de quadrados."],
     explanation: ["Multiplique numerador e denominador pelo conjugado da expressão com raiz. O produto \\((a-b)(a+b)=a^2-b^2\\) elimina o radical responsável pela indeterminação."],
     callout: "Multiplicar por conjugado é multiplicar por 1: a fração mantém o valor onde está definida.",

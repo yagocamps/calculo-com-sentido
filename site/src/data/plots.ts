@@ -2465,6 +2465,188 @@ export const plots = {
       { kind: "text", at: [-1.8, -1.3], text: "y = x", tone: "neutro", anchor: "start" },
     ],
   },
+
+  "aproximacao-pelos-dois-lados": {
+    alt: "Reta inclinada com quatro pontos marcados, dois de cada lado de x igual a dois, cada vez mais perto dele. Linhas tracejadas ligam o ponto central aos eixos.",
+    x: [1.5, 2.5], y: [2.4, 3.6],
+    xTicks: [1.9, 2, 2.1], yTicks: [2.9, 3, 3.1],
+    legend: "Chegando por qualquer um dos lados, os valores de f(x) se acumulam em torno de 3.",
+    marks: [
+      { kind: "curve", f: (x) => x + 1, from: 1.5, to: 2.5, tone: "principal" },
+      { kind: "segment", from: [2, 2.4], to: [2, 3], tone: "neutro", dashed: true },
+      { kind: "segment", from: [1.5, 3], to: [2, 3], tone: "neutro", dashed: true },
+      { kind: "point", at: [1.9, 2.9], tone: "aplicacao" },
+      { kind: "point", at: [1.99, 2.99], tone: "aplicacao" },
+      { kind: "point", at: [2.01, 3.01], tone: "alerta" },
+      { kind: "point", at: [2.1, 3.1], tone: "alerta" },
+      { kind: "text", at: [1.74, 3.32], text: "pela esquerda", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [2.28, 2.66], text: "pela direita", tone: "alerta", anchor: "middle" },
+    ],
+  },
+
+  "tabela-de-valores-proximos": {
+    alt: "Tabela de duas colunas: valores de x cada vez mais próximos de três, à esquerda, e os valores correspondentes de x ao quadrado, à direita, cada vez mais próximos de nove.",
+    x: [0, 10], y: [0, 7],
+    axes: "nenhum",
+    legend: "A tabela não prova, mas mostra: por qualquer lado, f(x) = x² se encaminha para 9.",
+    marks: [
+      { kind: "segment", from: [0.6, 5.7], to: [7.4, 5.7], tone: "neutro" },
+      { kind: "segment", from: [4, 0.6], to: [4, 6.3], tone: "neutro" },
+      { kind: "text", at: [2.3, 6.05], text: "x", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [5.7, 6.05], text: "f(x) = x²", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [2.3, 5], text: "2,9", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [5.7, 5], text: "8,41", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [2.3, 4], text: "2,99", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [5.7, 4], text: "8,9401", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [2.3, 3], text: "3,01", tone: "alerta", anchor: "middle" },
+      { kind: "text", at: [5.7, 3], text: "9,0601", tone: "alerta", anchor: "middle" },
+      { kind: "text", at: [2.3, 2], text: "3,1", tone: "alerta", anchor: "middle" },
+      { kind: "text", at: [5.7, 2], text: "9,61", tone: "alerta", anchor: "middle" },
+      { kind: "text", at: [5.7, 1], text: "→ 9", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [2.3, 1], text: "→ 3", tone: "principal", anchor: "middle" },
+    ],
+  },
+
+  "tendencia-com-furo-em-um": {
+    alt: "Reta inclinada com um ponto vazado na altura dois. Dois pontos cheios, um de cada lado, mostram a aproximação por valores vizinhos.",
+    x: [-0.5, 3], y: [0, 4.5],
+    xTicks: [0, 1, 2, 3], yTicks: [0, 1, 2, 3, 4],
+    legend: "A função não existe em x = 1, mas os valores vizinhos apontam claramente para 2.",
+    marks: [
+      { kind: "curve", f: (x) => x + 1, from: -0.5, to: 3, tone: "principal" },
+      { kind: "segment", from: [1, 0], to: [1, 2], tone: "neutro", dashed: true },
+      { kind: "point", at: [0.8, 1.8], tone: "aplicacao" },
+      { kind: "point", at: [1.2, 2.2], tone: "alerta" },
+      { kind: "point", at: [1, 2], open: true, tone: "neutro" },
+      { kind: "text", at: [1.25, 1.35], text: "não existe em x = 1", tone: "neutro", anchor: "start" },
+      { kind: "text", at: [0.1, 3.1], text: "mas tende a 2", tone: "principal", anchor: "start" },
+    ],
+  },
+
+  "secantes-encolhendo-tres": {
+    alt: "Parábola com três segmentos que partem do mesmo ponto e chegam a pontos cada vez mais próximos dele; as retas vão ficando menos inclinadas.",
+    x: [1.5, 3.4], y: [3, 10],
+    xTicks: [2, 2.5, 3], yTicks: [4, 6, 9],
+    legend: "Encolhendo o intervalo, as inclinações caem de 5 para 4,5 e 4,1 — a caminho de 4.",
+    marks: [
+      { kind: "curve", f: (t) => t * t, from: 1.5, to: 3.15, tone: "neutro" },
+      { kind: "segment", from: [2, 4], to: [3, 9], tone: "alerta" },
+      { kind: "segment", from: [2, 4], to: [2.5, 6.25], tone: "aplicacao" },
+      { kind: "segment", from: [2, 4], to: [2.1, 4.41], tone: "principal" },
+      { kind: "point", at: [2, 4], tone: "principal" },
+      { kind: "point", at: [3, 9], tone: "alerta" },
+      { kind: "point", at: [2.5, 6.25], tone: "aplicacao" },
+      { kind: "text", at: [2.92, 9.55], text: "inclinação 5", tone: "alerta", anchor: "end" },
+      { kind: "text", at: [2.6, 6.1], text: "4,5", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [1.95, 3.55], text: "4,1 e caindo", tone: "principal", anchor: "start" },
+    ],
+  },
+
+  "cancelar-guarda-a-restricao": {
+    alt: "Três linhas de álgebra, uma sob a outra: a fração original, a fração fatorada e o resultado simplificado, seguido da condição x diferente de um.",
+    x: [0, 12], y: [0, 5],
+    axes: "nenhum",
+    legend: "A restrição não é detalhe: ela é parte da igualdade, e é o que separa as duas funções no ponto x = 1.",
+    marks: [
+      { kind: "text", at: [0.3, 4.2], text: "(x² − 1) ÷ (x − 1)", tone: "neutro", anchor: "start" },
+      { kind: "text", at: [0.3, 3.2], text: "= (x − 1)(x + 1) ÷ (x − 1)", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.3, 2.2], text: "= x + 1,  desde que x ≠ 1", tone: "principal", anchor: "start" },
+      { kind: "text", at: [0.3, 1.2], text: "f só perde o ponto x = 1; g = x + 1 existe lá", tone: "ideia", anchor: "start" },
+      { kind: "text", at: [0.3, 0.4], text: "cancelar sem anotar a condição troca uma função por outra", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "furo-da-racionalizacao-em-quatro": {
+    alt: "Curva suave levemente decrescente com um ponto vazado na altura de um quarto, em x igual a quatro.",
+    x: [0, 12], y: [0.15, 0.55],
+    xTicks: [0, 2, 4, 8, 12],
+    legend: "Depois do conjugado sobra 1/(√x + 2), que em x = 4 vale 1/4 — o limite procurado.",
+    marks: [
+      { kind: "curve", f: (x) => 1 / (Math.sqrt(x) + 2), from: 0, to: 12, tone: "principal" },
+      { kind: "segment", from: [4, 0.15], to: [4, 0.25], tone: "neutro", dashed: true },
+      { kind: "point", at: [4, 0.25], open: true, tone: "alerta" },
+      { kind: "text", at: [4.4, 0.3], text: "limite 1/4", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "valor-diferente-do-limite": {
+    alt: "Parábola com um ponto vazado onde a curva passaria e, acima dele, um ponto cheio isolado, na mesma vertical.",
+    x: [-0.5, 2.5], y: [-0.5, 4.5],
+    xTicks: [0, 1, 2], yTicks: [0, 1, 3, 4],
+    legend: "O limite existe e vale 1, e f(1) existe e vale 3 — mas são diferentes, então a função não é contínua em 1.",
+    marks: [
+      { kind: "curve", f: (x) => x * x, from: -0.5, to: 2.1, tone: "principal" },
+      { kind: "segment", from: [1, 1], to: [1, 3], tone: "neutro", dashed: true },
+      { kind: "point", at: [1, 1], open: true, tone: "aplicacao" },
+      { kind: "point", at: [1, 3], tone: "alerta" },
+      { kind: "text", at: [1.15, 0.85], text: "limite: 1", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [1.15, 3.1], text: "f(1) = 3", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "continua-sem-saltos": {
+    alt: "Duas curvas de posição ao longo do tempo: a de cima é traçada sem interrupções; a de baixo, tracejada, tem um salto no meio, com ponto vazado e ponto cheio.",
+    x: [0, 8.6], y: [0, 11],
+    xTicks: [0, 2, 4, 6, 8], yTicks: [0, 4, 8],
+    legend: "Continuidade no intervalo exclui o salto: para ir de uma altura à outra, o gráfico precisa passar por todas as alturas do meio.",
+    marks: [
+      { kind: "curve", f: (t) => 4 + 0.45 * t + 0.4 * Math.sin(t), from: 0, to: 8, tone: "principal" },
+      { kind: "curve", f: (t) => 0.35 * t + 0.5, from: 0, to: 4, tone: "alerta", dashed: true },
+      { kind: "curve", f: (t) => 0.35 * t + 1.7, from: 4, to: 8, tone: "alerta", dashed: true },
+      { kind: "point", at: [4, 1.9], open: true, tone: "alerta" },
+      { kind: "point", at: [4, 3.1], tone: "alerta" },
+      { kind: "text", at: [5.6, 9.4], text: "posição real: sem buracos", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [6.6, 1.3], text: "salto: impossível na viagem", tone: "alerta", anchor: "middle" },
+    ],
+  },
+
+  "removivel-contra-salto": {
+    alt: "Duas curvas sobre os mesmos eixos: uma passa suavemente pela altura um no centro; a outra vale menos um à esquerda e mais um à direita, com pontos vazados no centro.",
+    x: [-6.5, 6.5], y: [-1.6, 1.8],
+    xTicks: [-6, -3, 0, 3, 6], yTicks: [-1, 0, 1],
+    legend: "À esquerda o buraco fecha com o valor certo: definindo f(0) = 1 a função fica contínua. À direita, o salto não fecha com valor nenhum.",
+    marks: [
+      { kind: "curve", f: (x) => (x === 0 ? 1 : Math.sin(x) / x), from: -6.5, to: 6.5, tone: "principal" },
+      { kind: "curve", f: () => -1, from: -6.5, to: -0.12, tone: "alerta", dashed: true },
+      { kind: "curve", f: () => 1, from: 0.12, to: 6.5, tone: "alerta", dashed: true },
+      { kind: "point", at: [0, 1], tone: "principal" },
+      { kind: "point", at: [0, -1], open: true, tone: "alerta" },
+      { kind: "text", at: [-6.2, 1.5], text: "sen(x)/x com f(0) = 1: contínua", tone: "principal", anchor: "start" },
+      { kind: "text", at: [6.2, -1.35], text: "|x|/x: salto", tone: "alerta", anchor: "end" },
+    ],
+  },
+
+  "tvi-raiz-entre-zero-e-um": {
+    alt: "Curva crescente que começa abaixo do eixo horizontal, cruza-o uma vez e termina acima, dentro do intervalo mostrado.",
+    x: [-0.15, 1.25], y: [-1.4, 1.4],
+    xTicks: [0, 0.5, 1], yTicks: [-1, 0, 1],
+    legend: "Contínua, começando em −1 e terminando em 1: para sair de um sinal e chegar ao outro, precisa passar pelo zero.",
+    marks: [
+      { kind: "hline", at: 0, tone: "neutro" },
+      { kind: "curve", f: (x) => x * x * x + x - 1, from: -0.15, to: 1.25, tone: "principal" },
+      { kind: "point", at: [0, -1], tone: "aplicacao" },
+      { kind: "point", at: [1, 1], tone: "aplicacao" },
+      { kind: "point", at: [0.6823, 0], tone: "alerta" },
+      { kind: "text", at: [0.08, -1.15], text: "f(0) = −1", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.94, 1.15], text: "f(1) = 1", tone: "aplicacao", anchor: "end" },
+      { kind: "text", at: [0.72, -0.45], text: "raiz garantida aqui", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "interna-sempre-positiva": {
+    alt: "Duas curvas em forma de vale: a de cima sobe rápido dos dois lados; a de baixo, mais achatada, é a raiz da primeira. Uma linha tracejada mostra que a de cima nunca desce abaixo de um.",
+    x: [-3, 3], y: [0, 10],
+    xTicks: [-2, -1, 0, 1, 2], yTicks: [0, 1, 4, 8],
+    legend: "A camada interna x² + 1 nunca fica abaixo de 1: a raiz sempre existe, e a composição é contínua em toda a reta.",
+    marks: [
+      { kind: "hline", at: 1, tone: "ideia" },
+      { kind: "curve", f: (x) => x * x + 1, from: -3, to: 3, tone: "aplicacao" },
+      { kind: "curve", f: (x) => Math.sqrt(x * x + 1), from: -3, to: 3, tone: "principal" },
+      { kind: "text", at: [-2.9, 8.6], text: "x² + 1", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [2.9, 2.6], text: "√(x² + 1)", tone: "principal", anchor: "end" },
+      { kind: "text", at: [0, 1.5], text: "nunca abaixo de 1", tone: "ideia", anchor: "middle" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;

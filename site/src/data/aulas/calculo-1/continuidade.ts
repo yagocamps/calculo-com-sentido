@@ -224,6 +224,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
   },
 
   "assintotas-continuidade": {
+    plot: "explosao-perto-de-3",
     meta: c1Meta({
       title: "Assíntotas e continuidade",
       moduleSlug: MOD,
@@ -329,6 +330,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
   },
 
   "continuidade-ponto": {
+    plot: "valor-diferente-do-limite",
     meta: c1Meta({
       title: "Continuidade em um ponto (definição)",
       moduleSlug: MOD,
@@ -434,6 +436,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
   },
 
   "continuidade-intervalo": {
+    plot: "continua-sem-saltos",
     meta: c1Meta({
       title: "Continuidade em intervalos",
       moduleSlug: MOD,
@@ -538,6 +541,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
   },
 
   "revisao-continuidade": {
+    plot: "removivel-contra-salto",
     meta: c1Meta({
       title: "Revisão: Continuidade",
       moduleSlug: MOD,

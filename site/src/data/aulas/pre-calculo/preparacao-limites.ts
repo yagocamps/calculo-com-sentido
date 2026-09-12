@@ -150,6 +150,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
   },
 
   "comportamento-funcoes": {
+    plot: "aproximacao-pelos-dois-lados",
     meta: preMeta({
       title: "Comportamento de funções: o que ela faz perto de um ponto",
       moduleSlug: MOD,
@@ -289,6 +290,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
   },
 
   "valores-proximos": {
+    plot: "tabela-de-valores-proximos",
     meta: preMeta({
       title: "Valores próximos de um ponto: a tabela que revela o destino",
       moduleSlug: MOD,
@@ -428,6 +430,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
   },
 
   "ideia-tendencia": {
+    plot: "tendencia-com-furo-em-um",
     meta: preMeta({
       title: "Ideia de tendência: para onde a função aponta",
       moduleSlug: MOD,
@@ -707,6 +710,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
   },
 
   "velocidade-tendencia": {
+    plot: "secantes-encolhendo-tres",
     meta: preMeta({
       title: "Velocidade e tendência: o primeiro passo rumo ao cálculo",
       moduleSlug: MOD,
