@@ -10,12 +10,15 @@ import { slugify } from "@/lib/utils";
 
 const glossarioByTerm = new Map(glossario.map((g) => [g.termo, g]));
 
-export function AulaToc({ content, hasSimulation = false }: { content: AulaContent; hasSimulation?: boolean }) {
+export function AulaToc({ content, hasSimulation = false, hasNext }: { content: AulaContent; hasSimulation?: boolean; hasNext: boolean }) {
   const pathname = usePathname();
+  // `hasNext` vem do AulaView, que decide a próxima aula pela ordem do
+  // catálogo. Olhar `meta.nextLesson` aqui escondia o item do índice em toda
+  // aula que não declara a próxima no conteúdo, embora a seção existisse.
   const links = sectionLinks.filter(
     (item) =>
       (item.id !== "simulacao" || hasSimulation) &&
-      (item.id !== "proxima" || content.meta.nextLesson) &&
+      (item.id !== "proxima" || hasNext) &&
       (item.id !== "quiz" || content.quiz?.length) &&
       (item.id !== "video" || content.videos?.length),
   );

@@ -209,7 +209,7 @@ export function AulaView({
             <FutureUseLinks items={futureUses} />
           </header>
 
-          <AulaTocMobile content={content} hasSimulation={hasSimulation} />
+          <AulaTocMobile content={content} hasSimulation={hasSimulation} hasNext={Boolean(nextLesson)} />
 
           <div id="porque">
             <Section n={1} label="Por que aprender isso" title={content.porQue.title}>
@@ -496,7 +496,7 @@ export function AulaView({
           </div>
         </article>
 
-        <AulaToc content={content} hasSimulation={hasSimulation} />
+        <AulaToc content={content} hasSimulation={hasSimulation} hasNext={Boolean(nextLesson)} />
       </div>
     </PageShell>
   );

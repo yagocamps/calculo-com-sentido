@@ -5,11 +5,12 @@ import type { AulaContent } from "@/data/aulas/types";
  * Índice da aula colapsável, exibido só no mobile (no desktop a TOC fica fixa
  * na coluna lateral). Usa <details> nativo — sem JS, fecha ao tocar num link.
  */
-export function AulaTocMobile({ content, hasSimulation = false }: { content: AulaContent; hasSimulation?: boolean }) {
+export function AulaTocMobile({ content, hasSimulation = false, hasNext }: { content: AulaContent; hasSimulation?: boolean; hasNext: boolean }) {
+  // `hasNext` acompanha a seção renderizada pelo AulaView (ver AulaToc).
   const links = sectionLinks.filter(
     (item) =>
       (item.id !== "simulacao" || hasSimulation) &&
-      (item.id !== "proxima" || content.meta.nextLesson) &&
+      (item.id !== "proxima" || hasNext) &&
       (item.id !== "quiz" || content.quiz?.length) &&
       (item.id !== "video" || content.videos?.length),
   );
