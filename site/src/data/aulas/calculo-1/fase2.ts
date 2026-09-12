@@ -318,6 +318,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "continuidade", moduleTitle: "Continuidade", lessonNumber: 7,
     slug: "teorema-valor-intermediario", title: "Teorema do Valor Intermediário", notes: ["existência", "hipóteses"],
+    plot: "tvi-raiz-entre-zero-e-um",
     why: "O teorema garante que uma função contínua não pula valores e permite provar que uma equação tem solução sem encontrá-la exatamente.",
     concept: "Se \\(f\\) é contínua em \\([a,b]\\), então assume todo valor entre \\(f(a)\\) e \\(f(b)\\). Ele garante existência, não unicidade nem localização exata.",
     callout: "Hipótese: continuidade no intervalo fechado. Conclusão: pelo menos uma ocorrência do valor intermediário.",
@@ -334,6 +335,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "continuidade", moduleTitle: "Continuidade", lessonNumber: 8,
     slug: "composicao-funcoes-continuas", title: "Composição de funções contínuas", notes: ["domínio", "continuidade preservada"],
+    plot: "interna-sempre-positiva",
     why: "Funções complexas são construídas em camadas; saber quando a continuidade passa pela composição simplifica muitos limites.",
     concept: "Se \\(g\\) é contínua em \\(a\\) e \\(f\\) é contínua em \\(g(a)\\), então \\(f\\circ g\\) é contínua em \\(a\\). O ponto \\(g(a)\\) precisa pertencer ao domínio de \\(f\\).",
     callout: "A composição preserva continuidade apenas onde todas as camadas estão definidas.",
