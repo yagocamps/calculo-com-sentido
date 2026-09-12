@@ -345,6 +345,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 13,
     slug: "derivadas-trigonometricas", title: "Derivadas trigonométricas", notes: ["seno", "cosseno", "tangente"],
+    plot: "seno-e-cosseno-derivada",
     why: "Ondas e movimentos periódicos exigem taxas de variação de seno, cosseno e tangente.",
     concept: "Em radianos, seno deriva para cosseno, cosseno deriva para menos seno e tangente deriva para secante ao quadrado. Com composição, multiplique pela derivada interna.",
     callout: "As fórmulas simples pressupõem ângulos em radianos.",
@@ -361,6 +362,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 14,
     slug: "derivadas-exponenciais-logaritmicas", title: "Derivadas exponenciais e logarítmicas", notes: ["eˣ", "ln x"],
+    plot: "exponencial-inclinacao-igual-altura",
     why: "Crescimento contínuo, decaimento, juros e escalas logarítmicas pedem suas próprias regras de derivação.",
     concept: "A exponencial natural é sua própria derivada. Para base \\(a\\), aparece \\(\\ln a\\). O logaritmo natural deriva para \\(1/x\\), no domínio \\(x>0\\).",
     callout: "Com função interna \\(u(x)\\), aplique cadeia: \\((e^u)'=e^u u'\\) e \\((\\ln u)'=u'/u\\).",
@@ -377,6 +379,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 15,
     slug: "derivacao-implicita", title: "Derivação implícita", notes: ["y depende de x", "cadeia"],
+    plot: "circunferencia-tangente-implicita",
     why: "Nem toda curva vem com \\(y\\) isolado. Círculos e relações físicas são frequentemente dadas por uma equação entre variáveis.",
     concept: "Derive os dois lados em relação a \\(x\\). Sempre que derivar uma expressão com \\(y\\), multiplique por \\(y'=dy/dx\\), pois \\(y\\) depende de \\(x\\).",
     callout: "O fator \\(y'\\) é a regra da cadeia aparecendo na variável dependente.",
@@ -393,6 +396,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 16,
     slug: "derivadas-ordem-superior", title: "Derivadas de ordem superior", notes: ["segunda derivada", "aceleração"],
+    plot: "concavidade-x-cubo",
     why: "A primeira derivada mede mudança; derivar novamente mede como essa mudança também varia.",
     concept: "A segunda derivada \\(f''\\) é a derivada de \\(f'\\). Em movimento, posição deriva para velocidade e velocidade deriva para aceleração; em gráficos, \\(f''\\) informa concavidade.",
     callout: "A unidade também deriva: metros, metros por segundo, metros por segundo ao quadrado.",

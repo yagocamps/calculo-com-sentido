@@ -1353,6 +1353,203 @@ export const plots = {
       { kind: "text", at: [2.1, 0.5], text: "y = ln x", tone: "aplicacao", anchor: "start" },
     ],
   },
+
+  "regra-da-soma-inclinacoes": {
+    alt: "Três curvas partindo da esquerda: uma parábola tracejada, uma reta tracejada e, acima delas, a curva da soma. Em x igual a um, cada uma recebe um pequeno traço de tangente; o traço da soma é visivelmente mais inclinado que os outros dois.",
+    x: [-0.5, 2.4], y: [-1, 8],
+    xTicks: [0, 1, 2], yTicks: [0, 1, 2, 3, 6],
+    legend: "Em x = 1, as inclinações das partes são 2 e 2; a da soma é 4 — as taxas se somam.",
+    marks: [
+      { kind: "curve", f: (x) => x * x, from: -0.5, to: 2.4, tone: "aplicacao", dashed: true },
+      { kind: "curve", f: (x) => 2 * x, from: -0.5, to: 2.4, tone: "neutro", dashed: true },
+      { kind: "curve", f: (x) => x * x + 2 * x, from: -0.5, to: 2.4, tone: "principal" },
+      { kind: "segment", from: [0.6, 0.2], to: [1.4, 1.8], tone: "aplicacao" },
+      { kind: "segment", from: [0.6, 1.2], to: [1.4, 2.8], tone: "neutro" },
+      { kind: "segment", from: [0.6, 1.4], to: [1.4, 4.6], tone: "principal" },
+      { kind: "point", at: [1, 1], tone: "aplicacao" },
+      { kind: "point", at: [1, 2], tone: "neutro" },
+      { kind: "point", at: [1, 3], tone: "principal" },
+      { kind: "text", at: [2.05, 7.2], text: "f + g", tone: "principal", anchor: "end" },
+      { kind: "text", at: [2.35, 5.4], text: "f = x²", tone: "aplicacao", anchor: "end" },
+      { kind: "text", at: [2.35, 4.1], text: "g = 2x", tone: "neutro", anchor: "end" },
+    ],
+  },
+
+  "potencia-funcao-e-derivada": {
+    alt: "Uma parábola com o vértice na origem e, sobre o mesmo par de eixos, a reta da sua derivada, que é negativa à esquerda do zero, passa pela origem e fica positiva à direita.",
+    x: [-2.5, 2.5], y: [-4, 6],
+    xTicks: [-2, -1, 0, 1, 2], yTicks: [-4, -2, 0, 2, 4, 6],
+    legend: "Onde a derivada é negativa a parábola desce; onde é positiva, sobe; no zero da derivada está o vértice.",
+    marks: [
+      { kind: "curve", f: (x) => x * x, from: -2.5, to: 2.5, tone: "principal" },
+      { kind: "curve", f: (x) => 2 * x, from: -2.2, to: 2.2, tone: "aplicacao" },
+      { kind: "point", at: [0, 0], tone: "alerta" },
+      { kind: "text", at: [-2.4, 5.2], text: "f(x) = x²", tone: "principal", anchor: "start" },
+      { kind: "text", at: [1.35, 3.4], text: "f′(x) = 2x", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.12, -1.1], text: "f′ = 0 no vértice", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "cadeia-onda-comprimida": {
+    alt: "Duas ondas sobre os mesmos eixos: uma completa um ciclo no trecho mostrado; a outra, mais apertada, completa dois ciclos no mesmo espaço.",
+    x: [0, 6.4], y: [-1.5, 1.5],
+    xTicks: [0, 2, 4, 6], yTicks: [-1, 0, 1],
+    legend: "A camada interna 2x aperta a onda pela metade: por isso a derivada ganha o fator 2 da regra da cadeia.",
+    marks: [
+      { kind: "curve", f: (x) => Math.sin(x), from: 0, to: 6.4, tone: "neutro" },
+      { kind: "curve", f: (x) => Math.sin(2 * x), from: 0, to: 6.4, tone: "principal" },
+      { kind: "text", at: [1.3, 1.32], text: "sen x", tone: "neutro", anchor: "start" },
+      { kind: "text", at: [3.5, -1.32], text: "sen 2x: o dobro da velocidade", tone: "principal", anchor: "middle" },
+    ],
+  },
+
+  "sinal-da-derivada-tres-tangentes": {
+    alt: "Curva em forma de S deitado: sobe, desce no meio e volta a subir. Em três pontos há pequenos traços de tangente — inclinados para cima nas pontas e para baixo no meio.",
+    x: [-2.2, 2.2], y: [-3, 3],
+    xTicks: [-2, -1, 0, 1, 2], yTicks: [-2, 0, 2],
+    legend: "O sinal da derivada decide a direção: positiva nas pontas (sobe) e negativa no meio (desce).",
+    marks: [
+      { kind: "curve", f: (x) => x * x * x - 3 * x, from: -2.1, to: 2.1, tone: "principal" },
+      { kind: "segment", from: [-1.8, 0], to: [-1.2, 2.25], tone: "aplicacao" },
+      { kind: "segment", from: [-0.35, 1.05], to: [0.35, -1.05], tone: "alerta" },
+      { kind: "segment", from: [1.2, -2.25], to: [1.8, 0], tone: "aplicacao" },
+      { kind: "point", at: [-1.5, 1.125], tone: "aplicacao" },
+      { kind: "point", at: [0, 0], tone: "alerta" },
+      { kind: "point", at: [1.5, -1.125], tone: "aplicacao" },
+      { kind: "text", at: [-2.15, 2.7], text: "f′ > 0", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.45, 1.1], text: "f′ < 0", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [1.1, -2.7], text: "f′ > 0", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "posicao-e-velocidade": {
+    alt: "Curva da posição que sobe, atinge um topo, desce até um vale e volta a subir. Abaixo dela, a curva tracejada da velocidade cruza o zero exatamente nos instantes do topo e do vale.",
+    x: [0, 4.2], y: [-4, 7],
+    xTicks: [0, 1, 2, 3, 4], yTicks: [-4, 0, 4],
+    legend: "A velocidade zera exatamente onde a posição vira: no topo (t = 1) e no vale (t = 3).",
+    marks: [
+      { kind: "hline", at: 0, tone: "neutro" },
+      { kind: "curve", f: (t) => t * t * t - 6 * t * t + 9 * t, from: 0, to: 4.2, tone: "principal" },
+      { kind: "curve", f: (t) => 3 * t * t - 12 * t + 9, from: 0.35, to: 4.05, tone: "aplicacao", dashed: true },
+      { kind: "point", at: [1, 4], tone: "principal" },
+      { kind: "point", at: [3, 0], tone: "principal" },
+      { kind: "text", at: [1, 5], text: "topo", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [3.05, -1.2], text: "vale", tone: "principal", anchor: "start" },
+      { kind: "text", at: [3.5, 4.6], text: "velocidade", tone: "aplicacao", anchor: "middle" },
+    ],
+  },
+
+  "receita-custo-e-lucro-maximo": {
+    alt: "Uma reta de receita e uma curva de custo que partem juntas e voltam a se encontrar. Entre elas, um segmento vertical marca a maior distância, na metade do caminho.",
+    x: [0, 330], y: [0, 13000],
+    xTicks: [0, 100, 150, 200, 300], yTicks: [0, 4000, 8000],
+    legend: "O lucro é a distância entre receita e custo; ela é máxima em x = 150, onde as duas inclinações se igualam.",
+    marks: [
+      { kind: "curve", f: (x) => 40 * x, from: 0, to: 330, tone: "principal" },
+      { kind: "curve", f: (x) => 0.1 * x * x + 10 * x, from: 0, to: 330, tone: "aplicacao" },
+      { kind: "segment", from: [150, 3750], to: [150, 6000], tone: "alerta" },
+      { kind: "point", at: [150, 6000], tone: "alerta" },
+      { kind: "point", at: [150, 3750], tone: "alerta" },
+      { kind: "text", at: [158, 5100], text: "lucro máximo", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [232, 10200], text: "receita", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [292, 8100], text: "custo", tone: "aplicacao", anchor: "middle" },
+    ],
+  },
+
+  "tangente-na-revisao-derivadas": {
+    alt: "Curva que sobe devagar, achata perto da origem e depois dispara. No ponto em x igual a um, uma reta tangente toca a curva e acompanha sua inclinação.",
+    x: [-0.6, 1.6], y: [-1.5, 5],
+    xTicks: [0, 1], yTicks: [-1, 0, 2, 4],
+    legend: "Derivar f(x) = x²(3x − 1) dá f′(1) = 7: é a inclinação da tangente marcada no ponto (1, 2).",
+    marks: [
+      { kind: "curve", f: (x) => 3 * x * x * x - x * x, from: -0.6, to: 1.35, tone: "principal" },
+      { kind: "curve", f: (x) => 2 + 7 * (x - 1), from: 0.55, to: 1.45, tone: "aplicacao", dashed: true },
+      { kind: "point", at: [1, 2], tone: "aplicacao" },
+      { kind: "text", at: [1.08, 1.3], text: "f′(1) = 7", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "inversa-reflexao-e-inclinacoes": {
+    alt: "Duas curvas espelhadas em relação à reta tracejada que faz quarenta e cinco graus: uma sobe rápido, a outra cresce devagar. Cada uma recebe um traço de tangente em pontos correspondentes; um traço é íngreme e o outro, suave.",
+    x: [0, 5], y: [0, 5],
+    xTicks: [0, 1, 2, 3, 4, 5], yTicks: [0, 1, 2, 3, 4, 5],
+    aspect: "igual",
+    legend: "Em pontos correspondentes, as inclinações são inversas: 4 numa curva e 1/4 na outra.",
+    marks: [
+      { kind: "curve", f: (x) => x, from: 0, to: 5, tone: "neutro", dashed: true },
+      { kind: "curve", f: (x) => x * x, from: 0, to: 2.24, tone: "principal" },
+      { kind: "curve", f: (x) => Math.sqrt(x), from: 0, to: 5, tone: "aplicacao" },
+      { kind: "segment", from: [1.75, 3], to: [2.25, 5], tone: "principal" },
+      { kind: "segment", from: [3, 1.75], to: [5, 2.25], tone: "aplicacao" },
+      { kind: "point", at: [2, 4], tone: "principal" },
+      { kind: "point", at: [4, 2], tone: "aplicacao" },
+      { kind: "text", at: [0.72, 4.3], text: "f(x) = x², inclinação 4", tone: "principal", anchor: "start" },
+      { kind: "text", at: [2.6, 1.2], text: "f⁻¹(x) = √x, inclinação 1/4", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "seno-e-cosseno-derivada": {
+    alt: "Duas ondas do mesmo tamanho, deslocadas entre si: onde a primeira atinge o topo, a segunda cruza o zero descendo.",
+    x: [0, 6.4], y: [-1.5, 1.6],
+    xTicks: [0, 2, 4, 6], yTicks: [-1, 0, 1],
+    legend: "A derivada do seno é o cosseno: no topo do seno a inclinação é zero, e é exatamente ali que o cosseno cruza o eixo.",
+    marks: [
+      { kind: "segment", from: [1.5708, -1.5], to: [1.5708, 1.5], tone: "neutro", dashed: true },
+      { kind: "curve", f: (x) => Math.sin(x), from: 0, to: 6.4, tone: "principal" },
+      { kind: "curve", f: (x) => Math.cos(x), from: 0, to: 6.4, tone: "aplicacao" },
+      { kind: "point", at: [1.5708, 1], tone: "principal" },
+      { kind: "point", at: [1.5708, 0], tone: "aplicacao" },
+      { kind: "text", at: [1.75, 1.4], text: "topo do seno", tone: "principal", anchor: "start" },
+      { kind: "text", at: [4.3, 1.15], text: "cosseno", tone: "aplicacao", anchor: "middle" },
+    ],
+  },
+
+  "exponencial-inclinacao-igual-altura": {
+    alt: "Curva exponencial subindo. Em dois pontos há traços de tangente: no primeiro, a altura é um e o traço sobe suave; no segundo, a altura é quase três e o traço é bem mais íngreme.",
+    x: [-2, 2.2], y: [-1, 8],
+    xTicks: [-2, -1, 0, 1, 2], yTicks: [0, 1, 3, 6],
+    legend: "Em cada ponto, a inclinação da tangente é igual à altura da curva: é o que faz eˣ ser sua própria derivada.",
+    marks: [
+      { kind: "curve", f: (x) => Math.exp(x), from: -2, to: 2.05, tone: "principal" },
+      { kind: "curve", f: (x) => x + 1, from: -1.6, to: 1.2, tone: "aplicacao", dashed: true },
+      { kind: "curve", f: (x) => Math.E * x, from: 0.1, to: 2.1, tone: "alerta", dashed: true },
+      { kind: "point", at: [0, 1], tone: "aplicacao" },
+      { kind: "point", at: [1, 2.718], tone: "alerta" },
+      { kind: "text", at: [-1.9, 2.1], text: "inclinação 1 na altura 1", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.75, 1.1], text: "inclinação e na altura e", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "circunferencia-tangente-implicita": {
+    alt: "Circunferência centrada na origem. Um raio tracejado vai do centro até um ponto no primeiro quadrante, e nesse ponto uma reta tangente cruza a curva formando ângulo reto com o raio.",
+    x: [-7, 7.5], y: [-7, 7.5],
+    xTicks: [-5, 0, 3, 5], yTicks: [-5, 0, 4, 5],
+    aspect: "igual",
+    legend: "Na circunferência x² + y² = 25, a derivação implícita dá inclinação −x/y: em (3, 4), vale −3/4.",
+    marks: [
+      { kind: "curve", f: (x) => Math.sqrt(Math.max(0, 25 - x * x)), from: -5, to: 5, tone: "neutro" },
+      { kind: "curve", f: (x) => -Math.sqrt(Math.max(0, 25 - x * x)), from: -5, to: 5, tone: "neutro" },
+      { kind: "segment", from: [0, 0], to: [3, 4], tone: "aplicacao", dashed: true },
+      { kind: "curve", f: (x) => 4 - 0.75 * (x - 3), from: -1, to: 7.2, tone: "principal" },
+      { kind: "rightAngle", at: [3, 4], from: [0, 0], to: [7.2, 0.85], tone: "neutro" },
+      { kind: "point", at: [3, 4], tone: "principal" },
+      { kind: "text", at: [3.4, 4.9], text: "(3, 4): inclinação −3/4", tone: "principal", anchor: "start" },
+    ],
+  },
+
+  "concavidade-x-cubo": {
+    alt: "Curva que sobe o tempo todo, mas muda o jeito de curvar: à esquerda da origem ela é abaulada para cima e à direita, para baixo. No ponto de troca, na origem, há um ponto marcado.",
+    x: [-2, 2], y: [-6, 6],
+    xTicks: [-2, -1, 0, 1, 2], yTicks: [-3, 0, 3, 6],
+    legend: "A segunda derivada de x³ é 6x: negativa antes do zero e positiva depois. Na origem a concavidade troca.",
+    marks: [
+      { kind: "curve", f: (x) => x * x * x, from: -1.85, to: 1.85, tone: "principal" },
+      { kind: "point", at: [0, 0], tone: "alerta" },
+      { kind: "text", at: [-1.9, -3.6], text: "f″ < 0", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.9, 3.4], text: "f″ > 0", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.12, -1], text: "inflexão", tone: "alerta", anchor: "start" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;
