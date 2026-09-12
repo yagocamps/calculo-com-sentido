@@ -429,6 +429,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
   },
 
   "regras-derivacao": {
+    plot: "regra-da-soma-inclinacoes",
     meta: c1Meta({
       title: "Regras de derivação (visão geral)",
       moduleSlug: MOD,
@@ -536,6 +537,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
   },
 
   "derivada-potencia": {
+    plot: "potencia-funcao-e-derivada",
     meta: c1Meta({
       title: "Derivada de potências e polinômios",
       moduleSlug: MOD,
@@ -745,6 +747,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
   },
 
   "derivada-composta": {
+    plot: "cadeia-onda-comprimida",
     meta: c1Meta({
       title: "Regra da cadeia (introdução)",
       moduleSlug: MOD,
@@ -849,6 +852,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
   },
 
   "interpretacao-derivada": {
+    plot: "sinal-da-derivada-tres-tangentes",
     meta: c1Meta({
       title: "Interpretar a derivada na prática",
       moduleSlug: MOD,
@@ -953,6 +957,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
   },
 
   "velocidade-aceleracao": {
+    plot: "posicao-e-velocidade",
     meta: c1Meta({
       title: "Velocidade e aceleração",
       moduleSlug: MOD,
@@ -1056,6 +1061,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
   },
 
   "custo-marginal": {
+    plot: "receita-custo-e-lucro-maximo",
     meta: c1Meta({
       title: "Custo e lucro marginal",
       moduleSlug: MOD,
@@ -1161,6 +1167,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
   },
 
   "revisao-derivadas": {
+    plot: "tangente-na-revisao-derivadas",
     meta: c1Meta({
       title: "Revisão: Derivadas com sentido",
       moduleSlug: MOD,

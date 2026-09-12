@@ -144,6 +144,7 @@ const revisions: Record<string, Partial<Spec>> = {
 export const derivadaInversaSpec: Spec = {
   track: "calculo-1", moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 18,
   slug: "derivada-da-inversa", title: "Derivada da função inversa", duration: "20 min",
+  plot: "inversa-reflexao-e-inclinacoes",
   notes: ["entrada e saída", "derivada não nula"],
   prereqs: [{ label: "Funções inversas", href: "/pre-calculo/funcoes/funcoes-inversas" }, { label: "Regra da cadeia", href: "/calculo-1/derivadas/derivada-composta" }],
   usedIn: [{ label: "Derivadas logarítmicas", href: "/calculo-1/derivadas/derivadas-exponenciais-logaritmicas", detail: "relacionar a taxa da exponencial com a de sua inversa" }],
