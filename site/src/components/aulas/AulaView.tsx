@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { AlternativeExplanation } from "@/components/aulas/AlternativeExplanation";
 import { AulaExerciseCard } from "@/components/aulas/AulaExerciseCard";
-import { AulaQuiz } from "@/components/aulas/AulaQuiz";
 import { AulaToc } from "@/components/aulas/AulaToc";
 import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
@@ -100,7 +99,6 @@ export function AulaView({
   const temaHref = exercicioTemas.some((t) => t.slug === temaSlug)
     ? `/exercicios?tema=${temaSlug}`
     : undefined;
-  const hasQuiz = Boolean(content.quiz?.length);
   const hasVideos = Boolean(content.videos?.length);
   const curriculumModules =
     trilha === "calculo-1" ? calculo1Modulos : preCalculoModulos;
@@ -438,25 +436,10 @@ export function AulaView({
             </Section>
           </div>
 
-          {hasQuiz && content.quiz && (
-            <div id="quiz">
-              <Section
-                n={11 + simulationOffset}
-                label="Checagem rápida"
-                title="Pronto para a próxima?"
-              >
-                <AulaQuiz
-                  questions={content.quiz}
-                  nextLesson={nextLesson}
-                />
-              </Section>
-            </div>
-          )}
-
           {hasVideos && (
             <div id="video">
               <Section
-                n={(hasQuiz ? 12 : 11) + simulationOffset}
+                n={11 + simulationOffset}
                 label="Vídeo aula"
                 title="Assista à explicação"
               >
@@ -468,7 +451,7 @@ export function AulaView({
           {nextLesson && (
             <div id="proxima">
               <Section
-                n={11 + Number(hasQuiz) + Number(hasVideos) + simulationOffset}
+                n={11 + Number(hasVideos) + simulationOffset}
                 label="Próxima aula"
                 title="Continue sua trilha"
               >

@@ -174,9 +174,4 @@ export const derivadaInversaSpec: Spec = {
   ],
   exerciseIds: ["cur-dinv-1", "cur-dinv-2", "cur-dinv-3"],
   summary: ["Encontre a entrada que produz a saída pedida.", "Verifique a derivada não nula e tome seu recíproco.", "Uma inversa pode existir sem ter derivada finita em um ponto."],
-  quiz: [
-    { pergunta: m`Se \(f(3)=10\) e \(f'(3)=2\), com as hipóteses do teorema válidas, quanto vale \((f^{-1})'(10)\)?`, opcoes: [m`\(\frac{1}{2}\)`, m`\(\frac{1}{10}\)`, m`\(2\)`], corretaIndex: 0, explicacao: m`A saída \(10\) corresponde à entrada \(3\); inverta \(f'(3)\).`, reforcoSectionId: "passos" },
-    { pergunta: m`Se \(f'(x_0)=0\), podemos aplicar diretamente a fórmula \(1/f'(x_0)\)?`, opcoes: ["Sim, a derivada inversa é zero", "Não, é preciso analisar a inversa por outra via", "Sim, toda inversa é diferenciável"], corretaIndex: 1, critical: true, explicacao: "A divisão exige derivada não nula; a inversa do cubo em zero mostra o problema.", reforcoSectionId: "regra-inversa-derivada-zero", reforcoLabel: "Derivada zero e tangente vertical" },
-    { pergunta: m`Qual função é a inversa de \(f(x)=2x\), de \(\mathbb R\) para \(\mathbb R\)?`, opcoes: [m`\(\frac{1}{2x}\)`, m`\(\frac{2}{x}\)`, m`\(\frac{x}{2}\)`], corretaIndex: 2, explicacao: "Dividir a saída por dois recupera a entrada; o recíproco não faz isso.", reforcoSectionId: "explicacao" },
-  ],
 };

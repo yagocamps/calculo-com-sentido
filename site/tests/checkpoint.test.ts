@@ -1,19 +1,10 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { moduleCheckpoints } from "@/data/checkpoints";
-import { evaluateCheckpoint, restoreCheckpoint, evaluateLessonQuiz } from "@/lib/checkpoint";
-import { propriedadesDosLimites } from "@/data/aulas/calculo-1/propriedades-dos-limites";
+import { evaluateCheckpoint, restoreCheckpoint } from "@/lib/checkpoint";
 
 const data = moduleCheckpoints["pre-calculo/preparacao-limites"];
 const answers = Object.fromEntries(data.questions.map((q, i) => [i, q.correctIndex]));
-
-test("the limit quiz does not declare readiness after a domain or denominator error", () => {
-  const quiz = propriedadesDosLimites.quiz!;
-  assert.equal(evaluateLessonQuiz(quiz, [0, 0, 1]).passed, false);
-  assert.equal(evaluateLessonQuiz(quiz, [2, 1, 1]).passed, false);
-  assert.equal(evaluateLessonQuiz(quiz, [2, 0, 1]).passed, true);
-  assert.equal(evaluateLessonQuiz(quiz, [2, 0, null]).passed, false);
-});
 
 test("80 percent with a cancellation error must not declare readiness", () => {
   const result = evaluateCheckpoint(data, { ...answers, 1: 0 });

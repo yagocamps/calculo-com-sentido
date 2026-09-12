@@ -68,7 +68,6 @@ export function estimateMinutes(content: AulaContent): number {
     content.erros,
     content.exerciciosGuiados,
     content.resumo,
-    content.quiz,
   ]) {
     percorrer(secao, custo);
   }

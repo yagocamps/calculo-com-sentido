@@ -18,7 +18,6 @@ test("limit laws have individual conditions, examples, accessible notation and l
   assert.equal(practice.length, 10);
   assert.ok(practice.every(Boolean));
   assert.deepEqual([...new Set(practice.map((e) => e?.pedagogicalLevel))].sort(), [1, 2, 3, 4, 5]);
-  assert.ok(lesson.quiz && lesson.quiz.length >= 3);
 });
 
 test("limit properties precede substitution and applications without duplicate routes", () => {

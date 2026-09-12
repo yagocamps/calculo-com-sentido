@@ -5,8 +5,6 @@ import { calculo1Modulos } from "@/data/calculo-1";
 import { expressStages, resolveExpressRef } from "@/data/trilha-expressa";
 import { exercicios } from "@/data/exercicios";
 import { exerciciosRevisaoCurricular } from "@/data/exercicios-revisao-curricular";
-import { evaluateLessonQuiz } from "@/lib/checkpoint";
-import { sectionLinks } from "@/components/aulas/toc-sections";
 
 const revised = [
   "pre-calculo/funcoes/polinomios-e-zeros", "pre-calculo/funcoes/funcoes-inversas",
@@ -16,7 +14,7 @@ const revised = [
 ];
 const content = (path: string) => { const [track, module, slug] = path.split("/"); return getAulaContent(track, module, slug)!; };
 
-test("reviewed lessons expose their practice, prerequisites and valid quiz recovery anchors", () => {
+test("reviewed lessons expose their practice and prerequisites", () => {
   const linked = new Set<string>();
   for (const path of revised) {
     const lesson = content(path);
@@ -27,8 +25,6 @@ test("reviewed lessons expose their practice, prerequisites and valid quiz recov
       linked.add(id);
     }
     for (const prereq of lesson.meta.prereqs ?? []) assert.ok(content(prereq.href.slice(1)), prereq.href);
-    const anchors = new Set<string>([...sectionLinks.map((s) => s.id), ...(lesson.explicacao.rules ?? []).map((r) => `regra-${r.id}`)]);
-    for (const question of lesson.quiz ?? []) if (question.reforcoSectionId) assert.ok(anchors.has(question.reforcoSectionId), question.reforcoSectionId);
   }
   assert.equal(exerciciosRevisaoCurricular.length, 23);
   for (const exercise of exerciciosRevisaoCurricular) assert.ok(linked.has(exercise.id), exercise.id);
@@ -53,17 +49,6 @@ test("the catalog places foundations before their uses and the express route res
     assert.ok(slugs.indexOf(prerequisite) >= 0 && slugs.indexOf(prerequisite) < slugs.indexOf("indeterminacao-fatoracao"));
   assert.ok(slugs.includes("racionalizacao-em-limites"));
   assert.doesNotMatch(JSON.stringify(expressStages), /70%|toda P1|Estas 7 aulas/);
-});
-
-test("inverse quiz never signals readiness when the nonzero derivative condition is missed", () => {
-  const quiz = content("calculo-1/derivadas/derivada-da-inversa").quiz!;
-  assert.equal(quiz.length, 3);
-  for (let a = 0; a < 3; a++) for (let b = 0; b < 3; b++) for (let c = 0; c < 3; c++) {
-    const answers = [a, b, c];
-    const result = evaluateLessonQuiz(quiz, answers);
-    const score = answers.filter((value, i) => value === quiz[i].corretaIndex).length;
-    assert.equal(result.passed, score >= 2 && b === 1);
-  }
 });
 
 function integrate(coefficients: number[], a: number, b: number) {

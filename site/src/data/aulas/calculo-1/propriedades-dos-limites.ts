@@ -84,9 +84,4 @@ export const propriedadesDosLimites: CurriculumLessonSpec = {
     "Módulo preserva limites, mas a recíproca falha. Composição exige continuidade da função externa.",
     "Indeterminações pedem outra ferramenta; desigualdades e confronto podem controlar a expressão inteira.",
   ],
-  quiz: [
-    { pergunta: "Se \\(f\\to2\\) e \\(g\\to0\\), a regra do quociente permite calcular \\(\\frac LM\\)?", opcoes: ["Sim, o resultado é sempre zero", "Sim, o resultado é sempre infinito", "Não; a hipótese \\(M\\ne0\\) falhou"], corretaIndex: 2, critical: true, explicacao: "É necessário investigar a expressão e os lados da aproximação. Divisão por zero não é uma operação com números reais.", reforcoSectionId: "regra-quociente", reforcoLabel: "Condição do quociente" },
-    { pergunta: "Se \\(f\\to0\\), o que ainda conferir para a raiz quadrada de f?", opcoes: ["Se f está não negativa nos pontos da aproximação", "Nada: toda raiz existe nos reais", "Se \\(f(0)=1\\)"], corretaIndex: 0, critical: true, explicacao: "O limite do radicando não substitui a verificação do domínio perto do ponto.", reforcoSectionId: "regra-raiz", reforcoLabel: "Domínio das raízes" },
-    { pergunta: "Se \\(f\\to-2\\), qual o limite de \\(f^3\\)?", opcoes: ["8", "−8", "−6"], corretaIndex: 1, explicacao: "\\((-2)^3=-8\\): a regra da potência preserva o sinal para expoente ímpar.", reforcoSectionId: "regra-potencia", reforcoLabel: "Potências e sinais" },
-  ],
 };
