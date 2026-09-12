@@ -1140,6 +1140,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   "engenharia-arquitetura": {
+    plot: "componentes-de-uma-forca",
     meta: preMeta({
       title: "Engenharia e arquitetura",
       moduleSlug: MOD,
@@ -1282,6 +1283,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
   },
 
   "revisao-trigonometria": {
+    plot: "rampa-altura-e-avanco",
     meta: preMeta({
       title: "Revisão do módulo: trigonometria básica",
       moduleSlug: MOD,

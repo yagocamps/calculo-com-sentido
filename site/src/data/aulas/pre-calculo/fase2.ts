@@ -533,6 +533,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "trigonometria", moduleTitle: "Trigonometria básica", lessonNumber: 11,
     slug: "graus-e-radianos", title: "Graus, radianos e comprimento de arco", notes: ["círculo", "unidade natural do Cálculo"],
+    plot: "setor-e-comprimento-de-arco",
     why: ["Limites e derivadas trigonométricas assumem ângulos em radianos. Entender a unidade evita decorar um fator de conversão sem sentido."],
     explanation: ["Um radiano é o ângulo que subtende um arco de comprimento igual ao raio. Como uma volta tem comprimento \\(2\\pi r\\), ela mede \\(2\\pi\\) radianos, equivalentes a \\(360^\\circ\\)."],
     callout: "Em radianos, o número do ângulo é a razão \\(s/r\\) entre arco e raio.",

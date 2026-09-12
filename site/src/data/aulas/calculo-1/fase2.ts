@@ -420,6 +420,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 10,
     slug: "extremos-intervalo-fechado", title: "Extremos absolutos em intervalo fechado", notes: ["endpoints", "pontos críticos"],
+    plot: "candidatos-em-intervalo-fechado",
     why: "Em problemas reais, o maior ou menor valor pode ocorrer na borda permitida, não apenas onde a derivada zera.",
     concept: "Para função contínua em \\([a,b]\\), encontre pontos críticos internos e compare os valores da função nesses pontos e nos dois endpoints.",
     callout: "O método é uma comparação de candidatos, não apenas resolver \\(f'=0\\).",
@@ -452,6 +453,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 12,
     slug: "rolle-e-valor-medio", title: "Teoremas de Rolle e do Valor Médio", notes: ["hipóteses", "taxa média"],
+    plot: "tvm-secante-e-tangente-paralelas",
     why: "Esses teoremas conectam o comportamento global de um intervalo a uma taxa instantânea em algum ponto interno.",
     concept: "Se \\(f\\) é contínua em \\([a,b]\\) e derivável em \\((a,b)\\), o TVM garante um \\(c\\) com \\(f'(c)=[f(b)-f(a)]/(b-a)\\). Rolle é o caso em que os extremos têm o mesmo valor.",
     callout: "Verifique as hipóteses antes de usar a conclusão.",
@@ -468,6 +470,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 13,
     slug: "taxas-relacionadas", title: "Taxas relacionadas", notes: ["duas grandezas", "unidades"],
+    plot: "circulo-crescendo-anel",
     why: "Em fenômenos reais, várias grandezas mudam ao mesmo tempo e uma equação física ou geométrica conecta suas taxas.",
     concept: "Escreva a relação entre as grandezas, derive em relação ao tempo e só depois substitua os valores do instante. Cada variável dependente do tempo produz sua própria taxa.",
     callout: "Substituir números antes de derivar pode apagar justamente a grandeza que varia.",
@@ -484,6 +487,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 14,
     slug: "aproximacao-linear", title: "Aproximação linear e diferenciais", notes: ["reta tangente", "erro local"],
+    plot: "tangente-boa-perto-ruim-longe",
     why: "Perto de um ponto conhecido, a reta tangente permite estimar rapidamente valores difíceis e medir sensibilidade.",
     concept: "A linearização em \\(a\\) é \\(L(x)=f(a)+f'(a)(x-a)\\). O diferencial \\(dy=f'(a)dx\\) estima a mudança na saída para uma pequena mudança na entrada.",
     callout: "A aproximação é local: quanto mais longe de \\(a\\), maior pode ser o erro.",

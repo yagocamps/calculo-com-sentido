@@ -220,6 +220,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "integral-indefinida": {
+    plot: "familia-de-antiderivadas",
     meta: c1Meta({
       title: "Integral indefinida (antiderivada)",
       moduleSlug: MOD,
