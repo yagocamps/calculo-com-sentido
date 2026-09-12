@@ -80,6 +80,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "funcoes", moduleTitle: "Funções", lessonNumber: 13,
     slug: "polinomios-e-zeros", title: "Polinômios, zeros e multiplicidade", notes: ["grau", "comportamento"],
+    plot: "zeros-e-multiplicidade",
     why: ["Polinômios são a matéria-prima de funções racionais, fatoração, limites e estudo de curvas."],
     explanation: ["O grau é o maior expoente com coeficiente não nulo. Zeros resolvem \\(p(x)=0\\). Um zero de multiplicidade par toca o eixo e retorna; de multiplicidade ímpar, atravessa."],
     callout: "O termo de maior grau governa o comportamento quando \\(|x|\\) fica grande.",
@@ -136,6 +137,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "funcoes", moduleTitle: "Funções", lessonNumber: 16,
     slug: "composicao-funcoes", title: "Composição de funções", notes: ["função dentro de função", "camadas"],
+    plot: "composicao-com-numeros",
     why: ["A regra da cadeia só faz sentido quando você reconhece uma função dentro de outra. Composição também aparece em conversões e modelos em etapas."],
     explanation: ["Em \\(f\\circ g\\), primeiro aplicamos \\(g\\) e usamos sua saída como entrada de \\(f\\). A ordem importa: em geral \\(f\\circ g\\ne g\\circ f\\)."],
     callout: "Leia de dentro para fora: \\(f(g(x))\\).",
@@ -155,6 +157,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "funcoes", moduleTitle: "Funções", lessonNumber: 17,
     slug: "funcoes-inversas", title: "Funções inversas", notes: ["desfazer operações", "domínio e imagem"],
+    plot: "inversa-reflete-na-diagonal",
     why: ["Logaritmo desfaz exponencial, raiz desfaz potência em domínio adequado e muitas equações são resolvidas aplicando operações inversas."],
     explanation: ["Uma inversa troca entrada por saída e desfaz a função: \\(f^{-1}(f(x))=x\\). Para existir como função em todo o domínio considerado, \\(f\\) precisa ser um a um."],
     callout: "\\(f^{-1}(x)\\) não significa \\(1/f(x)\\).",

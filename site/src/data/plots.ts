@@ -2313,6 +2313,158 @@ export const plots = {
       { kind: "text", at: [-5.8, 1.7], text: "tende a y = 1", tone: "ideia", anchor: "start" },
     ],
   },
+
+  "maquina-da-funcao": {
+    alt: "Diagrama de uma máquina: a entrada três segue por uma seta até uma caixa que dobra e soma um, e sai do outro lado como sete.",
+    x: [0, 12], y: [0, 3.4],
+    axes: "nenhum",
+    legend: "Função é uma regra que transforma cada entrada numa única saída: entrou 3, saiu 7.",
+    marks: [
+      { kind: "text", at: [0.8, 2.15], text: "entrada 3", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [2.4, 2.2], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[3, 1.6], [7.4, 1.6], [7.4, 2.8], [3, 2.8]], tone: "principal" },
+      { kind: "text", at: [5.2, 2.15], text: "f(x) = 2x + 1", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [8, 2.2], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [9.4, 2.15], text: "saída 7", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [0.4, 0.8], text: "cada entrada tem uma saída só — é isso que faz dela função", tone: "neutro", anchor: "start" },
+    ],
+  },
+
+  "dominio-com-buraco-na-reta": {
+    alt: "Curva com dois ramos separados por uma linha vertical. Abaixo do gráfico, um traço marca os valores permitidos, interrompido por uma bolinha vazada no ponto proibido.",
+    x: [-3, 7], y: [-5, 5],
+    xTicks: [-2, 0, 2, 4, 6], yTicks: [-4, 0, 4],
+    legend: "O domínio é toda a reta menos o ponto onde o denominador zera: x = 2 fica de fora, e ali a curva dispara.",
+    marks: [
+      { kind: "vline", at: 2, tone: "alerta" },
+      { kind: "curve", f: (x) => 1 / (x - 2), from: -3, to: 1.75, tone: "principal" },
+      { kind: "curve", f: (x) => 1 / (x - 2), from: 2.25, to: 7, tone: "principal" },
+      { kind: "segment", from: [-3, -4.4], to: [2, -4.4], tone: "aplicacao" },
+      { kind: "segment", from: [2, -4.4], to: [7, -4.4], tone: "aplicacao" },
+      { kind: "point", at: [2, -4.4], open: true, tone: "alerta" },
+      { kind: "text", at: [4.6, 2.2], text: "x = 2 não entra no domínio", tone: "alerta", anchor: "middle" },
+      { kind: "text", at: [-2.9, -3.4], text: "domínio: todos os reais, menos 2", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "corrida-por-km": {
+    alt: "Reta crescente que começa acima do zero. Linhas tracejadas marcam dois pares: oito quilômetros com vinte e seis reais, e trinta e um reais com dez quilômetros.",
+    x: [0, 14], y: [0, 44],
+    xTicks: [0, 4, 8, 10, 14], yTicks: [6, 26, 31, 40],
+    legend: "A bandeirada é onde a reta começa; o preço por km é a inclinação. A mesma reta responde às duas perguntas.",
+    marks: [
+      { kind: "curve", f: (x) => 2.5 * x + 6, from: 0, to: 14, tone: "principal" },
+      { kind: "segment", from: [8, 0], to: [8, 26], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 26], to: [8, 26], tone: "neutro", dashed: true },
+      { kind: "segment", from: [10, 0], to: [10, 31], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 31], to: [10, 31], tone: "neutro", dashed: true },
+      { kind: "point", at: [0, 6], tone: "ideia" },
+      { kind: "point", at: [8, 26], tone: "aplicacao" },
+      { kind: "point", at: [10, 31], tone: "alerta" },
+      { kind: "text", at: [0.4, 10.5], text: "bandeirada 6", tone: "ideia", anchor: "start" },
+      { kind: "text", at: [10.6, 33.5], text: "R$ 31 → 10 km", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "custo-medio-minimo-parabola": {
+    alt: "Parábola aberta para cima com o ponto mais baixo destacado, e linhas tracejadas ligando esse ponto aos dois eixos.",
+    x: [0, 9], y: [10, 40],
+    xTicks: [0, 2, 4, 6, 8], yTicks: [14, 20, 30, 40],
+    legend: "O vértice responde à pergunta do problema: 400 peças dão o menor custo médio, R$ 14.",
+    marks: [
+      { kind: "curve", f: (x) => x * x - 8 * x + 30, from: 0, to: 8.6, tone: "principal" },
+      { kind: "segment", from: [4, 10], to: [4, 14], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 14], to: [4, 14], tone: "neutro", dashed: true },
+      { kind: "point", at: [4, 14], tone: "alerta" },
+      { kind: "text", at: [4.4, 16.5], text: "mínimo: x = 4, custo 14", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "tres-familias-basicas": {
+    alt: "Três curvas sobre os mesmos eixos: uma reta inclinada, uma parábola e uma curva em V com bico na origem.",
+    x: [-3, 3], y: [-1.5, 6],
+    xTicks: [-2, -1, 0, 1, 2], yTicks: [0, 2, 4],
+    legend: "Três famílias, três formatos: a reta cresce sempre igual, a parábola acelera e o módulo faz bico.",
+    marks: [
+      { kind: "curve", f: (x) => x + 1, from: -3, to: 3, tone: "aplicacao" },
+      { kind: "curve", f: (x) => x * x, from: -2.4, to: 2.4, tone: "principal" },
+      { kind: "curve", f: (x) => Math.abs(x), from: -3, to: 3, tone: "ideia" },
+      { kind: "point", at: [0, 0], tone: "ideia" },
+      { kind: "text", at: [2.4, 4.2], text: "x²", tone: "principal", anchor: "start" },
+      { kind: "text", at: [2.3, 2.9], text: "x + 1", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [-2.9, 2.4], text: "|x|", tone: "ideia", anchor: "start" },
+    ],
+  },
+
+  "exponencial-contra-linear": {
+    alt: "Duas curvas que partem do mesmo ponto: uma reta sobe em ritmo constante e uma curva vai se afastando dela para cima com o passar dos anos.",
+    x: [0, 10], y: [180, 340],
+    xTicks: [0, 2, 4, 6, 8, 10], yTicks: [200, 250, 300],
+    legend: "Crescer 5% ao ano não é somar sempre o mesmo tanto: a porcentagem incide sobre um valor cada vez maior.",
+    marks: [
+      { kind: "curve", f: (t) => 200 * Math.pow(1.05, t), from: 0, to: 10, tone: "principal" },
+      { kind: "curve", f: (t) => 200 + 10 * t, from: 0, to: 10, tone: "neutro", dashed: true },
+      { kind: "point", at: [2, 220.5], tone: "alerta" },
+      { kind: "text", at: [2.3, 213], text: "2 anos: 220,50", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [8.6, 322], text: "5% ao ano", tone: "principal", anchor: "end" },
+      { kind: "text", at: [9.6, 292], text: "soma fixa", tone: "neutro", anchor: "end" },
+    ],
+  },
+
+  "zeros-e-multiplicidade": {
+    alt: "Curva que sobe cruzando o eixo horizontal num ponto à esquerda, depois desce, encosta no eixo em outro ponto sem atravessar e volta a subir.",
+    x: [-3.2, 2.6], y: [-4, 8],
+    xTicks: [-3, -2, -1, 0, 1, 2], yTicks: [-2, 0, 2, 4, 6],
+    legend: "Multiplicidade ímpar atravessa o eixo; multiplicidade par encosta e volta. Em (x−1)²(x+2), o zero 1 toca e o zero −2 cruza.",
+    marks: [
+      { kind: "hline", at: 0, tone: "neutro" },
+      { kind: "curve", f: (x) => (x - 1) * (x - 1) * (x + 2), from: -2.8, to: 2.3, tone: "principal" },
+      { kind: "point", at: [-2, 0], tone: "alerta" },
+      { kind: "point", at: [1, 0], tone: "aplicacao" },
+      { kind: "text", at: [-2, 1.4], text: "cruza em −2", tone: "alerta", anchor: "middle" },
+      { kind: "text", at: [1.2, -1.6], text: "toca em 1", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "composicao-com-numeros": {
+    alt: "Diagrama em linha com dois blocos: o número três entra no primeiro, sai cinco, entra no segundo e sai vinte e cinco.",
+    x: [0, 13], y: [0, 3.6],
+    axes: "nenhum",
+    legend: "Componha de dentro para fora: primeiro g devolve 5, e só então f eleva ao quadrado.",
+    marks: [
+      { kind: "text", at: [0.6, 2.15], text: "3", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [1.5, 2.2], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[2.2, 1.6], [5.4, 1.6], [5.4, 2.8], [2.2, 2.8]], tone: "aplicacao" },
+      { kind: "text", at: [3.8, 2.15], text: "g(x) = 2x − 1", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [6, 2.2], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [6.6, 2.15], text: "5", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [7.2, 2.2], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[7.8, 1.6], [10.4, 1.6], [10.4, 2.8], [7.8, 2.8]], tone: "principal" },
+      { kind: "text", at: [9.1, 2.15], text: "f(u) = u²", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [11, 2.2], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [11.9, 2.15], text: "25", tone: "ideia", anchor: "middle" },
+      { kind: "text", at: [0.4, 0.8], text: "f(g(3)) = (2·3 − 1)² = 5² = 25", tone: "neutro", anchor: "start" },
+    ],
+  },
+
+  "inversa-reflete-na-diagonal": {
+    alt: "Duas retas espelhadas em relação a uma diagonal tracejada: uma sobe rápido, a outra sobe devagar, e elas se encontram sobre a diagonal.",
+    x: [-2, 8], y: [-2, 8],
+    xTicks: [-2, 0, 2, 4, 6, 8], yTicks: [-2, 0, 2, 4, 6, 8],
+    aspect: "igual",
+    legend: "A inversa desfaz a função: o par (4, 6) de f vira (6, 4) em f⁻¹, e os gráficos são espelhos na diagonal y = x.",
+    marks: [
+      { kind: "curve", f: (x) => x, from: -2, to: 8, tone: "neutro", dashed: true },
+      { kind: "curve", f: (x) => 3 * x - 6, from: 1.2, to: 4.6, tone: "principal" },
+      { kind: "curve", f: (x) => (x + 6) / 3, from: -2, to: 8, tone: "aplicacao" },
+      { kind: "point", at: [4, 6], tone: "principal" },
+      { kind: "point", at: [6, 4], tone: "aplicacao" },
+      { kind: "point", at: [3, 3], tone: "neutro" },
+      { kind: "text", at: [3.4, 6.8], text: "f: (4, 6)", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [6.6, 3.2], text: "f⁻¹: (6, 4)", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [-1.8, -1.3], text: "y = x", tone: "neutro", anchor: "start" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;
