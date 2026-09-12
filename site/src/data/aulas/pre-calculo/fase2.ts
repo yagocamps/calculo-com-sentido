@@ -20,6 +20,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "fundamentos", moduleTitle: "Fundamentos matemáticos", lessonNumber: 15,
     slug: "conjuntos-e-intervalos", title: "Conjuntos numéricos e intervalos", notes: ["reta real", "notação intervalar"], glossary: ["Domínio"],
+    plot: "intervalo-na-reta-real",
     why: ["Domínio, inequações e continuidade são escritos com conjuntos e intervalos. Sem essa linguagem, uma resposta correta pode parecer incompleta."],
     explanation: ["Os naturais estão contidos nos inteiros, que estão contidos nos racionais, que estão contidos nos reais. Um intervalo descreve um trecho contínuo da reta: colchete inclui a ponta; parêntese exclui."],
     callout: "Leia \\([a,b)\\) como: de \\(a\\), incluído, até \\(b\\), excluído.",
@@ -39,6 +40,7 @@ const specs: CurriculumLessonSpec[] = [
   make({
     moduleSlug: "fundamentos", moduleTitle: "Fundamentos matemáticos", lessonNumber: 16,
     slug: "propriedades-das-operacoes", title: "Propriedades das operações e inversos", notes: ["comutativa", "associativa", "distributiva"],
+    plot: "distributiva-em-area",
     why: ["Quase toda transformação algébrica legítima nasce de uma propriedade. Entender qual propriedade foi usada reduz a sensação de que termos simplesmente mudam de lugar."],
     explanation: ["Comutativa troca a ordem; associativa troca o agrupamento; distributiva liga multiplicação e soma. O inverso aditivo produz zero e o multiplicativo produz um, quando o número não é zero."],
     callout: "Não existe comutatividade para subtração ou divisão em geral.",

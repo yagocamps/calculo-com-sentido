@@ -6,6 +6,7 @@ const MOD_TITLE = "Fundamentos matemáticos";
 
 export const fundamentosAulas: Record<string, AulaContent> = {
   "operacoes-basicas": {
+    plot: "ordem-das-operacoes-escada",
     meta: preMeta({
       title: "Operações básicas e ordem das operações",
       moduleSlug: MOD,
@@ -147,6 +148,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   fracoes: {
+    plot: "somar-fracoes-em-barras",
     meta: preMeta({
       title: "Frações na prática: somar, multiplicar e dividir",
       moduleSlug: MOD,
@@ -293,6 +295,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   potenciacao: {
+    plot: "potencias-de-mesma-base",
     meta: preMeta({
       title: "Potenciação: multiplicação repetida e suas regras",
       moduleSlug: MOD,
@@ -436,6 +439,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   radiciacao: {
+    plot: "raiz-como-lado-do-quadrado",
     meta: preMeta({
       title: "Radiciação: a operação que desfaz a potência",
       moduleSlug: MOD,
@@ -578,6 +582,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   "produtos-notaveis": {
+    plot: "quadrado-da-soma-em-areas",
     meta: preMeta({
       title: "Produtos notáveis: atalhos que evitam contas longas",
       moduleSlug: MOD,
@@ -718,6 +723,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   fatoracao: {
+    plot: "fatorar-trinomio-em-areas",
     meta: preMeta({
       title: "Fatoração: escrever uma soma como produto",
       moduleSlug: MOD,
@@ -1010,6 +1016,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   "equacao-segundo-grau": {
+    plot: "raizes-da-parabola-bhaskara",
     meta: preMeta({
       title: "Equações do 2º grau: a fórmula de Bhaskara",
       moduleSlug: MOD,
@@ -1224,6 +1231,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   "descontos-orcamento": {
+    plot: "desconto-em-barra",
     meta: preMeta({
       title: "Descontos e orçamento: porcentagem na vida real",
       moduleSlug: MOD,
@@ -1367,6 +1375,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   "escalas-medidas": {
+    plot: "proporcao-pela-reta",
     meta: preMeta({
       title: "Escalas e medidas: regra de três e proporção",
       moduleSlug: MOD,
@@ -1508,6 +1517,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   "problemas-financeiros": {
+    plot: "juros-simples-em-reta",
     meta: preMeta({
       title: "Problemas financeiros simples: juros e montante",
       moduleSlug: MOD,
@@ -1796,6 +1806,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   "revisao-fundamentos-1": {
+    plot: "revisao-expressao-em-etapas",
     meta: preMeta({
       title: "Revisão · Parte 1: números, frações e potências",
       moduleSlug: MOD,
@@ -1939,6 +1950,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
   },
 
   "revisao-fundamentos-2": {
+    plot: "desconto-e-cupom-em-barras",
     meta: preMeta({
       title: "Revisão · Parte 2: equações e aplicações",
       moduleSlug: MOD,
