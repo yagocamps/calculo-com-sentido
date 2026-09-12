@@ -1713,6 +1713,193 @@ export const plots = {
       { kind: "text", at: [2.72, 0.32], text: "eixo", tone: "neutro", anchor: "end" },
     ],
   },
+
+  "ganho-fixo-mais-por-hora": {
+    alt: "Reta crescente que não parte da origem: em zero hora ela já está na altura oitenta, e sobe em ritmo constante a partir daí.",
+    x: [0, 8.5], y: [0, 460],
+    xTicks: [0, 2, 4, 6, 8], yTicks: [0, 80, 200, 300, 400],
+    legend: "O 80 é o que existe antes de qualquer hora trabalhada; o 45 é quanto cada hora acrescenta.",
+    marks: [
+      { kind: "curve", f: (h) => 80 + 45 * h, from: 0, to: 8.5, tone: "principal" },
+      { kind: "segment", from: [4, 0], to: [4, 260], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 260], to: [4, 260], tone: "neutro", dashed: true },
+      { kind: "point", at: [0, 80], tone: "alerta" },
+      { kind: "point", at: [4, 260], tone: "principal" },
+      { kind: "text", at: [0.25, 120], text: "G(0) = 80", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [4.2, 250], text: "G(4) = 260", tone: "principal", anchor: "start" },
+    ],
+  },
+
+  "dominio-e-imagem-da-raiz": {
+    alt: "Curva de raiz que começa num ponto sobre o eixo horizontal e sobe devagar para a direita. Um traço marca o trecho permitido do eixo horizontal e outro traço marca as alturas alcançadas no eixo vertical.",
+    x: [-0.8, 6.5], y: [-0.9, 3],
+    xTicks: [0, 1, 2, 4, 6], yTicks: [0, 1, 2],
+    legend: "A raiz exige x ≥ 1: esse é o domínio. As alturas atingidas começam em 0 e crescem: essa é a imagem.",
+    marks: [
+      { kind: "curve", f: (x) => Math.sqrt(x - 1), from: 1, to: 6.3, tone: "principal" },
+      { kind: "segment", from: [1, -0.35], to: [6.3, -0.35], tone: "aplicacao" },
+      { kind: "segment", from: [-0.45, 0], to: [-0.45, 2.3], tone: "ideia" },
+      { kind: "point", at: [1, 0], tone: "principal" },
+      { kind: "text", at: [1.1, -0.72], text: "domínio: x ≥ 1", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [-0.3, 2.6], text: "imagem: y ≥ 0", tone: "ideia", anchor: "start" },
+    ],
+  },
+
+  "custo-medio-em-u": {
+    alt: "Curva em forma de U: começa alta à esquerda, desce até um ponto mais baixo e volta a subir à direita.",
+    x: [0, 110], y: [0, 60],
+    xTicks: [0, 20, 40, 60, 80, 100], yTicks: [0, 25, 50],
+    legend: "O custo médio cai enquanto o custo fixo se dilui e volta a subir quando a produção fica pesada: o mínimo é em q = 40.",
+    marks: [
+      { kind: "curve", f: (q) => 400 / q + 0.25 * q + 5, from: 9, to: 110, tone: "principal" },
+      { kind: "segment", from: [40, 0], to: [40, 25], tone: "neutro", dashed: true },
+      { kind: "point", at: [40, 25], tone: "alerta" },
+      { kind: "text", at: [45, 27], text: "mínimo: q = 40", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "ler-um-ponto-no-grafico": {
+    alt: "Curva de lucro que sobe, atinge um topo e começa a descer. Linhas tracejadas sobem de cem no eixo horizontal até a curva e seguem até o eixo vertical.",
+    x: [0, 320], y: [0, 6500],
+    xTicks: [0, 100, 200, 300], yTicks: [0, 2000, 4000, 5000],
+    legend: "Cada ponto do gráfico é um par entrada-saída: aqui, 100 unidades correspondem a R$ 5.000 de lucro.",
+    marks: [
+      { kind: "curve", f: (x) => 70 * x - 0.2 * x * x, from: 0, to: 320, tone: "principal" },
+      { kind: "segment", from: [100, 0], to: [100, 5000], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 5000], to: [100, 5000], tone: "neutro", dashed: true },
+      { kind: "point", at: [100, 5000], tone: "alerta" },
+      { kind: "text", at: [110, 4600], text: "L(100) = 5.000", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "custo-receita-equilibrio": {
+    alt: "Duas retas: uma começa acima do zero e sobe devagar, a outra parte da origem e sobe mais rápido, cruzando a primeira.",
+    x: [0, 120], y: [0, 3200],
+    xTicks: [0, 30, 60, 90, 120], yTicks: [0, 1000, 2000, 3000],
+    legend: "Antes do cruzamento a receita não cobre o custo; depois dele, o lucro passa a ser positivo. O equilíbrio fica perto de 59 unidades.",
+    marks: [
+      { kind: "curve", f: (x) => 1000 + 8 * x, from: 0, to: 120, tone: "aplicacao" },
+      { kind: "curve", f: (x) => 25 * x, from: 0, to: 120, tone: "principal" },
+      { kind: "point", at: [58.8, 1470], tone: "alerta" },
+      { kind: "text", at: [63, 1180], text: "equilíbrio ≈ 59", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [112, 2020], text: "custo", tone: "aplicacao", anchor: "end" },
+      { kind: "text", at: [104, 2850], text: "receita", tone: "principal", anchor: "end" },
+    ],
+  },
+
+  "variacao-media-da-temperatura": {
+    alt: "Curva de temperatura subindo cada vez mais rápido ao longo das horas. Um segmento reto liga o ponto de uma hora ao de três horas.",
+    x: [0, 6.5], y: [18, 40],
+    xTicks: [0, 1, 2, 3, 4, 5, 6], yTicks: [20, 30, 40],
+    legend: "A reta que liga os dois instantes tem inclinação 2: a temperatura subiu, em média, 2 °C por hora entre t = 1 e t = 3.",
+    marks: [
+      { kind: "curve", f: (t) => 20 + 0.5 * t * t, from: 0, to: 6.3, tone: "principal" },
+      { kind: "segment", from: [1, 20.5], to: [3, 24.5], tone: "aplicacao" },
+      { kind: "point", at: [1, 20.5], tone: "aplicacao" },
+      { kind: "point", at: [3, 24.5], tone: "aplicacao" },
+      { kind: "text", at: [1.4, 26.4], text: "média: 2 °C por hora", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "furo-em-tres-apos-simplificar": {
+    alt: "Reta inclinada subindo, com um ponto vazado na altura seis, em x igual a três.",
+    x: [-1, 6], y: [0, 10],
+    xTicks: [0, 1, 3, 5], yTicks: [0, 3, 6, 9],
+    legend: "Simplificada, a expressão é x + 3 para todo x ≠ 3. Em x = 3 o valor não existe, mas a tendência é 6.",
+    marks: [
+      { kind: "curve", f: (x) => x + 3, from: -1, to: 6, tone: "principal" },
+      { kind: "segment", from: [3, 0], to: [3, 6], tone: "neutro", dashed: true },
+      { kind: "point", at: [3, 6], open: true, tone: "alerta" },
+      { kind: "text", at: [3.25, 5.4], text: "furo em x = 3", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "composicao-em-duas-etapas": {
+    alt: "Diagrama em linha: a entrada x segue por uma seta até uma caixa que soma e multiplica, produz u, e segue por outra seta até uma caixa que eleva ao cubo, produzindo y.",
+    x: [0, 12], y: [0, 3.2],
+    axes: "nenhum",
+    legend: "Compor é encadear máquinas: a saída da primeira é a entrada da segunda, e é essa ordem que a regra da cadeia vai respeitar.",
+    marks: [
+      { kind: "text", at: [0.5, 1.55], text: "x", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [1.4, 1.55], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[2.1, 0.9], [5.1, 0.9], [5.1, 2.2], [2.1, 2.2]], tone: "aplicacao" },
+      { kind: "text", at: [3.6, 1.45], text: "g(x) = 2x + 1", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [5.7, 1.55], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [5.7, 2.35], text: "u", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[6.4, 0.9], [9.4, 0.9], [9.4, 2.2], [6.4, 2.2]], tone: "principal" },
+      { kind: "text", at: [7.9, 1.45], text: "f(u) = u³", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [10, 1.55], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [10.9, 1.55], text: "(2x + 1)³", tone: "neutro", anchor: "middle" },
+    ],
+  },
+
+  "funcao-por-partes-com-salto": {
+    alt: "Duas semirretas: a da esquerda termina num ponto vazado na altura três; a da direita começa num ponto cheio na altura dois, mais abaixo.",
+    x: [-0.5, 3], y: [0, 6.5],
+    xTicks: [0, 1, 2, 3], yTicks: [0, 2, 3, 5],
+    legend: "Em x = 1 a regra muda: pela esquerda a função busca 3, mas o valor definido ali é 2. É um salto.",
+    marks: [
+      { kind: "curve", f: (x) => x + 2, from: -0.5, to: 1, tone: "aplicacao" },
+      { kind: "curve", f: (x) => 2 * x, from: 1, to: 3, tone: "principal" },
+      { kind: "point", at: [1, 3], open: true, tone: "aplicacao" },
+      { kind: "point", at: [1, 2], tone: "principal" },
+      { kind: "text", at: [0.15, 3.5], text: "pela esquerda: 3", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [1.15, 1.6], text: "valor em x = 1: 2", tone: "principal", anchor: "start" },
+    ],
+  },
+
+  "racional-com-furo-e-assintota": {
+    alt: "Curva racional com dois ramos separados por uma linha vertical. No ramo da esquerda há um ponto vazado; ao longe, os dois ramos se aproximam de uma altura fixa.",
+    x: [-2, 7], y: [-6, 8],
+    xTicks: [-1, 0, 1, 3, 5, 7], yTicks: [-4, 0, 1, 4],
+    legend: "Em x = 1 o fator cancela e sobra um furo; em x = 3 o denominador zera de verdade e vira assíntota. Ao longe, a curva tende a y = 1.",
+    marks: [
+      { kind: "vline", at: 3, tone: "alerta", label: "x = 3" },
+      { kind: "hline", at: 1, tone: "ideia" },
+      { kind: "curve", f: (x) => (x + 1) / (x - 3), from: -2, to: 2.75, tone: "principal" },
+      { kind: "curve", f: (x) => (x + 1) / (x - 3), from: 3.3, to: 7, tone: "principal" },
+      { kind: "point", at: [1, -1], open: true, tone: "aplicacao" },
+      { kind: "text", at: [-1.9, -2], text: "furo em x = 1", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [-1.9, 1.9], text: "assíntota y = 1", tone: "ideia", anchor: "start" },
+    ],
+  },
+
+  "quociente-de-diferencas-triangulo": {
+    alt: "Parábola com dois pontos marcados. Entre eles, um segmento reto; abaixo, dois catetos formam um triângulo retângulo com esse segmento como hipotenusa.",
+    x: [0, 3.6], y: [-0.6, 9],
+    xTicks: [0, 1, 2, 3], yTicks: [0, 2, 4, 6, 8],
+    legend: "O quociente de diferenças é a altura dividida pela base desse triângulo: a inclinação da reta que liga os dois pontos.",
+    marks: [
+      { kind: "curve", f: (x) => x * x, from: 0, to: 3, tone: "neutro" },
+      { kind: "segment", from: [0.7, 0.49], to: [2.8, 7.84], tone: "principal" },
+      { kind: "segment", from: [1, 1], to: [2.5, 1], tone: "aplicacao" },
+      { kind: "segment", from: [2.5, 1], to: [2.5, 6.25], tone: "alerta" },
+      { kind: "point", at: [1, 1], tone: "principal" },
+      { kind: "point", at: [2.5, 6.25], tone: "principal" },
+      { kind: "text", at: [1.75, 0.35], text: "h", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [2.6, 3.4], text: "f(x+h) − f(x)", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "roteiro-do-limite-algebrico": {
+    alt: "Diagrama em linha com três caixas ligadas por setas: substituir, classificar a forma e transformar. Abaixo da última caixa, as três ferramentas possíveis estão listadas.",
+    x: [0, 12], y: [0, 4],
+    axes: "nenhum",
+    legend: "A forma da expressão é que escolhe a ferramenta: não existe uma receita única para todo 0/0.",
+    marks: [
+      { kind: "polygon", points: [[0.3, 2.3], [3.3, 2.3], [3.3, 3.5], [0.3, 3.5]], tone: "neutro" },
+      { kind: "text", at: [1.8, 2.85], text: "1. substituir", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [3.9, 2.95], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[4.5, 2.3], [7.5, 2.3], [7.5, 3.5], [4.5, 3.5]], tone: "alerta" },
+      { kind: "text", at: [6, 2.85], text: "2. achou 0/0?", tone: "alerta", anchor: "middle" },
+      { kind: "text", at: [8.1, 2.95], text: "→", tone: "neutro", anchor: "middle" },
+      { kind: "polygon", points: [[8.7, 2.3], [11.7, 2.3], [11.7, 3.5], [8.7, 3.5]], tone: "principal" },
+      { kind: "text", at: [10.2, 2.85], text: "3. transformar", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [10.2, 1.7], text: "↓", tone: "principal", anchor: "middle" },
+      { kind: "text", at: [10.2, 1.05], text: "fatorar · racionalizar · juntar frações", tone: "aplicacao", anchor: "end" },
+      { kind: "text", at: [0.3, 0.45], text: "depois: simplificar e substituir de novo", tone: "neutro", anchor: "start" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;
