@@ -190,6 +190,7 @@ const specs: CurriculumLessonSpec[] = [
     // Sem LaTeX: este título também vai para a aba do navegador, a barra
     // lateral, o breadcrumb, o sitemap e a busca — lugares que exibem texto puro.
     slug: "indeterminacao-fatoracao", title: "Indeterminação 0/0 e fatoração", notes: ["diferença de quadrados", "trinômios"],
+    plot: "furo-depois-da-fatoracao",
     why: "Fatoração é a técnica principal para limites algébricos com fatores ocultos.",
     concept: "\\(0/0\\) informa que substituição direta não decidiu o limite. Fatore a expressão, cancele apenas fatores comuns com a restrição adequada e reavalie.",
     callout: "Indeterminação não é resultado; é um pedido de investigação.",
@@ -206,6 +207,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 14,
     slug: "racionalizacao-em-limites", title: "Racionalização em limites", notes: ["conjugado", "radicais"],
+    plot: "furo-depois-da-racionalizacao",
     why: "Diferenças de raízes escondem fatores que aparecem quando usamos o conjugado.",
     concept: "Multiplique pela fração formada pelo conjugado sobre ele mesmo. A identidade \\((a-b)(a+b)=a^2-b^2\\) elimina a raiz problemática.",
     callout: "Escolha o conjugado da parte que produz a indeterminação.",
@@ -222,6 +224,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 15,
     slug: "teorema-do-confronto", title: "Teorema do Confronto", notes: ["comparação", "função espremida"],
+    plot: "confronto-oscilacao-espremida",
     why: "Alguns limites são difíceis de calcular diretamente, mas fáceis de cercar entre duas funções conhecidas.",
     concept: "Se \\(g(x)\\le f(x)\\le h(x)\\) perto de \\(a\\) e \\(g\\) e \\(h\\) têm o mesmo limite \\(L\\), então \\(f\\) também tende a \\(L\\).",
     callout: "As duas barreiras precisam convergir para o mesmo número.",
@@ -255,6 +258,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 17,
     slug: "classificacao-indeterminacoes", title: "Classificação de indeterminações", notes: ["diagnóstico", "estratégias"],
+    plot: "mesma-forma-tres-resultados",
     why: "Nomear a forma evita conclusões automáticas erradas e orienta a transformação adequada.",
     concept: "Formas como \\(0/0\\), \\(\\infty/\\infty\\), \\(0\\cdot\\infty\\) e \\(\\infty-\\infty\\) são inconclusivas. Cada uma pode esconder resultados diferentes.",
     callout: "Infinito descreve comportamento; não é um número comum para fazer aritmética direta.",
@@ -271,6 +275,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 18,
     slug: "epsilon-delta-intuicao", title: "Epsilon e delta — leitura opcional", notes: ["definição formal", "opcional"], level: "aprofundamento opcional",
+    plot: "epsilon-delta-faixas",
     prereqs: [
       { label: "Inequações modulares", href: "/pre-calculo/algebra/inequacoes-modulares" },
       { label: "Ideia de limite", href: "/calculo-1/limites/ideia-de-limite" },
@@ -291,6 +296,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 19,
     slug: "limites-exponenciais-logaritmicos", title: "Limites exponenciais e logarítmicos", notes: ["continuidade", "crescimento"],
+    plot: "exponencial-e-logaritmo",
     why: "Exponenciais e logaritmos aparecem em crescimento, decaimento e taxas; seus limites combinam continuidade e comportamento assintótico.",
     concept: "Onde estão definidas, exponenciais e logaritmos são contínuos. Assim, substituição direta resolve limites em pontos internos do domínio; no infinito, use crescimento e a relação de inversas.",
     callout: "Antes de usar continuidade do logaritmo, confirme que o argumento permanece positivo.",
