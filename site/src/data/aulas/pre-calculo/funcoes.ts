@@ -6,6 +6,7 @@ const MOD_TITLE = "Funções";
 
 export const funcoesAulas: Record<string, AulaContent> = {
   "o-que-e-funcao": {
+    plot: "maquina-da-funcao",
     meta: preMeta({
       title: "O que é uma função?",
       moduleSlug: MOD,
@@ -142,6 +143,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "dominio-imagem": {
+    plot: "dominio-com-buraco-na-reta",
     meta: preMeta({
       title: "Domínio e imagem",
       moduleSlug: MOD,
@@ -839,6 +841,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "corrida-aplicativo": {
+    plot: "corrida-por-km",
     meta: preMeta({
       title: "Aplicação: corrida de aplicativo",
       moduleSlug: MOD,
@@ -1121,6 +1124,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "custo-producao": {
+    plot: "custo-medio-minimo-parabola",
     meta: preMeta({
       title: "Aplicação: custo de produção",
       moduleSlug: MOD,
@@ -1263,6 +1267,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "revisao-funcoes-1": {
+    plot: "tres-familias-basicas",
     meta: preMeta({
       title: "Revisão · Parte 1: conceito e funções básicas",
       moduleSlug: MOD,
@@ -1400,6 +1405,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
   },
 
   "revisao-funcoes-2": {
+    plot: "exponencial-contra-linear",
     meta: preMeta({
       title: "Revisão · Parte 2: exponencial, log e aplicações",
       moduleSlug: MOD,
