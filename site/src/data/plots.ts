@@ -1550,6 +1550,169 @@ export const plots = {
       { kind: "text", at: [0.12, -1], text: "inflexão", tone: "alerta", anchor: "start" },
     ],
   },
+
+  "area-sob-a-curva-definida": {
+    alt: "Parábola subindo a partir da origem. A região entre a curva e o eixo horizontal, de zero até três, está pintada.",
+    x: [-0.5, 4], y: [-1, 10],
+    xTicks: [0, 1, 2, 3, 4], yTicks: [0, 3, 6, 9],
+    legend: "A integral definida é o número que mede essa área: de 0 a 3, ela vale exatamente 9.",
+    marks: [
+      { kind: "area", top: (x) => x * x, from: 0, to: 3, tone: "aplicacao" },
+      { kind: "curve", f: (x) => x * x, from: -0.5, to: 3.2, tone: "principal" },
+      { kind: "text", at: [1.5, 2.2], text: "área = 9", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [3, -0.7], text: "b = 3", tone: "neutro", anchor: "middle" },
+      { kind: "text", at: [0, -0.7], text: "a = 0", tone: "neutro", anchor: "middle" },
+    ],
+  },
+
+  "integral-aditiva-em-c": {
+    alt: "Reta inclinada a quarenta e cinco graus. A região sob ela está pintada em duas partes, separadas por uma linha vertical no meio do intervalo.",
+    x: [-0.5, 4.6], y: [-0.5, 5],
+    xTicks: [0, 2, 4], yTicks: [0, 2, 4],
+    legend: "Partir o intervalo em c = 2 divide a área em 2 e 6; somadas, dão os mesmos 8 do intervalo inteiro.",
+    marks: [
+      { kind: "area", top: (x) => x, from: 0, to: 2, tone: "aplicacao" },
+      { kind: "area", top: (x) => x, from: 2, to: 4, tone: "ideia" },
+      { kind: "segment", from: [2, 0], to: [2, 2], tone: "neutro", dashed: true },
+      { kind: "curve", f: (x) => x, from: -0.5, to: 4.6, tone: "principal" },
+      { kind: "text", at: [1.25, 0.6], text: "2", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [3.1, 1.4], text: "6", tone: "ideia", anchor: "middle" },
+      { kind: "text", at: [2, -0.35], text: "c", tone: "neutro", anchor: "middle" },
+    ],
+  },
+
+  "deslocamento-contra-distancia": {
+    alt: "Reta da velocidade que começa negativa, cruza o zero no meio do intervalo e termina positiva. A parte abaixo do eixo e a parte acima estão pintadas em tons diferentes e têm o mesmo tamanho.",
+    x: [-0.3, 6.4], y: [-4, 4],
+    xTicks: [0, 3, 6], yTicks: [-3, 0, 3],
+    legend: "As duas áreas valem 4,5 cada: o deslocamento soma −4,5 + 4,5 = 0, mas a distância percorrida é 9.",
+    marks: [
+      { kind: "area", top: (t) => t - 3, from: 0, to: 3, tone: "alerta" },
+      { kind: "area", top: (t) => t - 3, from: 3, to: 6, tone: "aplicacao" },
+      { kind: "hline", at: 0, tone: "neutro" },
+      { kind: "curve", f: (t) => t - 3, from: -0.3, to: 6.4, tone: "principal" },
+      { kind: "text", at: [1.5, -2.6], text: "−4,5 (volta)", tone: "alerta", anchor: "middle" },
+      { kind: "text", at: [4.5, 2.2], text: "+4,5 (avança)", tone: "aplicacao", anchor: "middle" },
+    ],
+  },
+
+  "consumo-acumulado-area": {
+    alt: "Reta levemente crescente representando a potência ao longo do tempo. Toda a região sob ela, das zero às oito horas, está pintada.",
+    x: [-0.3, 9], y: [0, 8],
+    xTicks: [0, 2, 4, 6, 8], yTicks: [0, 2, 4, 6],
+    legend: "A taxa é potência em kW e o eixo horizontal é tempo em horas: a área acumulada são 32 kWh de energia.",
+    marks: [
+      { kind: "area", top: (t) => 2 + 0.5 * t, from: 0, to: 8, tone: "aplicacao" },
+      { kind: "curve", f: (t) => 2 + 0.5 * t, from: -0.3, to: 9, tone: "principal" },
+      { kind: "text", at: [4, 2], text: "32 kWh", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [8.2, 6.6], text: "potência (kW)", tone: "principal", anchor: "end" },
+    ],
+  },
+
+  "area-entre-curva-e-eixo": {
+    alt: "Parábola aberta para baixo cortando o eixo horizontal em menos dois e em dois. Toda a região entre a curva e o eixo está pintada.",
+    x: [-3, 3], y: [-1.5, 5],
+    xTicks: [-2, -1, 0, 1, 2], yTicks: [0, 2, 4],
+    legend: "Entre os cortes em −2 e 2, a área vale 32/3 ≈ 10,7. Girando essa região em torno do eixo, a mesma integral vira volume.",
+    marks: [
+      { kind: "area", top: (x) => 4 - x * x, from: -2, to: 2, tone: "aplicacao" },
+      { kind: "hline", at: 0, tone: "neutro" },
+      { kind: "curve", f: (x) => 4 - x * x, from: -2.6, to: 2.6, tone: "principal" },
+      { kind: "text", at: [0, 1.5], text: "A = 32/3", tone: "aplicacao", anchor: "middle" },
+    ],
+  },
+
+  "custo-adicional-marginal": {
+    alt: "Reta crescente do custo marginal. A faixa sob ela, entre cem e duzentas unidades, está pintada.",
+    x: [0, 240], y: [0, 46],
+    xTicks: [0, 100, 200], yTicks: [0, 20, 30, 40],
+    legend: "A área sob o custo marginal entre 100 e 200 unidades é o custo adicional: R$ 3.500.",
+    marks: [
+      { kind: "area", top: (x) => 20 + 0.1 * x, from: 100, to: 200, tone: "aplicacao" },
+      { kind: "curve", f: (x) => 20 + 0.1 * x, from: 0, to: 240, tone: "principal" },
+      { kind: "text", at: [150, 14], text: "R$ 3.500", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [232, 41], text: "C′(x)", tone: "principal", anchor: "end" },
+    ],
+  },
+
+  "deslocamento-triangulo-velocidade": {
+    alt: "Reta que sai da origem e sobe. A região triangular sob ela, de zero a quatro segundos, está pintada.",
+    x: [-0.3, 5], y: [-1, 14],
+    xTicks: [0, 1, 2, 3, 4], yTicks: [0, 4, 8, 12],
+    legend: "Com v(t) = 3t, a área é um triângulo de base 4 e altura 12: o deslocamento é 24 m.",
+    marks: [
+      { kind: "area", top: (t) => 3 * t, from: 0, to: 4, tone: "aplicacao" },
+      { kind: "curve", f: (t) => 3 * t, from: -0.3, to: 4.6, tone: "principal" },
+      { kind: "text", at: [2.1, 3.4], text: "24 m", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [4.55, 12.6], text: "v(t) = 3t", tone: "principal", anchor: "end" },
+    ],
+  },
+
+  "substituicao-troca-os-extremos": {
+    alt: "Curva crescente da função interna. Linhas tracejadas mostram que a entrada zero chega à altura um e que a entrada dois chega à altura cinco.",
+    x: [-0.3, 2.5], y: [0, 6],
+    xTicks: [0, 1, 2], yTicks: [0, 1, 3, 5],
+    legend: "Com u = x² + 1, os extremos também mudam: x de 0 a 2 vira u de 1 a 5.",
+    marks: [
+      { kind: "curve", f: (x) => x * x + 1, from: -0.3, to: 2.3, tone: "principal" },
+      { kind: "segment", from: [2, 0], to: [2, 5], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 5], to: [2, 5], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 1], to: [0.1, 1], tone: "neutro", dashed: true },
+      { kind: "point", at: [0, 1], tone: "aplicacao" },
+      { kind: "point", at: [2, 5], tone: "aplicacao" },
+      { kind: "text", at: [0.15, 1.45], text: "x = 0 → u = 1", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [1.9, 5.45], text: "x = 2 → u = 5", tone: "aplicacao", anchor: "end" },
+    ],
+  },
+
+  "valor-medio-retangulo": {
+    alt: "Parábola com a região sob ela pintada, e sobre o mesmo trecho um retângulo tracejado de altura constante. As duas áreas são iguais.",
+    x: [-0.4, 3.6], y: [-1, 10],
+    xTicks: [0, 1, 2, 3], yTicks: [0, 3, 6, 9],
+    legend: "O retângulo de altura 3 sobre [0, 3] tem a mesma área da região sob a curva: 3 é o valor médio.",
+    marks: [
+      { kind: "area", top: (x) => x * x, from: 0, to: 3, tone: "aplicacao" },
+      { kind: "polygon", points: [[0, 0], [3, 0], [3, 3], [0, 3]], tone: "alerta", dashed: true },
+      { kind: "curve", f: (x) => x * x, from: -0.4, to: 3.2, tone: "principal" },
+      { kind: "hline", at: 3, tone: "alerta" },
+      { kind: "text", at: [0.15, 3.5], text: "altura média 3", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [2.35, 1.1], text: "mesma área", tone: "aplicacao", anchor: "middle" },
+    ],
+  },
+
+  "area-entre-curvas-com-cruzamento": {
+    alt: "Uma reta e uma parábola que se cruzam duas vezes. Entre o primeiro e o segundo cruzamento a reta está por cima; depois, a parábola passa à frente. As duas regiões estão pintadas em tons diferentes.",
+    x: [-0.3, 2.4], y: [-0.6, 4.5],
+    xTicks: [0, 1, 2], yTicks: [0, 1, 2, 4],
+    legend: "Em [0, 1] a reta está acima; em [1, 2] é a parábola. Somando 1/6 e 5/6, a área geométrica é 1.",
+    marks: [
+      { kind: "area", top: (x) => x, bottom: (x) => x * x, from: 0, to: 1, tone: "aplicacao" },
+      { kind: "area", top: (x) => x * x, bottom: (x) => x, from: 1, to: 2, tone: "ideia" },
+      { kind: "curve", f: (x) => x, from: -0.3, to: 2.4, tone: "principal" },
+      { kind: "curve", f: (x) => x * x, from: -0.3, to: 2.1, tone: "alerta" },
+      { kind: "point", at: [1, 1], tone: "neutro" },
+      { kind: "text", at: [0.6, -0.34], text: "1/6", tone: "aplicacao", anchor: "middle" },
+      { kind: "text", at: [1.72, 2.1], text: "5/6", tone: "ideia", anchor: "middle" },
+      { kind: "text", at: [1.05, 0.75], text: "cruzamento", tone: "neutro", anchor: "start" },
+    ],
+  },
+
+  "solido-de-revolucao-cone": {
+    alt: "Duas retas simétricas saindo da origem formam um triângulo deitado em torno do eixo horizontal, com a região entre elas pintada. Um segmento vertical na ponta direita marca o disco de maior raio.",
+    x: [-0.4, 2.8], y: [-2.6, 2.6],
+    xTicks: [0, 1, 2], yTicks: [-2, 0, 2],
+    aspect: "igual",
+    legend: "Girando a região sob y = x em torno do eixo, cada fatia vira um disco de raio x; o sólido é um cone de volume 8π/3.",
+    marks: [
+      { kind: "area", top: (x) => x, bottom: (x) => -x, from: 0, to: 2, tone: "aplicacao" },
+      { kind: "hline", at: 0, tone: "neutro" },
+      { kind: "curve", f: (x) => x, from: 0, to: 2, tone: "principal" },
+      { kind: "curve", f: (x) => -x, from: 0, to: 2, tone: "principal", dashed: true },
+      { kind: "segment", from: [2, -2], to: [2, 2], tone: "alerta" },
+      { kind: "text", at: [2.1, 1.2], text: "raio 2", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [2.72, 0.32], text: "eixo", tone: "neutro", anchor: "end" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;

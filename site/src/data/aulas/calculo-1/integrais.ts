@@ -324,6 +324,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "integral-definida": {
+    plot: "area-sob-a-curva-definida",
     meta: c1Meta({
       title: "Integral definida",
       moduleSlug: MOD,
@@ -428,6 +429,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "propriedades-integral": {
+    plot: "integral-aditiva-em-c",
     meta: c1Meta({
       title: "Propriedades da integral",
       moduleSlug: MOD,
@@ -638,6 +640,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "distancia-total": {
+    plot: "deslocamento-contra-distancia",
     meta: c1Meta({
       title: "Distância total a partir da velocidade",
       moduleSlug: MOD,
@@ -743,6 +746,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "consumo-acumulado": {
+    plot: "consumo-acumulado-area",
     meta: c1Meta({
       title: "Consumo acumulado",
       moduleSlug: MOD,
@@ -850,6 +854,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "area-volume-integral": {
+    plot: "area-entre-curva-e-eixo",
     meta: c1Meta({
       title: "Área e volume com integral",
       moduleSlug: MOD,
@@ -954,6 +959,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "aplicacoes-integrais": {
+    plot: "custo-adicional-marginal",
     meta: c1Meta({
       title: "Aplicações práticas de integrais",
       moduleSlug: MOD,
@@ -1060,6 +1066,7 @@ export const integraisAulas: Record<string, AulaContent> = {
   },
 
   "revisao-integrais": {
+    plot: "deslocamento-triangulo-velocidade",
     meta: c1Meta({
       title: "Revisão: Integrais com sentido — trilha Cálculo 1",
       moduleSlug: MOD,
