@@ -617,30 +617,6 @@ const specs: CurriculumLessonSpec[] = [
       "Para a diferença, troque \\(b\\) por \\(-b\\) e inverta o sinal do termo com seno.",
       "Somar arcos é girar duas vezes no círculo — não é distribuir a função sobre a soma.",
     ],
-    quiz: [
-      {
-        pergunta: "Quanto vale \\(\\sin(a+b)\\)?",
-        opcoes: ["\\(\\sin a + \\sin b\\)", "\\(\\sin a\\cos b + \\cos a\\sin b\\)", "\\(\\cos a\\cos b - \\sin a\\sin b\\)", "\\(\\sin a\\sin b + \\cos a\\cos b\\)"],
-        corretaIndex: 1,
-        critical: true,
-        explicacao: "No seno da soma os termos somam e cada parcela cruza seno com cosseno.",
-        reforcoSectionId: "explicacao",
-      },
-      {
-        pergunta: "Na fórmula de \\(\\cos(a+b)\\), qual é o sinal entre os dois termos?",
-        opcoes: ["Mais", "Menos", "Depende do quadrante", "Não há dois termos"],
-        corretaIndex: 1,
-        explicacao: "\\(\\cos(a+b) = \\cos a\\cos b - \\sin a\\sin b\\). O mais aparece na fórmula da diferença.",
-        reforcoSectionId: "explicacao",
-      },
-      {
-        pergunta: "Qual decomposição ajuda a calcular \\(\\cos 15^\\circ\\) com valores notáveis?",
-        opcoes: ["\\(15^\\circ = 45^\\circ - 30^\\circ\\)", "\\(15^\\circ = 30^\\circ - 45^\\circ\\)", "\\(15^\\circ = 10^\\circ + 5^\\circ\\)", "Não é possível"],
-        corretaIndex: 0,
-        explicacao: "\\(45^\\circ\\) e \\(30^\\circ\\) são notáveis e a diferença dá \\(15^\\circ\\); a fórmula da diferença resolve.",
-        reforcoSectionId: "passos",
-      },
-    ],
   }),
 ];
 

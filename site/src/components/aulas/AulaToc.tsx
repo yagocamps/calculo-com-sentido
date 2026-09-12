@@ -19,7 +19,6 @@ export function AulaToc({ content, hasSimulation = false, hasNext }: { content: 
     (item) =>
       (item.id !== "simulacao" || hasSimulation) &&
       (item.id !== "proxima" || hasNext) &&
-      (item.id !== "quiz" || content.quiz?.length) &&
       (item.id !== "video" || content.videos?.length),
   );
 

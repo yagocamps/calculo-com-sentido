@@ -178,37 +178,4 @@ export const funcaoAfimAula: AulaContent = {
       "Sempre interprete o resultado: o que é fixo e o que depende de \\(x\\)?",
     ],
   },
-  quiz: [
-    {
-      pergunta:
-        "Na função \\(f(x) = ax + b\\), o que o \\(b\\) representa numa situação real?",
-      opcoes: [
-        "A taxa de variação por unidade",
-        "A parte fixa / valor inicial",
-        "O valor de \\(x\\) quando \\(f(x) = 0\\)",
-        "O total a pagar",
-      ],
-      corretaIndex: 1,
-      explicacao:
-        "\\(b\\) é o que existe mesmo com \\(x = 0\\): a bandeirada, o salário fixo, a tarifa mínima.",
-      reforcoSectionId: "explicacao",
-    },
-    {
-      pergunta: "Se \\(C(x) = 2x + 10\\), quanto vale \\(C(4)\\)?",
-      opcoes: ["\\(8\\)", "\\(18\\)", "\\(12\\)", "\\(40\\)"],
-      corretaIndex: 1,
-      explicacao:
-        "Primeiro a parte que depende de \\(x\\): \\(2 \\times 4 = 8\\). Depois soma a parte fixa: \\(8 + 10 = 18\\).",
-      reforcoSectionId: "passos",
-    },
-    {
-      pergunta:
-        "Uma corrida custa \\(C(x) = 2{,}40x + 6\\). Se a corrida tiver \\(0\\) km, quanto custa?",
-      opcoes: ["R$ 0,00", "R$ 2,40", "R$ 6,00", "R$ 8,40"],
-      corretaIndex: 2,
-      explicacao:
-        "Com \\(x = 0\\) sobra só o \\(b\\): R$ 6,00 é o custo de \"chamar o carro\" — ele não zera.",
-      reforcoSectionId: "interpretacao",
-    },
-  ],
 };

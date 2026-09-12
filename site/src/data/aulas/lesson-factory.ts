@@ -2,7 +2,6 @@ import type {
   AulaContent,
   AulaFutureUse,
   AulaPrereq,
-  AulaQuizQuestion,
 } from "@/data/aulas/types";
 import type { AnswerCheckOptions } from "@/lib/answer-check";
 import type { PlotId } from "@/data/plots";
@@ -53,7 +52,6 @@ export type CurriculumLessonSpec = {
   }[];
   exerciseIds?: string[];
   summary: string[];
-  quiz?: AulaQuizQuestion[];
 };
 
 export function lessonHref(
@@ -141,6 +139,5 @@ export function createCurriculumLesson(
       title: "O que precisa ficar",
       bullets: spec.summary,
     },
-    quiz: spec.quiz,
   };
 }

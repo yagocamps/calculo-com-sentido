@@ -11,7 +11,6 @@ export function AulaTocMobile({ content, hasSimulation = false, hasNext }: { con
     (item) =>
       (item.id !== "simulacao" || hasSimulation) &&
       (item.id !== "proxima" || hasNext) &&
-      (item.id !== "quiz" || content.quiz?.length) &&
       (item.id !== "video" || content.videos?.length),
   );
 

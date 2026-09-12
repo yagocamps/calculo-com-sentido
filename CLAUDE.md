@@ -51,8 +51,8 @@ Site educacional de Pré-Cálculo e Cálculo 1 para alunos que chegam à faculda
 4. **Erros comuns sempre.** Toda aula lista 2-4 erros típicos.
 5. **Linguagem acolhedora.** Sem academiquês. Como se fosse para alguém com medo de matemática.
 
-Estrutura obrigatória da aula (13 etapas de conteúdo, além do título):
-1. Por que aprender · 2. Explicação simples · 3. Onde aparece · 4. Exemplo aplicado · 5. Passo a passo · 6. Interpretação · 7. Erros comuns · 8. Exercícios guiados · 9. Exercícios aplicados · 10. Resumo · 11. Checagem rápida · 12. Vídeo-aula · 13. Próxima aula.
+Estrutura obrigatória da aula (12 etapas de conteúdo, além do título):
+1. Por que aprender · 2. Explicação simples · 3. Onde aparece · 4. Exemplo aplicado · 5. Passo a passo · 6. Interpretação · 7. Erros comuns · 8. Exercícios guiados · 9. Exercícios aplicados · 10. Resumo · 11. Vídeo-aula · 12. Próxima aula.
 
 Estrutura obrigatória do exercício (9 campos):
 1. Tema · 2. Área de aplicação · 3. Enunciado · 4. O que identificar · 5. Dica · 6. Resolução · 7. Resposta · 8. Interpretação · 9. Erro comum.
@@ -99,7 +99,7 @@ O projeto implementado está em `site/`. Rodar com `cd site && npm run dev`.
 - **Etapa 2:** Home completa em `site/src/components/home/` + `site/src/data/home.ts`
 - **Etapa 3:** Teste de nível em `site/src/components/teste/` + `site/src/data/teste-nivel.ts`
 - **Etapa 4:** Trilha Pré-Cálculo em `site/src/data/pre-calculo.ts` + rotas `/pre-calculo/[modulo]`
-- **Etapa 5:** Aulas em `site/src/data/aulas/` + `AulaView` (13 etapas de conteúdo). MD fonte em `site/src/content/aulas/`
+- **Etapa 5:** Aulas em `site/src/data/aulas/` + `AulaView` (12 etapas de conteúdo). MD fonte em `site/src/content/aulas/`
 - **Etapa 6:** Exercícios em `site/src/data/exercicios.ts` + `ExerciciosFlow` (9 partes, filtros, reveal)
 - **Etapa 8:** Progresso em `site/src/components/progresso/` + `site/src/lib/progress-dashboard.ts`
-- **Etapa 9:** Diferenciais para quem trava em matemática: mini-quiz de saída (`AulaQuiz`, campo `quiz` opcional na aula), pré-requisitos por aula (`site/src/data/prereqs.ts`, default por módulo + override em `meta.prereqs`), tooltip "Lê-se" em fórmulas inline (`RichText`), explicação alternativa (`explicacao.alternativa`), gráfico com sliders (`InteractiveAfimPlot`, via `grafico.interactive`), trilha expressa `/trilha-expressa` e check de seção na TOC.
+- **Etapa 9:** Diferenciais para quem trava em matemática: pré-requisitos por aula (`site/src/data/prereqs.ts`, default por módulo + override em `meta.prereqs`), tooltip "Lê-se" em fórmulas inline (`RichText`), explicação alternativa (`explicacao.alternativa`), gráfico com sliders (`InteractiveAfimPlot`, via `grafico.interactive`), trilha expressa `/trilha-expressa` e check de seção na TOC.

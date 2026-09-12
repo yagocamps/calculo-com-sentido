@@ -37,19 +37,6 @@ export type AulaVideo = {
   youtubeId: string;
 };
 
-/** Pergunta do mini-quiz de saída (mastery learning). */
-export type AulaQuizQuestion = {
-  pergunta: string;
-  opcoes: string[];
-  corretaIndex: number;
-  critical?: boolean;
-  reforcoLabel?: string;
-  /** Por que a resposta certa é certa (mostrado após conferir). */
-  explicacao: string;
-  /** Seção da aula para revisar em caso de erro (id da TOC, ex.: "explicacao"). */
-  reforcoSectionId?: string;
-};
-
 /** Pré-requisito de uma aula, com link para revisar. */
 export type AulaPrereq = {
   label: string;
@@ -169,7 +156,4 @@ export type AulaContent = {
   };
   /** Vídeo-aulas do YouTube (máx. 3). Quando vazio/ausente, a seção é ocultada. */
   videos?: AulaVideo[];
-  /** Mini-quiz de saída (3 perguntas). 2+ acertos → pronto para a próxima;
-   * menos → reforço com link para a seção correspondente. */
-  quiz?: AulaQuizQuestion[];
 };
