@@ -414,7 +414,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Quais candidatos testar para \\(f\\) em \\([-1,3]\\) com crítico em 2?", "Teste -1, 2 e 3.", "-1, 2 e 3", "A lista vem do domínio fechado."],
       ["O maior valor de \\(f\\) entre candidatos é o quê?", "O máximo absoluto no intervalo.", "máximo absoluto", "A comparação decide o extremo global."],
-    ],
+    ], exerciseIds: ["ad-ap-19", "ad-ap-20", "ad-ap-21"],
   }),
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 11,
@@ -430,7 +430,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Qual informação vem antes de derivar uma função racional?", "O domínio e as possíveis assíntotas.", "domínio", "Não se desenha através de pontos proibidos."],
       ["Se \\(f'>0\\) e \\(f''<0\\), como é o trecho?", "Crescente e côncavo para baixo.", "crescente e côncavo para baixo", "As duas derivadas respondem perguntas diferentes."],
-    ],
+    ], exerciseIds: ["ad-ap-22", "ad-ap-23", "ad-ap-24"],
   }),
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 12,
@@ -446,7 +446,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Qual a taxa média de \\(x^2\\) em \\([0,2]\\)?", "\\((4-0)/(2-0)=2\\).", "2", "O TVM procura uma tangente com essa inclinação."],
       ["Rolle exige qual relação adicional?", "\\(f(a)=f(b)\\).", "\\(f(a)=f(b)\\)", "A taxa média então é zero."],
-    ],
+    ], exerciseIds: ["ad-ap-25", "ad-ap-26", "ad-ap-27"],
   }),
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 13,
@@ -478,7 +478,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Linearize \\(f(x)=x^2\\) em \\(a=3\\).", "\\(f(3)=9\\), \\(f'(3)=6\\): \\(L(x)=9+6(x-3)\\).", "\\(9+6(x-3)\\)", "A reta compartilha valor e inclinação no ponto."],
       ["Se \\(dx=0{,}02\\) e \\(f'(a)=5\\), estime \\(dy\\).", "\\(dy=5(0{,}02)=0{,}1\\).", "0,1", "A derivada converte pequenas variações."],
-    ],
+    ], exerciseIds: ["ad-ap-28", "ad-ap-29", "ad-ap-30"],
   }),
   compact({
     moduleSlug: "integrais", moduleTitle: "Integrais", lessonNumber: 12,
