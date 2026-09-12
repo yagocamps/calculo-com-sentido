@@ -995,6 +995,7 @@ export const graficosAulas: Record<string, AulaContent> = {
   },
 
   "revisao-graficos": {
+    plot: "leitura-completa-da-curva",
     meta: preMeta({
       title: "Revisão do módulo: gráficos",
       moduleSlug: MOD,

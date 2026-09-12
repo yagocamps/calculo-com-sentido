@@ -9,6 +9,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   "ideia-de-limite": ideiaDeLimiteAula,
 
   "limite-por-tabela": {
+    plot: "tabela-do-limite-em-dois",
     meta: c1Meta({
       title: "Limite por tabela",
       moduleSlug: MOD,

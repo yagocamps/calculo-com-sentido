@@ -6,6 +6,7 @@ const MOD_TITLE = "Derivadas com sentido";
 
 export const derivadasAulas: Record<string, AulaContent> = {
   "variacao-media": {
+    plot: "variacao-media-no-intervalo",
     meta: c1Meta({
       title: "Variação média: mudança no intervalo",
       moduleSlug: MOD,

@@ -6,6 +6,7 @@ const MOD_TITLE = "Aplicações de derivadas";
 
 export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   "crescimento-decrescimento-deriv": {
+    plot: "sinal-de-f-linha-na-reta",
     meta: c1Meta({
       title: "Onde a função sobe ou desce",
       moduleSlug: MOD,
@@ -534,6 +535,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   },
 
   "velocidade-producao": {
+    plot: "producao-e-taxa-de-producao",
     meta: c1Meta({
       title: "Velocidade de produção e taxas relacionadas (intro)",
       moduleSlug: MOD,
@@ -638,6 +640,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   },
 
   "area-volume-max": {
+    plot: "volume-da-caixa-maximo",
     meta: c1Meta({
       title: "Área e volume máximos",
       moduleSlug: MOD,
@@ -851,6 +854,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
   },
 
   "revisao-aplic-derivadas": {
+    plot: "cerca-com-lado-no-rio",
     meta: c1Meta({
       title: "Revisão: Aplicações de derivadas",
       moduleSlug: MOD,
