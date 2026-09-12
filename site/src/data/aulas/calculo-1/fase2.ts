@@ -233,7 +233,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Se \\(-x^2\\le f(x)\\le x^2\\), qual o limite em 0?", "Ambas as barreiras tendem a 0.", "0", "O confronto controla a função desconhecida."],
       ["Basta ter apenas uma função acima de \\(f\\)?", "Não; precisamos de duas barreiras convergindo ao mesmo valor.", "Não", "O aperto vem dos dois lados."],
-    ],
+    ], exerciseIds: ["lim-ap-21", "lim-ap-22", "lim-ap-23"],
   }),
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 16,
@@ -286,7 +286,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Para \\(f(x)=5x\\), qual escolha simples de \\(\\delta\\) atende um \\(\\varepsilon\\)?", "Como \\(|5x-5a|=5|x-a|\\), use \\(\\delta=\\varepsilon/5\\).", "\\(\\varepsilon/5\\)", "A inclinação converte tolerâncias."],
       ["Qual variável controla a proximidade de \\(f(x)\\) a \\(L\\)?", "\\(\\varepsilon\\) define a faixa vertical.", "epsilon", "Delta é escolhido em resposta a epsilon."],
-    ],
+    ], exerciseIds: ["lim-ap-24", "lim-ap-25", "lim-ap-26"],
   }),
   compact({
     moduleSlug: "limites", moduleTitle: "Limites sem trauma", lessonNumber: 19,
@@ -318,7 +318,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Se \\(f(2)=-3\\), \\(f(5)=4\\) e \\(f\\) é contínua, existe raiz entre 2 e 5?", "Sim, zero está entre as imagens dos extremos.", "Sim", "A continuidade impede um salto sobre zero."],
       ["O TVI garante uma única raiz?", "Não, garante pelo menos uma.", "Não", "Unicidade precisa de outra informação, como monotonicidade."],
-    ],
+    ], exerciseIds: ["cont-ap-13", "cont-ap-14", "cont-ap-15"],
   }),
   compact({
     moduleSlug: "continuidade", moduleTitle: "Continuidade", lessonNumber: 8,
@@ -334,7 +334,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Onde \\(\\ln(x-2)\\) é contínua?", "Quando \\(x-2>0\\), isto é, \\(x>2\\).", "\\(x>2\\)", "A restrição vem da camada logarítmica."],
       ["\\(1/(x^2+1)\\) é contínua em todos os reais?", "Sim, pois o denominador nunca zera.", "Sim", "A composição e o quociente respeitam suas hipóteses."],
-    ],
+    ], exerciseIds: ["cont-ap-16", "cont-ap-17", "cont-ap-18"],
   }),
   compact({
     moduleSlug: "derivadas", moduleTitle: "Derivadas com sentido", lessonNumber: 13,
