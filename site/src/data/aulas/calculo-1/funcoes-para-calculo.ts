@@ -6,6 +6,7 @@ const MOD_TITLE = "Funções para Cálculo";
 
 export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
   "funcoes-no-calculo": {
+    plot: "ganho-fixo-mais-por-hora",
     meta: c1Meta({
       title: "Funções no contexto do Cálculo",
       moduleSlug: MOD,
@@ -116,6 +117,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
   },
 
   "dominio-imagem": {
+    plot: "dominio-e-imagem-da-raiz",
     meta: c1Meta({
       title: "Domínio e imagem (revisão)",
       moduleSlug: MOD,
@@ -223,6 +225,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
   },
 
   "graficos-leitura": {
+    plot: "custo-medio-em-u",
     meta: c1Meta({
       title: "Ler gráficos com sentido",
       moduleSlug: MOD,
@@ -437,6 +440,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
   },
 
   "interpretacao-grafica": {
+    plot: "ler-um-ponto-no-grafico",
     meta: c1Meta({
       title: "Interpretar o que o gráfico diz",
       moduleSlug: MOD,
@@ -541,6 +545,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
   },
 
   "custo-receita": {
+    plot: "custo-receita-equilibrio",
     meta: c1Meta({
       title: "Custo, receita e lucro como funções",
       moduleSlug: MOD,
@@ -647,6 +652,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
   },
 
   "velocidade-temperatura": {
+    plot: "variacao-media-da-temperatura",
     meta: c1Meta({
       title: "Velocidade e temperatura: funções do tempo",
       moduleSlug: MOD,
@@ -753,6 +759,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
   },
 
   "revisao-funcoes-calculo": {
+    plot: "furo-em-tres-apos-simplificar",
     meta: c1Meta({
       title: "Revisão: Funções para Cálculo",
       moduleSlug: MOD,

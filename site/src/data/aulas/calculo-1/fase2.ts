@@ -107,6 +107,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "funcoes-para-calculo", moduleTitle: "Funções para Cálculo", lessonNumber: 9,
     slug: "composicao-e-inversa", title: "Composição e inversa para Cálculo", notes: ["camadas", "desfazer funções"],
+    plot: "composicao-em-duas-etapas",
     why: "Regra da cadeia e substituição em integrais dependem de reconhecer uma função dentro de outra.",
     concept: "Em \\(f(g(x))\\), \\(g\\) age primeiro. A inversa desfaz uma função um a um e troca domínio por imagem.",
     callout: "Composição lê de dentro para fora; inversa desfaz de fora para dentro.",
@@ -123,6 +124,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "funcoes-para-calculo", moduleTitle: "Funções para Cálculo", lessonNumber: 10,
     slug: "funcoes-por-partes", title: "Funções por partes e leitura lateral", notes: ["regras por intervalo", "pontos de troca"],
+    plot: "funcao-por-partes-com-salto",
     why: "Limites laterais e continuidade quase sempre são testados em funções com regras diferentes de cada lado.",
     concept: "Escolha a expressão pela condição da entrada. No ponto de troca, calcule separadamente valor, tendência pela esquerda e tendência pela direita.",
     callout: "Três perguntas diferentes: quanto vale no ponto, para onde vai pela esquerda e para onde vai pela direita?",
@@ -139,6 +141,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "funcoes-para-calculo", moduleTitle: "Funções para Cálculo", lessonNumber: 11,
     slug: "polinomiais-e-racionais", title: "Polinomiais e racionais como famílias", notes: ["termo dominante", "restrições"],
+    plot: "racional-com-furo-e-assintota",
     why: "Grande parte dos limites e derivadas iniciais usa polinômios ou quocientes de polinômios.",
     concept: "Polinômios são contínuos em todos os reais. Funções racionais são contínuas onde o denominador não zera; fatores canceláveis geram furos e fatores persistentes geram assíntotas verticais.",
     callout: "Antes de calcular, fatore e registre o domínio.",
@@ -155,6 +158,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "funcoes-para-calculo", moduleTitle: "Funções para Cálculo", lessonNumber: 12,
     slug: "quociente-de-diferencas", title: "Quociente de diferenças", notes: ["taxa média", "preparação para derivada"],
+    plot: "quociente-de-diferencas-triangulo",
     why: "A expressão central da derivada deve ser entendida como taxa média antes de virar um limite.",
     concept: "\\([f(x+h)-f(x)]/h\\) compara a mudança na saída com a mudança \\(h\\) na entrada. Geometricamente, é a inclinação de uma secante.",
     callout: "Simplifique o numerador inteiro antes de dividir por \\(h\\).",
@@ -171,6 +175,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "funcoes-para-calculo", moduleTitle: "Funções para Cálculo", lessonNumber: 13,
     slug: "oficina-algebrica-limites", title: "Oficina algébrica para limites", notes: ["diagnóstico", "escolha de técnica"],
+    plot: "roteiro-do-limite-algebrico",
     why: "O bloqueio mais comum em limites é algébrico, não conceitual: o aluno reconhece a aproximação, mas não sabe transformar \\(0/0\\).",
     concept: "Use um roteiro: substituir, classificar a forma, fatorar ou racionalizar, registrar restrições, simplificar e substituir novamente.",
     callout: "A forma da expressão escolhe a ferramenta; não existe uma única receita para todo \\(0/0\\).",
