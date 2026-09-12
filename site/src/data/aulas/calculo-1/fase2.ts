@@ -166,7 +166,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Ache o quociente para \\(f(x)=3x+1\\).", "A diferença é \\(3h\\); dividindo por \\(h\\), sobra 3.", "3", "Função afim tem taxa constante."],
       ["Por que exigimos \\(h\\ne0\\) antes do limite?", "Porque o quociente contém divisão por \\(h\\).", "Para não dividir por zero", "O limite permite aproximar zero sem usar zero."],
-    ],
+    ], exerciseIds: ["fc-ap-17", "fc-ap-18", "fc-ap-19"],
   }),
   compact({
     moduleSlug: "funcoes-para-calculo", moduleTitle: "Funções para Cálculo", lessonNumber: 13,
@@ -182,7 +182,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Que técnica usar em \\((x^2-9)/(x-3)\\)?", "Diferença de quadrados.", "fatoração", "O fator \\(x-3\\) fica visível."],
       ["Que técnica usar em \\((\\sqrt{x+1}-2)/(x-3)\\)?", "Conjugado da diferença de raízes.", "racionalização", "O produto cria \\(x-3\\)."],
-    ],
+    ], exerciseIds: ["fc-ap-20", "fc-ap-21", "fc-ap-22"],
   }),
   propriedadesDosLimites,
   compact({
@@ -398,7 +398,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Se \\(f(x)=x^4\\), calcule \\(f''(x)\\).", "\\(f'=4x^3\\) e \\(f''=12x^2\\).", "\\(12x^2\\)", "A segunda taxa ainda depende de x."],
       ["Se \\(s\\) está em metros e \\(t\\) em segundos, unidade de \\(s''\\)?", "Metros por segundo ao quadrado.", "m/s²", "A unidade confirma a interpretação como aceleração."],
-    ],
+    ], exerciseIds: ["der-ap-25", "der-ap-26", "der-ap-27"],
   }),
   compact({
     moduleSlug: "aplicacoes-derivadas", moduleTitle: "Aplicações de derivadas", lessonNumber: 10,
@@ -526,7 +526,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Valor médio de \\(f(x)=4\\) em qualquer intervalo?", "O acúmulo é \\(4(b-a)\\); dividindo pelo comprimento, sobra 4.", "4", "A média de uma constante é a própria constante."],
       ["Qual unidade tem o valor médio?", "A mesma unidade de \\(f\\).", "a mesma de f", "A divisão cancela a unidade da variável de integração."],
-    ],
+    ], exerciseIds: ["int-ap-23", "int-ap-24", "int-ap-25"],
   }),
   compact({
     moduleSlug: "integrais", moduleTitle: "Integrais", lessonNumber: 15,
@@ -558,7 +558,7 @@ const specs: CurriculumLessonSpec[] = [
     practice: [
       ["Qual área de uma arruela com raios 5 e 3?", "\\(\\pi(25-9)=16\\pi\\).", "\\(16\\pi\\)", "Subtraímos o furo interno."],
       ["Ao girar \\(y=f(x)\\) em torno do eixo x, qual raio do disco?", "A distância vertical ao eixo: \\(|f(x)|\\).", "\\(|f(x)|\\)", "O quadrado elimina o sinal na área."],
-    ],
+    ], exerciseIds: ["int-ap-26", "int-ap-27", "int-ap-28"],
   }),
 ];
 
