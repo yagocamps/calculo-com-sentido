@@ -509,6 +509,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "integrais", moduleTitle: "Integrais", lessonNumber: 13,
     slug: "substituicao", title: "Substituição: a cadeia ao contrário", notes: ["função interna", "du"],
+    plot: "substituicao-troca-os-extremos",
     why: "Sem substituição, integrais de composições simples ficam fora de alcance mesmo após o aluno dominar a regra da cadeia.",
     concept: "Escolha \\(u=g(x)\\) quando a integral contém uma função de \\(g(x)\\) multiplicada por \\(g'(x)\\). Troque toda a expressão para \\(u\\), integre e volte para \\(x\\).",
     callout: "A substituição funciona quando a derivada da parte interna aparece, talvez por um fator constante.",
@@ -525,6 +526,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "integrais", moduleTitle: "Integrais", lessonNumber: 14,
     slug: "valor-medio-funcao", title: "Valor médio de uma função", notes: ["acúmulo", "média contínua"],
+    plot: "valor-medio-retangulo",
     why: "Quando uma taxa varia continuamente, a média aritmética de poucos pontos não representa todo o intervalo.",
     concept: "O valor médio contínuo é o acúmulo total dividido pelo comprimento do intervalo: \\(f_{med}=\\frac1{b-a}\\int_a^b f(x)dx\\).",
     callout: "É a mesma ideia de média: total dividido pela extensão em que o total foi acumulado.",
@@ -541,6 +543,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "integrais", moduleTitle: "Integrais", lessonNumber: 15,
     slug: "area-entre-curvas", title: "Área entre curvas", notes: ["cima menos baixo", "interseções"],
+    plot: "area-entre-curvas-com-cruzamento",
     why: "Muitas regiões não ficam entre uma curva e o eixo, mas entre duas funções que podem trocar de posição.",
     concept: "Encontre as interseções, determine qual função está acima em cada intervalo e integre \\(\\text{cima}-\\text{baixo}\\). Se a ordem mudar, divida a integral.",
     callout: "Área geométrica não pode ser negativa; a ordem das curvas é parte do problema.",
@@ -557,6 +560,7 @@ const specs: CurriculumLessonSpec[] = [
   compact({
     moduleSlug: "integrais", moduleTitle: "Integrais", lessonNumber: 16,
     slug: "volumes-por-discos", title: "Volumes por discos e arruelas", notes: ["opcional", "sólidos de revolução"], level: "aplicação opcional",
+    plot: "solido-de-revolucao-cone",
     why: "Girar uma região em torno de um eixo transforma áreas pequenas em discos ou arruelas cujo volume pode ser acumulado.",
     concept: "Uma fatia perpendicular ao eixo de rotação tem área \\(\\pi R^2\\) para disco ou \\(\\pi(R^2-r^2)\\) para arruela. Integre essas áreas ao longo do eixo.",
     callout: "Defina claramente raio externo e interno antes de montar a integral.",
