@@ -239,6 +239,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   },
 
   "limite-substituicao": {
+    plot: "limite-substituicao-direta",
     meta: c1Meta({
       title: "Limite por substituição",
       moduleSlug: MOD,
@@ -354,6 +355,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   },
 
   "limites-laterais": {
+    plot: "limites-laterais-com-valor-diferente",
     meta: c1Meta({
       title: "Limites laterais",
       moduleSlug: MOD,
@@ -819,6 +821,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   },
 
   "velocidade-instantanea": {
+    plot: "secante-encolhendo-para-tangente",
     meta: c1Meta({
       title: "Velocidade instantânea",
       moduleSlug: MOD,
@@ -934,6 +937,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   },
 
   "aplicacoes-limites": {
+    plot: "custo-medio-e-marginal",
     meta: c1Meta({
       title: "Aplicações de limites",
       moduleSlug: MOD,
@@ -1050,6 +1054,7 @@ export const limitesAulas: Record<string, AulaContent> = {
   },
 
   "revisao-limites": {
+    plot: "assintotas-um-sobre-x-mais-dois",
     meta: c1Meta({
       title: "Revisão do módulo",
       moduleSlug: MOD,

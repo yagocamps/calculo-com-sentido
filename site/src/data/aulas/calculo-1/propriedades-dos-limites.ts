@@ -5,6 +5,7 @@ import type { CurriculumLessonSpec } from "@/data/aulas/lesson-factory";
 export const propriedadesDosLimites: CurriculumLessonSpec = {
   track: "calculo-1", moduleSlug: "limites", moduleTitle: "Limites sem trauma",
   lessonNumber: 4, slug: "propriedades-dos-limites", title: "Propriedades dos limites",
+  plot: "limites-das-partes",
   duration: "25 min", level: "universitário introdutório",
   notes: ["regras e hipóteses", "potências e raízes", "contraexemplos"],
   prereqs: [

@@ -1168,6 +1168,191 @@ export const plots = {
       { kind: "text", at: [7.3, -2.3], text: "(7, −3)", tone: "principal", anchor: "start" },
     ],
   },
+
+  "limite-substituicao-direta": {
+    alt: "Parábola subindo. Em x igual a três, uma linha tracejada sobe do eixo horizontal até a curva e outra segue da curva até o eixo vertical, na altura catorze, onde há um ponto cheio sobre a curva.",
+    x: [0, 5], y: [-3, 20],
+    xTicks: [0, 1, 2, 3, 4, 5], yTicks: [0, 5, 10, 14, 20],
+    legend: "A curva passa pelo ponto: o limite em x = 3 é o próprio valor f(3) = 14.",
+    marks: [
+      { kind: "curve", f: (x) => x * x + 2 * x - 1, from: 0, to: 4, tone: "principal" },
+      { kind: "segment", from: [3, 0], to: [3, 14], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, 14], to: [3, 14], tone: "neutro", dashed: true },
+      { kind: "point", at: [3, 14], tone: "principal" },
+      { kind: "text", at: [3.2, 15.8], text: "f(3) = 14", tone: "principal", anchor: "start" },
+      { kind: "text", at: [3, -1.8], text: "x = 3", tone: "neutro", anchor: "middle" },
+    ],
+  },
+
+  "limites-laterais-com-valor-diferente": {
+    alt: "Duas semirretas chegam à mesma altura três em x igual a dois, terminando num ponto vazado. Acima delas, um ponto cheio isolado marca a altura cinco, que é o valor da função nesse x.",
+    x: [-0.5, 4.5], y: [-1, 7],
+    xTicks: [0, 1, 2, 3, 4], yTicks: [0, 1, 3, 5, 7],
+    legend: "Os dois lados chegam a 3, então o limite é 3 — mesmo com f(2) = 5.",
+    marks: [
+      { kind: "curve", f: (x) => x + 1, from: -0.5, to: 2, tone: "aplicacao" },
+      { kind: "curve", f: (x) => 2 * x - 1, from: 2, to: 4.5, tone: "principal" },
+      { kind: "segment", from: [0, 3], to: [2, 3], tone: "neutro", dashed: true },
+      { kind: "point", at: [2, 3], open: true, tone: "neutro" },
+      { kind: "point", at: [2, 5], tone: "alerta" },
+      { kind: "text", at: [2.2, 5.4], text: "f(2) = 5", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [0.15, 3.4], text: "limite 3", tone: "neutro", anchor: "start" },
+    ],
+  },
+
+  "secante-encolhendo-para-tangente": {
+    alt: "Parábola da posição em função do tempo. Uma reta secante liga os pontos em t igual a dois e em t igual a dois e meio; uma reta tracejada, menos inclinada, toca a curva apenas no ponto em t igual a dois.",
+    x: [0, 3.4], y: [-1, 9],
+    xTicks: [0, 1, 2, 3], yTicks: [0, 2, 4, 6, 8],
+    legend: "A secante de [2; 2,5] tem inclinação 4,5 m/s; a tangente em t = 2 tem 4 m/s.",
+    marks: [
+      { kind: "curve", f: (t) => t * t, from: 0, to: 3, tone: "neutro" },
+      { kind: "curve", f: (t) => 4 * t - 4, from: 1.2, to: 3.2, tone: "principal", dashed: true },
+      { kind: "segment", from: [1.6, 2.2], to: [2.9, 8.05], tone: "aplicacao" },
+      { kind: "point", at: [2, 4], tone: "principal" },
+      { kind: "point", at: [2.5, 6.25], tone: "aplicacao" },
+      { kind: "text", at: [2.95, 7.6], text: "secante 4,5", tone: "aplicacao", anchor: "end" },
+      { kind: "text", at: [1.3, 1.2], text: "tangente 4", tone: "principal", anchor: "start" },
+    ],
+  },
+
+  "custo-medio-e-marginal": {
+    alt: "Duas curvas em função da quantidade produzida: o custo médio desce, chega a um ponto mais baixo e volta a subir; o custo marginal é uma reta crescente que cruza o custo médio exatamente nesse ponto mais baixo.",
+    x: [40, 420], y: [8, 22],
+    xTicks: [50, 150, 250, 350], yTicks: [10, 15, 20],
+    legend: "O custo marginal cruza o custo médio no ponto mais baixo do médio, perto de q = 224.",
+    marks: [
+      { kind: "curve", f: (q) => 500 / q + 8 + 0.01 * q, from: 40, to: 420, tone: "principal" },
+      { kind: "curve", f: (q) => 8 + 0.02 * q, from: 40, to: 420, tone: "aplicacao" },
+      { kind: "point", at: [223.6, 12.47], tone: "alerta" },
+      { kind: "text", at: [238, 13.4], text: "mínimo do médio", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [62, 19.2], text: "custo médio", tone: "principal", anchor: "start" },
+      { kind: "text", at: [300, 15.4], text: "custo marginal", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "assintotas-um-sobre-x-mais-dois": {
+    alt: "Hipérbole com dois ramos. À direita, a curva desce do alto e se aproxima da altura dois; à esquerda, sobe por baixo e também se aproxima de dois. Junto ao eixo vertical os dois ramos disparam, um para cima e outro para baixo.",
+    x: [-4, 4], y: [-3, 7],
+    xTicks: [-4, -2, 0, 2, 4], yTicks: [-2, 0, 2, 4, 6],
+    legend: "Assíntota vertical em x = 0 e horizontal em y = 2: a curva se aproxima das duas sem tocar nenhuma.",
+    marks: [
+      { kind: "hline", at: 2, tone: "alerta", label: "y = 2" },
+      { kind: "vline", at: 0, tone: "alerta", label: "x = 0" },
+      { kind: "curve", f: (x) => 1 / x + 2, from: -4, to: -0.2, tone: "principal" },
+      { kind: "curve", f: (x) => 1 / x + 2, from: 0.2, to: 4, tone: "principal" },
+    ],
+  },
+
+  "limites-das-partes": {
+    alt: "Duas retas cruzam a linha vertical em x igual a dois: uma sobe e chega à altura dois; a outra desce e chega à altura menos três. Linhas tracejadas ligam cada ponto de chegada ao eixo vertical.",
+    x: [-0.5, 4], y: [-6, 4],
+    xTicks: [0, 1, 2, 3], yTicks: [-6, -3, 0, 2, 4],
+    legend: "Cada parte tem seu próprio limite em x = 2; as propriedades combinam esses dois números.",
+    marks: [
+      { kind: "vline", at: 2, tone: "neutro" },
+      { kind: "curve", f: (x) => x, from: -0.5, to: 4, tone: "principal" },
+      { kind: "curve", f: (x) => 1 - 2 * x, from: -0.5, to: 4, tone: "aplicacao" },
+      { kind: "segment", from: [0, 2], to: [2, 2], tone: "neutro", dashed: true },
+      { kind: "segment", from: [0, -3], to: [2, -3], tone: "neutro", dashed: true },
+      { kind: "point", at: [2, 2], tone: "principal" },
+      { kind: "point", at: [2, -3], tone: "aplicacao" },
+      { kind: "text", at: [3.15, 3.4], text: "f → 2", tone: "principal", anchor: "start" },
+      { kind: "text", at: [3.15, -5.4], text: "g → −3", tone: "aplicacao", anchor: "start" },
+    ],
+  },
+
+  "furo-depois-da-fatoracao": {
+    alt: "Reta inclinada subindo. Em x igual a menos dois há um ponto vazado na altura um: ali a expressão original não existe, embora a reta siga normalmente dos dois lados.",
+    x: [-5, 2], y: [-3, 6],
+    xTicks: [-4, -2, 0, 2], yTicks: [-2, 0, 1, 3, 5],
+    legend: "Depois de fatorar, a expressão vale x + 3 para todo x ≠ −2. O furo em (−2, 1) é o único traço da indeterminação.",
+    marks: [
+      { kind: "curve", f: (x) => x + 3, from: -5, to: 2, tone: "principal" },
+      { kind: "segment", from: [-2, 0], to: [-2, 1], tone: "neutro", dashed: true },
+      { kind: "point", at: [-2, 1], open: true, tone: "alerta" },
+      { kind: "text", at: [-1.7, 0.3], text: "x = −2", tone: "neutro", anchor: "start" },
+      { kind: "text", at: [-1.7, 1.7], text: "limite 1", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "furo-depois-da-racionalizacao": {
+    alt: "Curva suave levemente decrescente, quase horizontal. Em x igual a zero há um ponto vazado na altura de um quarto, valor para o qual a expressão tende.",
+    x: [-3.5, 6], y: [0.1, 0.45],
+    xTicks: [-3, 0, 3, 6],
+    legend: "Depois da racionalização sobra 1/(√(x+4) + 2), que em x = 0 vale 1/4 — o limite procurado.",
+    marks: [
+      { kind: "curve", f: (x) => 1 / (Math.sqrt(x + 4) + 2), from: -3.5, to: 6, tone: "principal" },
+      { kind: "point", at: [0, 0.25], open: true, tone: "alerta" },
+      { kind: "text", at: [0.3, 0.29], text: "limite 1/4", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [-3.2, 0.42], text: "a expressão original não existe em x = 0", tone: "neutro", anchor: "start" },
+    ],
+  },
+
+  "confronto-oscilacao-espremida": {
+    alt: "Duas retas formam um funil que se fecha na origem: uma é y igual ao módulo de x, a outra é o seu oposto. Entre elas, uma curva oscila cada vez mais rápido e com amplitude cada vez menor à medida que se aproxima de zero.",
+    x: [-1, 1], y: [-1, 1],
+    xTicks: [-1, 0, 1], yTicks: [-1, 0, 1],
+    aspect: "igual",
+    legend: "A oscilação continua até o fim, mas fica presa entre −|x| e |x|, que se encontram em zero.",
+    marks: [
+      { kind: "curve", f: (x) => Math.abs(x), from: -1, to: 1, tone: "alerta", dashed: true },
+      { kind: "curve", f: (x) => -Math.abs(x), from: -1, to: 1, tone: "alerta", dashed: true },
+      { kind: "curve", f: (x) => (x === 0 ? 0 : x * Math.sin(1 / x)), from: -1, to: 1, tone: "principal" },
+      { kind: "point", at: [0, 0], tone: "principal" },
+      { kind: "text", at: [0.5, 0.88], text: "y = |x|", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [0.5, -0.94], text: "y = −|x|", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "mesma-forma-tres-resultados": {
+    alt: "Três curvas no primeiro quadrante, todas indo em direção ao eixo vertical: uma reta horizontal na altura um, uma reta que desce até a origem e uma curva que dispara para cima perto do zero.",
+    x: [0, 2.2], y: [0, 5],
+    xTicks: [0, 1, 2], yTicks: [0, 1, 3, 5],
+    legend: "As três têm forma 0/0 em x = 0 e terminam diferentes: 1, 0 e sem limite finito.",
+    marks: [
+      { kind: "curve", f: () => 1, from: 0.02, to: 2.2, tone: "principal" },
+      { kind: "curve", f: (x) => x, from: 0, to: 2.2, tone: "aplicacao" },
+      { kind: "curve", f: (x) => 1 / x, from: 0.2, to: 2.2, tone: "alerta" },
+      { kind: "text", at: [1.45, 1.2], text: "x/x → 1", tone: "principal", anchor: "start" },
+      { kind: "text", at: [1.6, 2.05], text: "x²/x → 0", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.3, 4.4], text: "x/x² dispara", tone: "alerta", anchor: "start" },
+    ],
+  },
+
+  "epsilon-delta-faixas": {
+    alt: "Reta crescente atravessando o cruzamento de duas faixas: uma faixa horizontal estreita em torno da altura seis e uma faixa vertical estreita em torno de x igual a três. O ponto do encontro fica no centro.",
+    x: [1.5, 4.5], y: [3, 9],
+    xTicks: [2, 3, 4], yTicks: [4, 6, 8],
+    legend: "Exigir |f(x) − 6| < 1 equivale, nesta reta, a exigir |x − 3| < 0,5: o delta responde ao epsilon.",
+    marks: [
+      { kind: "hline", at: 7, tone: "alerta" },
+      { kind: "hline", at: 5, tone: "alerta" },
+      { kind: "vline", at: 3.5, tone: "aplicacao" },
+      { kind: "vline", at: 2.5, tone: "aplicacao" },
+      { kind: "curve", f: (x) => 2 * x, from: 1.5, to: 4.5, tone: "principal" },
+      { kind: "point", at: [3, 6], tone: "principal" },
+      { kind: "text", at: [1.6, 7.35], text: "L + ε = 7", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [1.6, 4.5], text: "L − ε = 5", tone: "alerta", anchor: "start" },
+      { kind: "text", at: [3.56, 3.4], text: "a + δ", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [2.44, 3.4], text: "a − δ", tone: "aplicacao", anchor: "end" },
+    ],
+  },
+
+  "exponencial-e-logaritmo": {
+    alt: "Duas curvas: a exponencial sobe suavemente e passa pela altura um quando x é zero; o logaritmo existe apenas à direita do eixo vertical e despenca quando x se aproxima de zero.",
+    x: [-2.5, 3], y: [-4, 8],
+    xTicks: [-2, 0, 1, 2, 3], yTicks: [-3, 0, 1, 4, 8],
+    legend: "A exponencial é contínua em toda a reta; o logaritmo despenca para −∞ quando x se aproxima de zero pela direita.",
+    marks: [
+      { kind: "vline", at: 0, tone: "neutro" },
+      { kind: "curve", f: (x) => Math.exp(x), from: -2.5, to: 2.1, tone: "principal" },
+      { kind: "curve", f: (x) => Math.log(x), from: 0.02, to: 3, tone: "aplicacao" },
+      { kind: "point", at: [0, 1], tone: "principal" },
+      { kind: "text", at: [1.45, 6.4], text: "y = eˣ", tone: "principal", anchor: "start" },
+      { kind: "text", at: [2.1, 0.5], text: "y = ln x", tone: "aplicacao", anchor: "start" },
+    ],
+  },
 } satisfies Record<string, PlotSpec>;
 
 export type PlotId = keyof typeof plots;
