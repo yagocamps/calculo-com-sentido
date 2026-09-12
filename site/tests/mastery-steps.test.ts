@@ -7,6 +7,7 @@ import {
   masterySteps,
   masterySummary,
 } from "@/lib/learning-evidence";
+import type { SkillEvidence } from "@/lib/learning-evidence";
 import type { ProgressState } from "@/lib/progress";
 
 /** Aula com bastante questão conferível, para exercitar todos os critérios. */
@@ -79,18 +80,30 @@ test("o aluno é avisado quando o que falta é só o tempo passar", () => {
 });
 
 test("uma aula sem questões conferíveis suficientes diz isso em vez de pedir o impossível", () => {
-  const curtas = buildLearningEvidence(estado([]), AGORA).filter(
-    (s) => s.exerciseIds.length < MASTERY.questoesCorretas,
-  );
-  assert.ok(curtas.length > 0, "o cenário existe no catálogo e precisa ser comunicado");
-  for (const skill of curtas) {
-    const primeiro = masterySteps(skill, AGORA)[0];
-    assert.equal(primeiro.blocked, true, `${skill.id}: o critério é inalcançável e deveria estar marcado`);
-    assert.match(primeiro.status, /o critério pede 3/);
-    // Não promete um caminho que a página não tem: o link para o banco só
-    // aparece quando o módulo realmente tem tema lá.
-    assert.match(masterySummary(skill, AGORA), /não é medido nesta aula/);
-  }
+  // O catálogo não tem mais aula assim: todas passaram a ter exercícios no
+  // banco. O comportamento continua valendo para qualquer aula curta que venha
+  // a existir, então o cenário é montado aqui em vez de ser procurado lá.
+  const base = buildLearningEvidence(estado([]), AGORA).find((s) => s.id === AULA)!;
+  const curta: SkillEvidence = {
+    ...base,
+    exerciseIds: base.exerciseIds.slice(0, MASTERY.questoesCorretas - 1),
+  };
+
+  const primeiro = masterySteps(curta, AGORA)[0];
+  assert.equal(primeiro.blocked, true, "o critério é inalcançável e deveria estar marcado");
+  assert.match(primeiro.status, /o critério pede 3/);
+  // Não promete um caminho que a página não tem: o link para o banco só
+  // aparece quando o módulo realmente tem tema lá.
+  assert.match(masterySummary(curta, AGORA), /não é medido nesta aula/);
+});
+
+test("nenhuma aula do catálogo fica abaixo do critério de domínio", () => {
+  // Vira guarda do que os bancos fecharam: uma aula nova sem exercícios
+  // conferíveis volta a esconder o domínio de quem a estuda.
+  const curtas = buildLearningEvidence(estado([]), AGORA)
+    .filter((s) => s.exerciseIds.length < MASTERY.questoesCorretas)
+    .map((s) => `${s.id} (${s.exerciseIds.length})`);
+  assert.deepEqual(curtas, [], "aula com menos de 3 questões conferíveis");
 });
 
 test("autoavaliação não conta como evidência", () => {
