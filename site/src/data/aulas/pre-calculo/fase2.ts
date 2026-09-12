@@ -33,6 +33,7 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Escreva \\(x>4\\) como intervalo.", solution: "A partir de 4 sem incluí-lo: \\((4,+\\infty)\\).", answer: "\\((4,+\\infty)\\)", interpretation: "A seta segue indefinidamente para a direita." },
       { type: "interpretacao", question: "O zero pertence a \\((-1,0]\\)?", solution: "Sim: o colchete inclui o extremo 0.", answer: "Sim", interpretation: "O símbolo da ponta decide a inclusão." },
     ],
+    exerciseIds: ["fund-ap-29", "fund-ap-30", "fund-ap-31"],
     summary: ["Conjuntos organizam tipos de número.", "Intervalos descrevem trechos da reta real.", "Colchete inclui; parêntese exclui."],
   }),
   make({
@@ -51,6 +52,7 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Expanda \\(3(x-4)\\).", solution: "Multiplique 3 por cada termo: \\(3x-12\\).", answer: "\\(3x-12\\)", interpretation: "O sinal negativo acompanha o 4." },
       { question: "Fatore \\(5x+15\\).", solution: "Coloque o fator comum 5 em evidência: \\(5(x+3)\\).", answer: "\\(5(x+3)\\)", interpretation: "É a distributiva usada ao contrário." },
     ],
+    exerciseIds: ["fund-ap-32", "fund-ap-33", "fund-ap-34"],
     summary: ["Propriedades justificam transformações.", "Distributiva expande e também fatora.", "Inversos neutralizam uma operação."],
   }),
   make({
@@ -181,6 +183,7 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Como obter o gráfico de \\(y=f(-x)\\)?", solution: "Refletindo o gráfico de \\(f\\) no eixo \\(y\\).", answer: "reflexão no eixo y", interpretation: "Entradas positivas e negativas trocam de lado." },
       { type: "interpretacao", question: "O que \\(3f(x)\\) faz com o ponto \\((2,4)\\)?", solution: "Mantém \\(x=2\\) e multiplica a saída: \\((2,12)\\).", answer: "\\((2,12)\\)", interpretation: "É uma escala vertical." },
     ],
+    exerciseIds: ["graf-ap-17", "graf-ap-18", "graf-ap-19"],
     summary: ["\\(-f(x)\\) reflete verticalmente.", "\\(f(-x)\\) reflete horizontalmente.", "Fatores externos escalam as saídas."],
   }),
   make({
@@ -496,6 +499,7 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Simplifique \\(\\frac{x^2-5x}{x}\\) para \\(x\\ne0\\).", solution: "\\(x(x-5)/x=x-5\\).", answer: "\\(x-5\\)", interpretation: "A forma simplificada não inclui \\(x=0\\) na original." },
       { type: "compreensao", question: "O limite depende do valor exatamente no ponto?", solution: "Não; depende dos valores arbitrariamente próximos.", answer: "Não", interpretation: "Por isso um furo pode ter limite." },
     ],
+    exerciseIds: ["prep-ap-13", "prep-ap-14", "prep-ap-15"],
     summary: ["Cancele apenas fatores comuns.", "Registre a restrição.", "Limite olha ao redor, não exige valor no ponto."],
   }),
   make({
@@ -533,6 +537,7 @@ const specs: CurriculumLessonSpec[] = [
       { question: "Converta \\(45^\\circ\\) para radianos.", solution: "\\(45\\pi/180=\\pi/4\\).", answer: "\\(\\pi/4\\)", interpretation: "É um oitavo de uma volta." },
       { question: "Qual arco para \\(r=5\\) e \\(\\theta=2\\) rad?", solution: "\\(s=r\\theta=10\\).", answer: "10", interpretation: "O arco tem duas vezes o comprimento do raio." },
     ],
+    exerciseIds: ["trig-ap-25", "trig-ap-26", "trig-ap-27"],
     summary: ["\\(180^\\circ=\\pi\\) rad.", "Radiano mede arco dividido pelo raio.", "\\(s=r\\theta\\) usa \\(\\theta\\) em radianos."],
   }),
   make({
