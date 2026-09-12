@@ -687,6 +687,26 @@ export const plots = {
     ],
   },
 
+  "circulo-soma-de-arcos": {
+    alt: "Círculo de raio um centrado na origem. Um raio sobe do eixo x até o ponto do ângulo a; a partir desse raio, um segundo arco marca mais b graus até o ponto do ângulo a mais b, mais alto e mais à esquerda no primeiro quadrante.",
+    x: [-1.4, 1.4], y: [-1.4, 1.4],
+    xTicks: [-1, 0, 1], yTicks: [-1, 0, 1],
+    aspect: "igual",
+    legend: "Somar arcos é girar duas vezes: primeiro a, depois mais b. As fórmulas traduzem esse giro em coordenadas.",
+    marks: [
+      { kind: "curve", f: (x) => Math.sqrt(Math.max(0, 1 - x * x)), from: -1, to: 1, tone: "neutro" },
+      { kind: "curve", f: (x) => -Math.sqrt(Math.max(0, 1 - x * x)), from: -1, to: 1, tone: "neutro" },
+      { kind: "segment", from: [0, 0], to: [0.819, 0.574], tone: "aplicacao" },
+      { kind: "segment", from: [0, 0], to: [0.5, 0.866], tone: "principal" },
+      { kind: "angle", at: [0, 0], from: [1, 0], to: [0.819, 0.574], label: "a", tone: "aplicacao" },
+      { kind: "angle", at: [0, 0], from: [0.819, 0.574], to: [0.5, 0.866], label: "b", tone: "principal" },
+      { kind: "point", at: [0.819, 0.574], tone: "aplicacao" },
+      { kind: "point", at: [0.5, 0.866], tone: "principal" },
+      { kind: "text", at: [0.92, 0.66], text: "ponto de a", tone: "aplicacao", anchor: "start" },
+      { kind: "text", at: [0.56, 1.05], text: "ponto de a + b", tone: "principal", anchor: "start" },
+    ],
+  },
+
   "quadrantes": {
     alt: "Plano cartesiano com os quatro quadrantes numerados: primeiro à direita e acima, segundo à esquerda e acima, terceiro à esquerda e abaixo, quarto à direita e abaixo.",
     x: [-6, 6], y: [-6, 6],
