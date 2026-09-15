@@ -3,6 +3,7 @@
 import { MotionLimitBench } from "./MotionLimitBench";
 import { ContinuityBridge } from "./ContinuityBridge";
 import { DerivativeTank } from "./DerivativeTank";
+import { IntegralRamp } from "./IntegralRamp";
 
 import Link from "next/link";
 import { useId, useState, type ReactNode } from "react";
@@ -520,6 +521,7 @@ export function InteractiveConceptLab({ kind }: { kind: VisualLabKind }) {
     case "motion-limit": return <MotionLimitBench />;
     case "continuity-bridge": return <ContinuityBridge />;
     case "derivative-tank": return <DerivativeTank />;
+    case "integral-ramp": return <IntegralRamp />;
     case "limit": return <LimitLab />;
     case "secant": return <SecantLab />;
     case "riemann": return <RiemannLab />;

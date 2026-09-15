@@ -88,7 +88,8 @@ export function AulaView({
   const visualLab = visualLabForLesson(trilha, meta.moduleSlug, aulaSlug);
   const simulationTitle = visualLab === "motion-limit" ? "Experimente os limites na bancada de movimento"
     : visualLab === "continuity-bridge" ? "Conecte as partes da ponte"
-    : visualLab === "derivative-tank" ? "Veja o volume mudar no reservatório" : null;
+    : visualLab === "derivative-tank" ? "Veja o volume mudar no reservatório"
+    : visualLab === "integral-ramp" ? "Some pequenos trechos de uma rampa" : null;
   const hasSimulation = simulationTitle !== null;
   const simulationOffset = Number(hasSimulation);
   // O banco usa "funcoes-calculo" onde a trilha usa "funcoes-para-calculo";

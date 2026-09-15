@@ -2,6 +2,7 @@ export type VisualLabKind =
   | "motion-limit"
   | "continuity-bridge"
   | "derivative-tank"
+  | "integral-ramp"
   | "limit"
   | "secant"
   | "riemann"
@@ -15,6 +16,7 @@ export const visualLabsByLesson: Record<string, VisualLabKind> = {
   "calculo-1/limites/ideia-de-limite": "motion-limit",
   "calculo-1/continuidade/ideia-continuidade": "continuity-bridge",
   "calculo-1/derivadas/variacao-instantanea": "derivative-tank",
+  "calculo-1/integrais/ideia-de-soma": "integral-ramp",
   "calculo-1/limites/limite-por-grafico": "limit",
   "calculo-1/derivadas/reta-secante-tangente": "secant",
   // A aula que formaliza o quociente incremental precisa mostrar o quociente
