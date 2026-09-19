@@ -106,7 +106,7 @@ function renderMath(latex: string, display: boolean, key: number): ReactNode {
         </span>
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-full left-0 z-30 mb-1.5 w-max max-w-[min(280px,80vw)] origin-bottom-left scale-95 rounded-xl border border-border bg-surface px-3 py-2 text-left font-sans text-[12px] font-normal not-italic leading-relaxed text-ink-muted opacity-0 shadow-lg transition-all duration-150 group-hover/math:scale-100 group-hover/math:opacity-100 group-focus-within/math:scale-100 group-focus-within/math:opacity-100"
+          className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-1.5 w-max max-w-[min(280px,80vw)] -translate-x-1/2 origin-bottom scale-95 rounded-xl border border-border bg-surface px-3 py-2 text-left font-sans text-[12px] font-normal not-italic leading-relaxed text-ink-muted opacity-0 shadow-lg transition-all duration-150 group-hover/math:scale-100 group-hover/math:opacity-100 group-focus-within/math:scale-100 group-focus-within/math:opacity-100"
         >
           <span className="font-semibold text-ink">Lê-se:</span> {reading}
         </span>

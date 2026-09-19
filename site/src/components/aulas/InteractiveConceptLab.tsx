@@ -193,7 +193,7 @@ function LabShell({
       <p className="text-[11px] font-bold uppercase tracking-wider text-sky-ink">
         Laboratório visual · manipule
       </p>
-      <h3 className="mt-1 font-serif text-xl font-medium">{title}</h3>
+      <h3 className="mt-1 font-serif text-[18px] font-semibold">{title}</h3>
       <p className="mt-1 text-sm leading-relaxed text-ink-muted">{intro}</p>
       <p className="mt-2 text-xs text-ink-subtle">Nos controles deslizantes, use as setas para ajustar e Home/End para ir aos extremos.</p>
       <p className="sr-only" aria-live="polite" aria-atomic="true">

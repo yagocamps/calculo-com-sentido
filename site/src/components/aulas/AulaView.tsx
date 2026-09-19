@@ -261,7 +261,7 @@ export function AulaView({
                 <div className="mt-5 space-y-4" aria-label="Propriedades e condições de aplicação">
                   {content.explicacao.rules.map((rule) => (
                     <section key={rule.id} id={`regra-${rule.id}`} className="min-w-0 scroll-mt-24 rounded-2 border border-border p-4">
-                      <h3 className="font-serif text-xl font-medium">{rule.title}</h3>
+                      <h3 className="font-serif text-[18px] font-semibold tracking-tight text-ink">{rule.title}</h3>
                       <div className="max-w-full overflow-x-auto">
                         <FormulaBlock formula={rule.formulaAria} formulaLatex={rule.formulaLatex} formulaAria={rule.formulaAria} />
                       </div>
