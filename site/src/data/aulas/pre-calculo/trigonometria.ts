@@ -18,7 +18,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "cosseno", title: "Cosseno" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A razão que mede altura sem subir",
       paragraphs: [
         "A trigonometria nasceu de uma pergunta prática: como medir alturas e distâncias que não dá para alcançar com a fita métrica — a altura de uma montanha, a largura de um rio.",
         "O seno é a primeira ferramenta: ele liga um ângulo a uma proporção entre lados de um triângulo retângulo. Sabendo o ângulo e um lado, você descobre os outros.",
@@ -39,7 +39,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "SOH: o seno relaciona o lado oposto com a hipotenusa",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da rampa à sombra do prédio",
       items: [
         { label: "Topografia", detail: "medir altura de morros e prédios" },
         { label: "Navegação", detail: "calcular rotas e distâncias" },
@@ -55,7 +55,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Uma pipa está presa por uma linha de 50 m que faz 30° com o chão. A que altura ela está? Use \\(\\sin(30^\\circ) = 0{,}5\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Identificar o cateto oposto antes de dividir",
       steps: [
         {
           title: "Desenhar o triângulo",
@@ -77,14 +77,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o valor do seno indica",
       paragraphs: [
         "A pipa está a 25 m de altura. Medimos algo inalcançável usando só um ângulo e o comprimento da linha — esse é o superpoder da trigonometria.",
         "Como \\(\\sin(30^\\circ) = 0{,}5\\), a altura é exatamente metade da linha. Se o ângulo fosse maior, o seno cresceria e a pipa estaria mais alta para a mesma linha.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir cateto oposto com adjacente",
       items: [
         "Trocar cateto oposto com adjacente.",
         "Usar o seno quando o lado conhecido pede cosseno.",
@@ -93,7 +93,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule senos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -133,12 +133,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Seno no banco",
       intro: "Pratique cálculos com seno em triângulos retângulos no banco de exercícios.",
       exerciseIds: ["trig-ap-01", "trig-ap-02"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Oposto sobre hipotenusa",
       bullets: [
         "\\(\\sin = \\frac{\\text{cateto oposto}}{\\text{hipotenusa}}\\) (SOH).",
         "Depende só do ângulo, não do tamanho do triângulo.",
@@ -161,7 +161,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "tangente", title: "Tangente" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A razão que mede o avanço na horizontal",
       paragraphs: [
         "Se o seno cuida do lado \"na frente\" do ângulo, o cosseno cuida do lado \"colado\" nele. Juntos, eles descrevem completamente um triângulo retângulo.",
         "O cosseno responde a perguntas como: qual a distância horizontal que percorri ao subir uma rampa? Quanto uma escada se afasta da parede?",
@@ -182,7 +182,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "CAH: o cosseno relaciona o lado adjacente com a hipotenusa",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do plano inclinado à decomposição de forças",
       items: [
         { label: "Construção", detail: "distância horizontal de uma rampa" },
         { label: "Escadas", detail: "afastamento da base em relação à parede" },
@@ -198,7 +198,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Uma escada de 4 m encosta na parede formando 60° com o chão. A que distância da parede está o pé da escada? Use \\(\\cos(60^\\circ) = 0{,}5\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Identificar o cateto adjacente antes de dividir",
       steps: [
         {
           title: "Identificar os lados",
@@ -220,14 +220,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o valor do cosseno indica",
       paragraphs: [
         "O pé da escada está a 2 m da parede. O cosseno deu a parte horizontal, do mesmo jeito que o seno daria a altura alcançada.",
         "Quanto mais íngreme a escada (ângulo maior), menor o cosseno e mais perto da parede fica o pé. Seno e cosseno trabalham em sentidos opostos conforme o ângulo muda.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar adjacente por oposto no triângulo",
       items: [
         "Confundir adjacente com oposto (cosseno usa o adjacente).",
         "Usar cosseno quando o problema dá o lado oposto.",
@@ -236,7 +236,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule cossenos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -276,12 +276,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Cosseno no banco",
       intro: "Pratique cálculos com cosseno em triângulos retângulos no banco de exercícios.",
       exerciseIds: ["trig-ap-03", "trig-ap-04"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Adjacente sobre hipotenusa",
       bullets: [
         "\\(\\cos = \\frac{\\text{cateto adjacente}}{\\text{hipotenusa}}\\) (CAH).",
         "É o par do seno: descreve a parte horizontal.",
@@ -304,7 +304,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "ciclo-trigonometrico", title: "Ciclo trigonométrico" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A razão que mede inclinação",
       paragraphs: [
         "A tangente é a razão que mede inclinação: quanto algo sobe para cada passo na horizontal. É a matemática por trás de \"rampa de 10%\" e da declividade de uma estrada.",
         "Diferente do seno e do cosseno, a tangente não usa a hipotenusa — compara os dois catetos diretamente.",
@@ -325,7 +325,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "TOA: a tangente compara os catetos e é seno sobre cosseno",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da rampa de acessibilidade ao telhado",
       items: [
         { label: "Estradas", detail: "inclinação (subida em %)" },
         { label: "Telhados", detail: "caimento por metro" },
@@ -341,7 +341,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Do chão, você vê o topo de um prédio a 40 m de distância sob um ângulo de 45°. Qual a altura do prédio? Use \\(\\tan(45^\\circ) = 1\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Dividir oposto por adjacente",
       steps: [
         {
           title: "Identificar os lados",
@@ -363,14 +363,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a tangente diz sobre a subida",
       paragraphs: [
         "O prédio tem 40 m. Como \\(\\tan(45^\\circ) = 1\\), a altura é igual à distância — característico do ângulo de 45°, onde subir e andar se equilibram.",
         "A tangente é a própria definição de inclinação: 40 m de altura em 40 m de distância é uma subida de 100%. É assim que se lê a placa \"rampa 8%\" numa estrada.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Usar a hipotenusa na tangente",
       items: [
         "Usar a hipotenusa na tangente (ela só usa os catetos).",
         "Inverter a razão (oposto sobre adjacente, não o contrário).",
@@ -379,7 +379,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule tangentes com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -417,12 +417,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Tangente no banco",
       intro: "Pratique tangente e inclinação no banco de exercícios.",
       exerciseIds: ["trig-ap-05", "trig-ap-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Oposto sobre adjacente é a inclinação",
       bullets: [
         "\\(\\tan = \\frac{\\text{cateto oposto}}{\\text{cateto adjacente}}\\) (TOA).",
         "Não usa a hipotenusa; compara os catetos.",
@@ -444,7 +444,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "identidades-basicas", title: "Identidades básicas" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O círculo que organiza todos os ângulos",
       paragraphs: [
         "Os triângulos só lidam com ângulos entre 0° e 90°. Mas seno e cosseno valem para qualquer ângulo — inclusive uma volta inteira, e mais. Como?",
         "O ciclo trigonométrico é a resposta: um círculo de raio 1 onde seno e cosseno viram as coordenadas de um ponto que gira. Ele estende a trigonometria para todos os ângulos.",
@@ -465,7 +465,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "o ponto no círculo unitário tem cosseno e seno como coordenadas",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o movimento dá voltas",
       items: [
         { label: "Ondas", detail: "som, luz e rádio são senoides" },
         { label: "Movimento circular", detail: "roda-gigante, relógios" },
@@ -481,7 +481,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Qual é o ponto \\((\\cos\\theta, \\sin\\theta)\\) para \\(\\theta = 0^\\circ\\), \\(90^\\circ\\) e \\(180^\\circ\\) no ciclo trigonométrico?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do ângulo às coordenadas no círculo",
       steps: [
         {
           title: "Começar em 0°",
@@ -502,14 +502,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o seno e o cosseno medem ali",
       paragraphs: [
         "Ler o ponto no círculo dá seno e cosseno de qualquer ângulo. Em 90°, por exemplo, o cosseno é 0 — coisa que um triângulo nunca mostraria.",
         "Como o ponto volta ao início a cada volta, seno e cosseno se repetem. Essa repetição (periodicidade) é o que descreve tudo que oscila: ondas, marés, batimentos.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar seno e cosseno nos eixos",
       items: [
         "Trocar as coordenadas: \\(x\\) é cosseno, \\(y\\) é seno.",
         "Esquecer que os valores ficam entre −1 e 1.",
@@ -518,7 +518,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Percorra o ciclo com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -556,12 +556,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Ciclo trigonométrico no banco",
       intro: "Pratique o ciclo trigonométrico e valores notáveis no banco de exercícios.",
       exerciseIds: ["trig-ap-07", "trig-ap-08"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Cosseno na horizontal, seno na vertical",
       bullets: [
         "O ciclo é um círculo de raio 1; o ponto do ângulo é \\((\\cos\\theta, \\sin\\theta)\\).",
         "Cosseno é a coordenada \\(x\\); seno é a \\(y\\).",
@@ -584,7 +584,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "graficos-trigonometricos", title: "Gráficos trigonométricos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Uma relação que sempre vale",
       paragraphs: [
         "Seno e cosseno não são independentes: eles estão amarrados por uma regra que nunca falha. Conhecendo um, você acha o outro.",
         "Essa relação economiza trabalho — em provas, na física e no cálculo, ela permite trocar uma expressão complicada por uma simples.",
@@ -605,7 +605,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "relação fundamental: seno e cosseno se completam",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a identidade encurta a conta",
       items: [
         { label: "Física", detail: "decompor forças e velocidades" },
         { label: "Engenharia", detail: "simplificar cálculos de estruturas" },
@@ -621,7 +621,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Um ângulo agudo tem \\(\\sin\\theta = 0{,}6\\). Quanto vale \\(\\cos\\theta\\)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Usar a relação para trocar um termo",
       steps: [
         {
           title: "Escrever a relação fundamental",
@@ -639,14 +639,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Por que a soma dos quadrados dá um",
       paragraphs: [
         "Com \\(\\cos\\theta = 0{,}8\\), achamos o segundo lado sem medir nada — só usando a relação. Esse é o ângulo do triângulo 3-4-5, clássico.",
         "Repare: quanto maior o seno, menor o cosseno, porque a soma dos quadrados é fixa em 1. Eles dividem um \"orçamento\" de 1 entre si.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Elevar ao quadrado só um dos lados",
       items: [
         "Esquecer de elevar ao quadrado antes de somar.",
         "Esquecer a raiz no final ao isolar.",
@@ -655,7 +655,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aplique identidades com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -694,12 +694,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Identidades básicas no banco",
       intro: "Pratique a relação fundamental no banco de exercícios.",
       exerciseIds: ["trig-ap-09", "trig-ap-10"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Seno ao quadrado mais cosseno ao quadrado",
       bullets: [
         "Relação fundamental: \\(\\sin^2\\theta + \\cos^2\\theta = 1\\).",
         "Vem de Pitágoras no círculo de raio 1.",
@@ -721,7 +721,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "rampas-altura", title: "Rampas e altura de prédios" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A forma que se repete para sempre",
       paragraphs: [
         "Quando você desenha o seno para todos os ângulos, surge uma curva ondulada que sobe e desce sem parar: a senoide.",
         "Essa forma é a assinatura de tudo que oscila — som, luz, marés, batimentos cardíacos, sinais de rádio. Reconhecer a onda é entender o mundo cíclico.",
@@ -743,7 +743,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
     },
     plot: "senoide-em-graus",
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do som à corrente elétrica",
       items: [
         { label: "Som", detail: "ondas sonoras e tons puros" },
         { label: "Eletricidade", detail: "tensão da rede (corrente alternada)" },
@@ -759,7 +759,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "No gráfico de \\(y = \\sin(x)\\), em quais ângulos entre 0° e 360° a curva vale 0?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Da amplitude ao período",
       steps: [
         {
           title: "Lembrar o início",
@@ -784,14 +784,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que amplitude e período representam",
       paragraphs: [
         "A onda cruza o zero em 0°, 180° e 360° — pontos onde, numa oscilação, o objeto passa pela posição de equilíbrio.",
         "Esse ritmo regular é o que chamamos de período. Entender onde a onda zera, sobe ou desce é a base para ler qualquer sinal: um som, uma corrente, um pulso.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir amplitude com período",
       items: [
         "Achar que a curva ultrapassa 1 ou −1.",
         "Confundir amplitude (altura) com período (largura).",
@@ -800,7 +800,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Desenhe ondas com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -839,12 +839,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Gráficos trigonométricos no banco",
       intro: "Pratique leitura de gráficos de seno e cosseno no banco de exercícios.",
       exerciseIds: ["trig-ap-11", "trig-ap-12"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Amplitude, período e deslocamento",
       bullets: [
         "O gráfico do seno é uma onda (senoide) entre −1 e 1.",
         "Amplitude = altura; período = comprimento da repetição.",
@@ -867,7 +867,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "ondas-movimento", title: "Ondas e movimento circular" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Medir o que você não consegue alcançar",
       paragraphs: [
         "Toda rampa de acessibilidade, cada telhado e a altura de um prédio que você não pode escalar — tudo isso é trigonometria aplicada.",
         "Com um ângulo e uma distância, engenheiros e arquitetos calculam o que seria impossível medir diretamente. É a trigonometria saindo do papel para a obra.",
@@ -888,7 +888,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "com a base e o ângulo de elevação, a tangente dá a altura",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da rampa de acesso ao prédio vizinho",
       items: [
         { label: "Acessibilidade", detail: "rampas dentro da norma (máx. 8,33%)" },
         { label: "Construção civil", detail: "altura de prédios e torres" },
@@ -904,7 +904,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "A 30 m da base de uma torre, você mede um ângulo de elevação de 45° até o topo. Qual a altura da torre? (\\(\\tan 45^\\circ = 1\\))",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do ângulo à altura",
       steps: [
         {
           title: "Montar o triângulo",
@@ -926,14 +926,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a inclinação encontrada significa",
       paragraphs: [
         "A torre tem 30 m. Medimos a altura sem subir nela, só com uma trena no chão e um instrumento de ângulo.",
         "Se o ângulo medido fosse maior, a torre seria mais alta para a mesma distância. É assim que se levantam alturas de montanhas, prédios e árvores na prática.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Usar a razão errada para o lado conhecido",
       items: [
         "Escolher a razão errada para os lados que você tem.",
         "Esquecer de somar a altura do observador (olho do nível do chão).",
@@ -942,7 +942,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule alturas com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -981,12 +981,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Rampas e alturas no banco",
       intro: "Pratique altura, rampas e ângulos de elevação no banco de exercícios.",
       exerciseIds: ["trig-ap-13", "trig-ap-14"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Ângulo e um lado bastam",
       bullets: [
         "Identifique ângulo e lados (conhecido e procurado) para escolher a razão.",
         "Ângulo de elevação mede alturas a partir do chão.",
@@ -1009,7 +1009,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "engenharia-arquitetura", title: "Engenharia e arquitetura" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Descrever o que vai e volta",
       paragraphs: [
         "Por que o som, a luz, as marés, a roda-gigante e a corrente elétrica usam a mesma matemática? Porque todos se repetem, e seno e cosseno são a linguagem da repetição.",
         "Um ponto girando num círculo, visto de lado, sobe e desce exatamente como uma onda. Movimento circular e onda são a mesma coisa vista de ângulos diferentes.",
@@ -1030,7 +1030,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "A = amplitude · f = frequência (voltas por segundo) · t = tempo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do pêndulo à roda-gigante",
       items: [
         { label: "Som", detail: "frequência define a nota musical" },
         { label: "Roda-gigante", detail: "altura do passageiro no tempo" },
@@ -1046,7 +1046,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Uma roda-gigante tem raio de 10 m e o centro a 12 m do chão. Quando o assento está no ângulo de 90° (topo), qual a altura em relação ao chão?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do movimento circular à onda",
       steps: [
         {
           title: "Modelar a altura",
@@ -1068,14 +1068,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a fase representa no movimento",
       paragraphs: [
         "No topo o passageiro está a 22 m do chão. A mesma fórmula dá a altura em qualquer instante: é uma senoide subindo e descendo enquanto a roda gira.",
         "Trocar o ângulo por tempo transforma a trigonometria numa descrição do movimento. Esse salto — de ângulo para tempo — é o que liga seno e cosseno à física das ondas.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Misturar graus e radianos na mesma conta",
       items: [
         "Esquecer de somar a altura do centro (o eixo da roda).",
         "Confundir frequência (voltas por segundo) com período (tempo por volta).",
@@ -1084,7 +1084,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Modele movimentos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1124,12 +1124,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Ondas e movimento no banco",
       intro: "Pratique movimento circular e ondas no banco de exercícios.",
       exerciseIds: ["trig-ap-15", "trig-ap-16"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Girar e oscilar são a mesma conta",
       bullets: [
         "Movimento circular projetado vira uma onda (senoide).",
         "A altura de um ponto que gira é \\(\\sin\\) do ângulo.",
@@ -1152,7 +1152,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-trigonometria", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Onde o ângulo vira projeto",
       paragraphs: [
         "Pontes, telhados, guindastes e torres ficam de pé porque alguém calculou ângulos e forças com trigonometria. É ela que decide a espessura de uma viga e a inclinação de um cabo.",
         "Quando uma força age em diagonal, separamos ela em \"quanto empurra para os lados\" e \"quanto empurra para cima\" — e isso é seno e cosseno puro.",
@@ -1173,7 +1173,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "cosseno dá a parte horizontal; seno dá a vertical",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do telhado à ponte",
       items: [
         { label: "Pontes", detail: "tensão nos cabos e treliças" },
         { label: "Telhados", detail: "carga distribuída pela inclinação" },
@@ -1189,7 +1189,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Um cabo puxa uma estrutura com força de 100 N num ângulo de 30° com a horizontal. Quais são as componentes horizontal e vertical? (\\(\\cos 30^\\circ \\approx 0{,}87\\); \\(\\sin 30^\\circ = 0{,}5\\))",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do desenho técnico à medida",
       steps: [
         {
           title: "Separar as componentes",
@@ -1212,14 +1212,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a medida calculada garante na obra",
       paragraphs: [
         "A força de 100 N se reparte em 87 N na horizontal e 50 N na vertical. O engenheiro usa cada parte para dimensionar apoios e fundações.",
         "Mudar o ângulo redistribui a força: ângulos maiores aumentam a parte vertical e diminuem a horizontal. É assim que se ajusta o projeto de um cabo ou de um estai.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Arredondar o ângulo cedo demais",
       items: [
         "Trocar seno e cosseno nas componentes (cosseno é a horizontal).",
         "Esquecer que as componentes somam vetorialmente, não diretamente.",
@@ -1228,7 +1228,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Resolva projetos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1267,12 +1267,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Engenharia e arquitetura no banco",
       intro: "Pratique decomposição de forças e ângulos em estruturas no banco de exercícios.",
       exerciseIds: ["trig-ap-17", "trig-ap-18"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Trigonometria como ferramenta de projeto",
       bullets: [
         "Força em diagonal se decompõe em horizontal (\\(F\\cos\\theta\\)) e vertical (\\(F\\sin\\theta\\)).",
         "Cosseno dá a parte horizontal; seno dá a vertical.",
@@ -1295,7 +1295,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       next: { slug: "ideia-aproximacao", title: "Ideia de aproximação", moduleSlug: "preparacao-limites" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Fechar a trigonometria antes do cálculo",
       paragraphs: [
         "A trigonometria começou medindo triângulos e terminou descrevendo ondas, giros e forças. Esta revisão amarra tudo num só fio.",
         "Se você reconhecer qual razão usar e ler uma senoide, levou o essencial — e está pronto para a reta final antes do cálculo.",
@@ -1316,7 +1316,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       formulaLegend: "as duas relações que conectam todo o módulo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde ela volta em derivadas e integrais",
       items: [
         { label: "Construção", detail: "alturas, rampas e telhados" },
         { label: "Física", detail: "forças, ondas e movimento circular" },
@@ -1332,7 +1332,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
         "Uma rampa de 10 m faz 30° com o chão. Qual a altura ganha (use seno) e o avanço horizontal (use cosseno)? (\\(\\sin 30^\\circ = 0{,}5\\); \\(\\cos 30^\\circ \\approx 0{,}87\\))",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Revisar do ciclo às aplicações",
       steps: [
         {
           title: "Identificar os lados",
@@ -1357,14 +1357,14 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que já está no automático",
       paragraphs: [
         "Com um único triângulo, seno e cosseno deram as duas medidas que importam na obra: o quanto se sobe e o quanto se anda.",
         "A relação fundamental serviu de prova real — sinal de que você domina as peças e como elas se encaixam. É isso que leva para o cálculo.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "As trocas que mais custam pontos",
       items: [
         "Trocar a razão pelo par de lados errado.",
         "Esquecer a relação \\(\\sin^2\\theta + \\cos^2\\theta = 1\\) para conferir.",
@@ -1373,7 +1373,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise trigonometria com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1413,12 +1413,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Trigonometria básica no banco",
       intro: "Revise todo o módulo de trigonometria no banco de exercícios.",
       exerciseIds: ["trig-ap-19", "trig-ap-20", "dsf-trig-01"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Ciclo, identidades e ondas",
       bullets: [
         "SOH-CAH-TOA: as três razões e seus pares de lados.",
         "Ciclo trigonométrico estende tudo para qualquer ângulo.",

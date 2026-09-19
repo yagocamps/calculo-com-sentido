@@ -17,7 +17,7 @@ export const oQueECalculo1Aula: AulaContent = {
     },
   },
   porQue: {
-    title: "Antes da fórmula, o sentido",
+    title: "Saber o que vem pela frente tira o medo",
     paragraphs: [
       "Cálculo 1 não é uma lista de fórmulas para decorar. É o estudo de como as coisas mudam e de como somar efeitos pequenos para obter um total.",
       "Na faculdade você vai encontrar limites, derivadas e integrais — mas todos respondem perguntas que você já faz no dia a dia: \"até onde isso vai?\", \"quão rápido muda?\", \"quanto acumulou no total?\"",
@@ -82,7 +82,7 @@ export const oQueECalculo1Aula: AulaContent = {
     ],
   },
   erros: {
-    title: "Armadilhas que valem atenção",
+    title: "As crenças que atrapalham antes de começar",
     items: [
       "Achar que Cálculo é só álgebra com letras diferentes.",
       "Decorar fórmulas sem saber o que cada símbolo mede na prática.",
@@ -91,7 +91,7 @@ export const oQueECalculo1Aula: AulaContent = {
     ],
   },
   exerciciosGuiados: {
-    title: "Prática em camadas",
+    title: "Situe-se no cálculo com apoio",
     exercises: [
       {
         id: "c1-g1",
@@ -128,12 +128,12 @@ export const oQueECalculo1Aula: AulaContent = {
     ],
   },
   exerciciosAplicados: {
-    title: "Continue praticando",
+    title: "Visão geral do cálculo no banco",
     intro: "Em breve: banco de exercícios dedicado ao módulo Antes do Cálculo.",
     exerciseIds: [],
   },
   resumo: {
-    title: "O que precisa ficar",
+    title: "Cálculo estuda mudança e acumulação",
     bullets: [
       "Cálculo 1 estuda mudança (derivada) e acúmulo (integral), com limites como base.",
       "Tudo se apoia em funções e gráficos — revise o Pré-Cálculo quando precisar.",

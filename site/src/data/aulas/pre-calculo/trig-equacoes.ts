@@ -55,7 +55,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
     },
     plot: "seno-igual-meio-ciclo",
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Achar o ângulo a partir do valor",
       paragraphs: [
         "Até aqui a pergunta foi sempre a mesma: dado o ângulo, quanto vale o seno? \\(\\sin 30^\\circ = \\frac{1}{2}\\). Esta aula faz a pergunta ao contrário: dado o seno, qual é o ângulo?",
         "Ela aparece sempre que algo oscila e você quer saber quando. Em que instante a cadeira da roda-gigante está a certa altura? Em que momento a tensão da tomada atinge um valor? Em Cálculo, onde a derivada de uma função com seno se anula?",
@@ -83,7 +83,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       formulaLegend: "θ é um ângulo com o seno (ou cosseno) igual a a; k é qualquer inteiro; em radianos, 360° vira 2π",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde você conhece a medida e quer o ângulo",
       items: [
         { label: "Cálculo", detail: "pontos críticos de funções com seno e cosseno" },
         { label: "Roda-gigante", detail: "quando a cadeira está a certa altura" },
@@ -98,7 +98,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       situacao: "Resolva \\(\\sin x = \\frac{1}{2}\\) para \\(0^\\circ \\leq x < 360^\\circ\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do valor ao ângulo, e depois às voltas",
       steps: [
         {
           title: "Achar um ângulo de referência",
@@ -120,14 +120,14 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Por que existe mais de uma resposta",
       paragraphs: [
         "No círculo acima, a linha da altura \\(\\frac{1}{2}\\) encontra o círculo em dois pontos, e cada raio faz \\(30^\\circ\\) com o seu lado do eixo horizontal. É por isso que a segunda solução é \\(180^\\circ - 30^\\circ\\), e não \\(30^\\circ + 90^\\circ\\) ou qualquer outro palpite.",
         "Sem o intervalo, as soluções seriam infinitas: \\(x = 30^\\circ + k \\cdot 360^\\circ\\) ou \\(x = 150^\\circ + k \\cdot 360^\\circ\\). Em radianos, \\(x = \\frac{\\pi}{6} + 2k\\pi\\) ou \\(x = \\frac{5\\pi}{6} + 2k\\pi\\) — é assim que o Cálculo vai pedir.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Parar na primeira solução encontrada",
       items: [
         "Parar na primeira solução (\\(30^\\circ\\)) e esquecer a simétrica (\\(150^\\circ\\)).",
         "Trocar as simetrias: \\(180^\\circ - \\theta\\) é a do seno; \\(360^\\circ - \\theta\\) é a do cosseno. \\(\\sin 330^\\circ = -\\frac{1}{2}\\), não \\(\\frac{1}{2}\\).",
@@ -136,7 +136,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Resolva equações com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -180,12 +180,12 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Equações trigonométricas no banco",
       intro: "Seno e cosseno com sinais diferentes, e o caso em que não há solução.",
       exerciseIds: ["trig-eq-01", "trig-eq-02", "trig-eq-03"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Uma equação, infinitas voltas",
       bullets: [
         "Resolver \\(\\sin x = a\\) é achar os pontos do círculo com altura \\(a\\).",
         "Se \\(-1 < a < 1\\), há duas soluções por volta; se \\(a = \\pm 1\\), uma; se \\(|a| > 1\\), nenhuma.",
@@ -228,7 +228,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
     },
     plot: "seno-2x-igual-meio",
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando a equação não se entrega de primeira",
       paragraphs: [
         "As equações de prova raramente chegam prontas como \\(\\sin x = \\frac{1}{2}\\). O ângulo aparece multiplicado, como em \\(\\sin 2x\\); o seno aparece ao quadrado; ou seno e cosseno aparecem juntos na mesma igualdade.",
         "Todas elas são uma \\(\\sin u = a\\) disfarçada. O trabalho desta aula é tirar o disfarce sem perder solução no caminho — e é justamente no caminho que se perdem as soluções.",
@@ -256,7 +256,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       formulaLegend: "se x percorre uma volta, u = bx percorre b voltas",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a equação vem disfarçada",
       items: [
         { label: "Cálculo", detail: "f′(x) = 0 em funções como \\(x + 2\\cos x\\)" },
         { label: "Eletricidade", detail: "sinais com o dobro da frequência da rede" },
@@ -271,7 +271,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       situacao: "Resolva \\(\\sin 2x = \\frac{1}{2}\\) para \\(0^\\circ \\leq x < 360^\\circ\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Reduzir até sobrar uma razão só",
       steps: [
         {
           title: "Trocar o ângulo",
@@ -293,14 +293,14 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que cada solução representa no ciclo",
       paragraphs: [
         "No gráfico acima, \\(\\sin 2x\\) é a senoide comprimida: completa duas ondas no espaço de uma, e por isso passa pela altura \\(\\frac{1}{2}\\) quatro vezes. Quem resolve \\(\\sin u = \\frac{1}{2}\\) só na primeira volta encontra \\(15^\\circ\\) e \\(75^\\circ\\) e perde metade das respostas.",
         "O mesmo raciocínio aparece em Cálculo. Se \\(f(x) = x + 2\\cos x\\), a derivada é \\(f'(x) = 1 - 2\\sin x\\), e \\(f'(x) = 0\\) é exatamente \\(\\sin x = \\frac{1}{2}\\): a equação da aula anterior, agora a serviço de achar onde o gráfico fica plano.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Dividir por um termo que pode ser zero",
       items: [
         "Tratar \\(\\sin 2x\\) como \\(2\\sin x\\). São funções diferentes: em \\(x = 90^\\circ\\), \\(\\sin 180^\\circ = 0\\), mas \\(2\\sin 90^\\circ = 2\\).",
         "Esquecer de ampliar o intervalo de \\(u\\) e perder as soluções da segunda volta.",
@@ -309,7 +309,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Reduza equações com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -354,12 +354,12 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Equações com mais passos no banco",
       intro: "Solução geral em radianos, ângulo multiplicado e a duração do dia ao longo do ano.",
       exerciseIds: ["trig-eq-04", "trig-eq-05", "trig-eq-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Simplificar antes de resolver",
       bullets: [
         "Toda equação desta aula é uma \\(\\sin u = a\\) disfarçada.",
         "Ângulo multiplicado: troque \\(bx\\) por \\(u\\) e amplie o intervalo para \\(b\\) voltas.",

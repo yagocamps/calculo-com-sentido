@@ -18,7 +18,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       next: { slug: "isolamento-variaveis", title: "Isolamento de variáveis" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Deixar a expressão do jeito que ajuda",
       paragraphs: [
         "Uma expressão algébrica é só uma conta com letra no lugar de um número que você ainda não sabe. \"3 maçãs + 2 maçãs\" vira \"\\(3x + 2x\\)\" — e dá \\(5x\\), do mesmo jeito que daria 5 maçãs.",
         "Manipular expressão é arrumar a bagunça: juntar o que é parecido, abrir parênteses, deixar tudo mais curto antes de resolver.",
@@ -39,7 +39,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "a propriedade distributiva, que abre os parênteses",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde simplificar economiza tempo",
       items: [
         { label: "Equações", detail: "simplificar antes de isolar a incógnita" },
         { label: "Funções", detail: "deixar a fórmula na forma mais simples" },
@@ -55,7 +55,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Simplifique: \\(2(x + 3) + 4x - 5\\). Tem parêntese para abrir e termos parecidos para juntar.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Agrupar antes de calcular",
       steps: [
         {
           title: "Abrir o parêntese (distributiva)",
@@ -73,14 +73,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a forma simplificada revela",
       paragraphs: [
         "\\(6x + 1\\) é a mesma expressão de antes, só que arrumada. Para qualquer valor de \\(x\\), as duas dão o mesmo número — só que esta é mais fácil de usar.",
         "Repare que não dá para juntar \\(6x\\) com \\(1\\): um tem letra, o outro não. São unidades diferentes, e por isso o resultado fica com dois termos.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Distribuir o sinal pela metade",
       items: [
         "Somar termos diferentes: \\(6x + 1\\) não é \\(7x\\).",
         "Esquecer de distribuir para todos os termos do parêntese.",
@@ -89,7 +89,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Simplifique com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -130,12 +130,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Expressões algébricas no banco",
       intro: "Treine simplificação de expressões no banco de exercícios do site.",
       exerciseIds: ["alg-ap-01", "alg-ap-02"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Simplificar é reescrever, não mudar",
       bullets: [
         "Só some/subtraia termos semelhantes (mesma letra e expoente).",
         "Distributiva: \\(a(b + c) = ab + ac\\) abre os parênteses.",
@@ -158,7 +158,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       next: { slug: "inequacoes", title: "Inequações" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Tirar da fórmula a letra que você quer",
       paragraphs: [
         "Isolar uma variável é deixá-la sozinha de um lado do igual: \"x = alguma coisa\". É como descascar uma fruta — você tira tudo que está em volta do x até ele ficar exposto.",
         "Essa é a habilidade mais usada de toda a matemática: resolver equação, inverter uma fórmula de física, achar quanto você pode gastar. Tudo é isolar.",
@@ -179,7 +179,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "isolando x em uma equação do primeiro grau",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a fórmula precisa ser virada",
       items: [
         { label: "Física", detail: "isolar a velocidade em v = d/t" },
         { label: "Finanças", detail: "achar quanto economizar por mês" },
@@ -195,7 +195,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Você guarda dinheiro com a regra \\(T = 50m + 200\\) (total \\(T\\) após \\(m\\) meses, começando com R$ 200). Quantos meses para juntar R$ 950? Isole \\(m\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Desfazer operação por operação",
       steps: [
         {
           title: "Escrever a equação com o valor pedido",
@@ -213,14 +213,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "A mesma relação, outra leitura",
       paragraphs: [
         "\\(m = 15\\) meses é o tempo para juntar R$ 950 nesse ritmo. Isolar a variável transformou \"quanto tempo?\" em uma conta direta.",
         "A ordem das operações inversas importa: tiramos primeiro o que estava somando (\\(200\\)) e depois o que estava multiplicando (\\(50\\)) — o contrário da ordem normal das operações.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Dividir só um lado da igualdade",
       items: [
         "Fazer a operação só de um lado da igualdade.",
         "Dividir antes de tirar o termo que está somando.",
@@ -229,7 +229,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Isole variáveis com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -269,12 +269,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Isolamento de variáveis no banco",
       intro: "Pratique isolamento de variáveis e inversão de fórmulas no banco do site.",
       exerciseIds: ["alg-ap-03", "alg-ap-04"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Desfazer na ordem inversa",
       bullets: [
         "Isolar = deixar a variável sozinha de um lado do igual.",
         "Use a operação inversa: soma↔subtração, multiplicação↔divisão.",
@@ -297,7 +297,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       next: { slug: "quadro-de-sinais", title: "Quadro de sinais" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando a resposta é uma faixa, não um ponto",
       paragraphs: [
         "Nem tudo na vida é \"igual a\". Muita coisa é \"no máximo\", \"pelo menos\", \"acima de\": o limite de peso no elevador, o mínimo de pontos para passar, o teto do orçamento.",
         "Inequação é a equação dessas situações. Em vez de um único valor, a resposta é uma faixa de valores que funcionam.",
@@ -318,7 +318,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "ao multiplicar por menos um, a desigualdade inverte",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde existe um mínimo ou um teto",
       items: [
         { label: "Elevador", detail: "peso total \\(\\leq\\) capacidade máxima" },
         { label: "Provas", detail: "pelo menos X pontos para aprovar" },
@@ -334,7 +334,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Você tem R$ 100 para gastar. Cada ingresso custa R$ 18 e você já gastou R$ 10 de transporte. Quantos ingressos no máximo dá para comprar? Monte como inequação.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Resolver como equação, vigiando o sinal",
       steps: [
         {
           title: "Montar a inequação",
@@ -356,14 +356,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o intervalo encontrado permite",
       paragraphs: [
         "\\(x \\leq 5\\) quer dizer \"no máximo 5 ingressos\". A resposta não é um número só, e sim todos os valores que respeitam o orçamento.",
         "Como ingresso é coisa inteira, na prática a resposta vai de 0 a 5. O símbolo \\(\\leq\\) inclui o 5, porque gastar exatamente R$ 100 ainda está dentro do limite.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Manter o sinal ao multiplicar por negativo",
       items: [
         "Esquecer de virar o sinal ao multiplicar/dividir por negativo.",
         "Tratar a resposta como um único número, e não como um intervalo.",
@@ -372,7 +372,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Resolva inequações com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -413,12 +413,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Inequações no banco",
       intro: "Pratique inequações e problemas de limite no banco de exercícios.",
       exerciseIds: ["alg-ap-05", "alg-ap-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Multiplicar por negativo inverte o sinal",
       bullets: [
         "Inequação resolve-se quase igual a uma equação.",
         "Multiplicar/dividir por negativo VIRA o sinal da desigualdade.",
@@ -441,7 +441,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       next: { slug: "simplificacao", title: "Simplificação algébrica" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Duas informações, duas incógnitas",
       paragraphs: [
         "Às vezes você tem duas coisas desconhecidas ao mesmo tempo: quantos adultos e quantas crianças, o preço do café e o do pão. Uma equação só não basta.",
         "Um sistema junta duas (ou mais) equações que valem ao mesmo tempo. A resposta é o par de valores que satisfaz as duas de uma vez.",
@@ -462,7 +462,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "somando as duas equações o y se cancela",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde duas condições se cruzam",
       items: [
         { label: "Compras", detail: "descobrir dois preços a partir de dois totais" },
         { label: "Eventos", detail: "quantos adultos e crianças por bilheteria" },
@@ -478,7 +478,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "2 cafés e 1 pão custam R$ 17. 1 café e 1 pão custam R$ 11. Qual o preço de cada um? Chame café de \\(x\\) e pão de \\(y\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Substituição ou soma, e por quê",
       steps: [
         {
           title: "Montar o sistema",
@@ -501,14 +501,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O ponto onde as duas valem juntas",
       paragraphs: [
         "Café custa R$ 6 e pão R$ 5. Esse par é o único que satisfaz as duas situações ao mesmo tempo — por isso precisávamos das duas equações.",
         "Subtrair as equações foi esperto: o \\(y\\) tinha coeficiente igual nas duas, então sumiu e sobrou só o \\(x\\). Esse é o coração do método da adição/eliminação.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Achar o x e esquecer de achar o y",
       items: [
         "Resolver uma equação só e achar que terminou.",
         "Errar o sinal ao subtrair equações inteiras.",
@@ -517,7 +517,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Resolva sistemas com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -558,12 +558,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Sistemas de equações no banco",
       intro: "Pratique sistemas por substituição e adição no banco de exercícios.",
       exerciseIds: ["alg-ap-07", "alg-ap-08"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Uma solução que serve às duas",
       bullets: [
         "Sistema = duas equações que valem ao mesmo tempo.",
         "Substituição: isole uma variável e troque na outra equação.",
@@ -586,7 +586,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       next: { slug: "orcamentos-planos", title: "Orçamentos e planos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Menos termos, menos chance de errar",
       paragraphs: [
         "Simplificar é deixar uma expressão na forma mais curta e limpa, sem mudar o valor dela. É como reduzir uma fração: 4/8 e 1/2 são a mesma coisa, mas 1/2 é mais fácil de usar.",
         "Em álgebra, expressões grandes escondem o que importa. Simplificar revela a estrutura e evita erros nas contas seguintes.",
@@ -607,7 +607,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "o fator comum c cancela em cima e embaixo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a expressão longa trava a conta",
       items: [
         { label: "Frações", detail: "reduzir à forma mais simples" },
         { label: "Funções", detail: "limpar a fórmula antes de usar" },
@@ -623,7 +623,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Simplifique a fração \\( \\frac{x^2 + 3x}{x} \\). Há um fator comum escondido no numerador.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Fatorar antes de cancelar",
       steps: [
         {
           title: "Fatorar o numerador",
@@ -641,14 +641,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Por que a forma curta é a mesma expressão",
       paragraphs: [
         "\\(x + 3\\) é a mesma expressão, muito mais simples. Para qualquer \\(x\\) (diferente de 0), as duas dão o mesmo valor.",
         "O passo decisivo foi fatorar antes de cortar. Sem fatorar, alguém tentaria cancelar o \\(x\\) direto e erraria, porque o \\(3x\\) estava somando.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Cancelar termo que está somando",
       items: [
         "Cancelar termos que estão somando: \\(\\frac{x + 2}{2}\\) não vira \\(x\\).",
         "Cortar antes de fatorar e perder o fator comum.",
@@ -657,7 +657,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Simplifique expressões com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -697,12 +697,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Simplificação no banco",
       intro: "Pratique simplificação de frações algébricas no banco de exercícios.",
       exerciseIds: ["alg-ap-09", "alg-ap-10"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Só se cancela o que multiplica",
       bullets: [
         "Simplificar = forma mais curta sem mudar o valor.",
         "Só cancele fatores que multiplicam o numerador e o denominador inteiros.",
@@ -725,7 +725,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       next: { slug: "custos-producao", title: "Custos de produção" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Comparar planos sem cair no marketing",
       paragraphs: [
         "Quase todo plano que você contrata tem duas partes: um valor fixo que paga sempre, e um valor que varia com o uso. Conta de celular, academia, internet, conta de luz.",
         "Escrever isso como expressão (fixo + variável × quantidade) deixa fácil comparar planos e prever quanto vai pagar.",
@@ -746,7 +746,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "custo total = parte fixa F mais preço por unidade p vezes a quantidade x",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do plano de celular ao aluguel de equipamento",
       items: [
         { label: "Celular", detail: "mensalidade + custo por GB extra" },
         { label: "Academia", detail: "matrícula + mensalidade" },
@@ -762,7 +762,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Plano A: R$ 30 fixos + R$ 2 por GB. Plano B: R$ 50 fixos + R$ 1 por GB. A partir de quantos GB o plano B compensa?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Montar as duas contas e igualar",
       steps: [
         {
           title: "Escrever a expressão de cada plano",
@@ -784,14 +784,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "A partir de quanto o outro plano compensa",
       paragraphs: [
         "O plano B compensa a partir de 20 GB. Antes disso, a mensalidade alta dele não vale a pena; depois, o preço menor por GB ganha.",
         "Repare que quem tem a parte variável menor (B, com R$ 1/GB) sempre vence no uso alto. A parte fixa só decide quem ganha no uso baixo.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Comparar mensalidades ignorando o consumo",
       items: [
         "Comparar só a parte fixa e ignorar o custo por uso.",
         "Esquecer de multiplicar o preço unitário pela quantidade.",
@@ -800,7 +800,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Compare planos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -841,12 +841,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Orçamentos e planos no banco",
       intro: "Pratique comparação de planos e orçamentos no banco de exercícios.",
       exerciseIds: ["alg-ap-11", "alg-ap-12"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Parte fixa, parte variável, ponto de virada",
       bullets: [
         "Plano: custo = parte fixa + preço por unidade × quantidade.",
         "Comparar planos = igualar expressões e achar o ponto de equilíbrio.",
@@ -869,7 +869,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       next: { slug: "receita-despesa", title: "Receita e despesa" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Saber quanto custa fazer mais um",
       paragraphs: [
         "Quem produz qualquer coisa — pão, camiseta, app — tem dois tipos de custo: o que paga uma vez (aluguel, máquina) e o que paga por item feito (ingrediente, tecido).",
         "Entender essa separação explica por que produzir mais barateia cada unidade, e a partir de quanto vale a pena ligar a fábrica.",
@@ -890,7 +890,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "custo total e custo por unidade produzida",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da padaria à linha de montagem",
       items: [
         { label: "Padaria", detail: "forno (fixo) + farinha por pão (variável)" },
         { label: "Confecção", detail: "máquina + tecido por peça" },
@@ -906,7 +906,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Você gasta R$ 200 fixos por mês (gás, equipamento) e R$ 8 de ingredientes por bolo. Qual o custo total e o custo por bolo se fizer 50 bolos?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Separar o que é fixo do que escala",
       steps: [
         {
           title: "Montar o custo total",
@@ -932,14 +932,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Quanto pesa cada unidade a mais",
       paragraphs: [
         "Cada bolo custa R$ 12 quando você faz 50. O custo por unidade caiu porque os R$ 200 fixos se dividiram entre mais bolos.",
         "Isso explica o ganho de escala: quanto mais você produz, menor o peso do custo fixo em cada item — até o limite da sua capacidade.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Tratar custo fixo como se fosse variável",
       items: [
         "Esquecer o custo fixo ao calcular o total.",
         "Dividir só o custo variável pela quantidade ao achar o unitário.",
@@ -948,7 +948,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Modele custos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -987,12 +987,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Custos de produção no banco",
       intro: "Pratique cálculo de custo total e unitário no banco de exercícios.",
       exerciseIds: ["alg-ap-13", "alg-ap-14"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Custo total é fixo mais variável",
       bullets: [
         "Custo total = custo fixo + custo variável × quantidade.",
         "Custo por unidade = custo total ÷ quantidade.",
@@ -1015,7 +1015,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-algebra", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Descobrir quando o negócio para de perder",
       paragraphs: [
         "Todo negócio vive de uma conta simples: quanto entra menos quanto sai. O que entra é a receita; o que sai é a despesa; a diferença é o lucro (ou o prejuízo).",
         "Saber a partir de quantas vendas você para de ter prejuízo — o ponto de equilíbrio — é uma das contas mais úteis que existem.",
@@ -1036,7 +1036,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "ponto de equilíbrio: receita igual ao custo total",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o ponto de equilíbrio decide",
       items: [
         { label: "Pequeno negócio", detail: "quantas vendas para cobrir os custos" },
         { label: "Eventos", detail: "ingressos mínimos para não ter prejuízo" },
@@ -1052,7 +1052,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Você vende brigadeiros a R$ 3 cada. Tem R$ 120 de custo fixo e gasta R$ 1 de ingredientes por brigadeiro. Quantos precisa vender para empatar (lucro zero)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Igualar receita e despesa",
       steps: [
         {
           title: "Montar receita e custo",
@@ -1070,14 +1070,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que acontece antes e depois do equilíbrio",
       paragraphs: [
         "Você precisa vender 60 brigadeiros para empatar. A partir do 61º, cada um deixa R$ 2 de lucro (preço R$ 3 menos R$ 1 de ingrediente).",
         "O número 2 do denominador (\\(p - v = 3 - 1\\)) é a margem por unidade: quanto cada venda contribui para cobrir o fixo. Quanto maior a margem, menos vendas para empatar.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir receita com lucro",
       items: [
         "Confundir receita (só o que entra) com lucro (entra menos sai).",
         "Esquecer o custo variável e dividir o fixo só pelo preço.",
@@ -1086,7 +1086,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Ache o equilíbrio com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1127,12 +1127,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Receita e despesa no banco",
       intro: "Pratique lucro e ponto de equilíbrio no banco de exercícios.",
       exerciseIds: ["alg-ap-15", "alg-ap-16"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Equilíbrio é receita igual a custo",
       bullets: [
         "Receita = preço × quantidade; lucro = receita − custo.",
         "Ponto de equilíbrio: receita = custo, lucro zero.",
@@ -1159,7 +1159,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Deixar a álgebra pronta para funções",
       paragraphs: [
         "A álgebra inteira deste módulo serve a um propósito só: transformar situações em expressões e resolver para a resposta que você quer.",
         "Você aprendeu a simplificar, isolar, comparar com desigualdade, resolver sistemas e aplicar tudo a orçamentos, custos e lucro. Esta aula amarra os fios.",
@@ -1178,7 +1178,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       formulaLegend: "o fluxo que conecta todas as aulas do módulo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a álgebra segura o resto do curso",
       items: [
         { label: "Funções", detail: "o próximo módulo usa tudo isto" },
         { label: "Finanças", detail: "planos, custos e lucro no dia a dia" },
@@ -1194,7 +1194,7 @@ export const algebraAulas: Record<string, AulaContent> = {
         "Uma oficina cobra R$ 60 fixos + R$ 40 por hora. Outra cobra R$ 100 fixos + R$ 30 por hora. A partir de quantas horas a segunda compensa, e quanto custa nesse ponto?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Revisar do mais simples ao aplicado",
       steps: [
         {
           title: "Montar as expressões",
@@ -1212,14 +1212,14 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que já está automático",
       paragraphs: [
         "Em 4 horas as duas oficinas custam R$ 220. Acima disso, a oficina B (menor preço por hora) compensa; abaixo, a A.",
         "Repare como o problema usou o módulo inteiro: montar expressões (aula 1), juntar termos semelhantes (aula 1), isolar a variável (aula 2) e a lógica de planos (aula 6). É tudo a mesma caixa de ferramentas.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Os deslizes que voltam sempre",
       items: [
         "Comparar planos olhando só a parte fixa.",
         "Errar o sinal ao juntar termos dos dois lados.",
@@ -1228,7 +1228,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise álgebra com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1268,12 +1268,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Álgebra essencial no banco",
       intro: "Revise todo o módulo de álgebra com exercícios variados no banco do site.",
       exerciseIds: ["alg-ap-17", "alg-ap-18", "dsf-alg-01"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "As manipulações que precisam ser automáticas",
       bullets: [
         "Fluxo: situação → expressão → simplificar → isolar/igualar → interpretar.",
         "Simplificar e isolar são a base de toda resolução.",

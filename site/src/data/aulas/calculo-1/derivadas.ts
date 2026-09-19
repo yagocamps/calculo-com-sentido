@@ -17,7 +17,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "variacao-instantanea", title: "Variação instantânea" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quanto mudou, em média, no trecho",
       paragraphs: [
         "Antes de falar de \"agora\", medimos mudança em um trecho: quanto a posição mudou entre dois instantes, quanto o lucro mudou entre duas quantidades.",
         "Variação média é a inclinação da reta que liga dois pontos do gráfico — a secante.",
@@ -38,7 +38,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       callout: "Unidades: (unidade de f) por (unidade de x).",
     },
     ondeAparece: {
-      title: "Exemplos",
+      title: "Onde a média já basta",
       items: [
         { label: "Viagem", detail: "Velocidade média \\(= \\frac{\\Delta s}{\\Delta t}\\)" },
         { label: "Economia", detail: "Custo médio por unidade extra no trecho" },
@@ -50,7 +50,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "Posição de \\(t = 1\\) s a \\(t = 3\\) s. Variação média de posição?",
     },
     passos: {
-      title: "Cálculo",
+      title: "Montar o quociente das diferenças",
       steps: [
         { title: "Valores", detail: "\\(s(1)=1\\), \\(s(3)=9\\)." },
         { title: "Δs", detail: "\\(9 - 1 = 8\\) m." },
@@ -59,14 +59,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que a variação média informa",
       paragraphs: [
         "4 m/s não garante que em cada instante a velocidade foi 4 — só descreve o trecho.",
         "Derivada virá quando \\(\\Delta t \\to 0\\).",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Dividir a variação pelo valor, não pelo intervalo",
       items: [
         "Trocar \\(f(b)-f(a)\\) por \\(f(a)-f(b)\\) sem ajustar sinal.",
         "Dividir por \\((a-b)\\) em vez de \\((b-a)\\).",
@@ -74,7 +74,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule variação média com apoio",
       exercises: [
         {
           id: "vm-g1",
@@ -103,9 +103,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-01", "der-ap-02"] },
+    exerciciosAplicados: { title: "Variação média no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-01", "der-ap-02"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Diferença de saída sobre diferença de entrada",
       bullets: [
         "Variação média \\(= \\frac{\\Delta f}{\\Delta x}\\) no intervalo.",
         "É inclinação da secante.",
@@ -124,7 +124,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "reta-secante-tangente", title: "Reta secante e tangente" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Do trecho inteiro para o instante",
       paragraphs: [
         "O velocímetro mostra velocidade agora, não só a média da viagem.",
         "Variação instantânea pergunta: se o intervalo ficar minúsculo, para qual taxa a mudança tende?",
@@ -132,7 +132,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Ideia",
+      title: "O instante como intervalo que some",
       paragraphs: [
         "Aproxime b de a: médias cada vez mais perto da inclinação no ponto.",
         "Esse limite é a taxa instantânea de mudança de f em a.",
@@ -144,7 +144,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       callout: "Mesma ideia de limite que você já estudou.",
     },
     ondeAparece: {
-      title: "Contextos",
+      title: "Onde o instante importa mais que o trecho",
       items: [
         { label: "Velocidade instantânea", detail: "Derivada de posição" },
         { label: "Marginal", detail: "Custo de mais uma unidade" },
@@ -156,7 +156,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "Velocidade instantânea em \\(t = 2\\) s?",
     },
     passos: {
-      title: "Esboço",
+      title: "Desenhar o intervalo encolhendo",
       steps: [
         { title: "Média em [2, 2+h]", detail: "\\(\\frac{(2+h)^2-4}{h} = 4+h\\)." },
         { title: "h → 0", detail: "Tende a 4 m/s." },
@@ -164,21 +164,21 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Mensagem",
+      title: "O que o valor no instante informa",
       paragraphs: [
         "Instantâneo = limite do médio.",
         "Próxima aula nomeia a reta tangente.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Usar dois pontos distantes como instante",
       items: [
         "Usar média de viagem inteira como instantânea.",
         "Esquecer limite quando o ponto é problemático.",
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aproxime o instante com apoio",
       exercises: [
         {
           id: "vi-g1",
@@ -207,9 +207,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-03", "der-ap-04"] },
+    exerciciosAplicados: { title: "Variação instantânea no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-03", "der-ap-04"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Encurtar o intervalo até quase zero",
       bullets: [
         "Instantânea = limite da variação média.",
         "Velocidade no ponto = limite de \\(\\frac{\\Delta s}{\\Delta t}\\).",
@@ -229,7 +229,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "definicao-derivada", title: "Definição de derivada" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A reta que encosta em vez de cortar",
       paragraphs: [
         "Secante corta a curva em dois pontos; tangente toca em um ponto sem \"atravessar\" localmente.",
         "Inclinação da tangente = taxa instantânea = derivada.",
@@ -248,7 +248,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       callout: "Equação da tangente: \\(y - f(a) = m(x - a)\\).",
     },
     ondeAparece: {
-      title: "Uso",
+      title: "Onde a inclinação vira resposta",
       items: [
         { label: "Aproximação", detail: "Linearizar perto de um ponto" },
         { label: "Física", detail: "Direção do movimento instantâneo" },
@@ -260,7 +260,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "Inclinação da tangente?",
     },
     passos: {
-      title: "Passos",
+      title: "Da secante à tangente, passo a passo",
       steps: [
         { title: "Secante", detail: "\\(\\frac{(1+h)^2-1}{h} = 2+h\\)." },
         { title: "Limite", detail: "\\(h \\to 0 \\Rightarrow m = 2\\)." },
@@ -268,21 +268,21 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que a inclinação da tangente diz",
       paragraphs: [
         "Perto de \\((1,1)\\), a parábola parece uma reta de inclinação 2.",
         "Derivada em \\(a\\) é inclinação da tangente.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Traçar a secante achando que é tangente",
       items: [
         "Confundir secante com tangente antes do limite.",
         "Tangente em quina (\\(|x|\\) em 0) não é única clássica.",
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Compare secante e tangente com apoio",
       exercises: [
         {
           id: "st-g1",
@@ -311,9 +311,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-05", "der-ap-06"] },
+    exerciciosAplicados: { title: "Secante e tangente no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-05", "der-ap-06"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Secante vira tangente no limite",
       bullets: [
         "Secante → tangente quando \\(h \\to 0\\).",
         "Inclinação da tangente = derivada em \\(a\\).",
@@ -332,7 +332,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "regras-derivacao", title: "Regras de derivação" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A fórmula que formaliza a ideia",
       paragraphs: [
         "A derivada nomeia o que construímos: taxa instantânea de mudança.",
         "Notação \\(f'(a)\\) ou \\(\\frac{df}{dx}\\) em \\(a\\) — ferramenta central do Cálculo 1.",
@@ -366,7 +366,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(f'(3)\\) pela definição.",
     },
     passos: {
-      title: "Cálculo",
+      title: "Aplicar a definição com cuidado",
       steps: [
         { title: "Diferença", detail: "\\[\\frac{(3+h)^2-9}{h} = \\frac{6h+h^2}{h} = 6+h\\]" },
         { title: "Limite", detail: "\\(f'(3)=6\\)." },
@@ -381,7 +381,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Cancelar termos antes de simplificar direito",
       items: [
         "Esquecer de tomar o limite após simplificar.",
         "Cancelar h quando não é fator comum válido.",
@@ -389,7 +389,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Use a definição com apoio",
       exercises: [
         {
           id: "def-g1",
@@ -418,9 +418,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-07", "der-ap-08"] },
+    exerciciosAplicados: { title: "Definição de derivada no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-07", "der-ap-08"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O limite do quociente incremental",
       bullets: [
         "\\(f'(a)\\) = limite do quociente de diferenças.",
         "Tangente, velocidade, marginal = mesma ideia.",
@@ -440,7 +440,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "derivada-potencia", title: "Derivada de potências" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Parar de usar a definição toda vez",
       paragraphs: [
         "Recalcular limite em cada exercício não escala. Regras são atalhos comprovados a partir da definição.",
         "Organizam o cálculo em blocos: constante, soma, produto, quociente, cadeia.",
@@ -489,7 +489,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Escolher a regra errada para a estrutura",
       items: [
         "Derivar produto como se fosse soma.",
         "Esquecer g′ na cadeia.",
@@ -497,7 +497,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Escolha a regra com apoio",
       exercises: [
         {
           id: "reg-g1",
@@ -526,9 +526,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-09", "der-ap-10"] },
+    exerciciosAplicados: { title: "Regras de derivação no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-09", "der-ap-10"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Reconhecer a estrutura antes de derivar",
       bullets: [
         "Regras evitam limite em todo exercício.",
         "Soma, produto, quociente, cadeia — arsenal principal.",
@@ -548,7 +548,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "derivada-produto-quociente", title: "Produto e quociente" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A regra que resolve a maioria dos casos",
       paragraphs: [
         "A regra (x^n)′ = n x^(n−1) é a mais usada em Cálculo 1.",
         "Polinômios viram retas inclinadas termo a termo.",
@@ -567,7 +567,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       formulaLegend: "válida para n racional em domínio adequado",
     },
     ondeAparece: {
-      title: "Exemplos",
+      title: "Onde a regra da potência resolve",
       items: [
         { label: "Área", detail: "\\(x^2\\) em dimensões" },
         { label: "Custo", detail: "Termos quadráticos de escala" },
@@ -579,7 +579,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(f'(x)\\)?",
     },
     passos: {
-      title: "Derivar",
+      title: "Baixar o expoente termo a termo",
       steps: [
         { title: "x⁴", detail: "\\(\\to 4x^3\\)." },
         { title: "−3x²", detail: "\\(\\to -6x\\)." },
@@ -595,7 +595,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Esquecer de baixar o expoente",
       items: [
         "Esquecer multiplicar pelo expoente.",
         "Derivar constante como se fosse x.",
@@ -603,7 +603,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Derive potências com apoio",
       exercises: [
         {
           id: "pot-g1",
@@ -632,9 +632,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-11", "der-ap-12"] },
+    exerciciosAplicados: { title: "Derivada de potências no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-11", "der-ap-12"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Desce o expoente, diminui um",
       bullets: [
         "\\((x^n)' = n\\,x^{n-1}\\).",
         "Polinômio: derivar termo a termo.",
@@ -653,7 +653,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "derivada-composta", title: "Regra da cadeia (introdução)" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando a função é feita de duas",
       paragraphs: [
         "Receita = preço × quantidade: as duas variáveis mudam juntas — precisa da regra do produto.",
         "Custo médio e razões usam quociente.",
@@ -699,7 +699,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Derivar cada fator e multiplicar",
       items: [
         "Derivar fatores separadamente e multiplicar.",
         "Inverter sinal no numerador do quociente.",
@@ -707,7 +707,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Derive produtos e quocientes com apoio",
       exercises: [
         {
           id: "pq-g1",
@@ -736,9 +736,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-13", "der-ap-14"] },
+    exerciciosAplicados: { title: "Produto e quociente no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-13", "der-ap-14"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Duas parcelas no produto, ordem fixa no quociente",
       bullets: [
         "Produto: \\(f'g + fg'\\).",
         "Quociente: \\(\\frac{f'g-fg'}{g^2}\\).",
@@ -758,14 +758,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "interpretacao-derivada", title: "Interpretar a derivada" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Função dentro de função",
       paragraphs: [
         "Função dentro de função: custo do tempo de viagem, temperatura ao longo da posição.",
         "A mudança externa multiplica a mudança interna.",
       ],
     },
     explicacao: {
-      title: "Ideia",
+      title: "Derivar de fora para dentro",
       paragraphs: [
         "Se \\(y = f(u)\\) e \\(u = g(x)\\), então \\(\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}\\).",
         "Notação: \\((f(g(x)))' = f'(g(x)) \\cdot g'(x)\\).",
@@ -777,7 +777,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       callout: "Não esqueça o fator g′(x) — erro mais comum.",
     },
     ondeAparece: {
-      title: "Exemplos",
+      title: "Onde a cadeia aparece encadeada",
       items: [
         { label: "(3x+1)⁵", detail: "Fora: \\(u^5\\), dentro: \\(3x+1\\)" },
         { label: "√(x²+1)", detail: "Fora: \\(\\sqrt{u}\\)" },
@@ -797,14 +797,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que a cadeia está encadeando",
       paragraphs: [
         "Taxa na saída = taxa na casca externa × taxa da casca interna.",
         "Prática com vários exemplos fixa o olhar.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Derivar a de fora e parar por aí",
       items: [
         "Derivar só a potência externa.",
         "Esquecer de derivar o interior.",
@@ -812,7 +812,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aplique a cadeia com apoio",
       exercises: [
         {
           id: "cad-g1",
@@ -841,9 +841,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-15", "der-ap-16"] },
+    exerciciosAplicados: { title: "Regra da cadeia no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-15", "der-ap-16"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "De fora para dentro, multiplicando",
       bullets: [
         "Cadeia: derivada externa × derivada interna.",
         "Marque u interno antes de derivar.",
@@ -863,7 +863,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "velocidade-aceleracao", title: "Velocidade e aceleração" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Transformar o número em afirmação",
       paragraphs: [
         "Calcular \\(f'(x)\\) sem interpretar perde metade da prova aplicada.",
         "\\(f'>0\\): função sobe; \\(f'<0\\): desce; \\(f'=0\\): possível extremo ou platô.",
@@ -894,7 +894,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(C'(x)=5+0{,}02x\\). O que \\(C'(100)\\) significa?",
     },
     passos: {
-      title: "Interpretar",
+      title: "Traduzir o número em frase",
       steps: [
         { title: "Valor", detail: "\\(C'(100)=5+2=7\\) reais/unidade (aprox.)." },
         { title: "Frase", detail: "Produzir a 101ª unidade custa cerca de R$ 7 extras." },
@@ -902,14 +902,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Hábito",
+      title: "O hábito de dizer o significado",
       paragraphs: [
         "Sempre escreva uma frase após derivar em problema aplicado.",
         "Unidades são obrigatórias.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Dar a resposta sem dizer o que significa",
       items: [
         "Achar que \\(f'=0\\) implica mínimo (pode ser máximo ou inflexão).",
         "Confundir \\(f\\) com \\(f'\\).",
@@ -917,7 +917,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Interprete derivadas com apoio",
       exercises: [
         {
           id: "intd-g1",
@@ -946,9 +946,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-17", "der-ap-18"] },
+    exerciciosAplicados: { title: "Interpretação da derivada no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-17", "der-ap-18"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Derivada é taxa, com unidade",
       bullets: [
         "\\(f'\\): sinal = direção; valor = rapidez.",
         "Marginal e velocidade são interpretações.",
@@ -968,14 +968,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "custo-marginal", title: "Custo e lucro marginal" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Derivar duas vezes o mesmo movimento",
       paragraphs: [
         "\\(s(t)\\) posição \\(\\to v(t)=s'(t)\\) velocidade \\(\\to a(t)=v'(t)=s''(t)\\) aceleração.",
         "É o exemplo que motivou o Cálculo desde Newton.",
       ],
     },
     explicacao: {
-      title: "Relações",
+      title: "Posição, velocidade e aceleração",
       paragraphs: [
         "Velocidade instantânea = derivada da posição em relação ao tempo.",
         "Aceleração = derivada da velocidade = segunda derivada da posição.",
@@ -998,7 +998,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(v(t)\\) e \\(a(t)\\)? Significado em \\(t=1\\) s.",
     },
     passos: {
-      title: "Derivar",
+      title: "Derivar a posição duas vezes",
       steps: [
         { title: "v(t)", detail: "\\(v(t) = -10t+20\\) m/s." },
         { title: "a(t)", detail: "\\(a(t) = -10\\) m/s² (constante)." },
@@ -1006,14 +1006,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que a aceleração acrescenta",
       paragraphs: [
         "\\(a\\) constante negativa: gravidade simplificada.",
         "Máximo de \\(s\\) ocorre quando \\(v=0\\).",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir velocidade negativa com desaceleração",
       items: [
         "Confundir posição com velocidade.",
         "Esquecer unidades m, m/s, m/s².",
@@ -1021,7 +1021,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Analise movimentos com apoio",
       exercises: [
         {
           id: "veld-g1",
@@ -1050,9 +1050,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-19", "der-ap-20"] },
+    exerciciosAplicados: { title: "Velocidade e aceleração no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-19", "der-ap-20"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Posição, velocidade, aceleração",
       bullets: [
         "\\(v=s'\\), \\(a=v'=s''\\).",
         "Unidades coerentes sempre.",
@@ -1072,7 +1072,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-derivadas", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O custo da próxima unidade",
       paragraphs: [
         "Produzir mais uma unidade custa aproximadamente \\(C'(x)\\) — custo marginal.",
         "Lucro marginal \\(L' = R' - C'\\) guia decisão de produzir ou parar.",
@@ -1103,7 +1103,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(C'(x)\\), \\(R'(x)\\) e quando lucro marginal zera?",
     },
     passos: {
-      title: "Análise",
+      title: "Do custo total ao custo marginal",
       steps: [
         { title: "C′", detail: "\\(C'(x) = 10+0{,}1x\\)." },
         { title: "R′", detail: "\\(R'(x) = 40\\)." },
@@ -1119,7 +1119,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ler custo marginal como custo médio",
       items: [
         "Usar custo médio no lugar de marginal.",
         "Esquecer que R′ pode depender de x (preço variável).",
@@ -1127,7 +1127,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule margens com apoio",
       exercises: [
         {
           id: "cm-g1",
@@ -1156,9 +1156,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-21", "der-ap-22"] },
+    exerciciosAplicados: { title: "Custo marginal no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-21", "der-ap-22"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Derivada do custo é o custo da unidade seguinte",
       bullets: [
         "\\(C'\\) e \\(R'\\) são taxas marginais.",
         "\\(L' = R' - C'\\).",
@@ -1182,14 +1182,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Amarrar regra, gráfico e significado",
       paragraphs: [
         "Consolidar derivada como taxa instantânea e regras de cálculo.",
         "Próximo módulo usa \\(f'\\) para máximos, mínimos e otimização.",
       ],
     },
     explicacao: {
-      title: "Checklist",
+      title: "As regras lado a lado",
       paragraphs: [
         "✓ Variação média \\(\\to\\) limite \\(\\to f'(a)\\).",
         "✓ Tangente e interpretação.",
@@ -1222,21 +1222,21 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Seguir",
+      title: "O que levar para as aplicações",
       paragraphs: [
         "Abra Aplicações de derivadas na trilha.",
         "Revise regra da cadeia se ainda travar.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "As trocas de regra mais frequentes",
       items: [
         "Calcular sem interpretar em problemas aplicados.",
         "Pular para integral antes de dominar derivada.",
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise derivadas com apoio",
       exercises: [
         {
           id: "revd-g1",
@@ -1265,9 +1265,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-23", "der-ap-24", "dsf-deriv-01"] },
+    exerciciosAplicados: { title: "Revisão de derivadas no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-23", "der-ap-24", "dsf-deriv-01"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Regra certa, conta certa, leitura certa",
       bullets: [
         "Derivada \\(=\\) taxa instantânea \\(=\\) inclinação da tangente.",
         "Regras aceleram; interpretação fecha o ciclo.",

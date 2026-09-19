@@ -17,7 +17,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "dominio-imagem", title: "Domínio e imagem (revisão)" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A função como objeto de estudo, não só conta",
       paragraphs: [
         "Em Cálculo, quase tudo é função: posição em função do tempo, custo em função da quantidade, temperatura em função da hora.",
         "\\(f(x)\\) não é \"f vezes x\" — é a regra que transforma entrada em saída.",
@@ -60,14 +60,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que muda quando a função vira protagonista",
       paragraphs: [
         "\\(G(0) = 80\\): só deslocamento. \\(G(2) = 170\\): duas horas de trabalho.",
         "Esse padrão fixo + taxa aparecerá em derivadas (custo marginal).",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Tratar função como fórmula para substituir",
       items: [
         "Confundir \\(f(x)\\) com produto \\(f \\cdot x\\).",
         "Esquecer unidades (h em horas, R$ na saída).",
@@ -75,7 +75,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Explore funções com apoio",
       exercises: [
         {
           id: "fnc-g1",
@@ -104,9 +104,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-01", "fc-ap-02"] },
+    exerciciosAplicados: { title: "Funções no cálculo no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-01", "fc-ap-02"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Função é comportamento, não só valor",
       bullets: [
         "Função = regra que associa entrada a saída.",
         "Notação \\(f(x)\\); gráfico \\((x, f(x))\\).",
@@ -127,14 +127,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "graficos-leitura", title: "Ler gráficos com sentido" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Onde a função existe e onde ela falha",
       paragraphs: [
         "Domínio: valores de \\(x\\) permitidos. Imagem: valores de \\(f(x)\\) que realmente aparecem.",
         "Em Cálculo, divisão por zero e raiz de negativo bloqueiam pontos — isso define onde limites fazem sentido.",
       ],
     },
     explicacao: {
-      title: "Conceitos",
+      title: "O que entra e o que sai",
       paragraphs: [
         "Domínio natural: todos os \\(x\\) que não quebram a fórmula (denominador \\(\\neq 0\\), radicando \\(\\geq 0\\)).",
         "Imagem: projete no eixo \\(y\\) o que o gráfico alcança.",
@@ -147,7 +147,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       callout: "Contexto real pode cortar o domínio matemático.",
     },
     ondeAparece: {
-      title: "Aplicações",
+      title: "Onde a restrição é do mundo real",
       items: [
         { label: "1/x", detail: "Domínio: \\(x \\neq 0\\)" },
         { label: "√x", detail: "Domínio: \\(x \\geq 0\\)" },
@@ -156,11 +156,11 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x) = \\frac{1}{x - 2}\\)",
+      title: "Um denominador que zera",
       situacao: "Qual \\(x\\) não pode ser usado? O que acontece perto de \\(x = 2\\)?",
     },
     passos: {
-      title: "Análise",
+      title: "Checar as restrições antes de estudar a função",
       steps: [
         { title: "Denominador", detail: "\\(x - 2 \\neq 0 \\Rightarrow x \\neq 2\\)." },
         { title: "Domínio", detail: "\\(\\mathbb{R} \\setminus \\{2\\}\\) ou \"todos os reais exceto 2\"." },
@@ -175,7 +175,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ignorar restrições que o cálculo vai cobrar",
       items: [
         "Achar que domínio é sempre todos os reais.",
         "Confundir imagem com codomínio declarado.",
@@ -183,7 +183,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Reveja domínios com apoio",
       exercises: [
         {
           id: "dom-g1",
@@ -212,9 +212,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-03", "fc-ap-04"] },
+    exerciciosAplicados: { title: "Domínio e imagem para o cálculo no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-03", "fc-ap-04"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Onde a função pode ser estudada",
       bullets: [
         "Domínio = entradas válidas; imagem = saídas alcançadas.",
         "Cuidado com denominador zero e raízes.",
@@ -235,7 +235,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "crescimento-decrescimento", title: "Crescimento e decrescimento" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O gráfico vai ser sua principal evidência",
       paragraphs: [
         "Prova de Cálculo mistura álgebra e gráfico. Quem só manipula símbolos perde metade da intuição.",
         "Ler gráfico é prever limite, derivada e integral antes de calcular.",
@@ -278,14 +278,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Mensagem",
+      title: "O que o gráfico já entregou",
       paragraphs: [
         "Você não precisa desenhar perfeito — precisa interpretar comportamento.",
         "Sketch (esboço) de gráfico é habilidade de prova.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ler o gráfico sem checar os eixos",
       items: [
         "Confundir eixos x e y.",
         "Ler valor em escala errada.",
@@ -293,7 +293,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Extraia informação do gráfico com apoio",
       exercises: [
         {
           id: "grf-g1",
@@ -322,9 +322,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-05", "fc-ap-06"] },
+    exerciciosAplicados: { title: "Ler gráficos com sentido no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-05", "fc-ap-06"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O desenho antecipa a conta",
       bullets: [
         "Identifique eixos, tendência, zeros e extremos.",
         "Gráfico apoia limite, derivada e integral.",
@@ -344,7 +344,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "interpretacao-grafica", title: "Interpretar o que o gráfico diz" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A pergunta que a derivada vai responder",
       paragraphs: [
         "Saber onde f sobe ou desce é pré-requisito para derivada e otimização.",
         "Na prática: lucro aumentando? estoque caindo? temperatura subindo?",
@@ -364,7 +364,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       callout: "Intervalo importa — função pode subir e descer em regiões diferentes.",
     },
     ondeAparece: {
-      title: "Aplicações",
+      title: "Onde a tendência orienta a decisão",
       items: [
         { label: "Lucro", detail: "Onde receita supera custo crescente" },
         { label: "Medicina", detail: "Concentração subindo ou caindo" },
@@ -392,14 +392,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir valor grande com crescimento",
       items: [
         "Dizer \"sempre crescente\" olhando só um pedaço.",
         "Confundir crescente com positivo (f pode ser negativa e subir).",
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Identifique intervalos com apoio",
       exercises: [
         {
           id: "cre-g1",
@@ -428,9 +428,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-07", "fc-ap-08"] },
+    exerciciosAplicados: { title: "Crescimento e decrescimento no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-07", "fc-ap-08"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Subir e descer, antes da derivada",
       bullets: [
         "Crescente/decrescente dependem do intervalo.",
         "Leia o gráfico da esquerda para a direita.",
@@ -450,7 +450,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "custo-receita", title: "Custo, receita e lucro" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Traduzir desenho em afirmação",
       paragraphs: [
         "Prova cobra interpretação: \"o que significa \\(f(10) = 200\\)?\"",
         "Número sem frase em português perde pontos e sentido.",
@@ -489,14 +489,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Hábito",
+      title: "O hábito de conferir o eixo",
       paragraphs: [
         "Após cada cálculo, escreva uma linha interpretando.",
         "Professor valoriza coerência de unidades.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Afirmar mais do que o gráfico mostra",
       items: [
         "Responder só o número.",
         "Trocar o papel de \\(x\\) e \\(y\\).",
@@ -504,7 +504,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Traduza o gráfico em afirmação com apoio",
       exercises: [
         {
           id: "int-g1",
@@ -533,9 +533,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-09", "fc-ap-10"] },
+    exerciciosAplicados: { title: "Interpretação gráfica no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-09", "fc-ap-10"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O que o gráfico autoriza dizer",
       bullets: [
         "Traduza \\(f(a)\\) para linguagem do problema.",
         "Declare sempre o significado de \\(x\\) e \\(f(x)\\).",
@@ -555,7 +555,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "velocidade-temperatura", title: "Velocidade e temperatura" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O contexto onde a derivada vira dinheiro",
       paragraphs: [
         "Modelos \\(C(x)\\), \\(R(x)\\), \\(L(x) = R(x) - C(x)\\) aparecem em Cálculo 1 e Economia.",
         "Derivada de custo = custo marginal; de lucro = onde lucro para de crescer.",
@@ -586,7 +586,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       situacao: "\\(C(x) = 1000 + 8x\\), \\(R(x) = 25x\\). Lucro? Quantidade para \\(L = 0\\)?",
     },
     passos: {
-      title: "Resolver",
+      title: "Montar as três funções do negócio",
       steps: [
         { title: "Lucro", detail: "\\[\\begin{aligned} L(x) &= 25x - (1000 + 8x) \\\\ &= 17x - 1000 \\end{aligned}\\]" },
         { title: "Break-even", detail: "\\[\\begin{aligned} 17x - 1000 &= 0 \\\\ x &= \\frac{1000}{17} \\approx 58{,}8 \\end{aligned}\\]" },
@@ -601,7 +601,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar receita por lucro no enunciado",
       items: [
         "Esquecer custo fixo no lucro.",
         "Achar que receita máxima = lucro máximo.",
@@ -609,7 +609,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Modele custo e receita com apoio",
       exercises: [
         {
           id: "cr-g1",
@@ -639,9 +639,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-11", "fc-ap-12"] },
+    exerciciosAplicados: { title: "Custo e receita no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-11", "fc-ap-12"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Lucro é receita menos custo",
       bullets: [
         "\\(L(x) = R(x) - C(x)\\).",
         "Break-even: \\(L(x) = 0\\).",
@@ -662,14 +662,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-funcoes-calculo", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Grandezas que mudam com o tempo",
       paragraphs: [
         "\\(s(t)\\), \\(v(t)\\), \\(T(t)\\) são os exemplos clássicos de Cálculo em física e engenharia.",
         "Posição → velocidade → aceleração é cadeia de taxas de variação.",
       ],
     },
     explicacao: {
-      title: "Relações",
+      title: "Duas grandezas, um mesmo tempo",
       paragraphs: [
         "\\(s(t)\\): posição. Velocidade média: \\(\\frac{\\Delta s}{\\Delta t}\\). Instantânea: limite quando \\(\\Delta t \\to 0\\).",
         "\\(T(t)\\): temperatura ao longo do dia; taxa de aquecimento = derivada de \\(T\\).",
@@ -680,7 +680,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       formulaLegend: "derivada como limite",
     },
     ondeAparece: {
-      title: "Contextos",
+      title: "Do sensor ao gráfico do dia",
       items: [
         { label: "Trânsito", detail: "Posição GPS no tempo" },
         { label: "Clima", detail: "T(t) em estação de medição" },
@@ -692,7 +692,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       situacao: "Distância em metros, \\(t\\) em segundos. Velocidade média entre \\(t=1\\) e \\(t=3\\)?",
     },
     passos: {
-      title: "Cálculo",
+      title: "Ler a taxa a partir da tabela",
       steps: [
         { title: "Δs", detail: "\\(s(3) - s(1) = 9 - 1 = 8\\) m." },
         { title: "Δt", detail: "\\(3 - 1 = 2\\) s." },
@@ -708,7 +708,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ignorar a unidade de tempo na leitura",
       items: [
         "Confundir posição com velocidade.",
         "Esquecer unidades (m/s vs m).",
@@ -716,7 +716,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Modele grandezas no tempo com apoio",
       exercises: [
         {
           id: "vel-g1",
@@ -747,9 +747,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-13", "fc-ap-14"] },
+    exerciciosAplicados: { title: "Grandezas no tempo no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-13", "fc-ap-14"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O tempo como variável independente",
       bullets: [
         "\\(s(t)\\), \\(T(t)\\) modelam grandezas no tempo.",
         "Taxa média = \\(\\frac{\\Delta \\text{saída}}{\\Delta \\text{tempo}}\\).",
@@ -773,14 +773,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Chegar em limites com a base pronta",
       paragraphs: [
         "Consolidar funções evita retorno à estaca zero no módulo de limites.",
         "Checklist final antes de entrar em aproximação e tendência.",
       ],
     },
     explicacao: {
-      title: "Checklist do módulo",
+      title: "O checklist de funções",
       paragraphs: [
         "✓ Montar \\(f(x)\\) a partir de problema.",
         "✓ Domínio e restrições.",
@@ -794,7 +794,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       callout: "Limite estuda f perto de um ponto — função precisa estar clara.",
     },
     ondeAparece: {
-      title: "Conexão",
+      title: "Onde essa base volta em limites",
       items: [
         { label: "Limite", detail: "Comportamento perto de a" },
         { label: "Derivada", detail: "Taxa de mudança de f" },
@@ -802,11 +802,11 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Mini-simulado mental",
+      title: "Teste rápido de funções",
       situacao: "\\(f(x)=\\frac{x^2-9}{x-3}\\). Simplifique para \\(x \\neq 3\\) e interprete o buraco em \\(x=3\\).",
     },
     passos: {
-      title: "Revisão rápida",
+      title: "Repassar funções em minutos",
       steps: [
         { title: "Fatorar", detail: "\\(x^2-9=(x-3)(x+3)\\)." },
         { title: "Simplificar", detail: "\\(f(x)=x+3\\) para \\(x \\neq 3\\)." },
@@ -815,21 +815,21 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Próximo módulo",
+      title: "O que levar para limites",
       paragraphs: [
         "Abra Limites sem trauma — comece por Ideia de limite.",
         "Marque este módulo como concluído no progresso se dominou o checklist.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "As lacunas que travam a próxima etapa",
       items: [
         "Avançar sem interpretar gráficos.",
         "Pular exercícios guiados das aulas anteriores.",
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise funções com apoio",
       exercises: [
         {
           id: "rev-g1",
@@ -858,9 +858,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-15", "fc-ap-16", "dsf-fcal-01"] },
+    exerciciosAplicados: { title: "Revisão de funções no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-15", "fc-ap-16", "dsf-fcal-01"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O que precisa estar firme antes de limites",
       bullets: [
         "Função, domínio, gráfico, interpretação, modelos econômicos e no tempo.",
         "Próximo: módulo Limites.",

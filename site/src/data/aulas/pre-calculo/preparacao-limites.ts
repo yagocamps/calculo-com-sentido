@@ -18,7 +18,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       next: { slug: "comportamento-funcoes", title: "Comportamento de funções" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Chegar perto já resolve muita coisa",
       paragraphs: [
         "Toda a base do cálculo está numa ideia simples: o que acontece quando você chega bem perto de um valor, sem necessariamente chegar nele?",
         "Você já faz isso na vida: ao estacionar, encosta o carro cada vez mais perto da guia; ao ajustar o forno, vai chegando perto da temperatura certa. Aproximar-se é natural.",
@@ -39,7 +39,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       formulaLegend: "os valores se aproximam de 2 sem precisar alcançá-lo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o valor exato não existe ou não importa",
       items: [
         { label: "Estacionar", detail: "encostar cada vez mais perto da guia" },
         { label: "Forno e ar", detail: "chegar perto da temperatura desejada" },
@@ -55,7 +55,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         "Observe a sequência \\(1{,}9\\) — \\(1{,}99\\) — \\(1{,}999\\) — \\(1{,}9999\\). De qual número ela está se aproximando, e ela chega exatamente nele?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Aproximar por valores cada vez mais próximos",
       steps: [
         {
           title: "Olhar o padrão",
@@ -80,14 +80,14 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a aproximação está sugerindo",
       paragraphs: [
         "A sequência \"aponta\" para 2 mesmo sem tocar em 2. No cálculo, dizemos que o limite é 2 — o destino para onde tudo converge.",
         "Essa diferença entre \"o valor para onde vai\" e \"o valor que assume\" é exatamente o que torna o cálculo poderoso: ele estuda o destino, não só a parada.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Achar que aproximar é o mesmo que chegar",
       items: [
         "Achar que aproximar-se obriga a alcançar o valor.",
         "Confundir o último termo da lista com o destino da sequência.",
@@ -96,7 +96,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aproxime valores com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -134,12 +134,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Aproximação no banco",
       intro: "Pratique a ideia de aproximação e tendência no banco de exercícios.",
       exerciseIds: ["prep-ap-01", "prep-ap-02"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Perto o bastante para decidir",
       bullets: [
         "Aproximar-se é assumir valores cada vez mais próximos de um alvo.",
         "O que importa é o destino, não onde a lista para.",
@@ -162,7 +162,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       next: { slug: "valores-proximos", title: "Valores próximos de um ponto" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Olhar a vizinhança em vez do ponto",
       paragraphs: [
         "Antes de calcular qualquer coisa, vale a pergunta: o que essa função está fazendo aqui perto? Está subindo, descendo, se acalmando, disparando?",
         "Ler o comportamento de uma função é como ler o ritmo de um gráfico de batimentos ou de preços: você entende a história antes de qualquer número.",
@@ -183,7 +183,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       formulaLegend: "estudar o comportamento é observar f perto de a",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o ponto exato falha",
       items: [
         { label: "Preços", detail: "tendência de alta ou baixa perto de uma data" },
         { label: "Saúde", detail: "curva de febre subindo ou cedendo" },
@@ -199,7 +199,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         "Observe a função \\(f(x) = x + 1\\) com \\(x\\) se aproximando de 2 (\\(1{,}9\\); \\(1{,}99\\); \\(2{,}01\\); \\(2{,}1\\)). Para qual valor f(x) caminha?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Observar os dois lados do ponto",
       steps: [
         {
           title: "Vir pela esquerda",
@@ -220,14 +220,14 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a vizinhança revela",
       paragraphs: [
         "Perto de \\(x = 2\\), a função aponta para 3 pelos dois lados. Esse acordo entre esquerda e direita é o que dá confiança no comportamento.",
         "Em funções mais difíceis, os dois lados podem discordar — e detectar isso cedo evita erros graves de interpretação no cálculo.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Olhar só um lado e concluir",
       items: [
         "Olhar só um lado (esquerda ou direita) e tirar conclusão.",
         "Confundir o valor no ponto com o comportamento ao redor.",
@@ -236,7 +236,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Analise o comportamento com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -274,12 +274,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Comportamento de funções no banco",
       intro: "Pratique a leitura do comportamento de funções no banco de exercícios.",
       exerciseIds: ["prep-ap-03", "prep-ap-04"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O que acontece perto, não em cima",
       bullets: [
         "Comportamento é o que a função faz nos arredores de um ponto.",
         "Compare sempre os dois lados: esquerda e direita.",
@@ -302,7 +302,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       next: { slug: "ideia-tendencia", title: "Ideia de tendência" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Deixar a tabela mostrar o destino",
       paragraphs: [
         "Quando não dá para ver o destino de cara, monta-se uma tabela: testam-se valores cada vez mais perto e observa-se para onde a função aponta.",
         "É a mesma lógica de cercar uma resposta por tentativas — algo que você já faz ao ajustar um chuveiro ou afinar um instrumento.",
@@ -323,7 +323,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       formulaLegend: "as duas aproximações laterais precisam concordar",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a tabela antecipa a resposta",
       items: [
         { label: "Calibração", detail: "ajustar instrumentos por tentativa" },
         { label: "Computação", detail: "métodos numéricos por aproximação" },
@@ -339,7 +339,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         "Para \\(f(x) = x^2\\), complete a aproximação por valores próximos de \\(x = 3\\) e diga para onde f(x) caminha.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Montar a tabela pelos dois lados",
       steps: [
         {
           title: "Aproximar pela esquerda",
@@ -360,14 +360,14 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Para onde os valores estão apontando",
       paragraphs: [
         "A tabela mostrou, com números, que f(x) caminha para 9 perto de \\(x = 3\\). A intuição virou evidência conferível.",
         "Quando você não consegue calcular direto no ponto, essa tabela é a saída honesta: ela revela o destino sem precisar tocar nele.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Parar a tabela cedo demais",
       items: [
         "Testar valores longe demais do ponto.",
         "Usar só um lado da tabela.",
@@ -376,7 +376,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Monte tabelas com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -414,12 +414,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Valores próximos no banco",
       intro: "Pratique tabelas de valores próximos no banco de exercícios.",
       exerciseIds: ["prep-ap-05", "prep-ap-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A tabela que revela a tendência",
       bullets: [
         "Monte uma tabela com valores próximos do ponto.",
         "Aproxime pela esquerda e pela direita.",
@@ -442,7 +442,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       next: { slug: "interpretacao-grafica", title: "Interpretação gráfica" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A palavra que vai virar limite",
       paragraphs: [
         "Tendência é a palavra-chave: para onde a função aponta quando x chega perto de um ponto, mesmo que no ponto exato algo dê errado.",
         "É como prever onde uma bola vai cair olhando a trajetória, ainda que você não veja o instante exato do toque no chão.",
@@ -463,7 +463,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       formulaLegend: "L é a tendência: o destino de f perto de a",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a tendência vale mais que o ponto",
       items: [
         { label: "Esportes", detail: "prever a trajetória de uma bola" },
         { label: "Economia", detail: "tendência de um indicador" },
@@ -479,7 +479,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         "A função \\(f(x) = \\frac{x^2 - 1}{x - 1}\\) não está definida em \\(x = 1\\) (dá \\(\\frac{0}{0}\\)). Para onde ela tende quando \\(x\\) se aproxima de 1?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Descrever a tendência em palavras",
       steps: [
         {
           title: "Reconhecer o problema no ponto",
@@ -500,14 +500,14 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que significa apontar para um valor",
       paragraphs: [
         "Há um buraco no gráfico em \\(x = 1\\), mas a tendência é clara: 2. A função aponta para 2 vindo dos dois lados.",
         "Esse é o coração do cálculo: estudar o destino mesmo quando o ponto falha. É o que permite calcular velocidades instantâneas e inclinações exatas adiante.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir tendência com o valor da função",
       items: [
         "Concluir que a tendência não existe só porque o ponto é indefinido.",
         "Parar no \\(\\frac{0}{0}\\) sem investigar a vizinhança.",
@@ -516,7 +516,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Descreva tendências com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -554,12 +554,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Tendência no banco",
       intro: "Pratique a ideia de tendência e indeterminações no banco de exercícios.",
       exerciseIds: ["prep-ap-07", "prep-ap-08"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Para onde aponta, mesmo sem chegar",
       bullets: [
         "Tendência é o destino apontado pela função perto de um ponto.",
         "Pode existir mesmo quando o ponto é indefinido (\\(\\frac{0}{0}\\)).",
@@ -582,7 +582,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       next: { slug: "velocidade-tendencia", title: "Velocidade e tendência" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Enxergar a tendência sem tabela",
       paragraphs: [
         "Um gráfico conta a história da tendência num relance: dá para ver para onde a curva aponta antes de calcular qualquer número.",
         "Quem aprende a ler isso visualmente entende limites muito mais rápido — o olho percebe o destino que a tabela só sugere.",
@@ -603,7 +603,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       formulaLegend: "a tendência é a altura comum aos dois lados da curva",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o desenho responde na hora",
       items: [
         { label: "Painéis", detail: "ler tendência de um indicador no gráfico" },
         { label: "Saúde", detail: "curva de monitor apontando um valor" },
@@ -619,7 +619,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         "Um gráfico mostra uma curva que atinge a altura \\(y = 4\\) em \\(x = 2\\), mas com uma bolinha aberta exatamente nesse ponto. Qual a tendência de \\(f(x)\\) quando \\(x \\to 2\\)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Seguir a curva até o ponto",
       steps: [
         {
           title: "Aproximar pela esquerda",
@@ -640,14 +640,14 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o gráfico diz sobre a aproximação",
       paragraphs: [
         "O gráfico mostra de imediato o que a tabela demoraria a sugerir: a curva aponta para 4, mesmo com o ponto aberto.",
         "Distinguir 'para onde aponta' de 'o que vale no ponto' é o que o olho treinado faz num segundo — e é exatamente a leitura de limite no cálculo.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confiar no furo desenhado como se fosse valor",
       items: [
         "Confundir o ponto aberto (sem valor) com a tendência.",
         "Ler só um lado da curva.",
@@ -656,7 +656,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Leia tendências no gráfico com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -694,12 +694,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Tendência no gráfico no banco",
       intro: "Pratique a leitura gráfica de tendências no banco de exercícios.",
       exerciseIds: ["prep-ap-09", "prep-ap-10"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A curva aponta, o ponto pode faltar",
       bullets: [
         "Siga a curva pelos dois lados até a altura comum.",
         "Ponto aberto marca buraco: a curva aponta, mas não assume.",
@@ -726,7 +726,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O primeiro problema que exige limite",
       paragraphs: [
         "Velocidade instantânea — a que aparece no velocímetro neste exato segundo — é, no fundo, uma tendência. E é o exemplo que originou o cálculo.",
         "Como medir a velocidade num único instante, se velocidade é distância dividida por tempo e um instante tem tempo zero? A resposta usa tudo que você viu neste módulo.",
@@ -747,7 +747,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       formulaLegend: "intervalos cada vez menores revelam a velocidade no instante",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do velocímetro ao sensor de movimento",
       items: [
         { label: "Velocímetro", detail: "a velocidade do instante atual" },
         { label: "Esportes", detail: "velocidade de pico de um atleta" },
@@ -763,7 +763,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
         "Um objeto percorre \\(s(t) = t^2\\) metros. Estime a velocidade instantânea em \\(t = 2\\) s usando intervalos cada vez menores.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Encurtar o intervalo até quase zero",
       steps: [
         {
           title: "Velocidade média de 2 a 3 s",
@@ -784,14 +784,14 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a velocidade instantânea significa",
       paragraphs: [
         "A velocidade no instante \\(t = 2\\) s é 4 m/s — o destino das velocidades médias quando o intervalo encolhe. Você acabou de fazer, na mão, o que o cálculo chama de derivada.",
         "Esse é o ponto de chegada do Pré-Cálculo e o ponto de partida do Cálculo 1: tendência aplicada à taxa de variação. Você já tem a intuição completa para começar limites e derivadas de verdade.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Usar velocidade média como se fosse instantânea",
       items: [
         "Confundir velocidade média (do trecho) com instantânea (do ponto).",
         "Parar num intervalo grande e achar que já é a resposta.",
@@ -800,7 +800,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aproxime velocidades com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -839,12 +839,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Velocidade e tendência no banco",
       intro: "Pratique velocidade média, instantânea e tendência no banco de exercícios.",
       exerciseIds: ["prep-ap-11", "prep-ap-12", "dsf-prep-01"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Intervalo que encolhe, velocidade que se revela",
       bullets: [
         "Velocidade instantânea é a tendência das velocidades médias.",
         "Encolha o intervalo de tempo e veja para onde a média aponta.",

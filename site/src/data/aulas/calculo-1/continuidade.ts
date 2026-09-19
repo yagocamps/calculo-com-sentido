@@ -17,7 +17,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       next: { slug: "furos-saltos", title: "Furos e saltos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Desenhar sem tirar o lápis do papel",
       paragraphs: [
         "Uma função contínua é aquela que você pode desenhar sem tirar o lápis do papel — sem saltos nem buracos.",
         "Na prática, significa que o modelo não \"pula\" de repente: temperatura que varia suavemente, posição sem teleporte.",
@@ -61,14 +61,14 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Mensagem",
+      title: "O que significa a curva não quebrar",
       paragraphs: [
         "Polinômios são contínuos em todo \\(\\mathbb{R}\\) — por isso substituição direta costuma funcionar.",
         "Buracos e saltos viram foco nas próximas aulas.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Achar que toda curva bonita é contínua",
       items: [
         "Achar que contínua significa sempre crescente.",
         "Confundir contínua com definida em todo lugar (domínio importa).",
@@ -76,7 +76,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Reconheça continuidade com apoio",
       exercises: [
         {
           id: "cont-g1",
@@ -105,9 +105,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-01", "cont-ap-02"] },
+    exerciciosAplicados: { title: "Ideia de continuidade no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-01", "cont-ap-02"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Sem furo, salto ou disparada",
       bullets: [
         "Contínua = gráfico sem quebra no ponto.",
         "Formalmente: \\(\\lim_{x \\to a} f(x) = f(a)\\).",
@@ -128,7 +128,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       next: { slug: "assintotas-continuidade", title: "Assíntotas e continuidade" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Os três jeitos de a curva quebrar",
       paragraphs: [
         "Nem toda quebra é igual: buraco (limite existe, valor falta ou errado) é diferente de salto (limites laterais diferentes).",
         "Reconhecer o tipo orienta o cálculo e a modelagem.",
@@ -147,7 +147,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       callout: "Buraco às vezes pode ser \"corrigido\" redefinindo \\(f(a) = L\\).",
     },
     ondeAparece: {
-      title: "Exemplos",
+      title: "Onde a quebra aparece na prática",
       items: [
         { label: "Buraco", detail: "\\(\\frac{x^2-4}{x-2}\\) em \\(x = 2\\)" },
         { label: "Salto", detail: "Tarifa com faixa de preço diferente" },
@@ -168,14 +168,14 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que cada tipo de quebra significa",
       paragraphs: [
         "Buraco: modelo quase certo, falta definir um ponto.",
         "Salto: fenômeno real de mudança abrupta (política, interruptor).",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir furo removível com salto",
       items: [
         "Chamar salto de buraco.",
         "Achar que buraco implica limite inexistente.",
@@ -183,7 +183,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Classifique descontinuidades com apoio",
       exercises: [
         {
           id: "fs-g1",
@@ -212,9 +212,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-03", "cont-ap-04"] },
+    exerciciosAplicados: { title: "Furos e saltos no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-03", "cont-ap-04"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Furo, salto e assíntota",
       bullets: [
         "Buraco: limite existe, valor falha ou difere.",
         "Salto: limites laterais diferentes.",
@@ -234,7 +234,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       next: { slug: "continuidade-ponto", title: "Continuidade em um ponto" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando a quebra é infinita",
       paragraphs: [
         "Assíntota vertical: função explode (\\(\\to \\pm\\infty\\)) perto de uma reta \\(x = a\\) — descontinuidade infinita.",
         "Assíntota horizontal: comportamento estável quando \\(x \\to \\infty\\) — não é quebra num ponto finito, mas fecha o gráfico.",
@@ -254,7 +254,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       formulaLegend: "horizontal: lim (x→±∞) f(x) = L",
     },
     ondeAparece: {
-      title: "Aplicações",
+      title: "Onde existe uma barreira",
       items: [
         { label: "1/x", detail: "Assíntota vertical \\(x = 0\\)" },
         { label: "Custos fixos", detail: "Comportamento longo prazo → horizontal" },
@@ -262,11 +262,11 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x) = \\frac{1}{x - 2}\\)",
+      title: "Uma função que dispara perto de 2",
       situacao: "Onde há assíntota vertical? Contínua em \\(x = 3\\)?",
     },
     passos: {
-      title: "Análise",
+      title: "Testar o limite dos dois lados",
       steps: [
         { title: "Vertical", detail: "\\(x = 2\\) (denominador zero)." },
         { title: "Em x = 3", detail: "\\(f(3) = 1\\); função definida e finita." },
@@ -281,7 +281,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Tratar assíntota como furo comum",
       items: [
         "Confundir assíntota horizontal com valor em x finito.",
         "Achar que gráfico cruza assíntota vertical.",
@@ -289,7 +289,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Analise assíntotas com apoio",
       exercises: [
         {
           id: "as-g1",
@@ -318,9 +318,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-05", "cont-ap-06"] },
+    exerciciosAplicados: { title: "Assíntotas e continuidade no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-05", "cont-ap-06"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A quebra que dispara sem limite",
       bullets: [
         "Assíntota vertical ↔ descontinuidade infinita.",
         "Horizontal/obliqua descrevem x → ∞.",
@@ -340,7 +340,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       next: { slug: "continuidade-intervalo", title: "Continuidade em intervalos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A definição que fecha a ideia visual",
       paragraphs: [
         "A definição formal junta três checagens: \\(f(a)\\) definida, limite existe, limite \\(= f(a)\\).",
         "É o que permite substituir \\(x\\) por \\(a\\) direto em muitos limites.",
@@ -387,7 +387,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Verificar o limite e esquecer o valor",
       items: [
         "Verificar só o limite e esquecer \\(f(a)\\).",
         "Não testar limites laterais em funções por partes.",
@@ -395,7 +395,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Teste continuidade com apoio",
       exercises: [
         {
           id: "cp-g1",
@@ -424,9 +424,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-07", "cont-ap-08"] },
+    exerciciosAplicados: { title: "Continuidade num ponto no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-07", "cont-ap-08"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Existe, tem limite, e os dois coincidem",
       bullets: [
         "Três condições: \\(f(a)\\), limite, igualdade.",
         "Buraco: ajuste \\(f(a)\\); salto: não corrige só redefinindo um valor.",
@@ -446,7 +446,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-continuidade", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Da continuidade no ponto à do intervalo",
       paragraphs: [
         "Dizer que f é contínua em \\([a, b]\\) significa contínua em todo ponto interno e bem comportada nas pontas (em intervalo fechado).",
         "Teoremas importantes (valor intermediário) exigem continuidade em intervalo.",
@@ -465,7 +465,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       callout: "Próximo módulo (derivadas) usa funções contínuas em trechos.",
     },
     ondeAparece: {
-      title: "Aplicações",
+      title: "Onde o intervalo inteiro importa",
       items: [
         { label: "Movimento", detail: "\\(s(t)\\) contínua em intervalo de tempo" },
         { label: "Produção", detail: "Fluxo sem parada no turno" },
@@ -477,7 +477,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       situacao: "Posição contínua durante 8 horas de viagem. O que isso exclui?",
     },
     passos: {
-      title: "Interpretar",
+      title: "Verificar ponto a ponto no intervalo",
       steps: [
         { title: "Sem teleporte", detail: "Posição não salta instantaneamente." },
         { title: "Pode acelerar", detail: "Derivada pode mudar — isso é outra aula." },
@@ -492,7 +492,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ignorar o comportamento nas pontas",
       items: [
         "Achar que contínua em intervalo implica derivável em todo ponto.",
         "Ignorar comportamento nas pontas de \\([a,b]\\).",
@@ -500,7 +500,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Analise intervalos com apoio",
       exercises: [
         {
           id: "ci-g1",
@@ -529,9 +529,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-09", "cont-ap-10"] },
+    exerciciosAplicados: { title: "Continuidade em intervalos no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-09", "cont-ap-10"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Contínua em cada ponto do intervalo",
       bullets: [
         "Contínua em intervalo = contínua ponto a ponto (com cuidado nas pontas).",
         "Modelos físicos costumam assumir continuidade no tempo.",
@@ -555,7 +555,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Fechar continuidade antes de derivar",
       paragraphs: [
         "Consolidar continuidade antes de derivadas evita confundir quebra com \"não derivável\".",
         "Checklist final do módulo 4.",
@@ -575,7 +575,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       callout: "Próximo: taxa de variação — módulo Derivadas.",
     },
     ondeAparece: {
-      title: "Conexão",
+      title: "Onde a continuidade será exigida",
       items: [
         { label: "Limites", detail: "Tendência antes do valor" },
         { label: "Continuidade", detail: "Valor = tendência" },
@@ -595,21 +595,21 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Próximo módulo",
+      title: "O que levar para derivadas",
       paragraphs: [
         "Derivadas medem mudança instantânea; exigem continuidade local (e mais).",
         "Marque o progresso e revise aulas onde ainda houver dúvida.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "As confusões que voltam em derivadas",
       items: [
         "Pular para derivadas sem dominar limite + continuidade.",
         "Decorar definição sem desenhar o gráfico.",
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise continuidade com apoio",
       exercises: [
         {
           id: "rc-g1",
@@ -638,9 +638,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-11", "cont-ap-12", "dsf-cont-01"] },
+    exerciciosAplicados: { title: "Revisão de continuidade no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-11", "cont-ap-12", "dsf-cont-01"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O que garante uma curva sem quebra",
       bullets: [
         "Contínua \\(\\iff\\) limite = valor no ponto.",
         "Buraco, salto, infinita — três perfis de quebra.",

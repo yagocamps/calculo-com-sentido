@@ -18,7 +18,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "fracoes", title: "Frações na prática" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O erro que derruba a conta certa",
       paragraphs: [
         "Quase todo erro de conta em prova não é \"não saber a matéria\": é fazer as operações na ordem errada.",
         "Quando você digita \\(2 + 3 \\times 4\\) na calculadora e ela responde \\(14\\) (e não \\(20\\)), é porque existe uma ordem combinada que o mundo todo segue.",
@@ -37,7 +37,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "a ordem de prioridade das operações",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da calculadora à planilha do mês",
       items: [
         { label: "Calculadora", detail: "Ela sempre respeita essa ordem" },
         { label: "Planilhas", detail: "Excel/Sheets calculam na mesma ordem" },
@@ -53,7 +53,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
         "Você comprou 3 cadernos a R$ 4,00 cada e 1 caneta de R$ 6,00. Qual é o total? Escreva como uma única conta: \\(3 \\times 4 + 6\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "A ordem, um nível por vez",
       steps: [
         {
           title: "Identificar as operações",
@@ -75,14 +75,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Por que a calculadora discorda de você",
       paragraphs: [
         "R$ 18,00 é o total da compra. Se você fizesse \\(3 \\times (4 + 6)\\) daria R$ 30, que está errado — o parêntese mudaria a ordem.",
         "A ordem não é capricho: \\(3 \\times 4\\) significa \"três cadernos\", e os R$ 6 da caneta são outra coisa. Somar antes misturaria itens diferentes.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Onde a ordem costuma se perder",
       items: [
         "Resolver da esquerda para a direita ignorando a prioridade (\\(2 + 3 \\times 4\\) não é \\(20\\)).",
         "Esquecer que \\(\\times\\) e \\(\\div\\) vêm antes de \\(+\\) e \\(-\\).",
@@ -91,7 +91,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Treine a ordem com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -132,12 +132,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Ordem das operações no banco",
       intro: "Treine contas com ordem de operações no banco de exercícios do site.",
       exerciseIds: ["fund-ap-01", "fund-ap-02"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A sequência que precisa grudar",
       bullets: [
         "Ordem: parênteses → potências/raízes → \\(\\times\\,\\div\\) → \\(+\\,-\\).",
         "Mesma prioridade: da esquerda para a direita.",
@@ -160,7 +160,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "potenciacao", title: "Potenciação" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A base silenciosa de quase tudo",
       paragraphs: [
         "Fração é só uma forma de dizer \"uma parte de um todo\": meia pizza, três quartos de hora, \\(20\\%\\) de desconto.",
         "Sem frações você trava em proporção, probabilidade, juros e em quase toda aplicação de funções. Elas são a base silenciosa do resto.",
@@ -181,7 +181,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "soma de frações igualando os denominadores",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da receita de cozinha ao desconto",
       items: [
         { label: "Receitas", detail: "\\(\\frac{1}{2}\\) xícara + \\(\\frac{1}{3}\\) de xícara" },
         { label: "Tempo", detail: "\\(\\frac{3}{4}\\) de hora = 45 min" },
@@ -192,12 +192,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "Somar dois pedaços de tamanhos diferentes",
       situacao:
         "Você estudou \\(\\frac{1}{2}\\) hora de manhã e \\(\\frac{1}{3}\\) de hora à tarde. Quanto tempo estudou no total?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Igualar os denominadores primeiro",
       steps: [
         {
           title: "Olhar os denominadores",
@@ -223,14 +223,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a fração resultante representa",
       paragraphs: [
         "\\(\\frac{5}{6}\\) de hora são \\(50\\) minutos de estudo no dia — faltam \\(10\\) minutos para fechar uma hora.",
         "Repare que não dá para somar \\(\\frac{1}{2} + \\frac{1}{3}\\) \"de cabeça\" como \\(\\frac{2}{5}\\): isso ignoraria que os pedaços têm tamanhos diferentes. O MMC coloca tudo no mesmo tamanho de fatia (sextos) antes de somar.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Somar numerador com numerador e parar",
       items: [
         "Somar numerador com numerador e denominador com denominador (\\(\\frac{1}{2} + \\frac{1}{3} \\neq \\frac{2}{5}\\)).",
         "Esquecer de ajustar o numerador depois de mudar o denominador.",
@@ -239,7 +239,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Opere frações com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -279,12 +279,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Frações no banco",
       intro: "Pratique frações em contextos de receita, tempo e desconto no banco de exercícios.",
       exerciseIds: ["fund-ap-03", "fund-ap-04"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Somar iguala, multiplicar é direto",
       bullets: [
         "Somar/subtrair: iguale os denominadores (MMC), depois mexa só nos numeradores.",
         "Multiplicar: reto — numerador com numerador, denominador com denominador.",
@@ -307,7 +307,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "radiciacao", title: "Radiciação" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Escrever multiplicação repetida sem cansar",
       paragraphs: [
         "Potência é só um atalho para multiplicar o mesmo número várias vezes: \\(2^5\\) é \\(2 \\times 2 \\times 2 \\times 2 \\times 2\\).",
         "Esse atalho aparece em juros compostos, crescimento de populações, área, volume e notação científica. Sem ele, números grandes e pequenos ficam impossíveis de escrever.",
@@ -328,7 +328,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "produto de potências de mesma base",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da área ao crescimento populacional",
       items: [
         { label: "Juros compostos", detail: "montante cresce como \\((1+i)^n\\)" },
         { label: "Notação científica", detail: "\\(300000 = 3 \\times 10^5\\)" },
@@ -339,12 +339,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "Uma área que dobra de lado",
       situacao:
         "Simplifique a expressão \\(2^3 \\times 2^2\\) escrevendo o resultado como uma única potência e depois como número.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Aplicar a regra pela operação entre as bases",
       steps: [
         {
           title: "Reconhecer a base",
@@ -366,14 +366,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o expoente está contando",
       paragraphs: [
         "Somar os expoentes funciona porque \\(2^3 \\times 2^2\\) é o \\(2\\) multiplicado \\(3\\) vezes e depois mais \\(2\\) vezes — no total \\(5\\) vezes.",
         "Por isso a regra não é decoreba: o expoente conta quantos fatores existem, e juntar dois grupos é só somar as contagens.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Somar expoentes de bases diferentes",
       items: [
         "Multiplicar as bases em vez de somar os expoentes (\\(2^3 \\times 2^2 \\neq 4^5\\)).",
         "Achar que \\(2^3 = 2 \\times 3 = 6\\) (é \\(2 \\times 2 \\times 2 = 8\\)).",
@@ -382,7 +382,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Use as regras de potência com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -423,12 +423,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Potenciação no banco",
       intro: "Use potências em notação científica e crescimento no banco de exercícios.",
       exerciseIds: ["fund-ap-05", "fund-ap-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Mesma base: soma, subtrai ou multiplica expoente",
       bullets: [
         "\\(a^n\\) = \\(a\\) multiplicado por ele mesmo \\(n\\) vezes.",
         "Mesma base: \\(\\times\\) soma expoentes, \\(\\div\\) subtrai expoentes.",
@@ -451,7 +451,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "produtos-notaveis", title: "Produtos notáveis" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Voltar atrás numa potência",
       paragraphs: [
         "Se a potência multiplica um número por ele mesmo, a raiz faz a pergunta inversa: \"qual número, multiplicado por ele mesmo, dá isto?\".",
         "\\(\\sqrt{25} = 5\\) porque \\(5 \\times 5 = 25\\). É a chave para resolver equações de 2º grau, calcular distâncias (Pitágoras) e entender desvios em estatística.",
@@ -472,7 +472,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "raiz escrita como expoente fracionário",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do teorema de Pitágoras ao desvio padrão",
       items: [
         { label: "Pitágoras", detail: "hipotenusa = \\(\\sqrt{a^2 + b^2}\\)" },
         { label: "Bhaskara", detail: "tem uma raiz no meio da fórmula" },
@@ -483,12 +483,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "O lado de um quadrado de área conhecida",
       situacao:
         "Um quadrado tem área de \\(144\\) cm². Qual é a medida do lado?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Fatorar o radicando antes de extrair",
       steps: [
         {
           title: "Lembrar a relação",
@@ -510,14 +510,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a raiz encontrada representa",
       paragraphs: [
         "O lado de \\(12\\) cm é o único valor positivo que, ao quadrado, devolve a área de \\(144\\) cm².",
         "Em geometria usamos só a raiz positiva (não existe lado de \\(-12\\) cm). Em equações, porém, lembre que tanto \\(12\\) quanto \\(-12\\) elevados ao quadrado dão \\(144\\) — por isso a equação \\(x^2 = 144\\) tem duas soluções.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Separar a raiz de uma soma",
       items: [
         "Achar que \\(\\sqrt{a + b} = \\sqrt{a} + \\sqrt{b}\\) (é falso: \\(\\sqrt{9+16} \\neq 3+4\\)).",
         "Esquecer que \\(x^2 = 144\\) tem duas soluções (\\(12\\) e \\(-12\\)).",
@@ -526,7 +526,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Extraia raízes com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -566,12 +566,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Radiciação no banco",
       intro: "Pratique raízes em Pitágoras e áreas no banco de exercícios.",
       exerciseIds: ["fund-ap-07", "fund-ap-08"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Raiz é potência de expoente fracionário",
       bullets: [
         "Raiz é o inverso da potência: \\(\\sqrt[n]{a}\\) pergunta \"o que elevado a \\(n\\) dá \\(a\\)\".",
         "\\(\\sqrt[n]{a} = a^{1/n}\\) — vira potência de expoente fracionário.",
@@ -594,7 +594,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "fatoracao", title: "Fatoração" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Três atalhos que economizam linhas",
       paragraphs: [
         "Alguns produtos aparecem tanto que vale a pena reconhecer o padrão em vez de multiplicar tudo na mão toda vez.",
         "\\((a + b)^2\\) não é \\(a^2 + b^2\\) — esse é o erro que mais cai em prova. Entender por que aparece o \"\\(2ab\\)\" no meio te salva de perder pontos bobos.",
@@ -616,7 +616,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "quadrado da soma",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o atalho aparece sem avisar",
       items: [
         { label: "Fatoração", detail: "reconhecer o padrão para fatorar" },
         { label: "Bhaskara", detail: "completar quadrados usa \\((a+b)^2\\)" },
@@ -627,12 +627,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "Um quadrado que vira três termos",
       situacao:
         "Sem calculadora, quanto é \\(21^2\\)? Use o produto notável escrevendo \\(21\\) como \\((20 + 1)\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Reconhecer o padrão antes de multiplicar",
       steps: [
         {
           title: "Reescrever o número",
@@ -650,14 +650,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o padrão revelou",
       paragraphs: [
         "O padrão transforma uma multiplicação difícil (\\(21 \\times 21\\)) em três contas fáceis. O termo do meio (\\(2 \\cdot 20 \\cdot 1 = 40\\)) é exatamente o que faltaria se você só somasse \\(400 + 1\\).",
         "Geometricamente, \\((20+1)^2\\) é a área de um quadrado de lado \\(21\\): um quadrado \\(20 \\times 20\\), mais duas tiras \\(20 \\times 1\\), mais um quadradinho \\(1 \\times 1\\). As duas tiras são o \"\\(2ab\\)\".",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "O termo do meio que some",
       items: [
         "Escrever \\((a + b)^2 = a^2 + b^2\\) (esquecer o \\(2ab\\)).",
         "Trocar o sinal do meio em \\((a - b)^2\\).",
@@ -666,7 +666,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Reconheça os padrões com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -707,12 +707,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Produtos notáveis no banco",
       intro: "Treine produtos notáveis e cálculo mental no banco de exercícios.",
       exerciseIds: ["fund-ap-09", "fund-ap-10"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Os três padrões que valem decorar",
       bullets: [
         "\\((a + b)^2 = a^2 + 2ab + b^2\\) — nunca esqueça o \\(2ab\\).",
         "\\((a - b)^2 = a^2 - 2ab + b^2\\).",
@@ -735,7 +735,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "equacao-primeiro-grau", title: "Equações do 1º grau" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Transformar soma em produto abre portas",
       paragraphs: [
         "Fatorar é o inverso de distribuir: em vez de abrir um produto, você junta uma soma de volta na forma de multiplicação.",
         "Isso parece abstrato, mas é o que permite simplificar frações algébricas e resolver equações: quando um produto é zero, basta um dos fatores ser zero.",
@@ -757,7 +757,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "fatoração da diferença de quadrados",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde fatorar destrava a simplificação",
       items: [
         { label: "Equações 2º grau", detail: "achar raízes sem Bhaskara" },
         { label: "Simplificar frações", detail: "cancelar fatores iguais" },
@@ -768,12 +768,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "Uma expressão que encolhe ao ser fatorada",
       situacao:
         "Fatore o trinômio \\(x^2 + 5x + 6\\) para descobrir suas raízes sem usar Bhaskara.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Procurar o fator comum primeiro",
       steps: [
         {
           title: "Identificar S e P",
@@ -799,14 +799,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a forma fatorada revela",
       paragraphs: [
         "As raízes \\(-2\\) e \\(-3\\) são os valores de \\(x\\) que zeram a expressão. A forma fatorada deixa isso visível na hora: basta zerar cada parêntese.",
         "É por isso que fatorar é tão útil em equações: \"um produto é zero quando algum fator é zero\". Sem fatorar, esse atalho não existe.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Fatorar só parte dos termos",
       items: [
         "Pular o fator comum e partir direto para o trinômio.",
         "Errar o sinal: para \\(x^2 - 5x + 6\\), os números são \\(-2\\) e \\(-3\\).",
@@ -815,7 +815,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Fatore expressões com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -855,12 +855,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Fatoração no banco",
       intro: "Pratique fatoração aplicada a equações no banco de exercícios.",
       exerciseIds: ["fund-ap-11", "fund-ap-12"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Fator comum, diferença de quadrados, trinômio",
       bullets: [
         "Fatorar = transformar soma em produto (inverso de distribuir).",
         "Comece sempre pelo fator comum.",
@@ -882,7 +882,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "equacao-segundo-grau", title: "Equações do 2º grau" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Descobrir o número que falta",
       paragraphs: [
         "Uma equação é uma balança: os dois lados valem o mesmo. Resolver é descobrir o valor escondido (a incógnita) mantendo a balança equilibrada.",
         "Equações de 1º grau respondem perguntas do tipo \"quanto preciso vender para bater a meta?\" ou \"em quantos meses o saldo zera?\".",
@@ -904,7 +904,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     },
     plot: "reta-2x-menos-6",
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde você já resolve sem perceber",
       items: [
         { label: "Metas de venda", detail: "quanto vender para um valor alvo" },
         { label: "Tempo", detail: "quando dois custos se igualam" },
@@ -915,12 +915,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "Quantas horas para pagar a conta",
       situacao:
         "Você tem R$ 6,00 a menos do que o dobro de uma quantia \\(x\\), e isso resulta em zero. Ou seja: \\(2x - 6 = 0\\). Qual é o valor de \\(x\\)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Levar o x para um lado só",
       steps: [
         {
           title: "Desfazer a subtração",
@@ -942,14 +942,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a raiz encontrada significa",
       paragraphs: [
         "\\(x = 3\\) é o único valor que torna a igualdade verdadeira. Trocar por qualquer outro número desequilibra a balança.",
         "No gráfico, a solução é exatamente o ponto em que a reta \\(f(x) = 2x - 6\\) corta o eixo horizontal — onde \\(f\\) vale zero. Resolver a equação e \"achar a raiz da função\" são a mesma coisa.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "O sinal que troca na travessia",
       items: [
         "Aplicar a operação em um lado só e esquecer o outro.",
         "Trocar o sinal de forma mecânica e errar (mover \\(+6\\) vira \\(-6\\) ao passar).",
@@ -958,7 +958,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Isole a incógnita com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1000,12 +1000,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Equações do 1º grau no banco",
       intro: "Resolva equações de 1º grau aplicadas a custos e metas no banco de exercícios.",
       exerciseIds: ["fund-ap-13", "fund-ap-14"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O caminho até o x sozinho",
       bullets: [
         "Equação é uma balança: os dois lados são iguais.",
         "Isole o \\(x\\) desfazendo as operações com suas inversas.",
@@ -1028,7 +1028,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "descontos-orcamento", title: "Descontos e orçamento" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando a resposta pode ser duas",
       paragraphs: [
         "Quando o \\(x\\) aparece ao quadrado, a taxa de variação deixa de ser constante e o gráfico deixa de ser uma reta: o mesmo passo em \\(x\\) produz saltos cada vez maiores (ou cada vez menores) em \\(y\\). É o caso de área, trajetória de uma bola, lucro com preço variável.",
         "A equação de 2º grau responde \"para quais valores isso vale zero?\". Por exemplo: em que instante a bola toca o chão, ou em que preço o lucro é nulo.",
@@ -1112,7 +1112,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a parábola decide o resultado",
       items: [
         { label: "Lançamentos", detail: "altura de uma bola no tempo" },
         { label: "Áreas", detail: "achar dimensões dada uma área" },
@@ -1123,12 +1123,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "A altura de uma bola lançada",
       situacao:
         "Resolva \\(x^2 - 5x + 6 = 0\\) usando Bhaskara e diga quantas soluções a equação tem.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do delta às duas raízes",
       steps: [
         {
           title: "Identificar os coeficientes",
@@ -1156,7 +1156,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que cada raiz representa",
       paragraphs: [
         "As soluções \\(x = 2\\) e \\(x = 3\\) são os valores que zeram a expressão \\(x^2 - 5x + 6\\) — nada além disso. Aqui a equação é abstrata: \\(x\\) não é tempo, nem altura, nem preço.",
         "Repare que poderíamos ter fatorado: \\(x^2 - 5x + 6 = (x - 2)(x - 3)\\). Bhaskara e fatoração levam ao mesmo lugar — a fórmula é o caminho garantido quando a fatoração não salta aos olhos.",
@@ -1164,7 +1164,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "O delta negativo e o sinal trocado",
       items: [
         "Errar o sinal de \\(b\\): em \\(x^2 - 5x + 6\\), \\(b = -5\\), então \\(-b = +5\\).",
         "Colar uma história física em qualquer parábola. Para altura de um projétil, \\(a\\) precisa ser negativo (a gravidade puxa para baixo); com \\(a > 0\\) o gráfico abre para cima e não descreve um lançamento.",
@@ -1174,7 +1174,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aplique Bhaskara com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1215,12 +1215,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Equações do 2º grau no banco",
       intro: "Pratique equações de 2º grau aplicadas no banco de exercícios.",
       exerciseIds: ["fund-ap-15", "fund-ap-16"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Delta primeiro, raízes depois",
       bullets: [
         "Forma geral: \\(ax^2 + bx + c = 0\\) (\\(a \\neq 0\\)).",
         "Bhaskara: \\(x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}\\), com \\(\\Delta = b^2 - 4ac\\).",
@@ -1243,7 +1243,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "escalas-medidas", title: "Escalas e medidas" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Saber se o desconto vale mesmo",
       paragraphs: [
         "Porcentagem é só uma fração com denominador 100: \\(20\\% = \\frac{20}{100} = 0{,}2\\). Tirar \\(20\\%\\) é multiplicar por \\(0{,}8\\).",
         "Você usa isso toda semana: desconto na loja, gorjeta, aumento de salário, juros do cartão. Errar aqui custa dinheiro de verdade.",
@@ -1264,7 +1264,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "d = desconto em decimal (ex.: 25% → 0,25)",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da vitrine ao boleto",
       items: [
         { label: "Promoções", detail: "preço com desconto na vitrine" },
         { label: "Salário", detail: "reajuste de \\(X\\%\\)" },
@@ -1275,12 +1275,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "Dois descontos seguidos na mesma compra",
       situacao:
         "Uma blusa custa R$ 80,00 e está com \\(25\\%\\) de desconto. Qual é o preço final?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Da porcentagem ao valor final",
       steps: [
         {
           title: "Transformar a porcentagem em decimal",
@@ -1305,14 +1305,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Quanto você realmente economizou",
       paragraphs: [
         "R$ 60,00 é quanto você paga. O fator \\(0{,}75\\) já embute o desconto: você pula a etapa de \"calcular o desconto e depois subtrair\".",
         "Esse método brilha em descontos sucessivos: \\(25\\%\\) e depois mais \\(10\\%\\) é \\(80 \\times 0{,}75 \\times 0{,}90 = 54\\) → R$ 54 — e não \\(80\\) menos \\(35\\%\\), que daria R$ 52. Multiplicar fatores evita esse erro comum.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Somar descontos que não se somam",
       items: [
         "Somar descontos sucessivos (\\(10\\% + 10\\% \\neq 20\\%\\)).",
         "Esquecer de converter a porcentagem em decimal.",
@@ -1321,7 +1321,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule descontos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1359,12 +1359,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Porcentagem no banco",
       intro: "Pratique porcentagem, desconto e acréscimo no banco de exercícios.",
       exerciseIds: ["fund-ap-17", "fund-ap-18"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Porcentagem é sempre sobre alguma base",
       bullets: [
         "Porcentagem é fração de \\(100\\); converta para decimal antes de calcular.",
         "Desconto de \\(d\\%\\): multiplique por \\((1 - d)\\). Acréscimo: por \\((1 + d)\\).",
@@ -1387,7 +1387,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "problemas-financeiros", title: "Problemas financeiros simples" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Converter sem errar a conta",
       paragraphs: [
         "Proporção responde \"se tanto custa isso, quanto custa aquilo?\" mantendo a mesma relação. É a regra de três que você já usou sem saber o nome.",
         "Está em receita que serve mais gente, mapa com escala, conversão de moeda, velocidade média e mistura de tintas.",
@@ -1408,7 +1408,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "multiplicação cruzada na proporção",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da receita de bolo à planta da casa",
       items: [
         { label: "Receitas", detail: "ajustar para mais porções" },
         { label: "Mapas", detail: "escala \\(1:100000\\)" },
@@ -1419,12 +1419,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "Uma planta em escala e a parede real",
       situacao:
         "Se \\(3\\) pães custam R$ 6,00, quanto custam \\(5\\) pães (mesmo preço por pão)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Montar a proporção na ordem certa",
       steps: [
         {
           title: "Montar a proporção",
@@ -1442,14 +1442,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a razão encontrada diz",
       paragraphs: [
         "R$ 10,00 é o preço de \\(5\\) pães mantendo o mesmo valor por unidade. A proporção garante que a relação \"reais por pão\" não mudou.",
         "Se o preço por pão mudasse (atacado mais barato, por exemplo), a relação deixaria de ser proporcional e a regra de três não valeria. Sempre cheque se a relação é mesmo direta.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Inverter os termos da proporção",
       items: [
         "Inverter uma das razões ao montar a proporção.",
         "Misturar unidades (pães em cima de um lado, reais do outro).",
@@ -1458,7 +1458,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Monte proporções com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1501,12 +1501,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Escalas e proporção no banco",
       intro: "Pratique proporção, escala e regra de três no banco de exercícios.",
       exerciseIds: ["fund-ap-19", "fund-ap-20"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Proporção é razão que se mantém",
       bullets: [
         "Proporção é a igualdade de duas razões.",
         "Multiplicação cruzada: \\(\\frac{a}{b} = \\frac{c}{d} \\Rightarrow a \\cdot d = b \\cdot c\\).",
@@ -1529,7 +1529,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "consumo-energia", title: "Consumo de energia" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Enxergar quanto o dinheiro custa",
       paragraphs: [
         "Juros é o aluguel do dinheiro: o quanto se paga (ou se ganha) por usar um valor durante um tempo.",
         "Em juros simples, esse aluguel incide sempre sobre o valor inicial — cresce de forma constante, como uma função afim. É a porta de entrada para juros compostos.",
@@ -1550,7 +1550,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "C = capital · i = taxa (decimal) · t = tempo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do crediário ao rendimento da poupança",
       items: [
         { label: "Empréstimos", detail: "quanto pagar de volta" },
         { label: "Poupança", detail: "rendimento ao longo do tempo" },
@@ -1561,12 +1561,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "O preço à vista contra o parcelado",
       situacao:
         "Você aplica R$ 1000 a juros simples de \\(2\\%\\) ao mês durante \\(6\\) meses. Quanto terá no final?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do capital ao montante",
       steps: [
         {
           title: "Listar os dados",
@@ -1588,14 +1588,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Quanto do total virou juro",
       paragraphs: [
         "Você termina com R$ 1120: o capital de R$ 1000 mais R$ 120 de juros pelos \\(6\\) meses.",
         "Como é juros simples, os R$ 20 por mês (\\(2\\%\\) de \\(1000\\)) nunca mudam. Em juros compostos, os juros passariam a render juros e o total seria um pouco maior — essa é a diferença-chave entre os dois sistemas.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir taxa ao mês com taxa ao ano",
       items: [
         "Usar a taxa em porcentagem (\\(2\\)) em vez de decimal (\\(0{,}02\\)).",
         "Misturar unidades: taxa ao mês com tempo em anos.",
@@ -1604,7 +1604,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule juros com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1645,12 +1645,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Juros e montante no banco",
       intro: "Pratique juros simples e montante no banco de exercícios.",
       exerciseIds: ["fund-ap-21", "fund-ap-22"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Capital, taxa, tempo e montante",
       bullets: [
         "Juros simples incidem sempre sobre o capital inicial (crescimento linear).",
         "\\(M = C(1 + i \\cdot t)\\); juros \\(= C \\cdot i \\cdot t\\).",
@@ -1672,7 +1672,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-fundamentos-1", title: "Revisão · Parte 1" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Entender a conta antes de reclamar",
       paragraphs: [
         "A conta de luz é pura matemática de fundamentos: potência vezes tempo dá energia, e energia vezes tarifa dá o valor a pagar.",
         "Entender isso revela onde o dinheiro vai: aparelhos de alta potência ligados por muito tempo (chuveiro, ar-condicionado) dominam a fatura.",
@@ -1694,7 +1694,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
     },
     plot: "custo-por-kwh",
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do chuveiro à fatura do mês",
       items: [
         { label: "Conta de luz", detail: "kWh × tarifa" },
         { label: "Chuveiro", detail: "alta potência, muito consumo" },
@@ -1705,12 +1705,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Uma situação concreta",
+      title: "Quanto custa o chuveiro por banho",
       situacao:
         "Um chuveiro de \\(5400\\) W é usado \\(1\\) hora por dia durante \\(30\\) dias. Com tarifa de R$ 0,75/kWh, qual o custo no mês?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do watt ao real",
       steps: [
         {
           title: "Converter a potência para kW",
@@ -1732,14 +1732,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o kWh representa na fatura",
       paragraphs: [
         "R$ 121,50 vêm só do chuveiro — costuma ser um dos maiores vilões da conta justamente por juntar alta potência (\\(5{,}4\\) kW) com uso diário.",
         "Como o custo é \\(0{,}75\\) vezes o consumo, reduzir banhos pela metade (\\(81\\) kWh) corta o gasto pela metade (≈ R$ 60). A relação é uma proporção direta, como mostra a reta do gráfico.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar watt por quilowatt no meio",
       items: [
         "Esquecer de converter watts para quilowatts (dividir por \\(1000\\)).",
         "Multiplicar potência em W direto pela tarifa de kWh.",
@@ -1748,7 +1748,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Converta consumo com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1790,12 +1790,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Consumo e energia no banco",
       intro: "Pratique cálculo de consumo e custo de energia no banco de exercícios.",
       exerciseIds: ["fund-ap-23", "fund-ap-24"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Potência vezes tempo vira consumo",
       bullets: [
         "Energia (kWh) = potência (kW) × tempo (h).",
         "\\(1\\) kW \\(= 1000\\) W; sempre converta antes de calcular.",
@@ -1818,7 +1818,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-fundamentos-2", title: "Revisão · Parte 2" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Fechar as bases antes de seguir",
       paragraphs: [
         "Você passou por seis assuntos que parecem soltos — ordem das operações, frações, potências, raízes, produtos notáveis e fatoração — mas eles formam uma única caixa de ferramentas.",
         "Revisar não é repetir: é olhar de cima e perceber como uma regra puxa a outra. Quem mistura potências e frações com segurança não trava em álgebra depois.",
@@ -1839,7 +1839,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "o produto notável mais usado — saber de cor economiza tempo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde essas bases reaparecem",
       items: [
         { label: "Álgebra", detail: "todo o próximo módulo depende disto" },
         { label: "Funções", detail: "simplificar expressões antes de resolver" },
@@ -1855,7 +1855,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
         "Simplifique a expressão: \\( \\frac{2^3 \\cdot 2}{2^2} + (3 + 1)^2 \\). Ela mistura potências de mesma base, ordem das operações e um produto notável.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Revisar na ordem em que aprendeu",
       steps: [
         {
           title: "Resolver o que está no parêntese",
@@ -1877,14 +1877,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que já está firme e o que não está",
       paragraphs: [
         "O \\(20\\) não é o ponto importante — o que importa é que você encadeou quatro regras diferentes sem se perder. Essa é exatamente a habilidade que a álgebra vai cobrar.",
         "Repare que somar as potências de base \\(2\\) só foi possível porque a base era a mesma. Trocar a base quebraria a regra, e aí teríamos de calcular cada potência separadamente.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "As confusões que voltam nas provas",
       items: [
         "Somar expoentes de bases diferentes (\\(2^3 \\cdot 3^2\\) não é \\(6^5\\)).",
         "Distribuir o expoente sobre uma soma: \\((a + b)^2\\) não é \\(a^2 + b^2\\).",
@@ -1893,7 +1893,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise as bases com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1934,12 +1934,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Números e potências no banco",
       intro: "Revise as seis ferramentas com exercícios variados no banco do site.",
       exerciseIds: ["fund-ap-25", "fund-ap-26"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "As bases que sustentam o resto",
       bullets: [
         "Ordem das operações governa toda conta; respeite-a sempre.",
         "Frações somam com denominador igual; multiplicam reto; dividem virando.",
@@ -1966,7 +1966,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Amarrar equação com situação real",
       paragraphs: [
         "A segunda metade dos fundamentos saiu da conta pura e entrou no mundo: equações de 1º e 2º grau, descontos, escalas, finanças e energia.",
         "O fio condutor é sempre o mesmo: traduzir uma situação em uma igualdade e isolar o que você não sabe. Quem enxerga isso resolve problema sem decorar fórmula.",
@@ -1987,7 +1987,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       formulaLegend: "fórmula de Bhaskara para equações de segundo grau",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a equação vira decisão",
       items: [
         { label: "Compras", detail: "calcular preço com desconto" },
         { label: "Mapas", detail: "converter escala em distância real" },
@@ -2003,7 +2003,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
         "Uma blusa custava R$ 80,00 e está com \\(25\\%\\) de desconto. Depois ainda há R$ 5,00 de cupom. Quanto você paga? Monte como uma única conta.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do enunciado à conta",
       steps: [
         {
           title: "Traduzir o desconto percentual",
@@ -2021,14 +2021,14 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Ler a resposta de volta no problema",
       paragraphs: [
         "R$ 55,00 é o valor final. O passo-chave foi transformar \"\\(25\\%\\) de desconto\" em \"\\(\\times\\, 0{,}75\\)\" — multiplicar pelo que sobra é mais rápido que calcular o desconto e subtrair.",
         "Repare que a ordem importou: o cupom de R$ 5 entrou depois do desconto percentual. Se a loja aplicasse o cupom antes, o resultado mudaria — e o enunciado diz qual vem primeiro.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Resolver certo e responder errado",
       items: [
         "Somar \\(25\\%\\) de desconto como se fosse R$ 25, não \\(25\\%\\) do valor.",
         "Aplicar o percentual e o cupom em ordem trocada sem ler o enunciado.",
@@ -2037,7 +2037,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Pratique a tradução com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -2077,12 +2077,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Equações aplicadas no banco",
       intro: "Pratique equações e problemas aplicados no banco de exercícios do site.",
       exerciseIds: ["fund-ap-27", "fund-ap-28", "dsf-fund-01"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Traduzir, resolver, interpretar",
       bullets: [
         "Equação: isole a incógnita fazendo a mesma coisa dos dois lados.",
         "2º grau: Bhaskara, e o discriminante diz quantas soluções há.",

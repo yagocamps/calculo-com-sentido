@@ -18,7 +18,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "dominio-imagem", title: "Domínio e imagem" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A ideia que organiza todo o resto",
       paragraphs: [
         "Função é uma das ideias mais úteis da matemática, e também uma das mais mal explicadas. No fundo, é simples: é uma regra que pega uma coisa e devolve outra.",
         "Você usa funções o tempo todo sem perceber: coloca um valor de compra e a máquina devolve o troco; coloca a distância e o app devolve o preço.",
@@ -39,7 +39,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "f é a regra; x é a entrada; f(x) é a saída",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde uma coisa depende da outra",
       items: [
         { label: "App de corrida", detail: "distância → preço da viagem" },
         { label: "Conversão", detail: "reais → dólares pela cotação" },
@@ -55,7 +55,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Uma função dobra o número e soma 1: \\(f(x) = 2x + 1\\). O que ela devolve para a entrada \\(x = 3\\)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Identificar quem manda e quem obedece",
       steps: [
         {
           title: "Identificar a entrada",
@@ -73,14 +73,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Ler a função como uma frase",
       paragraphs: [
         "\\(f(3) = 7\\) quer dizer que, ao colocar 3 na máquina, ela devolve 7. A notação \\(f(3)\\) não é multiplicação — é \"o valor da função em 3\".",
         "Se você colocar 3 de novo, sempre sai 7. Essa previsibilidade é a essência de função: a mesma entrada nunca dá duas saídas diferentes.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Achar que toda relação é função",
       items: [
         "Ler \\(f(x)\\) como \\(f\\) vezes \\(x\\) — é \"f de x\", o valor da função.",
         "Achar que uma entrada pode ter duas saídas diferentes.",
@@ -89,7 +89,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Reconheça funções com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -127,12 +127,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Conceito de função no banco",
       intro: "Pratique a ideia de função e a notação f(x) no banco de exercícios.",
       exerciseIds: ["func-ap-01", "func-ap-02"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Cada entrada com uma saída só",
       bullets: [
         "Função é uma regra: cada entrada gera uma única saída.",
         "f(x) se lê \"f de x\" — é o valor da função, não multiplicação.",
@@ -155,7 +155,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "funcao-afim", title: "Função afim" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Saber o que pode entrar e o que pode sair",
       paragraphs: [
         "Nem todo número pode entrar na máquina. Não dá para dividir por zero, nem tirar raiz quadrada de número negativo (nos reais). Essas são as entradas proibidas.",
         "Domínio é o conjunto das entradas permitidas; imagem é o conjunto das saídas que realmente saem. Saber isso evita respostas sem sentido.",
@@ -176,7 +176,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "o zero fica de fora do domínio por causa da divisão",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a realidade limita a conta",
       items: [
         { label: "Tempo", detail: "em problemas reais, \\(t \\geq 0\\)" },
         { label: "Geometria", detail: "lados e raios são positivos" },
@@ -192,7 +192,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Considere \\(f(x) = \\frac{1}{x - 2}\\). Qual é o domínio dessa função?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Testar o que quebra a expressão",
       steps: [
         {
           title: "Procurar o que é proibido",
@@ -213,14 +213,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o domínio diz sobre o problema",
       paragraphs: [
         "O domínio é \"todos os números reais, exceto 2\". Para qualquer outro valor a função funciona; só o 2 quebra a conta.",
         "Neste exemplo, o gráfico tem uma assíntota vertical em \\(x = 2\\): a curva se aproxima dessa reta, mas a função não existe ali. Um \"buraco\" ocorre em outro caso, quando um fator que zera pode ser cancelado algebricamente. O domínio antecipa onde a função existe.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Esquecer a raiz e o denominador",
       items: [
         "Esquecer de excluir o valor que zera o denominador.",
         "Permitir raiz quadrada de número negativo nos reais.",
@@ -229,7 +229,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Determine domínios com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -267,12 +267,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Domínio e imagem no banco",
       intro: "Pratique determinação de domínio e imagem no banco de exercícios.",
       exerciseIds: ["func-ap-03", "func-ap-04"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Entradas válidas, saídas possíveis",
       bullets: [
         "Domínio = entradas permitidas; imagem = saídas possíveis.",
         "Proibições clássicas: dividir por zero e raiz de negativo.",
@@ -294,7 +294,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "funcao-modular", title: "Função modular" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A curva que descreve subir e cair",
       paragraphs: [
         "Quando algo sobe e depois desce — uma bola jogada para o alto, o lucro que cresce e cai, a trajetória de um jato d'água — você está vendo uma função quadrática.",
         "O gráfico dela é uma parábola, aquela curva em forma de U (ou U de cabeça para baixo). O ponto de virada, o vértice, costuma ser a resposta da pergunta: altura máxima, lucro máximo, custo mínimo.",
@@ -316,7 +316,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
     },
     plot: "altura-da-bola",
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do lançamento da bola ao lucro máximo",
       items: [
         { label: "Lançamentos", detail: "altura de uma bola ou projétil" },
         { label: "Lucro", detail: "preço ótimo que maximiza o ganho" },
@@ -332,7 +332,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Uma bola é jogada e sua altura é \\(h(t) = -5t^2 + 20t\\) (em metros, \\(t\\) em segundos). Qual a altura máxima e quando ela ocorre?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do vértice às raízes",
       steps: [
         {
           title: "Identificar a, b e c",
@@ -355,14 +355,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o vértice representa",
       paragraphs: [
         "A bola atinge a altura máxima de 20 metros aos 2 segundos. O vértice respondeu exatamente \"qual o pico e quando\".",
         "O sinal negativo de \\(a\\) foi a pista: ele garante que existe um máximo, não um mínimo. Se \\(a\\) fosse positivo, a curva teria um fundo em vez de um pico.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar o sinal de a e inverter a curva",
       items: [
         "Esquecer o sinal de \\(a\\) ao decidir se é máximo ou mínimo.",
         "Errar o sinal em \\(\\frac{-b}{2a}\\) (o \\(b = 20\\) dá \\(-20\\) no numerador).",
@@ -371,7 +371,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Explore parábolas com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -411,12 +411,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Função quadrática no banco",
       intro: "Pratique parábolas, vértice e raízes no banco de exercícios.",
       exerciseIds: ["func-ap-05", "func-ap-06", "fq-01", "fq-02", "fq-03", "fq-04", "fq-05", "fq-06", "fq-07", "fq-08", "fq-09", "fq-10", "fq-11", "fq-12", "fq-13", "fq-14"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Parábola: vértice, raízes e concavidade",
       bullets: [
         "Função quadrática: \\(f(x) = ax^2 + bx + c\\), gráfico em parábola.",
         "\\(a > 0\\) abre para cima (mínimo); \\(a < 0\\) abre para baixo (máximo).",
@@ -439,7 +439,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "funcao-exponencial", title: "Função exponencial" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando só importa o tamanho, não o sinal",
       paragraphs: [
         "Às vezes só importa o tamanho, não a direção. A distância entre duas cidades é a mesma na ida e na volta; um erro de 2 graus para mais ou para menos é igualmente ruim.",
         "O módulo (ou valor absoluto) captura essa ideia: ele transforma qualquer número no seu tamanho, sempre positivo. |−5| e |5| dão os dois 5.",
@@ -460,7 +460,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "a definição por partes do valor absoluto",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a diferença conta sem direção",
       items: [
         { label: "Distância", detail: "quão longe, sem se importar com direção" },
         { label: "Erro", detail: "desvio para mais ou para menos" },
@@ -476,7 +476,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Um termostato deve manter 20 °C. A diferença em relação ao alvo é \\(|T - 20|\\). Qual a diferença quando \\(T = 17\\) °C e quando \\(T = 23\\) °C?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Abrir o módulo em dois casos",
       steps: [
         {
           title: "Calcular para T = 17",
@@ -493,14 +493,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a distância encontrada significa",
       paragraphs: [
         "Estar a 17 °C ou a 23 °C representa o mesmo erro de 3 graus em relação ao alvo. O módulo ignora se faltou ou sobrou — só mede o quanto.",
         "Por isso \\(|x|\\) é a ferramenta de \"distância\": o que importa é o afastamento do alvo, não o lado para o qual ele aconteceu.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Abrir o módulo esquecendo um dos casos",
       items: [
         "Achar que \\(|-x| = x\\) sempre (só vale se você souber o sinal de \\(x\\)).",
         "Tratar o módulo como se cancelasse o número (\\(|-5|\\) não é \\(-5\\)).",
@@ -509,7 +509,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Trabalhe com módulo com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -547,12 +547,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Função modular no banco",
       intro: "Pratique módulo, distância e erros no banco de exercícios.",
       exerciseIds: ["func-ap-07", "func-ap-08"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Módulo é distância até zero",
       bullets: [
         "Módulo = distância até o zero, sempre \\(\\geq 0\\).",
         "\\(|x|\\) mantém positivos e inverte negativos.",
@@ -575,7 +575,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "funcao-logaritmica", title: "Função logarítmica" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando o crescimento acelera sozinho",
       paragraphs: [
         "Tem coisa que não cresce somando sempre o mesmo tanto, e sim multiplicando: o dinheiro com juros, uma população, um vídeo que viraliza. A cada passo, fica vezes maior.",
         "Esse crescimento que acelera é a função exponencial. No começo parece lento, depois dispara — é por isso que juros compostos e \"viralizar\" surpreendem tanto.",
@@ -596,7 +596,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "a = valor inicial · b = fator de multiplicação por passo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do rendimento à propagação",
       items: [
         { label: "Juros compostos", detail: "dinheiro multiplicando a cada período" },
         { label: "População", detail: "crescimento populacional ou de bactérias" },
@@ -612,7 +612,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Uma cultura começa com 100 bactérias e dobra a cada hora: \\(N(t) = 100 \\cdot 2^t\\). Quantas bactérias há após 3 horas?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Ler a base e o expoente",
       steps: [
         {
           title: "Identificar os elementos",
@@ -630,14 +630,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a base maior que um provoca",
       paragraphs: [
         "Após 3 horas há 800 bactérias. Repare como o salto da 2ª para a 3ª hora (de 400 para 800) é bem maior que da 1ª (de 100 para 200): é o crescimento que acelera.",
         "Esse é o motivo de juros compostos e epidemias parecerem inofensivos no início e explodirem depois — a multiplicação se acumula sobre um número cada vez maior.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir multiplicar por 2 com elevar a 2",
       items: [
         "Tratar como afim e somar em vez de multiplicar.",
         "Multiplicar a base pelo expoente (\\(2^3\\) não é 6).",
@@ -646,7 +646,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Explore exponenciais com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -685,12 +685,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Função exponencial no banco",
       intro: "Pratique crescimento e decaimento exponencial no banco de exercícios.",
       exerciseIds: ["func-ap-09", "func-ap-10"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A taxa que se aplica sobre o que já cresceu",
       bullets: [
         "Exponencial multiplica pela mesma base a cada passo.",
         "\\(f(x) = a \\cdot b^x\\): \\(a\\) é o inicial, \\(b\\) o fator por passo.",
@@ -713,7 +713,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "corrida-aplicativo", title: "Aplicação: corrida de app" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Descobrir o expoente escondido",
       paragraphs: [
         "Se a exponencial responde \"quanto vira depois de tantos passos?\", o logaritmo responde a pergunta inversa: \"quantos passos para chegar nesse valor?\".",
         "Quanto tempo para o dinheiro dobrar? Quantas vezes preciso dividir até sobrar pouco? Essas perguntas de \"quantas vezes\" são logaritmos.",
@@ -734,7 +734,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "condições reais: b > 0, b ≠ 1 e N > 0",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Da escala Richter ao tempo de investimento",
       items: [
         { label: "Terremotos", detail: "escala Richter é logarítmica" },
         { label: "Som", detail: "decibéis medem intensidade em log" },
@@ -750,7 +750,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Você começa com 1 e dobra repetidamente: 1, 2, 4, 8... Quantas vezes precisa dobrar para chegar a 64? Em log: quanto é \\(\\log_2(64)\\)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Trocar potência por logaritmo",
       steps: [
         {
           title: "Reescrever como pergunta de expoente",
@@ -771,14 +771,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o logaritmo devolve",
       paragraphs: [
         "\\(\\log_2(64) = 6\\) quer dizer que são necessárias 6 duplicações para sair de 1 e chegar a 64. O log contou os passos da exponencial.",
         "Repare como o log encolhe números grandes: 64 vira 6. É por isso que escalas como Richter e decibéis usam log — para que diferenças enormes caibam em poucos números.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Somar logaritmos de bases diferentes",
       items: [
         "Achar que log é multiplicação ou divisão.",
         "Esquecer qual é a base (\\(\\log_2\\) e \\(\\log_{10}\\) dão resultados diferentes).",
@@ -787,7 +787,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Use logaritmos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -825,12 +825,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Função logarítmica no banco",
       intro: "Pratique logaritmos e a relação com exponenciais no banco de exercícios.",
       exerciseIds: ["func-ap-11", "func-ap-12"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Logaritmo pergunta qual é o expoente",
       bullets: [
         "\\(\\log_b(N)\\) pergunta: qual expoente leva \\(b\\) a \\(N\\)?",
         "Logaritmo é a operação inversa da exponencial.",
@@ -853,7 +853,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "juros-compostos", title: "Aplicação: juros compostos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A função que você já usa toda semana",
       paragraphs: [
         "A corrida de app é o exemplo perfeito de função afim: você paga uma bandeirada fixa só para entrar no carro, e mais um tanto por quilômetro rodado.",
         "Entender essa conta deixa você prever o preço antes de pedir, comparar trajetos e perceber quando uma tarifa dinâmica está cara.",
@@ -874,7 +874,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "exemplo: R$ 6 de bandeirada + R$ 2,50 por km",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde bandeirada e quilômetro se somam",
       items: [
         { label: "Apps de corrida", detail: "preço por trajeto" },
         { label: "Táxi", detail: "bandeirada + taxímetro" },
@@ -890,7 +890,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Um app cobra R$ 6 de bandeirada e R$ 2,50 por km. Quanto custa uma corrida de 8 km? E de quantos km a corrida custaria R$ 31?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do preço da corrida à fórmula",
       steps: [
         {
           title: "Montar a função",
@@ -913,14 +913,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a bandeirada representa no gráfico",
       paragraphs: [
         "Você consegue ir nos dois sentidos: do trajeto para o preço (\\(C(8) = 26\\)) e do preço para o trajeto (R$ 31 → 10 km). É a mesma função, lida de dois jeitos.",
         "A bandeirada de R$ 6 é o que você paga mesmo sem andar quase nada. Por isso corridas curtíssimas saem proporcionalmente caras: o fixo pesa mais.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Esquecer a parte fixa no final",
       items: [
         "Esquecer de somar a bandeirada ao preço por km.",
         "Multiplicar a bandeirada pelos km.",
@@ -929,7 +929,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Modele a corrida com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -970,12 +970,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Corrida de aplicativo no banco",
       intro: "Pratique problemas de corrida e tarifas no banco de exercícios.",
       exerciseIds: ["func-ap-13", "func-ap-14"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Parte fixa mais parte por quilômetro",
       bullets: [
         "Corrida de app é função afim: bandeirada + preço por km.",
         "\\(C(x) = a \\cdot x + b\\), com \\(b\\) = bandeirada e \\(a\\) = preço por km.",
@@ -998,7 +998,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "custo-producao", title: "Aplicação: custo de produção" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Por que a dívida cresce mais rápido do que parece",
       paragraphs: [
         "Juros compostos é a função exponencial no seu bolso. O dinheiro não rende sobre o valor inicial só: rende sobre o que já rendeu também — juro sobre juro.",
         "É o que faz um investimento crescer cada vez mais rápido com o tempo, e também o que faz uma dívida de cartão sair do controle.",
@@ -1019,7 +1019,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "montante = capital × fator de juro elevado ao número de períodos",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do cartão de crédito ao investimento",
       items: [
         { label: "Poupança", detail: "rendimento mês a mês" },
         { label: "Investimentos", detail: "CDB, Tesouro, fundos" },
@@ -1035,7 +1035,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Você investe R$ 1000 a 10% ao ano (juros compostos). Quanto terá após 2 anos?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do capital ao montante composto",
       steps: [
         {
           title: "Identificar os valores",
@@ -1053,14 +1053,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Quanto do valor virou juro sobre juro",
       paragraphs: [
         "Após 2 anos você tem R$ 1210. Os R$ 10 a mais em relação ao juro simples vêm do segundo ano render também sobre os R$ 100 ganhos no primeiro.",
         "Essa diferença parece pequena em 2 anos, mas vira enorme em 10 ou 20 — é o efeito exponencial. Por isso começar cedo a investir faz tanta diferença.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Aplicar juro simples onde o juro é composto",
       items: [
         "Usar a taxa em porcentagem (\\(10\\)) em vez de decimal (\\(0{,}10\\)).",
         "Multiplicar a base pelo expoente em vez de elevar.",
@@ -1069,7 +1069,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule juros compostos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1108,12 +1108,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Juros compostos no banco",
       intro: "Pratique juros compostos e montante no banco de exercícios.",
       exerciseIds: ["func-ap-15", "func-ap-16"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O juro que incide sobre o próprio juro",
       bullets: [
         "Juros compostos: \\(M = C \\cdot (1 + i)^t\\).",
         "A taxa entra em decimal (\\(10\\% = 0{,}10\\)) e soma-se 1.",
@@ -1136,7 +1136,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-funcoes-1", title: "Revisão · Parte 1" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quanto custa cada unidade a mais",
       paragraphs: [
         "Custo de produção pode ser uma função afim (fixo + por unidade) ou, quando há ineficiências e ganhos de escala, uma quadrática com um ponto de custo mínimo.",
         "Escrever o custo como função permite responder perguntas valiosas: quanto custa produzir X, e qual a quantidade que minimiza o custo por unidade.",
@@ -1157,7 +1157,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "quando a > 0, o vértice é a quantidade de custo mínimo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a escala muda o preço",
       items: [
         { label: "Indústria", detail: "quantidade ótima de produção" },
         { label: "Logística", detail: "tamanho de lote que minimiza custo" },
@@ -1173,7 +1173,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "O custo médio por peça é \\(C(x) = x^2 - 8x + 30\\) (em reais), onde \\(x\\) é a quantidade em centenas. Qual quantidade minimiza o custo, e qual é esse custo?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Montar a função de custo",
       steps: [
         {
           title: "Identificar a, b, c",
@@ -1196,14 +1196,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o custo médio revela",
       paragraphs: [
         "Produzir 400 peças minimiza o custo médio em R$ 14 por peça. Produzir menos ou mais que isso encarece cada peça — pouco demais não dilui o fixo, demais sobrecarrega a estrutura.",
         "É o mesmo vértice da função quadrática, agora respondendo a uma pergunta de negócio: existe um ponto ideal, nem pouco nem demais.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Somar custo fixo a cada unidade",
       items: [
         "Esquecer o sinal ao calcular \\(\\frac{-b}{2a}\\) (\\(b = -8\\) dá \\(+8\\) no numerador).",
         "Parar em \\(x_{min}\\) e não calcular o custo \\(C(x_{min})\\).",
@@ -1212,7 +1212,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Monte funções de custo com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1251,12 +1251,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Custo de produção no banco",
       intro: "Pratique funções de custo e otimização no banco de exercícios.",
       exerciseIds: ["func-ap-17", "func-ap-18"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Custo fixo, custo por unidade, custo total",
       bullets: [
         "Custo simples é função afim: fixo + variável × quantidade.",
         "Custo médio pode ser quadrático, com um ponto de mínimo.",
@@ -1279,7 +1279,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-funcoes-2", title: "Revisão · Parte 2" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Firmar o conceito antes das aplicações",
       paragraphs: [
         "A primeira metade do módulo construiu a ideia de função e apresentou os tipos básicos: afim (reta), quadrática (parábola) e modular (V).",
         "Revisar é enxergar o que liga tudo: toda função é uma máquina de entrada e saída, e cada tipo tem uma assinatura no gráfico.",
@@ -1298,7 +1298,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "as três funções básicas e suas fórmulas",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o conceito volta o tempo todo",
       items: [
         { label: "Gráficos", detail: "identificar o tipo pela forma" },
         { label: "Modelagem", detail: "escolher a função certa para o fenômeno" },
@@ -1314,7 +1314,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Dada \\(f(x) = x^2 - 4x + 3\\), diga o tipo, se tem máximo ou mínimo, e calcule \\(f(0)\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Revisar do conceito ao gráfico",
       steps: [
         {
           title: "Identificar o tipo",
@@ -1335,14 +1335,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que já dá para ler sem pensar",
       paragraphs: [
         "Você classificou a função (quadrática), descreveu o comportamento (mínimo) e avaliou um ponto (\\(f(0) = 3\\)) — exatamente o que se espera ao ler uma função.",
         "Esse trio — tipo, comportamento, valor num ponto — é a leitura básica de qualquer função, e vale para todos os tipos do módulo.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "As trocas mais comuns entre domínio e imagem",
       items: [
         "Confundir os gráficos: reta, parábola e V são bem diferentes.",
         "Esquecer de checar o domínio antes de avaliar.",
@@ -1351,7 +1351,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise o conceito com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1389,12 +1389,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Conceito e funções básicas no banco",
       intro: "Revise conceito, domínio e funções básicas no banco de exercícios.",
       exerciseIds: ["func-ap-19", "func-ap-20"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Função, domínio, imagem e gráfico",
       bullets: [
         "Função: cada entrada gera uma saída; cheque o domínio.",
         "Afim = reta; quadrática = parábola; modular = V.",
@@ -1421,7 +1421,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Amarrar exponencial, log e aplicação",
       paragraphs: [
         "A segunda metade trouxe a exponencial (multiplicar, não somar), o logaritmo (sua inversa) e três aplicações que amarram tudo: corrida, juros e custo.",
         "Revisar aqui é perceber que cada função existe para descrever um tipo de mudança: constante (afim), com pico (quadrática), acelerada (exponencial).",
@@ -1440,7 +1440,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       formulaLegend: "as ferramentas da segunda metade do módulo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde essas funções decidem dinheiro e tempo",
       items: [
         { label: "Finanças", detail: "juros e crescimento de patrimônio" },
         { label: "Ciência", detail: "população, decaimento, pH" },
@@ -1456,7 +1456,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
         "Um valor de R$ 200 cresce 5% ao ano. Quanto será após 2 anos? Qual tipo de função descreve isso?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Escolher a função certa para a situação",
       steps: [
         {
           title: "Reconhecer o tipo",
@@ -1474,14 +1474,14 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Qual modelo descreve cada crescimento",
       paragraphs: [
         "R$ 220,50 é o valor após 2 anos. O passo decisivo foi reconhecer que \"crescer X% ao ano\" é exponencial, não afim — escolher a função certa é metade do problema.",
         "Se fosse um valor fixo somado por ano (afim), a conta seria outra. Saber distinguir os tipos de mudança é o grande ganho do módulo.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Usar modelo linear onde o crescimento acelera",
       items: [
         "Modelar crescimento percentual como afim (somando fixo).",
         "Usar a taxa em porcentagem em vez de decimal nos juros.",
@@ -1490,7 +1490,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Escolha o modelo com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1528,12 +1528,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Exponencial e logaritmo no banco",
       intro: "Revise exponencial, log e aplicações no banco de exercícios.",
       exerciseIds: ["func-ap-21", "func-ap-22", "dsf-func-01"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Reconhecer o tipo de crescimento",
       bullets: [
         "Exponencial multiplica pela base; log é sua inversa.",
         "Mudança constante = afim; acelerada = exponencial.",

@@ -17,7 +17,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "area-sob-grafico", title: "Área sob o gráfico" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Somar muitos pedaços pequenos",
       paragraphs: [
         "Derivada pergunta \"quão rápido muda agora?\". Integral pergunta \"quanto acumulou no total?\"",
         "Conta de luz, distância percorrida, volume de água — tudo é soma de pedaços pequenos.",
@@ -38,7 +38,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       callout: "Mais retângulos, melhor a aproximação.",
     },
     ondeAparece: {
-      title: "Exemplos",
+      title: "Onde somar pedaços resolve",
       items: [
         { label: "Distância", detail: "Soma de \\(v \\cdot \\Delta t\\)" },
         { label: "Consumo", detail: "Soma de \\(\\text{potência} \\cdot \\Delta t\\)" },
@@ -65,7 +65,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Somar pedaços de larguras diferentes sem perceber",
       items: [
         "Confundir valor instantâneo com total acumulado.",
         "Esquecer unidades (m/s × s = m).",
@@ -73,7 +73,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Some pedaços com apoio",
       exercises: [
         {
           id: "som-g1",
@@ -103,9 +103,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-01", "int-ap-02"] },
+    exerciciosAplicados: { title: "Soma acumulada no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-01", "int-ap-02"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Muitos pedacinhos viram um total",
       bullets: [
         "Integral \\(=\\) acúmulo \\(=\\) limite de somas.",
         "Pedaços × valor médio × largura.",
@@ -125,7 +125,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "integral-indefinida", title: "Integral indefinida" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A área que carrega um significado",
       paragraphs: [
         "Área entre gráfico e eixo x modela total acumulado quando \\(f \\geq 0\\).",
         "f negativo: integral conta área com sinal (abaixo do eixo subtrai).",
@@ -144,7 +144,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       callout: "Desenho ajuda a ver o que está somando.",
     },
     ondeAparece: {
-      title: "Contextos",
+      title: "Onde a área carrega significado",
       items: [
         { label: "v(t)", detail: "Área sob v = distância" },
         { label: "Taxa", detail: "Total produzido" },
@@ -156,7 +156,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       situacao: "Área sob o gráfico?",
     },
     passos: {
-      title: "Calcular",
+      title: "Somar as fatias sob a curva",
       steps: [
         { title: "Retângulo", detail: "\\(2 \\times 3 = 6\\)." },
         { title: "Integral", detail: "\\(\\int_0^3 2\\,dx = 6\\)." },
@@ -171,7 +171,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ignorar a área abaixo do eixo",
       items: [
         "Ignorar trechos com \\(f<0\\).",
         "Confundir área com perímetro.",
@@ -179,7 +179,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule áreas com apoio",
       exercises: [
         {
           id: "asg-g1",
@@ -208,9 +208,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-03", "int-ap-04"] },
+    exerciciosAplicados: { title: "Área sob o gráfico no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-03", "int-ap-04"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Área com sinal, não só espaço",
       bullets: [
         "Integral definida ≈ área líquida sob f.",
         "Sinal importa quando \\(f<0\\).",
@@ -230,7 +230,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "integral-definida", title: "Integral definida" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Desfazer a derivada",
       paragraphs: [
         "Se \\(F'(x)=f(x)\\), F é antiderivada de f — \"volta\" da derivada.",
         "Integral indefinida \\(\\int f(x)\\,dx = F(x)+C\\) reúne todas as antiderivadas.",
@@ -249,7 +249,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       callout: "Sempre +C em indefinida (família de soluções).",
     },
     ondeAparece: {
-      title: "Uso",
+      title: "Onde a antiderivada é o objetivo",
       items: [
         { label: "Recuperar posição", detail: "\\(s=\\int v\\,dt\\)" },
         { label: "Custo total", detail: "\\(\\int \\text{marginal}\\)" },
@@ -261,7 +261,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       situacao: "Antiderivada?",
     },
     passos: {
-      title: "Integrar",
+      title: "Achar a antiderivada e somar a constante",
       steps: [
         { title: "Regra", detail: "\\(x^3 + C\\)." },
         { title: "Verificar", detail: "\\((x^3)'=3x^2\\)." },
@@ -276,7 +276,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Esquecer a constante de integração",
       items: [
         "Esquecer \\(+C\\).",
         "Dividir por \\(n+1\\) errado em potência.",
@@ -284,7 +284,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Ache antiderivadas com apoio",
       exercises: [
         {
           id: "ind-g1",
@@ -313,9 +313,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-05", "int-ap-06"] },
+    exerciciosAplicados: { title: "Integral indefinida no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-05", "int-ap-06"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Uma família de funções, não uma só",
       bullets: [
         "Antiderivada: derivar volta a f.",
         "\\(\\int f\\,dx = F(x)+C\\).",
@@ -335,7 +335,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "propriedades-integral", title: "Propriedades da integral" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Do processo ao número",
       paragraphs: [
         "Integral definida \\(\\int_a^b f(x)\\,dx\\) é um número: acúmulo/área líquida no intervalo.",
         "Limites \\(a\\) e \\(b\\) fixam onde começa e termina a conta.",
@@ -354,7 +354,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       callout: "dx indica variável de integração; a e b são números.",
     },
     ondeAparece: {
-      title: "Exemplos",
+      title: "Onde o número final importa",
       items: [
         { label: "Produção", detail: "Total entre \\(t_1\\) e \\(t_2\\)" },
         { label: "Probabilidade", detail: "Área sob densidade (futuro)" },
@@ -381,7 +381,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar a ordem dos limites de integração",
       items: [
         "Deixar \\(+C\\) na definida (não aparece no valor final).",
         "Limites invertidos sem sinal.",
@@ -389,7 +389,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule integrais definidas com apoio",
       exercises: [
         {
           id: "def-g1",
@@ -418,9 +418,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-07", "int-ap-08"] },
+    exerciciosAplicados: { title: "Integral definida no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-07", "int-ap-08"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Um número, com unidade e sinal",
       bullets: [
         "Definida = número no intervalo \\([a,b]\\).",
         "Área líquida / acúmulo.",
@@ -440,7 +440,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "tfc", title: "Teorema Fundamental do Cálculo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quebrar a integral em partes fáceis",
       paragraphs: [
         "Propriedades permitem quebrar integrais difíceis em pedaços simples.",
         "Linearity, aditividade de intervalos e comparação são ferramentas de prova e cálculo.",
@@ -459,7 +459,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       callout: "c pode estar dentro ou fora de [a,b].",
     },
     ondeAparece: {
-      title: "Uso",
+      title: "Onde quebrar a integral ajuda",
       items: [
         { label: "Simetria", detail: "Funções pares/ímpares" },
         { label: "Trechos", detail: "Definição por partes" },
@@ -486,7 +486,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Integrar produto como se fosse soma",
       items: [
         "Quebrar em \\(c\\) fora do domínio de f.",
         "Esquecer sinal ao inverter limites.",
@@ -494,7 +494,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Use as propriedades com apoio",
       exercises: [
         {
           id: "prop-g1",
@@ -523,9 +523,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-09", "int-ap-10"] },
+    exerciciosAplicados: { title: "Propriedades da integral no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-09", "int-ap-10"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Somar, separar e tirar constante",
       bullets: [
         "Soma e constante: linearidade.",
         "Quebre intervalos: aditividade.",
@@ -544,7 +544,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "distancia-total", title: "Distância total a partir da velocidade" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A ponte entre derivar e integrar",
       paragraphs: [
         "TFC liga derivada e integral: calcular área usando antiderivada.",
         "É a ponte que torna Cálculo 1 computável na prática.",
@@ -577,7 +577,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       situacao: "Usar TFC.",
     },
     passos: {
-      title: "Passos",
+      title: "Aplicar o teorema em ordem",
       steps: [
         { title: "Antiderivada", detail: "\\(F(x)=\\frac{x^3}{3}\\)." },
         { title: "Avaliar", detail: "\\(F(1)-F(0)=\\frac{1}{3}-0=\\frac{1}{3}\\)." },
@@ -592,7 +592,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Aplicar o teorema com função descontínua no intervalo",
       items: [
         "Antiderivada errada.",
         "Esquecer \\(F(a)\\) na subtração.",
@@ -600,7 +600,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aplique o teorema com apoio",
       exercises: [
         {
           id: "tfc-g1",
@@ -629,9 +629,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-11", "int-ap-12"] },
+    exerciciosAplicados: { title: "Teorema Fundamental no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-11", "int-ap-12"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Antiderivada no fim menos no começo",
       bullets: [
         "TFC: para \\(f\\) contínua em \\([a,b]\\), a área acumulada deriva de volta para \\(f\\); se \\(F'=f\\), então \\(\\int_a^b f = F(b)-F(a)\\).",
         "Encontre antiderivada, avalie limites.",
@@ -651,7 +651,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "consumo-acumulado", title: "Consumo acumulado" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Da velocidade de volta à distância",
       paragraphs: [
         "Deslocamento \\(\\int v\\,dt\\) pode ser negativo; distância total soma o percorrido sem sinal.",
         "v negativo = voltar; distância conta ida e volta.",
@@ -670,7 +670,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       callout: "Movimento ida e volta exige cuidado com sinal de v.",
     },
     ondeAparece: {
-      title: "Exemplos",
+      title: "Do velocímetro ao odômetro",
       items: [
         { label: "GPS", detail: "Odômetro vs posição final" },
         { label: "Esporte", detail: "Km percorridos" },
@@ -690,14 +690,14 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que separa distância de deslocamento",
       paragraphs: [
         "Voltou ao ponto inicial: deslocamento 0, mas percorreu 18 m.",
         "Integral de v sozinha não basta para odômetro.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Somar velocidade negativa como se fosse distância",
       items: [
         "Usar \\(\\int v\\) como distância quando v muda de sinal.",
         "Esquecer de achar onde \\(v=0\\).",
@@ -705,7 +705,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule distâncias com apoio",
       exercises: [
         {
           id: "dis-g1",
@@ -735,9 +735,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-13", "int-ap-14"] },
+    exerciciosAplicados: { title: "Distância total no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-13", "int-ap-14"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Deslocamento tem sinal, distância não",
       bullets: [
         "Deslocamento = \\(\\int v\\) (com sinal).",
         "Distância = \\(\\int |v|\\) ou soma de trechos.",
@@ -757,7 +757,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "area-volume-integral", title: "Área e volume" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Somar o que se gasta ao longo do tempo",
       paragraphs: [
         "Potência instantânea (kW) integrada no tempo dá energia consumida (kWh).",
         "Vazão (L/min) integrada dá volume total.",
@@ -789,7 +789,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       situacao: "Energia consumida?",
     },
     passos: {
-      title: "Integrar",
+      title: "Integrar a taxa no período",
       steps: [
         { title: "Unidades", detail: "t em horas, P em kW \\(\\to\\) kWh." },
         { title: "∫₀³ 2t dt", detail: "\\(\\int_0^3 2t\\,dt = \\left[t^2\\right]_0^3 = 9\\) kWh." },
@@ -804,7 +804,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Misturar unidades de taxa e de total",
       items: [
         "Confundir potência com energia.",
         "Horas vs segundos nas unidades.",
@@ -812,7 +812,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Acumule consumo com apoio",
       exercises: [
         {
           id: "con-g1",
@@ -843,9 +843,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-15", "int-ap-16"] },
+    exerciciosAplicados: { title: "Consumo acumulado no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-15", "int-ap-16"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Taxa integrada vira total",
       bullets: [
         "Taxa integrada = total acumulado.",
         "Cuidado com unidades (kW·h).",
@@ -865,7 +865,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "aplicacoes-integrais", title: "Aplicações práticas" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Medir formas que não têm fórmula pronta",
       paragraphs: [
         "Áreas entre curvas e volumes de sólidos aparecem em engenharia e física.",
         "Cálculo 1 introduz: área = integral da diferença; volume = disco/fatia (conceito).",
@@ -884,7 +884,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       callout: "Desenhe quem está em cima.",
     },
     ondeAparece: {
-      title: "Aplicações",
+      title: "Da peça irregular ao reservatório",
       items: [
         { label: "Terreno", detail: "Área entre níveis" },
         { label: "Reservatório", detail: "Volume por seção" },
@@ -896,7 +896,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       situacao: "Área da região entre as curvas?",
     },
     passos: {
-      title: "Resolver",
+      title: "Fatiar e montar a integral",
       steps: [
         { title: "Quem está acima", detail: "\\(x \\geq x^2\\) em \\([0,1]\\)." },
         { title: "Integral", detail: "\\[\\int_0^1 (x-x^2)\\,dx = \\left[\\frac{x^2}{2}-\\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2}-\\frac{1}{3} = \\frac{1}{6}\\]" },
@@ -911,7 +911,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Montar a integral com a variável errada",
       items: [
         "Integrar \\((f-g)\\) sem ver quem é maior.",
         "Limites errados de interseção.",
@@ -919,7 +919,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule áreas e volumes com apoio",
       exercises: [
         {
           id: "avol-g1",
@@ -948,9 +948,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-17", "int-ap-18"] },
+    exerciciosAplicados: { title: "Área e volume no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-17", "int-ap-18"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Fatiar, somar, integrar",
       bullets: [
         "Área entre curvas: \\(\\int (f-g)\\) com \\(f \\geq g\\).",
         "Ache interseções para limites.",
@@ -970,7 +970,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-integrais", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Onde a integral resolve problema real",
       paragraphs: [
         "Síntese: integral responde acúmulo — distância, energia, área, totais em economia.",
         "Problema aplicado: identifique taxa, intervalo, unidades, depois integre.",
@@ -1017,7 +1017,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Integrar sem checar o intervalo do problema",
       items: [
         "Integrar quantidade em vez de taxa.",
         "Limites trocados.",
@@ -1025,7 +1025,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aplique integrais com apoio",
       exercises: [
         {
           id: "apl-g1",
@@ -1055,9 +1055,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-19", "int-ap-20"] },
+    exerciciosAplicados: { title: "Aplicações de integrais no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-19", "int-ap-20"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Integral como acumulação",
       bullets: [
         "Identifique taxa e intervalo.",
         "Unidades e sinal.",
@@ -1081,7 +1081,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Fechar a trilha com a ideia inteira",
       paragraphs: [
         "Você fechou o arco central de Cálculo 1: limites → derivadas → integrais.",
         "Esta revisão consolida acúmulo, área e TFC antes de seguir para Cálculo 2 ou revisão geral.",
@@ -1114,7 +1114,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       situacao: "\\(v(t)=3t\\) m/s em \\(0 \\leq t \\leq 4\\) s. Deslocamento e distância?",
     },
     passos: {
-      title: "Resolver",
+      title: "Refazer o caminho da trilha",
       steps: [
         { title: "Deslocamento", detail: "\\(\\int_0^4 3t\\,dt = \\left[1{,}5t^2\\right]_0^4 = 24\\) m." },
         { title: "Distância", detail: "\\(v \\geq 0 \\to 24\\) m também." },
@@ -1130,7 +1130,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Os esquecimentos clássicos de sinal e constante",
       items: [
         "Decorar integral sem desenhar área.",
         "Esquecer TFC na definida.",
@@ -1138,7 +1138,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise integrais com apoio",
       exercises: [
         {
           id: "revi-g1",
@@ -1167,9 +1167,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-21", "int-ap-22", "dsf-int-01"] },
+    exerciciosAplicados: { title: "Revisão de integrais no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-21", "int-ap-22", "dsf-int-01"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Somar, acumular, interpretar",
       bullets: [
         "Integral \\(=\\) acúmulo \\(=\\) área líquida (com sinal).",
         "TFC é a ferramenta de cálculo.",

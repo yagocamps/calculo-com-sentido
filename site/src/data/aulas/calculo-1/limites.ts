@@ -21,7 +21,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "limite-por-grafico", title: "Limite por gráfico" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Ver a tendência com números na mão",
       paragraphs: [
         "Antes de calcular com álgebra, você pode observar o comportamento: escolha valores de \\(x\\) cada vez mais perto de \\(a\\) e veja para onde \\(f(x)\\) vai.",
         "Tabelas são a ferramenta mais honesta do iniciante — mostram tendência sem exigir manipulação simbólica.",
@@ -42,7 +42,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "L = valor para o qual f(x) parece convergir na tabela",
     },
     ondeAparece: {
-      title: "Aplicações reais",
+      title: "Onde a medição chega perto do limite",
       items: [
         { label: "Engenharia", detail: "Testes numéricos perto de ponto de falha" },
         { label: "Economia", detail: "Demanda quando preço se aproxima de um patamar" },
@@ -64,14 +64,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "Para onde a tabela está apontando",
       paragraphs: [
         "A tabela sugere \\(L = 4\\) mesmo com buraco em \\(x = 2\\).",
         "Diferenças pequenas entre linhas indicam convergência; saltos indicam possível limite lateral ou inexistência.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Concluir com poucos valores na tabela",
       items: [
         "Usar poucos valores — a tendência pode enganar.",
         "Incluir \\(x = a\\) quando \\(f(a)\\) não existe e confundir com o limite.",
@@ -79,7 +79,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Monte tabelas de limite com apoio",
       exercises: [
         {
           id: "tab-g1",
@@ -109,12 +109,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Limite por tabela no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-03", "lim-ap-04"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A tabela sugere, não prova",
       bullets: [
         "Tabela: \\(x\\) perto de \\(a\\) → calcular \\(f(x)\\) → observar tendência.",
         "Funciona mesmo quando \\(f(a)\\) não existe.",
@@ -136,7 +136,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "limite-substituicao", title: "Limite por substituição" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Ler o limite sem calcular nada",
       paragraphs: [
         "O gráfico mostra tendência de um relance: para onde a curva caminha quando \\(x\\) se aproxima de \\(a\\)?",
         "Buracos e saltos explicam por que \\(f(a)\\) pode faltar ou diferir do limite.",
@@ -157,7 +157,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "L = y para o qual a curva se aproxima visualmente",
     },
     ondeAparece: {
-      title: "Aplicações reais",
+      title: "Onde o desenho responde primeiro",
       items: [
         { label: "Velocidade", detail: "Gráfico s(t) mostra posição; inclinação local vem depois" },
         { label: "Engenharia", detail: "Curvas de resposta perto de saturação" },
@@ -179,14 +179,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que a bolinha aberta representa",
       paragraphs: [
         "Gráfico traduz tabela em imagem: mesma tendência, leitura mais rápida.",
         "Salto indica limite lateral diferente — tema da aula de limites laterais.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Usar o valor do ponto no lugar do limite",
       items: [
         "Confundir buraco com limite inexistente.",
         "Ler só um lado do gráfico.",
@@ -194,7 +194,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Leia limites no gráfico com apoio",
       exercises: [
         {
           id: "graf-g1",
@@ -224,12 +224,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Limite por gráfico no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-05", "lim-ap-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "O limite ignora o ponto em si",
       bullets: [
         "Siga a curva quando \\(x \\to a\\) para ler \\(L\\).",
         "Buraco: limite pode existir sem \\(f(a)\\).",
@@ -252,7 +252,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "limites-laterais", title: "Limites laterais" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O caminho mais curto, quando ele existe",
       paragraphs: [
         "Quando a função é \"bem comportada\" em \\(a\\), o limite é simplesmente \\(f(a)\\) — basta substituir.",
         "Muitos limites parecem difíceis porque \\(x = a\\) gera \\(\\frac{0}{0}\\) ou forma indeterminada; aí substituição direta falha, mas a tendência ainda existe.",
@@ -273,7 +273,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "válido quando f é contínua em a",
     },
     ondeAparece: {
-      title: "Aplicações reais",
+      title: "Onde substituir já resolve",
       items: [
         { label: "Polinômios", detail: "Sempre contínuos → substituição imediata" },
         { label: "Custo", detail: "\\(C(10)\\) = custo exato de 10 unidades" },
@@ -286,7 +286,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       situacao: "(A) \\(\\lim_{x \\to 3} (x^2 + 2x - 1)\\). (B) \\(\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}\\).",
     },
     passos: {
-      title: "Resolver",
+      title: "Substituir e conferir o resultado",
       steps: [
         { title: "Caso A", detail: "Polinômio contínuo → \\(9 + 6 - 1 = 14\\)." },
         { title: "Caso B — tentativa", detail: "\\(x = 2 \\to \\frac{0}{0}\\) (indeterminação)." },
@@ -295,14 +295,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "Por que substituir funcionou aqui",
       paragraphs: [
         "\\(\\frac{0}{0}\\) não significa limite inexistente — significa que substituição bruta falhou.",
         "Simplificar revela a tendência que tabela e gráfico já sugeriam.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Substituir e aceitar uma indeterminação",
       items: [
         "Substituir em \\(\\frac{0}{0}\\) sem simplificar e concluir \"não existe\".",
         "Cancelar termos que não são fatores comuns (ex.: somar em vez de fatorar).",
@@ -310,7 +310,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule por substituição com apoio",
       exercises: [
         {
           id: "sub-g1",
@@ -340,12 +340,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Limite por substituição no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-07", "lim-ap-08"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Substitua, e confira o que saiu",
       bullets: [
         "Contínua em \\(a\\) → limite \\(= f(a)\\).",
         "\\(\\frac{0}{0}\\) pede simplificação antes de substituir.",
@@ -368,7 +368,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "limite-infinito", title: "Limites infinitos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando cada lado conta uma história",
       paragraphs: [
         "Às vezes a função se comporta de um jeito à esquerda de a e de outro à direita — como um semáforo ou uma política que muda em uma data.",
         "Limite lateral pergunta: o que acontece se x → a por um só lado?",
@@ -389,7 +389,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "a⁻ = por baixo · a⁺ = por cima",
     },
     ondeAparece: {
-      title: "Aplicações reais",
+      title: "Onde a regra muda no meio do caminho",
       items: [
         { label: "Tarifas", detail: "Preço muda exatamente em \\(x = k\\) unidades" },
         { label: "Controle", detail: "Sinal liga/desliga em instante \\(t_0\\)" },
@@ -411,14 +411,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que significa os lados discordarem",
       paragraphs: [
         "Laterais explicam saltos: se \\(3 \\neq 7\\), limite bilateral não existe.",
         "Em aplicações, o lado importa: chegar ao limite por baixo vs por cima pode ter significados distintos.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Concluir o limite olhando um lado só",
       items: [
         "Usar a fórmula errada do lado errado da fronteira.",
         "Achar que limite bilateral existe só porque um dos lados existe.",
@@ -426,7 +426,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Compare os dois lados com apoio",
       exercises: [
         {
           id: "lat-g1",
@@ -456,12 +456,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Limites laterais no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-09", "lim-ap-10", "p2-limites-laterais-1", "p2-limites-laterais-2", "p2-limites-laterais-4", "p2-limites-laterais-5"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Só existe limite se os lados concordam",
       bullets: [
         "\\(a^-\\) e \\(a^+\\): aproximar por um lado.",
         "Limite bilateral exige laterais iguais.",
@@ -484,7 +484,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "limite-no-infinito", title: "Limites no infinito" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando o valor dispara perto de um ponto",
       paragraphs: [
         "Algumas grandezas explodem quando x se aproxima de a — denominador vai a zero, pressão tende ao infinito, fila cresce sem limite.",
         "Limite infinito descreve crescimento sem bound: f(x) fica maior que qualquer número fixo, se x estiver perto o suficiente de a.",
@@ -505,7 +505,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "f(x) > M para x perto de a (M qualquer)",
     },
     ondeAparece: {
-      title: "Aplicações reais",
+      title: "Onde a conta estoura",
       items: [
         { label: "Engenharia", detail: "Resistência antes de ruptura (modelo idealizado)" },
         { label: "Economia", detail: "Custo marginal extremo perto de capacidade máxima" },
@@ -518,7 +518,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       situacao: "Descreva o comportamento quando \\(x \\to 3\\).",
     },
     passos: {
-      title: "Análise",
+      title: "Investigar o que dispara",
       steps: [
         { title: "Denominador", detail: "→ 0 quando \\(x \\to 3\\)." },
         { title: "Numerador", detail: "Vale \\(1\\), não vai a zero. Esse par (numerador fixo, denominador \\(\\to 0\\)) é o que gera explosão. Se o numerador também fosse a zero, teríamos \\(\\frac{0}{0}\\) e o limite poderia ser finito." },
@@ -528,14 +528,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que o infinito indica aqui",
       paragraphs: [
         "\\(+\\infty\\) e \\(-\\infty\\) importam para o lado da curva em relação ao eixo x.",
         "Laterais podem ser \\(+\\infty\\) de um lado e \\(-\\infty\\) do outro (ex.: \\(\\frac{1}{x}\\) em \\(x = 0\\)).",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Tratar infinito como se fosse número",
       items: [
         "Tratar \\(\\infty\\) como valor numérico para operar.",
         "Esquecer de verificar sinal (\\(+\\infty\\) vs \\(-\\infty\\)).",
@@ -544,7 +544,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Analise limites infinitos com apoio",
       exercises: [
         {
           id: "inf-g1",
@@ -574,12 +574,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Limites infinitos no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-11", "lim-ap-12"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Infinito descreve comportamento, não valor",
       bullets: [
         "\\(f(x) \\to \\pm\\infty\\) quando \\(x \\to a\\): crescimento ilimitado.",
         "Gráfico: assíntota vertical \\(x = a\\).",
@@ -602,7 +602,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "assintotas", title: "Assíntotas" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O que acontece no longo prazo",
       paragraphs: [
         "Longe na direita ou esquerda do eixo x, como a função se comporta? Demanda estabiliza? Velocidade terminal? Custo marginal tende a constante?",
         "Limite no infinito estuda x → +∞ ou x → −∞ — o \"fim do gráfico\".",
@@ -623,7 +623,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "L pode ser 0, constante ou ±∞",
     },
     ondeAparece: {
-      title: "Aplicações reais",
+      title: "Onde interessa a estabilização",
       items: [
         { label: "Economia", detail: "Demanda tende a patamar quando preço sobe muito" },
         { label: "Biologia", detail: "População próxima de capacidade máxima \\(K\\)" },
@@ -636,7 +636,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       situacao: "Determine \\(\\lim_{x \\to +\\infty} f(x)\\) e \\(\\lim_{x \\to -\\infty} f(x)\\).",
     },
     passos: {
-      title: "Resolver",
+      title: "Comparar os graus dominantes",
       steps: [
         { title: "Graus", detail: "Numerador e denominador grau 2." },
         { title: "Coeficientes", detail: "\\(\\frac{3}{1} = 3\\) no termo líder." },
@@ -645,14 +645,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que o valor de estabilização representa",
       paragraphs: [
         "\\(y = 3\\) é o valor de longo prazo do modelo racional.",
         "Quando o grau do numerador é maior, os termos líderes determinam a magnitude, mas o sinal deve ser analisado em cada direção. A curva não tem assíntota horizontal finita; uma divisão polinomial pode revelar uma assíntota oblíqua ou polinomial.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Comparar graus do numerador e denominador errado",
       items: [
         "Confundir \\(\\lim_{x \\to a} f(x) = \\infty\\) com \\(\\lim_{x \\to \\infty} f(x)\\).",
         "Esquecer termos de grau menor — só o líder decide no infinito.",
@@ -660,7 +660,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule limites no infinito com apoio",
       exercises: [
         {
           id: "ninf-g1",
@@ -690,12 +690,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Limites no infinito no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-13", "lim-ap-14"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Para onde a função caminha no fim",
       bullets: [
         "\\(x \\to \\pm\\infty\\): estuda comportamento de longo prazo.",
         "Racionais: compare graus e coeficientes líderes.",
@@ -718,7 +718,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "velocidade-instantanea", title: "Velocidade instantânea" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "As linhas que a curva nunca cruza",
       paragraphs: [
         "Assíntota é reta guia: o gráfico se aproxima dela. Aproximar-se não significa ficar proibido de encostar — a curva pode até cruzar uma assíntota horizontal ou oblíqua.",
         "Organiza limites infinitos e no infinito num vocabulário visual único.",
@@ -739,7 +739,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "horizontal · oblíqua · vertical",
     },
     ondeAparece: {
-      title: "Aplicações reais",
+      title: "Onde existe um teto ou uma barreira",
       items: [
         { label: "Engenharia", detail: "Capacidade máxima (horizontal)" },
         { label: "Economia", detail: "Custo médio → custo marginal (oblíqua em modelos)" },
@@ -761,14 +761,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que cada assíntota informa",
       paragraphs: [
         "Lista de assíntotas resume limites difíceis em retas simples.",
         "Oblíqua aparece quando crescimento linear domina no infinito.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Achar que a curva nunca pode cruzar a horizontal",
       items: [
         "Confundir buraco com assíntota vertical.",
         "Declarar oblíqua sem dividir polinômios.",
@@ -776,7 +776,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Encontre assíntotas com apoio",
       exercises: [
         {
           id: "ass-g1",
@@ -806,12 +806,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Assíntotas no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-15", "lim-ap-16"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Vertical estoura, horizontal estabiliza",
       bullets: [
         "Vertical: lim infinito em \\(x = a\\).",
         "Horizontal: lim finito quando \\(x \\to \\pm\\infty\\).",
@@ -834,7 +834,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "aplicacoes-limites", title: "Aplicações de limites" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O limite que o velocímetro calcula",
       paragraphs: [
         "Velocidade no velocímetro não é média da viagem inteira — é o que acontece \"agora\", em um instante.",
         "Com \\(s(t)\\) = posição, velocidade média em \\([t_1, t_2]\\) usa diferença; instantânea exige intervalo cada vez menor.",
@@ -855,7 +855,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "v(a) = velocidade instantânea em t = a",
     },
     ondeAparece: {
-      title: "Aplicações reais",
+      title: "Do carro ao sensor de esteira",
       items: [
         { label: "Trânsito", detail: "s(t) do GPS → velocidade no radar" },
         { label: "Engenharia", detail: "Taxa de deformação em materiais" },
@@ -868,7 +868,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       situacao: "Velocidade média em [2, 2,5] e limite para instantânea em \\(t = 2\\).",
     },
     passos: {
-      title: "Calcular",
+      title: "Encurtar o intervalo até o instante",
       steps: [
         { title: "Média", detail: "\\(\\Delta s = 2{,}5^2 - 2^2 = 2{,}25\\) m; \\(\\Delta t = 0{,}5\\) s → 4,5 m/s." },
         { title: "Intervalo menor", detail: "[2, 2,1]: \\(\\frac{\\Delta s}{\\Delta t} \\approx 4{,}1\\) m/s." },
@@ -877,14 +877,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que a velocidade num instante significa",
       paragraphs: [
         "Médias em intervalos menores aproximam a instantânea — exatamente o espírito do limite.",
         "Derivada formalizará esse limite; aqui o foco é o significado físico.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Usar o intervalo inteiro como se fosse instante",
       items: [
         "Usar velocidade média da viagem como instantânea.",
         "Esquecer unidades (m/s, km/h).",
@@ -892,7 +892,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Calcule velocidades com apoio",
       exercises: [
         {
           id: "vel-g1",
@@ -922,12 +922,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Velocidade instantânea no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-17", "lim-ap-18"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Intervalo que tende a zero",
       bullets: [
         "\\(s(t)\\) posição; v média \\(= \\frac{\\Delta s}{\\Delta t}\\).",
         "Instantânea = limite quando \\(\\Delta t \\to 0\\).",
@@ -950,7 +950,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-limites", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Onde o limite resolve problema real",
       paragraphs: [
         "Limite não é exercício isolado — é a linguagem de tendência em ciência, engenharia e economia.",
         "Consolidar aplicações fixa por que o módulo inteiro importa antes de avançar para continuidade.",
@@ -985,7 +985,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       situacao: "\\(C(q) = 500 + 8q + 0{,}01q^2\\). Discuta custo médio e custo marginal quando q cresce muito.",
     },
     passos: {
-      title: "Análise",
+      title: "Do enunciado ao limite",
       steps: [
         { title: "Médio", detail: "\\(\\frac{C(q)}{q} = \\frac{500}{q} + 8 + 0{,}01q\\); o termo \\(0{,}01q\\) domina quando \\(q \\to \\infty\\)." },
         { title: "Marginal (ideia)", detail: "\\(\\frac{\\Delta C}{\\Delta q} \\approx 8 + 0{,}02q\\) para q grande." },
@@ -994,14 +994,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que o limite responde na prática",
       paragraphs: [
         "Limites traduzem \"o que acontece no extremo\" em números ou \\(\\infty\\).",
         "Revisão desta aula amarra tabela, gráfico, laterais, infinitos e velocidade.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Modelar sem verificar o domínio",
       items: [
         "Aplicar modelo fora do domínio onde foi calibrado.",
         "Ignorar unidades e contexto ao interpretar L ou \\(\\infty\\).",
@@ -1009,7 +1009,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aplique limites com apoio",
       exercises: [
         {
           id: "apl-g1",
@@ -1039,12 +1039,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Aplicações de limites no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-19"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Limite como ferramenta de decisão",
       bullets: [
         "Limites modelam tendência, taxas instantâneas e extremos.",
         "Física, economia e engenharia compartilham a mesma estrutura.",
@@ -1069,14 +1069,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Consolidar antes de entrar em derivadas",
       paragraphs: [
         "Consolidar limites evita carregar buracos conceituais para continuidade e derivada.",
         "Checklist final: você consegue ir da ideia intuitiva ao cálculo e à leitura aplicada?",
       ],
     },
     explicacao: {
-      title: "Checklist do módulo",
+      title: "O checklist de limites",
       paragraphs: [
         "✓ Ideia: tendência quando \\(x \\to a\\) (sem exigir \\(f(a)\\)).",
         "✓ Tabela e gráfico: estimar L; buracos vs saltos.",
@@ -1091,7 +1091,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       callout: "Continuidade junta limite e valor no ponto.",
     },
     ondeAparece: {
-      title: "Conexão",
+      title: "Onde o limite sustenta a derivada",
       items: [
         { label: "Continuidade", detail: "Limite \\(= f(a)\\) sem quebra" },
         { label: "Derivada", detail: "Limite de taxa média" },
@@ -1099,11 +1099,11 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Mini-simulado mental",
+      title: "Teste rápido de limites",
       situacao: "\\(f(x) = \\frac{x^2 - 1}{x - 1}\\). Limite em \\(x = 1\\)? Assíntotas de \\(g(x) = \\frac{1}{x} + 2\\)?",
     },
     passos: {
-      title: "Revisão rápida",
+      title: "Repassar limites em minutos",
       steps: [
         { title: "f em x = 1", detail: "Simplifica \\(x + 1 \\to\\) lim \\(= 2\\)." },
         { title: "g", detail: "Vertical \\(x = 0\\); horizontal \\(y = 2\\)." },
@@ -1112,14 +1112,14 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Próximo módulo",
+      title: "O que levar para continuidade",
       paragraphs: [
         "Abra Continuidade — comece por Ideia visual de continuidade.",
         "Marque este módulo como concluído se dominou o checklist.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Os deslizes que se repetem em prova",
       items: [
         "Memorizar regras sem interpretar tabela/gráfico.",
         "Pular limites laterais em funções por partes.",
@@ -1127,7 +1127,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise limites com apoio",
       exercises: [
         {
           id: "revl-g1",
@@ -1157,12 +1157,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Revisão de limites no banco",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-20"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Tabela, gráfico, substituição e laterais",
       bullets: [
         "Limite = tendência; tabela, gráfico, álgebra.",
         "Laterais, ±∞, assíntotas, velocidade instantânea.",
