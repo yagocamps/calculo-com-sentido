@@ -752,7 +752,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       situacao: "Identifique assíntotas vertical, horizontal e oblíqua.",
     },
     passos: {
-      title: "Inventário",
+      title: "Levantar as três assíntotas",
       steps: [
         { title: "Vertical", detail: "\\(x = 0\\) (denominador); \\(\\lim_{x \\to 0} |f| = \\infty\\)." },
         { title: "Horizontal?", detail: "Grau num > den → não há horizontal finita." },
@@ -972,7 +972,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       formulaLegend: "esqueleto comum das aplicações",
     },
     ondeAparece: {
-      title: "Panorama",
+      title: "Onde o limite entra na prática",
       items: [
         { label: "Física", detail: "Instantâneo via intervalos infinitesimais" },
         { label: "Economia", detail: "Marginal = limite de incremento médio" },

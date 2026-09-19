@@ -160,7 +160,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         "\\(f(x) = \\frac{x^2-1}{x-1}\\) para \\(x \\neq 1\\); \\(g(x) = 1\\) se \\(x<0\\) e \\(g(x)=2\\) se \\(x \\geq 0\\). Classifique em \\(x=1\\) e \\(x=0\\).",
     },
     passos: {
-      title: "Classificar",
+      title: "Classificar a quebra em três tipos",
       steps: [
         { title: "f em x=1", detail: "Simplifica para \\(x+1\\) (\\(x \\neq 1\\)); lim \\(= 2\\), \\(f(1)\\) indefinido → buraco." },
         { title: "g em x=0", detail: "Esquerda → 1, direita → 2 → salto." },
@@ -274,7 +274,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Distinção",
+      title: "Assíntota não é o mesmo que furo",
       paragraphs: [
         "Assíntota vertical marca descontinuidade infinita.",
         "Pontos longe da vertical podem ser perfeitamente contínuos.",
@@ -372,7 +372,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       situacao: "\\[f(x) = \\begin{cases} x^2 & x \\neq 1 \\\\ 3 & x = 1 \\end{cases}\\] Contínua em 1?",
     },
     passos: {
-      title: "Checklist",
+      title: "As três condições, na ordem",
       steps: [
         { title: "f(1)", detail: "\\(f(1) = 3\\) — existe." },
         { title: "Limite", detail: "Para \\(x \\neq 1\\), \\(f(x)=x^2 \\to\\) lim \\(= 1\\)." },
@@ -380,7 +380,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Correção",
+      title: "Quando dá para remendar o furo",
       paragraphs: [
         "Redefinir \\(f(1) = 1\\) tornaria contínua — buraco removível.",
         "Provas pedem explicitar as três condições.",
@@ -583,11 +583,11 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Mini-desafio",
+      title: "Duas funções para classificar em zero",
       situacao: "Classifique em \\(x = 0\\): \\(f(x)=\\frac{\\sin x}{x}\\) para \\(x \\neq 0\\), \\(f(0)=1\\); \\(g(x)=\\frac{|x|}{x}\\) para \\(x \\neq 0\\).",
     },
     passos: {
-      title: "Respostas",
+      title: "Conferindo as duas classificações",
       steps: [
         { title: "f", detail: "lim \\(= 1\\), \\(f(0)=1\\) → contínua (clássico)." },
         { title: "g", detail: "Saltos \\(\\pm 1\\) em 0 → descontínua." },

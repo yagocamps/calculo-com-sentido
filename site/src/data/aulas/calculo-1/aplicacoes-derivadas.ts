@@ -58,7 +58,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Gráfico",
+      title: "O desenho confirma o sinal da derivada",
       paragraphs: [
         "Entre \\(-1\\) e \\(1\\) o gráfico desce; fora disso sobe — coerente com cubo menos 3x.",
         "Extremos locais serão estudados na próxima aula.",
@@ -164,7 +164,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Parábola",
+      title: "Por que esse máximo é único",
       paragraphs: [
         "Coeficiente de \\(x^2\\) negativo: um único máximo global em \\(x=2\\).",
         "Problemas aplicados pedem interpretar \\(x=2\\) no contexto (unidades).",
@@ -261,7 +261,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       situacao: "Pontos críticos?",
     },
     passos: {
-      title: "Achar",
+      title: "Onde a derivada zera ou falha",
       steps: [
         { title: "f′", detail: "\\(f'(x) = 4x^3-8x = 4x(x^2-2)\\)." },
         { title: "f′=0", detail: "\\(x=0\\), \\(x=\\sqrt{2}\\), \\(x=-\\sqrt{2}\\)." },
@@ -343,7 +343,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Regras",
+      title: "O sinal da segunda derivada",
       paragraphs: [
         "\\(f''(x)>0 \\to f'\\) crescente \\(\\to f\\) côncava para cima.",
         "\\(f''(x)<0 \\to\\) côncava para baixo.",
@@ -355,7 +355,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "Cálculo 1 introdutório usa f″ quando disponível; senão teste de f′.",
     },
     ondeAparece: {
-      title: "Leitura",
+      title: "Onde a curvatura muda a leitura",
       items: [
         { label: "Custo", detail: "Curvatura de escala" },
         { label: "Crescimento", detail: "Aceleração de mudança" },
@@ -375,7 +375,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Inflexão",
+      title: "O ponto onde a curva vira",
       paragraphs: [
         "Em 0 o gráfico muda de ∩ para ∪ — ponto de inflexão.",
         "\\(f'(0)=0\\) e não é extremo.",
@@ -457,7 +457,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "Unidades e frase final valem pontos.",
     },
     ondeAparece: {
-      title: "Clássicos",
+      title: "Os problemas clássicos de otimização",
       items: [
         { label: "Cerca", detail: "Área máxima com perímetro fixo" },
         { label: "Caixa", detail: "Volume máximo cortando cantos" },
@@ -469,7 +469,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       situacao: "Cercar 40 m de tela contra um muro, sem colocar tela no muro. Chame de \\(x\\) o lado paralelo ao muro e de \\(y\\) cada um dos dois lados perpendiculares. Qual é a área máxima?",
     },
     passos: {
-      title: "Modelar",
+      title: "Da situação à função a otimizar",
       steps: [
         { title: "Restrição", detail: "\\(x+2y=40\\) (dois lados y e um x)." },
         { title: "Área", detail: "\\[A=xy = \\frac{x(40-x)}{2} = 20x - \\frac{x^2}{2}\\]" },
@@ -479,7 +479,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Resposta",
+      title: "A medida que resolve o problema",
       paragraphs: [
         "Retângulo com 20 m paralelos ao muro e 10 m perpendiculares — área máxima de 200 m². A tela cobre um lado de 20 m e dois de 10 m.",
         "Sempre verifique se \\(x=20\\) respeita contexto.",
@@ -576,7 +576,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(Q(t)=50t-t^2\\) peças em \\(0 \\leq t \\leq 50\\) h. Quando produção instantânea é máxima?",
     },
     passos: {
-      title: "Taxa",
+      title: "Derivar a produção para achar a taxa",
       steps: [
         { title: "Q′(t)", detail: "\\(Q'(t) = 50-2t\\)." },
         { title: "Q′=0", detail: "\\(t=25\\) h." },
@@ -657,7 +657,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Estratégia",
+      title: "Desenhar, nomear e reduzir a uma variável",
       paragraphs: [
         "Desenhe, nomeie dimensões, uma variável livre.",
         "Perímetro, área, superfície ou volume como função objetivo.",
@@ -668,7 +668,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       formulaAria: "V de x ou A de x, derive e iguale a zero",
     },
     ondeAparece: {
-      title: "Problemas",
+      title: "Cercados, caixas e recipientes",
       items: [
         { label: "Jardim", detail: "Área com cerca fixa" },
         { label: "Caixa sem tampa", detail: "Volume com chapa limitada" },
@@ -680,7 +680,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       situacao: "Cartão \\(12 \\times 12\\). Cortar quadrados de lado \\(x\\) nos cantos e dobrar. Volume máximo?",
     },
     passos: {
-      title: "Modelo",
+      title: "Montar a função da medida a maximizar",
       steps: [
         { title: "Base", detail: "\\(12-2x\\) por lado." },
         { title: "V(x)", detail: "\\(V(x) = x(12-2x)^2\\)." },
@@ -690,7 +690,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Conferência",
+      title: "Testar os extremos para confirmar",
       paragraphs: [
         "Sempre teste \\(x\\) pequeno (\\(V \\to 0\\)) e \\(x \\to 6\\) (\\(V \\to 0\\)) para confirmar máximo interior.",
         "Resposta: dimensões da caixa, não só x.",
@@ -763,7 +763,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Passos",
+      title: "Receita e custo antes do lucro",
       paragraphs: [
         "Monte \\(R(x)\\) e \\(C(x)\\) do enunciado.",
         "\\(L(x)=R(x)-C(x)\\); domínio \\(x \\geq 0\\).",
@@ -777,7 +777,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "\\(R' = C'\\) marca onde o lucro para de subir ou de descer — é candidato a máximo. Quem confirma é \\(L'' < 0\\) (ou a checagem das bordas).",
     },
     ondeAparece: {
-      title: "Modelos",
+      title: "Onde o preço ótimo é decidido",
       items: [
         { label: "Preço fixo", detail: "\\(R=px\\)" },
         { label: "Demanda linear", detail: "\\(p=a-bx\\)" },
@@ -797,7 +797,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Marginal",
+      title: "Receita e custo marginais se igualam",
       paragraphs: [
         "Em \\(x=1000\\), \\(R'=50\\) e \\(C'=10+0{,}04 \\cdot 1000=50\\) — marginais iguais.",
         "Antes disso \\(R'>C'\\); depois o contrário.",

@@ -25,7 +25,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Definição",
+      title: "Quanto f muda por unidade de x",
       paragraphs: [
         "Entre \\(x = a\\) e \\(x = b\\), a variação média de f é quanto f mudou por unidade de \\(x\\).",
         "Geometricamente: inclinação da reta por \\((a, f(a))\\) e \\((b, f(b))\\).",
@@ -236,7 +236,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Geometria",
+      title: "A reta que passa por dois pontos",
       paragraphs: [
         "Secante por \\((a,f(a))\\) e \\((a+h,f(a+h))\\): inclinação \\(\\frac{f(a+h)-f(a)}{h}\\).",
         "\\(h \\to 0\\): secante → tangente em \\(a\\) (se o limite existir).",
@@ -354,7 +354,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       callout: "Calcular por definição é lento — regras aceleram.",
     },
     ondeAparece: {
-      title: "Interpretações",
+      title: "As três leituras da derivada",
       items: [
         { label: "Geométrica", detail: "Inclinação da tangente" },
         { label: "Física", detail: "Velocidade, aceleração" },
@@ -374,7 +374,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Significado",
+      title: "A curva se comporta como uma reta ali",
       paragraphs: [
         "Em \\(x=3\\), \\(x^2\\) muda instantaneamente como se fosse reta de inclinação 6.",
         "Regras darão \\(f'(x)=2x \\Rightarrow f'(3)=6\\).",
@@ -460,7 +460,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       callout: "Sempre simplifique antes de derivar quando possível.",
     },
     ondeAparece: {
-      title: "Estratégia",
+      title: "Onde reconhecer a estrutura economiza tempo",
       items: [
         { label: "Polinômio", detail: "Termo a termo" },
         { label: "Produto", detail: "Duas funções multiplicadas" },
@@ -588,7 +588,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Grau",
+      title: "O grau cai um a cada derivada",
       paragraphs: [
         "Grau do polinômio cai 1 na derivada.",
         "Derivada nula em pontos onde tangente é horizontal.",
@@ -660,7 +660,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Fórmulas",
+      title: "As duas fórmulas lado a lado",
       paragraphs: [
         "Produto: \\((fg)' = f'g + fg'\\).",
         "Quociente: \\(\\left(\\frac{f}{g}\\right)' = \\frac{f'g - fg'}{g^2}\\), com \\(g \\neq 0\\).",
@@ -684,7 +684,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "Derivar.",
     },
     passos: {
-      title: "Produto",
+      title: "Aplicando a regra do produto",
       steps: [
         { title: "f=x², g=2x+1", detail: "\\(f'=2x\\), \\(g'=2\\)." },
         { title: "Aplicar", detail: "\\(2x(2x+1)+x^2 \\cdot 2\\)." },
@@ -692,7 +692,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Dica",
+      title: "Expandir e conferir o resultado",
       paragraphs: [
         "Expandir \\(x^2(2x+1)=2x^3+x^2\\) e derivar dá o mesmo — confira.",
         "Quociente é sensível a sinais.",
@@ -789,7 +789,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(f'(x)\\)?",
     },
     passos: {
-      title: "Cadeia",
+      title: "Aplicando a regra da cadeia",
       steps: [
         { title: "Fora", detail: "\\(u^4 \\to 4u^3\\)." },
         { title: "Dentro", detail: "\\(u=2x+3 \\to u'=2\\)." },
@@ -870,7 +870,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Leituras",
+      title: "O que o sinal e o tamanho dizem",
       paragraphs: [
         "Sinal de \\(f'\\): direção do gráfico.",
         "Valor de \\(|f'|\\): rapidez da mudança (não o valor de f).",
@@ -986,7 +986,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       formulaAria: "v de t igual a s linha de t; a de t igual a v linha de t igual a s duas linhas de t",
     },
     ondeAparece: {
-      title: "Situações",
+      title: "Do freio do carro à queda livre",
       items: [
         { label: "Queda livre", detail: "s(t) parabólica" },
         { label: "Trânsito", detail: "Acelerar e frear" },
@@ -1079,7 +1079,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Definições",
+      title: "Custo, receita e lucro marginais",
       paragraphs: [
         "Custo marginal em x: \\(C'(x)\\) (custo da próxima unidade infinitesimal).",
         "Receita marginal: \\(R'(x)\\).",
@@ -1091,7 +1091,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       callout: "Produzir mais vale a pena enquanto R′ > C′ (lucro marginal positivo).",
     },
     ondeAparece: {
-      title: "Decisão",
+      title: "Onde a margem decide produzir ou parar",
       items: [
         { label: "Empresa", detail: "Quantidade ótima (módulo 6)" },
         { label: "Preço", detail: "Elasticidade (cursos avançados)" },
@@ -1112,7 +1112,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Prática",
+      title: "A margem como atalho de decisão",
       paragraphs: [
         "Marginal aproxima decisão incremental.",
         "Otimização completa no módulo Aplicações de derivadas.",
@@ -1214,7 +1214,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(f(x)=x^2(3x-1)\\). Esboce estratégia para \\(f'\\) sem expandir tudo de uma vez.",
     },
     passos: {
-      title: "Estratégia",
+      title: "Escolher a regra pela estrutura",
       steps: [
         { title: "Opção A", detail: "Expandir e derivar termo a termo." },
         { title: "Opção B", detail: "Regra do produto: \\(2x(3x-1)+x^2 \\cdot 3\\)." },

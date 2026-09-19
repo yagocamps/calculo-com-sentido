@@ -50,7 +50,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       situacao: "\\(v=5\\) m/s durante 10 s. Distância total?",
     },
     passos: {
-      title: "Pensar",
+      title: "Dividir, somar e refinar",
       steps: [
         { title: "Retângulos", detail: "Altura 5, base 10 \\(\\to\\) área 50." },
         { title: "Soma", detail: "\\(\\sum v \\cdot \\Delta t = 5 \\times 10 = 50\\) m." },
@@ -164,7 +164,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Sinal",
+      title: "Abaixo do eixo, a área conta negativo",
       paragraphs: [
         "Área \"abaixo\" do eixo contribui negativamente.",
         "Distância total usa \\(|v|\\) ou separa trechos — cuidado em movimento.",
@@ -237,7 +237,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Conceito",
+      title: "Por que a constante sempre aparece",
       paragraphs: [
         "C é constante porque \\((F+C)'=F'=f\\).",
         "Regras espelham derivadas: \\(\\int x^n\\,dx = \\frac{x^{n+1}}{n+1}+C\\) (\\(n \\neq -1\\)).",
@@ -447,7 +447,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Principais",
+      title: "Soma e constante saem da integral",
       paragraphs: [
         "\\(\\int (f+g) = \\int f + \\int g\\). \\(\\int (cf) = c\\int f\\).",
         "\\(\\int_a^b f = \\int_a^c f + \\int_c^b f\\) (aditividade).",
@@ -479,7 +479,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Estratégia",
+      title: "Integrar trecho a trecho quando a regra muda",
       paragraphs: [
         "Modelos reais mudam de regra — integre trecho a trecho.",
         "Simetria em \\([-a,a]\\) economiza trabalho.",
@@ -682,7 +682,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       situacao: "Deslocamento e distância em 0 a 6 s?",
     },
     passos: {
-      title: "Analisar",
+      title: "Separar os trechos de ida e de volta",
       steps: [
         { title: "Zero v", detail: "\\(6-2t=0 \\Rightarrow t=3\\)." },
         { title: "Deslocamento", detail: "\\[\\int_0^6 (6-2t)\\,dt = \\left[6t-t^2\\right]_0^6 = 0\\]" },
@@ -765,7 +765,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Modelo",
+      title: "Da potência à energia consumida",
       paragraphs: [
         "\\(P(t)\\) potência \\(\\to\\) energia \\(E=\\int P\\,dt\\).",
         "Consumo de água: \\(\\int \\text{vazão}\\,dt\\).",
@@ -872,7 +872,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Ideias",
+      title: "Área entre curvas e volume por fatias",
       paragraphs: [
         "Área entre f e g em \\([a,b]\\): \\(\\int (f-g)\\,dx\\) quando \\(f \\geq g\\).",
         "Volume por rotação (esboço): fatias perpendiculares; Cálculo 2 aprofunda.",
@@ -989,7 +989,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       callout: "Desenho do gráfico valida sinal e magnitude.",
     },
     ondeAparece: {
-      title: "Painel",
+      title: "Um panorama de usos da integral",
       items: [
         { label: "Física", detail: "s, v, trabalho" },
         { label: "Economia", detail: "Excedente, custo total" },
@@ -1122,7 +1122,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Parabéns",
+      title: "Você fechou a trilha de Cálculo 1",
       paragraphs: [
         "Marque o progresso em Meu progresso.",
         "Revise módulos fracos e faça exercícios aplicados.",

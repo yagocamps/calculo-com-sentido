@@ -269,7 +269,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       situacao: "Curva de custo médio em U: alto no início, mínimo no meio, sobe de novo. Onde produzir faz sentido?",
     },
     passos: {
-      title: "Leitura",
+      title: "Ler o gráfico em três olhadas",
       steps: [
         { title: "Mínimo", detail: "Ponto mais baixo da curva." },
         { title: "Antes do mínimo", detail: "Custo médio caindo." },
@@ -385,7 +385,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Antecipação",
+      title: "O que a derivada vai confirmar",
       paragraphs: [
         "Derivada positiva = crescente; negativa = decrescente; zero = possível extremo.",
         "Esta aula treina o olhar; o módulo 5 formaliza.",
@@ -481,7 +481,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       situacao: "\\(L(100) = 5000\\). O que isso quer dizer?",
     },
     passos: {
-      title: "Redação",
+      title: "Escrever a frase que o gráfico permite",
       steps: [
         { title: "x", detail: "100 unidades (ou o contexto dado)." },
         { title: "L(x)", detail: "Lucro em reais." },
@@ -574,7 +574,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       callout: "Lucro máximo no gráfico: topo da curva L.",
     },
     ondeAparece: {
-      title: "Decisões",
+      title: "Onde o lucro orienta a decisão",
       items: [
         { label: "Produzir ou não", detail: "\\(L(x) > 0\\)" },
         { label: "Quantidade ótima", detail: "Máximo de \\(L(x)\\)" },
@@ -701,7 +701,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Ponte",
+      title: "A ponte para limite e derivada",
       paragraphs: [
         "Velocidade instantânea é o caso motivador de limite e derivada.",
         "Temperatura segue a mesma lógica de \"quão rápido muda\".",
