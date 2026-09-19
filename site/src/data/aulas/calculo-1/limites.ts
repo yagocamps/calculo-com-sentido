@@ -71,7 +71,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar poucos valores — a tendência pode enganar.",
         "Incluir \\(x = a\\) quando \\(f(a)\\) não existe e confundir com o limite.",
@@ -79,7 +79,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "tab-g1",
@@ -109,12 +109,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-03", "lim-ap-04"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Tabela: \\(x\\) perto de \\(a\\) → calcular \\(f(x)\\) → observar tendência.",
         "Funciona mesmo quando \\(f(a)\\) não existe.",
@@ -186,7 +186,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir buraco com limite inexistente.",
         "Ler só um lado do gráfico.",
@@ -194,7 +194,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "graf-g1",
@@ -224,12 +224,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-05", "lim-ap-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Siga a curva quando \\(x \\to a\\) para ler \\(L\\).",
         "Buraco: limite pode existir sem \\(f(a)\\).",
@@ -302,7 +302,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Substituir em \\(\\frac{0}{0}\\) sem simplificar e concluir \"não existe\".",
         "Cancelar termos que não são fatores comuns (ex.: somar em vez de fatorar).",
@@ -310,7 +310,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "sub-g1",
@@ -340,12 +340,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-07", "lim-ap-08"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Contínua em \\(a\\) → limite \\(= f(a)\\).",
         "\\(\\frac{0}{0}\\) pede simplificação antes de substituir.",
@@ -418,7 +418,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar a fórmula errada do lado errado da fronteira.",
         "Achar que limite bilateral existe só porque um dos lados existe.",
@@ -426,7 +426,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "lat-g1",
@@ -456,12 +456,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-09", "lim-ap-10", "p2-limites-laterais-1", "p2-limites-laterais-2", "p2-limites-laterais-4", "p2-limites-laterais-5"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(a^-\\) e \\(a^+\\): aproximar por um lado.",
         "Limite bilateral exige laterais iguais.",
@@ -535,7 +535,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Tratar \\(\\infty\\) como valor numérico para operar.",
         "Esquecer de verificar sinal (\\(+\\infty\\) vs \\(-\\infty\\)).",
@@ -544,7 +544,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "inf-g1",
@@ -574,12 +574,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-11", "lim-ap-12"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(f(x) \\to \\pm\\infty\\) quando \\(x \\to a\\): crescimento ilimitado.",
         "Gráfico: assíntota vertical \\(x = a\\).",
@@ -652,7 +652,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir \\(\\lim_{x \\to a} f(x) = \\infty\\) com \\(\\lim_{x \\to \\infty} f(x)\\).",
         "Esquecer termos de grau menor — só o líder decide no infinito.",
@@ -660,7 +660,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "ninf-g1",
@@ -690,12 +690,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-13", "lim-ap-14"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(x \\to \\pm\\infty\\): estuda comportamento de longo prazo.",
         "Racionais: compare graus e coeficientes líderes.",
@@ -768,7 +768,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir buraco com assíntota vertical.",
         "Declarar oblíqua sem dividir polinômios.",
@@ -776,7 +776,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "ass-g1",
@@ -806,12 +806,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-15", "lim-ap-16"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Vertical: lim infinito em \\(x = a\\).",
         "Horizontal: lim finito quando \\(x \\to \\pm\\infty\\).",
@@ -884,7 +884,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar velocidade média da viagem como instantânea.",
         "Esquecer unidades (m/s, km/h).",
@@ -892,7 +892,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "vel-g1",
@@ -922,12 +922,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-17", "lim-ap-18"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(s(t)\\) posição; v média \\(= \\frac{\\Delta s}{\\Delta t}\\).",
         "Instantânea = limite quando \\(\\Delta t \\to 0\\).",
@@ -1001,7 +1001,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Aplicar modelo fora do domínio onde foi calibrado.",
         "Ignorar unidades e contexto ao interpretar L ou \\(\\infty\\).",
@@ -1009,7 +1009,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "apl-g1",
@@ -1039,12 +1039,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-19"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Limites modelam tendência, taxas instantâneas e extremos.",
         "Física, economia e engenharia compartilham a mesma estrutura.",
@@ -1119,7 +1119,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Memorizar regras sem interpretar tabela/gráfico.",
         "Pular limites laterais em funções por partes.",
@@ -1127,7 +1127,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "revl-g1",
@@ -1157,12 +1157,12 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique com exercícios resolvidos passo a passo.",
       exerciseIds: ["lim-ap-20"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Limite = tendência; tabela, gráfico, álgebra.",
         "Laterais, ±∞, assíntotas, velocidade instantânea.",

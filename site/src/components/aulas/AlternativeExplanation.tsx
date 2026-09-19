@@ -34,7 +34,7 @@ export function AlternativeExplanation({ paragraphs }: { paragraphs: string[] })
             <RichText
               as="p"
               key={p.slice(0, 24)}
-              className="mt-2.5 text-[15px] leading-relaxed"
+              className="mt-2.5 aula-prose"
             >
               {p}
             </RichText>

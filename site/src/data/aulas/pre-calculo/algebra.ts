@@ -80,7 +80,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Somar termos diferentes: \\(6x + 1\\) não é \\(7x\\).",
         "Esquecer de distribuir para todos os termos do parêntese.",
@@ -89,7 +89,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -130,12 +130,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Treine simplificação de expressões no banco de exercícios do site.",
       exerciseIds: ["alg-ap-01", "alg-ap-02"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Só some/subtraia termos semelhantes (mesma letra e expoente).",
         "Distributiva: \\(a(b + c) = ab + ac\\) abre os parênteses.",
@@ -220,7 +220,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Fazer a operação só de um lado da igualdade.",
         "Dividir antes de tirar o termo que está somando.",
@@ -229,7 +229,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -269,12 +269,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique isolamento de variáveis e inversão de fórmulas no banco do site.",
       exerciseIds: ["alg-ap-03", "alg-ap-04"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Isolar = deixar a variável sozinha de um lado do igual.",
         "Use a operação inversa: soma↔subtração, multiplicação↔divisão.",
@@ -363,7 +363,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer de virar o sinal ao multiplicar/dividir por negativo.",
         "Tratar a resposta como um único número, e não como um intervalo.",
@@ -372,7 +372,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -413,12 +413,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique inequações e problemas de limite no banco de exercícios.",
       exerciseIds: ["alg-ap-05", "alg-ap-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Inequação resolve-se quase igual a uma equação.",
         "Multiplicar/dividir por negativo VIRA o sinal da desigualdade.",
@@ -508,7 +508,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Resolver uma equação só e achar que terminou.",
         "Errar o sinal ao subtrair equações inteiras.",
@@ -517,7 +517,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -558,12 +558,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique sistemas por substituição e adição no banco de exercícios.",
       exerciseIds: ["alg-ap-07", "alg-ap-08"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Sistema = duas equações que valem ao mesmo tempo.",
         "Substituição: isole uma variável e troque na outra equação.",
@@ -648,7 +648,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Cancelar termos que estão somando: \\(\\frac{x + 2}{2}\\) não vira \\(x\\).",
         "Cortar antes de fatorar e perder o fator comum.",
@@ -657,7 +657,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -697,12 +697,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique simplificação de frações algébricas no banco de exercícios.",
       exerciseIds: ["alg-ap-09", "alg-ap-10"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Simplificar = forma mais curta sem mudar o valor.",
         "Só cancele fatores que multiplicam o numerador e o denominador inteiros.",
@@ -791,7 +791,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Comparar só a parte fixa e ignorar o custo por uso.",
         "Esquecer de multiplicar o preço unitário pela quantidade.",
@@ -800,7 +800,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -841,12 +841,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique comparação de planos e orçamentos no banco de exercícios.",
       exerciseIds: ["alg-ap-11", "alg-ap-12"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Plano: custo = parte fixa + preço por unidade × quantidade.",
         "Comparar planos = igualar expressões e achar o ponto de equilíbrio.",
@@ -939,7 +939,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer o custo fixo ao calcular o total.",
         "Dividir só o custo variável pela quantidade ao achar o unitário.",
@@ -948,7 +948,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -987,12 +987,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique cálculo de custo total e unitário no banco de exercícios.",
       exerciseIds: ["alg-ap-13", "alg-ap-14"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Custo total = custo fixo + custo variável × quantidade.",
         "Custo por unidade = custo total ÷ quantidade.",
@@ -1077,7 +1077,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir receita (só o que entra) com lucro (entra menos sai).",
         "Esquecer o custo variável e dividir o fixo só pelo preço.",
@@ -1086,7 +1086,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1127,12 +1127,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique lucro e ponto de equilíbrio no banco de exercícios.",
       exerciseIds: ["alg-ap-15", "alg-ap-16"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Receita = preço × quantidade; lucro = receita − custo.",
         "Ponto de equilíbrio: receita = custo, lucro zero.",
@@ -1219,7 +1219,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Comparar planos olhando só a parte fixa.",
         "Errar o sinal ao juntar termos dos dois lados.",
@@ -1228,7 +1228,7 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1268,12 +1268,12 @@ export const algebraAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Revise todo o módulo de álgebra com exercícios variados no banco do site.",
       exerciseIds: ["alg-ap-17", "alg-ap-18", "dsf-alg-01"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Fluxo: situação → expressão → simplificar → isolar/igualar → interpretar.",
         "Simplificar e isolar são a base de toda resolução.",

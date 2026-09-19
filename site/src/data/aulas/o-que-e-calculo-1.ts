@@ -82,7 +82,7 @@ export const oQueECalculo1Aula: AulaContent = {
     ],
   },
   erros: {
-    title: "Cuidado com",
+    title: "Armadilhas que valem atenção",
     items: [
       "Achar que Cálculo é só álgebra com letras diferentes.",
       "Decorar fórmulas sem saber o que cada símbolo mede na prática.",
@@ -91,7 +91,7 @@ export const oQueECalculo1Aula: AulaContent = {
     ],
   },
   exerciciosGuiados: {
-    title: "Exercícios guiados",
+    title: "Prática em camadas",
     exercises: [
       {
         id: "c1-g1",
@@ -128,12 +128,12 @@ export const oQueECalculo1Aula: AulaContent = {
     ],
   },
   exerciciosAplicados: {
-    title: "Exercícios aplicados",
+    title: "Continue praticando",
     intro: "Em breve: banco de exercícios dedicado ao módulo Antes do Cálculo.",
     exerciseIds: [],
   },
   resumo: {
-    title: "Resumo da aula",
+    title: "O que precisa ficar",
     bullets: [
       "Cálculo 1 estuda mudança (derivada) e acúmulo (integral), com limites como base.",
       "Tudo se apoia em funções e gráficos — revise o Pré-Cálculo quando precisar.",

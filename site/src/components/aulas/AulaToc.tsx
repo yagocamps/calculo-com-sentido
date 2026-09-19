@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { sectionLinks } from "@/components/aulas/toc-sections";
+import { visibleSectionLinks } from "@/components/aulas/toc-sections";
 import { GlossaryTermChip } from "@/components/glossario/GlossaryTermChip";
 import type { AulaContent } from "@/data/aulas/types";
 import { glossario } from "@/data/glossario";
@@ -15,12 +15,11 @@ export function AulaToc({ content, hasSimulation = false, hasNext }: { content: 
   // `hasNext` vem do AulaView, que decide a próxima aula pela ordem do
   // catálogo. Olhar `meta.nextLesson` aqui escondia o item do índice em toda
   // aula que não declara a próxima no conteúdo, embora a seção existisse.
-  const links = sectionLinks.filter(
-    (item) =>
-      (item.id !== "simulacao" || hasSimulation) &&
-      (item.id !== "proxima" || hasNext) &&
-      (item.id !== "video" || content.videos?.length),
-  );
+  const links = visibleSectionLinks({
+    hasSimulation,
+    hasNext,
+    hasVideos: Boolean(content.videos?.length),
+  });
 
   const [activeId, setActiveId] = useState<string>("");
   // Pequenas vitórias durante a aula: seções já percorridas viram ✓.

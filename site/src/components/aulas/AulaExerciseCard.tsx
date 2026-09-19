@@ -56,11 +56,11 @@ export function AulaExerciseCard({ exercise, lessonPathId }: { exercise: AulaExe
   };
 
   return (
-    <div id={anchorId} className="scroll-mt-20 rounded-2 border border-border bg-surface-soft/60 p-4">
+    <div id={anchorId} className="scroll-mt-20 max-w-[42em] rounded-2 border border-border-soft bg-surface-soft/60 p-4">
       <div className="mb-2 flex items-center gap-2">
         <Tag tone="sky">{typeLabels[exercise.type]}</Tag>
       </div>
-      <RichText as="p" className="text-[15px] leading-relaxed">
+      <RichText as="p" className="aula-texto">
         {exercise.enunciado}
       </RichText>
 

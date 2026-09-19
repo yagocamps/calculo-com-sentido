@@ -83,7 +83,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Trocar a ordem: \\((x, y)\\) não é \\((y, x)\\).",
         "Confundir o eixo \\(x\\) (horizontal) com o \\(y\\) (vertical).",
@@ -92,7 +92,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -130,12 +130,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique leitura e marcação de coordenadas no banco de exercícios.",
       exerciseIds: ["graf-ap-01", "graf-ap-02"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Plano cartesiano: eixo \\(x\\) horizontal, eixo \\(y\\) vertical, cruzando na origem.",
         "Cada ponto é um par ordenado \\((x, y)\\).",
@@ -221,7 +221,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Trocar os eixos: confirmar o que é x e o que é y.",
         "Ler a escala errada (de 2 em 2, de 10 em 10).",
@@ -230,7 +230,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -268,12 +268,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique leitura de valores em gráficos no banco de exercícios.",
       exerciseIds: ["graf-ap-03", "graf-ap-04"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Eixo x é a entrada; eixo y é o que acontece.",
         "Do x ao y: suba até a curva e leia a altura.",
@@ -365,7 +365,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Ler o gráfico da direita para a esquerda (sempre é da esquerda para a direita).",
         "Confundir um valor alto com \"crescente\" (altura não é o mesmo que subir).",
@@ -374,7 +374,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -412,12 +412,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique identificação de crescimento e decrescimento no banco de exercícios.",
       exerciseIds: ["graf-ap-05", "graf-ap-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Leia sempre da esquerda para a direita.",
         "Sobe = crescente, desce = decrescente, horizontal = constante.",
@@ -509,7 +509,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir máximo (pico) com o fim do gráfico.",
         "Ignorar o que acontece antes e depois de um cruzamento.",
@@ -518,7 +518,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -556,12 +556,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique interpretação de picos, vales e cruzamentos no banco de exercícios.",
       exerciseIds: ["graf-ap-07", "graf-ap-08"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Máximo = pico; mínimo = vale.",
         "Interseção entre curvas = mesmo valor naquele ponto.",
@@ -649,7 +649,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Inverter o sentido horizontal: \\(f(x - 2)\\) vai para a DIREITA.",
         "Confundir mudança dentro (horizontal) com fora (vertical).",
@@ -658,7 +658,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -696,12 +696,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique translações verticais e horizontais no banco de exercícios.",
       exerciseIds: ["graf-ap-09", "graf-ap-10"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Somar fora, \\(f(x) + k\\): move na vertical (\\(+k\\) sobe, \\(-k\\) desce).",
         "Somar dentro, \\(f(x \\pm k)\\): move na horizontal, sentido contrário ao sinal.",
@@ -791,7 +791,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que preço sempre maior gera receita maior.",
         "Parar no preço (\\(p_v\\)) sem calcular a receita máxima.",
@@ -800,7 +800,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -840,12 +840,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique gráficos de receita e preço ótimo no banco de exercícios.",
       exerciseIds: ["graf-ap-11", "graf-ap-12"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Receita = preço × quantidade vendida.",
         "Costuma ser parábola: sobe, atinge o pico e cai.",
@@ -932,7 +932,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir relação direta com inversa.",
         "Calcular a variação dividindo na ordem errada.",
@@ -941,7 +941,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -979,12 +979,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique leitura de gráficos que relacionam duas grandezas no banco de exercícios.",
       exerciseIds: ["graf-ap-13", "graf-ap-14"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Gráficos reais ligam duas grandezas que variam juntas.",
         "Relação direta sobe junto; inversa vai em sentidos opostos.",
@@ -1074,7 +1074,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Pular a leitura dos eixos e suas unidades.",
         "Confundir altura (valor alto) com crescimento (subir).",
@@ -1083,7 +1083,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1121,12 +1121,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Revise todo o módulo de gráficos com exercícios variados no banco do site.",
       exerciseIds: ["graf-ap-15", "graf-ap-16", "dsf-graf-01"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Leitura em camadas: localizar, ler, descrever, interpretar, transformar.",
         "Pontos-chave: interceptos, máximos, mínimos e cruzamentos.",

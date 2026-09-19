@@ -65,7 +65,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar sinal de \\(f\\) em vez de \\(f'\\).",
         "Esquecer pontos onde \\(f'\\) não existe.",
@@ -73,7 +73,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "cd-g1",
@@ -102,9 +102,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-01", "ad-ap-02", "apd-f-01", "apd-f-02", "apd-f-03", "apd-f-04"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-01", "ad-ap-02", "apd-f-01", "apd-f-02", "apd-f-03", "apd-f-04"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(f'>0\\): crescente; \\(f'<0\\): decrescente.",
         "Zeros de \\(f'\\) candidatos a extremos.",
@@ -171,7 +171,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que \\(f'=0\\) é sempre máximo.",
         "Ignorar extremos nos endpoints do domínio.",
@@ -179,7 +179,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "mm-g1",
@@ -208,9 +208,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-03", "ad-ap-04"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-03", "ad-ap-04"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Máximo/mínimo local = topo/fundo do gráfico.",
         "Candidatos: \\(f'=0\\), \\(f'\\) indefinida, bordas do domínio.",
@@ -276,7 +276,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer onde \\(f'\\) não existe.",
         "Incluir \\(x\\) fora do domínio aplicado.",
@@ -284,7 +284,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "pc-g1",
@@ -313,9 +313,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-05", "ad-ap-06"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-05", "ad-ap-06"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Crítico: \\(f'=0\\) ou \\(f'\\) indefinida.",
         "Lista completa antes de classificar.",
@@ -382,7 +382,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir concavidade com crescimento.",
         "Aplicar teste da 2ª derivada quando \\(f''(c)=0\\).",
@@ -390,7 +390,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "conc-g1",
@@ -419,9 +419,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-07", "ad-ap-08"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-07", "ad-ap-08"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(f''\\) descreve concavidade.",
         "Teste \\(f''(c)\\) classifica críticos com \\(f'(c)=0\\).",
@@ -486,7 +486,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Montar função errada na restrição.",
         "Esquecer domínio físico.",
@@ -494,7 +494,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "opt-g1",
@@ -523,9 +523,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-09", "ad-ap-10", "p2-otimizacao-1", "p2-otimizacao-2", "p2-otimizacao-3"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-09", "ad-ap-10", "p2-otimizacao-1", "p2-otimizacao-2", "p2-otimizacao-3"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Modelar → derivar → testar críticos e bordas.",
         "Restrição define variáveis.",
@@ -591,7 +591,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir total acumulado com taxa.",
         "Esquecer unidade de tempo.",
@@ -599,7 +599,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "vp-g1",
@@ -628,9 +628,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-11", "ad-ap-12"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-11", "ad-ap-12"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Derivada em relação ao tempo = taxa instantânea.",
         "Produção máxima vs acumulado máximo podem ocorrer em instantes diferentes.",
@@ -697,7 +697,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer que falta a tampa na área de material.",
         "Domínio 0<x<6 violado.",
@@ -705,7 +705,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "av-g1",
@@ -734,9 +734,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-13", "ad-ap-14", "p2-otimizacao-4", "p2-otimizacao-5"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-13", "ad-ap-14", "p2-otimizacao-4", "p2-otimizacao-5"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Geometria → uma variável → volume/área.",
         "Teste endpoints e críticos.",
@@ -804,7 +804,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Maximizar receita em vez de lucro.",
         "Esquecer custo fixo na interpretação (afeta \\(L\\), não \\(L'=0\\)).",
@@ -812,7 +812,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "lm-g1",
@@ -841,9 +841,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-15", "ad-ap-16"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-15", "ad-ap-16"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Maximize \\(L=R-C\\).",
         "\\(L'=0\\) ↔ marginais iguais — candidato, não conclusão.",
@@ -916,14 +916,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Pular modelagem e ir direto à fórmula.",
         "Não revisar erros de sinal em f′.",
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "rad-g1",
@@ -952,9 +952,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-17", "ad-ap-18", "dsf-apder-01"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-17", "ad-ap-18", "dsf-apder-01"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(f'\\) e \\(f''\\) guiam forma do gráfico e extremos.",
         "Otimização = modelo + domínio + críticos.",

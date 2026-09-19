@@ -15,6 +15,7 @@ import { LessonAnalytics } from "@/components/aulas/LessonAnalytics";
 import { LessonMastery } from "@/components/aulas/LessonMastery";
 import { LessonWorkspace } from "@/components/aulas/LessonWorkspace";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
+import { ReadingProgress } from "@/components/aulas/ReadingProgress";
 import { RichText } from "@/components/aulas/RichText";
 import { Section } from "@/components/aulas/Section";
 import { AulaVideos } from "@/components/aulas/AulaVideos";
@@ -160,6 +161,11 @@ export function AulaView({
       <LessonAnalytics lessonPathId={lessonPathId} />
       <div className="mx-auto grid max-w-[1080px] gap-7 lg:grid-cols-[minmax(0,1fr)_240px]">
         <article className="min-w-0">
+          <ReadingProgress
+            hasSimulation={hasSimulation}
+            hasVideos={hasVideos}
+            hasNext={Boolean(nextLesson)}
+          />
           <header className="mb-4">
             <Link
               href={backToModulo}
@@ -216,7 +222,7 @@ export function AulaView({
                 <RichText
                   as="p"
                   key={p.slice(0, 24)}
-                  className="mb-3 text-[15px] leading-relaxed last:mb-0"
+                  className="mb-3 aula-prose last:mb-0"
                   glossary={glossaryHL}
                 >
                   {p}
@@ -231,7 +237,7 @@ export function AulaView({
                 <RichText
                   as="p"
                   key={p.slice(0, 24)}
-                  className="mb-3 text-[15px] leading-relaxed last:mb-0"
+                  className="mb-3 aula-prose last:mb-0"
                   glossary={glossaryHL}
                 >
                   {p}
@@ -265,7 +271,7 @@ export function AulaView({
                       <div className="max-w-full overflow-x-auto">
                         <FormulaBlock formula={rule.formulaAria} formulaLatex={rule.formulaLatex} formulaAria={rule.formulaAria} />
                       </div>
-                      <RichText as="p" className="text-sm leading-relaxed">{rule.conditions}</RichText>
+                      <RichText as="p" className="aula-prose">{rule.conditions}</RichText>
                       <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-terracotta">Exemplo comentado</p>
                       <RichText as="div" className="mt-1 max-w-full overflow-x-auto text-sm leading-relaxed">{rule.example}</RichText>
                     </section>
@@ -299,7 +305,7 @@ export function AulaView({
 
           <div id="onde">
             <Section n={3} label="Onde isso aparece" title={content.ondeAparece.title}>
-              <Callout variant="apply">
+              <Callout variant="apply" label={null}>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {content.ondeAparece.items.map((item) => (
                     <div key={item.label} className="text-[13px]">
@@ -316,7 +322,7 @@ export function AulaView({
             <Section n={4} label="Exemplo aplicado" title={content.exemplo.title} titleRich>
               <RichText
                 as="p"
-                className="text-[15px] leading-relaxed"
+                className="aula-prose"
                 glossary={glossaryHL}
               >
                 {content.exemplo.situacao}
@@ -349,7 +355,7 @@ export function AulaView({
                 <RichText
                   as="p"
                   key={p.slice(0, 24)}
-                  className="mb-3 text-[15px] leading-relaxed last:mb-0"
+                  className="mb-3 aula-prose last:mb-0"
                   glossary={glossaryHL}
                 >
                   {p}
@@ -360,8 +366,8 @@ export function AulaView({
 
           <div id="erros">
             <Section n={7} label="Erros comuns" title={content.erros.title}>
-              <Callout variant="warn" label="ERROS COMUNS">
-                <ul className="list-disc space-y-1 pl-4 text-[14px] leading-relaxed">
+              <Callout variant="warn" label={null}>
+                <ul className="list-disc space-y-1 pl-4 aula-texto">
                   {content.erros.items.map((item) => (
                     <RichText as="li" key={item} glossary={glossaryHL}>
                       {item}
@@ -401,24 +407,35 @@ export function AulaView({
               label="Exercícios aplicados"
               title={content.exerciciosAplicados.title}
             >
-              <RichText as="p" className="mb-4 text-[15px] leading-relaxed text-ink-muted">
+              <RichText as="p" className="mb-4 aula-prose text-ink-muted">
                 {content.exerciciosAplicados.intro}
               </RichText>
-              <div className="space-y-2">
+              {/*
+                Eram oito cards empilhados, cada um com borda, fundo próprio e
+                cantos: juntos pesavam mais que a abertura da etapa seguinte e
+                invertiam a hierarquia da página. Uma lista dividida entrega a
+                mesma informação e devolve o destaque à estrutura da aula.
+              */}
+              <ul className="max-w-[37.5em] divide-y divide-border-soft rounded-2 border border-border-soft">
                 {appliedExercises.map((ex) => (
-                  <Link
-                    key={ex.id}
-                    href={`/exercicios?id=${ex.id}`}
-                    className="block rounded-xl border border-border bg-surface px-4 py-3 transition-colors hover:border-terracotta hover:bg-terracotta-soft/20"
-                  >
-                    <span className="font-mono text-[11px] text-ink-subtle">
-                      {ex.num}
-                    </span>
-                    <p className="font-semibold">{ex.title}</p>
-                    <p className="text-xs text-ink-muted">{ex.tema}</p>
-                  </Link>
+                  <li key={ex.id}>
+                    <Link
+                      href={`/exercicios?id=${ex.id}`}
+                      className="flex items-baseline gap-3 px-4 py-2.5 transition-colors hover:bg-terracotta-soft/25"
+                    >
+                      <span className="shrink-0 font-mono text-[11px] text-ink-subtle">
+                        {ex.num}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="font-semibold">{ex.title}</span>
+                        <span className="ml-2 text-xs text-ink-muted">
+                          {ex.tema}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <Button href="/exercicios" variant="primary" className="mt-4">
                 Ver todos os exercícios →
               </Button>
@@ -427,7 +444,7 @@ export function AulaView({
 
           <div id="resumo">
             <Section n={10 + simulationOffset} label="Resumo da aula" title={content.resumo.title}>
-              <ul className="list-disc space-y-2 pl-5 text-[15px] leading-relaxed">
+              <ul className="list-disc space-y-2 pl-5 aula-prose">
                 {content.resumo.bullets.map((b) => (
                   <RichText as="li" key={b} glossary={glossaryHL}>
                     {b}

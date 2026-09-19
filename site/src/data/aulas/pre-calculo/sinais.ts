@@ -108,7 +108,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Testar justamente um dos zeros: ali o produto vale zero e não informa o sinal do intervalo.",
         "Achar que o sinal sempre alterna. Um fator repetido, como \\((x-2)^2\\), não muda o sinal ao passar por \\(2\\) — ele apenas toca o eixo.",
@@ -117,7 +117,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -162,12 +162,12 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique o estudo de sinal em produtos, raízes e frações.",
       exerciseIds: ["alg-sin-01", "alg-sin-02", "alg-sin-03"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Os zeros de cada fator são os únicos pontos onde o sinal pode mudar.",
         "Eles cortam a reta em intervalos; dentro de cada um o sinal é constante.",
@@ -268,7 +268,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Multiplicar os dois lados pelo denominador. O sinal dele é desconhecido e a desigualdade pode inverter.",
         "Incluir o zero do denominador na resposta. Ali a expressão não existe, então ele nunca entra.",
@@ -277,7 +277,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -322,12 +322,12 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Inequações do segundo grau, racionais e aplicadas.",
       exerciseIds: ["alg-sin-04", "alg-sin-05", "alg-sin-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Passe tudo para um lado antes de qualquer coisa: a pergunta vira \"onde isto é positivo?\".",
         "Fatore, marque os zeros e monte o quadro de sinais.",

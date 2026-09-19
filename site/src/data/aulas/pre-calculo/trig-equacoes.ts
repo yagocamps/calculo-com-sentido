@@ -127,7 +127,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Parar na primeira solução (\\(30^\\circ\\)) e esquecer a simétrica (\\(150^\\circ\\)).",
         "Trocar as simetrias: \\(180^\\circ - \\theta\\) é a do seno; \\(360^\\circ - \\theta\\) é a do cosseno. \\(\\sin 330^\\circ = -\\frac{1}{2}\\), não \\(\\frac{1}{2}\\).",
@@ -136,7 +136,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -180,12 +180,12 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Seno e cosseno com sinais diferentes, e o caso em que não há solução.",
       exerciseIds: ["trig-eq-01", "trig-eq-02", "trig-eq-03"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Resolver \\(\\sin x = a\\) é achar os pontos do círculo com altura \\(a\\).",
         "Se \\(-1 < a < 1\\), há duas soluções por volta; se \\(a = \\pm 1\\), uma; se \\(|a| > 1\\), nenhuma.",
@@ -300,7 +300,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Tratar \\(\\sin 2x\\) como \\(2\\sin x\\). São funções diferentes: em \\(x = 90^\\circ\\), \\(\\sin 180^\\circ = 0\\), mas \\(2\\sin 90^\\circ = 2\\).",
         "Esquecer de ampliar o intervalo de \\(u\\) e perder as soluções da segunda volta.",
@@ -309,7 +309,7 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -354,12 +354,12 @@ export const trigEquacoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Solução geral em radianos, ângulo multiplicado e a duração do dia ao longo do ano.",
       exerciseIds: ["trig-eq-04", "trig-eq-05", "trig-eq-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Toda equação desta aula é uma \\(\\sin u = a\\) disfarçada.",
         "Ângulo multiplicado: troque \\(bx\\) por \\(u\\) e amplie o intervalo para \\(b\\) voltas.",

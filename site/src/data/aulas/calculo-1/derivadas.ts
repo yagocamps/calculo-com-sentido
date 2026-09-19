@@ -66,7 +66,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Trocar \\(f(b)-f(a)\\) por \\(f(a)-f(b)\\) sem ajustar sinal.",
         "Dividir por \\((a-b)\\) em vez de \\((b-a)\\).",
@@ -74,7 +74,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "vm-g1",
@@ -103,9 +103,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-01", "der-ap-02"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-01", "der-ap-02"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Variação média \\(= \\frac{\\Delta f}{\\Delta x}\\) no intervalo.",
         "É inclinação da secante.",
@@ -171,14 +171,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar média de viagem inteira como instantânea.",
         "Esquecer limite quando o ponto é problemático.",
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "vi-g1",
@@ -207,9 +207,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-03", "der-ap-04"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-03", "der-ap-04"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Instantânea = limite da variação média.",
         "Velocidade no ponto = limite de \\(\\frac{\\Delta s}{\\Delta t}\\).",
@@ -275,14 +275,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir secante com tangente antes do limite.",
         "Tangente em quina (\\(|x|\\) em 0) não é única clássica.",
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "st-g1",
@@ -311,9 +311,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-05", "der-ap-06"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-05", "der-ap-06"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Secante → tangente quando \\(h \\to 0\\).",
         "Inclinação da tangente = derivada em \\(a\\).",
@@ -381,7 +381,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer de tomar o limite após simplificar.",
         "Cancelar h quando não é fator comum válido.",
@@ -389,7 +389,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "def-g1",
@@ -418,9 +418,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-07", "der-ap-08"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-07", "der-ap-08"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(f'(a)\\) = limite do quociente de diferenças.",
         "Tangente, velocidade, marginal = mesma ideia.",
@@ -489,7 +489,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Derivar produto como se fosse soma.",
         "Esquecer g′ na cadeia.",
@@ -497,7 +497,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "reg-g1",
@@ -526,9 +526,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-09", "der-ap-10"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-09", "der-ap-10"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Regras evitam limite em todo exercício.",
         "Soma, produto, quociente, cadeia — arsenal principal.",
@@ -595,7 +595,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer multiplicar pelo expoente.",
         "Derivar constante como se fosse x.",
@@ -603,7 +603,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "pot-g1",
@@ -632,9 +632,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-11", "der-ap-12"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-11", "der-ap-12"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\((x^n)' = n\\,x^{n-1}\\).",
         "Polinômio: derivar termo a termo.",
@@ -699,7 +699,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Derivar fatores separadamente e multiplicar.",
         "Inverter sinal no numerador do quociente.",
@@ -707,7 +707,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "pq-g1",
@@ -736,9 +736,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-13", "der-ap-14"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-13", "der-ap-14"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Produto: \\(f'g + fg'\\).",
         "Quociente: \\(\\frac{f'g-fg'}{g^2}\\).",
@@ -804,7 +804,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Derivar só a potência externa.",
         "Esquecer de derivar o interior.",
@@ -812,7 +812,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "cad-g1",
@@ -841,9 +841,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-15", "der-ap-16"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-15", "der-ap-16"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Cadeia: derivada externa × derivada interna.",
         "Marque u interno antes de derivar.",
@@ -909,7 +909,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que \\(f'=0\\) implica mínimo (pode ser máximo ou inflexão).",
         "Confundir \\(f\\) com \\(f'\\).",
@@ -917,7 +917,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "intd-g1",
@@ -946,9 +946,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-17", "der-ap-18"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-17", "der-ap-18"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(f'\\): sinal = direção; valor = rapidez.",
         "Marginal e velocidade são interpretações.",
@@ -1013,7 +1013,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir posição com velocidade.",
         "Esquecer unidades m, m/s, m/s².",
@@ -1021,7 +1021,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "veld-g1",
@@ -1050,9 +1050,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-19", "der-ap-20"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-19", "der-ap-20"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(v=s'\\), \\(a=v'=s''\\).",
         "Unidades coerentes sempre.",
@@ -1119,7 +1119,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar custo médio no lugar de marginal.",
         "Esquecer que R′ pode depender de x (preço variável).",
@@ -1127,7 +1127,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "cm-g1",
@@ -1156,9 +1156,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-21", "der-ap-22"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-21", "der-ap-22"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(C'\\) e \\(R'\\) são taxas marginais.",
         "\\(L' = R' - C'\\).",
@@ -1229,14 +1229,14 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Calcular sem interpretar em problemas aplicados.",
         "Pular para integral antes de dominar derivada.",
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "revd-g1",
@@ -1265,9 +1265,9 @@ export const derivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-23", "der-ap-24", "dsf-deriv-01"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["der-ap-23", "der-ap-24", "dsf-deriv-01"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Derivada \\(=\\) taxa instantânea \\(=\\) inclinação da tangente.",
         "Regras aceleram; interpretação fecha o ciclo.",

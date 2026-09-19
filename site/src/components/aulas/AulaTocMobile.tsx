@@ -1,4 +1,4 @@
-import { sectionLinks } from "@/components/aulas/toc-sections";
+import { visibleSectionLinks } from "@/components/aulas/toc-sections";
 import type { AulaContent } from "@/data/aulas/types";
 
 /**
@@ -7,12 +7,11 @@ import type { AulaContent } from "@/data/aulas/types";
  */
 export function AulaTocMobile({ content, hasSimulation = false, hasNext }: { content: AulaContent; hasSimulation?: boolean; hasNext: boolean }) {
   // `hasNext` acompanha a seção renderizada pelo AulaView (ver AulaToc).
-  const links = sectionLinks.filter(
-    (item) =>
-      (item.id !== "simulacao" || hasSimulation) &&
-      (item.id !== "proxima" || hasNext) &&
-      (item.id !== "video" || content.videos?.length),
-  );
+  const links = visibleSectionLinks({
+    hasSimulation,
+    hasNext,
+    hasVideos: Boolean(content.videos?.length),
+  });
 
   return (
     <details className="group mb-6 rounded-2 border border-border bg-surface-soft lg:hidden">
