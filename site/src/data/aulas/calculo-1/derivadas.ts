@@ -46,7 +46,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(s(t) = t^2\\) metros",
+      title: "A velocidade média entre dois instantes",
       situacao: "Posição de \\(t = 1\\) s a \\(t = 3\\) s. Variação média de posição?",
     },
     passos: {
@@ -152,7 +152,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(s(t)=t^2\\)",
+      title: "A velocidade exata aos dois segundos",
       situacao: "Velocidade instantânea em \\(t = 2\\) s?",
     },
     passos: {
@@ -256,7 +256,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^2\\) em \\(x=1\\)",
+      title: "A inclinação da parábola num ponto",
       situacao: "Inclinação da tangente?",
     },
     passos: {
@@ -362,7 +362,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^2\\) em \\(a=3\\)",
+      title: "A derivada calculada pela definição",
       situacao: "\\(f'(3)\\) pela definição.",
     },
     passos: {
@@ -468,7 +468,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=3x^2+2x-5\\)",
+      title: "Um polinômio derivado pelas regras",
       situacao: "Derivar por regras.",
     },
     passos: {
@@ -575,7 +575,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^4-3x^2+5\\)",
+      title: "Um polinômio de quarto grau, termo a termo",
       situacao: "\\(f'(x)\\)?",
     },
     passos: {
@@ -680,7 +680,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^2 \\cdot (2x+1)\\)",
+      title: "Um produto de dois fatores",
       situacao: "Derivar.",
     },
     passos: {
@@ -785,7 +785,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=(2x+3)^4\\)",
+      title: "Uma potência com função dentro",
       situacao: "\\(f'(x)\\)?",
     },
     passos: {
@@ -890,7 +890,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(C(x)=1000+5x+0{,}01x^2\\)",
+      title: "O custo da centésima primeira unidade",
       situacao: "\\(C'(x)=5+0{,}02x\\). O que \\(C'(100)\\) significa?",
     },
     passos: {
@@ -994,7 +994,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(s(t)=-5t^2+20t\\) (metros)",
+      title: "Um lançamento vertical, segundo a segundo",
       situacao: "\\(v(t)\\) e \\(a(t)\\)? Significado em \\(t=1\\) s.",
     },
     passos: {
@@ -1099,7 +1099,7 @@ export const derivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(C(x)=500+10x+0{,}05x^2\\), \\(R(x)=40x\\)",
+      title: "Onde o lucro marginal chega a zero",
       situacao: "\\(C'(x)\\), \\(R'(x)\\) e quando lucro marginal zera?",
     },
     passos: {

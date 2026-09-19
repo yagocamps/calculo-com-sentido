@@ -473,7 +473,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(s(t)\\) em \\([0, 8]\\)",
+      title: "Uma viagem de oito horas sem teletransporte",
       situacao: "Posição contínua durante 8 horas de viagem. O que isso exclui?",
     },
     passos: {

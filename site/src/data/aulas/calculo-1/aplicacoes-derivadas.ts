@@ -45,7 +45,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^3-3x\\)",
+      title: "Uma cúbica que sobe, desce e sobe",
       situacao: "Onde f cresce e onde decresce?",
     },
     passos: {
@@ -151,7 +151,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=-x^2+4x+1\\)",
+      title: "O ponto mais alto de uma parábola",
       situacao: "Encontre máximo local.",
     },
     passos: {
@@ -257,7 +257,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^4-4x^2\\)",
+      title: "Uma curva com três candidatos",
       situacao: "Pontos críticos?",
     },
     passos: {
@@ -363,7 +363,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^3\\)",
+      title: "A cúbica que troca de concavidade na origem",
       situacao: "\\(f''\\) e concavidade?",
     },
     passos: {
@@ -572,7 +572,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Produção \\(Q(t)\\)",
+      title: "Quando a produção por hora é máxima",
       situacao: "\\(Q(t)=50t-t^2\\) peças em \\(0 \\leq t \\leq 50\\) h. Quando produção instantânea é máxima?",
     },
     passos: {

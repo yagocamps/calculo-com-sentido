@@ -152,7 +152,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=2\\) em \\([0,3]\\)",
+      title: "A área de um retângulo sob a reta",
       situacao: "Área sob o gráfico?",
     },
     passos: {
@@ -257,7 +257,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(\\int 3x^2\\,dx\\)",
+      title: "A antiderivada de um monômio",
       situacao: "Antiderivada?",
     },
     passos: {
@@ -362,7 +362,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(\\int_0^2 2x\\,dx\\)",
+      title: "A área exata sob uma reta inclinada",
       situacao: "Valor exato?",
     },
     passos: {
@@ -573,7 +573,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(\\int_0^1 x^2\\,dx\\)",
+      title: "O teorema aplicado a uma parábola",
       situacao: "Usar TFC.",
     },
     passos: {
@@ -678,7 +678,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(v(t)=6-2t\\) em \\([0,6]\\)",
+      title: "Um corpo que vai e volta em seis segundos",
       situacao: "Deslocamento e distância em 0 a 6 s?",
     },
     passos: {

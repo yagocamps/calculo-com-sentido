@@ -51,7 +51,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x) = \\frac{x^2 - 4}{x - 2}\\)",
+      title: "Uma fração que some exatamente em dois",
       situacao: "Monte uma tabela com \\(x \\to 2\\) (por cima e por baixo) e estime o limite.",
     },
     passos: {
@@ -514,7 +514,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x) = \\frac{1}{(x - 3)^2}\\)",
+      title: "Uma fração que estoura perto de três",
       situacao: "Descreva o comportamento quando \\(x \\to 3\\).",
     },
     passos: {
@@ -632,7 +632,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x) = \\frac{3x^2 + 1}{x^2 + 4}\\)",
+      title: "Uma razão que estabiliza no longo prazo",
       situacao: "Determine \\(\\lim_{x \\to +\\infty} f(x)\\) e \\(\\lim_{x \\to -\\infty} f(x)\\).",
     },
     passos: {
@@ -748,7 +748,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x) = \\frac{x^2 + 1}{x}\\)",
+      title: "Uma curva com assíntota vertical e oblíqua",
       situacao: "Identifique assíntotas vertical, horizontal e oblíqua.",
     },
     passos: {
@@ -864,7 +864,7 @@ export const limitesAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(s(t) = t^2\\) (metros)",
+      title: "Do intervalo curto ao instante exato",
       situacao: "Velocidade média em [2, 2,5] e limite para instantânea em \\(t = 2\\).",
     },
     passos: {

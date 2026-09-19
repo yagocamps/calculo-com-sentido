@@ -372,7 +372,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x) = -x^2 + 4x\\)",
+      title: "Uma parábola que sobe até o topo e desce",
       situacao: "Parábola com máximo. Onde cresce e onde decresce?",
     },
     passos: {
@@ -477,7 +477,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Lucro \\(L(x)\\)",
+      title: "Cem unidades vendidas e cinco mil de lucro",
       situacao: "\\(L(100) = 5000\\). O que isso quer dizer?",
     },
     passos: {
@@ -688,7 +688,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(s(t) = t^2\\)",
+      title: "A velocidade média de um corpo em movimento",
       situacao: "Distância em metros, \\(t\\) em segundos. Velocidade média entre \\(t=1\\) e \\(t=3\\)?",
     },
     passos: {
