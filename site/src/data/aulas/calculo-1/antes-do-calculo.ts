@@ -85,7 +85,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que \"todo mundo reprova, é normal\" e não mudar hábito.",
         "Copiar resolução sem fechar o caderno e tentar sozinho.",
@@ -94,7 +94,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "repr-g1",
@@ -127,12 +127,12 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Em breve: autoavaliação de hábitos de estudo.",
       exerciseIds: [],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Reprovação costuma vir de base fraca, pouca prática e estudo só mecânico.",
         "Funções e gráficos são o alicerce — não pule.",
@@ -220,7 +220,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que Cálculo vai \"ensinar álgebra de novo\" do zero.",
         "Confundir notação \\(f(x)\\) com multiplicação \\(f\\) vezes \\(x\\).",
@@ -229,7 +229,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "pre-g1",
@@ -259,12 +259,12 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Revise no Pré-Cálculo: função afim, quadrática e gráficos.",
       exerciseIds: [],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Domine álgebra básica, funções e leitura de gráficos antes de limites.",
         "Trig introdutória ajuda em muitos cursos — não ignore.",
@@ -341,7 +341,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Só copiar solução do professor ou IA sem tentar antes.",
         "Estudar 6 horas um dia e zero na semana seguinte.",
@@ -350,7 +350,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "est-g1",
@@ -382,12 +382,12 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Use o banco de exercícios do site após cada aula de conteúdo.",
       exerciseIds: [],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Estude com ciclo: ideia → guiado → sozinho → interpretar.",
         "Rotina curta e frequente supera maratona esporádica.",
@@ -467,7 +467,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Querer ir direto a derivadas sem limites.",
         "Tratar integral como \"antiderivada\" sem ideia de soma.",
@@ -476,7 +476,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "map-g1",
@@ -506,12 +506,12 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Siga a ordem dos módulos na sidebar de Cálculo 1.",
       exerciseIds: [],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Trilha: funções → limites → continuidade → derivadas → aplicações → integrais.",
         "Cada etapa responde um tipo de pergunta prática.",

@@ -68,7 +68,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que contínua significa sempre crescente.",
         "Confundir contínua com definida em todo lugar (domínio importa).",
@@ -76,7 +76,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "cont-g1",
@@ -105,9 +105,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-01", "cont-ap-02"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-01", "cont-ap-02"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Contínua = gráfico sem quebra no ponto.",
         "Formalmente: \\(\\lim_{x \\to a} f(x) = f(a)\\).",
@@ -175,7 +175,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Chamar salto de buraco.",
         "Achar que buraco implica limite inexistente.",
@@ -183,7 +183,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "fs-g1",
@@ -212,9 +212,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-03", "cont-ap-04"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-03", "cont-ap-04"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Buraco: limite existe, valor falha ou difere.",
         "Salto: limites laterais diferentes.",
@@ -281,7 +281,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir assíntota horizontal com valor em x finito.",
         "Achar que gráfico cruza assíntota vertical.",
@@ -289,7 +289,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "as-g1",
@@ -318,9 +318,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-05", "cont-ap-06"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-05", "cont-ap-06"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Assíntota vertical ↔ descontinuidade infinita.",
         "Horizontal/obliqua descrevem x → ∞.",
@@ -387,7 +387,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Verificar só o limite e esquecer \\(f(a)\\).",
         "Não testar limites laterais em funções por partes.",
@@ -395,7 +395,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "cp-g1",
@@ -424,9 +424,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-07", "cont-ap-08"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-07", "cont-ap-08"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Três condições: \\(f(a)\\), limite, igualdade.",
         "Buraco: ajuste \\(f(a)\\); salto: não corrige só redefinindo um valor.",
@@ -492,7 +492,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que contínua em intervalo implica derivável em todo ponto.",
         "Ignorar comportamento nas pontas de \\([a,b]\\).",
@@ -500,7 +500,7 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "ci-g1",
@@ -529,9 +529,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-09", "cont-ap-10"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-09", "cont-ap-10"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Contínua em intervalo = contínua ponto a ponto (com cuidado nas pontas).",
         "Modelos físicos costumam assumir continuidade no tempo.",
@@ -602,14 +602,14 @@ export const continuidadeAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Pular para derivadas sem dominar limite + continuidade.",
         "Decorar definição sem desenhar o gráfico.",
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "rc-g1",
@@ -638,9 +638,9 @@ export const continuidadeAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-11", "cont-ap-12", "dsf-cont-01"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["cont-ap-11", "cont-ap-12", "dsf-cont-01"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Contínua \\(\\iff\\) limite = valor no ponto.",
         "Buraco, salto, infinita — três perfis de quebra.",

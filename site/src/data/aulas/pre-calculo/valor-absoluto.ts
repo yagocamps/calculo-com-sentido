@@ -121,7 +121,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Calcular \\(|4 - (-3)|\\) como \\(|4 - 3|\\), perdendo o sinal do número negativo.",
         "Achar que \\(|a - b|\\) e \\(|b - a|\\) são diferentes: são a mesma distância, medida a partir de pontas opostas.",
@@ -130,7 +130,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -174,12 +174,12 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Distâncias na reta, centros escondidos e equações com módulo.",
       exerciseIds: ["alg-mod-01", "alg-mod-02", "alg-mod-03"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(|x|\\) é a distância de \\(x\\) até o zero.",
         "\\(|a - b|\\) é a distância entre \\(a\\) e \\(b\\); a ordem não importa.",
@@ -291,7 +291,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Resolver \\(|x - 3| > 2\\) como \\(1 < x < 5\\), trocando as pontas de fora pela faixa de dentro.",
         "Escrever \\(x - 3 > 2\\), chegar a \\(x > 5\\) e parar, esquecendo o lado esquerdo.",
@@ -300,7 +300,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -343,12 +343,12 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Faixas de tolerância, pontas de fora e o caso do raio negativo.",
       exerciseIds: ["alg-mod-04", "alg-mod-05", "alg-mod-06", "func-ap-08"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Isole o módulo e confira se o raio \\(r\\) é positivo.",
         "\\(|x - c| < r\\): um intervalo, \\(c - r < x < c + r\\).",

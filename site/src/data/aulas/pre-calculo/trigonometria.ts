@@ -84,7 +84,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Trocar cateto oposto com adjacente.",
         "Usar o seno quando o lado conhecido pede cosseno.",
@@ -93,7 +93,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -133,12 +133,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique cálculos com seno em triângulos retângulos no banco de exercícios.",
       exerciseIds: ["trig-ap-01", "trig-ap-02"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(\\sin = \\frac{\\text{cateto oposto}}{\\text{hipotenusa}}\\) (SOH).",
         "Depende só do ângulo, não do tamanho do triângulo.",
@@ -227,7 +227,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir adjacente com oposto (cosseno usa o adjacente).",
         "Usar cosseno quando o problema dá o lado oposto.",
@@ -236,7 +236,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -276,12 +276,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique cálculos com cosseno em triângulos retângulos no banco de exercícios.",
       exerciseIds: ["trig-ap-03", "trig-ap-04"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(\\cos = \\frac{\\text{cateto adjacente}}{\\text{hipotenusa}}\\) (CAH).",
         "É o par do seno: descreve a parte horizontal.",
@@ -370,7 +370,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar a hipotenusa na tangente (ela só usa os catetos).",
         "Inverter a razão (oposto sobre adjacente, não o contrário).",
@@ -379,7 +379,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -417,12 +417,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique tangente e inclinação no banco de exercícios.",
       exerciseIds: ["trig-ap-05", "trig-ap-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(\\tan = \\frac{\\text{cateto oposto}}{\\text{cateto adjacente}}\\) (TOA).",
         "Não usa a hipotenusa; compara os catetos.",
@@ -509,7 +509,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Trocar as coordenadas: \\(x\\) é cosseno, \\(y\\) é seno.",
         "Esquecer que os valores ficam entre −1 e 1.",
@@ -518,7 +518,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -556,12 +556,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique o ciclo trigonométrico e valores notáveis no banco de exercícios.",
       exerciseIds: ["trig-ap-07", "trig-ap-08"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "O ciclo é um círculo de raio 1; o ponto do ângulo é \\((\\cos\\theta, \\sin\\theta)\\).",
         "Cosseno é a coordenada \\(x\\); seno é a \\(y\\).",
@@ -646,7 +646,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer de elevar ao quadrado antes de somar.",
         "Esquecer a raiz no final ao isolar.",
@@ -655,7 +655,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -694,12 +694,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique a relação fundamental no banco de exercícios.",
       exerciseIds: ["trig-ap-09", "trig-ap-10"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Relação fundamental: \\(\\sin^2\\theta + \\cos^2\\theta = 1\\).",
         "Vem de Pitágoras no círculo de raio 1.",
@@ -791,7 +791,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que a curva ultrapassa 1 ou −1.",
         "Confundir amplitude (altura) com período (largura).",
@@ -800,7 +800,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -839,12 +839,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique leitura de gráficos de seno e cosseno no banco de exercícios.",
       exerciseIds: ["trig-ap-11", "trig-ap-12"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "O gráfico do seno é uma onda (senoide) entre −1 e 1.",
         "Amplitude = altura; período = comprimento da repetição.",
@@ -933,7 +933,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Escolher a razão errada para os lados que você tem.",
         "Esquecer de somar a altura do observador (olho do nível do chão).",
@@ -942,7 +942,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -981,12 +981,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique altura, rampas e ângulos de elevação no banco de exercícios.",
       exerciseIds: ["trig-ap-13", "trig-ap-14"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Identifique ângulo e lados (conhecido e procurado) para escolher a razão.",
         "Ângulo de elevação mede alturas a partir do chão.",
@@ -1075,7 +1075,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer de somar a altura do centro (o eixo da roda).",
         "Confundir frequência (voltas por segundo) com período (tempo por volta).",
@@ -1084,7 +1084,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1124,12 +1124,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique movimento circular e ondas no banco de exercícios.",
       exerciseIds: ["trig-ap-15", "trig-ap-16"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Movimento circular projetado vira uma onda (senoide).",
         "A altura de um ponto que gira é \\(\\sin\\) do ângulo.",
@@ -1219,7 +1219,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Trocar seno e cosseno nas componentes (cosseno é a horizontal).",
         "Esquecer que as componentes somam vetorialmente, não diretamente.",
@@ -1228,7 +1228,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1267,12 +1267,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique decomposição de forças e ângulos em estruturas no banco de exercícios.",
       exerciseIds: ["trig-ap-17", "trig-ap-18"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Força em diagonal se decompõe em horizontal (\\(F\\cos\\theta\\)) e vertical (\\(F\\sin\\theta\\)).",
         "Cosseno dá a parte horizontal; seno dá a vertical.",
@@ -1364,7 +1364,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Trocar a razão pelo par de lados errado.",
         "Esquecer a relação \\(\\sin^2\\theta + \\cos^2\\theta = 1\\) para conferir.",
@@ -1373,7 +1373,7 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1413,12 +1413,12 @@ export const trigonometriaAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Revise todo o módulo de trigonometria no banco de exercícios.",
       exerciseIds: ["trig-ap-19", "trig-ap-20", "dsf-trig-01"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "SOH-CAH-TOA: as três razões e seus pares de lados.",
         "Ciclo trigonométrico estende tudo para qualquer ângulo.",

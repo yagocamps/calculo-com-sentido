@@ -81,7 +81,7 @@ export const ideiaDeLimiteAula: AulaContent = {
     ],
   },
   erros: {
-    title: "Cuidado com",
+    title: "Armadilhas que valem atenção",
     items: [
       "Confundir limite com o valor da função no ponto (podem ser diferentes).",
       "Achar que \\(\\frac{0}{0}\\) significa \"não existe limite\" — muitas vezes existe tendência.",
@@ -90,7 +90,7 @@ export const ideiaDeLimiteAula: AulaContent = {
     ],
   },
   exerciciosGuiados: {
-    title: "Exercícios guiados",
+    title: "Prática em camadas",
     exercises: [
       {
         id: "lim-g1",
@@ -122,12 +122,12 @@ export const ideiaDeLimiteAula: AulaContent = {
     ],
   },
   exerciciosAplicados: {
-    title: "Exercícios aplicados",
+    title: "Continue praticando",
     intro: "Pratique a ideia de limite com exercícios resolvidos passo a passo.",
     exerciseIds: ["lim-ap-01", "lim-ap-02"],
   },
   resumo: {
-    title: "Resumo da aula",
+    title: "O que precisa ficar",
     bullets: [
       "Limite = comportamento de \\(f(x)\\) quando \\(x\\) se aproxima de \\(a\\).",
       "Tendência pode existir mesmo com buraco ou indeterminação no ponto.",

@@ -33,7 +33,7 @@ export function BhaskaraDerivation({
           <p className="text-[11px] font-bold uppercase tracking-wider text-terracotta">
             Demonstração disponível
           </p>
-          <h3 className="mt-1 font-serif text-[24px] font-medium text-ink">
+          <h3 className="mt-1 font-serif text-[18px] font-semibold text-ink">
             {title}
           </h3>
         </div>

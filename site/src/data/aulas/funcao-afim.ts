@@ -111,7 +111,7 @@ export const funcaoAfimAula: AulaContent = {
     ],
   },
   erros: {
-    title: "Cuidado com",
+    title: "Armadilhas que valem atenção",
     items: [
       "Esquecer de somar a parte fixa \\(b\\) no final (calcular só \\(a \\times x\\)).",
       "Trocar \\(a\\) e \\(b\\) ao montar a função na situação real.",
@@ -120,7 +120,7 @@ export const funcaoAfimAula: AulaContent = {
     ],
   },
   exerciciosGuiados: {
-    title: "Exercícios guiados",
+    title: "Prática em camadas",
     exercises: [
       {
         id: "guiado-1",
@@ -164,13 +164,13 @@ export const funcaoAfimAula: AulaContent = {
     ],
   },
   exerciciosAplicados: {
-    title: "Exercícios aplicados",
+    title: "Continue praticando",
     intro:
       "Treine no banco de exercícios com contexto real (corrida, salário, energia).",
     exerciseIds: ["ex-01", "ex-02", "ex-03", "ex-04", "ex-05", "ex-06", "ex-07", "ex-08"],
   },
   resumo: {
-    title: "Resumo da aula",
+    title: "O que precisa ficar",
     bullets: [
       "Função afim: \\(f(x) = ax + b\\) — crescimento constante.",
       "\\(a\\) = taxa (quanto muda por unidade); \\(b\\) = parte fixa.",

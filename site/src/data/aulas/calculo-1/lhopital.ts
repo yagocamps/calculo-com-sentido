@@ -153,7 +153,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Aplicar a regra sem conferir a forma. Em \\(\\frac{x + 1}{x + 2}\\) com \\(x \\to 0\\), a substituição já dá \\(\\frac{1}{2}\\); derivando, você obteria \\(1\\), que está errado.",
         "Usar a regra do quociente. L’Hôpital deriva o numerador e o denominador cada um por si, e não a fração inteira.",
@@ -162,7 +162,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -207,12 +207,12 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "0/0 e ∞/∞, crescimento de algoritmos e o erro de derivar cedo demais.",
       exerciseIds: ["ad-lh-01", "ad-lh-02", "ad-lh-03"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Substitua primeiro: a regra só vale em \\(\\frac{0}{0}\\) ou \\(\\frac{\\infty}{\\infty}\\).",
         "Derive o numerador e o denominador separadamente e substitua de novo.",
@@ -330,7 +330,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Responder \\(1^\\infty = 1\\) ou \\(0 \\cdot \\infty = 0\\) de cabeça. As duas formas são indeterminadas e podem dar qualquer valor.",
         "Aplicar L’Hôpital direto num produto ou numa diferença. A regra só vale para quocientes; reescreva antes.",
@@ -339,7 +339,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -382,12 +382,12 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Um exercício de cada reescrita, incluindo os juros capitalizados sem parar.",
       exerciseIds: ["ad-lh-04", "ad-lh-05", "ad-lh-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(0 \\cdot \\infty\\), \\(\\infty - \\infty\\), \\(1^\\infty\\), \\(0^0\\) e \\(\\infty^0\\) são indeterminadas: o símbolo não diz o resultado.",
         "\\(0 \\cdot \\infty\\): passe um fator para o denominador.",

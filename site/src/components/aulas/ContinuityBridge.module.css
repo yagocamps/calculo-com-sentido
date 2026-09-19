@@ -1,7 +1,7 @@
 .bridge { container-type: inline-size; margin-block: 2rem; scroll-margin-top: 80px; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; background: var(--surface); color: var(--ink); }
 .header { padding: 22px 24px; background: var(--surface-warm); }
 .eyebrow { font-size: 10px; font-weight: 750; letter-spacing: .1em; margin-bottom: 8px; }
-.header h3 { font-size: 25px; line-height: 1.2; letter-spacing: -.03em; font-weight: 750; }
+.header h3 { font-size: 20px; line-height: 1.2; letter-spacing: -.03em; font-weight: 750; }
 .header > p:last-child { font-size: 14px; color: var(--ink-muted); margin-top: 10px; line-height: 1.6; }
 .instruction { padding: 16px 24px; font-size: 15px; font-weight: 650; background: var(--terracotta-soft); color: var(--terracotta-ink); }
 .bridge button { min-height: 44px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; background: var(--surface); color: var(--ink); font: inherit; font-size: 12px; font-weight: 650; cursor: pointer; }

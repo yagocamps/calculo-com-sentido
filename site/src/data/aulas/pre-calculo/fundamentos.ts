@@ -82,7 +82,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Resolver da esquerda para a direita ignorando a prioridade (\\(2 + 3 \\times 4\\) não é \\(20\\)).",
         "Esquecer que \\(\\times\\) e \\(\\div\\) vêm antes de \\(+\\) e \\(-\\).",
@@ -91,7 +91,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -132,12 +132,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Treine contas com ordem de operações no banco de exercícios do site.",
       exerciseIds: ["fund-ap-01", "fund-ap-02"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Ordem: parênteses → potências/raízes → \\(\\times\\,\\div\\) → \\(+\\,-\\).",
         "Mesma prioridade: da esquerda para a direita.",
@@ -230,7 +230,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Somar numerador com numerador e denominador com denominador (\\(\\frac{1}{2} + \\frac{1}{3} \\neq \\frac{2}{5}\\)).",
         "Esquecer de ajustar o numerador depois de mudar o denominador.",
@@ -239,7 +239,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -279,12 +279,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique frações em contextos de receita, tempo e desconto no banco de exercícios.",
       exerciseIds: ["fund-ap-03", "fund-ap-04"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Somar/subtrair: iguale os denominadores (MMC), depois mexa só nos numeradores.",
         "Multiplicar: reto — numerador com numerador, denominador com denominador.",
@@ -373,7 +373,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Multiplicar as bases em vez de somar os expoentes (\\(2^3 \\times 2^2 \\neq 4^5\\)).",
         "Achar que \\(2^3 = 2 \\times 3 = 6\\) (é \\(2 \\times 2 \\times 2 = 8\\)).",
@@ -382,7 +382,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -423,12 +423,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Use potências em notação científica e crescimento no banco de exercícios.",
       exerciseIds: ["fund-ap-05", "fund-ap-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(a^n\\) = \\(a\\) multiplicado por ele mesmo \\(n\\) vezes.",
         "Mesma base: \\(\\times\\) soma expoentes, \\(\\div\\) subtrai expoentes.",
@@ -517,7 +517,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que \\(\\sqrt{a + b} = \\sqrt{a} + \\sqrt{b}\\) (é falso: \\(\\sqrt{9+16} \\neq 3+4\\)).",
         "Esquecer que \\(x^2 = 144\\) tem duas soluções (\\(12\\) e \\(-12\\)).",
@@ -526,7 +526,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -566,12 +566,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique raízes em Pitágoras e áreas no banco de exercícios.",
       exerciseIds: ["fund-ap-07", "fund-ap-08"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Raiz é o inverso da potência: \\(\\sqrt[n]{a}\\) pergunta \"o que elevado a \\(n\\) dá \\(a\\)\".",
         "\\(\\sqrt[n]{a} = a^{1/n}\\) — vira potência de expoente fracionário.",
@@ -657,7 +657,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Escrever \\((a + b)^2 = a^2 + b^2\\) (esquecer o \\(2ab\\)).",
         "Trocar o sinal do meio em \\((a - b)^2\\).",
@@ -666,7 +666,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -707,12 +707,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Treine produtos notáveis e cálculo mental no banco de exercícios.",
       exerciseIds: ["fund-ap-09", "fund-ap-10"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\((a + b)^2 = a^2 + 2ab + b^2\\) — nunca esqueça o \\(2ab\\).",
         "\\((a - b)^2 = a^2 - 2ab + b^2\\).",
@@ -806,7 +806,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Pular o fator comum e partir direto para o trinômio.",
         "Errar o sinal: para \\(x^2 - 5x + 6\\), os números são \\(-2\\) e \\(-3\\).",
@@ -815,7 +815,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -855,12 +855,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique fatoração aplicada a equações no banco de exercícios.",
       exerciseIds: ["fund-ap-11", "fund-ap-12"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Fatorar = transformar soma em produto (inverso de distribuir).",
         "Comece sempre pelo fator comum.",
@@ -949,7 +949,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Aplicar a operação em um lado só e esquecer o outro.",
         "Trocar o sinal de forma mecânica e errar (mover \\(+6\\) vira \\(-6\\) ao passar).",
@@ -958,7 +958,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1000,12 +1000,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Resolva equações de 1º grau aplicadas a custos e metas no banco de exercícios.",
       exerciseIds: ["fund-ap-13", "fund-ap-14"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Equação é uma balança: os dois lados são iguais.",
         "Isole o \\(x\\) desfazendo as operações com suas inversas.",
@@ -1164,7 +1164,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Errar o sinal de \\(b\\): em \\(x^2 - 5x + 6\\), \\(b = -5\\), então \\(-b = +5\\).",
         "Colar uma história física em qualquer parábola. Para altura de um projétil, \\(a\\) precisa ser negativo (a gravidade puxa para baixo); com \\(a > 0\\) o gráfico abre para cima e não descreve um lançamento.",
@@ -1174,7 +1174,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1215,12 +1215,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique equações de 2º grau aplicadas no banco de exercícios.",
       exerciseIds: ["fund-ap-15", "fund-ap-16"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Forma geral: \\(ax^2 + bx + c = 0\\) (\\(a \\neq 0\\)).",
         "Bhaskara: \\(x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}\\), com \\(\\Delta = b^2 - 4ac\\).",
@@ -1312,7 +1312,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Somar descontos sucessivos (\\(10\\% + 10\\% \\neq 20\\%\\)).",
         "Esquecer de converter a porcentagem em decimal.",
@@ -1321,7 +1321,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1359,12 +1359,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique porcentagem, desconto e acréscimo no banco de exercícios.",
       exerciseIds: ["fund-ap-17", "fund-ap-18"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Porcentagem é fração de \\(100\\); converta para decimal antes de calcular.",
         "Desconto de \\(d\\%\\): multiplique por \\((1 - d)\\). Acréscimo: por \\((1 + d)\\).",
@@ -1449,7 +1449,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Inverter uma das razões ao montar a proporção.",
         "Misturar unidades (pães em cima de um lado, reais do outro).",
@@ -1458,7 +1458,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1501,12 +1501,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique proporção, escala e regra de três no banco de exercícios.",
       exerciseIds: ["fund-ap-19", "fund-ap-20"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Proporção é a igualdade de duas razões.",
         "Multiplicação cruzada: \\(\\frac{a}{b} = \\frac{c}{d} \\Rightarrow a \\cdot d = b \\cdot c\\).",
@@ -1595,7 +1595,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar a taxa em porcentagem (\\(2\\)) em vez de decimal (\\(0{,}02\\)).",
         "Misturar unidades: taxa ao mês com tempo em anos.",
@@ -1604,7 +1604,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1645,12 +1645,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique juros simples e montante no banco de exercícios.",
       exerciseIds: ["fund-ap-21", "fund-ap-22"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Juros simples incidem sempre sobre o capital inicial (crescimento linear).",
         "\\(M = C(1 + i \\cdot t)\\); juros \\(= C \\cdot i \\cdot t\\).",
@@ -1739,7 +1739,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer de converter watts para quilowatts (dividir por \\(1000\\)).",
         "Multiplicar potência em W direto pela tarifa de kWh.",
@@ -1748,7 +1748,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1790,12 +1790,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique cálculo de consumo e custo de energia no banco de exercícios.",
       exerciseIds: ["fund-ap-23", "fund-ap-24"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Energia (kWh) = potência (kW) × tempo (h).",
         "\\(1\\) kW \\(= 1000\\) W; sempre converta antes de calcular.",
@@ -1884,7 +1884,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Somar expoentes de bases diferentes (\\(2^3 \\cdot 3^2\\) não é \\(6^5\\)).",
         "Distribuir o expoente sobre uma soma: \\((a + b)^2\\) não é \\(a^2 + b^2\\).",
@@ -1893,7 +1893,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1934,12 +1934,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Revise as seis ferramentas com exercícios variados no banco do site.",
       exerciseIds: ["fund-ap-25", "fund-ap-26"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Ordem das operações governa toda conta; respeite-a sempre.",
         "Frações somam com denominador igual; multiplicam reto; dividem virando.",
@@ -2028,7 +2028,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Somar \\(25\\%\\) de desconto como se fosse R$ 25, não \\(25\\%\\) do valor.",
         "Aplicar o percentual e o cupom em ordem trocada sem ler o enunciado.",
@@ -2037,7 +2037,7 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -2077,12 +2077,12 @@ export const fundamentosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique equações e problemas aplicados no banco de exercícios do site.",
       exerciseIds: ["fund-ap-27", "fund-ap-28", "dsf-fund-01"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Equação: isole a incógnita fazendo a mesma coisa dos dois lados.",
         "2º grau: Bhaskara, e o discriminante diz quantas soluções há.",

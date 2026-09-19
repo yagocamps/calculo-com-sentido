@@ -22,7 +22,7 @@ export function StepList({
             <p className="font-semibold">{step.title}</p>
             <RichText
               as="p"
-              className="font-mono text-[13.5px] text-ink-muted"
+              className="max-w-[37.5em] font-mono text-[14.5px] leading-[1.65] text-ink-muted"
               glossary={glossary}
             >
               {step.detail}

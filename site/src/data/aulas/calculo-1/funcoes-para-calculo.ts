@@ -67,7 +67,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir \\(f(x)\\) com produto \\(f \\cdot x\\).",
         "Esquecer unidades (h em horas, R$ na saída).",
@@ -75,7 +75,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "fnc-g1",
@@ -104,9 +104,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-01", "fc-ap-02"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-01", "fc-ap-02"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Função = regra que associa entrada a saída.",
         "Notação \\(f(x)\\); gráfico \\((x, f(x))\\).",
@@ -175,7 +175,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que domínio é sempre todos os reais.",
         "Confundir imagem com codomínio declarado.",
@@ -183,7 +183,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "dom-g1",
@@ -212,9 +212,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-03", "fc-ap-04"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-03", "fc-ap-04"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Domínio = entradas válidas; imagem = saídas alcançadas.",
         "Cuidado com denominador zero e raízes.",
@@ -285,7 +285,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir eixos x e y.",
         "Ler valor em escala errada.",
@@ -293,7 +293,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "grf-g1",
@@ -322,9 +322,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-05", "fc-ap-06"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-05", "fc-ap-06"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Identifique eixos, tendência, zeros e extremos.",
         "Gráfico apoia limite, derivada e integral.",
@@ -392,14 +392,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Dizer \"sempre crescente\" olhando só um pedaço.",
         "Confundir crescente com positivo (f pode ser negativa e subir).",
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "cre-g1",
@@ -428,9 +428,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-07", "fc-ap-08"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-07", "fc-ap-08"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Crescente/decrescente dependem do intervalo.",
         "Leia o gráfico da esquerda para a direita.",
@@ -496,7 +496,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Responder só o número.",
         "Trocar o papel de \\(x\\) e \\(y\\).",
@@ -504,7 +504,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "int-g1",
@@ -533,9 +533,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-09", "fc-ap-10"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-09", "fc-ap-10"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Traduza \\(f(a)\\) para linguagem do problema.",
         "Declare sempre o significado de \\(x\\) e \\(f(x)\\).",
@@ -601,7 +601,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer custo fixo no lucro.",
         "Achar que receita máxima = lucro máximo.",
@@ -609,7 +609,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "cr-g1",
@@ -639,9 +639,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-11", "fc-ap-12"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-11", "fc-ap-12"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(L(x) = R(x) - C(x)\\).",
         "Break-even: \\(L(x) = 0\\).",
@@ -708,7 +708,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir posição com velocidade.",
         "Esquecer unidades (m/s vs m).",
@@ -716,7 +716,7 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "vel-g1",
@@ -747,9 +747,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-13", "fc-ap-14"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-13", "fc-ap-14"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(s(t)\\), \\(T(t)\\) modelam grandezas no tempo.",
         "Taxa média = \\(\\frac{\\Delta \\text{saída}}{\\Delta \\text{tempo}}\\).",
@@ -822,14 +822,14 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Avançar sem interpretar gráficos.",
         "Pular exercícios guiados das aulas anteriores.",
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "rev-g1",
@@ -858,9 +858,9 @@ export const funcoesParaCalculoAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-15", "fc-ap-16", "dsf-fcal-01"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["fc-ap-15", "fc-ap-16", "dsf-fcal-01"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Função, domínio, gráfico, interpretação, modelos econômicos e no tempo.",
         "Próximo: módulo Limites.",

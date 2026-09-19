@@ -29,7 +29,7 @@ export function DemonstrationDisclosure({
                 <p className="text-[11px] font-bold uppercase tracking-wider text-terracotta">
                   Demonstração disponível
                 </p>
-                <h3 className="mt-1 font-serif text-[21px] font-medium text-ink">
+                <h3 className="mt-1 font-serif text-[18px] font-semibold text-ink">
                   <RichText as="span">{demo.title}</RichText>
                 </h3>
               </div>

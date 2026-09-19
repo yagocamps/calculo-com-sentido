@@ -87,7 +87,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que aproximar-se obriga a alcançar o valor.",
         "Confundir o último termo da lista com o destino da sequência.",
@@ -96,7 +96,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -134,12 +134,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique a ideia de aproximação e tendência no banco de exercícios.",
       exerciseIds: ["prep-ap-01", "prep-ap-02"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Aproximar-se é assumir valores cada vez mais próximos de um alvo.",
         "O que importa é o destino, não onde a lista para.",
@@ -227,7 +227,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Olhar só um lado (esquerda ou direita) e tirar conclusão.",
         "Confundir o valor no ponto com o comportamento ao redor.",
@@ -236,7 +236,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -274,12 +274,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique a leitura do comportamento de funções no banco de exercícios.",
       exerciseIds: ["prep-ap-03", "prep-ap-04"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Comportamento é o que a função faz nos arredores de um ponto.",
         "Compare sempre os dois lados: esquerda e direita.",
@@ -367,7 +367,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Testar valores longe demais do ponto.",
         "Usar só um lado da tabela.",
@@ -376,7 +376,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -414,12 +414,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique tabelas de valores próximos no banco de exercícios.",
       exerciseIds: ["prep-ap-05", "prep-ap-06"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Monte uma tabela com valores próximos do ponto.",
         "Aproxime pela esquerda e pela direita.",
@@ -507,7 +507,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Concluir que a tendência não existe só porque o ponto é indefinido.",
         "Parar no \\(\\frac{0}{0}\\) sem investigar a vizinhança.",
@@ -516,7 +516,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -554,12 +554,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique a ideia de tendência e indeterminações no banco de exercícios.",
       exerciseIds: ["prep-ap-07", "prep-ap-08"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Tendência é o destino apontado pela função perto de um ponto.",
         "Pode existir mesmo quando o ponto é indefinido (\\(\\frac{0}{0}\\)).",
@@ -647,7 +647,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir o ponto aberto (sem valor) com a tendência.",
         "Ler só um lado da curva.",
@@ -656,7 +656,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -694,12 +694,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique a leitura gráfica de tendências no banco de exercícios.",
       exerciseIds: ["prep-ap-09", "prep-ap-10"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Siga a curva pelos dois lados até a altura comum.",
         "Ponto aberto marca buraco: a curva aponta, mas não assume.",
@@ -791,7 +791,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir velocidade média (do trecho) com instantânea (do ponto).",
         "Parar num intervalo grande e achar que já é a resposta.",
@@ -800,7 +800,7 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -839,12 +839,12 @@ export const preparacaoLimitesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique velocidade média, instantânea e tendência no banco de exercícios.",
       exerciseIds: ["prep-ap-11", "prep-ap-12", "dsf-prep-01"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Velocidade instantânea é a tendência das velocidades médias.",
         "Encolha o intervalo de tempo e veja para onde a média aponta.",

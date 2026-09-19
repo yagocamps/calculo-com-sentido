@@ -27,7 +27,12 @@ export function Callout({
 }: {
   variant: keyof typeof variants;
   children: React.ReactNode;
-  label?: string;
+  /**
+   * Título da faixa. `null` remove a faixa: use quando o callout abre logo
+   * abaixo de uma seção que já diz a mesma coisa, para o aluno não ler o
+   * mesmo rótulo duas vezes seguidas.
+   */
+  label?: string | null;
   className?: string;
 }) {
   const v = variants[variant];
@@ -39,10 +44,12 @@ export function Callout({
         className,
       )}
     >
-      <div className="mb-1.5 text-[11px] font-bold tracking-[0.12em]">
-        {label ?? v.label}
-      </div>
-      <div className="text-[15px] leading-relaxed [&_b]:font-semibold">{children}</div>
+      {label !== null && (
+        <div className="mb-1.5 text-[11px] font-bold tracking-[0.12em]">
+          {label ?? v.label}
+        </div>
+      )}
+      <div className="aula-texto [&_b]:font-semibold">{children}</div>
     </div>
   );
 }

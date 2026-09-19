@@ -65,7 +65,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir valor instantâneo com total acumulado.",
         "Esquecer unidades (m/s × s = m).",
@@ -73,7 +73,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "som-g1",
@@ -103,9 +103,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-01", "int-ap-02"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-01", "int-ap-02"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Integral \\(=\\) acúmulo \\(=\\) limite de somas.",
         "Pedaços × valor médio × largura.",
@@ -171,7 +171,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Ignorar trechos com \\(f<0\\).",
         "Confundir área com perímetro.",
@@ -179,7 +179,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "asg-g1",
@@ -208,9 +208,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-03", "int-ap-04"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-03", "int-ap-04"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Integral definida ≈ área líquida sob f.",
         "Sinal importa quando \\(f<0\\).",
@@ -276,7 +276,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer \\(+C\\).",
         "Dividir por \\(n+1\\) errado em potência.",
@@ -284,7 +284,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "ind-g1",
@@ -313,9 +313,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-05", "int-ap-06"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-05", "int-ap-06"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Antiderivada: derivar volta a f.",
         "\\(\\int f\\,dx = F(x)+C\\).",
@@ -381,7 +381,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Deixar \\(+C\\) na definida (não aparece no valor final).",
         "Limites invertidos sem sinal.",
@@ -389,7 +389,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "def-g1",
@@ -418,9 +418,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-07", "int-ap-08"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-07", "int-ap-08"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Definida = número no intervalo \\([a,b]\\).",
         "Área líquida / acúmulo.",
@@ -486,7 +486,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Quebrar em \\(c\\) fora do domínio de f.",
         "Esquecer sinal ao inverter limites.",
@@ -494,7 +494,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "prop-g1",
@@ -523,9 +523,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-09", "int-ap-10"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-09", "int-ap-10"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Soma e constante: linearidade.",
         "Quebre intervalos: aditividade.",
@@ -592,7 +592,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Antiderivada errada.",
         "Esquecer \\(F(a)\\) na subtração.",
@@ -600,7 +600,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "tfc-g1",
@@ -629,9 +629,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-11", "int-ap-12"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-11", "int-ap-12"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "TFC: para \\(f\\) contínua em \\([a,b]\\), a área acumulada deriva de volta para \\(f\\); se \\(F'=f\\), então \\(\\int_a^b f = F(b)-F(a)\\).",
         "Encontre antiderivada, avalie limites.",
@@ -697,7 +697,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar \\(\\int v\\) como distância quando v muda de sinal.",
         "Esquecer de achar onde \\(v=0\\).",
@@ -705,7 +705,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "dis-g1",
@@ -735,9 +735,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-13", "int-ap-14"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-13", "int-ap-14"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Deslocamento = \\(\\int v\\) (com sinal).",
         "Distância = \\(\\int |v|\\) ou soma de trechos.",
@@ -804,7 +804,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir potência com energia.",
         "Horas vs segundos nas unidades.",
@@ -812,7 +812,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "con-g1",
@@ -843,9 +843,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-15", "int-ap-16"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-15", "int-ap-16"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Taxa integrada = total acumulado.",
         "Cuidado com unidades (kW·h).",
@@ -911,7 +911,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Integrar \\((f-g)\\) sem ver quem é maior.",
         "Limites errados de interseção.",
@@ -919,7 +919,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "avol-g1",
@@ -948,9 +948,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-17", "int-ap-18"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-17", "int-ap-18"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Área entre curvas: \\(\\int (f-g)\\) com \\(f \\geq g\\).",
         "Ache interseções para limites.",
@@ -1017,7 +1017,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Integrar quantidade em vez de taxa.",
         "Limites trocados.",
@@ -1025,7 +1025,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "apl-g1",
@@ -1055,9 +1055,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-19", "int-ap-20"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-19", "int-ap-20"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Identifique taxa e intervalo.",
         "Unidades e sinal.",
@@ -1130,7 +1130,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Decorar integral sem desenhar área.",
         "Esquecer TFC na definida.",
@@ -1138,7 +1138,7 @@ export const integraisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "revi-g1",
@@ -1167,9 +1167,9 @@ export const integraisAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Exercícios aplicados", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-21", "int-ap-22", "dsf-int-01"] },
+    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["int-ap-21", "int-ap-22", "dsf-int-01"] },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Integral \\(=\\) acúmulo \\(=\\) área líquida (com sinal).",
         "TFC é a ferramenta de cálculo.",

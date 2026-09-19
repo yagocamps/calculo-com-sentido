@@ -147,6 +147,28 @@ html.dark {
     0 4px 12px rgba(42, 33, 26, 0.05);
 }
 
+/*
+ * Medida de leitura das aulas. A linha do corpo chegava a 99 caracteres no
+ * desktop, muito acima da faixa confortável (60 a 75): ao quebrar a linha o
+ * olho erra o retorno e relê ou pula. `aula-prose` limita o texto corrido;
+ * `aula-texto` só iguala corpo e entrelinha, para conteúdo que já vive dentro
+ * de uma caixa com largura própria (callouts, cards).
+ */
+.aula-prose,
+.aula-texto {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.aula-prose {
+  /*
+   * 37.5em = 600px no corpo de 16px, que dá ~73 caracteres por linha nesta
+   * fonte. `ch` não serve aqui: o zero do DM Sans mede 0,68em, bem acima da
+   * largura média de caractere (0,51em), e 68ch resultaria em 744px.
+   */
+  max-width: 37.5em;
+}
+
 html,
 body {
   height: 100%;

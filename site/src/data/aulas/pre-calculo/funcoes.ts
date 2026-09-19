@@ -80,7 +80,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Ler \\(f(x)\\) como \\(f\\) vezes \\(x\\) — é \"f de x\", o valor da função.",
         "Achar que uma entrada pode ter duas saídas diferentes.",
@@ -89,7 +89,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -127,12 +127,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique a ideia de função e a notação f(x) no banco de exercícios.",
       exerciseIds: ["func-ap-01", "func-ap-02"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Função é uma regra: cada entrada gera uma única saída.",
         "f(x) se lê \"f de x\" — é o valor da função, não multiplicação.",
@@ -220,7 +220,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer de excluir o valor que zera o denominador.",
         "Permitir raiz quadrada de número negativo nos reais.",
@@ -229,7 +229,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -267,12 +267,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique determinação de domínio e imagem no banco de exercícios.",
       exerciseIds: ["func-ap-03", "func-ap-04"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Domínio = entradas permitidas; imagem = saídas possíveis.",
         "Proibições clássicas: dividir por zero e raiz de negativo.",
@@ -362,7 +362,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer o sinal de \\(a\\) ao decidir se é máximo ou mínimo.",
         "Errar o sinal em \\(\\frac{-b}{2a}\\) (o \\(b = 20\\) dá \\(-20\\) no numerador).",
@@ -371,7 +371,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -411,12 +411,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique parábolas, vértice e raízes no banco de exercícios.",
       exerciseIds: ["func-ap-05", "func-ap-06", "fq-01", "fq-02", "fq-03", "fq-04", "fq-05", "fq-06", "fq-07", "fq-08", "fq-09", "fq-10", "fq-11", "fq-12", "fq-13", "fq-14"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Função quadrática: \\(f(x) = ax^2 + bx + c\\), gráfico em parábola.",
         "\\(a > 0\\) abre para cima (mínimo); \\(a < 0\\) abre para baixo (máximo).",
@@ -500,7 +500,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que \\(|-x| = x\\) sempre (só vale se você souber o sinal de \\(x\\)).",
         "Tratar o módulo como se cancelasse o número (\\(|-5|\\) não é \\(-5\\)).",
@@ -509,7 +509,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -547,12 +547,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique módulo, distância e erros no banco de exercícios.",
       exerciseIds: ["func-ap-07", "func-ap-08"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Módulo = distância até o zero, sempre \\(\\geq 0\\).",
         "\\(|x|\\) mantém positivos e inverte negativos.",
@@ -637,7 +637,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Tratar como afim e somar em vez de multiplicar.",
         "Multiplicar a base pelo expoente (\\(2^3\\) não é 6).",
@@ -646,7 +646,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -685,12 +685,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique crescimento e decaimento exponencial no banco de exercícios.",
       exerciseIds: ["func-ap-09", "func-ap-10"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Exponencial multiplica pela mesma base a cada passo.",
         "\\(f(x) = a \\cdot b^x\\): \\(a\\) é o inicial, \\(b\\) o fator por passo.",
@@ -778,7 +778,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Achar que log é multiplicação ou divisão.",
         "Esquecer qual é a base (\\(\\log_2\\) e \\(\\log_{10}\\) dão resultados diferentes).",
@@ -787,7 +787,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -825,12 +825,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique logaritmos e a relação com exponenciais no banco de exercícios.",
       exerciseIds: ["func-ap-11", "func-ap-12"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "\\(\\log_b(N)\\) pergunta: qual expoente leva \\(b\\) a \\(N\\)?",
         "Logaritmo é a operação inversa da exponencial.",
@@ -920,7 +920,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer de somar a bandeirada ao preço por km.",
         "Multiplicar a bandeirada pelos km.",
@@ -929,7 +929,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -970,12 +970,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique problemas de corrida e tarifas no banco de exercícios.",
       exerciseIds: ["func-ap-13", "func-ap-14"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Corrida de app é função afim: bandeirada + preço por km.",
         "\\(C(x) = a \\cdot x + b\\), com \\(b\\) = bandeirada e \\(a\\) = preço por km.",
@@ -1060,7 +1060,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Usar a taxa em porcentagem (\\(10\\)) em vez de decimal (\\(0{,}10\\)).",
         "Multiplicar a base pelo expoente em vez de elevar.",
@@ -1069,7 +1069,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1108,12 +1108,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique juros compostos e montante no banco de exercícios.",
       exerciseIds: ["func-ap-15", "func-ap-16"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Juros compostos: \\(M = C \\cdot (1 + i)^t\\).",
         "A taxa entra em decimal (\\(10\\% = 0{,}10\\)) e soma-se 1.",
@@ -1203,7 +1203,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Esquecer o sinal ao calcular \\(\\frac{-b}{2a}\\) (\\(b = -8\\) dá \\(+8\\) no numerador).",
         "Parar em \\(x_{min}\\) e não calcular o custo \\(C(x_{min})\\).",
@@ -1212,7 +1212,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1251,12 +1251,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Pratique funções de custo e otimização no banco de exercícios.",
       exerciseIds: ["func-ap-17", "func-ap-18"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Custo simples é função afim: fixo + variável × quantidade.",
         "Custo médio pode ser quadrático, com um ponto de mínimo.",
@@ -1342,7 +1342,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Confundir os gráficos: reta, parábola e V são bem diferentes.",
         "Esquecer de checar o domínio antes de avaliar.",
@@ -1351,7 +1351,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1389,12 +1389,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Revise conceito, domínio e funções básicas no banco de exercícios.",
       exerciseIds: ["func-ap-19", "func-ap-20"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Função: cada entrada gera uma saída; cheque o domínio.",
         "Afim = reta; quadrática = parábola; modular = V.",
@@ -1481,7 +1481,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Cuidado com",
+      title: "Armadilhas que valem atenção",
       items: [
         "Modelar crescimento percentual como afim (somando fixo).",
         "Usar a taxa em porcentagem em vez de decimal nos juros.",
@@ -1490,7 +1490,7 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Exercícios guiados",
+      title: "Prática em camadas",
       exercises: [
         {
           id: "guiado-1",
@@ -1528,12 +1528,12 @@ export const funcoesAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Exercícios aplicados",
+      title: "Continue praticando",
       intro: "Revise exponencial, log e aplicações no banco de exercícios.",
       exerciseIds: ["func-ap-21", "func-ap-22", "dsf-func-01"],
     },
     resumo: {
-      title: "Resumo da aula",
+      title: "O que precisa ficar",
       bullets: [
         "Exponencial multiplica pela base; log é sua inversa.",
         "Mudança constante = afim; acelerada = exponencial.",
