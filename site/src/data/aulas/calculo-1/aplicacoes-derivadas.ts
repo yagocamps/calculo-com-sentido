@@ -17,7 +17,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       next: { slug: "maximos-minimos", title: "Máximos e mínimos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O sinal da derivada responde de imediato",
       paragraphs: [
         "A derivada é um termômetro do gráfico: \\(f'>0\\) a função sobe; \\(f'<0\\) desce; \\(f'=0\\) pode ser platô ou virada.",
         "Esse teste organiza onde buscar máximos e mínimos.",
@@ -37,7 +37,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "Sinal de f′ importa mais que o valor de f em si.",
     },
     ondeAparece: {
-      title: "Aplicações",
+      title: "Onde saber a direção decide",
       items: [
         { label: "Lucro", detail: "Quando produzir aumenta lucro" },
         { label: "Temperatura", detail: "Aquecendo ou esfriando" },
@@ -45,11 +45,11 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^3-3x\\)",
+      title: "Uma cúbica que sobe, desce e sobe",
       situacao: "Onde f cresce e onde decresce?",
     },
     passos: {
-      title: "Análise",
+      title: "Do sinal da derivada aos intervalos",
       steps: [
         { title: "f′(x)", detail: "\\(f'(x) = 3x^2-3 = 3(x^2-1)\\)." },
         { title: "Zeros", detail: "\\(x=-1\\) e \\(x=1\\)." },
@@ -58,14 +58,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Gráfico",
+      title: "O desenho confirma o sinal da derivada",
       paragraphs: [
         "Entre \\(-1\\) e \\(1\\) o gráfico desce; fora disso sobe — coerente com cubo menos 3x.",
         "Extremos locais serão estudados na próxima aula.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Analisar o sinal sem achar os pontos críticos",
       items: [
         "Usar sinal de \\(f\\) em vez de \\(f'\\).",
         "Esquecer pontos onde \\(f'\\) não existe.",
@@ -73,7 +73,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Estude o sinal com apoio",
       exercises: [
         {
           id: "cd-g1",
@@ -102,9 +102,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-01", "ad-ap-02", "apd-f-01", "apd-f-02", "apd-f-03", "apd-f-04"] },
+    exerciciosAplicados: { title: "Onde a função sobe ou desce no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-01", "ad-ap-02", "apd-f-01", "apd-f-02", "apd-f-03", "apd-f-04"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Derivada positiva sobe, negativa desce",
       bullets: [
         "\\(f'>0\\): crescente; \\(f'<0\\): decrescente.",
         "Zeros de \\(f'\\) candidatos a extremos.",
@@ -124,14 +124,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       next: { slug: "pontos-criticos", title: "Pontos críticos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Achar o melhor e o pior ponto",
       paragraphs: [
         "Otimizar é achar o melhor valor: maior lucro, menor custo, máxima área com cerca fixa.",
         "Máximo e mínimo local são os \"topos\" e \"fundos\" do gráfico.",
       ],
     },
     explicacao: {
-      title: "Conceitos",
+      title: "Máximo local e máximo global",
       paragraphs: [
         "Máximo local: \\(f(a) \\geq f(x)\\) perto de \\(a\\).",
         "Mínimo local: \\(f(a) \\leq f(x)\\) perto de \\(a\\).",
@@ -151,11 +151,11 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=-x^2+4x+1\\)",
+      title: "O ponto mais alto de uma parábola",
       situacao: "Encontre máximo local.",
     },
     passos: {
-      title: "Resolver",
+      title: "Dos candidatos ao extremo confirmado",
       steps: [
         { title: "f′", detail: "\\(f'(x) = -2x+4\\)." },
         { title: "f′=0", detail: "\\(x=2\\)." },
@@ -164,14 +164,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Parábola",
+      title: "Por que esse máximo é único",
       paragraphs: [
         "Coeficiente de \\(x^2\\) negativo: um único máximo global em \\(x=2\\).",
         "Problemas aplicados pedem interpretar \\(x=2\\) no contexto (unidades).",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Aceitar ponto crítico como máximo sem testar",
       items: [
         "Achar que \\(f'=0\\) é sempre máximo.",
         "Ignorar extremos nos endpoints do domínio.",
@@ -179,7 +179,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Encontre extremos com apoio",
       exercises: [
         {
           id: "mm-g1",
@@ -208,9 +208,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-03", "ad-ap-04"] },
+    exerciciosAplicados: { title: "Máximos e mínimos no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-03", "ad-ap-04"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Candidato primeiro, confirmação depois",
       bullets: [
         "Máximo/mínimo local = topo/fundo do gráfico.",
         "Candidatos: \\(f'=0\\), \\(f'\\) indefinida, bordas do domínio.",
@@ -230,7 +230,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       next: { slug: "concavidade", title: "Concavidade" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Onde a curva pode virar",
       paragraphs: [
         "Ponto crítico: onde a \"estratégia\" de subida/descida pode mudar — \\(f'=0\\) ou \\(f'\\) não existe.",
         "Lista de críticos reduz busca em problemas de otimização.",
@@ -249,7 +249,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "Todo extremo interior é crítico, mas nem todo crítico é extremo.",
     },
     ondeAparece: {
-      title: "Exemplos",
+      title: "Onde a curva muda de direção",
       items: [
         { label: "|x| em 0", detail: "Crítico sem derivada" },
         { label: "x³ em 0", detail: "\\(f'=0\\) mas sem extremo" },
@@ -257,11 +257,11 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^4-4x^2\\)",
+      title: "Uma curva com três candidatos",
       situacao: "Pontos críticos?",
     },
     passos: {
-      title: "Achar",
+      title: "Onde a derivada zera ou falha",
       steps: [
         { title: "f′", detail: "\\(f'(x) = 4x^3-8x = 4x(x^2-2)\\)." },
         { title: "f′=0", detail: "\\(x=0\\), \\(x=\\sqrt{2}\\), \\(x=-\\sqrt{2}\\)." },
@@ -276,7 +276,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Esquecer os pontos onde a derivada não existe",
       items: [
         "Esquecer onde \\(f'\\) não existe.",
         "Incluir \\(x\\) fora do domínio aplicado.",
@@ -284,7 +284,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Liste pontos críticos com apoio",
       exercises: [
         {
           id: "pc-g1",
@@ -313,9 +313,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-05", "ad-ap-06"] },
+    exerciciosAplicados: { title: "Pontos críticos no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-05", "ad-ap-06"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Derivada zero ou indefinida",
       bullets: [
         "Crítico: \\(f'=0\\) ou \\(f'\\) indefinida.",
         "Lista completa antes de classificar.",
@@ -335,7 +335,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       next: { slug: "otimizacao", title: "Problemas de otimização" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "A curvatura que a segunda derivada revela",
       paragraphs: [
         "Concavidade descreve se o gráfico parece um U (∪) ou um ∩.",
         "\\(f''>0\\): concavidade para cima; \\(f''<0\\): para baixo; \\(f''=0\\) possível inflexão.",
@@ -343,7 +343,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     explicacao: {
-      title: "Regras",
+      title: "O sinal da segunda derivada",
       paragraphs: [
         "\\(f''(x)>0 \\to f'\\) crescente \\(\\to f\\) côncava para cima.",
         "\\(f''(x)<0 \\to\\) côncava para baixo.",
@@ -355,7 +355,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "Cálculo 1 introdutório usa f″ quando disponível; senão teste de f′.",
     },
     ondeAparece: {
-      title: "Leitura",
+      title: "Onde a curvatura muda a leitura",
       items: [
         { label: "Custo", detail: "Curvatura de escala" },
         { label: "Crescimento", detail: "Aceleração de mudança" },
@@ -363,11 +363,11 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "\\(f(x)=x^3\\)",
+      title: "A cúbica que troca de concavidade na origem",
       situacao: "\\(f''\\) e concavidade?",
     },
     passos: {
-      title: "Análise",
+      title: "Da segunda derivada à curvatura",
       steps: [
         { title: "f′", detail: "\\(f'(x) = 3x^2\\)." },
         { title: "f″", detail: "\\(f''(x) = 6x\\)." },
@@ -375,14 +375,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Inflexão",
+      title: "O ponto onde a curva vira",
       paragraphs: [
         "Em 0 o gráfico muda de ∩ para ∪ — ponto de inflexão.",
         "\\(f'(0)=0\\) e não é extremo.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar concavidade por crescimento",
       items: [
         "Confundir concavidade com crescimento.",
         "Aplicar teste da 2ª derivada quando \\(f''(c)=0\\).",
@@ -390,7 +390,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Analise concavidade com apoio",
       exercises: [
         {
           id: "conc-g1",
@@ -419,9 +419,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-07", "ad-ap-08"] },
+    exerciciosAplicados: { title: "Concavidade no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-07", "ad-ap-08"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Segunda derivada diz para onde a curva abre",
       bullets: [
         "\\(f''\\) descreve concavidade.",
         "Teste \\(f''(c)\\) classifica críticos com \\(f'(c)=0\\).",
@@ -441,7 +441,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       next: { slug: "velocidade-producao", title: "Velocidade e produção" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Achar o melhor valor possível",
       paragraphs: [
         "Otimizar = traduzir história → função → domínio → extremo → frase resposta.",
         "É o tipo de questão que mais aparece em prova aplicada.",
@@ -457,7 +457,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "Unidades e frase final valem pontos.",
     },
     ondeAparece: {
-      title: "Clássicos",
+      title: "Os problemas clássicos de otimização",
       items: [
         { label: "Cerca", detail: "Área máxima com perímetro fixo" },
         { label: "Caixa", detail: "Volume máximo cortando cantos" },
@@ -469,7 +469,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       situacao: "Cercar 40 m de tela contra um muro, sem colocar tela no muro. Chame de \\(x\\) o lado paralelo ao muro e de \\(y\\) cada um dos dois lados perpendiculares. Qual é a área máxima?",
     },
     passos: {
-      title: "Modelar",
+      title: "Da situação à função a otimizar",
       steps: [
         { title: "Restrição", detail: "\\(x+2y=40\\) (dois lados y e um x)." },
         { title: "Área", detail: "\\[A=xy = \\frac{x(40-x)}{2} = 20x - \\frac{x^2}{2}\\]" },
@@ -479,14 +479,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Resposta",
+      title: "A medida que resolve o problema",
       paragraphs: [
         "Retângulo com 20 m paralelos ao muro e 10 m perpendiculares — área máxima de 200 m². A tela cobre um lado de 20 m e dois de 10 m.",
         "Sempre verifique se \\(x=20\\) respeita contexto.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Otimizar sem escrever a restrição",
       items: [
         "Montar função errada na restrição.",
         "Esquecer domínio físico.",
@@ -494,7 +494,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Resolva otimizações com apoio",
       exercises: [
         {
           id: "opt-g1",
@@ -523,9 +523,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-09", "ad-ap-10", "p2-otimizacao-1", "p2-otimizacao-2", "p2-otimizacao-3"] },
+    exerciciosAplicados: { title: "Otimização no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-09", "ad-ap-10", "p2-otimizacao-1", "p2-otimizacao-2", "p2-otimizacao-3"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Modelar, restringir, derivar, conferir",
       bullets: [
         "Modelar → derivar → testar críticos e bordas.",
         "Restrição define variáveis.",
@@ -545,14 +545,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       next: { slug: "area-volume-max", title: "Área e volume máximos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando duas taxas andam juntas",
       paragraphs: [
         "Às vezes duas grandezas mudam no tempo ligadas por equação — derivar ambos os lados em t.",
         "Velocidade de produção: dQ/dt; otimizar estoque ou fluxo usa mesma ideia de taxa.",
       ],
     },
     explicacao: {
-      title: "Ideia",
+      title: "Duas taxas ligadas pela mesma relação",
       paragraphs: [
         "Se \\(V(t)\\) volume e \\(h(t)\\) altura relacionados por \\(V=\\pi r^2 h\\) com r fixo, \\(\\frac{dV}{dt} = \\pi r^2 \\frac{dh}{dt}\\).",
         "Taxas relacionadas: derive implicitamente em relação ao tempo.",
@@ -564,7 +564,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "Problemas clássicos de escada e balde — mesma estrutura.",
     },
     ondeAparece: {
-      title: "Contextos",
+      title: "Onde duas medidas mudam juntas",
       items: [
         { label: "Fábrica", detail: "Peças por hora" },
         { label: "Tanque", detail: "Nível sobe, vazão" },
@@ -572,11 +572,11 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exemplo: {
-      title: "Produção \\(Q(t)\\)",
+      title: "Quando a produção por hora é máxima",
       situacao: "\\(Q(t)=50t-t^2\\) peças em \\(0 \\leq t \\leq 50\\) h. Quando produção instantânea é máxima?",
     },
     passos: {
-      title: "Taxa",
+      title: "Derivar a produção para achar a taxa",
       steps: [
         { title: "Q′(t)", detail: "\\(Q'(t) = 50-2t\\)." },
         { title: "Q′=0", detail: "\\(t=25\\) h." },
@@ -584,14 +584,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Leitura",
+      title: "O que a relação entre as taxas revela",
       paragraphs: [
         "\\(Q\\) acumula peças; \\(Q'\\) é taxa instantânea de produção.",
         "\\(Q\\) total máxima em \\(t=50\\) (endpoint), mas taxa máxima em \\(t=25\\).",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Substituir os valores antes de derivar",
       items: [
         "Confundir total acumulado com taxa.",
         "Esquecer unidade de tempo.",
@@ -599,7 +599,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Relacione taxas com apoio",
       exercises: [
         {
           id: "vp-g1",
@@ -628,9 +628,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-11", "ad-ap-12"] },
+    exerciciosAplicados: { title: "Taxas relacionadas no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-11", "ad-ap-12"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Derivar a relação, depois substituir",
       bullets: [
         "Derivada em relação ao tempo = taxa instantânea.",
         "Produção máxima vs acumulado máximo podem ocorrer em instantes diferentes.",
@@ -650,14 +650,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       next: { slug: "lucro-maximo", title: "Lucro máximo na prática" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O maior espaço com o material que você tem",
       paragraphs: [
         "Geometria + cálculo: maximizar área ou volume com material limitado.",
         "Padrão de prova desde o ensino médio avançado até engenharia.",
       ],
     },
     explicacao: {
-      title: "Estratégia",
+      title: "Desenhar, nomear e reduzir a uma variável",
       paragraphs: [
         "Desenhe, nomeie dimensões, uma variável livre.",
         "Perímetro, área, superfície ou volume como função objetivo.",
@@ -668,7 +668,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       formulaAria: "V de x ou A de x, derive e iguale a zero",
     },
     ondeAparece: {
-      title: "Problemas",
+      title: "Cercados, caixas e recipientes",
       items: [
         { label: "Jardim", detail: "Área com cerca fixa" },
         { label: "Caixa sem tampa", detail: "Volume com chapa limitada" },
@@ -680,7 +680,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       situacao: "Cartão \\(12 \\times 12\\). Cortar quadrados de lado \\(x\\) nos cantos e dobrar. Volume máximo?",
     },
     passos: {
-      title: "Modelo",
+      title: "Montar a função da medida a maximizar",
       steps: [
         { title: "Base", detail: "\\(12-2x\\) por lado." },
         { title: "V(x)", detail: "\\(V(x) = x(12-2x)^2\\)." },
@@ -690,14 +690,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Conferência",
+      title: "Testar os extremos para confirmar",
       paragraphs: [
         "Sempre teste \\(x\\) pequeno (\\(V \\to 0\\)) e \\(x \\to 6\\) (\\(V \\to 0\\)) para confirmar máximo interior.",
         "Resposta: dimensões da caixa, não só x.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Maximizar sem usar a restrição do enunciado",
       items: [
         "Esquecer que falta a tampa na área de material.",
         "Domínio 0<x<6 violado.",
@@ -705,7 +705,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Maximize medidas com apoio",
       exercises: [
         {
           id: "av-g1",
@@ -734,9 +734,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-13", "ad-ap-14", "p2-otimizacao-4", "p2-otimizacao-5"] },
+    exerciciosAplicados: { title: "Área e volume máximos no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-13", "ad-ap-14", "p2-otimizacao-4", "p2-otimizacao-5"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Restrição reduz para uma variável",
       bullets: [
         "Geometria → uma variável → volume/área.",
         "Teste endpoints e críticos.",
@@ -756,14 +756,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-aplic-derivadas", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O preço que dá o melhor retorno",
       paragraphs: [
         "Empresas querem \\(L(x)=R(x)-C(x)\\) máximo — onde produzir/vender para melhor lucro.",
         "Une custo marginal, receita e otimização.",
       ],
     },
     explicacao: {
-      title: "Passos",
+      title: "Receita e custo antes do lucro",
       paragraphs: [
         "Monte \\(R(x)\\) e \\(C(x)\\) do enunciado.",
         "\\(L(x)=R(x)-C(x)\\); domínio \\(x \\geq 0\\).",
@@ -777,7 +777,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "\\(R' = C'\\) marca onde o lucro para de subir ou de descer — é candidato a máximo. Quem confirma é \\(L'' < 0\\) (ou a checagem das bordas).",
     },
     ondeAparece: {
-      title: "Modelos",
+      title: "Onde o preço ótimo é decidido",
       items: [
         { label: "Preço fixo", detail: "\\(R=px\\)" },
         { label: "Demanda linear", detail: "\\(p=a-bx\\)" },
@@ -789,7 +789,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       situacao: "\\(R(x)=50x\\). Lucro máximo?",
     },
     passos: {
-      title: "Cálculo",
+      title: "Da função lucro ao preço ótimo",
       steps: [
         { title: "L(x)", detail: "\\[L(x) = 50x-2000-10x-0{,}02x^2 = 40x-2000-0{,}02x^2\\]" },
         { title: "L′", detail: "\\(40-0{,}04x=0 \\Rightarrow x=1000\\)." },
@@ -797,14 +797,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Marginal",
+      title: "Receita e custo marginais se igualam",
       paragraphs: [
         "Em \\(x=1000\\), \\(R'=50\\) e \\(C'=10+0{,}04 \\cdot 1000=50\\) — marginais iguais.",
         "Antes disso \\(R'>C'\\); depois o contrário.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Maximizar receita achando que é lucro",
       items: [
         "Maximizar receita em vez de lucro.",
         "Esquecer custo fixo na interpretação (afeta \\(L\\), não \\(L'=0\\)).",
@@ -812,7 +812,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Maximize lucro com apoio",
       exercises: [
         {
           id: "lm-g1",
@@ -841,9 +841,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-15", "ad-ap-16"] },
+    exerciciosAplicados: { title: "Lucro máximo no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-15", "ad-ap-16"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Lucro máximo onde a margem zera",
       bullets: [
         "Maximize \\(L=R-C\\).",
         "\\(L'=0\\) ↔ marginais iguais — candidato, não conclusão.",
@@ -868,14 +868,14 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Juntar sinal, curvatura e otimização",
       paragraphs: [
         "Este módulo transformou derivada em ferramenta de decisão: onde sobe, onde maximizar, como modelar.",
         "Próximo bloco: integrais — acúmulo em vez de taxa instantânea.",
       ],
     },
     explicacao: {
-      title: "Checklist",
+      title: "A rotina de análise completa",
       paragraphs: [
         "✓ Sinal de \\(f'\\): crescimento/decrescimento.",
         "✓ Críticos e máximos/mínimos.",
@@ -889,7 +889,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       callout: "Integrais respondem \"quanto acumulou\" — complemento natural.",
     },
     ondeAparece: {
-      title: "Conexão",
+      title: "Onde essas aplicações reaparecem",
       items: [
         { label: "Derivada", detail: "Taxa instantânea" },
         { label: "Integral", detail: "Acúmulo / área" },
@@ -901,7 +901,7 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       situacao: "Cerca 100 m para cercar campo retangular com um lado no rio (sem cerca). Variável?",
     },
     passos: {
-      title: "Esboço",
+      title: "Montar o esboço da curva",
       steps: [
         { title: "Variáveis", detail: "Largura \\(x\\), comprimento \\(y\\)." },
         { title: "Restrição", detail: "\\(x+2y=100\\)." },
@@ -909,21 +909,21 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "Seguir",
+      title: "O que levar para integrais",
       paragraphs: [
         "Abra Integrais com sentido — comece por Ideia de soma.",
         "Derivada e integral são os dois pilares finais da trilha.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Os passos que costumam ser pulados",
       items: [
         "Pular modelagem e ir direto à fórmula.",
         "Não revisar erros de sinal em f′.",
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise aplicações com apoio",
       exercises: [
         {
           id: "rad-g1",
@@ -952,9 +952,9 @@ export const aplicacoesDerivadasAulas: Record<string, AulaContent> = {
         },
       ],
     },
-    exerciciosAplicados: { title: "Continue praticando", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-17", "ad-ap-18", "dsf-apder-01"] },
+    exerciciosAplicados: { title: "Aplicações de derivadas no banco", intro: "Pratique com exercícios resolvidos passo a passo.", exerciseIds: ["ad-ap-17", "ad-ap-18", "dsf-apder-01"] },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Da derivada à decisão",
       bullets: [
         "\\(f'\\) e \\(f''\\) guiam forma do gráfico e extremos.",
         "Otimização = modelo + domínio + críticos.",

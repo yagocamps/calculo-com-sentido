@@ -28,7 +28,7 @@ export const funcaoAfimAula: AulaContent = {
     ],
   },
   porQue: {
-    title: "Antes da fórmula, o sentido",
+    title: "A conta que você já faz sem perceber",
     paragraphs: [
       "A função afim é o jeito matemático de dizer: tem uma parte fixa e uma parte que depende de quanto você usa.",
       "É a corrida de aplicativo (bandeirada + preço por km), o salário com comissão (fixo + percentual sobre vendas), a conta de luz (tarifa mínima + consumo).",
@@ -62,7 +62,7 @@ export const funcaoAfimAula: AulaContent = {
     interactive: { type: "afim", a: 2.4, b: 6 },
   },
   ondeAparece: {
-    title: "Aplicações reais",
+    title: "Da corrida de app à conta de luz",
     items: [
       { label: "Corrida de app", detail: "Bandeirada + R$ por km" },
       { label: "Salário", detail: "Fixo + comissão por venda" },
@@ -73,12 +73,12 @@ export const funcaoAfimAula: AulaContent = {
     ],
   },
   exemplo: {
-    title: "Uma situação concreta",
+    title: "O preço de uma corrida de 8 km",
     situacao:
       "Uma corrida de aplicativo cobra uma bandeirada de R$ 6,00 e mais R$ 2,40 por quilômetro rodado. Quanto custa uma corrida de \\(8\\) km?",
   },
   passos: {
-    title: "Como pensar e resolver",
+    title: "Da situação à fórmula, e de volta",
     steps: [
       {
         title: "Identificar a parte fixa",
@@ -111,7 +111,7 @@ export const funcaoAfimAula: AulaContent = {
     ],
   },
   erros: {
-    title: "Armadilhas que valem atenção",
+    title: "Onde a parte fixa se perde",
     items: [
       "Esquecer de somar a parte fixa \\(b\\) no final (calcular só \\(a \\times x\\)).",
       "Trocar \\(a\\) e \\(b\\) ao montar a função na situação real.",
@@ -120,7 +120,7 @@ export const funcaoAfimAula: AulaContent = {
     ],
   },
   exerciciosGuiados: {
-    title: "Prática em camadas",
+    title: "Monte funções afins com apoio",
     exercises: [
       {
         id: "guiado-1",
@@ -164,13 +164,13 @@ export const funcaoAfimAula: AulaContent = {
     ],
   },
   exerciciosAplicados: {
-    title: "Continue praticando",
+    title: "Função afim no banco",
     intro:
       "Treine no banco de exercícios com contexto real (corrida, salário, energia).",
     exerciseIds: ["ex-01", "ex-02", "ex-03", "ex-04", "ex-05", "ex-06", "ex-07", "ex-08"],
   },
   resumo: {
-    title: "O que precisa ficar",
+    title: "Uma parte fixa e uma que varia",
     bullets: [
       "Função afim: \\(f(x) = ax + b\\) — crescimento constante.",
       "\\(a\\) = taxa (quanto muda por unidade); \\(b\\) = parte fixa.",

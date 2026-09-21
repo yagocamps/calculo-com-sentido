@@ -50,7 +50,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
     },
     plot: "distancia-na-reta",
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando a direção não importa",
       paragraphs: [
         "Você provavelmente aprendeu o módulo como uma regra: \"tira o sinal\". \\(|-5| = 5\\), \\(|5| = 5\\). A regra funciona, mas esconde o que o módulo mede de verdade: distância.",
         "E é a distância que importa daqui para a frente. Uma peça de \\(50\\) mm aceita com meio milímetro de folga, o erro de um termômetro, o desvio de um dado em relação à média — tudo isso é \"quão longe de um alvo\", sem se importar de que lado.",
@@ -77,7 +77,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       formulaLegend: "a ordem da subtração não muda a distância",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde só o afastamento conta",
       items: [
         { label: "Tolerância", detail: "peça de \\(50\\) mm aceita se \\(|x - 50| \\leq 0{,}5\\)" },
         { label: "Erro de medida", detail: "a distância entre o valor medido e o real é o tamanho do erro" },
@@ -93,7 +93,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
         "Na reta numérica, qual é a distância entre \\(-3\\) e \\(4\\)? Calcule de dois jeitos — contando passos na reta e usando o módulo — e confira que dão o mesmo.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Traduzir o módulo em distância",
       steps: [
         {
           title: "Localizar os dois pontos",
@@ -114,14 +114,14 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que esse afastamento representa",
       paragraphs: [
         "A distância é \\(7\\), e não \\(1\\). O tropeço mais comum é fazer \\(4 - 3\\), esquecendo que o \\(-3\\) está do outro lado do zero: subtrair um número negativo soma a distância dele.",
         "É esse o uso que o Cálculo fará do módulo. \\(|x - a|\\) mede o quanto \\(x\\) está longe de \\(a\\), de qualquer lado. Quando você encontrar \\(|x - 3| < 0{,}01\\), leia: \"\\(x\\) está a menos de um centésimo de \\(3\\)\".",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Tirar o módulo trocando o sinal por engano",
       items: [
         "Calcular \\(|4 - (-3)|\\) como \\(|4 - 3|\\), perdendo o sinal do número negativo.",
         "Achar que \\(|a - b|\\) e \\(|b - a|\\) são diferentes: são a mesma distância, medida a partir de pontas opostas.",
@@ -130,7 +130,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Trabalhe distâncias com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -174,12 +174,12 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Valor absoluto no banco",
       intro: "Distâncias na reta, centros escondidos e equações com módulo.",
       exerciseIds: ["alg-mod-01", "alg-mod-02", "alg-mod-03"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Módulo mede afastamento do zero",
       bullets: [
         "\\(|x|\\) é a distância de \\(x\\) até o zero.",
         "\\(|a - b|\\) é a distância entre \\(a\\) e \\(b\\); a ordem não importa.",
@@ -217,7 +217,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
     },
     plot: "faixa-modular",
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Descrever uma faixa de tolerância",
       paragraphs: [
         "Uma peça de \\(50\\) mm é aceita com meio milímetro de folga. Um remédio funciona se a dose ficar a menos de \\(15\\) mg da ideal. Um alarme dispara se a temperatura se afastar mais de \\(5\\) °C do normal. Três regras, a mesma forma: a distância até um alvo precisa ser menor — ou maior — que um limite.",
         "Escritas em matemática, elas são inequações modulares, como \\(|x - 50| \\leq 0{,}5\\). A aula anterior deu a leitura (\"distância de \\(x\\) até \\(50\\)\"); esta aula transforma a leitura em intervalo.",
@@ -245,7 +245,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       formulaLegend: "valem para r positivo; com ≤ e ≥ as bordas entram",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do controle de qualidade à margem de erro",
       items: [
         { label: "Indústria", detail: "tolerância de fabricação, como \\(|x - 50| \\leq 0{,}5\\) mm" },
         { label: "Medicina", detail: "faixa de dose eficaz em torno da dose ideal" },
@@ -261,7 +261,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
         "Resolva \\(|x - 3| \\leq 2\\) e, em seguida, \\(|x - 3| > 2\\). Use a leitura de distância antes de fazer qualquer conta.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Abrir o módulo nos dois sentidos",
       steps: [
         {
           title: "Ler como distância",
@@ -284,14 +284,14 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a faixa encontrada permite",
       paragraphs: [
         "No gráfico acima, \\(|x - 3|\\) é o V e o raio é a linha na altura \\(2\\). O trecho do V abaixo da linha é o intervalo \\([1, 5]\\); os trechos acima são as duas pontas. As duas respostas se completam: juntas cobrem a reta inteira, sem sobrar nem repetir ponto.",
         "Por isso testar um número resolve qualquer dúvida sobre o lado: o centro \\(x = 3\\) sempre satisfaz o \"menor que\", e um número bem longe, como \\(x = 100\\), sempre satisfaz o \"maior que\".",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar o conectivo entre as duas condições",
       items: [
         "Resolver \\(|x - 3| > 2\\) como \\(1 < x < 5\\), trocando as pontas de fora pela faixa de dentro.",
         "Escrever \\(x - 3 > 2\\), chegar a \\(x > 5\\) e parar, esquecendo o lado esquerdo.",
@@ -300,7 +300,7 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Resolva inequações modulares com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -343,12 +343,12 @@ export const valorAbsolutoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Inequações modulares no banco",
       intro: "Faixas de tolerância, pontas de fora e o caso do raio negativo.",
       exerciseIds: ["alg-mod-04", "alg-mod-05", "alg-mod-06", "func-ap-08"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Perto do centro ou longe dele",
       bullets: [
         "Isole o módulo e confira se o raio \\(r\\) é positivo.",
         "\\(|x - c| < r\\): um intervalo, \\(c - r < x < c + r\\).",

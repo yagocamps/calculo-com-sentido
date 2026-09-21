@@ -32,7 +32,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
     }),
     plot: "sinal-parabola",
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Saber onde a expressão é positiva",
       paragraphs: [
         "Até agora você resolveu perguntas do tipo \"para qual \\(x\\) isso vale zero?\". Existe uma pergunta diferente, e mais frequente: \"para quais \\(x\\) isso é positivo?\".",
         "Ela aparece o tempo todo, quase sempre disfarçada: o domínio de \\(\\sqrt{x-3}\\) exige que o que está dentro seja positivo ou nulo; o denominador de uma fração exige que ele não seja zero; em Cálculo, saber onde a função cresce é saber onde a derivada é positiva.",
@@ -59,7 +59,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       formulaLegend: "os zeros cortam a reta; cada pedaço tem um sinal só",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o sinal decide a resposta",
       items: [
         { label: "Domínio com raiz", detail: "\\(\\sqrt{p(x)}\\) exige \\(p(x) \\geq 0\\)" },
         { label: "Domínio com fração", detail: "o denominador não pode zerar" },
@@ -75,7 +75,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
         "Descubra para quais valores de \\(x\\) o produto \\((x-1)(x+3)\\) é maior que zero. Repare que a pergunta não é onde ele vale zero — é onde ele é positivo.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Achar as raízes e montar o quadro",
       steps: [
         {
           title: "Achar os zeros de cada fator",
@@ -100,7 +100,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que cada intervalo do quadro diz",
       paragraphs: [
         "No gráfico acima, \"positivo\" é literalmente \"acima do eixo \\(x\\)\". A resposta que você calculou com sinais é a mesma que você leria apontando o dedo: a parábola está acima do eixo antes de \\(-3\\) e depois de \\(1\\), e abaixo entre os dois.",
         "Repare que os zeros ficaram de fora da resposta. Como a pergunta era \\(> 0\\) (estritamente maior), os pontos onde o produto vale exatamente zero não servem. Se fosse \\(\\geq 0\\), eles entrariam.",
@@ -108,7 +108,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Esquecer de inverter o sinal ao multiplicar",
       items: [
         "Testar justamente um dos zeros: ali o produto vale zero e não informa o sinal do intervalo.",
         "Achar que o sinal sempre alterna. Um fator repetido, como \\((x-2)^2\\), não muda o sinal ao passar por \\(2\\) — ele apenas toca o eixo.",
@@ -117,7 +117,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Monte quadros de sinais com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -162,12 +162,12 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Quadro de sinais no banco",
       intro: "Pratique o estudo de sinal em produtos, raízes e frações.",
       exerciseIds: ["alg-sin-01", "alg-sin-02", "alg-sin-03"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Raízes dividem a reta em intervalos",
       bullets: [
         "Os zeros de cada fator são os únicos pontos onde o sinal pode mudar.",
         "Eles cortam a reta em intervalos; dentro de cada um o sinal é constante.",
@@ -191,7 +191,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
     }),
     plot: "sinal-racional",
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Resolver quando a resposta é uma faixa",
       paragraphs: [
         "Numa inequação do primeiro grau você isola o \\(x\\) e acabou. Em \\(x^2 - x - 6 > 0\\) isso não funciona: não há como deixar o \\(x\\) sozinho, porque ele aparece ao quadrado.",
         "A saída é outra: em vez de isolar, você descobre onde a expressão inteira é positiva. É exatamente o quadro de sinais da aula anterior, agora com um objetivo.",
@@ -219,7 +219,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       formulaLegend: "o denominador corta a reta, mas não pertence à solução",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a condição vale num intervalo",
       items: [
         { label: "Domínio", detail: "achar onde a fórmula de uma função faz sentido" },
         { label: "Lucro", detail: "para quais quantidades o lucro é positivo" },
@@ -235,7 +235,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
         "Resolva \\(\\dfrac{x+1}{x-2} \\geq 0\\). Repare que a desigualdade é \"maior ou igual\", mas nem todos os zeros vão poder entrar na resposta.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do quadro de sinais ao conjunto solução",
       steps: [
         {
           title: "Conferir que já há zero de um lado",
@@ -260,7 +260,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o intervalo encontrado representa",
       paragraphs: [
         "O colchete em \\(-1\\) e o parêntese em \\(2\\) não são detalhe de notação: dizem coisas diferentes. Em \\(-1\\) a expressão vale zero e a pergunta admitia zero. Em \\(2\\) não há valor nenhum para admitir.",
         "No gráfico acima isso aparece na hora: a curva toca o eixo em \\(-1\\) e some perto de \\(2\\), onde há assíntota. Nenhuma conta consegue colocar \\(x = 2\\) na resposta.",
@@ -268,7 +268,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Multiplicar pelo denominador sem checar o sinal",
       items: [
         "Multiplicar os dois lados pelo denominador. O sinal dele é desconhecido e a desigualdade pode inverter.",
         "Incluir o zero do denominador na resposta. Ali a expressão não existe, então ele nunca entra.",
@@ -277,7 +277,7 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Resolva inequações quadráticas com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -322,12 +322,12 @@ export const sinaisAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Inequações quadráticas no banco",
       intro: "Inequações do segundo grau, racionais e aplicadas.",
       exerciseIds: ["alg-sin-04", "alg-sin-05", "alg-sin-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A resposta é um intervalo, não um número",
       bullets: [
         "Passe tudo para um lado antes de qualquer coisa: a pergunta vira \"onde isto é positivo?\".",
         "Fatore, marque os zeros e monte o quadro de sinais.",

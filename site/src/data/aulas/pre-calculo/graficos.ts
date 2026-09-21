@@ -18,7 +18,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       next: { slug: "leitura-graficos", title: "Leitura de gráficos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "O mapa onde toda função vai morar",
       paragraphs: [
         "O plano cartesiano é um mapa onde cada ponto tem um endereço de dois números. É a mesma ideia de \"rua e número\" ou das coordenadas de um GPS.",
         "Ele transforma números em desenho: é o que permite ver uma função como uma curva e enxergar tendências que a fórmula esconde.",
@@ -39,7 +39,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       formulaLegend: "x = posição horizontal · y = posição vertical",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do GPS à planilha de vendas",
       items: [
         { label: "GPS", detail: "latitude e longitude são coordenadas" },
         { label: "Gráficos", detail: "todo gráfico vive no plano" },
@@ -55,7 +55,7 @@ export const graficosAulas: Record<string, AulaContent> = {
         "Onde fica o ponto \\((3, 2)\\) no plano? E como ele difere do ponto \\((2, 3)\\)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Marcar o ponto na ordem certa",
       steps: [
         {
           title: "Ler a primeira coordenada (x)",
@@ -76,14 +76,14 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que cada quadrante indica",
       paragraphs: [
         "\\((3, 2)\\) e \\((2, 3)\\) são pontos distintos, porque o primeiro número sempre é o horizontal e o segundo o vertical. Trocar a ordem move o ponto.",
         "Esse endereço de dois números é o que liga a álgebra ao desenho: cada par \\((x, f(x))\\) de uma função vira um ponto, e juntos formam a curva.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Trocar a ordem do par ordenado",
       items: [
         "Trocar a ordem: \\((x, y)\\) não é \\((y, x)\\).",
         "Confundir o eixo \\(x\\) (horizontal) com o \\(y\\) (vertical).",
@@ -92,7 +92,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Localize pontos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -130,12 +130,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Plano cartesiano no banco",
       intro: "Pratique leitura e marcação de coordenadas no banco de exercícios.",
       exerciseIds: ["graf-ap-01", "graf-ap-02"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Primeiro a horizontal, depois a vertical",
       bullets: [
         "Plano cartesiano: eixo \\(x\\) horizontal, eixo \\(y\\) vertical, cruzando na origem.",
         "Cada ponto é um par ordenado \\((x, y)\\).",
@@ -158,7 +158,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       next: { slug: "crescimento-decrescimento", title: "Crescimento e decrescimento" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Tirar informação sem fazer conta",
       paragraphs: [
         "Saber ler um gráfico é uma das habilidades mais práticas que existem. Notícias, painéis de saúde, finanças, ciência — tudo vem em gráfico hoje em dia.",
         "Um gráfico conta uma história visual: o que entra (eixo x) e o que acontece (eixo y). Ler bem é extrair informação sem precisar da fórmula.",
@@ -177,7 +177,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       formulaLegend: "o procedimento básico de leitura de um gráfico",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do jornal ao relatório da empresa",
       items: [
         { label: "Notícias", detail: "gráficos de economia e saúde" },
         { label: "Apps", detail: "painéis de passos, gastos, sono" },
@@ -193,7 +193,7 @@ export const graficosAulas: Record<string, AulaContent> = {
         "Um gráfico mostra a temperatura (\\(y\\), em °C) por hora do dia (\\(x\\)). Às 6h o ponto está em \\((6, 18)\\) e às 14h em \\((14, 30)\\). Como ler esses valores?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Ler os eixos antes da curva",
       steps: [
         {
           title: "Identificar o que cada eixo mede",
@@ -214,14 +214,14 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a curva conta sobre o período",
       paragraphs: [
         "Cada ponto liga uma hora a uma temperatura. Ler o gráfico é traduzir a posição na curva em informação: \"às 14h fazia 30 graus\".",
         "O poder do gráfico é mostrar a tendência inteira de uma vez. Você não precisa de todos os números — a forma da curva já conta que esquentou ao longo do dia.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ler o gráfico sem olhar a escala",
       items: [
         "Trocar os eixos: confirmar o que é x e o que é y.",
         "Ler a escala errada (de 2 em 2, de 10 em 10).",
@@ -230,7 +230,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Leia gráficos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -268,12 +268,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Leitura de gráficos no banco",
       intro: "Pratique leitura de valores em gráficos no banco de exercícios.",
       exerciseIds: ["graf-ap-03", "graf-ap-04"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Eixos primeiro, forma depois",
       bullets: [
         "Eixo x é a entrada; eixo y é o que acontece.",
         "Do x ao y: suba até a curva e leia a altura.",
@@ -296,7 +296,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       next: { slug: "interpretacao-visual", title: "Interpretação visual" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Enxergar quando melhora e quando piora",
       paragraphs: [
         "A pergunta mais comum sobre um gráfico é: \"está subindo ou descendo?\". Vendas crescendo, febre baixando, saldo estável — tudo é leitura de crescimento ou decrescimento.",
         "Saber em quais trechos a curva sobe, desce ou fica parada é o primeiro nível de análise de qualquer gráfico.",
@@ -317,7 +317,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       formulaLegend: "definição de função crescente num intervalo",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a tendência importa mais que o valor",
       items: [
         { label: "Vendas", detail: "meses de alta e de baixa" },
         { label: "Saúde", detail: "febre subindo ou cedendo" },
@@ -333,7 +333,7 @@ export const graficosAulas: Record<string, AulaContent> = {
         "Um gráfico de vendas sobe de janeiro a junho, fica estável de junho a agosto e cai de agosto a dezembro. Descreva os trechos.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Percorrer o gráfico da esquerda para a direita",
       steps: [
         {
           title: "Ler da esquerda para a direita",
@@ -358,14 +358,14 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o trecho de subida significa",
       paragraphs: [
         "Dividir a curva em \"sobe, fica, desce\" já conta a história do ano sem nenhum número exato. É a leitura qualitativa, a primeira que um analista faz.",
         "Os pontos de virada (junho e agosto) merecem atenção: é onde algo mudou — talvez uma promoção que acabou, ou a chegada de uma baixa temporada.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Confundir valor alto com crescimento",
       items: [
         "Ler o gráfico da direita para a esquerda (sempre é da esquerda para a direita).",
         "Confundir um valor alto com \"crescente\" (altura não é o mesmo que subir).",
@@ -374,7 +374,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Identifique tendências com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -412,12 +412,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Crescimento e queda no banco",
       intro: "Pratique identificação de crescimento e decrescimento no banco de exercícios.",
       exerciseIds: ["graf-ap-05", "graf-ap-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Subir, descer e ficar parado",
       bullets: [
         "Leia sempre da esquerda para a direita.",
         "Sobe = crescente, desce = decrescente, horizontal = constante.",
@@ -440,7 +440,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       next: { slug: "translacao-graficos", title: "Translação de gráficos" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Ler a história que o desenho conta",
       paragraphs: [
         "Ler valores e sentido é o começo; interpretar é contar a história completa: onde estão os picos, os fundos, quando duas curvas se cruzam e o que isso significa.",
         "É essa leitura que aparece em decisões reais: quando o lucro foi máximo, quando dois planos custam igual, em que ponto a tendência mudou.",
@@ -461,7 +461,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       formulaLegend: "no cruzamento, as duas funções têm o mesmo valor",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o gráfico substitui o relatório",
       items: [
         { label: "Negócios", detail: "mês de lucro máximo" },
         { label: "Planos", detail: "ponto onde dois custos se igualam" },
@@ -477,7 +477,7 @@ export const graficosAulas: Record<string, AulaContent> = {
         "Dois planos de celular aparecem como retas no mesmo gráfico de custo (\\(y\\)) por GB (\\(x\\)). Elas se cruzam em \\((20, 70)\\). O que esse cruzamento conta?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do formato geral aos detalhes",
       steps: [
         {
           title: "Identificar o que é cada eixo",
@@ -502,14 +502,14 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que os picos e vales representam",
       paragraphs: [
         "O cruzamento em (20, 70) é o ponto de equilíbrio: abaixo de 20 GB um plano vence, acima o outro. O gráfico mostra a decisão de relance.",
         "Esse é o poder de pôr duas curvas juntas: o ponto de encontro vira uma recomendação prática, sem precisar resolver a equação no papel.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Inventar tendência onde só há ruído",
       items: [
         "Confundir máximo (pico) com o fim do gráfico.",
         "Ignorar o que acontece antes e depois de um cruzamento.",
@@ -518,7 +518,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Interprete gráficos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -556,12 +556,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Interpretação visual no banco",
       intro: "Pratique interpretação de picos, vales e cruzamentos no banco de exercícios.",
       exerciseIds: ["graf-ap-07", "graf-ap-08"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Forma, extremos e comportamento",
       bullets: [
         "Máximo = pico; mínimo = vale.",
         "Interseção entre curvas = mesmo valor naquele ponto.",
@@ -584,7 +584,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       next: { slug: "vendas-precos", title: "Vendas e preços" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Reaproveitar um gráfico que você já conhece",
       paragraphs: [
         "Você não precisa redesenhar tudo quando uma função muda um pouco. Se você conhece o gráfico de uma função, pequenas mudanças na fórmula só o deslocam — para cima, para baixo ou para os lados.",
         "Entender isso economiza um trabalho enorme: reconhecer o gráfico-base e ver para onde ele foi movido.",
@@ -605,7 +605,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       formulaLegend: "k fora sobe/desce; k dentro move para os lados",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o mesmo padrão aparece deslocado",
       items: [
         { label: "Física", detail: "trajetória que começa mais alto" },
         { label: "Finanças", detail: "mesma curva com base inicial maior" },
@@ -621,7 +621,7 @@ export const graficosAulas: Record<string, AulaContent> = {
         "Você conhece o gráfico de \\(f(x) = x^2\\) (parábola com vértice na origem). O que acontece com o gráfico de \\(g(x) = x^2 + 3\\)?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Separar o que move na horizontal e na vertical",
       steps: [
         {
           title: "Reconhecer o gráfico-base",
@@ -642,14 +642,14 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que o deslocamento representa",
       paragraphs: [
         "\\(g(x) = x^2 + 3\\) é exatamente o gráfico de \\(x^2\\) levantado em 3. Você não precisou recalcular pontos — só reconhecer o deslocamento.",
         "Essa leitura rápida (gráfico-base + deslocamento) vale para qualquer função: reta, parábola, V, exponencial. Identificar a base e o movimento resolve metade dos exercícios de gráfico.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Mover para o lado errado no eixo x",
       items: [
         "Inverter o sentido horizontal: \\(f(x - 2)\\) vai para a DIREITA.",
         "Confundir mudança dentro (horizontal) com fora (vertical).",
@@ -658,7 +658,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Desloque gráficos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -696,12 +696,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Translação de gráficos no banco",
       intro: "Pratique translações verticais e horizontais no banco de exercícios.",
       exerciseIds: ["graf-ap-09", "graf-ap-10"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Somar fora move na vertical, somar dentro move na horizontal",
       bullets: [
         "Somar fora, \\(f(x) + k\\): move na vertical (\\(+k\\) sobe, \\(-k\\) desce).",
         "Somar dentro, \\(f(x \\pm k)\\): move na horizontal, sentido contrário ao sinal.",
@@ -724,7 +724,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       next: { slug: "temperatura-consumo", title: "Temperatura e consumo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Ver preço e demanda no mesmo desenho",
       paragraphs: [
         "Preço alto demais afasta clientes; preço baixo demais não paga as contas. Em algum ponto no meio está o preço que traz a maior receita.",
         "Gráficos de vendas e receita mostram esse ponto ótimo de forma visual — muitas vezes um pico de parábola.",
@@ -745,7 +745,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       formulaLegend: "receita = preço vezes a quantidade vendida àquele preço",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde preço e volume se contrapõem",
       items: [
         { label: "Comércio", detail: "definir preço de venda" },
         { label: "Ingressos", detail: "preço que enche e lucra" },
@@ -761,7 +761,7 @@ export const graficosAulas: Record<string, AulaContent> = {
         "A receita de um show é \\(R(p) = -2p^2 + 200p\\) (\\(p\\) é o preço do ingresso). O gráfico é uma parábola para baixo. Qual preço dá a maior receita?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Do gráfico à decisão de preço",
       steps: [
         {
           title: "Reconhecer a parábola",
@@ -784,14 +784,14 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Onde está o melhor preço",
       paragraphs: [
         "Cobrar R$ 50 maximiza a receita em R$ 5000. Subir o preço afastaria público; baixá-lo deixaria dinheiro na mesa. O pico equilibra os dois efeitos.",
         "É exatamente a leitura de máximo de um gráfico aplicada a dinheiro: o vértice da parábola de receita é a recomendação de preço.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ler faturamento como se fosse quantidade",
       items: [
         "Achar que preço sempre maior gera receita maior.",
         "Parar no preço (\\(p_v\\)) sem calcular a receita máxima.",
@@ -800,7 +800,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Analise vendas com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -840,12 +840,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Vendas e preços no banco",
       intro: "Pratique gráficos de receita e preço ótimo no banco de exercícios.",
       exerciseIds: ["graf-ap-11", "graf-ap-12"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Preço sobe, quantidade tende a cair",
       bullets: [
         "Receita = preço × quantidade vendida.",
         "Costuma ser parábola: sobe, atinge o pico e cai.",
@@ -868,7 +868,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       next: { slug: "revisao-graficos", title: "Revisão do módulo" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Relacionar duas medidas do dia a dia",
       paragraphs: [
         "Muitos gráficos do dia a dia ligam duas grandezas que variam juntas: temperatura e consumo de energia, hora e movimento de uma loja, chuva e nível de um rio.",
         "Ler esses gráficos é perceber tendências: \"quanto mais quente, mais energia gasta com ar-condicionado\". É a base de decisões em casa, em empresas e em políticas públicas.",
@@ -887,7 +887,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       formulaLegend: "muitas relações reais aproximam-se de uma função afim",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Do clima à conta de energia",
       items: [
         { label: "Energia", detail: "consumo de ar-condicionado vs. calor" },
         { label: "Comércio", detail: "movimento por horário" },
@@ -903,7 +903,7 @@ export const graficosAulas: Record<string, AulaContent> = {
         "Um gráfico mostra que a 20 °C o consumo é 100 kWh/dia e a 30 °C é 200 kWh/dia, crescendo de forma aproximadamente linear. Qual a tendência e quanto se gasta a mais por grau?",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Cruzar as duas séries no gráfico",
       steps: [
         {
           title: "Identificar as variáveis",
@@ -925,14 +925,14 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a relação encontrada sugere",
       paragraphs: [
         "A inclinação de 10 kWh por grau quantifica a tendência: não só \"esquenta, gasta mais\", mas quanto mais. Isso é o que permite prever a conta de luz num dia quente.",
         "Essa taxa de variação (quanto y muda por unidade de x) é justamente a semente do conceito de derivada — o coração do Cálculo que vem a seguir.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Ler relação como se fosse causa",
       items: [
         "Confundir relação direta com inversa.",
         "Calcular a variação dividindo na ordem errada.",
@@ -941,7 +941,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Relacione grandezas com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -979,12 +979,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Temperatura e consumo no banco",
       intro: "Pratique leitura de gráficos que relacionam duas grandezas no banco de exercícios.",
       exerciseIds: ["graf-ap-13", "graf-ap-14"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Relação não é o mesmo que causa",
       bullets: [
         "Gráficos reais ligam duas grandezas que variam juntas.",
         "Relação direta sobe junto; inversa vai em sentidos opostos.",
@@ -1011,7 +1011,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Fechar a leitura visual antes de limites",
       paragraphs: [
         "O módulo inteiro foi construindo uma habilidade só: olhar um gráfico e entender o que ele diz, do ponto isolado à história completa.",
         "Você aprendeu a localizar pontos, ler valores, identificar crescimento, interpretar picos e cruzamentos e reconhecer deslocamentos. Esta aula amarra tudo.",
@@ -1030,7 +1030,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       formulaLegend: "o caminho da leitura completa de um gráfico",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o gráfico será sua principal ferramenta",
       items: [
         { label: "Trigonometria", detail: "o próximo módulo tem muitos gráficos" },
         { label: "Dados", detail: "ler painéis e relatórios" },
@@ -1046,7 +1046,7 @@ export const graficosAulas: Record<string, AulaContent> = {
         "Uma curva passa por \\((0, 2)\\), sobe até um pico em \\((3, 8)\\) e desce até \\((6, 2)\\). Faça a leitura completa: tipo, comportamento e pontos-chave.",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Revisar dos eixos à interpretação",
       steps: [
         {
           title: "Ler o ponto inicial",
@@ -1067,14 +1067,14 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que você já lê de primeira",
       paragraphs: [
         "Você usou as camadas todas: localizou pontos, descreveu o sentido, achou o máximo e reconheceu a forma. Essa é a leitura completa que o módulo treinou.",
         "Repare que nem foi preciso a fórmula: a posição dos pontos e o sentido da curva já contam tudo. Quando o Cálculo chegar, ele vai dar números exatos a essa intuição.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Os enganos visuais mais frequentes",
       items: [
         "Pular a leitura dos eixos e suas unidades.",
         "Confundir altura (valor alto) com crescimento (subir).",
@@ -1083,7 +1083,7 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Revise gráficos com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -1121,12 +1121,12 @@ export const graficosAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Gráficos no banco",
       intro: "Revise todo o módulo de gráficos com exercícios variados no banco do site.",
       exerciseIds: ["graf-ap-15", "graf-ap-16", "dsf-graf-01"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Ler antes de calcular",
       bullets: [
         "Leitura em camadas: localizar, ler, descrever, interpretar, transformar.",
         "Pontos-chave: interceptos, máximos, mínimos e cruzamentos.",

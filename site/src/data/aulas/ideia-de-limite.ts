@@ -17,7 +17,7 @@ export const ideiaDeLimiteAula: AulaContent = {
     },
   },
   porQue: {
-    title: "Antes da fórmula, o sentido",
+    title: "Chegar perto quando o ponto falha",
     paragraphs: [
       "Limite é a forma matemática de perguntar: \"se eu me aproximo cada vez mais de um valor, para onde o resultado vai?\"",
       "Você não precisa atingir o ponto — muitas vezes nem dá (como divisão por zero em um buraco do gráfico). O que importa é a tendência.",
@@ -38,7 +38,7 @@ export const ideiaDeLimiteAula: AulaContent = {
     formulaLegend: "quando x se aproxima de a, f(x) tende a L",
   },
   ondeAparece: {
-    title: "Aplicações reais",
+    title: "Onde o valor exato não está disponível",
     items: [
       { label: "Velocidade instantânea", detail: "Média em intervalos cada vez menores" },
       { label: "Engenharia", detail: "Comportamento perto de falhas ou saturação" },
@@ -81,7 +81,7 @@ export const ideiaDeLimiteAula: AulaContent = {
     ],
   },
   erros: {
-    title: "Armadilhas que valem atenção",
+    title: "Trocar o limite pelo valor no ponto",
     items: [
       "Confundir limite com o valor da função no ponto (podem ser diferentes).",
       "Achar que \\(\\frac{0}{0}\\) significa \"não existe limite\" — muitas vezes existe tendência.",
@@ -90,7 +90,7 @@ export const ideiaDeLimiteAula: AulaContent = {
     ],
   },
   exerciciosGuiados: {
-    title: "Prática em camadas",
+    title: "Investigue limites com apoio",
     exercises: [
       {
         id: "lim-g1",
@@ -122,12 +122,12 @@ export const ideiaDeLimiteAula: AulaContent = {
     ],
   },
   exerciciosAplicados: {
-    title: "Continue praticando",
+    title: "Ideia de limite no banco",
     intro: "Pratique a ideia de limite com exercícios resolvidos passo a passo.",
     exerciseIds: ["lim-ap-01", "lim-ap-02"],
   },
   resumo: {
-    title: "O que precisa ficar",
+    title: "Aproximar sem precisar chegar",
     bullets: [
       "Limite = comportamento de \\(f(x)\\) quando \\(x\\) se aproxima de \\(a\\).",
       "Tendência pode existir mesmo com buraco ou indeterminação no ponto.",

@@ -19,7 +19,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "pre-requisitos", title: "O que você precisa saber antes" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Entender o problema antes de cair nele",
       paragraphs: [
         "Reprovar em Cálculo 1 raramente significa \"não sou bom em matemática\". Na maioria das vezes significa estudar do jeito errado para essa matéria.",
         "A disciplina exige ligar símbolo, gráfico e situação real — quem só decora regras trava na primeira prova aplicada.",
@@ -85,7 +85,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "O que costuma derrubar quem se esforça",
       items: [
         "Achar que \"todo mundo reprova, é normal\" e não mudar hábito.",
         "Copiar resolução sem fechar o caderno e tentar sozinho.",
@@ -94,7 +94,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Reflita sobre seu próprio estudo",
       exercises: [
         {
           id: "repr-g1",
@@ -127,12 +127,12 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Diagnóstico no banco",
       intro: "Em breve: autoavaliação de hábitos de estudo.",
       exerciseIds: [],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A reprovação tem causas conhecidas",
       bullets: [
         "Reprovação costuma vir de base fraca, pouca prática e estudo só mecânico.",
         "Funções e gráficos são o alicerce — não pule.",
@@ -154,7 +154,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       next: { slug: "como-estudar", title: "Como estudar Cálculo sem trauma" },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Saber o que revisar antes de começar",
       paragraphs: [
         "Cálculo 1 não começa do zero absoluto: ele pressupõe que você leia expressões, monte gráficos simples e entenda o que é uma função.",
         "Sem isso, limites e derivadas viram manipulação de símbolos sem imagem mental.",
@@ -220,7 +220,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "As lacunas que mais atrapalham depois",
       items: [
         "Achar que Cálculo vai \"ensinar álgebra de novo\" do zero.",
         "Confundir notação \\(f(x)\\) com multiplicação \\(f\\) vezes \\(x\\).",
@@ -229,7 +229,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Teste seus pré-requisitos com apoio",
       exercises: [
         {
           id: "pre-g1",
@@ -259,12 +259,12 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Pré-requisitos no banco",
       intro: "Revise no Pré-Cálculo: função afim, quadrática e gráficos.",
       exerciseIds: [],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "A base mínima para acompanhar",
       bullets: [
         "Domine álgebra básica, funções e leitura de gráficos antes de limites.",
         "Trig introdutória ajuda em muitos cursos — não ignore.",
@@ -289,7 +289,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Estudar de um jeito que funciona",
       paragraphs: [
         "Estudar Cálculo como se fosse História — só ler e grifar — não funciona. É habilidade de raciocínio e procedimento.",
         "O método certo reduz ansiedade porque você sabe o que fazer em cada sessão de estudo.",
@@ -341,7 +341,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Hábitos que dão sensação de estudo sem resultado",
       items: [
         "Só copiar solução do professor ou IA sem tentar antes.",
         "Estudar 6 horas um dia e zero na semana seguinte.",
@@ -350,7 +350,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Monte sua rotina com apoio",
       exercises: [
         {
           id: "est-g1",
@@ -382,12 +382,12 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Prática de estudo no banco",
       intro: "Use o banco de exercícios do site após cada aula de conteúdo.",
       exerciseIds: [],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Rotina curta, constante e ativa",
       bullets: [
         "Estude com ciclo: ideia → guiado → sozinho → interpretar.",
         "Rotina curta e frequente supera maratona esporádica.",
@@ -413,7 +413,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       },
     }),
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Enxergar o caminho inteiro de uma vez",
       paragraphs: [
         "Ver o semestre inteiro em um mapa reduz medo do desconhecido.",
         "Cada bloco da trilha responde um tipo de pergunta do mundo real.",
@@ -467,7 +467,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Pular etapas do mapa e travar adiante",
       items: [
         "Querer ir direto a derivadas sem limites.",
         "Tratar integral como \"antiderivada\" sem ideia de soma.",
@@ -476,7 +476,7 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Situe-se no mapa com apoio",
       exercises: [
         {
           id: "map-g1",
@@ -506,12 +506,12 @@ export const antesDoCalculoAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Visão geral no banco",
       intro: "Siga a ordem dos módulos na sidebar de Cálculo 1.",
       exerciseIds: [],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Função, limite, derivada, integral",
       bullets: [
         "Trilha: funções → limites → continuidade → derivadas → aplicações → integrais.",
         "Cada etapa responde um tipo de pergunta prática.",

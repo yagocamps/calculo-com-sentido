@@ -51,7 +51,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
     },
     plot: "lhopital-razao-inclinacoes",
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Uma saída para o zero sobre zero",
       paragraphs: [
         "Você já sabe o que fazer com um \\(\\frac{0}{0}\\) quando dá para fatorar: cancela o fator comum e substitui. Mas muitos limites não fatoram. Perto de \\(x = 1\\), \\(\\frac{x^2 - 1}{\\ln x}\\) dá \\(\\frac{0}{0}\\) e não há fator comum à vista; a tabela sugere um valor, mas não prova nada.",
         "A regra de L’Hôpital resolve boa parte desses casos com uma ferramenta que você já domina: derivar. Em vez de comparar as duas funções, você compara a rapidez com que cada uma vai a zero.",
@@ -107,7 +107,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde a indeterminação trava o cálculo",
       items: [
         { label: "Provas", detail: "está em quase toda lista de limites de Cálculo 1" },
         { label: "Comparar crescimentos", detail: "a exponencial vence qualquer potência: \\(x^{10}/e^x \\to 0\\)" },
@@ -123,7 +123,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
         "Calcule o limite abaixo pela regra de L’Hôpital e confira fatorando. Os dois caminhos precisam dar o mesmo número. \\[\\lim_{x \\to 2} \\frac{x^3 - 8}{x^2 - 4}\\]",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Conferir a hipótese antes de derivar",
       steps: [
         {
           title: "Substituir primeiro",
@@ -146,14 +146,14 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "Por que a razão de inclinações resolve",
       paragraphs: [
         "Os dois caminhos dão \\(3\\). No gráfico acima, perto de \\(x = 2\\) as duas curvas se parecem com retas de inclinação \\(12\\) e \\(4\\): a altura de uma fica perto de três vezes a altura da outra, e é isso que o limite mede.",
         "A regra não substitui a fatoração quando ela é fácil. Mas funciona também onde não há o que fatorar: em \\(\\frac{x^2 - 1}{\\ln x}\\) perto de \\(1\\), derivando fica \\(\\frac{2x}{1/x} = 2x^2\\), que tende a \\(2\\).",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Aplicar a regra sem a indeterminação",
       items: [
         "Aplicar a regra sem conferir a forma. Em \\(\\frac{x + 1}{x + 2}\\) com \\(x \\to 0\\), a substituição já dá \\(\\frac{1}{2}\\); derivando, você obteria \\(1\\), que está errado.",
         "Usar a regra do quociente. L’Hôpital deriva o numerador e o denominador cada um por si, e não a fração inteira.",
@@ -162,7 +162,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Aplique L’Hôpital com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -207,12 +207,12 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Regra de L’Hôpital no banco",
       intro: "0/0 e ∞/∞, crescimento de algoritmos e o erro de derivar cedo demais.",
       exerciseIds: ["ad-lh-01", "ad-lh-02", "ad-lh-03"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Derivar em cima e embaixo, separado",
       bullets: [
         "Substitua primeiro: a regra só vale em \\(\\frac{0}{0}\\) ou \\(\\frac{\\infty}{\\infty}\\).",
         "Derive o numerador e o denominador separadamente e substitua de novo.",
@@ -256,7 +256,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
     },
     plot: "um-elevado-a-infinito",
     porQue: {
-      title: "Antes da fórmula, o sentido",
+      title: "Quando a indeterminação vem disfarçada",
       paragraphs: [
         "L’Hôpital só aceita frações do tipo \\(\\frac{0}{0}\\) ou \\(\\frac{\\infty}{\\infty}\\). Mas os limites de prova nem sempre chegam em forma de fração: aparecem \\(x \\ln x\\) perto de zero, a diferença de dois termos que explodem, ou uma potência como \\((1 + \\frac{1}{x})^x\\).",
         "Nesses casos a intuição engana. \\(0 \\cdot \\infty\\) não é zero nem infinito, e \\(1^\\infty\\) não é \\(1\\). Cada uma dessas formas pode dar qualquer resultado, dependendo de quem vence a disputa.",
@@ -284,7 +284,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       formulaLegend: "o logaritmo transforma a potência num produto",
     },
     ondeAparece: {
-      title: "Onde isso aparece",
+      title: "Onde o produto ou a potência escondem a forma",
       items: [
         { label: "Juros contínuos", detail: "\\((1 + \\frac{r}{n})^n \\to e^r\\) quando a capitalização não para" },
         { label: "Teoria da informação", detail: "a entropia usa \\(p \\ln p\\), que tende a \\(0\\) quando \\(p \\to 0\\)" },
@@ -300,7 +300,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
         "Calcule o limite de \\((1 + \\frac{1}{x})^x\\) quando \\(x \\to \\infty\\). A base vai para \\(1\\) e o expoente vai para infinito — a tentação é responder \\(1\\).",
     },
     passos: {
-      title: "Como pensar e resolver",
+      title: "Reescrever até aparecer uma fração",
       steps: [
         {
           title: "Reconhecer a forma",
@@ -323,14 +323,14 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     interpretacao: {
-      title: "O que esse resultado significa?",
+      title: "O que a reescrita revelou",
       paragraphs: [
         "O limite é \\(e\\), e não \\(1\\). No gráfico acima, a curva sobe devagar em direção à linha de \\(e\\), longe da linha do \\(1\\) que a intuição sugeria. A base encolhe para \\(1\\), mas o expoente cresce na mesma medida, e nenhum dos dois vence sozinho.",
         "É o limite dos juros compostos: capitalizar \\(100\\%\\) ao ano em \\(n\\) parcelas cada vez menores rende, no máximo, o fator \\(e\\). Um aviso honesto: aqui a regra confirma o valor de \\(e\\), mas não serve para defini-lo, porque a derivada de \\(\\ln x\\) usada no passo 3 já depende desse número.",
       ],
     },
     erros: {
-      title: "Armadilhas que valem atenção",
+      title: "Derivar a fração como quociente",
       items: [
         "Responder \\(1^\\infty = 1\\) ou \\(0 \\cdot \\infty = 0\\) de cabeça. As duas formas são indeterminadas e podem dar qualquer valor.",
         "Aplicar L’Hôpital direto num produto ou numa diferença. A regra só vale para quocientes; reescreva antes.",
@@ -339,7 +339,7 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosGuiados: {
-      title: "Prática em camadas",
+      title: "Reescreva indeterminações com apoio",
       exercises: [
         {
           id: "guiado-1",
@@ -382,12 +382,12 @@ export const lhopitalAulas: Record<string, AulaContent> = {
       ],
     },
     exerciciosAplicados: {
-      title: "Continue praticando",
+      title: "Outras indeterminações no banco",
       intro: "Um exercício de cada reescrita, incluindo os juros capitalizados sem parar.",
       exerciseIds: ["ad-lh-04", "ad-lh-05", "ad-lh-06"],
     },
     resumo: {
-      title: "O que precisa ficar",
+      title: "Primeiro reescrever, depois derivar",
       bullets: [
         "\\(0 \\cdot \\infty\\), \\(\\infty - \\infty\\), \\(1^\\infty\\), \\(0^0\\) e \\(\\infty^0\\) são indeterminadas: o símbolo não diz o resultado.",
         "\\(0 \\cdot \\infty\\): passe um fator para o denominador.",
