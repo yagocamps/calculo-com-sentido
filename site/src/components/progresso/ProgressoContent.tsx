@@ -1,5 +1,6 @@
 "use client";
 
+import { RichText } from "@/components/aulas/RichText";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { ProgressRing } from "@/components/ui/ProgressRing";
 import { StudentExperiencePanel } from "@/components/progresso/StudentExperiencePanel";
+import { NextStudyStep } from "@/components/progresso/NextStudyStep";
 import { Tag } from "@/components/ui/Tag";
 import {
   buildProgressDashboard,
@@ -84,7 +86,7 @@ export function ProgressoContent() {
               Meu progresso
             </h1>
             <p className="mt-2 text-sm text-ink-muted">
-              Seu progresso, favoritos, anotações e revisões ficam apenas neste navegador. Não há conta nem sincronização automática entre dispositivos. Limpar os dados do navegador pode apagá-los; use Exportar para guardar uma cópia e Importar para levá-la a outro dispositivo.
+              Encontre seu próximo passo, acompanhe o que aprendeu e retome suas revisões.
             </p>
             {/* Streak suave: só celebra, nunca cobra (público já chega ansioso). */}
             {dash.studyDaysThisWeek > 0 && (
@@ -95,6 +97,13 @@ export function ProgressoContent() {
               </p>
             )}
           </div>
+        </header>
+
+        {!isEmpty && <NextStudyStep dash={dash} />}
+
+        <details className="rounded-2 border border-border px-4 py-3">
+          <summary className="cursor-pointer text-sm font-semibold text-ink-muted">Seus dados e cópia do progresso</summary>
+          <p className="my-3 text-sm leading-relaxed text-ink-muted">Progresso, favoritos e anotações ficam neste navegador, sem sincronização automática. Salve uma cópia antes de limpar os dados ou mudar de computador.</p>
           <div className="flex flex-wrap items-center gap-2">
             <Button
               variant="soft"
@@ -116,11 +125,11 @@ export function ProgressoContent() {
                 }
               }}
             >
-              Exportar Backup (JSON)
+              Salvar cópia do progresso
             </Button>
 
             <label className="inline-flex items-center gap-2 rounded-[10px] border border-border bg-surface px-3 py-1.5 text-[12.5px] font-semibold cursor-pointer transition-opacity hover:opacity-90 shadow-sm select-none focus-within:ring-2 focus-within:ring-terracotta">
-              Importar Backup (JSON)
+              Restaurar uma cópia
               <input
                 type="file"
                 accept=".json"
@@ -170,7 +179,7 @@ export function ProgressoContent() {
               </Button>
             )}
           </div>
-        </header>
+        </details>
 
         {isEmpty ? (
           <Card className="py-10 text-center">
@@ -202,19 +211,19 @@ export function ProgressoContent() {
           </Card>
         ) : (
           <>
-            <div className="grid gap-5 lg:grid-cols-[auto_1fr]">
+            <div className="grid items-start gap-4 min-[1400px]:grid-cols-[auto_1fr]">
               <div className="flex flex-wrap gap-4">
-                <Card className="flex flex-col items-center justify-center py-6">
+                <Card className="flex flex-col items-center justify-center !p-4">
                   <ProgressRing
                     value={dash.trilhaPreCalculoPercent}
-                    size={112}
+                    size={80}
                     label="PRÉ-CÁLCULO"
                   />
                 </Card>
-                <Card className="flex flex-col items-center justify-center py-6">
+                <Card className="flex flex-col items-center justify-center !p-4">
                   <ProgressRing
                     value={dash.trilhaCalculo1Percent}
-                    size={112}
+                    size={80}
                     label="CÁLCULO 1"
                   />
                 </Card>
@@ -240,7 +249,7 @@ export function ProgressoContent() {
                 )}
                 {dash.nextLesson && (
                   <Card>
-                    <p className="text-xs text-ink-subtle">Próxima aula</p>
+                    <p className="text-xs text-ink-subtle">Continuação da trilha</p>
                     <Link
                       href={dash.nextLesson.href}
                       className="mt-1 block font-serif text-lg font-medium text-terracotta hover:underline"
@@ -256,15 +265,13 @@ export function ProgressoContent() {
             </div>
             <p className="text-sm text-ink-muted">
               {dash.publishedLessonsCompleted} de {dash.publishedLessonsTotal}{" "}
-              aulas com conteúdo concluídas ({dash.publishedPercent}%) ·{" "}
-              {dash.lessonsCompleted} de {dash.lessonsTotal} no catálogo completo
-              ({dash.trilhaCombinedPercent}%)
+              aulas estudadas ({dash.publishedPercent}%). Pratique e revise para acompanhar as evidências de aprendizagem.
             </p>
 
             <StudentExperiencePanel dash={dash} onRefresh={refresh} />
 
             {dash.reviewTotal > 0 && (
-              <Card className="border-l-4 border-l-sage">
+              <div id="revisar-hoje" className="scroll-mt-6"><Card className="border-l-4 border-l-sage">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-sage-ink">
@@ -296,7 +303,7 @@ export function ProgressoContent() {
                             href={item.href}
                             className="font-medium text-ink hover:text-terracotta"
                           >
-                            {item.title}
+                            <RichText>{item.title}</RichText>
                           </Link>
                           <p className="text-xs text-ink-subtle">
                             {item.trilha} · {item.moduleTitle}
@@ -337,7 +344,7 @@ export function ProgressoContent() {
                     ))}
                   </ul>
                 )}
-              </Card>
+              </Card></div>
             )}
 
             {dash.recommendedModule && (
@@ -446,7 +453,7 @@ export function ProgressoContent() {
                         href={item.href}
                         className="text-sm font-medium text-ink hover:text-terracotta"
                       >
-                        {item.title}
+                        <RichText>{item.title}</RichText>
                       </Link>
                       <span className="text-xs text-ink-subtle">
                         {" "}

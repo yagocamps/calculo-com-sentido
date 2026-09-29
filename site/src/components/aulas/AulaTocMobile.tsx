@@ -14,7 +14,7 @@ export function AulaTocMobile({ content, hasSimulation = false, hasNext }: { con
   });
 
   return (
-    <details className="group mb-6 rounded-2 border border-border bg-surface-soft lg:hidden">
+    <details className="lesson-toc-compact group mb-6 rounded-2 border border-border bg-surface-soft">
       <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-2.5 text-[13px] font-semibold text-ink">
         <span>Índice da aula</span>
         <span className="text-ink-subtle transition-transform group-open:rotate-180">

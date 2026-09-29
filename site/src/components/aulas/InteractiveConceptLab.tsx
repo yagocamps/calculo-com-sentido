@@ -4,6 +4,7 @@ import { MotionLimitBench } from "./MotionLimitBench";
 import { ContinuityBridge } from "./ContinuityBridge";
 import { DerivativeTank } from "./DerivativeTank";
 import { IntegralRamp } from "./IntegralRamp";
+import { SimulationStudy } from "./SimulationStudy";
 
 import Link from "next/link";
 import { useId, useState, type ReactNode } from "react";
@@ -517,6 +518,10 @@ function FtcLab() {
 }
 
 export function InteractiveConceptLab({ kind }: { kind: VisualLabKind }) {
+  return <SimulationStudy kind={kind}><LabContent kind={kind} /></SimulationStudy>;
+}
+
+function LabContent({ kind }: { kind: VisualLabKind }) {
   switch (kind) {
     case "motion-limit": return <MotionLimitBench />;
     case "continuity-bridge": return <ContinuityBridge />;

@@ -56,11 +56,11 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid gap-3 border-b border-dashed border-border-soft py-3 sm:grid-cols-[130px_1fr]">
-      <span className="font-serif text-xs italic tracking-wide text-ink-subtle">
+    <div className="min-w-0 space-y-2 border-b border-dashed border-border-soft py-5">
+      <span className="block text-sm font-semibold text-ink-muted">
         {label}
       </span>
-      <div className="text-sm leading-relaxed text-ink">{children}</div>
+      <div className="min-w-0 text-base leading-relaxed text-ink">{children}</div>
     </div>
   );
 }
@@ -168,7 +168,7 @@ export function ExercicioDetail({
             <TypeTag type={exercicio.type} />
           </div>
           <h2 className="mt-2 font-serif text-[22px] font-medium tracking-tight">
-            {exercicio.title}
+            <RichText>{exercicio.title}</RichText>
           </h2>
           <p className="mt-1 text-sm text-ink-muted">
             Tema: {exercicio.tema} · Área: {exercicio.area}
@@ -217,25 +217,26 @@ export function ExercicioDetail({
       </Field>
 
       <Field label="Sua resposta">
-        <div className="flex flex-wrap items-center gap-2">
-          <input
-            type="text"
+        <div className="space-y-3">
+          <textarea
+            rows={exercicio.type === "compreensao" || /\([abc]\)/i.test(exercicio.enunciado) ? 4 : 2}
             value={attempt}
             disabled={Boolean(assessment)}
             onChange={(e) => { setAttempt(e.target.value); setResult(null); }}
             onKeyDown={(e) => {
-              if (e.key === "Enter") handleVerify();
+              if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); handleVerify(); }
             }}
             placeholder="Tente antes de ver a solução…"
             aria-label="Sua resposta"
-            className="min-w-0 flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm text-ink outline-none transition-colors placeholder:text-ink-subtle focus-visible:border-terracotta"
+            aria-describedby="exercise-answer-help"
+            className="block w-full resize-y rounded-lg border border-border bg-bg px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-ink-subtle focus-visible:border-terracotta focus-visible:ring-2 focus-visible:ring-terracotta"
           />
           <Button variant="primary" size="sm" onClick={handleVerify} disabled={!attempt.trim() || Boolean(assessment)}>
             Verificar
           </Button>
         </div>
 
-        <p className="mt-2 text-xs text-ink-subtle">{answerHint(exercicio.answerCheck)}</p>
+        <p id="exercise-answer-help" className="mt-2 text-xs text-ink-subtle">Separe os itens em linhas quando necessário. Ctrl+Enter verifica a resposta. {answerHint(exercicio.answerCheck)}</p>
 
         {result === "correct" && (
           <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-sage-soft px-3 py-1 text-[13px] font-semibold text-sage-ink">
@@ -245,9 +246,8 @@ export function ExercicioDetail({
         {result === "incorrect" && (
           <div className="mt-2 space-y-2 text-[13px]">
             <p className="text-ink-muted">
-              <span className="font-semibold text-amber-ink">Quase!</span>{" "}
-              Errar aqui faz parte do caminho — esse exercício derruba muita
-              gente.
+              <span className="font-semibold text-amber-ink">Vamos rever esta tentativa.</span>{" "}
+              Compare seu raciocínio com a dica e tente novamente.
             </p>
             <div className="rounded-xl border border-amber bg-amber-soft/60 px-3.5 py-2.5 leading-relaxed text-amber-ink">
               <b>O erro mais comum aqui:</b>{" "}
@@ -283,7 +283,7 @@ export function ExercicioDetail({
                 : "Recomendado: reforce com um mais tranquilo"}
             </span>
             <span className="mt-0.5 block text-[13px] font-medium text-ink">
-              {recommended.title} →
+              <RichText>{recommended.title}</RichText> →
             </span>
           </Link>
         )}

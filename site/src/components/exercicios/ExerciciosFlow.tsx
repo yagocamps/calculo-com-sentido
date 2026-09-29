@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useDeferredValue, useMemo, useState } from "react";
+import { RichText } from "@/components/aulas/RichText";
+import { useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ExercicioDetail } from "@/components/exercicios/ExercicioDetail";
 import { AdaptivePractice } from "@/components/exercicios/AdaptivePractice";
@@ -42,6 +43,8 @@ function ExerciseBank() {
   const searchParams = useSearchParams();
   const paramId = searchParams.get("id");
   const paramTema = searchParams.get("tema");
+  const [catalogOpen, setCatalogOpen] = useState(!paramId);
+  const headingRef = useRef<HTMLHeadingElement>(null);
   // Deep-link de uma aula (?id=...): começa no tema do próprio exercício,
   // senão a lista filtrada não conteria o exercício e ele "sumiria".
   // O dashboard de progresso usa ?tema=... ("Refazer exercícios").
@@ -85,21 +88,33 @@ function ExerciseBank() {
     : -1;
 
   const selectExercicio = useCallback(
-    (id: string) => {
+    (id: string, practice = false) => {
       const params = new URLSearchParams(searchParams.toString());
       params.set("id", id);
       router.replace(`/exercicios?${params.toString()}`, { scroll: false });
+      if (practice) {
+        setCatalogOpen(false);
+        headingRef.current?.focus();
+        document.getElementById("main-content")?.scrollTo({ top: 0 });
+      }
     },
     [router, searchParams],
   );
 
   return (
-    <PageShell crumbs={["Início", "Exercícios", ...(active ? [active.tema] : [])]}>
-      <div className="mx-auto grid max-w-[1080px] gap-5 lg:grid-cols-[320px_1fr]">
-        <aside>
-          <h1 className="font-serif text-2xl font-medium tracking-tight">
-            Exercícios aplicados
+    <PageShell focusAvailable crumbs={["Início", "Exercícios", ...(active ? [active.tema] : [])]}>
+      <div className="mx-auto max-w-[900px] space-y-5">
+        <header className="flex flex-wrap items-center justify-between gap-3">
+          <h1 ref={headingRef} tabIndex={-1} className="font-serif text-3xl font-medium tracking-tight">
+            {catalogOpen ? "Escolha o que praticar" : "Hora de praticar"}
           </h1>
+          <button type="button" aria-expanded={catalogOpen} aria-controls="exercise-catalog"
+            className="rounded-lg border border-border bg-surface px-4 py-2 text-sm font-semibold"
+            onClick={() => setCatalogOpen(value => !value)}>
+            {catalogOpen ? "Voltar à questão" : "Escolher outra questão"}
+          </button>
+        </header>
+        <section id="exercise-catalog" hidden={!catalogOpen} aria-label="Catálogo de exercícios">
           <p className="mt-1.5 text-sm text-ink-muted">
             Avance em cinco níveis: fundamento, aplicação direta,
             interpretação, problema e desafio.
@@ -181,12 +196,12 @@ function ExerciseBank() {
             </div>
           </div>
 
-          <ul className="mt-4 max-h-[480px] space-y-1.5 overflow-y-auto pr-1">
+          <ul className="mt-5 grid gap-3 lg:grid-cols-2">
             {filtered.map((ex) => (
               <li key={ex.id}>
                 <button
                   type="button"
-                  onClick={() => selectExercicio(ex.id)}
+                  onClick={() => selectExercicio(ex.id, true)}
                   className={cn(
                     "w-full rounded-2 border px-3.5 py-3 text-left transition-colors",
                     ex.id === active?.id
@@ -201,8 +216,8 @@ function ExerciseBank() {
                     <PedagogicalLevelTag level={pedagogicalLevelOf(ex)} />
                     <TypeTag type={ex.type} />
                   </div>
-                  <div className="truncate text-[13.5px] font-semibold">
-                    {ex.title}
+                  <div className="text-base font-semibold">
+                    <RichText>{ex.title}</RichText>
                   </div>
                   <div className="text-xs text-ink-muted">{ex.area}</div>
                 </button>
@@ -215,8 +230,9 @@ function ExerciseBank() {
               Nenhum exercício neste filtro.
             </p>
           )}
-        </aside>
+        </section>
 
+        <div hidden={catalogOpen}>
         {active ? <ExercicioDetail
           key={active.id}
           exercicio={active}
@@ -239,6 +255,7 @@ function ExerciseBank() {
             router.replace("/exercicios", { scroll: false });
           }}>Ver todos os exercícios →</button>
         </section>}
+        </div>
       </div>
     </PageShell>
   );

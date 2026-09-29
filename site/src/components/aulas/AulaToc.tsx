@@ -77,7 +77,7 @@ export function AulaToc({ content, hasSimulation = false, hasNext }: { content: 
   const doneCount = maxReached;
 
   return (
-    <aside className="hidden lg:block">
+    <aside className="lesson-toc">
       <nav className="sticky top-6 text-[13px]">
         <div className="mb-2.5 flex items-baseline justify-between">
           <p className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-ink-subtle">

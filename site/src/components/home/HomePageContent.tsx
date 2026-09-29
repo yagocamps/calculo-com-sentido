@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HeroCtas } from "@/components/home/HeroCtas";
-import { ReviewTodayBanner } from "@/components/home/ReviewTodayBanner";
+import { StudyWelcome } from "@/components/home/StudyWelcome";
 import { PageShell } from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
@@ -21,16 +21,10 @@ import { cn } from "@/lib/utils";
 export function HomePageContent() {
   const sections = [
     HeroSection,
-    ReviewTodayBanner,
-    SocialProofSection,
-    MissionSection,
-    ProblemSection,
-    SolutionSection,
     PathsSection,
     LessonsSection,
-    BenefitsSection,
-    AudienceSection,
-    FinalCtaSection,
+    SocialProofSection,
+    AboutSection,
   ];
   return (
     <PageShell crumbs={["Início"]}>
@@ -51,6 +45,7 @@ export function HomePageContent() {
 
 function HeroSection() {
   return (
+    <StudyWelcome>
     <section className="relative overflow-hidden rounded-3 border border-border bg-gradient-to-br from-surface-warm to-terracotta-soft px-9 py-10 md:px-11 md:py-11">
       <div
         className="pointer-events-none absolute -right-10 -top-8 select-none font-serif text-[280px] italic leading-none text-terracotta-ink/10"
@@ -78,7 +73,17 @@ function HeroSection() {
 
       <HeroCtas />
     </section>
+    </StudyWelcome>
   );
+}
+
+function AboutSection() {
+  return <details className="rounded-3 border border-border bg-surface p-6">
+    <summary className="cursor-pointer font-serif text-xl font-medium">Conheça o projeto e nossa forma de ensinar</summary>
+    <div className="mt-5 space-y-5">
+      <MissionSection /><ProblemSection /><SolutionSection /><BenefitsSection /><AudienceSection /><FinalCtaSection />
+    </div>
+  </details>;
 }
 
 function SocialProofSection() {

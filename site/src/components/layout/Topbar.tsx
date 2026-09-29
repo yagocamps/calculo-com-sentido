@@ -8,10 +8,12 @@ import { NavIcon } from "@/components/layout/icons";
 export function Topbar({
   crumbs,
   right,
+  context,
   onMenuClick,
 }: {
   crumbs: string[];
   right?: React.ReactNode;
+  context?: React.ReactNode;
   onMenuClick?: () => void;
 }) {
   const [studyMinutes, setStudyMinutes] = useState(0);
@@ -52,6 +54,7 @@ export function Topbar({
         </button>
       )}
 
+      <div className="min-w-0">
       <nav className="flex items-center gap-1.5 text-[12px] md:text-[13px] text-ink-muted min-w-0" aria-label="Trilha">
         {crumbs.map((crumb, i) => (
           <span key={`${crumb}-${i}`} className="flex items-center gap-1.5 min-w-0">
@@ -68,6 +71,8 @@ export function Topbar({
           </span>
         ))}
       </nav>
+      {context}
+      </div>
 
       <div className="ml-auto flex min-w-0 items-center gap-2 md:gap-2.5">
         {right}

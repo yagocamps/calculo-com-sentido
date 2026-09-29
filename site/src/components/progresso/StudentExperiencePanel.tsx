@@ -1,5 +1,6 @@
 "use client";
 
+import { RichText } from "@/components/aulas/RichText";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -8,15 +9,6 @@ import { configureStudyPlan, updateStudyPlanSession } from "@/lib/progress";
 import { getLearningItem } from "@/lib/learning-assessments";
 import { MasteryChecklist } from "@/components/progresso/MasteryChecklist";
 import { MASTERY, masterySteps } from "@/lib/learning-evidence";
-
-const sourceLabel = {
-  "exercise-errors": "Com base nos seus erros",
-  "guided-errors": "Com base nos exercícios guiados",
-  "checkpoint-errors": "Com base no checkpoint",
-  "level-test": "Com base no teste de nível",
-  review: "Com base na revisão espaçada",
-  path: "Com base nos pré-requisitos",
-} as const;
 
 function formatAttemptDate(value: string) {
   return new Intl.DateTimeFormat("pt-BR", {
@@ -34,8 +26,6 @@ export function StudentExperiencePanel({
   dash: ProgressDashboard;
   onRefresh: () => void;
 }) {
-  const recommendation = dash.skillRecommendation;
-
   return (
     <div className="space-y-5">
       <Card>
@@ -44,46 +34,18 @@ export function StudentExperiencePanel({
         <p className="mt-3 font-semibold">{dash.learningEvidence.filter(s => s.state === "Dominado").length} assuntos dominados · {dash.learningEvidence.filter(s => s.state === "Estudado").length} estudados</p>
         <details className="mt-4">
           <summary className="cursor-pointer font-semibold">Ver evidências por assunto</summary>
+          <p className="mt-3 text-sm text-ink-muted">O indicador de domínio exige acertos verificados em três questões distintas, novo acerto após 24 horas, pelo menos 80% nas últimas dez tentativas e nenhum erro pendente. Autoavaliações não certificam domínio.</p>
           <ul className="mt-3 divide-y divide-border">
             {dash.learningEvidence.map(skill => <li key={skill.id} className="py-3 text-sm">
               <Link href={skill.href} className="font-semibold text-sky-ink underline">{skill.title}</Link>
               <p>{skill.state} · {skill.accuracy === null ? "Sem tentativas verificadas" : `${skill.accuracy}% nas tentativas recentes · ${skill.correctCount} questões com último resultado correto`}</p>
               {skill.state !== "Dominado" && <MasteryChecklist steps={masterySteps(skill)} className="mt-1.5" />}
               {skill.prerequisites.length > 0 && <p className="text-ink-muted">Base: {skill.prerequisites.map((id, index) => <span key={id}>{index > 0 && " · "}<Link className="underline" href={`/${id}`}>{dash.learningEvidence.find(s => s.id === id)?.title ?? "Revisar pré-requisito"}</Link></span>)}</p>}
-              {skill.dueErrors.length > 0 && <div className="mt-1">Hora de revisitar: {skill.dueErrors.map((id,index) => { const item = getLearningItem(id); return item && <span key={id}>{index > 0 && " · "}<Link className="text-terracotta underline" href={item.href}>{item.title}</Link></span>; })}</div>}
+              {skill.dueErrors.length > 0 && <div className="mt-1">Hora de revisitar: {skill.dueErrors.map((id,index) => { const item = getLearningItem(id); return item && <span key={id}>{index > 0 && " · "}<Link className="text-terracotta underline" href={item.href}><RichText>{item.title}</RichText></Link></span>; })}</div>}
             </li>)}
           </ul>
         </details>
       </Card>
-      {recommendation && (
-        <Card className="border-l-4 border-l-terracotta">
-          <p className="text-[11px] font-bold uppercase tracking-wider text-terracotta">
-            Próximo passo recomendado · {sourceLabel[recommendation.source]}
-          </p>
-          <div className="mt-2 flex flex-wrap items-start justify-between gap-4">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold text-ink-muted">
-                Habilidade: {recommendation.skill}
-              </p>
-              <h2 className="mt-1 font-serif text-2xl font-medium">
-                {recommendation.title}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                {recommendation.reason}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <Button href={recommendation.href}>Estudar agora →</Button>
-              {recommendation.practiceHref && (
-                <Button href={recommendation.practiceHref} variant="soft">
-                  Praticar habilidade
-                </Button>
-              )}
-            </div>
-          </div>
-        </Card>
-      )}
-
       <div className="grid gap-5 lg:grid-cols-2">
         <Card>
           <p className="text-[11px] font-bold uppercase tracking-wider text-sky-ink">
@@ -107,7 +69,7 @@ export function StudentExperiencePanel({
                   </span>
                   <span>
                     <span className="block text-sm font-semibold text-ink">
-                      {item.title}
+                      <RichText>{item.title}</RichText>
                     </span>
                     <span className="block text-[11px] text-ink-muted">
                       {item.reason}
@@ -141,7 +103,7 @@ export function StudentExperiencePanel({
                 type="button"
                 aria-pressed={dash.studyPlan?.durationWeeks === weeks}
                 onClick={() => {
-                  configureStudyPlan(weeks, recommendation?.href);
+                  configureStudyPlan(weeks, dash.skillRecommendation?.href);
                   onRefresh();
                 }}
                 className={`rounded-xl border px-2 py-2 text-center text-sm font-semibold transition-colors ${
@@ -179,7 +141,7 @@ export function StudentExperiencePanel({
                         {step.label} · {step.minutes} min
                       </span>
                       <span className="mt-0.5 block text-sm font-semibold text-ink">
-                        {step.title}
+                        <RichText>{step.title}</RichText>
                       </span>
                       <span className="block text-[11px] text-ink-muted">
                         {step.reason}
@@ -233,7 +195,7 @@ export function StudentExperiencePanel({
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
                       <Link href={item.href} className="text-sm font-semibold text-ink hover:text-terracotta">
-                        {item.title} →
+                        <RichText>{item.title}</RichText> →
                       </Link>
                       <p className="text-[11px] text-ink-muted">{item.skill}</p>
                     </div>
@@ -268,7 +230,7 @@ export function StudentExperiencePanel({
               {dash.savedLessons.map((item) => (
                 <li key={item.id} className="rounded-xl border border-border bg-surface-soft px-3 py-2.5">
                   <Link href={item.href} className="text-sm font-semibold text-ink hover:text-terracotta">
-                    {item.favorite ? "★ " : ""}{item.title} →
+                    {item.favorite ? "★ " : ""}<RichText>{item.title}</RichText> →
                   </Link>
                   <p className="text-[11px] text-ink-muted">{item.moduleTitle}</p>
                   {item.note && (
@@ -294,7 +256,7 @@ export function StudentExperiencePanel({
               Sincronização opcional, sem conta
             </p>
             <p className="mt-1 text-sm text-ink-muted">
-              O backup JSON no topo inclui progresso, teste, respostas de checkpoints e exercícios guiados, histórico, sessão adaptativa, plano, favoritos e anotações.
+              A opção “Seus dados e cópia do progresso” inclui progresso, teste, respostas de checkpoints e exercícios guiados, histórico, sessão adaptativa, plano, favoritos e anotações.
               Exporte neste computador e importe em outro quando quiser.
             </p>
           </div>

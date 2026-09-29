@@ -8,14 +8,16 @@ import { FutureUseLinks } from "@/components/aulas/FutureUseLinks";
 import { StaticPlot } from "@/components/aulas/StaticPlot";
 import { getPlot } from "@/data/plots";
 import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
+import { SimulationStudy } from "@/components/aulas/SimulationStudy";
 import { InteractiveConceptLab } from "@/components/aulas/InteractiveConceptLab";
 import { BhaskaraDerivation } from "@/components/aulas/BhaskaraDerivation";
 import { DemonstrationDisclosure } from "@/components/aulas/DemonstrationDisclosure";
 import { LessonAnalytics } from "@/components/aulas/LessonAnalytics";
 import { LessonMastery } from "@/components/aulas/LessonMastery";
 import { LessonWorkspace } from "@/components/aulas/LessonWorkspace";
+import { LessonPosition } from "@/components/aulas/LessonPosition";
+import { sectionLinks } from "@/components/aulas/toc-sections";
 import { MarkCompleteButton } from "@/components/aulas/MarkCompleteButton";
-import { ReadingProgress } from "@/components/aulas/ReadingProgress";
 import { RichText } from "@/components/aulas/RichText";
 import { Section } from "@/components/aulas/Section";
 import { AulaVideos } from "@/components/aulas/AulaVideos";
@@ -155,17 +157,17 @@ export function AulaView({
 
   return (
     <PageShell
+      focusAvailable
       crumbs={[trilhaRoot, meta.moduleTitle, crumbTitle]}
-      right={<MarkCompleteButton lessonPathId={lessonPathId} />}
+      headerContext={<LessonPosition sections={sectionLinks.filter(item =>
+        (item.id !== "simulacao" || hasSimulation) &&
+        (item.id !== "video" || hasVideos) &&
+        (item.id !== "proxima" || Boolean(nextLesson))
+      )} />}
     >
       <LessonAnalytics lessonPathId={lessonPathId} />
-      <div className="mx-auto grid max-w-[1080px] gap-7 lg:grid-cols-[minmax(0,1fr)_240px]">
+      <div className="lesson-layout">
         <article className="min-w-0">
-          <ReadingProgress
-            hasSimulation={hasSimulation}
-            hasVideos={hasVideos}
-            hasNext={Boolean(nextLesson)}
-          />
           <header className="mb-4">
             <Link
               href={backToModulo}
@@ -175,14 +177,14 @@ export function AulaView({
               {meta.moduleTitle}
             </Link>
             <h1 className="mt-2 text-balance font-serif text-[38px] font-medium leading-tight tracking-tight">
-              {meta.title}
+              <RichText>{meta.title}</RichText>
             </h1>
             <div className="mt-3 flex flex-wrap items-center gap-3 text-[13px] text-ink-muted">
               <span>⏱ {durationLabel(content)} de leitura</span>
               {meta.readingNotes.map((note) => (
                 <span key={note} className="flex items-center gap-3">
                   <span className="h-1 w-1 rounded-full bg-ink-subtle" />
-                  {note}
+                  <RichText>{note}</RichText>
                 </span>
               ))}
               <Tag tone="sage">Nível: {meta.level}</Tag>
@@ -190,10 +192,10 @@ export function AulaView({
             <LessonWorkspace lessonPathId={lessonPathId} />
 
             {prereqs.length > 0 && (
-              <div className="mt-4 rounded-2 border border-sky/50 bg-sky-soft/40 px-4 py-3">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-sky-ink">
+              <details className="mt-4 rounded-2 border border-border px-4 py-3">
+                <summary className="cursor-pointer text-sm font-semibold text-ink-muted">
                   Para esta aula, ajuda já conhecer
-                </p>
+                </summary>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {prereqs.map((p) => (
                     <Link
@@ -201,7 +203,7 @@ export function AulaView({
                       href={p.href}
                       className="rounded-full border border-border bg-surface px-2.5 py-0.5 text-[12px] font-semibold text-ink-muted transition-colors hover:border-sky hover:text-sky-ink"
                     >
-                      {p.label}
+                      <RichText>{p.label}</RichText>
                     </Link>
                   ))}
                 </div>
@@ -209,9 +211,8 @@ export function AulaView({
                   Se algum desses estiver nebuloso, revise primeiro — leva
                   poucos minutos e evita travar no meio da aula.
                 </p>
-              </div>
+              </details>
             )}
-            <FutureUseLinks items={futureUses} />
           </header>
 
           <AulaTocMobile content={content} hasSimulation={hasSimulation} hasNext={Boolean(nextLesson)} />
@@ -293,12 +294,12 @@ export function AulaView({
               )}
               {content.plot && <StaticPlot spec={getPlot(content.plot)} className="my-4" />}
               {content.grafico?.interactive?.type === "afim" && (
-                <InteractiveAfimPlot
+                <SimulationStudy kind="afim"><InteractiveAfimPlot
                   initialA={content.grafico.interactive.a}
                   initialB={content.grafico.interactive.b}
                   xDomain={content.grafico.xDomain}
                   yDomain={content.grafico.yDomain}
-                />
+                /></SimulationStudy>
               )}
             </Section>
           </div>
@@ -309,7 +310,7 @@ export function AulaView({
                 <div className="grid gap-2 sm:grid-cols-2">
                   {content.ondeAparece.items.map((item) => (
                     <div key={item.label} className="text-[13px]">
-                      <b>{item.label}</b> ·{" "}
+                      <b><RichText>{item.label}</RichText></b> ·{" "}
                       <RichText glossary={glossaryHL}>{item.detail}</RichText>
                     </div>
                   ))}
@@ -454,6 +455,7 @@ export function AulaView({
             </Section>
           </div>
 
+          <FutureUseLinks items={futureUses} />
           {hasVideos && (
             <div id="video">
               <Section
@@ -466,6 +468,11 @@ export function AulaView({
             </div>
           )}
 
+          <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-border pt-5">
+            <MarkCompleteButton lessonPathId={lessonPathId} />
+            <p className="text-sm text-ink-muted">Registre quando terminar de estudar esta aula.</p>
+          </div>
+
           {nextLesson && (
             <div id="proxima">
               <Section
@@ -476,7 +483,7 @@ export function AulaView({
                 <div className="flex flex-wrap items-center gap-4 rounded-2 border border-border bg-surface-warm p-5">
                   <div className="min-w-[200px] flex-1">
                     <p className="font-serif text-lg font-medium">
-                      {nextLesson.title}
+                      <RichText>{nextLesson.title}</RichText>
                     </p>
                   </div>
                   <Button href={nextLesson.href} variant="dark">

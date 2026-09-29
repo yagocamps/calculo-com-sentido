@@ -28,15 +28,15 @@ export function MarkCompleteButton({ lessonPathId }: { lessonPathId: string }) {
     return (
       <button
         type="button"
-        title="Clique para desmarcar como concluída"
-        aria-label="Concluída — clique para desmarcar"
+        title="Clique para desmarcar como estudada"
+        aria-label="Estudada — clique para desmarcar"
         onClick={() => {
           unmarkLessonComplete(lessonPathId);
           setDone(false);
         }}
         className="group inline-flex items-center gap-1.5 rounded-full bg-sage-soft px-3 py-1 text-xs font-semibold text-sage-ink transition-colors hover:bg-sage/25"
       >
-        ✓ Concluída
+        ✓ Estudada
         <span className="hidden text-sage-ink/70 group-hover:inline">↺ desmarcar</span>
       </button>
     );
@@ -56,7 +56,7 @@ export function MarkCompleteButton({ lessonPathId }: { lessonPathId: string }) {
         if (r) burstConfetti(r.left + r.width / 2, r.top + r.height / 2);
       }}
     >
-      Marcar como concluída
+      Marcar como estudada
     </Button>
   );
 }
