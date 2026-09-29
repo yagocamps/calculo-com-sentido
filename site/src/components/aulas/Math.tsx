@@ -39,7 +39,7 @@ export function MathFormula({
   });
 
   return (
-    <span className={className} role="math" aria-label={text}>
+    <span className={[className, display && latex.includes("\\begin{aligned}") ? "calculation-display block max-w-full overflow-x-auto" : ""].filter(Boolean).join(" ")} role="math" aria-label={text}>
       <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: html }} />
     </span>
   );

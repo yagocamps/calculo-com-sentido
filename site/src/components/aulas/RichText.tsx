@@ -119,7 +119,7 @@ function renderMath(latex: string, display: boolean, key: number): ReactNode {
       key={`math-${key}`}
       role="math"
       aria-label={reading}
-      className={display ? "my-1 block" : undefined}
+      className={display ? "calculation-display my-1 block max-w-full overflow-x-auto" : undefined}
     >
       <span aria-hidden="true" dangerouslySetInnerHTML={{ __html: html }} />
     </span>

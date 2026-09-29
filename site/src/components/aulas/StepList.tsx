@@ -18,7 +18,7 @@ export function StepList({
           <span className="grid h-7 w-7 place-items-center rounded-full border border-border bg-surface font-serif text-[13px] font-semibold">
             {i + 1}
           </span>
-          <div>
+          <div className="min-w-0">
             <p className="font-semibold">{step.title}</p>
             <RichText
               as="p"

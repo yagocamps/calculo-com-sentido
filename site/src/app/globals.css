@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+.calculation-display .katex-display,
+.calculation-display .katex-display > .katex { text-align: left; }
+
 /* Preserve reading width before allocating a second lesson column. */
 .lesson-layout { display: grid; gap: 2rem; max-width: 820px; margin-inline: auto; }
 .lesson-toc { display: none; }

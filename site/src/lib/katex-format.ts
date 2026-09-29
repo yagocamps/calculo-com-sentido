@@ -49,7 +49,24 @@ export function trigNotationPtBr(latex: string): string {
  * quebras em `aligned` e a grafia trigonométrica em português.
  */
 export function prepareForKatex(latex: string): string {
-  return trigNotationPtBr(addAlignedRowGap(latex));
+  return trigNotationPtBr(addAlignedRowGap(alignCalculationChains(latex)));
+}
+
+/** Keep the starting expression above a chain of equalities, at the same margin.
+ * Systems and derivations with a left-hand expression on each row retain their
+ * mathematical alignment. Nested environments are deliberately left intact.
+ */
+export function alignCalculationChains(latex: string): string {
+  return latex.replace(/\\begin\{aligned\}([\s\S]*?)\\end\{aligned\}/g, (full, inner: string) => {
+    if (/\\(?:begin|end)\{/.test(inner)) return full;
+    const rows = inner.split(/\\\\(?:\s*\[[^\]]*\])?/);
+    if (rows.length < 2 || !rows.slice(1).every(row => /^\s*&\s*(?:=|\\approx\b)/.test(row) && row.split("&").length === 2)) return full;
+    const first = rows[0].match(/^\s*([^&]+?)\s*&\s*((?:=|\\approx\b)[\s\S]+)$/);
+    if (!first) return full;
+    // Preserve explicit row spacing while inserting the initial expression row.
+    const remainder = inner.slice(inner.indexOf("&") + 1);
+    return `\\begin{aligned} & ${first[1].trim()} \\\\ & ${remainder}\\end{aligned}`;
+  });
 }
 
 /** Símbolos que viram uma palavra só, sem argumento. */
