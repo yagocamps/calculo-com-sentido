@@ -6,6 +6,7 @@ import { AulaTocMobile } from "@/components/aulas/AulaTocMobile";
 import { FormulaBlock } from "@/components/aulas/FormulaBlock";
 import { FutureUseLinks } from "@/components/aulas/FutureUseLinks";
 import { StaticPlot } from "@/components/aulas/StaticPlot";
+import { SecantAnimation } from "@/components/aulas/SecantAnimation";
 import { getPlot } from "@/data/plots";
 import { InteractiveAfimPlot } from "@/components/aulas/InteractiveAfimPlot";
 import { SimulationStudy } from "@/components/aulas/SimulationStudy";
@@ -263,6 +264,7 @@ export function AulaView({
                 formulaAria={content.explicacao.formulaAria}
                 legend={content.explicacao.formulaLegend}
               />
+              {trilha === "calculo-1" && meta.moduleSlug === "derivadas" && aulaSlug === "reta-secante-tangente" && <SecantAnimation />}
               {visualLab && !hasSimulation && <InteractiveConceptLab kind={visualLab} />}
               {content.explicacao.rules && (
                 <div className="mt-5 space-y-4" aria-label="Propriedades e condições de aplicação">
