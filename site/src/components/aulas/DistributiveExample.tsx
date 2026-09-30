@@ -77,7 +77,7 @@ export function DistributiveExample() {
     <div className="mt-4" aria-live="polite" aria-atomic="true"><p className="text-xs font-semibold text-ink-subtle">Passo {step + 1} de {steps.length}</p><p className="mt-1 font-semibold">{steps[step][0]}</p><p className="mt-1 text-sm text-ink-muted">{steps[step][1]}</p></div>
     <div className="mt-4 flex flex-wrap gap-2">
       <button type="button" disabled={step === 0} onClick={() => setStep(value => value - 1)} className="rounded-lg border border-border px-4 py-2 text-sm font-semibold disabled:opacity-40">← Voltar</button>
-      <button type="button" disabled={step === steps.length - 1} onClick={() => setStep(value => value + 1)} className="rounded-lg bg-terracotta px-4 py-2 text-sm font-semibold text-white disabled:opacity-40">Próximo passo →</button>
+      <button type="button" disabled={step === steps.length - 1} onClick={() => setStep(value => value + 1)} className="rounded-lg bg-terracotta px-4 py-2 text-sm font-semibold text-bg disabled:opacity-40">Próximo passo →</button>
       <button type="button" onClick={() => setStep(0)} className="rounded-lg px-4 py-2 text-sm text-ink-muted underline">Recomeçar</button>
     </div>
   </section>;
