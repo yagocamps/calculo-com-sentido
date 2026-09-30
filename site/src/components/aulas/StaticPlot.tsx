@@ -1,4 +1,5 @@
 import type { PlotSpec, PlotMark, PlotTone } from "@/data/plots";
+import { createPlotScale, formatPlotTick as fmt, layoutPlotLabels, PLOT_HEIGHT as H, PLOT_WIDTH as W, type PlotScale as Escala } from "@/lib/plot-layout";
 
 /**
  * Gráfico desenhado no servidor, sem JavaScript no cliente.
@@ -13,16 +14,6 @@ import type { PlotSpec, PlotMark, PlotTone } from "@/data/plots";
  * Riemann e área entre curvas.
  */
 
-const W = 600;
-const H = 340;
-// `bottom` acomoda duas linhas: os números do eixo e, abaixo deles, o nome da
-// variável — que senão fica por cima da última marca de escala.
-// `top` deixa o nome do eixo y acima da marca de escala mais alta, que senão
-// escreve por cima dele.
-const PAD = { top: 34, right: 18, bottom: 48, left: 46 };
-const PLOT_W = W - PAD.left - PAD.right;
-const PLOT_H = H - PAD.top - PAD.bottom;
-
 const TONES: Record<PlotTone, string> = {
   principal: "var(--terracotta)",
   aplicacao: "var(--sage)",
@@ -33,51 +24,6 @@ const TONES: Record<PlotTone, string> = {
 
 function toneColor(tone: PlotTone = "principal") {
   return TONES[tone];
-}
-
-/** Números do eixo em pt-BR, sem casas inúteis. */
-function fmt(v: number) {
-  const arredondado = Math.abs(v) < 1e-9 ? 0 : v;
-  return arredondado.toLocaleString("pt-BR", { maximumFractionDigits: 2 });
-}
-
-type Escala = {
-  x: (valor: number) => number;
-  y: (valor: number) => number;
-  xMin: number; xMax: number; yMin: number; yMax: number;
-};
-
-function criarEscala(spec: PlotSpec): Escala {
-  const [xMin, xMax] = spec.x;
-  const [yMin, yMax] = spec.y;
-  if (spec.aspect === "igual") {
-    // Um único fator para os dois eixos, com o desenho centralizado no quadro.
-    const k = Math.min(PLOT_W / (xMax - xMin), PLOT_H / (yMax - yMin));
-    const sobraX = (PLOT_W - (xMax - xMin) * k) / 2;
-    const sobraY = (PLOT_H - (yMax - yMin) * k) / 2;
-    return {
-      xMin, xMax, yMin, yMax,
-      x: (v) => PAD.left + sobraX + (v - xMin) * k,
-      y: (v) => PAD.top + PLOT_H - sobraY - (v - yMin) * k,
-    };
-  }
-  return {
-    xMin, xMax, yMin, yMax,
-    x: (v) => PAD.left + ((v - xMin) / (xMax - xMin)) * PLOT_W,
-    y: (v) => PAD.top + PLOT_H - ((v - yMin) / (yMax - yMin)) * PLOT_H,
-  };
-}
-
-/** Marcas de escala "redondas" dentro do domínio. */
-function ticks(min: number, max: number, alvo = 6): number[] {
-  const bruto = (max - min) / alvo;
-  const potencia = Math.pow(10, Math.floor(Math.log10(bruto)));
-  const passo = [1, 2, 2.5, 5, 10].map((m) => m * potencia).find((p) => p >= bruto) ?? potencia * 10;
-  const saida: number[] = [];
-  for (let v = Math.ceil(min / passo) * passo; v <= max + 1e-9; v += passo) {
-    saida.push(Math.abs(v) < passo / 1000 ? 0 : v);
-  }
-  return saida;
 }
 
 /**
@@ -113,6 +59,9 @@ function caminho(
 
 function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
   const cor = toneColor(mark.tone);
+  const PAD = esc.pad;
+  const PLOT_W = esc.width;
+  const PLOT_H = esc.height;
 
   switch (mark.kind) {
     case "curve": {
@@ -143,11 +92,6 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
             stroke={cor}
             strokeWidth={2.5}
           />
-          {mark.label && (
-            <text x={cx + 10} y={cy - 9} fill="var(--ink-muted)" fontSize={14} fontFamily="var(--font-sans)">
-              {mark.label}
-            </text>
-          )}
         </g>
       );
     }
@@ -159,11 +103,6 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
             x1={px} x2={px} y1={PAD.top} y2={PAD.top + PLOT_H}
             stroke={cor} strokeWidth={2} strokeDasharray="7 6"
           />
-          {mark.label && (
-            <text x={px + 6} y={PAD.top + 14} fill={cor} fontSize={14} fontFamily="var(--font-sans)">
-              {mark.label}
-            </text>
-          )}
         </g>
       );
     }
@@ -175,11 +114,6 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
             x1={PAD.left} x2={PAD.left + PLOT_W} y1={py} y2={py}
             stroke={cor} strokeWidth={2} strokeDasharray="7 6"
           />
-          {mark.label && (
-            <text x={PAD.left + PLOT_W - 6} y={py - 8} textAnchor="end" fill={cor} fontSize={14} fontFamily="var(--font-sans)">
-              {mark.label}
-            </text>
-          )}
         </g>
       );
     }
@@ -227,21 +161,7 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
         />
       );
     }
-    case "text": {
-      return (
-        <text
-          x={esc.x(mark.at[0])}
-          y={esc.y(mark.at[1])}
-          textAnchor={mark.anchor ?? "middle"}
-          fill={cor}
-          fontSize={14}
-          fontWeight={600}
-          fontFamily="var(--font-sans)"
-        >
-          {mark.text}
-        </text>
-      );
-    }
+    case "text": return null;
     case "polygon": {
       return (
         <polygon
@@ -272,8 +192,6 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
       const p2 = { x: v.x + b.x * r, y: v.y + b.y * r };
       // `sweep` escolhe o lado curto do arco, que é sempre o ângulo interno.
       const cruz = a.x * b.y - a.y * b.x;
-      const meio = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
-      const nm = Math.hypot(meio.x, meio.y) || 1;
       return (
         <g>
           <path
@@ -282,19 +200,6 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
             stroke={cor}
             strokeWidth={2}
           />
-          {mark.label && (
-            <text
-              x={v.x + (meio.x / nm) * (r + 16)}
-              y={v.y + (meio.y / nm) * (r + 16) + 5}
-              textAnchor="middle"
-              fill={cor}
-              fontSize={15}
-              fontWeight={600}
-              fontFamily="var(--font-sans)"
-            >
-              {mark.label}
-            </text>
-          )}
         </g>
       );
     }
@@ -332,15 +237,6 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
             stroke={cor} strokeWidth={2.5} strokeLinecap="round"
             strokeDasharray={mark.dashed ? "6 5" : undefined}
           />
-          {mark.label && (
-            <text
-              x={esc.x((x1 + x2) / 2) + 8}
-              y={esc.y((y1 + y2) / 2) - 8}
-              fill={cor} fontSize={14} fontFamily="var(--font-sans)"
-            >
-              {mark.label}
-            </text>
-          )}
         </g>
       );
     }
@@ -348,9 +244,9 @@ function Marca({ mark, esc }: { mark: PlotMark; esc: Escala }) {
 }
 
 export function StaticPlot({ spec, className }: { spec: PlotSpec; className?: string }) {
-  const esc = criarEscala(spec);
-  const xTicks = spec.xTicks ?? ticks(esc.xMin, esc.xMax);
-  const yTicks = spec.yTicks ?? ticks(esc.yMin, esc.yMax);
+  const esc = createPlotScale(spec);
+  const { pad: PAD, width: PLOT_W, height: PLOT_H, xTicks, yTicks } = esc;
+  const labels = layoutPlotLabels(spec, esc);
   const eixoX = esc.y(0);
   const eixoY = esc.x(0);
   const temEixoX = esc.yMin <= 0 && esc.yMax >= 0;
@@ -402,16 +298,22 @@ export function StaticPlot({ spec, className }: { spec: PlotSpec; className?: st
               fill="var(--ink-muted)" fontSize={13} fontStyle="italic" fontFamily="var(--font-serif)">
               {spec.xLabel ?? "x"}
             </text>
-            <text x={PAD.left - 8} y={PAD.top - 18} textAnchor="end"
+            <text x={PAD.left} y={PAD.top - 18} textAnchor="start"
               fill="var(--ink-muted)" fontSize={13} fontStyle="italic" fontFamily="var(--font-serif)">
               {spec.yLabel ?? "y"}
             </text>
           </g>
           )}
 
-          {spec.marks.map((mark, i) => (
-            <Marca key={i} mark={mark} esc={esc} />
-          ))}
+          {/* A nested viewport clips function traces without clipping annotations
+              or the open circles used to explain holes at domain boundaries. */}
+          <svg x={PAD.left} y={PAD.top} width={PLOT_W} height={PLOT_H} viewBox={`${PAD.left} ${PAD.top} ${PLOT_W} ${PLOT_H}`} overflow="hidden" aria-hidden="true">
+            {spec.marks.map((mark, i) => ["curve", "area", "rects"].includes(mark.kind) ? <Marca key={i} mark={mark} esc={esc} /> : null)}
+          </svg>
+          {spec.marks.map((mark, i) => !["curve", "area", "rects"].includes(mark.kind) ? <Marca key={i} mark={mark} esc={esc} /> : null)}
+          <g stroke="var(--surface)" strokeWidth={5} strokeLinejoin="round" paintOrder="stroke fill" fontFamily="var(--font-sans)">
+            {labels.map((label,i)=><text key={i} x={label.x} y={label.y} textAnchor={label.anchor} fill={toneColor(label.tone)} fontSize={label.size} fontWeight={label.weight}>{label.text}</text>)}
+          </g>
         </svg>
       </div>
       {spec.legend && (

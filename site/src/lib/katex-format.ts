@@ -139,6 +139,10 @@ const ARIA_TRANSPARENTES = new Set([
  * frações com `\sqrt{}` ou `\text{}` dentro perdiam o "sobre". */
 function ariaGrupo(s: string, i: number): { corpo: string; fim: number } {
   if (s[i] !== "{") {
+    if (s[i] === "\\") {
+      const command = /^\\[a-zA-Z]+/.exec(s.slice(i));
+      if (command) return { corpo: command[0], fim: i + command[0].length };
+    }
     // Argumento de um caractere só: \frac12, x^2, a_n
     return { corpo: s[i] ?? "", fim: i + 1 };
   }

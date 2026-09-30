@@ -25,11 +25,11 @@ export function DemonstrationDisclosure({
             className="rounded-2 border border-terracotta/30 bg-terracotta-soft/15 p-4"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
-              <div>
+              <div className="min-w-0 flex-1 basis-60">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-terracotta">
                   Demonstração disponível
                 </p>
-                <h3 className="mt-1 font-serif text-[18px] font-semibold text-ink">
+                <h3 className="mt-1 break-words font-serif text-[18px] font-semibold text-ink">
                   <RichText as="span">{demo.title}</RichText>
                 </h3>
               </div>
@@ -38,7 +38,7 @@ export function DemonstrationDisclosure({
                 onClick={() => setOpenIndex(isOpen ? null : index)}
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="rounded-full border border-terracotta/45 bg-surface px-3.5 py-1.5 text-xs font-semibold text-terracotta transition-colors hover:border-terracotta hover:bg-terracotta-soft/40"
+                className="shrink-0 rounded-full border border-terracotta/45 bg-surface px-3.5 py-1.5 text-xs font-semibold text-terracotta transition-colors hover:border-terracotta hover:bg-terracotta-soft/40"
               >
                 {isOpen ? "Ocultar demonstração" : "Ver demonstração"}
               </button>
@@ -59,7 +59,7 @@ export function DemonstrationDisclosure({
                       <span className="flex h-7 w-7 items-center justify-center rounded-full bg-terracotta text-xs font-bold text-white">
                         {stepIndex + 1}
                       </span>
-                      <div>
+                      <div className="min-w-0">
                         <h4 className="font-semibold text-ink">
                           <RichText as="span">{step.title}</RichText>
                         </h4>

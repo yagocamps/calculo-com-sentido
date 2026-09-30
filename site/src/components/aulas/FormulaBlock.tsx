@@ -17,9 +17,9 @@ export function FormulaBlock({
     <div className="my-3 flex flex-wrap items-center gap-4 rounded-2 bg-surface-ink px-5 py-4 font-mono text-base text-ink-on-dark">
       <span className="font-serif text-[13px] italic opacity-50">fórmula</span>
       {formulaLatex ? (
-        <MathFormula latex={formulaLatex} text={ariaText} display />
+        <MathFormula latex={formulaLatex} text={ariaText} display className="block min-w-0 max-w-full overflow-x-auto" />
       ) : (
-        <span role="math" aria-label={ariaText}>
+        <span role="math" aria-label={ariaText} className="min-w-0 max-w-full overflow-x-auto">
           {formula}
         </span>
       )}

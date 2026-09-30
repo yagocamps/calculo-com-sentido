@@ -32,3 +32,9 @@ test("o espaçamento de aligned continua sendo aplicado", () => {
   const out = prepareForKatex(String.raw`\begin{aligned} a &= b \\ c &= d \end{aligned}`);
   assert.match(out, /\\\\\[6pt\]/);
 });
+
+test("a leitura preserva comandos inteiros nos expoentes sem chaves", () => {
+  assert.equal(ariaFromLatex(String.raw`1^\infty`), "1 elevado a infinito");
+  assert.equal(ariaFromLatex(String.raw`x^\alpha`), "x elevado a alfa");
+  assert.equal(ariaFromLatex(String.raw`30^\circ`), "30 graus");
+});

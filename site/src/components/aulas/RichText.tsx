@@ -142,13 +142,13 @@ export function RichText({
   const renderPlain = (segment: string, keyBase: number): ReactNode =>
     glossary ? highlightTerms(segment, glossary, keyBase) : segment;
 
-  if (!text.includes("\\(") && !text.includes("\\[")) {
+  if (!text.includes("\\(") && !text.includes("\\[") && !text.includes("**")) {
     return <Tag className={className}>{renderPlain(text, 0)}</Tag>;
   }
 
   // Captura blocos de display `\[ ... \]` (grupo 1) ou fórmulas inline
   // `\( ... \)` (grupo 2). O `[\s\S]` permite quebras de linha internas.
-  const mathToken = /\\\[([\s\S]+?)\\\]|\\\(([\s\S]+?)\\\)/g;
+  const mathToken = /\*\*([^*]+?)\*\*|\\\[([\s\S]+?)\\\]|\\\(([\s\S]+?)\\\)/g;
   const nodes: ReactNode[] = [];
   let lastIndex = 0;
   let key = 0;
@@ -158,9 +158,12 @@ export function RichText({
     if (match.index > lastIndex) {
       nodes.push(renderPlain(text.slice(lastIndex, match.index), key));
     }
-    const displayContent = match[1];
-    const inlineContent = match[2];
-    if (displayContent !== undefined) {
+    const emphasizedContent = match[1];
+    const displayContent = match[2];
+    const inlineContent = match[3];
+    if (emphasizedContent !== undefined) {
+      nodes.push(<strong key={`emphasis-${key++}`}><RichText glossary={glossary}>{emphasizedContent}</RichText></strong>);
+    } else if (displayContent !== undefined) {
       nodes.push(renderMath(displayContent, true, key++));
     } else {
       nodes.push(renderMath(inlineContent, false, key++));

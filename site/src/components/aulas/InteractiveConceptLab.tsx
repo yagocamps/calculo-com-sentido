@@ -30,12 +30,19 @@ function pointPath(
   yMax: number,
   samples = 100,
 ) {
+  let drawing = false;
   return Array.from({ length: samples + 1 }, (_, index) => {
     const x = xMin + ((xMax - xMin) * index) / samples;
     const y = fn(x);
+    if (!Number.isFinite(y) || y < yMin || y > yMax) {
+      drawing = false;
+      return "";
+    }
     const px = P + ((x - xMin) / (xMax - xMin)) * (W - 2 * P);
     const py = H - P - ((y - yMin) / (yMax - yMin)) * (H - 2 * P);
-    return `${index === 0 ? "M" : "L"}${px.toFixed(1)},${py.toFixed(1)}`;
+    const command = drawing ? "L" : "M";
+    drawing = true;
+    return `${command}${px.toFixed(1)},${py.toFixed(1)}`;
   }).join(" ");
 }
 
@@ -351,7 +358,7 @@ function UnitCircleLab() {
         <line x1={px} y1={py} x2={px} y2={cy} stroke="var(--sage)" strokeWidth="3" strokeDasharray="7 5" />
         <line x1={cx} y1={cy} x2={px} y2={cy} stroke="var(--terracotta)" strokeWidth="3" strokeDasharray="7 5" />
         <circle cx={px} cy={py} r="8" fill="var(--sage)" />
-        <text x={px + 10} y={py - 10} fill="var(--ink)" fontSize="14">({fmt(cosine, 2)}; {fmt(sine, 2)})</text>
+        <text x={px + (cosine >= -1e-9 ? 12 : -12)} y={py + (sine >= -1e-9 ? -12 : 24)} textAnchor={cosine >= -1e-9 ? "start" : "end"} fill="var(--ink)" stroke="var(--surface)" strokeWidth="4" paintOrder="stroke fill" fontSize="14">({fmt(cosine, 2)}; {fmt(sine, 2)})</text>
       </Graph>
     </LabShell>
   );
@@ -455,8 +462,10 @@ function ProductRuleLab() {
         <rect x={left} y={top} width={baseWidth} height={extra} fill="var(--sky-soft)" stroke="var(--sky)" strokeWidth="3" />
         <rect x={left + baseWidth} y={top} width={extra} height={extra} fill="var(--amber-soft)" stroke="var(--amber)" strokeWidth="3" />
         <text x={left + 10} y={top + extra + baseHeight / 2} fill="var(--ink)" fontSize="15">f · g</text>
-        <text x={left + baseWidth + 5} y={top + extra + baseHeight / 2} fill="var(--ink)" fontSize="13">g·Δf</text>
-        <text x={left + 10} y={top + Math.max(16, extra / 2)} fill="var(--ink)" fontSize="13">f·Δg</text>
+        <line x1={left + baseWidth + extra / 2} x2={left + baseWidth + extra + 13} y1={top + extra + baseHeight / 2} y2={top + extra + baseHeight / 2} stroke="var(--sage)" />
+        <text x={left + baseWidth + extra + 18} y={top + extra + baseHeight / 2 + 4} fill="var(--sage-ink)" fontSize="13">g·Δf</text>
+        <line x1={left + baseWidth / 2} x2={left + baseWidth / 2} y1={29} y2={top + extra / 2} stroke="var(--sky)" />
+        <text x={left + baseWidth / 2} y={24} textAnchor="middle" fill="var(--sky-ink)" fontSize="13">f·Δg</text>
       </Graph>
     </LabShell>
   );
