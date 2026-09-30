@@ -22,6 +22,7 @@ import { RichText } from "@/components/aulas/RichText";
 import { Section } from "@/components/aulas/Section";
 import { AulaVideos } from "@/components/aulas/AulaVideos";
 import { StepList } from "@/components/aulas/StepList";
+import { DistributiveExample } from "@/components/aulas/DistributiveExample";
 import { PageShell } from "@/components/layout/PageShell";
 import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
@@ -328,6 +329,7 @@ export function AulaView({
               >
                 {content.exemplo.situacao}
               </RichText>
+              {trilha === "pre-calculo" && meta.moduleSlug === "algebra" && aulaSlug === "expressoes-algebricas" && <DistributiveExample />}
               {content.exemplo.diagram === "growing-circle" && (
                 <figure className="mt-5 rounded-xl border border-border bg-surface p-4">
                   <svg viewBox="0 0 400 200" role="img" aria-label="Círculo em expansão. O segmento vai do centro até a borda e representa o raio variável. O contorno tracejado mostra um instante posterior." className="mx-auto w-full max-w-sm">
